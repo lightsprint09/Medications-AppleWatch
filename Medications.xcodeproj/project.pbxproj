@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		942D38EE1B787EB200553C79 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942D38ED1B787EB200553C79 /* CoreDataStack.swift */; };
+		942D38F21B787FE100553C79 /* Medication+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942D38F01B787FE100553C79 /* Medication+CoreDataProperties.swift */; };
+		942D38F31B787FE100553C79 /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942D38F11B787FE100553C79 /* Medication.swift */; };
+		942D38F71B78813E00553C79 /* ManagedObjectContextSettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942D38F61B78813E00553C79 /* ManagedObjectContextSettable.swift */; };
+		942D38FB1B78855600553C79 /* UITabBarViewControllerCoreDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942D38FA1B78855600553C79 /* UITabBarViewControllerCoreDataExtension.swift */; };
 		944F21431B59570200ED8A7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944F21421B59570200ED8A7A /* AppDelegate.swift */; };
 		944F21481B59570200ED8A7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 944F21461B59570200ED8A7A /* Main.storyboard */; };
 		944F214B1B59570200ED8A7A /* Medications.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 944F21491B59570200ED8A7A /* Medications.xcdatamodeld */; };
@@ -80,6 +85,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		942D38ED1B787EB200553C79 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		942D38F01B787FE100553C79 /* Medication+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Medication+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		942D38F11B787FE100553C79 /* Medication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medication.swift; sourceTree = "<group>"; };
+		942D38F61B78813E00553C79 /* ManagedObjectContextSettable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectContextSettable.swift; sourceTree = "<group>"; };
+		942D38FA1B78855600553C79 /* UITabBarViewControllerCoreDataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBarViewControllerCoreDataExtension.swift; sourceTree = "<group>"; };
 		944F213F1B59570200ED8A7A /* Medications.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Medications.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		944F21421B59570200ED8A7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		944F21471B59570200ED8A7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -137,6 +147,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		942D38EF1B787EB900553C79 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				942D38F01B787FE100553C79 /* Medication+CoreDataProperties.swift */,
+				942D38F11B787FE100553C79 /* Medication.swift */,
+				942D38ED1B787EB200553C79 /* CoreDataStack.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		942D38F41B7880E700553C79 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				942D38F51B7880FB00553C79 /* protocol */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		942D38F51B7880FB00553C79 /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				942D38F61B78813E00553C79 /* ManagedObjectContextSettable.swift */,
+				942D38FA1B78855600553C79 /* UITabBarViewControllerCoreDataExtension.swift */,
+			);
+			name = protocol;
+			sourceTree = "<group>";
+		};
 		944F21361B59570200ED8A7A = {
 			isa = PBXGroup;
 			children = (
@@ -164,11 +201,13 @@
 		944F21411B59570200ED8A7A /* Medications */ = {
 			isa = PBXGroup;
 			children = (
+				942D38F41B7880E700553C79 /* controller */,
 				944F21421B59570200ED8A7A /* AppDelegate.swift */,
 				944F21461B59570200ED8A7A /* Main.storyboard */,
 				944F214C1B59570200ED8A7A /* Assets.xcassets */,
 				944F21511B59570200ED8A7A /* Info.plist */,
 				944F21491B59570200ED8A7A /* Medications.xcdatamodeld */,
+				942D38EF1B787EB900553C79 /* model */,
 			);
 			path = Medications;
 			sourceTree = "<group>";
@@ -412,7 +451,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				942D38F31B787FE100553C79 /* Medication.swift in Sources */,
+				942D38EE1B787EB200553C79 /* CoreDataStack.swift in Sources */,
 				944F214B1B59570200ED8A7A /* Medications.xcdatamodeld in Sources */,
+				942D38F21B787FE100553C79 /* Medication+CoreDataProperties.swift in Sources */,
+				942D38F71B78813E00553C79 /* ManagedObjectContextSettable.swift in Sources */,
+				942D38FB1B78855600553C79 /* UITabBarViewControllerCoreDataExtension.swift in Sources */,
 				944F21431B59570200ED8A7A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
