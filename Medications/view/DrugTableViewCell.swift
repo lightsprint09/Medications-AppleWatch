@@ -9,7 +9,11 @@
 import UIKit
 
 class DrugTableViewCell: UITableViewCell {
+    @IBOutlet weak var abstractImageView: UIImageView!
+    @IBOutlet weak var drugNameLabel: UILabel!
+    @IBOutlet weak var activeSubstanceLabel: UILabel!
     func configureWithDrug(drug:Drug) {
-        
+        drugNameLabel.text = drug.name
+        activeSubstanceLabel.text = drug.activeSubstance
     }
 }

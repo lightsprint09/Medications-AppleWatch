@@ -13,5 +13,27 @@ extension NSManagedObjectContext {
     guard let obj = NSEntityDescription.insertNewObjectForEntityForName(A.entityName, inManagedObjectContext: self) as? A else { fatalError("Wrong object type") }
     return obj
     }
+    
+    public func saveOrRollback() {
+        do {
+        try save()
+    } catch {
+            rollback()
+        }
+    }
+    
+    public func performChanges(block: () -> ()) {
+            performBlock {
+        block()
+        self.saveOrRollback()
+            }
+    }
+    
+    public func createPersistentObject<A: NSManagedObject where A: ManagedObjectType>(setupBlock:(A)->()) -> A {
+        let object = insertObject() as A
+        setupBlock(object)
+        saveOrRollback()
+        return object
+    }
 }
  

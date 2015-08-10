@@ -14,8 +14,8 @@ import CoreData
 
 extension ExecutionTime {
 
-    @NSManaged var creationDate: NSDate?
     @NSManaged var assignmentDate: NSDate?
+    @NSManaged var creationDate: NSDate?
     @NSManaged var executionDate: NSDate?
     @NSManaged var millisecondsMoved: NSNumber?
     @NSManaged var medications: NSSet?

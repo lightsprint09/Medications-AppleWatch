@@ -42,7 +42,7 @@
 		944F21931B59573300ED8A7A /* MediWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 944F21751B59573200ED8A7A /* MediWatch.app */; };
 		94D1E5EF1B78EAC700B0CD7D /* NSManagedObjectContextExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E5EE1B78EAC700B0CD7D /* NSManagedObjectContextExtension.swift */; };
 		94D1E5F11B78EB6800B0CD7D /* ManagedObjectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E5F01B78EB6800B0CD7D /* ManagedObjectType.swift */; };
-		94D1E5F31B78EBEB00B0CD7D /* ManagedObjectTypeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E5F21B78EBEB00B0CD7D /* ManagedObjectTypeExtension.swift */; };
+		94D1E5F31B78EBEB00B0CD7D /* NSManagedObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E5F21B78EBEB00B0CD7D /* NSManagedObjectExtension.swift */; };
 		94D1E5F51B78F53700B0CD7D /* UINavigationControllerCoreDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E5F41B78F53700B0CD7D /* UINavigationControllerCoreDataExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -147,7 +147,7 @@
 		944F21901B59573300ED8A7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94D1E5EE1B78EAC700B0CD7D /* NSManagedObjectContextExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContextExtension.swift; sourceTree = "<group>"; };
 		94D1E5F01B78EB6800B0CD7D /* ManagedObjectType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectType.swift; sourceTree = "<group>"; };
-		94D1E5F21B78EBEB00B0CD7D /* ManagedObjectTypeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectTypeExtension.swift; sourceTree = "<group>"; };
+		94D1E5F21B78EBEB00B0CD7D /* NSManagedObjectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectExtension.swift; sourceTree = "<group>"; };
 		94D1E5F41B78F53700B0CD7D /* UINavigationControllerCoreDataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationControllerCoreDataExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -243,7 +243,7 @@
 				942D38ED1B787EB200553C79 /* CoreDataStack.swift */,
 				94D1E5EE1B78EAC700B0CD7D /* NSManagedObjectContextExtension.swift */,
 				94D1E5F01B78EB6800B0CD7D /* ManagedObjectType.swift */,
-				94D1E5F21B78EBEB00B0CD7D /* ManagedObjectTypeExtension.swift */,
+				94D1E5F21B78EBEB00B0CD7D /* NSManagedObjectExtension.swift */,
 				942D38FA1B78855600553C79 /* UITabBarViewControllerCoreDataExtension.swift */,
 				94D1E5F41B78F53700B0CD7D /* UINavigationControllerCoreDataExtension.swift */,
 			);
@@ -551,7 +551,7 @@
 				942D39181B78ABBB00553C79 /* DrugTableViewControllerCellConfigure.swift in Sources */,
 				942D39071B78954900553C79 /* MedicationView.swift in Sources */,
 				942D39111B789DAB00553C79 /* ExecutionTime.swift in Sources */,
-				94D1E5F31B78EBEB00B0CD7D /* ManagedObjectTypeExtension.swift in Sources */,
+				94D1E5F31B78EBEB00B0CD7D /* NSManagedObjectExtension.swift in Sources */,
 				942D39151B78AAB800553C79 /* DrugTableViewController.swift in Sources */,
 				942D39131B789DAB00553C79 /* Medication.swift in Sources */,
 				942D38FB1B78855600553C79 /* UITabBarViewControllerCoreDataExtension.swift in Sources */,

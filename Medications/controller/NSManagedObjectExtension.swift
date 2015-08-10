@@ -10,7 +10,7 @@ import CoreData
 
 extension NSManagedObject: ManagedObjectType {
     public static var defaultSortDescriptors: [NSSortDescriptor] {
-        return []
+    return []
     }
     
     public static var entityName: String {
@@ -20,8 +20,8 @@ extension NSManagedObject: ManagedObjectType {
     }
     
     public static var sortedFetchRequest: NSFetchRequest {
-        let request = NSFetchRequest(entityName: entityName)
-        request.sortDescriptors = defaultSortDescriptors
-        return request
+            let request = NSFetchRequest(entityName: entityName)
+            request.sortDescriptors = defaultSortDescriptors
+            return request
     }
 }
