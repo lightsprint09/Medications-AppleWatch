@@ -9,8 +9,17 @@
 import UIKit
 import CoreData
 
-extension UITabBarController {
-    func passManagedObjectContextToChildren(managedObjectContext:NSManagedObjectContext) {
+extension UITabBarController: ManagedObjectContextSettable {
+    var managedObjectContext: NSManagedObjectContext! {
+        get {
+            return nil
+        }
+        
+        set(value) {
+            passManagedObjectContextToChildren(value)
+        }
+    }
+    private func passManagedObjectContextToChildren(managedObjectContext:NSManagedObjectContext) {
         
         for (_, controller) in childViewControllers.enumerate(){
             if let controller = controller as? ManagedObjectContextSettable {

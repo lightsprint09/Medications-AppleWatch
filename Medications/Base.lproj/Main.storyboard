@@ -27,7 +27,6 @@
         <!--Medikationplan-->
         <scene sceneID="NpN-lY-3MI">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FUc-rC-fFV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController title="Medikationplan" id="LQP-ve-NUB" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="v2S-ql-HY4">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -56,6 +55,7 @@
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FUc-rC-fFV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="907" y="-747"/>
         </scene>
@@ -185,14 +185,13 @@
         <!--Medikamente-->
         <scene sceneID="QAQ-k9-6Ga">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7LL-5w-WLK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController title="Medikamente" id="A4L-r0-d5w" sceneMemberID="viewController">
+                <tableViewController title="Medikamente" id="A4L-r0-d5w" customClass="DrugTableViewController" customModule="Medications" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="KH4-8z-boE">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="mdeication-sell" rowHeight="64" id="X8W-NH-CIx">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="drug-cell" rowHeight="64" id="X8W-NH-CIx">
                                 <rect key="frame" x="0.0" y="92" width="600" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X8W-NH-CIx" id="kI9-xB-Kr0">
@@ -200,7 +199,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="zX4-he-VwC">
-                                            <rect key="frame" x="0.0" y="0.0" width="559" height="64"/>
+                                            <rect key="frame" x="8" y="0.0" width="551" height="64"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="pill" translatesAutoresizingMaskIntoConstraints="NO" id="9yr-ai-Yqt" customClass="RoundUIImageView" customModule="Medications" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
@@ -222,17 +221,17 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" alignment="top" spacing="-20" translatesAutoresizingMaskIntoConstraints="NO" id="dTR-Or-4st">
-                                                    <rect key="frame" x="88" y="0.0" width="471" height="64"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" alignment="top" spacing="-12" translatesAutoresizingMaskIntoConstraints="NO" id="dTR-Or-4st">
+                                                    <rect key="frame" x="88" y="0.0" width="463" height="64"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Aspirin" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Uy-Ru-dFl">
-                                                            <rect key="frame" x="0.0" y="0.0" width="53" height="42"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="53" height="38"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wirkstoff: Acetylsalicylsäure" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufz-7U-PnU">
-                                                            <rect key="frame" x="0.0" y="22" width="193.5" height="42"/>
+                                                            <rect key="frame" x="0.0" y="26" width="193.5" height="38"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -245,7 +244,7 @@
                                     <constraints>
                                         <constraint firstItem="zX4-he-VwC" firstAttribute="top" secondItem="kI9-xB-Kr0" secondAttribute="topMargin" constant="-8" id="2TX-So-TWA"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="zX4-he-VwC" secondAttribute="trailing" id="aFb-Tt-Mnf"/>
-                                        <constraint firstItem="zX4-he-VwC" firstAttribute="leading" secondItem="kI9-xB-Kr0" secondAttribute="leadingMargin" constant="-8" id="rnT-1O-3kB"/>
+                                        <constraint firstItem="zX4-he-VwC" firstAttribute="leading" secondItem="kI9-xB-Kr0" secondAttribute="leadingMargin" id="rnT-1O-3kB"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="zX4-he-VwC" secondAttribute="bottom" constant="-8.5" id="t6O-5f-wp5"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -264,6 +263,7 @@
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7LL-5w-WLK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="963" y="109"/>
         </scene>

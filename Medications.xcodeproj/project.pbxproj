@@ -21,6 +21,11 @@
 		942D39111B789DAB00553C79 /* ExecutionTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942D390B1B789DAB00553C79 /* ExecutionTime.swift */; };
 		942D39121B789DAB00553C79 /* Medication+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942D390C1B789DAB00553C79 /* Medication+CoreDataProperties.swift */; };
 		942D39131B789DAB00553C79 /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942D390D1B789DAB00553C79 /* Medication.swift */; };
+		942D39151B78AAB800553C79 /* DrugTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942D39141B78AAB800553C79 /* DrugTableViewController.swift */; };
+		942D39181B78ABBB00553C79 /* DrugTableViewControllerCellConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942D39171B78ABBB00553C79 /* DrugTableViewControllerCellConfigure.swift */; };
+		942D391A1B78ABEF00553C79 /* FetchedResultsDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942D39191B78ABEF00553C79 /* FetchedResultsDataSourceDelegate.swift */; };
+		942D391C1B78AC6D00553C79 /* DrugTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942D391B1B78AC6D00553C79 /* DrugTableViewCell.swift */; };
+		942D391F1B78AE6A00553C79 /* FetchedResultsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942D391E1B78AE6A00553C79 /* FetchedResultsDataSource.swift */; };
 		944F21431B59570200ED8A7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944F21421B59570200ED8A7A /* AppDelegate.swift */; };
 		944F21481B59570200ED8A7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 944F21461B59570200ED8A7A /* Main.storyboard */; };
 		944F214B1B59570200ED8A7A /* Medications.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 944F21491B59570200ED8A7A /* Medications.xcdatamodeld */; };
@@ -35,6 +40,10 @@
 		944F218D1B59573300ED8A7A /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944F218C1B59573300ED8A7A /* NotificationController.swift */; };
 		944F218F1B59573300ED8A7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 944F218E1B59573300ED8A7A /* Assets.xcassets */; };
 		944F21931B59573300ED8A7A /* MediWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 944F21751B59573200ED8A7A /* MediWatch.app */; };
+		94D1E5EF1B78EAC700B0CD7D /* NSManagedObjectContextExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E5EE1B78EAC700B0CD7D /* NSManagedObjectContextExtension.swift */; };
+		94D1E5F11B78EB6800B0CD7D /* ManagedObjectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E5F01B78EB6800B0CD7D /* ManagedObjectType.swift */; };
+		94D1E5F31B78EBEB00B0CD7D /* ManagedObjectTypeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E5F21B78EBEB00B0CD7D /* ManagedObjectTypeExtension.swift */; };
+		94D1E5F51B78F53700B0CD7D /* UINavigationControllerCoreDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E5F41B78F53700B0CD7D /* UINavigationControllerCoreDataExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,7 +103,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		942D38ED1B787EB200553C79 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		942D38ED1B787EB200553C79 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataStack.swift; path = ../model/CoreDataStack.swift; sourceTree = "<group>"; };
 		942D38F61B78813E00553C79 /* ManagedObjectContextSettable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectContextSettable.swift; sourceTree = "<group>"; };
 		942D38FA1B78855600553C79 /* UITabBarViewControllerCoreDataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBarViewControllerCoreDataExtension.swift; sourceTree = "<group>"; };
 		942D38FD1B788B8000553C79 /* RoundCornerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundCornerButton.swift; sourceTree = "<group>"; };
@@ -108,6 +117,11 @@
 		942D390B1B789DAB00553C79 /* ExecutionTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecutionTime.swift; sourceTree = "<group>"; };
 		942D390C1B789DAB00553C79 /* Medication+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Medication+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		942D390D1B789DAB00553C79 /* Medication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medication.swift; sourceTree = "<group>"; };
+		942D39141B78AAB800553C79 /* DrugTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugTableViewController.swift; sourceTree = "<group>"; };
+		942D39171B78ABBB00553C79 /* DrugTableViewControllerCellConfigure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugTableViewControllerCellConfigure.swift; sourceTree = "<group>"; };
+		942D39191B78ABEF00553C79 /* FetchedResultsDataSourceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsDataSourceDelegate.swift; sourceTree = "<group>"; };
+		942D391B1B78AC6D00553C79 /* DrugTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugTableViewCell.swift; sourceTree = "<group>"; };
+		942D391E1B78AE6A00553C79 /* FetchedResultsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsDataSource.swift; sourceTree = "<group>"; };
 		944F213F1B59570200ED8A7A /* Medications.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Medications.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		944F21421B59570200ED8A7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		944F21471B59570200ED8A7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -131,6 +145,10 @@
 		944F218C1B59573300ED8A7A /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		944F218E1B59573300ED8A7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		944F21901B59573300ED8A7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94D1E5EE1B78EAC700B0CD7D /* NSManagedObjectContextExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContextExtension.swift; sourceTree = "<group>"; };
+		94D1E5F01B78EB6800B0CD7D /* ManagedObjectType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectType.swift; sourceTree = "<group>"; };
+		94D1E5F21B78EBEB00B0CD7D /* ManagedObjectTypeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectTypeExtension.swift; sourceTree = "<group>"; };
+		94D1E5F41B78F53700B0CD7D /* UINavigationControllerCoreDataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationControllerCoreDataExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,7 +192,6 @@
 				942D390B1B789DAB00553C79 /* ExecutionTime.swift */,
 				942D390C1B789DAB00553C79 /* Medication+CoreDataProperties.swift */,
 				942D390D1B789DAB00553C79 /* Medication.swift */,
-				942D38ED1B787EB200553C79 /* CoreDataStack.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -184,6 +201,7 @@
 			children = (
 				942D38FC1B7888D300553C79 /* extension */,
 				942D38F51B7880FB00553C79 /* protocol */,
+				942D39141B78AAB800553C79 /* DrugTableViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -191,7 +209,7 @@
 		942D38F51B7880FB00553C79 /* protocol */ = {
 			isa = PBXGroup;
 			children = (
-				942D38F61B78813E00553C79 /* ManagedObjectContextSettable.swift */,
+				942D39191B78ABEF00553C79 /* FetchedResultsDataSourceDelegate.swift */,
 			);
 			name = protocol;
 			sourceTree = "<group>";
@@ -199,7 +217,7 @@
 		942D38FC1B7888D300553C79 /* extension */ = {
 			isa = PBXGroup;
 			children = (
-				942D38FA1B78855600553C79 /* UITabBarViewControllerCoreDataExtension.swift */,
+				942D39171B78ABBB00553C79 /* DrugTableViewControllerCellConfigure.swift */,
 			);
 			name = extension;
 			sourceTree = "<group>";
@@ -212,8 +230,33 @@
 				942D38FF1B788B8000553C79 /* RoundLabel.swift */,
 				942D39041B788BC700553C79 /* RoundUIImageView.swift */,
 				942D39061B78954900553C79 /* MedicationView.swift */,
+				942D391D1B78AC7300553C79 /* cell */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		942D39161B78AB1400553C79 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				942D38F61B78813E00553C79 /* ManagedObjectContextSettable.swift */,
+				942D391E1B78AE6A00553C79 /* FetchedResultsDataSource.swift */,
+				942D38ED1B787EB200553C79 /* CoreDataStack.swift */,
+				94D1E5EE1B78EAC700B0CD7D /* NSManagedObjectContextExtension.swift */,
+				94D1E5F01B78EB6800B0CD7D /* ManagedObjectType.swift */,
+				94D1E5F21B78EBEB00B0CD7D /* ManagedObjectTypeExtension.swift */,
+				942D38FA1B78855600553C79 /* UITabBarViewControllerCoreDataExtension.swift */,
+				94D1E5F41B78F53700B0CD7D /* UINavigationControllerCoreDataExtension.swift */,
+			);
+			name = CoreData;
+			path = controller;
+			sourceTree = "<group>";
+		};
+		942D391D1B78AC7300553C79 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				942D391B1B78AC6D00553C79 /* DrugTableViewCell.swift */,
+			);
+			name = cell;
 			sourceTree = "<group>";
 		};
 		944F21361B59570200ED8A7A = {
@@ -243,6 +286,7 @@
 		944F21411B59570200ED8A7A /* Medications */ = {
 			isa = PBXGroup;
 			children = (
+				942D39161B78AB1400553C79 /* CoreData */,
 				942D39031B788B8C00553C79 /* view */,
 				942D38F41B7880E700553C79 /* controller */,
 				942D38EF1B787EB900553C79 /* model */,
@@ -494,18 +538,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94D1E5F11B78EB6800B0CD7D /* ManagedObjectType.swift in Sources */,
+				94D1E5F51B78F53700B0CD7D /* UINavigationControllerCoreDataExtension.swift in Sources */,
 				942D38EE1B787EB200553C79 /* CoreDataStack.swift in Sources */,
 				944F214B1B59570200ED8A7A /* Medications.xcdatamodeld in Sources */,
 				942D39021B788B8000553C79 /* RoundLabel.swift in Sources */,
+				94D1E5EF1B78EAC700B0CD7D /* NSManagedObjectContextExtension.swift in Sources */,
 				942D39051B788BC700553C79 /* RoundUIImageView.swift in Sources */,
 				942D38F71B78813E00553C79 /* ManagedObjectContextSettable.swift in Sources */,
+				942D391A1B78ABEF00553C79 /* FetchedResultsDataSourceDelegate.swift in Sources */,
 				942D390E1B789DAB00553C79 /* Drug+CoreDataProperties.swift in Sources */,
+				942D39181B78ABBB00553C79 /* DrugTableViewControllerCellConfigure.swift in Sources */,
 				942D39071B78954900553C79 /* MedicationView.swift in Sources */,
 				942D39111B789DAB00553C79 /* ExecutionTime.swift in Sources */,
+				94D1E5F31B78EBEB00B0CD7D /* ManagedObjectTypeExtension.swift in Sources */,
+				942D39151B78AAB800553C79 /* DrugTableViewController.swift in Sources */,
 				942D39131B789DAB00553C79 /* Medication.swift in Sources */,
 				942D38FB1B78855600553C79 /* UITabBarViewControllerCoreDataExtension.swift in Sources */,
 				942D39121B789DAB00553C79 /* Medication+CoreDataProperties.swift in Sources */,
+				942D391F1B78AE6A00553C79 /* FetchedResultsDataSource.swift in Sources */,
 				944F21431B59570200ED8A7A /* AppDelegate.swift in Sources */,
+				942D391C1B78AC6D00553C79 /* DrugTableViewCell.swift in Sources */,
 				942D39011B788B8000553C79 /* RoundView.swift in Sources */,
 				942D39101B789DAB00553C79 /* ExecutionTime+CoreDataProperties.swift in Sources */,
 				942D39001B788B8000553C79 /* RoundCornerButton.swift in Sources */,
