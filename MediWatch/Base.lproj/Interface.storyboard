@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8164.2" systemVersion="14E46" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8135.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8083.2"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="MediWatch" customModuleProvider="target">
+                    <items>
+                        <table alignment="left" id="2uO-SF-Mts">
+                            <items>
+                                <tableRow id="uT9-Cp-eH4">
+                                    <group key="rootItem" width="1" alignment="left" id="Qdu-o3-B0I"/>
+                                </tableRow>
+                            </items>
+                        </table>
+                        <group width="1" alignment="left" id="f14-KH-4bm">
+                            <items>
+                                <button alignment="left" id="Wpp-GA-Aw6">
+                                    <group key="contentGroup" width="60" alignment="left" layout="vertical" id="oju-gO-j4t">
+                                        <items>
+                                            <imageView alignment="left" id="MvC-nt-bTY"/>
+                                            <label width="84" alignment="left" text="Nehmen" textAlignment="center" id="uz1-gv-mIV"/>
+                                        </items>
+                                    </group>
+                                </button>
+                                <button alignment="left" id="szx-1X-rrB">
+                                    <group key="contentGroup" width="71" alignment="left" layout="vertical" id="o0j-1G-2A6">
+                                        <items>
+                                            <imageView alignment="left" id="16E-NV-DwL"/>
+                                            <label width="84" alignment="left" text="Verschieben" textAlignment="center" id="DcD-KJ-DO0"/>
+                                        </items>
+                                    </group>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="MediWatch" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>

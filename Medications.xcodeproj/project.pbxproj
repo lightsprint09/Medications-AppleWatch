@@ -8,11 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		944F21431B59570200ED8A7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944F21421B59570200ED8A7A /* AppDelegate.swift */; };
-		944F21451B59570200ED8A7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944F21441B59570200ED8A7A /* ViewController.swift */; };
 		944F21481B59570200ED8A7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 944F21461B59570200ED8A7A /* Main.storyboard */; };
 		944F214B1B59570200ED8A7A /* Medications.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 944F21491B59570200ED8A7A /* Medications.xcdatamodeld */; };
 		944F214D1B59570200ED8A7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 944F214C1B59570200ED8A7A /* Assets.xcassets */; };
-		944F21501B59570200ED8A7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 944F214E1B59570200ED8A7A /* LaunchScreen.storyboard */; };
 		944F215B1B59570200ED8A7A /* MedicationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944F215A1B59570200ED8A7A /* MedicationsTests.swift */; };
 		944F21661B59570200ED8A7A /* MedicationsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944F21651B59570200ED8A7A /* MedicationsUITests.swift */; };
 		944F21791B59573200ED8A7A /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 944F21771B59573200ED8A7A /* Interface.storyboard */; };
@@ -84,11 +82,9 @@
 /* Begin PBXFileReference section */
 		944F213F1B59570200ED8A7A /* Medications.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Medications.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		944F21421B59570200ED8A7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		944F21441B59570200ED8A7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		944F21471B59570200ED8A7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		944F214A1B59570200ED8A7A /* Medications.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Medications.xcdatamodel; sourceTree = "<group>"; };
 		944F214C1B59570200ED8A7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		944F214F1B59570200ED8A7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		944F21511B59570200ED8A7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		944F21561B59570200ED8A7A /* MedicationsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MedicationsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		944F215A1B59570200ED8A7A /* MedicationsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationsTests.swift; sourceTree = "<group>"; };
@@ -169,10 +165,8 @@
 			isa = PBXGroup;
 			children = (
 				944F21421B59570200ED8A7A /* AppDelegate.swift */,
-				944F21441B59570200ED8A7A /* ViewController.swift */,
 				944F21461B59570200ED8A7A /* Main.storyboard */,
 				944F214C1B59570200ED8A7A /* Assets.xcassets */,
-				944F214E1B59570200ED8A7A /* LaunchScreen.storyboard */,
 				944F21511B59570200ED8A7A /* Info.plist */,
 				944F21491B59570200ED8A7A /* Medications.xcdatamodeld */,
 			);
@@ -375,7 +369,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				944F21501B59570200ED8A7A /* LaunchScreen.storyboard in Resources */,
 				944F214D1B59570200ED8A7A /* Assets.xcassets in Resources */,
 				944F21481B59570200ED8A7A /* Main.storyboard in Resources */,
 			);
@@ -419,7 +412,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				944F21451B59570200ED8A7A /* ViewController.swift in Sources */,
 				944F214B1B59570200ED8A7A /* Medications.xcdatamodeld in Sources */,
 				944F21431B59570200ED8A7A /* AppDelegate.swift in Sources */,
 			);
@@ -483,14 +475,6 @@
 				944F21471B59570200ED8A7A /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		944F214E1B59570200ED8A7A /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				944F214F1B59570200ED8A7A /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 		944F21771B59573200ED8A7A /* Interface.storyboard */ = {
@@ -734,6 +718,7 @@
 				944F216C1B59570200ED8A7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		944F216D1B59570200ED8A7A /* Build configuration list for PBXNativeTarget "MedicationsTests" */ = {
 			isa = XCConfigurationList;
@@ -742,6 +727,7 @@
 				944F216F1B59570200ED8A7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		944F21701B59570200ED8A7A /* Build configuration list for PBXNativeTarget "MedicationsUITests" */ = {
 			isa = XCConfigurationList;
@@ -750,6 +736,7 @@
 				944F21721B59570200ED8A7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		944F21941B59573300ED8A7A /* Build configuration list for PBXNativeTarget "MediWatch Extension" */ = {
 			isa = XCConfigurationList;
@@ -758,6 +745,7 @@
 				944F21961B59573300ED8A7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		944F21981B59573300ED8A7A /* Build configuration list for PBXNativeTarget "MediWatch" */ = {
 			isa = XCConfigurationList;
@@ -766,6 +754,7 @@
 				944F219A1B59573300ED8A7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
