@@ -2,46 +2,9 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="osP-VC-BkV">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
-        <scene sceneID="iTJ-nZ-fGA">
-            <objects>
-                <viewController id="ReH-sV-VOK" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="YRh-TQ-LNd"/>
-                        <viewControllerLayoutGuide type="bottom" id="kfI-rp-fNe"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Mvh-lI-wKe">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="Ja0-cc-72x"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qJf-65-JbL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="181" y="231"/>
-        </scene>
-        <!--Item 1-->
-        <scene sceneID="ZEg-bz-jpE">
-            <objects>
-                <viewController id="zHP-tq-hre" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="07p-l3-3IA"/>
-                        <viewControllerLayoutGuide type="bottom" id="OuP-cR-oYT"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="k3t-LM-YNB">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="VOB-iV-25Q"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Zz4-sA-gT4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="181" y="-430"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="mAt-0U-RYO">
             <objects>
@@ -53,13 +16,379 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="zHP-tq-hre" kind="relationship" relationship="viewControllers" id="RCi-0s-Wn2"/>
-                        <segue destination="ReH-sV-VOK" kind="relationship" relationship="viewControllers" id="0kI-Qd-va7"/>
+                        <segue destination="f5Y-1T-phX" kind="relationship" relationship="viewControllers" id="fCF-iR-IUV"/>
+                        <segue destination="gH5-3F-Caa" kind="relationship" relationship="viewControllers" id="HdK-XE-4mk"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fvQ-Hl-5SN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-639" y="-99"/>
         </scene>
+        <!--Medikationplan-->
+        <scene sceneID="NpN-lY-3MI">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FUc-rC-fFV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController title="Medikationplan" id="LQP-ve-NUB" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="v2S-ql-HY4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="eDs-SG-YpR">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eDs-SG-YpR" id="ajH-wf-Pba">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="LQP-ve-NUB" id="pN8-cA-uXR"/>
+                            <outlet property="delegate" destination="LQP-ve-NUB" id="hmh-Nl-JKr"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Medikationplan" id="Whn-jX-OJg">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Yzz-f9-28A">
+                            <connections>
+                                <segue destination="g4g-cv-JNj" kind="presentation" id="1ue-OZ-QHA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="907" y="-747"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Rke-cX-TA8">
+            <objects>
+                <navigationController id="g4g-cv-JNj" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="l57-rX-Hx7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="RDo-1l-VTF" kind="relationship" relationship="rootViewController" id="VGH-DP-iB9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jzo-ex-1eC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1667" y="-747"/>
+        </scene>
+        <!--Neue Medikation-->
+        <scene sceneID="850-wJ-UM0">
+            <objects>
+                <viewController id="RDo-1l-VTF" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cUL-vh-swz"/>
+                        <viewControllerLayoutGuide type="bottom" id="vVh-3T-WIS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FCz-ki-npz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sYH-RC-Rio" customClass="MedicationView" customModule="Medications" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="600" height="120"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medikament" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAz-35-2Ae">
+                                        <rect key="frame" x="12" y="8" width="99" height="31.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="e11-5n-ted">
+                                        <rect key="frame" x="12" y="48" width="576" height="64"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="pill" translatesAutoresizingMaskIntoConstraints="NO" id="cEK-Qi-KuA" customClass="RoundUIImageView" customModule="Medications" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                                <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="tintColor" red="0.66645901415925923" green="0.18823529410000001" blue="0.27058823529999998" alpha="0.72999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="64" id="Cqo-XR-q2I"/>
+                                                    <constraint firstAttribute="height" constant="64" id="eK0-hN-Dwg"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="32"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.36078431372549019" green="0.40392156862745099" blue="0.45490196078431372" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" alignment="top" spacing="-20" translatesAutoresizingMaskIntoConstraints="NO" id="jx9-Jq-yB5">
+                                                <rect key="frame" x="88" y="0.0" width="488" height="64"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Aspirin" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jG3-SA-pL8">
+                                                        <rect key="frame" x="0.0" y="0.0" width="53" height="42"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wirkstoff: Acetylsalicylsäure" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqd-Rr-Lyw">
+                                                        <rect key="frame" x="0.0" y="22" width="193.5" height="42"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="gAz-35-2Ae" firstAttribute="leading" secondItem="sYH-RC-Rio" secondAttribute="leading" constant="12" id="0b7-E8-XE2"/>
+                                    <constraint firstAttribute="bottom" secondItem="e11-5n-ted" secondAttribute="bottom" constant="8" id="GKA-bp-sHx"/>
+                                    <constraint firstAttribute="trailing" secondItem="e11-5n-ted" secondAttribute="trailing" constant="12" id="K3R-zo-Cka"/>
+                                    <constraint firstItem="e11-5n-ted" firstAttribute="top" secondItem="gAz-35-2Ae" secondAttribute="bottom" constant="8" id="Ulj-um-0JV"/>
+                                    <constraint firstItem="e11-5n-ted" firstAttribute="leading" secondItem="sYH-RC-Rio" secondAttribute="leading" constant="12" id="pij-4L-zAf"/>
+                                    <constraint firstAttribute="height" constant="120" id="zYK-Zi-o8z"/>
+                                    <constraint firstItem="gAz-35-2Ae" firstAttribute="top" secondItem="sYH-RC-Rio" secondAttribute="top" constant="8" id="zqB-NL-hYH"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sYH-RC-Rio" firstAttribute="top" secondItem="cUL-vh-swz" secondAttribute="bottom" id="fdy-Bm-Kfa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sYH-RC-Rio" secondAttribute="trailing" constant="-20" id="gQf-P3-neI"/>
+                            <constraint firstItem="sYH-RC-Rio" firstAttribute="leading" secondItem="FCz-ki-npz" secondAttribute="leadingMargin" constant="-20" id="y3n-m9-uH6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Neue Medikation" id="VQH-W2-3PF">
+                        <barButtonItem key="leftBarButtonItem" title="Abbrechen" id="qu8-OA-gIq"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DGs-Gf-RKW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2393" y="-747"/>
+        </scene>
+        <!--Medikationplan-->
+        <scene sceneID="gzR-eb-7uD">
+            <objects>
+                <navigationController id="f5Y-1T-phX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Medikationplan" id="A8j-Qb-ahV"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZqJ-3v-bFI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="LQP-ve-NUB" kind="relationship" relationship="rootViewController" id="Ua1-OA-fgQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aGE-Ur-A6v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="87" y="-747"/>
+        </scene>
+        <!--Medikamente-->
+        <scene sceneID="QAQ-k9-6Ga">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7LL-5w-WLK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController title="Medikamente" id="A4L-r0-d5w" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="KH4-8z-boE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="mdeication-sell" rowHeight="64" id="X8W-NH-CIx">
+                                <rect key="frame" x="0.0" y="92" width="600" height="64"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X8W-NH-CIx" id="kI9-xB-Kr0">
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="63.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="zX4-he-VwC">
+                                            <rect key="frame" x="0.0" y="0.0" width="559" height="64"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="pill" translatesAutoresizingMaskIntoConstraints="NO" id="9yr-ai-Yqt" customClass="RoundUIImageView" customModule="Medications" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                                    <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="tintColor" red="0.66645901419999998" green="0.18823529410000001" blue="0.27058823529999998" alpha="0.72999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="64" id="5q4-nb-8Eg"/>
+                                                        <constraint firstAttribute="width" constant="64" id="biZ-ia-rBS"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="32"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" red="0.36078431370000003" green="0.4039215686" blue="0.4549019608" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" alignment="top" spacing="-20" translatesAutoresizingMaskIntoConstraints="NO" id="dTR-Or-4st">
+                                                    <rect key="frame" x="88" y="0.0" width="471" height="64"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Aspirin" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Uy-Ru-dFl">
+                                                            <rect key="frame" x="0.0" y="0.0" width="53" height="42"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wirkstoff: Acetylsalicylsäure" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufz-7U-PnU">
+                                                            <rect key="frame" x="0.0" y="22" width="193.5" height="42"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="zX4-he-VwC" firstAttribute="top" secondItem="kI9-xB-Kr0" secondAttribute="topMargin" constant="-8" id="2TX-So-TWA"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="zX4-he-VwC" secondAttribute="trailing" id="aFb-Tt-Mnf"/>
+                                        <constraint firstItem="zX4-he-VwC" firstAttribute="leading" secondItem="kI9-xB-Kr0" secondAttribute="leadingMargin" constant="-8" id="rnT-1O-3kB"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="zX4-he-VwC" secondAttribute="bottom" constant="-8.5" id="t6O-5f-wp5"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="A4L-r0-d5w" id="LNE-Yc-GSS"/>
+                            <outlet property="delegate" destination="A4L-r0-d5w" id="KDt-Jg-V7F"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Medikamente" id="qBH-6c-hea">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="jSd-j1-7pZ">
+                            <connections>
+                                <segue destination="uq5-8Z-2fs" kind="presentation" id="bqY-cm-pTJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="963" y="109"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0s1-AD-Yqt">
+            <objects>
+                <navigationController id="uq5-8Z-2fs" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yfW-Cp-hNH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oOz-7b-fRp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1667" y="109"/>
+        </scene>
+        <!--Neue Medikation-->
+        <scene sceneID="XzB-qq-fdx">
+            <objects>
+                <viewController id="BHr-1t-c1l" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Uzc-kW-QNS"/>
+                        <viewControllerLayoutGuide type="bottom" id="OsE-yI-Y3Q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vzW-t3-RCR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mnd-1G-wYa" customClass="MedicationView" customModule="Medications" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="600" height="120"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medikament" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NPD-RU-fxn">
+                                        <rect key="frame" x="12" y="8" width="99" height="31.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="7gd-9d-9y6">
+                                        <rect key="frame" x="12" y="48" width="576" height="64"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="pill" translatesAutoresizingMaskIntoConstraints="NO" id="BhR-JS-H71" customClass="RoundUIImageView" customModule="Medications" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                                <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="tintColor" red="0.66645901419999998" green="0.18823529410000001" blue="0.27058823529999998" alpha="0.72999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="64" id="4re-UF-yDc"/>
+                                                    <constraint firstAttribute="width" constant="64" id="mia-3S-dIC"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="32"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.36078431370000003" green="0.4039215686" blue="0.4549019608" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" alignment="top" spacing="-20" translatesAutoresizingMaskIntoConstraints="NO" id="mlv-kG-jW5">
+                                                <rect key="frame" x="88" y="0.0" width="488" height="64"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Aspirin" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wa1-4E-2UV">
+                                                        <rect key="frame" x="0.0" y="0.0" width="53" height="42"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wirkstoff: Acetylsalicylsäure" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHH-aT-32G">
+                                                        <rect key="frame" x="0.0" y="22" width="193.5" height="42"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="7gd-9d-9y6" secondAttribute="bottom" constant="8" id="4wZ-Ma-rWi"/>
+                                    <constraint firstItem="7gd-9d-9y6" firstAttribute="top" secondItem="NPD-RU-fxn" secondAttribute="bottom" constant="8" id="X6C-le-pmM"/>
+                                    <constraint firstItem="NPD-RU-fxn" firstAttribute="top" secondItem="Mnd-1G-wYa" secondAttribute="top" constant="8" id="cfQ-Dq-WJA"/>
+                                    <constraint firstAttribute="height" constant="120" id="dgP-gD-gQi"/>
+                                    <constraint firstItem="NPD-RU-fxn" firstAttribute="leading" secondItem="Mnd-1G-wYa" secondAttribute="leading" constant="12" id="i8Z-2W-U5x"/>
+                                    <constraint firstItem="7gd-9d-9y6" firstAttribute="leading" secondItem="Mnd-1G-wYa" secondAttribute="leading" constant="12" id="kLt-85-yIX"/>
+                                    <constraint firstAttribute="trailing" secondItem="7gd-9d-9y6" secondAttribute="trailing" constant="12" id="r3F-HB-qSq"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Mnd-1G-wYa" firstAttribute="leading" secondItem="vzW-t3-RCR" secondAttribute="leadingMargin" constant="-20" id="B4N-sx-W3K"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Mnd-1G-wYa" secondAttribute="trailing" constant="-20" id="Gex-yy-29g"/>
+                            <constraint firstItem="Mnd-1G-wYa" firstAttribute="top" secondItem="Uzc-kW-QNS" secondAttribute="bottom" id="hrh-3N-PIF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Neue Medikation" id="F50-P1-e9z">
+                        <barButtonItem key="leftBarButtonItem" title="Abbrechen" id="kCL-zM-I2s"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5f4-bd-GJo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3233" y="97"/>
+        </scene>
+        <!--Medikamente-->
+        <scene sceneID="abM-S9-7Oq">
+            <objects>
+                <navigationController id="gH5-3F-Caa" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Medikamente" id="EGj-77-mvn"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Lug-2q-xIi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="A4L-r0-d5w" kind="relationship" relationship="rootViewController" id="tAc-FE-JPF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0fD-T9-CaQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="143" y="109"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="pill" width="42" height="42"/>
+    </resources>
 </document>

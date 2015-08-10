@@ -1,5 +1,5 @@
 //
-//  Medication+CoreDataProperties.swift
+//  ExecutionTime+CoreDataProperties.swift
 //  Medications
 //
 //  Created by Lukas Schmidt on 10.08.15.
@@ -12,9 +12,12 @@
 import Foundation
 import CoreData
 
-extension Medication {
+extension ExecutionTime {
 
-    @NSManaged var drug: Drug?
-    @NSManaged var executionTimes: NSOrderedSet?
+    @NSManaged var creationDate: NSDate?
+    @NSManaged var assignmentDate: NSDate?
+    @NSManaged var executionDate: NSDate?
+    @NSManaged var millisecondsMoved: NSNumber?
+    @NSManaged var medications: NSSet?
 
 }

@@ -37,7 +37,7 @@ class CoreDataStack: NSObject {
     }
     
     private func model() -> NSManagedObjectModel {
-        let bundle = NSBundle(forClass: Medication.self)
+        let bundle = NSBundle(forClass: Drug.self)
         guard let modelURL = bundle.URLForResource(ModelName,
             withExtension: "momd")
             else {
