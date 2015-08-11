@@ -44,6 +44,7 @@
 		94D1E5F11B78EB6800B0CD7D /* ManagedObjectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E5F01B78EB6800B0CD7D /* ManagedObjectType.swift */; };
 		94D1E5F31B78EBEB00B0CD7D /* NSManagedObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E5F21B78EBEB00B0CD7D /* NSManagedObjectExtension.swift */; };
 		94D1E5F51B78F53700B0CD7D /* UINavigationControllerCoreDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E5F41B78F53700B0CD7D /* UINavigationControllerCoreDataExtension.swift */; };
+		94D1E6001B7A12CC00B0CD7D /* AddDrugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E5FF1B7A12CC00B0CD7D /* AddDrugViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +150,7 @@
 		94D1E5F01B78EB6800B0CD7D /* ManagedObjectType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectType.swift; sourceTree = "<group>"; };
 		94D1E5F21B78EBEB00B0CD7D /* NSManagedObjectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectExtension.swift; sourceTree = "<group>"; };
 		94D1E5F41B78F53700B0CD7D /* UINavigationControllerCoreDataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationControllerCoreDataExtension.swift; sourceTree = "<group>"; };
+		94D1E5FF1B7A12CC00B0CD7D /* AddDrugViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDrugViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +204,7 @@
 				942D38FC1B7888D300553C79 /* extension */,
 				942D38F51B7880FB00553C79 /* protocol */,
 				942D39141B78AAB800553C79 /* DrugTableViewController.swift */,
+				94D1E5FF1B7A12CC00B0CD7D /* AddDrugViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -556,6 +559,7 @@
 				942D39131B789DAB00553C79 /* Medication.swift in Sources */,
 				942D38FB1B78855600553C79 /* UITabBarViewControllerCoreDataExtension.swift in Sources */,
 				942D39121B789DAB00553C79 /* Medication+CoreDataProperties.swift in Sources */,
+				94D1E6001B7A12CC00B0CD7D /* AddDrugViewController.swift in Sources */,
 				942D391F1B78AE6A00553C79 /* FetchedResultsDataSource.swift in Sources */,
 				944F21431B59570200ED8A7A /* AppDelegate.swift in Sources */,
 				942D391C1B78AC6D00553C79 /* DrugTableViewCell.swift in Sources */,

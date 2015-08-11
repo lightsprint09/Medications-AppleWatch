@@ -19,23 +19,17 @@ class DrugTableViewController: UITableViewController, ManagedObjectContextSettab
     }
     
     override func viewDidLoad() {
-        managedObjectContext.performChanges{
-            let drug:Drug = self.managedObjectContext.insertObject()
-            drug.name = "Lukas"
-            drug.creationDate = NSDate()
-        }
-        let drug:Drug = managedObjectContext.createPersistentObject{d in
-            d.name = "Aspirin"
-            d.creationDate = NSDate()
-        }
-//        let drug2:Drug = managedObjectContext.createPersistentObject{d in
-//            d.name = "Aspirin"
-//        }
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest(), managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
         dataSource = FetchedResultsDataSource(tableView: tableView, fetchedResultsController: frc, delegate: self)
     }
     
     func fetchRequest() -> NSFetchRequest {
         return Drug.sortedFetchRequest
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        guard let addDrugVC = segue.destinationViewController as? ManagedObjectContextSettable else {return}
+        var vc = addDrugVC
+        vc.managedObjectContext = managedObjectContext
     }
 }
