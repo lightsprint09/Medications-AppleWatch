@@ -8,25 +8,63 @@
 
 import UIKit
 
-class CoustomDrugViewController: UIViewController {
+class CoustomDrugViewController: UIViewController, UICollectionViewDelegate {
     @IBOutlet weak var drugView: DrugCustomaziationView!
-    var rgb:(Float, Float, Float) = (0,0,0) {
+    @IBOutlet weak var pillCollectionView: UICollectionView!
+    
+    var rgb:(Float, Float, Float) = (1,1,1) {
         didSet{
-            let color = UIColor(colorLiteralRed: rgb.0, green: rgb.1, blue: rgb.2, alpha: 1)
-            drugView.pillBaseColor = color
+            drugView.pillBaseColor = rgbColor
+        }
+    }
+    
+    var rgbColor:UIColor {
+        get {
+            return sliderDelegate.getCurrentColor()
         }
     }
 
     @IBAction func redChanged(sender: UISlider) {
-        rgb.0 = sender.value
+        
+        rgb.0 = 1 - sender.value
+         pillCollectionView.reloadData()
     }
     
     @IBAction func greenChanged(sender: UISlider) {
-        rgb.1 = sender.value
+        rgb.1 = 1 -  sender.value
+         pillCollectionView.reloadData()
     }
     
     @IBAction func blueChanged(sender: UISlider) {
-        rgb.2 = sender.value
+        rgb.2 = 1 -  sender.value
+         pillCollectionView.reloadData()
     }
     
+    @IBAction func finishDragging(sender: AnyObject) {
+        pillCollectionView.reloadData()
+    }
+    
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let pillKind = DrugRenderEnum(rawValue: indexPath.row)
+        drugView.drugKind = pillKind
+    }
+    
+    let sliderDelegate = RGBColorSliderDelegate()
+    
+    @IBOutlet weak var redSlider: RGBColorSlider! {
+        didSet {
+            redSlider.connectAfterWithSliderColor(RGBColorTypeRed, trackHeight: 6, delegate: sliderDelegate)
+        }
+    }
+    @IBOutlet weak var greenSlider: RGBColorSlider! {
+        didSet {
+            greenSlider.connectAfterWithSliderColor(RGBColorTypeGreen, trackHeight: 6, delegate: sliderDelegate)
+        }
+    }
+    @IBOutlet weak var blueSlider: RGBColorSlider! {
+        didSet {
+            blueSlider.connectAfterWithSliderColor(RGBColorTypeBlue, trackHeight: 6, delegate: sliderDelegate)
+        }
+    }
 }

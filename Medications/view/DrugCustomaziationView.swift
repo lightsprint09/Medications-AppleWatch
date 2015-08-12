@@ -23,13 +23,18 @@ class DrugCustomaziationView: UIView {
         }
     }
     
+    @IBInspectable var drugKind: DrugRenderEnum? {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    
     
     override func drawRect(rect: CGRect) {
         super.drawRect(rect)
-        let drugKind = DrugRenderEnum.LongPill
-        guard let context = UIGraphicsGetCurrentContext(), let pillBaseColor = pillBaseColor else { return }
+        guard let context = UIGraphicsGetCurrentContext(), let pillBaseColor = pillBaseColor, let kind = drugKind else { return }
         
-        drugKind.render(context, baseColor: pillBaseColor, secondColor: pillSecondColor)
+        kind.render(context, baseColor: pillBaseColor, secondColor: pillSecondColor)
     }
     
     

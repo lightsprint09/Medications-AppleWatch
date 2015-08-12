@@ -434,52 +434,78 @@
                                     <segment title="Farben"/>
                                 </segments>
                             </segmentedControl>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ag4-hF-y8m">
-                                <rect key="frame" x="0.0" y="262" width="600" height="128"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceHorizontal="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ag4-hF-y8m">
+                                <rect key="frame" x="0.0" y="262" width="600" height="90"/>
                                 <color key="backgroundColor" red="0.79215686269999996" green="0.92549019610000005" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="gZg-cc-hBr"/>
+                                    <constraint firstAttribute="height" constant="90" id="gZg-cc-hBr"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jRr-Eb-Ltp">
-                                    <size key="itemSize" width="50" height="50"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jRr-Eb-Ltp">
+                                    <size key="itemSize" width="90" height="90"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="TTs-B6-6RH">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="coustom-pill-cell" id="TTs-B6-6RH" customClass="CustomPillCell" customModule="Medications" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hx9-ki-5cZ" customClass="DrugCustomaziationView" customModule="Medications" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="pillBaseColor">
+                                                            <color key="value" red="0.79215686269999996" green="0.92549019610000005" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="Hx9-ki-5cZ" firstAttribute="leading" secondItem="TTs-B6-6RH" secondAttribute="leadingMargin" constant="-8" id="7s7-2W-x1b"/>
+                                            <constraint firstItem="Hx9-ki-5cZ" firstAttribute="top" secondItem="TTs-B6-6RH" secondAttribute="topMargin" constant="-8" id="d4v-px-hgX"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="Hx9-ki-5cZ" secondAttribute="trailing" constant="-8" id="rs5-bn-rtI"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="Hx9-ki-5cZ" secondAttribute="bottom" constant="-8" id="xXR-6r-xeN"/>
+                                        </constraints>
+                                        <size key="customSize" width="90" height="90"/>
+                                        <connections>
+                                            <outlet property="pillView" destination="Hx9-ki-5cZ" id="3dI-uC-Q2c"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="fSJ-vm-eCx" id="FET-4c-pDK"/>
+                                    <outlet property="delegate" destination="fSJ-vm-eCx" id="8G2-Ma-k0w"/>
+                                </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tEJ-n6-SVZ">
-                                <rect key="frame" x="0.0" y="398" width="600" height="120"/>
+                                <rect key="frame" x="0.0" y="360" width="600" height="120"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sXM-71-0Iu">
                                         <rect key="frame" x="200" y="8" width="200" height="110"/>
                                         <subviews>
-                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="wLU-j4-VLL">
+                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="wLU-j4-VLL" customClass="RGBColorSlider">
                                                 <rect key="frame" x="-2" y="0.0" width="204" height="31"/>
                                                 <connections>
                                                     <action selector="redChanged:" destination="fSJ-vm-eCx" eventType="valueChanged" id="0Ub-0d-oSF"/>
                                                 </connections>
                                             </slider>
-                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="F0E-dP-rJj">
+                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="F0E-dP-rJj" customClass="RGBColorSlider">
                                                 <rect key="frame" x="-2" y="40" width="204" height="31"/>
                                                 <connections>
                                                     <action selector="greenChanged:" destination="fSJ-vm-eCx" eventType="valueChanged" id="Dbq-7r-4UV"/>
                                                 </connections>
                                             </slider>
-                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fWZ-wG-6we">
+                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fWZ-wG-6we" customClass="RGBColorSlider">
                                                 <rect key="frame" x="-2" y="80" width="204" height="31"/>
                                                 <connections>
                                                     <action selector="blueChanged:" destination="fSJ-vm-eCx" eventType="valueChanged" id="3cN-hq-J5T"/>
+                                                    <action selector="finishDragging:" destination="fSJ-vm-eCx" eventType="touchUpInside" id="LpA-cz-Ygj"/>
                                                 </connections>
                                             </slider>
                                         </subviews>
@@ -497,10 +523,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8g-aO-Pmw" customClass="DrugCustomaziationView" customModule="Medications" customModuleProvider="target">
-                                <rect key="frame" x="180" y="103" width="240" height="100"/>
+                                <rect key="frame" x="260" y="103" width="80" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="90q-pv-uM9"/>
+                                    <constraint firstAttribute="width" constant="80" id="90q-pv-uM9"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="S7B-J6-cgC"/>
                                     <constraint firstAttribute="height" constant="100" id="rRS-Sq-Spa"/>
                                 </constraints>
@@ -527,7 +553,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="bkR-Qm-g4y"/>
                     <connections>
+                        <outlet property="blueSlider" destination="fWZ-wG-6we" id="MHb-pM-zro"/>
                         <outlet property="drugView" destination="H8g-aO-Pmw" id="krF-BO-zdd"/>
+                        <outlet property="greenSlider" destination="F0E-dP-rJj" id="Dsx-K2-CgW"/>
+                        <outlet property="pillCollectionView" destination="Ag4-hF-y8m" id="dNl-qy-3f2"/>
+                        <outlet property="redSlider" destination="wLU-j4-VLL" id="G2z-JQ-ajb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7XA-cO-EmK" userLabel="First Responder" sceneMemberID="firstResponder"/>
