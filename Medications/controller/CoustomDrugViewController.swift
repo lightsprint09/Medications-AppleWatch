@@ -55,16 +55,19 @@ class CoustomDrugViewController: UIViewController, UICollectionViewDelegate {
     @IBOutlet weak var redSlider: RGBColorSlider! {
         didSet {
             redSlider.connectAfterWithSliderColor(RGBColorTypeRed, trackHeight: 6, delegate: sliderDelegate)
+            redSlider.setValue(1, animated: false)
         }
     }
     @IBOutlet weak var greenSlider: RGBColorSlider! {
         didSet {
             greenSlider.connectAfterWithSliderColor(RGBColorTypeGreen, trackHeight: 6, delegate: sliderDelegate)
+            greenSlider.setValue(1, animated: false)
         }
     }
     @IBOutlet weak var blueSlider: RGBColorSlider! {
         didSet {
             blueSlider.connectAfterWithSliderColor(RGBColorTypeBlue, trackHeight: 6, delegate: sliderDelegate)
+            blueSlider.setValue(1, animated: false)
         }
     }
 }

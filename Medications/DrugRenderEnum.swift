@@ -22,7 +22,6 @@ enum DrugRenderEnum: Int {
         let darkBaseColor = UIColor(red: baseColor.red() - 0.3, green: baseColor.green() - 0.3, blue: baseColor.blue() - 0.3, alpha: 1)
         let borderColor = UIColor(red: baseColor.red() - 0.35, green: baseColor.green() - 0.35, blue: baseColor.blue() - 0.35, alpha: 1)
         let pillMiddleColor = UIColor(red: baseColor.red() - 0.4, green: baseColor.green() - 0.4, blue: baseColor.blue() - 0.4, alpha: 1)
-        let pillBackgroundGradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), [baseColor.CGColor, baseColor.blendedColorWithFraction(0.5, ofColor: darkBaseColor).CGColor, darkBaseColor.CGColor], [0, 0.81, 1])
         
         switch(self) {
         case .RoundPill:
@@ -43,11 +42,12 @@ enum DrugRenderEnum: Int {
             
             
             //// Rectangle 2 Drawing
-            let rectangle2Path = UIBezierPath(rect: CGRectMake(14.5, 44.5, 59, 4))
+            let rectangle2Path = UIBezierPath(rect: CGRectMake(15.5, 44.5, 59, 4))
             CGContextSaveGState(context)
             rectangle2Path.addClip()
-            CGContextDrawLinearGradient(context, pillMiddelGradient, CGPointMake(44, 44.5), CGPointMake(44, 48.5), CGGradientDrawingOptions.DrawsBeforeStartLocation)
-            CGContextRestoreGState(context)        case .LongPill:
+            CGContextDrawLinearGradient(context, pillMiddelGradient, CGPointMake(45, 44.5), CGPointMake(45, 48.5), CGGradientDrawingOptions.DrawsBeforeStartLocation)
+            CGContextRestoreGState(context)
+        case .LongPill:
             //// Gradient Declarations
             
             //// Gradient Declarations
