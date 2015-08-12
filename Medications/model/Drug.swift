@@ -10,7 +10,19 @@ import Foundation
 import CoreData
 
 class Drug: NSManagedObject {
-
-// Insert code here to add functionality to your managed object subclass
+    func getDrugRenderType() -> DrugRenderEnum? {
+        if let type = imageKind {
+            return DrugRenderEnum(rawValue: type.integerValue)
+        }
+        return nil
+    }
+    
+    func setDrugRenderEnum(kind:DrugRenderEnum?) {
+        if let kind = kind {
+            imageKind = NSNumber(integer: kind.rawValue)
+        }else {
+            imageKind = nil
+        }
+    }
 
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uq5-8Z-2fs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="osP-VC-BkV">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -318,7 +318,15 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pBa-op-S8I">
                                 <rect key="frame" x="20" y="72" width="117" height="90"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="pill" translatesAutoresizingMaskIntoConstraints="NO" id="vMP-Wg-Xsq" customClass="RoundUIImageView" customModule="Medications" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xwG-vN-qKO" customClass="DrugCustomaziationView" customModule="Medications" customModuleProvider="target">
+                                        <rect key="frame" x="28.5" y="0.0" width="60" height="60"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="rbg-2C-9kG"/>
+                                            <constraint firstAttribute="height" constant="60" id="t3R-rU-iMz"/>
+                                        </constraints>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pill" translatesAutoresizingMaskIntoConstraints="NO" id="vMP-Wg-Xsq" customClass="RoundUIImageView" customModule="Medications" customModuleProvider="target">
                                         <rect key="frame" x="28.5" y="0.0" width="60" height="60"/>
                                         <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" red="0.66645901419999998" green="0.18823529410000001" blue="0.27058823529999998" alpha="0.72999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
@@ -349,14 +357,19 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="117" id="DYj-an-fvm"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="vMP-Wg-Xsq"/>
+                                    </mask>
+                                </variation>
                             </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c2i-1P-B4T">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c2i-1P-B4T">
                                 <rect key="frame" x="20" y="175" width="560" height="120"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="gfE-KZ-GaX"/>
                                 </constraints>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -389,6 +402,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="c2i-1P-B4T" firstAttribute="top" secondItem="SBP-Md-tt6" secondAttribute="bottom" constant="17" id="0Hp-xz-q44"/>
                             <constraint firstAttribute="trailingMargin" secondItem="IHM-6m-cT4" secondAttribute="trailing" constant="12" id="0df-pY-EHG"/>
                             <constraint firstAttribute="leadingMargin" secondItem="pBa-op-S8I" secondAttribute="leading" id="2Jl-zW-smK"/>
                             <constraint firstItem="IHM-6m-cT4" firstAttribute="leading" secondItem="pBa-op-S8I" secondAttribute="trailing" constant="8" id="EF0-4d-cmf"/>
@@ -410,6 +424,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="drugView" destination="xwG-vN-qKO" id="75v-ID-Tfd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p6q-2W-zfx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -497,22 +514,22 @@
                                         </segments>
                                     </segmentedControl>
                                     <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sXM-71-0Iu">
-                                        <rect key="frame" x="158" y="150" width="284" height="110"/>
+                                        <rect key="frame" x="108" y="150" width="384" height="110"/>
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="wLU-j4-VLL" customClass="RGBColorSlider">
-                                                <rect key="frame" x="-2" y="0.0" width="288" height="31"/>
+                                                <rect key="frame" x="-2" y="0.0" width="388" height="31"/>
                                                 <connections>
                                                     <action selector="redChanged:" destination="fSJ-vm-eCx" eventType="valueChanged" id="0Ub-0d-oSF"/>
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="F0E-dP-rJj" customClass="RGBColorSlider">
-                                                <rect key="frame" x="-2" y="40" width="288" height="31"/>
+                                                <rect key="frame" x="-2" y="40" width="388" height="31"/>
                                                 <connections>
                                                     <action selector="greenChanged:" destination="fSJ-vm-eCx" eventType="valueChanged" id="Dbq-7r-4UV"/>
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fWZ-wG-6we" customClass="RGBColorSlider">
-                                                <rect key="frame" x="-2" y="80" width="288" height="31"/>
+                                                <rect key="frame" x="-2" y="80" width="388" height="31"/>
                                                 <connections>
                                                     <action selector="blueChanged:" destination="fSJ-vm-eCx" eventType="valueChanged" id="3cN-hq-J5T"/>
                                                     <action selector="finishDragging:" destination="fSJ-vm-eCx" eventType="touchUpInside" id="LpA-cz-Ygj"/>

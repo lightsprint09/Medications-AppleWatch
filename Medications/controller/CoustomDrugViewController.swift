@@ -11,11 +11,22 @@ import UIKit
 class CoustomDrugViewController: UIViewController, UICollectionViewDelegate {
     @IBOutlet weak var drugView: DrugCustomaziationView!
     @IBOutlet weak var pillCollectionView: UICollectionView!
+    var drug:Drug!
     
     var rgb:(Float, Float, Float) = (1,1,1) {
         didSet{
             drugView.pillBaseColor = rgbColor
+            drug.color = rgbColor
         }
+    }
+    
+    override func viewDidLoad() {
+        guard let drugKind = drug.getDrugRenderType(), let color = drug.color else{ return }
+        drugView.drugKind = drugKind
+        drugView.pillBaseColor = color
+        redSlider.setValue(Float(color.red()), animated: false)
+        greenSlider.setValue(Float(color.green()), animated: false)
+        blueSlider.setValue(Float(color.blue()), animated: false)
     }
     
     var rgbColor:UIColor {
@@ -23,9 +34,27 @@ class CoustomDrugViewController: UIViewController, UICollectionViewDelegate {
             return sliderDelegate.getCurrentColor()
         }
     }
+    
+    @IBOutlet weak var redSlider: RGBColorSlider! {
+        didSet {
+            redSlider.connectAfterWithSliderColor(RGBColorTypeRed, trackHeight: 6, delegate: sliderDelegate)
+            redSlider.setValue(1, animated: false)
+        }
+    }
+    @IBOutlet weak var greenSlider: RGBColorSlider! {
+        didSet {
+            greenSlider.connectAfterWithSliderColor(RGBColorTypeGreen, trackHeight: 6, delegate: sliderDelegate)
+            greenSlider.setValue(1, animated: false)
+        }
+    }
+    @IBOutlet weak var blueSlider: RGBColorSlider! {
+        didSet {
+            blueSlider.connectAfterWithSliderColor(RGBColorTypeBlue, trackHeight: 6, delegate: sliderDelegate)
+            blueSlider.setValue(1, animated: false)
+        }
+    }
 
     @IBAction func redChanged(sender: UISlider) {
-        
         rgb.0 = 1 - sender.value
          pillCollectionView.reloadData()
     }
@@ -48,26 +77,10 @@ class CoustomDrugViewController: UIViewController, UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let pillKind = DrugRenderEnum(rawValue: indexPath.row)
         drugView.drugKind = pillKind
+        drug.setDrugRenderEnum(pillKind)
     }
     
     let sliderDelegate = RGBColorSliderDelegate()
     
-    @IBOutlet weak var redSlider: RGBColorSlider! {
-        didSet {
-            redSlider.connectAfterWithSliderColor(RGBColorTypeRed, trackHeight: 6, delegate: sliderDelegate)
-            redSlider.setValue(1, animated: false)
-        }
-    }
-    @IBOutlet weak var greenSlider: RGBColorSlider! {
-        didSet {
-            greenSlider.connectAfterWithSliderColor(RGBColorTypeGreen, trackHeight: 6, delegate: sliderDelegate)
-            greenSlider.setValue(1, animated: false)
-        }
-    }
-    @IBOutlet weak var blueSlider: RGBColorSlider! {
-        didSet {
-            blueSlider.connectAfterWithSliderColor(RGBColorTypeBlue, trackHeight: 6, delegate: sliderDelegate)
-            blueSlider.setValue(1, animated: false)
-        }
-    }
+    
 }

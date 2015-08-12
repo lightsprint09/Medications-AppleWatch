@@ -29,12 +29,12 @@ class DrugCustomaziationView: UIView {
         }
     }
     
-    
     override func drawRect(rect: CGRect) {
         super.drawRect(rect)
         guard let context = UIGraphicsGetCurrentContext(), let pillBaseColor = pillBaseColor, let kind = drugKind else { return }
         
-        kind.render(context, baseColor: pillBaseColor, secondColor: pillSecondColor)
+        let scale =  1 / 90 * rect.height
+        kind.render(context, baseColor: pillBaseColor, secondColor: pillSecondColor, scale: scale)
     }
     
     

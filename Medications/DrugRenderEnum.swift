@@ -19,7 +19,7 @@ enum DrugRenderEnum: Int {
         return max
     }
     
-    func render(context:CGContext, baseColor:UIColor, secondColor:UIColor?) {
+    func render(context:CGContext, baseColor:UIColor, secondColor:UIColor?, scale:CGFloat = 1) {
         let darkBaseColor = UIColor(red: baseColor.red() - 0.3, green: baseColor.green() - 0.3, blue: baseColor.blue() - 0.3, alpha: 1)
         let borderColor = UIColor(red: baseColor.red() - 0.35, green: baseColor.green() - 0.35, blue: baseColor.blue() - 0.35, alpha: 1)
         let pillMiddleColor = UIColor(red: baseColor.red() - 0.4, green: baseColor.green() - 0.4, blue: baseColor.blue() - 0.4, alpha: 1)
@@ -29,6 +29,9 @@ enum DrugRenderEnum: Int {
             //// Gradient Declarations
             let pillBackgroundGradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), [baseColor.CGColor, baseColor.blendedColorWithFraction(0.5, ofColor: darkBaseColor).CGColor, darkBaseColor.CGColor], [0, 0.81, 1])
             let pillMiddelGradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), [pillMiddleColor.CGColor, pillMiddleColor.blendedColorWithFraction(0.5, ofColor: baseColor).CGColor, baseColor.CGColor, baseColor.blendedColorWithFraction(0.5, ofColor: pillMiddleColor).CGColor, pillMiddleColor.CGColor], [0, 0, 0.48, 1, 1])
+            
+            CGContextSaveGState(context)
+            CGContextScaleCTM(context, scale, scale)
             
             //// Group
             //// Rectangle Drawing

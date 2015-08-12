@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 
 class AddDrugViewController: UIViewController, ManagedObjectContextSettable {
+    @IBOutlet weak var drugView: DrugCustomaziationView!
     
     var managedObjectContext:NSManagedObjectContext!
     var drug:Drug!
@@ -19,6 +20,12 @@ class AddDrugViewController: UIViewController, ManagedObjectContextSettable {
             drug = managedObjectContext.insertObject() as Drug
             drug.creationDate = NSDate()
         }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        guard let drugKind = drug.getDrugRenderType(), let color = drug.color else{ return }
+       drugView.drugKind = drugKind
+       drugView.pillBaseColor = color
     }
 
     @IBAction func cancelDrugCreation(sender: AnyObject) {
@@ -30,9 +37,16 @@ class AddDrugViewController: UIViewController, ManagedObjectContextSettable {
         managedObjectContext.saveOrRollback()
          presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
+    
     @IBAction func didChangeDrugName(sender: UITextField) {
         if let drugName = sender.text {
             drug.name = drugName
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let destinationCV = segue.destinationViewController as? CoustomDrugViewController {
+            destinationCV.drug = drug
         }
     }
 }
