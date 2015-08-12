@@ -50,4 +50,53 @@ class FetchedResultsDataSource<D: FetchedResultsDataSourceDelegate>:NSObject, UI
     @objc func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return fetchedResultsController.sections?.count ?? 1
     }
+    
+    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+        
+        switch(type) {
+        case .Insert:
+            guard let newIndexPath = newIndexPath else {return}
+            tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: UITableViewRowAnimation.Automatic);
+            
+        case .Delete:
+             guard let indexPath = indexPath else {return}
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            
+        case .Update:
+            guard let indexPath = indexPath, let anObject = anObject as? D.Object, let cell = tableView.cellForRowAtIndexPath(indexPath) as? D.Cell else {return}
+            delegate.configureCell(cell, object: anObject)
+            
+        case .Move:
+            guard let newIndexPath = newIndexPath, let indexPath = indexPath else {return}
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: UITableViewRowAnimation.Automatic);
+    }
+}
+    
+    
+    
+    func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
+        switch(type) {
+        case .Insert:
+            tableView.insertSections(NSIndexSet(index: sectionIndex), withRowAnimation: UITableViewRowAnimation.Automatic)
+            
+        case .Delete:
+            tableView.deleteSections(NSIndexSet(index:sectionIndex), withRowAnimation: UITableViewRowAnimation.Automatic)
+        default:
+            print("unexpted value")
+        }
+        
+    }
+    
+    
+    
+    func controllerWillChangeContent(controller: NSFetchedResultsController) {
+        tableView.beginUpdates();
+    }
+    
+    
+    
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+        tableView.endUpdates();
+    }
 }

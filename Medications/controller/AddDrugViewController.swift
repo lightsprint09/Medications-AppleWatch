@@ -28,6 +28,7 @@ class AddDrugViewController: UIViewController, ManagedObjectContextSettable {
     
     @IBAction func saveDrug(sender: AnyObject) {
         managedObjectContext.saveOrRollback()
+         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     @IBAction func didChangeDrugName(sender: UITextField) {
         if let drugName = sender.text {
