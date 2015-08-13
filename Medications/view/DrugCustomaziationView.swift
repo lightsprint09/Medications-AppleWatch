@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-class DrugCustomaziationView: UIView {
+class DrugCustomaziationView: RoundView {
     
     @IBInspectable var pillBaseColor: UIColor? {
         didSet {
@@ -36,8 +36,4 @@ class DrugCustomaziationView: UIView {
         let scale =  1 / 90 * rect.height
         kind.render(context, baseColor: pillBaseColor, secondColor: pillSecondColor, scale: scale)
     }
-    
-    
-    
-
 }

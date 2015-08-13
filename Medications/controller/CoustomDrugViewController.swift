@@ -21,6 +21,7 @@ class CoustomDrugViewController: UIViewController, UICollectionViewDelegate {
     }
     
     override func viewDidLoad() {
+        drug.color = rgbColor
         guard let drugKind = drug.getDrugRenderType(), let color = drug.color else{ return }
         drugView.drugKind = drugKind
         drugView.pillBaseColor = color

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="osP-VC-BkV">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -175,7 +176,7 @@
         <scene sceneID="gzR-eb-7uD">
             <objects>
                 <navigationController id="f5Y-1T-phX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Medikationplan" id="A8j-Qb-ahV"/>
+                    <tabBarItem key="tabBarItem" title="Medikationplan" image="glyphicons-46-calendar" id="A8j-Qb-ahV"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZqJ-3v-bFI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -197,76 +198,86 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="drug-cell" rowHeight="64" id="X8W-NH-CIx" customClass="DrugTableViewCell" customModule="Medications" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="64"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="drug-cell" rowHeight="68" id="X8W-NH-CIx" customClass="DrugTableViewCell" customModule="Medications" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="68"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X8W-NH-CIx" id="kI9-xB-Kr0">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="63.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="67.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="zX4-he-VwC">
-                                            <rect key="frame" x="8" y="0.0" width="551" height="64"/>
+                                            <rect key="frame" x="8" y="4" width="551" height="60"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="pill" translatesAutoresizingMaskIntoConstraints="NO" id="9yr-ai-Yqt" customClass="RoundUIImageView" customModule="Medications" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
-                                                    <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="tintColor" red="0.66645901419999998" green="0.18823529410000001" blue="0.27058823529999998" alpha="0.72999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZPC-Ni-hT3" customClass="DrugCustomaziationView" customModule="Medications" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="64" id="5q4-nb-8Eg"/>
-                                                        <constraint firstAttribute="width" constant="64" id="biZ-ia-rBS"/>
+                                                        <constraint firstAttribute="width" constant="60" id="hjT-fQ-CL6"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="32"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                            <color key="value" red="0.36078431370000003" green="0.4039215686" blue="0.4549019608" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <real key="value" value="0.0"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                            <real key="value" value="1"/>
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
-                                                </imageView>
+                                                    <variation key="widthClass=regular" misplaced="YES">
+                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="59.5"/>
+                                                    </variation>
+                                                </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" alignment="top" spacing="-12" translatesAutoresizingMaskIntoConstraints="NO" id="dTR-Or-4st">
-                                                    <rect key="frame" x="88" y="0.0" width="463" height="64"/>
+                                                    <rect key="frame" x="84" y="0.0" width="467" height="60"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Aspirin" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Uy-Ru-dFl">
-                                                            <rect key="frame" x="0.0" y="0.0" width="53" height="38"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aspirin" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Uy-Ru-dFl">
+                                                            <rect key="frame" x="0.0" y="0.0" width="53" height="36"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wirkstoff: Acetylsalicylsäure" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufz-7U-PnU">
-                                                            <rect key="frame" x="0.0" y="26" width="193.5" height="38"/>
+                                                            <rect key="frame" x="0.0" y="24" width="193.5" height="36"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
+                                                            <variation key="widthClass=regular" fixedFrame="YES">
+                                                                <rect key="frame" x="0.0" y="24" width="193.5" height="35.5"/>
+                                                            </variation>
                                                         </label>
                                                     </subviews>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="88" y="0.0" width="263" height="64"/>
+                                                        <rect key="frame" x="84" y="0.0" width="267" height="60"/>
                                                     </variation>
                                                     <variation key="widthClass=regular" fixedFrame="YES">
-                                                        <rect key="frame" x="88" y="0.0" width="594" height="64"/>
+                                                        <rect key="frame" x="84" y="0.0" width="598" height="59.5"/>
                                                     </variation>
                                                 </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ZPC-Ni-hT3" firstAttribute="leading" secondItem="zX4-he-VwC" secondAttribute="leading" id="8zu-Un-Tzd"/>
+                                                <constraint firstItem="ZPC-Ni-hT3" firstAttribute="top" secondItem="zX4-he-VwC" secondAttribute="top" id="cCj-Be-Gin"/>
+                                                <constraint firstAttribute="bottom" secondItem="ZPC-Ni-hT3" secondAttribute="bottom" id="jZY-JU-QYS"/>
+                                                <constraint firstItem="2Uy-Ru-dFl" firstAttribute="leading" secondItem="ZPC-Ni-hT3" secondAttribute="trailing" constant="24" id="tt9-Bx-taJ"/>
+                                            </constraints>
                                             <variation key="widthClass=regular" misplaced="YES">
-                                                <rect key="frame" x="8" y="0.0" width="682" height="64"/>
+                                                <rect key="frame" x="8" y="0.0" width="682" height="59.5"/>
                                             </variation>
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="zX4-he-VwC" firstAttribute="top" secondItem="kI9-xB-Kr0" secondAttribute="topMargin" constant="-8" id="2TX-So-TWA"/>
+                                        <constraint firstItem="zX4-he-VwC" firstAttribute="top" secondItem="kI9-xB-Kr0" secondAttribute="topMargin" constant="-4" id="2TX-So-TWA"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="zX4-he-VwC" secondAttribute="trailing" id="aFb-Tt-Mnf"/>
                                         <constraint firstItem="zX4-he-VwC" firstAttribute="leading" secondItem="kI9-xB-Kr0" secondAttribute="leadingMargin" id="rnT-1O-3kB"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="zX4-he-VwC" secondAttribute="bottom" constant="-8.5" id="t6O-5f-wp5"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="zX4-he-VwC" secondAttribute="bottom" constant="-4" id="t6O-5f-wp5"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="abstractImageView" destination="9yr-ai-Yqt" id="aqt-wK-9PJ"/>
                                     <outlet property="activeSubstanceLabel" destination="ufz-7U-PnU" id="zbt-KF-QoZ"/>
                                     <outlet property="drugNameLabel" destination="2Uy-Ru-dFl" id="Sd2-96-86a"/>
+                                    <outlet property="drugView" destination="ZPC-Ni-hT3" id="lqY-GY-hzg"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -278,7 +289,9 @@
                     <navigationItem key="navigationItem" title="Medikamente" id="qBH-6c-hea">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="jSd-j1-7pZ">
                             <connections>
-                                <segue destination="uq5-8Z-2fs" kind="presentation" id="bqY-cm-pTJ"/>
+                                <segue destination="uq5-8Z-2fs" kind="popoverPresentation" popoverAnchorBarButtonItem="jSd-j1-7pZ" id="bqY-cm-pTJ">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -320,11 +333,22 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xwG-vN-qKO" customClass="DrugCustomaziationView" customModule="Medications" customModuleProvider="target">
                                         <rect key="frame" x="28.5" y="0.0" width="60" height="60"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="rbg-2C-9kG"/>
-                                            <constraint firstAttribute="height" constant="60" id="t3R-rU-iMz"/>
+                                            <constraint firstAttribute="height" constant="60" id="dua-fx-4Lp"/>
+                                            <constraint firstAttribute="width" constant="60" id="fqa-4c-mpO"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pill" translatesAutoresizingMaskIntoConstraints="NO" id="vMP-Wg-Xsq" customClass="RoundUIImageView" customModule="Medications" customModuleProvider="target">
                                         <rect key="frame" x="28.5" y="0.0" width="60" height="60"/>
@@ -363,53 +387,164 @@
                                     </mask>
                                 </variation>
                             </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c2i-1P-B4T">
-                                <rect key="frame" x="20" y="175" width="560" height="120"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="gfE-KZ-GaX"/>
-                                </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="7f6-24-ujT">
+                                <rect key="frame" x="149" y="87" width="419" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBq-Im-t8A">
-                                <rect key="frame" x="0.0" y="0.0" width="112" height="30"/>
-                                <state key="normal" title="Foto hinzufügen"/>
-                            </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="IHM-6m-cT4">
-                                <rect key="frame" x="145" y="78" width="423" height="80"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
+                                <connections>
+                                    <action selector="didChangeDrugName:" destination="Mg7-DT-c0Y" eventType="editingChanged" id="zsT-3r-feG"/>
+                                </connections>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SsU-f2-Iab" customClass="RoundView" customModule="Medications" customModuleProvider="target">
+                                <rect key="frame" x="20" y="175" width="560" height="420"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Wirkstoff" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zWH-3b-46G">
-                                        <rect key="frame" x="0.0" y="0.0" width="423" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SBP-Md-tt6">
-                                        <rect key="frame" x="0.0" y="50" width="423" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="didChangeDrugName:" destination="Mg7-DT-c0Y" eventType="editingChanged" id="0VN-HN-QRV"/>
-                                        </connections>
-                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VbF-UM-xe3">
+                                        <rect key="frame" x="22" y="166" width="516" height="68.5"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="glyphicons-12-camera" translatesAutoresizingMaskIntoConstraints="NO" id="IDI-uo-7jU">
+                                                <rect key="frame" x="234" y="0.0" width="48" height="48"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="134" y="0.0" width="48" height="48"/>
+                                                </variation>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Füge ein Bild des Medikaments oder der Verpackung hinzu" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05q-Tt-sXR">
+                                                <rect key="frame" x="33.5" y="48" width="449" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="2.5" y="48" width="311.5" height="41"/>
+                                                </variation>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xvD-Ab-Taz">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="420"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uAt-a3-Asf">
+                                        <rect key="frame" x="0.0" y="384" width="560" height="36"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="bZk-Wy-2XJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="36"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xjx-3U-DJd">
+                                                    <rect key="frame" x="-20" y="-559" width="0.0" height="0.0"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="dxS-V0-jPW">
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bild" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pe-Sk-dbg">
+                                                                <rect key="frame" x="0.0" y="0.0" width="29" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </view>
+                                                    <vibrancyEffect>
+                                                        <blurEffect style="light"/>
+                                                    </vibrancyEffect>
+                                                </visualEffectView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6LH-L0-TZW">
+                                                    <rect key="frame" x="0.0" y="3" width="560" height="30"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDw-eI-p4r">
+                                                            <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
+                                                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <state key="normal" title="Foto hinzufügen"/>
+                                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                                <rect key="frame" x="0.0" y="0.0" width="360" height="30"/>
+                                                            </variation>
+                                                            <variation key="widthClass=regular" fixedFrame="YES">
+                                                                <rect key="frame" x="0.0" y="0.0" width="306" height="30"/>
+                                                            </variation>
+                                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                                <rect key="frame" x="0.0" y="0.0" width="158" height="30"/>
+                                                            </variation>
+                                                            <connections>
+                                                                <action selector="presentCamera:" destination="Mg7-DT-c0Y" eventType="touchUpInside" id="9Gv-zh-Ibc"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C73-Pd-6ez">
+                                                            <rect key="frame" x="560" y="0.0" width="0.0" height="30"/>
+                                                            <state key="normal" title="Foto entfernen">
+                                                                <color key="titleColor" red="0.81568627449999997" green="0.0078431372550000003" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </state>
+                                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                                <rect key="frame" x="360" y="0.0" width="0.0" height="30"/>
+                                                            </variation>
+                                                            <variation key="widthClass=regular" fixedFrame="YES">
+                                                                <rect key="frame" x="326" y="0.0" width="306" height="30"/>
+                                                            </variation>
+                                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                                <rect key="frame" x="178" y="0.0" width="158" height="30"/>
+                                                            </variation>
+                                                        </button>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="cw0-Lj-v0E"/>
+                                                    </constraints>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <exclude reference="cw0-Lj-v0E"/>
+                                                        </mask>
+                                                    </variation>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="6LH-L0-TZW" firstAttribute="top" secondItem="bZk-Wy-2XJ" secondAttribute="top" constant="3" id="Dp4-vE-bZf"/>
+                                                <constraint firstItem="6LH-L0-TZW" firstAttribute="leading" secondItem="bZk-Wy-2XJ" secondAttribute="leading" id="K0J-IR-5J1"/>
+                                                <constraint firstAttribute="bottom" secondItem="6LH-L0-TZW" secondAttribute="bottom" constant="3" id="Myd-GI-1DD"/>
+                                                <constraint firstAttribute="trailing" secondItem="6LH-L0-TZW" secondAttribute="trailing" id="wbd-ZJ-Kpi"/>
+                                            </constraints>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="2jT-Ot-MUx"/>
+                                        </constraints>
+                                        <blurEffect style="light"/>
+                                    </visualEffectView>
                                 </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.41960784309999999" blue="0.65098039220000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="zWH-3b-46G" firstAttribute="width" secondItem="IHM-6m-cT4" secondAttribute="width" id="LKo-m0-7DP"/>
-                                    <constraint firstItem="SBP-Md-tt6" firstAttribute="width" secondItem="IHM-6m-cT4" secondAttribute="width" id="kzD-pt-P5H"/>
+                                    <constraint firstAttribute="trailing" secondItem="uAt-a3-Asf" secondAttribute="trailing" id="3NC-hR-Xvn"/>
+                                    <constraint firstItem="VbF-UM-xe3" firstAttribute="leading" secondItem="SsU-f2-Iab" secondAttribute="leading" constant="22" id="4La-Bv-Vpr"/>
+                                    <constraint firstAttribute="width" secondItem="SsU-f2-Iab" secondAttribute="height" multiplier="4:3" id="7M7-Ua-9Np"/>
+                                    <constraint firstAttribute="bottom" secondItem="uAt-a3-Asf" secondAttribute="bottom" id="7nm-Oj-Vcl"/>
+                                    <constraint firstItem="uAt-a3-Asf" firstAttribute="leading" secondItem="SsU-f2-Iab" secondAttribute="leading" id="MsJ-Ms-ODJ"/>
+                                    <constraint firstItem="xvD-Ab-Taz" firstAttribute="centerY" secondItem="SsU-f2-Iab" secondAttribute="centerY" id="SW8-vD-BhH"/>
+                                    <constraint firstItem="xvD-Ab-Taz" firstAttribute="height" secondItem="SsU-f2-Iab" secondAttribute="height" id="e5n-gt-Qht"/>
+                                    <constraint firstItem="VbF-UM-xe3" firstAttribute="centerY" secondItem="SsU-f2-Iab" secondAttribute="centerY" constant="-10" id="eYb-Jg-8Ey">
+                                        <variation key="widthClass=compact" constant="-10"/>
+                                    </constraint>
+                                    <constraint firstItem="VbF-UM-xe3" firstAttribute="centerX" secondItem="SsU-f2-Iab" secondAttribute="centerX" id="hhl-2s-Spl"/>
+                                    <constraint firstAttribute="trailing" secondItem="VbF-UM-xe3" secondAttribute="trailing" constant="22" id="tT7-CO-UNr"/>
+                                    <constraint firstItem="xvD-Ab-Taz" firstAttribute="width" secondItem="SsU-f2-Iab" secondAttribute="width" id="xgU-IX-A34"/>
+                                    <constraint firstItem="xvD-Ab-Taz" firstAttribute="centerX" secondItem="SsU-f2-Iab" secondAttribute="centerX" id="z8e-IH-lGj"/>
                                 </constraints>
-                            </stackView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EOE-3S-fUW">
+                                <rect key="frame" x="192" y="613" width="216" height="30"/>
+                                <state key="normal" title="Mehr Informationen hinzufügen"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="c2i-1P-B4T" firstAttribute="top" secondItem="SBP-Md-tt6" secondAttribute="bottom" constant="17" id="0Hp-xz-q44"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="IHM-6m-cT4" secondAttribute="trailing" constant="12" id="0df-pY-EHG"/>
                             <constraint firstAttribute="leadingMargin" secondItem="pBa-op-S8I" secondAttribute="leading" id="2Jl-zW-smK"/>
-                            <constraint firstItem="IHM-6m-cT4" firstAttribute="leading" secondItem="pBa-op-S8I" secondAttribute="trailing" constant="8" id="EF0-4d-cmf"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="c2i-1P-B4T" secondAttribute="leading" id="VBH-v8-Y3I"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="SsU-f2-Iab" secondAttribute="leading" id="7ct-ZY-T1M"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SsU-f2-Iab" secondAttribute="trailing" id="J7T-4c-1Yn"/>
+                            <constraint firstItem="EOE-3S-fUW" firstAttribute="centerX" secondItem="HcO-m8-4BQ" secondAttribute="centerX" id="NOU-Sn-oXY"/>
+                            <constraint firstItem="7f6-24-ujT" firstAttribute="leading" secondItem="pBa-op-S8I" secondAttribute="trailing" constant="12" id="TG7-kH-3QB"/>
                             <constraint firstItem="pBa-op-S8I" firstAttribute="top" secondItem="0aG-au-OqB" secondAttribute="bottom" constant="8" id="WSe-A7-fLr"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="c2i-1P-B4T" secondAttribute="trailing" id="X3e-4k-EJS"/>
-                            <constraint firstItem="IHM-6m-cT4" firstAttribute="top" secondItem="0aG-au-OqB" secondAttribute="bottom" constant="14" id="acp-w6-XfB"/>
+                            <constraint firstItem="EOE-3S-fUW" firstAttribute="top" secondItem="SsU-f2-Iab" secondAttribute="bottom" constant="18" id="YJ0-wM-IFs"/>
+                            <constraint firstItem="SsU-f2-Iab" firstAttribute="top" secondItem="pBa-op-S8I" secondAttribute="bottom" constant="13" id="mNp-qa-TWP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7f6-24-ujT" secondAttribute="trailing" constant="12" id="oJO-Wc-NAQ"/>
+                            <constraint firstItem="7f6-24-ujT" firstAttribute="centerY" secondItem="xwG-vN-qKO" secondAttribute="centerY" id="ouB-3l-HZz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Neues Medikament" id="9YR-wc-ygP">
@@ -425,14 +560,16 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="delteImageButton" destination="C73-Pd-6ez" id="ODT-bR-ABU"/>
                         <outlet property="drugView" destination="xwG-vN-qKO" id="75v-ID-Tfd"/>
+                        <outlet property="imageView" destination="xvD-Ab-Taz" id="xMT-ex-Jby"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p6q-2W-zfx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2317" y="109"/>
         </scene>
-        <!--Coustom Drug View Controller-->
+        <!--Form u. Farbe-->
         <scene sceneID="tFi-aQ-dQn">
             <objects>
                 <viewController id="fSJ-vm-eCx" customClass="CoustomDrugViewController" customModule="Medications" customModuleProvider="target" sceneMemberID="viewController">
@@ -445,8 +582,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8g-aO-Pmw" customClass="DrugCustomaziationView" customModule="Medications" customModuleProvider="target">
-                                <rect key="frame" x="255" y="72" width="90" height="90"/>
-                                <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="255" y="76" width="90" height="90"/>
+                                <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="lep-yj-zUx"/>
                                     <constraint firstAttribute="width" constant="90" id="mlR-9G-m1K"/>
@@ -455,10 +592,19 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="pillBaseColor">
                                         <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="R6K-eX-3q9">
-                                <rect key="frame" x="0.0" y="198" width="600" height="260"/>
+                                <rect key="frame" x="0.0" y="178" width="600" height="260"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" alwaysBounceHorizontal="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ag4-hF-y8m">
                                         <rect key="frame" x="2" y="0.0" width="596.5" height="90"/>
@@ -501,6 +647,12 @@
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="90"/>
+                                        </variation>
+                                        <variation key="widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="102" y="0.0" width="596.5" height="90"/>
+                                        </variation>
                                         <connections>
                                             <outlet property="dataSource" destination="fSJ-vm-eCx" id="FET-4c-pDK"/>
                                             <outlet property="delegate" destination="fSJ-vm-eCx" id="8G2-Ma-k0w"/>
@@ -512,32 +664,66 @@
                                             <segment title="Hauptfarbe"/>
                                             <segment title="Sekundärfarbe"/>
                                         </segments>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="95.5" y="106" width="209" height="29"/>
+                                        </variation>
+                                        <variation key="widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="295.5" y="106" width="209" height="29"/>
+                                        </variation>
                                     </segmentedControl>
-                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sXM-71-0Iu">
-                                        <rect key="frame" x="108" y="150" width="384" height="110"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sXM-71-0Iu">
+                                        <rect key="frame" x="30" y="150" width="540" height="110"/>
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="wLU-j4-VLL" customClass="RGBColorSlider">
-                                                <rect key="frame" x="-2" y="0.0" width="388" height="31"/>
+                                                <rect key="frame" x="-2" y="0.0" width="544" height="31"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="-2" y="0.0" width="344" height="31"/>
+                                                </variation>
+                                                <variation key="widthClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="-2" y="0.0" width="744" height="31"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="redChanged:" destination="fSJ-vm-eCx" eventType="valueChanged" id="0Ub-0d-oSF"/>
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="F0E-dP-rJj" customClass="RGBColorSlider">
-                                                <rect key="frame" x="-2" y="40" width="388" height="31"/>
+                                                <rect key="frame" x="-2" y="40" width="544" height="31"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="-2" y="40" width="344" height="31"/>
+                                                </variation>
+                                                <variation key="widthClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="-2" y="40" width="744" height="31"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="greenChanged:" destination="fSJ-vm-eCx" eventType="valueChanged" id="Dbq-7r-4UV"/>
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fWZ-wG-6we" customClass="RGBColorSlider">
-                                                <rect key="frame" x="-2" y="80" width="388" height="31"/>
+                                                <rect key="frame" x="-2" y="80" width="544" height="31"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="-2" y="80" width="344" height="31"/>
+                                                </variation>
+                                                <variation key="widthClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="-2" y="80" width="744" height="31"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="blueChanged:" destination="fSJ-vm-eCx" eventType="valueChanged" id="3cN-hq-J5T"/>
                                                     <action selector="finishDragging:" destination="fSJ-vm-eCx" eventType="touchUpInside" id="LpA-cz-Ygj"/>
                                                 </connections>
                                             </slider>
                                         </subviews>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="30" y="150" width="340" height="110"/>
+                                        </variation>
+                                        <variation key="widthClass=regular" misplaced="YES">
+                                            <rect key="frame" x="30" y="150" width="740" height="110"/>
+                                        </variation>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="sXM-71-0Iu" firstAttribute="leading" secondItem="R6K-eX-3q9" secondAttribute="leading" constant="30" id="7CV-Wx-r9i"/>
+                                    <constraint firstAttribute="trailing" secondItem="sXM-71-0Iu" secondAttribute="trailing" constant="30" id="VY3-62-DYR"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -545,11 +731,11 @@
                             <constraint firstAttribute="trailingMargin" secondItem="R6K-eX-3q9" secondAttribute="trailing" constant="-20" id="AoI-KQ-evk"/>
                             <constraint firstItem="H8g-aO-Pmw" firstAttribute="centerX" secondItem="zuR-mn-5Vo" secondAttribute="centerX" id="Gdi-qH-vs4"/>
                             <constraint firstItem="R6K-eX-3q9" firstAttribute="leading" secondItem="zuR-mn-5Vo" secondAttribute="leadingMargin" constant="-20" id="Rhf-k7-vY6"/>
-                            <constraint firstItem="H8g-aO-Pmw" firstAttribute="top" secondItem="T0x-7w-RV3" secondAttribute="bottom" constant="8" id="Vmn-Hu-yon"/>
-                            <constraint firstItem="R6K-eX-3q9" firstAttribute="top" secondItem="H8g-aO-Pmw" secondAttribute="bottom" constant="36" id="zEX-ap-E7t"/>
+                            <constraint firstItem="H8g-aO-Pmw" firstAttribute="top" secondItem="T0x-7w-RV3" secondAttribute="bottom" constant="12" id="Vmn-Hu-yon"/>
+                            <constraint firstItem="R6K-eX-3q9" firstAttribute="top" secondItem="H8g-aO-Pmw" secondAttribute="bottom" constant="12" id="zEX-ap-E7t"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="bkR-Qm-g4y"/>
+                    <navigationItem key="navigationItem" title="Form u. Farbe" id="bkR-Qm-g4y"/>
                     <connections>
                         <outlet property="blueSlider" destination="fWZ-wG-6we" id="MHb-pM-zro"/>
                         <outlet property="drugView" destination="H8g-aO-Pmw" id="krF-BO-zdd"/>
@@ -566,7 +752,7 @@
         <scene sceneID="abM-S9-7Oq">
             <objects>
                 <navigationController id="gH5-3F-Caa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Medikamente" id="EGj-77-mvn"/>
+                    <tabBarItem key="tabBarItem" title="Medikamente" image="glyphicons-493-medicine" id="EGj-77-mvn"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Lug-2q-xIi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -581,6 +767,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="glyphicons-12-camera" width="48" height="48"/>
+        <image name="glyphicons-46-calendar" width="48" height="48"/>
+        <image name="glyphicons-493-medicine" width="48" height="48"/>
         <image name="pill" width="42" height="42"/>
     </resources>
 </document>

@@ -40,6 +40,8 @@
 		944F218D1B59573300ED8A7A /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944F218C1B59573300ED8A7A /* NotificationController.swift */; };
 		944F218F1B59573300ED8A7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 944F218E1B59573300ED8A7A /* Assets.xcassets */; };
 		944F21931B59573300ED8A7A /* MediWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 944F21751B59573200ED8A7A /* MediWatch.app */; };
+		946C04D91B7BD8FA00D93D10 /* DrugRenderEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E6081B7A4B0200B0CD7D /* DrugRenderEnum.swift */; };
+		946C04DA1B7BD91000D93D10 /* UIColorPainCodeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E6051B7A3C3200B0CD7D /* UIColorPainCodeExtension.swift */; };
 		94D1E5EF1B78EAC700B0CD7D /* NSManagedObjectContextExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E5EE1B78EAC700B0CD7D /* NSManagedObjectContextExtension.swift */; };
 		94D1E5F11B78EB6800B0CD7D /* ManagedObjectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E5F01B78EB6800B0CD7D /* ManagedObjectType.swift */; };
 		94D1E5F31B78EBEB00B0CD7D /* NSManagedObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E5F21B78EBEB00B0CD7D /* NSManagedObjectExtension.swift */; };
@@ -661,8 +663,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				946C04DA1B7BD91000D93D10 /* UIColorPainCodeExtension.swift in Sources */,
 				944F218D1B59573300ED8A7A /* NotificationController.swift in Sources */,
 				944F218B1B59573300ED8A7A /* ExtensionDelegate.swift in Sources */,
+				946C04D91B7BD8FA00D93D10 /* DrugRenderEnum.swift in Sources */,
 				944F21891B59573300ED8A7A /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -797,11 +801,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Dieter Schmidt (UKN6LJWN4G)";
 				INFOPLIST_FILE = Medications/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.freiraum.Medications;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Medications/libs/Classes/Medications-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -809,11 +815,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Dieter Schmidt (UKN6LJWN4G)";
 				INFOPLIST_FILE = Medications/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.freiraum.Medications;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Medications/libs/Classes/Medications-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

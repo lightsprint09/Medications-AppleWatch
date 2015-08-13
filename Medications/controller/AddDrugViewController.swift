@@ -8,12 +8,17 @@
 
 import UIKit
 import CoreData
+import MobileCoreServices
 
-class AddDrugViewController: UIViewController, ManagedObjectContextSettable {
+class AddDrugViewController: UIViewController, ManagedObjectContextSettable, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var drugView: DrugCustomaziationView!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var delteImageButton: UIButton!
     
     var managedObjectContext:NSManagedObjectContext!
     var drug:Drug!
+    
+    var cameraUI = UIImagePickerController()
     
     override func viewDidLoad() {
         if drug == nil {
@@ -24,8 +29,30 @@ class AddDrugViewController: UIViewController, ManagedObjectContextSettable {
     
     override func viewWillAppear(animated: Bool) {
         guard let drugKind = drug.getDrugRenderType(), let color = drug.color else{ return }
-       drugView.drugKind = drugKind
-       drugView.pillBaseColor = color
+        drugView.drugKind = drugKind
+        drugView.pillBaseColor = color
+    }
+    
+    @IBAction func presentCamera(sender: AnyObject) {
+        guard UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) else {return}
+        cameraUI.delegate = self
+        cameraUI.sourceType = UIImagePickerControllerSourceType.Camera;
+         [kUTTypeImage]
+        cameraUI.allowsEditing = true
+        
+        self.presentViewController(cameraUI, animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(picker:UIImagePickerController) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        guard picker.sourceType == UIImagePickerControllerSourceType.Camera else { return }
+        delteImageButton.hidden = false
+        imageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        imageView.contentMode = UIViewContentMode.ScaleAspectFill
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 
     @IBAction func cancelDrugCreation(sender: AnyObject) {
@@ -44,6 +71,11 @@ class AddDrugViewController: UIViewController, ManagedObjectContextSettable {
         }
     }
     
+    @IBAction func didChangeSubstanceName(sender: UITextField) {
+        if let activeSubstance = sender.text {
+            drug.activeSubstance = activeSubstance
+        }
+    }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let destinationCV = segue.destinationViewController as? CoustomDrugViewController {
             destinationCV.drug = drug
