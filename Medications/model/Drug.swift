@@ -10,6 +10,23 @@ import Foundation
 import CoreData
 
 class Drug: NSManagedObject {
+    
+    var image:UIImage? {
+        set{
+            if let image = newValue {
+                userImage = UIImagePNGRepresentation(image)
+            }else {
+                userImage = nil
+            }
+        }
+        get {
+            if let userImage = userImage {
+                return UIImage(data: userImage)
+            }
+            return nil;
+        }
+    }
+    
     func getDrugRenderType() -> DrugRenderEnum? {
         if let type = imageKind {
             return DrugRenderEnum(rawValue: type.integerValue)
@@ -24,5 +41,7 @@ class Drug: NSManagedObject {
             imageKind = nil
         }
     }
+    
+    
 
 }

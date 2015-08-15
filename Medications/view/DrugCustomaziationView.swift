@@ -17,12 +17,6 @@ class DrugCustomaziationView: RoundView {
         }
     }
     
-    @IBInspectable var pillSecondColor: UIColor? {
-        didSet {
-            setNeedsDisplay()
-        }
-    }
-    
     @IBInspectable var drugKind: DrugRenderEnum? {
         didSet {
             setNeedsDisplay()
@@ -34,6 +28,11 @@ class DrugCustomaziationView: RoundView {
         guard let context = UIGraphicsGetCurrentContext(), let pillBaseColor = pillBaseColor, let kind = drugKind else { return }
         
         let scale =  1 / 90 * rect.height
-        kind.render(context, baseColor: pillBaseColor, secondColor: pillSecondColor, scale: scale)
+        kind.render(context, baseColor: pillBaseColor, secondColor: nil, scale: scale)
+    }
+    
+    func configureWithDrug(drug:Drug) {
+        drugKind = drug.getDrugRenderType()
+        pillBaseColor = drug.color
     }
 }

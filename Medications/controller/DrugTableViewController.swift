@@ -28,8 +28,15 @@ class DrugTableViewController: UITableViewController, ManagedObjectContextSettab
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let drugSettabel = segue.destinationViewController as? DrugSettable, dataSource = dataSource, indexPath = tableView.indexPathForSelectedRow  {
+            var drugSettabel = drugSettabel
+            drugSettabel.drug = dataSource.objectAtIndexPath(indexPath)
+        }
         guard let addDrugVC = segue.destinationViewController as? ManagedObjectContextSettable else {return}
         var vc = addDrugVC
         vc.managedObjectContext = managedObjectContext
     }
+
+    
+    
 }

@@ -14,6 +14,8 @@ class AddDrugViewController: UIViewController, ManagedObjectContextSettable, UII
     @IBOutlet weak var drugView: DrugCustomaziationView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var delteImageButton: UIButton!
+    @IBOutlet weak var plusLabel: UILabel!
+    @IBOutlet weak var addStructureButton: UIButton!
     
     var managedObjectContext:NSManagedObjectContext!
     var drug:Drug!
@@ -28,16 +30,18 @@ class AddDrugViewController: UIViewController, ManagedObjectContextSettable, UII
     }
     
     override func viewWillAppear(animated: Bool) {
-        guard let drugKind = drug.getDrugRenderType(), let color = drug.color else{ return }
-        drugView.drugKind = drugKind
-        drugView.pillBaseColor = color
+        guard let _ = drug.getDrugRenderType(), let _ = drug.color else{ return }
+        addStructureButton.titleLabel?.text = "Form ändern"
+        plusLabel.hidden = true
+        
+        drugView.configureWithDrug(drug)
     }
     
     @IBAction func presentCamera(sender: AnyObject) {
         guard UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) else {return}
         cameraUI.delegate = self
         cameraUI.sourceType = UIImagePickerControllerSourceType.Camera;
-         [kUTTypeImage]
+        
         cameraUI.allowsEditing = true
         
         self.presentViewController(cameraUI, animated: true, completion: nil)
@@ -51,6 +55,7 @@ class AddDrugViewController: UIViewController, ManagedObjectContextSettable, UII
         guard picker.sourceType == UIImagePickerControllerSourceType.Camera else { return }
         delteImageButton.hidden = false
         imageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        drug.image = info[UIImagePickerControllerOriginalImage] as? UIImage
         imageView.contentMode = UIViewContentMode.ScaleAspectFill
         self.dismissViewControllerAnimated(true, completion: nil)
     }

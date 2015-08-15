@@ -22,7 +22,5 @@ extension Drug {
     @NSManaged var name: String?
     @NSManaged var userImage: NSData?
     @NSManaged var imageKind: NSNumber?
-    @NSManaged var secondColor: UIColor?
     @NSManaged var medications: NSSet?
-
 }

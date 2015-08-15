@@ -43,7 +43,7 @@ class FetchedResultsDataSource<D: FetchedResultsDataSourceDelegate>:NSObject, UI
         return cell
     }
     
-    private func objectAtIndexPath(indexPath:NSIndexPath) ->D.Object {
+    func objectAtIndexPath(indexPath:NSIndexPath) ->D.Object {
         return fetchedResultsController.objectAtIndexPath(indexPath) as! D.Object
     }
     

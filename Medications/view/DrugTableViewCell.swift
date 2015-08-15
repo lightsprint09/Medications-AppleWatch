@@ -16,8 +16,6 @@ class DrugTableViewCell: UITableViewCell {
     func configureWithDrug(drug:Drug) {
         drugNameLabel.text = drug.name
         activeSubstanceLabel.text = drug.activeSubstance
-        guard let drugKind = drug.getDrugRenderType(), let color = drug.color else{ return }
-        drugView.drugKind = drugKind
-        drugView.pillBaseColor = color
+        drugView.configureWithDrug(drug)
     }
 }
