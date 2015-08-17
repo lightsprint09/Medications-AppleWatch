@@ -41,6 +41,9 @@
 		944F21931B59573300ED8A7A /* MediWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 944F21751B59573200ED8A7A /* MediWatch.app */; };
 		946C04D91B7BD8FA00D93D10 /* DrugRenderEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E6081B7A4B0200B0CD7D /* DrugRenderEnum.swift */; };
 		946C04DA1B7BD91000D93D10 /* UIColorPainCodeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E6051B7A3C3200B0CD7D /* UIColorPainCodeExtension.swift */; };
+		947F022C1B80A39F006D9C7E /* ReapetEventCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947F022B1B80A39F006D9C7E /* ReapetEventCreator.swift */; };
+		947F022E1B80A3BF006D9C7E /* ReapetEventCreatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947F022D1B80A3BF006D9C7E /* ReapetEventCreatorProtocol.swift */; };
+		947F02301B81C7D8006D9C7E /* FetchedResultsCollectionDataSource<D: FetchedResultsDataSourceDelegate>.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947F022F1B81C7D8006D9C7E /* FetchedResultsCollectionDataSource<D: FetchedResultsDataSourceDelegate>.swift */; };
 		94CA619F1B7F491800FF27F0 /* DrugDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CA619E1B7F491800FF27F0 /* DrugDetailViewController.swift */; };
 		94CA61A11B7F496500FF27F0 /* DrugSettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CA61A01B7F496500FF27F0 /* DrugSettable.swift */; };
 		94D1E5EF1B78EAC700B0CD7D /* NSManagedObjectContextExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E5EE1B78EAC700B0CD7D /* NSManagedObjectContextExtension.swift */; };
@@ -158,6 +161,9 @@
 		944F218C1B59573300ED8A7A /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		944F218E1B59573300ED8A7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		944F21901B59573300ED8A7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		947F022B1B80A39F006D9C7E /* ReapetEventCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReapetEventCreator.swift; sourceTree = "<group>"; };
+		947F022D1B80A3BF006D9C7E /* ReapetEventCreatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReapetEventCreatorProtocol.swift; sourceTree = "<group>"; };
+		947F022F1B81C7D8006D9C7E /* FetchedResultsCollectionDataSource<D: FetchedResultsDataSourceDelegate>.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FetchedResultsCollectionDataSource<D: FetchedResultsDataSourceDelegate>.swift"; sourceTree = "<group>"; };
 		94CA619E1B7F491800FF27F0 /* DrugDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugDetailViewController.swift; sourceTree = "<group>"; };
 		94CA61A01B7F496500FF27F0 /* DrugSettable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugSettable.swift; sourceTree = "<group>"; };
 		94D1E5EE1B78EAC700B0CD7D /* NSManagedObjectContextExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContextExtension.swift; sourceTree = "<group>"; };
@@ -279,9 +285,10 @@
 				94D1E5EE1B78EAC700B0CD7D /* NSManagedObjectContextExtension.swift */,
 				94D1E5F01B78EB6800B0CD7D /* ManagedObjectType.swift */,
 				94D1E5F21B78EBEB00B0CD7D /* NSManagedObjectExtension.swift */,
+				947F022F1B81C7D8006D9C7E /* FetchedResultsCollectionDataSource<D: FetchedResultsDataSourceDelegate>.swift */,
 			);
 			name = CoreData;
-			path = controller;
+			path = coreData;
 			sourceTree = "<group>";
 		};
 		942D391D1B78AC7300553C79 /* cell */ = {
@@ -320,6 +327,7 @@
 		944F21411B59570200ED8A7A /* Medications */ = {
 			isa = PBXGroup;
 			children = (
+				947F022A1B80A35E006D9C7E /* service */,
 				94D1E6071B7A4AD300B0CD7D /* Pill/Drug */,
 				94D1E6041B7A3BF400B0CD7D /* libs */,
 				942D39161B78AB1400553C79 /* CoreData */,
@@ -382,6 +390,15 @@
 				944F21871B59573300ED8A7A /* PushNotificationPayload.apns */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		947F022A1B80A35E006D9C7E /* service */ = {
+			isa = PBXGroup;
+			children = (
+				947F022B1B80A39F006D9C7E /* ReapetEventCreator.swift */,
+				947F022D1B80A3BF006D9C7E /* ReapetEventCreatorProtocol.swift */,
+			);
+			path = service;
 			sourceTree = "<group>";
 		};
 		94D1E6011B7A20C600B0CD7D /* controller */ = {
@@ -615,6 +632,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				947F022E1B80A3BF006D9C7E /* ReapetEventCreatorProtocol.swift in Sources */,
 				94D1E5F11B78EB6800B0CD7D /* ManagedObjectType.swift in Sources */,
 				94CA619F1B7F491800FF27F0 /* DrugDetailViewController.swift in Sources */,
 				94D1E5F51B78F53700B0CD7D /* UINavigationControllerCoreDataExtension.swift in Sources */,
@@ -637,10 +655,12 @@
 				94D1E6151B7B558D00B0CD7D /* RGBColorSlider.m in Sources */,
 				942D39071B78954900553C79 /* MedicationView.swift in Sources */,
 				942D39111B789DAB00553C79 /* ExecutionTime.swift in Sources */,
+				947F02301B81C7D8006D9C7E /* FetchedResultsCollectionDataSource<D: FetchedResultsDataSourceDelegate>.swift in Sources */,
 				94D1E5F31B78EBEB00B0CD7D /* NSManagedObjectExtension.swift in Sources */,
 				942D39151B78AAB800553C79 /* DrugTableViewController.swift in Sources */,
 				942D39131B789DAB00553C79 /* Medication.swift in Sources */,
 				942D38FB1B78855600553C79 /* UITabBarViewControllerCoreDataExtension.swift in Sources */,
+				947F022C1B80A39F006D9C7E /* ReapetEventCreator.swift in Sources */,
 				942D39121B789DAB00553C79 /* Medication+CoreDataProperties.swift in Sources */,
 				94D1E6001B7A12CC00B0CD7D /* AddDrugViewController.swift in Sources */,
 				942D391F1B78AE6A00553C79 /* FetchedResultsDataSource.swift in Sources */,
