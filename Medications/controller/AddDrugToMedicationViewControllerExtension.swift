@@ -22,6 +22,12 @@ extension AddMedicationViewController: FetchedResultsCollectionViewDataSourceDel
     }
     
     func configureCell(cell: Cell, object: Object) {
+        if let selectedDrug = selectedDrug where object.isEqual(selectedDrug) {
+            cell.showSelectedBadge(true)
+        }else {
+            cell.showSelectedBadge(false)
+        }
+        
         cell.configureWithDrug(object)
     }
     

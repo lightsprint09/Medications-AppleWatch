@@ -9,9 +9,9 @@
 import CoreData
 
 extension NSManagedObjectContext {
-    public func insertObject<A: NSManagedObject where A: ManagedObjectType>() -> A {
-    guard let obj = NSEntityDescription.insertNewObjectForEntityForName(A.entityName, inManagedObjectContext: self) as? A else { fatalError("Wrong object type") }
-    return obj
+    public func insertObject<A: NSManagedObject>() -> A {
+        guard let obj = NSEntityDescription.insertNewObjectForEntityForName(A.entityName, inManagedObjectContext: self) as? A else { fatalError("Wrong object type") }
+        return obj
     }
     
     public func saveOrRollback() {
@@ -29,7 +29,7 @@ extension NSManagedObjectContext {
             }
     }
     
-    public func createPersistentObject<A: NSManagedObject where A: ManagedObjectType>(setupBlock:(A)->()) -> A {
+    public func createPersistentObject<A: NSManagedObject >(setupBlock:(A)->()) -> A {
         let object = insertObject() as A
         setupBlock(object)
         saveOrRollback()

@@ -12,19 +12,15 @@ import CoreData
 class DrugTableViewController: UITableViewController, ManagedObjectContextSettable {
     var managedObjectContext: NSManagedObjectContext!
     var dataSource: FetchedResultsDataSource<DrugTableViewController>?
-    
+    let drugService = DrugDBService()
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
     override func viewDidLoad() {
-        let frc = NSFetchedResultsController(fetchRequest: fetchRequest(), managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+        let frc = NSFetchedResultsController(fetchRequest: drugService.sortedFetchRequest(), managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
         dataSource = FetchedResultsDataSource(tableView: tableView, fetchedResultsController: frc, delegate: self)
-    }
-    
-    func fetchRequest() -> NSFetchRequest {
-        return Drug.sortedFetchRequest
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

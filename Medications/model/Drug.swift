@@ -10,7 +10,6 @@ import Foundation
 import CoreData
 
 class Drug: NSManagedObject {
-    
     var image:UIImage? {
         set{
             if let image = newValue {
@@ -41,7 +40,4 @@ class Drug: NSManagedObject {
             imageKind = nil
         }
     }
-    
-    
-
 }

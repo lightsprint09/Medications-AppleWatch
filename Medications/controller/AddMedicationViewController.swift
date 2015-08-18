@@ -12,13 +12,14 @@ import CoreData
 class AddMedicationViewController: UIViewController, ManagedObjectContextSettable, UICollectionViewDelegate {
     var managedObjectContext: NSManagedObjectContext!
     var dataSource: FetchedResultsCollectionViewController<AddMedicationViewController>?
+    let drugService = DrugDBService()
+    
+    var selectedDrug:Drug?
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-   
-    
     override func viewDidLoad() {
-        let frc = NSFetchedResultsController(fetchRequest: Drug.sortedFetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+        let frc = NSFetchedResultsController(fetchRequest: drugService.sortedFetchRequest(), managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
         dataSource = FetchedResultsCollectionViewController(collectionView: collectionView, fetchedResultsController: frc, delegate: self)
     }
     
@@ -31,6 +32,19 @@ class AddMedicationViewController: UIViewController, ManagedObjectContextSettabl
             var managedObjectContextSettable = managedObjectContextSettable
             managedObjectContextSettable.managedObjectContext = managedObjectContext
         }
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        if let selectedDrug = selectedDrug, let currentlySelectedIndexPath = dataSource?.fetchedResultsController.indexPathForObject(selectedDrug) {
+            if let cell = collectionView.cellForItemAtIndexPath(currentlySelectedIndexPath) as? AddDrugToMedicationCell {
+                cell.showSelectedBadge(false)
+            }
+        }
+        selectedDrug = dataSource?.objectAtIndexPath(indexPath)
+        if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? AddDrugToMedicationCell {
+            cell.showSelectedBadge(true)
+        }
+        
     }
     
    
