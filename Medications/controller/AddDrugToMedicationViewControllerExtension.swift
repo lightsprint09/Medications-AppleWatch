@@ -1,0 +1,41 @@
+//
+//  AddDrugToMedicationViewControllerExtension.swift
+//  Medications
+//
+//  Created by Lukas Schmidt on 17.08.15.
+//  Copyright © 2015 Lukas Schmidt. All rights reserved.
+//
+
+import Foundation
+
+extension AddMedicationViewController: FetchedResultsCollectionViewDataSourceDelegate {
+    private static let CELL_IDENTIFIER = "add-drug-to-medication-cell"
+    
+    typealias Cell = AddDrugToMedicationCell
+    typealias Object = Drug
+    
+    typealias Header = UICollectionReusableView
+    typealias Footer = UICollectionReusableView
+    
+    func cellIdentifierForObject(object: Object) -> String {
+        return AddMedicationViewController.CELL_IDENTIFIER
+    }
+    
+    func configureCell(cell: Cell, object: Object) {
+        cell.configureWithDrug(object)
+    }
+    
+    func headerIdentifierForIndexPath(indexPath: NSIndexPath) -> String {
+        return "add-drug-header-view"
+    }
+    func configureHeader(header: Header, indexPath: NSIndexPath) {
+       
+    }
+    
+    func footerIdentifierForIndexPath(indexPath: NSIndexPath) -> String {
+        return ""
+    }
+    func configureFooter(header: Footer, indexPath: NSIndexPath) {
+    }
+        
+}

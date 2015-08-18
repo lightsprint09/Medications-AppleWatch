@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol FetchedResultsDataSourceDelegate: class {
+protocol FetchedResultsDataSourceDelegate : class {
     typealias Object
     typealias Cell: UITableViewCell
     

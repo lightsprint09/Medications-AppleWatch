@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 class CoreDataStack: NSObject {
-    public func createMainContext() -> NSManagedObjectContext {
+    internal func createMainContext() -> NSManagedObjectContext {
         let context = NSManagedObjectContext(
             concurrencyType: .MainQueueConcurrencyType)
         context.persistentStoreCoordinator = createCoordinator()
