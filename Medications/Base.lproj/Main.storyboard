@@ -117,13 +117,13 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jw-Cb-Bgr">
-                                                    <rect key="frame" x="0.0" y="74.5" width="113" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="74" width="113" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glyphicons-194-circle-ok" translatesAutoresizingMaskIntoConstraints="NO" id="aQt-LW-D6j">
-                                                    <rect key="frame" x="67" y="0.0" width="50" height="50"/>
+                                                    <rect key="frame" x="67" y="-4" width="50" height="50"/>
                                                     <color key="tintColor" red="0.0" green="0.50196081399917603" blue="0.25098040699958801" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="IAH-hu-WGf"/>
@@ -140,7 +140,7 @@
                                             <constraint firstAttribute="topMargin" secondItem="LWj-eO-2Hj" secondAttribute="top" id="D8h-uu-AGG"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="1jw-Cb-Bgr" secondAttribute="bottom" id="FOP-1C-qCH"/>
                                             <constraint firstItem="1jw-Cb-Bgr" firstAttribute="leading" secondItem="iOR-PR-dqP" secondAttribute="leadingMargin" constant="-8" id="eVX-JS-oGv"/>
-                                            <constraint firstItem="aQt-LW-D6j" firstAttribute="top" secondItem="iOR-PR-dqP" secondAttribute="topMargin" constant="-8" id="gde-mJ-0Pn"/>
+                                            <constraint firstItem="aQt-LW-D6j" firstAttribute="top" secondItem="iOR-PR-dqP" secondAttribute="topMargin" constant="-12" id="gde-mJ-0Pn"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="1jw-Cb-Bgr" secondAttribute="trailing" constant="-8" id="qkM-cn-ta9"/>
                                         </constraints>
                                         <size key="customSize" width="113" height="103"/>
@@ -192,9 +192,353 @@
                                     <outlet property="delegate" destination="jeK-9w-xN6" id="EhL-X0-IzV"/>
                                 </connections>
                             </collectionView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="2Z1-Ab-4xh">
+                                <rect key="frame" x="8" y="175" width="584" height="145"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rMo-MP-Mbc">
+                                        <rect key="frame" x="0.0" y="0.0" width="584" height="29"/>
+                                        <segments>
+                                            <segment title="Täglich"/>
+                                            <segment title="Wöchentlich"/>
+                                        </segments>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="384" height="29"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="didChangeRepeatType:" destination="jeK-9w-xN6" eventType="valueChanged" id="jaE-pR-Z8h"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Sng-0H-Vjt">
+                                        <rect key="frame" x="0.0" y="34" width="584" height="0.0"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="71h-M5-NOu" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="77.5" height="0.0"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                <state key="normal" title="Mo">
+                                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="16"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="49" height="0.0"/>
+                                                </variation>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XmA-U0-p98" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
+                                                <rect key="frame" x="84.5" y="0.0" width="77.5" height="0.0"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                <state key="normal" title="Die">
+                                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="16"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="56" y="0.0" width="48.5" height="0.0"/>
+                                                </variation>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WLC-ib-zqp" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
+                                                <rect key="frame" x="169" y="0.0" width="77.5" height="0.0"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                <state key="normal" title="Mi">
+                                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="16"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="111.5" y="0.0" width="49" height="0.0"/>
+                                                </variation>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3L-Jc-R4E" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
+                                                <rect key="frame" x="253.5" y="0.0" width="77" height="0.0"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                <state key="normal" title="Do">
+                                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="16"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="167.5" y="0.0" width="49" height="0.0"/>
+                                                </variation>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gyS-6E-fM9" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
+                                                <rect key="frame" x="337.5" y="0.0" width="77.5" height="0.0"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                <state key="normal" title="Fr">
+                                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="16"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="223.5" y="0.0" width="49" height="0.0"/>
+                                                </variation>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Yd-FI-waO" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
+                                                <rect key="frame" x="422" y="0.0" width="77.5" height="0.0"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                <state key="normal" title="Sa">
+                                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="16"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="279.5" y="0.0" width="48.5" height="0.0"/>
+                                                </variation>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aO9-fO-OkD" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
+                                                <rect key="frame" x="506.5" y="0.0" width="77.5" height="0.0"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                <state key="normal" title="So">
+                                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="16"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="335" y="0.0" width="49" height="0.0"/>
+                                                </variation>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="z1z-Yo-IIK"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="dQI-u5-JX2">
+                                        <rect key="frame" x="0.0" y="40" width="584" height="105"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="u7d-3n-z12">
+                                                <rect key="frame" x="0.0" y="0.0" width="192" height="105"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Morgen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQv-SU-gXF">
+                                                        <rect key="frame" x="65.5" y="0.0" width="61.5" height="35"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dep-V3-sPq">
+                                                        <rect key="frame" x="0.0" y="35" width="192" height="35"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="glyphicons-54-alarm" translatesAutoresizingMaskIntoConstraints="NO" id="rGH-yn-8Ce">
+                                                                <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
+                                                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="35" id="3hF-1K-wgj"/>
+                                                                    <constraint firstAttribute="height" constant="35" id="7dF-s0-BW7"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="8:30" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jle-iN-dWV">
+                                                                <rect key="frame" x="35" y="7.5" width="157" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Menge: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiE-Vr-Ab3" customClass="RoundLabel" customModule="Medications" customModuleProvider="target">
+                                                        <rect key="frame" x="8" y="70" width="176" height="35"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="8"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="JiE-Vr-Ab3" secondAttribute="trailing" constant="8" id="Gba-cm-Jf0"/>
+                                                    <constraint firstItem="dep-V3-sPq" firstAttribute="width" secondItem="u7d-3n-z12" secondAttribute="width" id="UqV-PC-pZe"/>
+                                                    <constraint firstItem="JiE-Vr-Ab3" firstAttribute="leading" secondItem="u7d-3n-z12" secondAttribute="leading" constant="8" id="fwf-gm-xW0"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="57k-zn-wkT">
+                                                <rect key="frame" x="196" y="0.0" width="192" height="105"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mittag" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jyu-uH-svb">
+                                                        <rect key="frame" x="70" y="0.0" width="52" height="35"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jJb-g2-dpx">
+                                                        <rect key="frame" x="0.0" y="35" width="192" height="35"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="glyphicons-54-alarm" translatesAutoresizingMaskIntoConstraints="NO" id="KmP-Hp-nfH">
+                                                                <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
+                                                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="35" id="96I-Xm-qXW"/>
+                                                                    <constraint firstAttribute="width" constant="35" id="rny-Q0-98F"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3m-j7-NJ4">
+                                                                <rect key="frame" x="35" y="7.5" width="157" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Menge: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNN-LP-Kkn" customClass="RoundLabel" customModule="Medications" customModuleProvider="target">
+                                                        <rect key="frame" x="8" y="70" width="176" height="35"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="8"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="bNN-LP-Kkn" firstAttribute="leading" secondItem="57k-zn-wkT" secondAttribute="leading" constant="8" id="qsx-By-VBJ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="bNN-LP-Kkn" secondAttribute="trailing" constant="8" id="uIw-rS-Wip"/>
+                                                    <constraint firstItem="jJb-g2-dpx" firstAttribute="width" secondItem="57k-zn-wkT" secondAttribute="width" id="yWX-W2-82b"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HcB-35-eSv">
+                                                <rect key="frame" x="392" y="0.0" width="192" height="105"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Abend" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8lp-Nr-rVM">
+                                                        <rect key="frame" x="70" y="0.0" width="52.5" height="35"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="P0f-Ju-eYT">
+                                                        <rect key="frame" x="0.0" y="35" width="192" height="35"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="glyphicons-54-alarm" translatesAutoresizingMaskIntoConstraints="NO" id="lpB-oP-rer">
+                                                                <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
+                                                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="35" id="1T4-iX-3Z1"/>
+                                                                    <constraint firstAttribute="height" constant="35" id="KRG-Vl-Bv9"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="18:15" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ym2-pS-E6s">
+                                                                <rect key="frame" x="35" y="7.5" width="157" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Menge: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amU-vQ-E2N" customClass="RoundLabel" customModule="Medications" customModuleProvider="target">
+                                                        <rect key="frame" x="8" y="70" width="176" height="35"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="8"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="amU-vQ-E2N" firstAttribute="leading" secondItem="HcB-35-eSv" secondAttribute="leading" constant="8" id="iV0-dv-1ix"/>
+                                                    <constraint firstAttribute="trailing" secondItem="amU-vQ-E2N" secondAttribute="trailing" constant="8" id="mSx-gl-Orv"/>
+                                                    <constraint firstItem="P0f-Ju-eYT" firstAttribute="width" secondItem="HcB-35-eSv" secondAttribute="width" id="oOW-jv-BTW"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="2Z1-Ab-4xh" secondAttribute="trailing" constant="-12" id="5vD-CA-cxj"/>
+                            <constraint firstItem="2Z1-Ab-4xh" firstAttribute="top" secondItem="zeg-A1-OCe" secondAttribute="bottom" constant="8" id="Dp4-vL-pD1"/>
+                            <constraint firstItem="2Z1-Ab-4xh" firstAttribute="leading" secondItem="eHP-2c-0hc" secondAttribute="leadingMargin" constant="-12" id="MEg-em-v8T"/>
                             <constraint firstItem="zeg-A1-OCe" firstAttribute="leading" secondItem="eHP-2c-0hc" secondAttribute="leadingMargin" constant="-20" id="WcG-5N-xFI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zeg-A1-OCe" secondAttribute="trailing" constant="-20" id="swb-wd-nfV"/>
                             <constraint firstItem="zeg-A1-OCe" firstAttribute="top" secondItem="rbt-p5-QZ9" secondAttribute="bottom" id="wkv-et-Poi"/>
@@ -206,9 +550,11 @@
                                 <action selector="cancelAddMedication:" destination="jeK-9w-xN6" id="F4a-qY-COl"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="gkj-8W-GNU"/>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="zeg-A1-OCe" id="26o-H6-FW9"/>
+                        <outlet property="weekDaySelectionView" destination="Sng-0H-Vjt" id="zuC-iY-VVL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uj3-bI-fTu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -310,6 +656,9 @@
                                                 <constraint firstAttribute="bottom" secondItem="ZPC-Ni-hT3" secondAttribute="bottom" id="jZY-JU-QYS"/>
                                                 <constraint firstItem="2Uy-Ru-dFl" firstAttribute="leading" secondItem="ZPC-Ni-hT3" secondAttribute="trailing" constant="24" id="tt9-Bx-taJ"/>
                                             </constraints>
+                                            <variation key="widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="8" y="4" width="351" height="60"/>
+                                            </variation>
                                             <variation key="widthClass=regular" misplaced="YES">
                                                 <rect key="frame" x="8" y="0.0" width="682" height="59.5"/>
                                             </variation>
@@ -514,7 +863,7 @@
                                                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <state key="normal" title="Foto hinzufügen"/>
                                                             <variation key="widthClass=compact" fixedFrame="YES">
-                                                                <rect key="frame" x="0.0" y="0.0" width="360" height="30"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="360" height="41"/>
                                                             </variation>
                                                             <variation key="widthClass=regular" fixedFrame="YES">
                                                                 <rect key="frame" x="0.0" y="0.0" width="306" height="30"/>
@@ -532,7 +881,7 @@
                                                                 <color key="titleColor" red="0.81568627449999997" green="0.0078431372550000003" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
                                                             <variation key="widthClass=compact" fixedFrame="YES">
-                                                                <rect key="frame" x="360" y="0.0" width="0.0" height="30"/>
+                                                                <rect key="frame" x="360" y="0.0" width="0.0" height="41"/>
                                                             </variation>
                                                             <variation key="widthClass=regular" fixedFrame="YES">
                                                                 <rect key="frame" x="326" y="0.0" width="306" height="30"/>
@@ -759,6 +1108,9 @@
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="12" y="0.0" width="376" height="20.5"/>
+                                        </variation>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ag4-hF-y8m">
                                         <rect key="frame" x="2" y="36.5" width="596.5" height="90"/>
@@ -802,7 +1154,7 @@
                                             </collectionViewCell>
                                         </cells>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="400" height="90"/>
+                                            <rect key="frame" x="0.0" y="36.5" width="400" height="90"/>
                                         </variation>
                                         <variation key="widthClass=regular" fixedFrame="YES">
                                             <rect key="frame" x="102" y="0.0" width="596.5" height="90"/>
@@ -817,6 +1169,9 @@
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="12" y="142.5" width="376" height="20.5"/>
+                                        </variation>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sXM-71-0Iu">
                                         <rect key="frame" x="30" y="179" width="540" height="110"/>
@@ -860,7 +1215,7 @@
                                             </slider>
                                         </subviews>
                                         <variation key="widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="30" y="150" width="340" height="110"/>
+                                            <rect key="frame" x="30" y="179" width="340" height="110"/>
                                         </variation>
                                         <variation key="widthClass=regular" misplaced="YES">
                                             <rect key="frame" x="30" y="150" width="740" height="110"/>
@@ -922,6 +1277,7 @@
         <image name="glyphicons-194-circle-ok" width="48" height="48"/>
         <image name="glyphicons-46-calendar" width="48" height="48"/>
         <image name="glyphicons-493-medicine" width="48" height="48"/>
+        <image name="glyphicons-54-alarm" width="48" height="48"/>
         <image name="pill" width="42" height="42"/>
     </resources>
     <inferredMetricsTieBreakers>

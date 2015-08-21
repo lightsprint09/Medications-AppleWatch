@@ -12,8 +12,8 @@ enum RepeatType {
     case Daily, Weekly, Monthly
 }
 
-class ReapetEventCreator: NSObject {
-    func createEvent(startDate startDate:NSDate, repeatCount:Int, calculateNextDate:(NSDate)->NSDate, useDate:(NSDate)->(),  finalCall:(NSDate)->()) {
+class RepeatEventCreator: NSObject {
+    func createEvent(startDate startDate:NSDate, repeatCount:Int, calculateNextDate:(NSDate)->NSDate, useDate:(NSDate)->(), finalCall:(NSDate)->()) {
         useDate(startDate)
         var nextDate = startDate
         for var i = 0; i < repeatCount; i++ {

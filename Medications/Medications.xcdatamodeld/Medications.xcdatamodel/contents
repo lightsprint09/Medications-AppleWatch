@@ -12,19 +12,20 @@
         <relationship name="medications" toMany="YES" deletionRule="Nullify" destinationEntity="Medication" inverseName="drug" inverseEntity="Medication" syncable="YES"/>
     </entity>
     <entity name="ExecutionTime" representedClassName=".ExecutionTime" syncable="YES">
+        <attribute name="amount" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="assignmentDate" attributeType="Date" syncable="YES"/>
         <attribute name="creationDate" attributeType="Date" syncable="YES"/>
         <attribute name="executionDate" optional="YES" attributeType="Date" indexed="YES" syncable="YES"/>
         <attribute name="millisecondsMoved" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <relationship name="medications" toMany="YES" deletionRule="Nullify" destinationEntity="Medication" inverseName="executionTimes" inverseEntity="Medication" syncable="YES"/>
+        <relationship name="medication" maxCount="1" deletionRule="Nullify" destinationEntity="Medication" inverseName="executionTimes" inverseEntity="Medication" syncable="YES"/>
     </entity>
     <entity name="Medication" representedClassName=".Medication" syncable="YES">
         <relationship name="drug" maxCount="1" deletionRule="Nullify" destinationEntity="Drug" inverseName="medications" inverseEntity="Drug" syncable="YES"/>
-        <relationship name="executionTimes" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ExecutionTime" inverseName="medications" inverseEntity="ExecutionTime" syncable="YES"/>
+        <relationship name="executionTimes" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ExecutionTime" inverseName="medication" inverseEntity="ExecutionTime" syncable="YES"/>
     </entity>
     <elements>
         <element name="Drug" positionX="-63" positionY="-18" width="128" height="180"/>
-        <element name="ExecutionTime" positionX="412" positionY="71" width="128" height="118"/>
+        <element name="ExecutionTime" positionX="412" positionY="71" width="128" height="133"/>
         <element name="Medication" positionX="232" positionY="-126" width="128" height="73"/>
     </elements>
 </model>

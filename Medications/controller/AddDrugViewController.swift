@@ -20,7 +20,7 @@ class AddDrugViewController: UIViewController, ManagedObjectContextSettable, UII
     var managedObjectContext:NSManagedObjectContext!
     var drug:Drug!
     
-    var cameraUI = UIImagePickerController()
+    lazy var cameraUI = UIImagePickerController()
     
     override func viewDidLoad() {
         if drug == nil {

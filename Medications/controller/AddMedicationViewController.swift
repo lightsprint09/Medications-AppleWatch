@@ -13,8 +13,12 @@ class AddMedicationViewController: UIViewController, ManagedObjectContextSettabl
     var managedObjectContext: NSManagedObjectContext!
     var dataSource: FetchedResultsCollectionViewController<AddMedicationViewController>?
     let drugService = DrugDBService()
+    var repeatEventCreator = RepeatEventCreator()
     
+    @IBOutlet weak var weekDaySelectionView: UIStackView!
     var selectedDrug:Drug?
+    
+    let daytimeDataSource = DayTimeSource()
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -47,6 +51,21 @@ class AddMedicationViewController: UIViewController, ManagedObjectContextSettabl
         
     }
     
+    @IBAction func didChangeRepeatType(sender: UISegmentedControl) {
+        UIView.animateWithDuration(0.4, delay: 0.0, usingSpringWithDamping: 1.0 , initialSpringVelocity: 0, options: [], animations: {self.weekDaySelectionView.hidden = sender.selectedSegmentIndex != 1}, completion: nil)
+        
+    }
+    
+    func createMedication() {
+        let medication: Medication = managedObjectContext.insertObject()
+        medication.drug = selectedDrug
+        repeatEventCreator.createEvent(startDate: NSDate(), repeatCount: 2 * 7, calculateNextDate: {date in  date}, useDate: {date in
+            let executionTime: ExecutionTime = self.managedObjectContext.insertObject()
+            executionTime.creationDate = NSDate()
+            executionTime.assignmentDate = date
+//            executionTime.medication
+            }, finalCall: {date in})
+    }
    
 }
 
