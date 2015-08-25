@@ -1,0 +1,159 @@
+
+/* Class = "UILabel"; text = "Füge ein Bild des Medikaments oder der Verpackung hinzu"; ObjectID = "05q-Tt-sXR"; */
+"05q-Tt-sXR.text" = "Füge ein Bild des Medikaments oder der Verpackung hinzu";
+
+/* Class = "UIButton"; normalTitle = "Form hinzufügen"; ObjectID = "1Yu-Vd-Na0"; */
+"1Yu-Vd-Na0.normalTitle" = "Form hinzufügen";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "1jw-Cb-Bgr"; */
+"1jw-Cb-Bgr.text" = "Label";
+
+/* Class = "UILabel"; text = "Aspirin"; ObjectID = "2Uy-Ru-dFl"; */
+"2Uy-Ru-dFl.text" = "Aspirin";
+
+/* Class = "UIButton"; normalTitle = "Sa"; ObjectID = "2Yd-FI-waO"; */
+"2Yd-FI-waO.normalTitle" = "Sa";
+
+/* Class = "UILabel"; text = "Bild"; ObjectID = "5pe-Sk-dbg"; */
+"5pe-Sk-dbg.text" = "Bild";
+
+/* Class = "UILabel"; text = "von 12:00 - 16:00"; ObjectID = "6Kn-ic-fLW"; */
+"6Kn-ic-fLW.text" = "von 12:00 - 16:00";
+
+/* Class = "UILabel"; text = "Neues Medikament"; ObjectID = "6kD-R8-ob2"; */
+"6kD-R8-ob2.text" = "Neues Medikament";
+
+/* Class = "UIButton"; normalTitle = "Mo"; ObjectID = "71h-M5-NOu"; */
+"71h-M5-NOu.normalTitle" = "Mo";
+
+/* Class = "UINavigationItem"; title = "Zeit & Dosierung"; ObjectID = "7d5-yj-AUi"; */
+"7d5-yj-AUi.title" = "Zeit & Dosierung";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "7f6-24-ujT"; */
+"7f6-24-ujT.placeholder" = "Name";
+
+/* Class = "UINavigationItem"; title = "Neues Medikament"; ObjectID = "9YR-wc-ygP"; */
+"9YR-wc-ygP.title" = "Neues Medikament";
+
+/* Class = "UITableViewController"; title = "Medikamente"; ObjectID = "A4L-r0-d5w"; */
+"A4L-r0-d5w.title" = "Medikamente";
+
+/* Class = "UITabBarItem"; title = "Medikationplan"; ObjectID = "A8j-Qb-ahV"; */
+"A8j-Qb-ahV.title" = "Medikationplan";
+
+/* Class = "UIBarButtonItem"; title = "Abbrechen"; ObjectID = "Awq-w6-Xi7"; */
+"Awq-w6-Xi7.title" = "Abbrechen";
+
+/* Class = "UIButton"; normalTitle = "Foto entfernen"; ObjectID = "C73-Pd-6ez"; */
+"C73-Pd-6ez.normalTitle" = "Foto entfernen";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "CFI-Sx-XKX"; */
+"CFI-Sx-XKX.title" = "Title";
+
+/* Class = "UITabBarItem"; title = "Medikamente"; ObjectID = "EGj-77-mvn"; */
+"EGj-77-mvn.title" = "Medikamente";
+
+/* Class = "UIButton"; normalTitle = "Mehr Informationen hinzufügen"; ObjectID = "EOE-3S-fUW"; */
+"EOE-3S-fUW.normalTitle" = "Mehr Informationen hinzufügen";
+
+/* Class = "UIButton"; normalTitle = "Do"; ObjectID = "I3L-Jc-R4E"; */
+"I3L-Jc-R4E.normalTitle" = "Do";
+
+/* Class = "UILabel"; text = "Morgen"; ObjectID = "L1L-hO-AKa"; */
+"L1L-hO-AKa.text" = "Morgen";
+
+/* Class = "UITableViewController"; title = "Medikationplan"; ObjectID = "LQP-ve-NUB"; */
+"LQP-ve-NUB.title" = "Medikationplan";
+
+/* Class = "UIBarButtonItem"; title = "Abbrechen"; ObjectID = "V4b-U0-jQc"; */
+"V4b-U0-jQc.title" = "Abbrechen";
+
+/* Class = "UIButton"; normalTitle = "Mi"; ObjectID = "WLC-ib-zqp"; */
+"WLC-ib-zqp.normalTitle" = "Mi";
+
+/* Class = "UILabel"; text = "Farbe"; ObjectID = "WgM-kE-J7e"; */
+"WgM-kE-J7e.text" = "Farbe";
+
+/* Class = "UILabel"; text = "Zeit und Dosierung"; ObjectID = "WhM-Ha-yVa"; */
+"WhM-Ha-yVa.text" = "Zeit und Dosierung";
+
+/* Class = "UINavigationItem"; title = "Medikationplan"; ObjectID = "Whn-jX-OJg"; */
+"Whn-jX-OJg.title" = "Medikationplan";
+
+/* Class = "UIButton"; normalTitle = "Die"; ObjectID = "XmA-U0-p98"; */
+"XmA-U0-p98.normalTitle" = "Die";
+
+/* Class = "UILabel"; text = "+"; ObjectID = "ZRK-Vy-ejA"; */
+"ZRK-Vy-ejA.text" = "+";
+
+/* Class = "UIButton"; normalTitle = "So"; ObjectID = "aO9-fO-OkD"; */
+"aO9-fO-OkD.normalTitle" = "So";
+
+/* Class = "UINavigationItem"; title = "Form u. Farbe"; ObjectID = "bkR-Qm-g4y"; */
+"bkR-Qm-g4y.title" = "Form u. Farbe";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "ceY-SR-2Gj"; */
+"ceY-SR-2Gj.title" = "Title";
+
+/* Class = "UIBarButtonItem"; title = "Speichern"; ObjectID = "gkj-8W-GNU"; */
+"gkj-8W-GNU.title" = "Speichern";
+
+/* Class = "UIButton"; normalTitle = "Fr"; ObjectID = "gyS-6E-fM9"; */
+"gyS-6E-fM9.normalTitle" = "Fr";
+
+/* Class = "UILabel"; text = "Form"; ObjectID = "hb9-pd-NY9"; */
+"hb9-pd-NY9.text" = "Form";
+
+/* Class = "UIBarButtonItem"; title = "Abbrechen"; ObjectID = "iFt-wh-BMf"; */
+"iFt-wh-BMf.title" = "Abbrechen";
+
+/* Class = "UIButton"; normalTitle = "Foto hinzufügen"; ObjectID = "jDw-eI-p4r"; */
+"jDw-eI-p4r.normalTitle" = "Foto hinzufügen";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "jhy-68-BEg"; */
+"jhy-68-BEg.text" = "Detail";
+
+/* Class = "UINavigationItem"; title = "Hinzufügen"; ObjectID = "lLw-tr-Vh9"; */
+"lLw-tr-Vh9.title" = "Hinzufügen";
+
+/* Class = "UILabel"; text = "+"; ObjectID = "oP3-mT-Iua"; */
+"oP3-mT-Iua.text" = "+";
+
+/* Class = "UIBarButtonItem"; title = "Speichern"; ObjectID = "pt1-LU-NVw"; */
+"pt1-LU-NVw.title" = "Speichern";
+
+/* Class = "UINavigationItem"; title = "Medikamente"; ObjectID = "qBH-6c-hea"; */
+"qBH-6c-hea.title" = "Medikamente";
+
+/* Class = "UIBarButtonItem"; title = "Bearbeiten"; ObjectID = "qxf-px-2od"; */
+"qxf-px-2od.title" = "Bearbeiten";
+
+/* Class = "UISegmentedControl"; rMo-MP-Mbc.segmentTitles[0] = "Täglich"; ObjectID = "rMo-MP-Mbc"; */
+"rMo-MP-Mbc.segmentTitles[0]" = "Täglich";
+
+/* Class = "UISegmentedControl"; rMo-MP-Mbc.segmentTitles[1] = "Wöchentlich"; ObjectID = "rMo-MP-Mbc"; */
+"rMo-MP-Mbc.segmentTitles[1]" = "Wöchentlich";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "sZQ-9d-bLt"; */
+"sZQ-9d-bLt.text" = "Title";
+
+/* Class = "UILabel"; text = "Wirkstoff: Acetylsalicylsäure"; ObjectID = "ufz-7U-PnU"; */
+"ufz-7U-PnU.text" = "Wirkstoff: Acetylsalicylsäure";
+
+/* Class = "UIBarButtonItem"; title = "Fertig"; ObjectID = "vPb-IK-P29"; */
+"vPb-IK-P29.title" = "Fertig";
+
+/* Class = "UISegmentedControl"; vxA-za-gXn.segmentTitles[0] = "Morgen"; ObjectID = "vxA-za-gXn"; */
+"vxA-za-gXn.segmentTitles[0]" = "Morgen";
+
+/* Class = "UISegmentedControl"; vxA-za-gXn.segmentTitles[1] = "Mittag"; ObjectID = "vxA-za-gXn"; */
+"vxA-za-gXn.segmentTitles[1]" = "Mittag";
+
+/* Class = "UISegmentedControl"; vxA-za-gXn.segmentTitles[2] = "Abend"; ObjectID = "vxA-za-gXn"; */
+"vxA-za-gXn.segmentTitles[2]" = "Abend";
+
+/* Class = "UISegmentedControl"; vxA-za-gXn.segmentTitles[3] = "Nacht"; ObjectID = "vxA-za-gXn"; */
+"vxA-za-gXn.segmentTitles[3]" = "Nacht";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ywb-nr-jeX"; */
+"ywb-nr-jeX.text" = "Label";

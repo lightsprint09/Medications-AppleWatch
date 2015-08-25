@@ -11,23 +11,38 @@ import CoreData
 
 class AddMedicationViewController: UIViewController, ManagedObjectContextSettable, UICollectionViewDelegate {
     var managedObjectContext: NSManagedObjectContext!
-    var dataSource: FetchedResultsCollectionViewController<AddMedicationViewController>?
+    var drugDataSource: FetchedResultsCollectionViewController<AddMedicationViewController>?
+    var executionTimeDataSource: FetchedResultsDataSource<ExecutionTimeTableViewDataSourceDelegate>?
     let drugService = DrugDBService()
     var repeatEventCreator = RepeatEventCreator()
     let daytimeDataSource = DayTimeSource()
+    var medication: Medication!
+    let executionTimeDataSourceDelegate = ExecutionTimeTableViewDataSourceDelegate()
     
-    @IBOutlet weak var medicationDaytimeCollectionView: UICollectionView!
     
     @IBOutlet weak var weekDaySelectionView: UIStackView!
-    var selectedDrug:Drug?
+    var selectedDrug:Drug?{
+        didSet {
+            createMedicationFetch()
+        }
+    }
     
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var executionTimeTableView: UITableView!
     
     override func viewDidLoad() {
+        medication = managedObjectContext.insertObject() as Medication
         let frc = NSFetchedResultsController(fetchRequest: drugService.sortedFetchRequest(), managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
-        dataSource = FetchedResultsCollectionViewController(collectionView: collectionView, fetchedResultsController: frc, delegate: self)
-        medicationDaytimeCollectionView.dataSource = daytimeDataSource
+        drugDataSource = FetchedResultsCollectionViewController(collectionView: collectionView, fetchedResultsController: frc, delegate: self)
+    }
+    
+    func createMedicationFetch() {
+        let fetchRequest = NSFetchRequest(entityName: ExecutionTime.entityName)
+        fetchRequest.sortDescriptors = []
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+        executionTimeDataSource = FetchedResultsDataSource(tableView: executionTimeTableView, fetchedResultsController: frc, delegate: executionTimeDataSourceDelegate)
+        
     }
     
     @IBAction func cancelAddMedication(sender: AnyObject) {
@@ -39,15 +54,18 @@ class AddMedicationViewController: UIViewController, ManagedObjectContextSettabl
             var managedObjectContextSettable = managedObjectContextSettable
             managedObjectContextSettable.managedObjectContext = managedObjectContext
         }
+        if let medicationTimeController = (segue.destinationViewController as? UINavigationController)?.topViewController as? MedicationTimeViewController {
+            medicationTimeController.medication = medication
+        }
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        if let selectedDrug = selectedDrug, let currentlySelectedIndexPath = dataSource?.fetchedResultsController.indexPathForObject(selectedDrug) {
+        if let selectedDrug = selectedDrug, let currentlySelectedIndexPath = drugDataSource?.fetchedResultsController.indexPathForObject(selectedDrug) {
             if let cell = collectionView.cellForItemAtIndexPath(currentlySelectedIndexPath) as? AddDrugToMedicationCell {
                 cell.showSelectedBadge(false)
             }
         }
-        selectedDrug = dataSource?.objectAtIndexPath(indexPath)
+        selectedDrug = drugDataSource?.objectAtIndexPath(indexPath)
         if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? AddDrugToMedicationCell {
             cell.showSelectedBadge(true)
         }
@@ -62,14 +80,7 @@ class AddMedicationViewController: UIViewController, ManagedObjectContextSettabl
     func createMedication() {
         let medication: Medication = managedObjectContext.insertObject()
         medication.drug = selectedDrug
-        repeatEventCreator.createEvent(startDate: NSDate(), repeatCount: 2 * 7, calculateNextDate: {date in  date}, useDate: {date in
-            let executionTime: ExecutionTime = self.managedObjectContext.insertObject()
-            executionTime.creationDate = NSDate()
-            executionTime.assignmentDate = date
-//            executionTime.medication
-            }, finalCall: {date in})
     }
-   
 }
 
 

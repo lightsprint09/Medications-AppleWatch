@@ -295,7 +295,7 @@
                                 </connections>
                             </collectionView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="2Z1-Ab-4xh">
-                                <rect key="frame" x="8" y="175" width="584" height="240"/>
+                                <rect key="frame" x="8" y="175" width="584" height="28"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rMo-MP-Mbc">
                                         <rect key="frame" x="0.0" y="0.0" width="584" height="29"/>
@@ -311,7 +311,7 @@
                                         </connections>
                                     </segmentedControl>
                                     <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Sng-0H-Vjt">
-                                        <rect key="frame" x="0.0" y="34" width="584" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="28" width="584" height="0.0"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="71h-M5-NOu" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="77.5" height="0.0"/>
@@ -472,39 +472,86 @@
                                             <constraint firstAttribute="height" constant="44" id="z1z-Yo-IIK"/>
                                         </constraints>
                                     </stackView>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JHT-pg-Srb">
-                                        <rect key="frame" x="0.0" y="40" width="584" height="200"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="200" id="tds-ei-huK"/>
-                                        </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6h5-pW-d55">
-                                            <size key="itemSize" width="300" height="200"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="daytime-cell" id="P84-6v-h1e" customClass="DaytimeCell" customModule="Medications" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                </view>
-                                            </collectionViewCell>
-                                        </cells>
-                                    </collectionView>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WxF-s9-qZq">
+                                <rect key="frame" x="8" y="219" width="572" height="23"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Zeit und Dosierung" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WhM-Ha-yVa">
+                                        <rect key="frame" x="0.0" y="0.0" width="505" height="23"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Xm-9W-Dgo">
+                                        <rect key="frame" x="505" y="0.5" width="67" height="22"/>
+                                        <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <segue destination="zLj-Ir-7Ff" kind="presentation" id="fv0-Pa-BKs"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8so-sd-lCE">
+                                <rect key="frame" x="8" y="250" width="584" height="286"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="new-medication-cell" id="2YA-j2-Fpb" customClass="ExecutionTimeTableViewCell" customModule="Medications" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="584" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2YA-j2-Fpb" id="tcZ-Uu-c28">
+                                            <rect key="frame" x="0.0" y="0.0" width="584" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glyphicons-231-moon-color" translatesAutoresizingMaskIntoConstraints="NO" id="mcE-KC-Jh7">
+                                                    <rect key="frame" x="0.0" y="0.0" width="43" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="43" id="Ygc-pT-zA3"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmr-h0-YZr">
+                                                    <rect key="frame" x="51" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Nm-dx-Emc">
+                                                    <rect key="frame" x="160" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="mcE-KC-Jh7" firstAttribute="leading" secondItem="tcZ-Uu-c28" secondAttribute="leading" id="M4b-yD-mgR"/>
+                                                <constraint firstItem="mcE-KC-Jh7" firstAttribute="top" secondItem="tcZ-Uu-c28" secondAttribute="top" id="UiM-sa-6KI"/>
+                                                <constraint firstItem="mcE-KC-Jh7" firstAttribute="centerY" secondItem="tcZ-Uu-c28" secondAttribute="centerY" id="nS1-r3-nlB"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dayTimeImageView" destination="mcE-KC-Jh7" id="HHs-Rv-u5g"/>
+                                            <outlet property="doseLabel" destination="7Nm-dx-Emc" id="Qke-Gs-sFN"/>
+                                            <outlet property="timeLabel" destination="tmr-h0-YZr" id="x0W-Zn-BE2"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="2Z1-Ab-4xh" secondAttribute="trailing" constant="-12" id="5vD-CA-cxj"/>
+                            <constraint firstItem="8so-sd-lCE" firstAttribute="top" secondItem="WxF-s9-qZq" secondAttribute="bottom" constant="8" id="8qJ-QC-hbM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8so-sd-lCE" secondAttribute="trailing" constant="-12" id="AQQ-t3-PpX"/>
                             <constraint firstItem="2Z1-Ab-4xh" firstAttribute="top" secondItem="zeg-A1-OCe" secondAttribute="bottom" constant="8" id="Dp4-vL-pD1"/>
+                            <constraint firstItem="wIX-gO-ePE" firstAttribute="top" secondItem="8so-sd-lCE" secondAttribute="bottom" constant="15" id="FBc-EY-b3L"/>
                             <constraint firstItem="2Z1-Ab-4xh" firstAttribute="leading" secondItem="eHP-2c-0hc" secondAttribute="leadingMargin" constant="-12" id="MEg-em-v8T"/>
                             <constraint firstItem="zeg-A1-OCe" firstAttribute="leading" secondItem="eHP-2c-0hc" secondAttribute="leadingMargin" constant="-20" id="WcG-5N-xFI"/>
+                            <constraint firstItem="WxF-s9-qZq" firstAttribute="top" secondItem="2Z1-Ab-4xh" secondAttribute="bottom" constant="16" id="k0B-lK-T2A"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WxF-s9-qZq" secondAttribute="trailing" id="kan-eN-8OF"/>
+                            <constraint firstItem="WxF-s9-qZq" firstAttribute="leading" secondItem="2Z1-Ab-4xh" secondAttribute="leading" id="nOM-dW-1Xk"/>
+                            <constraint firstItem="WxF-s9-qZq" firstAttribute="leading" secondItem="8so-sd-lCE" secondAttribute="leading" id="pzw-7z-qOR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zeg-A1-OCe" secondAttribute="trailing" constant="-20" id="swb-wd-nfV"/>
+                            <constraint firstItem="8so-sd-lCE" firstAttribute="leading" secondItem="eHP-2c-0hc" secondAttribute="leadingMargin" constant="-12" id="vxV-VU-68I"/>
                             <constraint firstItem="zeg-A1-OCe" firstAttribute="top" secondItem="rbt-p5-QZ9" secondAttribute="bottom" id="wkv-et-Poi"/>
                         </constraints>
                     </view>
@@ -514,11 +561,11 @@
                                 <action selector="cancelAddMedication:" destination="jeK-9w-xN6" id="F4a-qY-COl"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="gkj-8W-GNU"/>
+                        <barButtonItem key="rightBarButtonItem" title="Speichern" id="gkj-8W-GNU"/>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="zeg-A1-OCe" id="26o-H6-FW9"/>
-                        <outlet property="medicationDaytimeCollectionView" destination="JHT-pg-Srb" id="8Oh-AL-3NW"/>
+                        <outlet property="executionTimeTableView" destination="8so-sd-lCE" id="BQE-MA-PnI"/>
                         <outlet property="weekDaySelectionView" destination="Sng-0H-Vjt" id="zuC-iY-VVL"/>
                     </connections>
                 </viewController>
@@ -531,10 +578,26 @@
             </objects>
             <point key="canvasLocation" x="2353" y="-747"/>
         </scene>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="hV9-jW-aDG">
+            <objects>
+                <navigationController id="zLj-Ir-7Ff" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qe7-xR-mHg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="bAE-nu-90z" kind="relationship" relationship="rootViewController" id="MeI-Vb-V7b"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r4D-1e-OFU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3046" y="-747"/>
+        </scene>
+        <!--Zeit & Dosierung-->
         <scene sceneID="4V4-MK-W0b">
             <objects>
-                <viewController id="bAE-nu-90z" sceneMemberID="viewController">
+                <viewController id="bAE-nu-90z" customClass="MedicationTimeViewController" customModule="Medications" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mc4-Xf-gbC"/>
                         <viewControllerLayoutGuide type="bottom" id="5sF-Gc-kAw"/>
@@ -542,12 +605,122 @@
                     <view key="view" contentMode="scaleToFill" id="fYt-lf-nop">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vxA-za-gXn">
+                                <rect key="frame" x="20" y="72" width="560" height="29"/>
+                                <segments>
+                                    <segment title="Morgen"/>
+                                    <segment title="Mittag"/>
+                                    <segment title="Abend"/>
+                                    <segment title="Nacht"/>
+                                </segments>
+                                <connections>
+                                    <action selector="didChangeDaytime:" destination="bAE-nu-90z" eventType="valueChanged" id="awS-om-JRa"/>
+                                </connections>
+                            </segmentedControl>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="Mhu-Eb-yNO">
+                                <rect key="frame" x="41" y="108" width="518" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="7p1-Rd-HtP"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="462188781.12351298">
+                                    <!--2015-08-25 09:46:21 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="timeDidChange:" destination="bAE-nu-90z" eventType="valueChanged" id="SNW-P8-Ik1"/>
+                                </connections>
+                            </datePicker>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="JAY-GE-UoF">
+                                <rect key="frame" x="160.5" y="256" width="279.5" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dM1-CY-QBl" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="44"/>
+                                        <color key="backgroundColor" red="0.86274509803921573" green="0.18431372549019609" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="B1K-RN-WdR"/>
+                                            <constraint firstAttribute="width" constant="80" id="gvH-TP-nto"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                        <state key="normal" title="½ -">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="16"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dosierung" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RWH-EV-NiC">
+                                        <rect key="frame" x="92" y="3" width="95.5" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="lng-15-srO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oGG-A8-vZV" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
+                                        <rect key="frame" x="199.5" y="0.0" width="80" height="44"/>
+                                        <color key="backgroundColor" red="0.19607843137254902" green="0.74117647058823533" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="CuQ-lf-sNx"/>
+                                            <constraint firstAttribute="height" constant="44" id="QAj-AH-aIb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                        <state key="normal" title="½ +">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="16"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="QZB-63-eDz">
+                                <rect key="frame" x="20" y="308" width="560" height="29"/>
+                                <segments>
+                                    <segment title="½"/>
+                                    <segment title="1"/>
+                                    <segment title="1 ½"/>
+                                    <segment title="2"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Mhu-Eb-yNO" secondAttribute="trailing" constant="21" id="Fo2-Tk-6Ao"/>
+                            <constraint firstItem="vxA-za-gXn" firstAttribute="trailing" secondItem="fYt-lf-nop" secondAttribute="trailingMargin" id="NTL-Oe-2wk"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="QZB-63-eDz" secondAttribute="leading" id="OSN-I5-T1V"/>
+                            <constraint firstItem="QZB-63-eDz" firstAttribute="top" secondItem="JAY-GE-UoF" secondAttribute="bottom" constant="8" id="Vaf-ac-Ff0"/>
+                            <constraint firstItem="Mhu-Eb-yNO" firstAttribute="top" secondItem="vxA-za-gXn" secondAttribute="bottom" constant="8" symbolic="YES" id="Vf4-DX-8Ud"/>
+                            <constraint firstItem="vxA-za-gXn" firstAttribute="top" secondItem="mc4-Xf-gbC" secondAttribute="bottom" constant="8" symbolic="YES" id="XFc-Tt-JOL"/>
+                            <constraint firstItem="JAY-GE-UoF" firstAttribute="top" secondItem="Mhu-Eb-yNO" secondAttribute="bottom" constant="8" id="cHJ-AC-oeT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QZB-63-eDz" secondAttribute="trailing" id="iQ9-4a-gsG"/>
+                            <constraint firstItem="Mhu-Eb-yNO" firstAttribute="leading" secondItem="fYt-lf-nop" secondAttribute="leadingMargin" constant="21" id="p5r-m6-YGX"/>
+                            <constraint firstItem="JAY-GE-UoF" firstAttribute="centerX" secondItem="fYt-lf-nop" secondAttribute="centerX" id="pNe-04-uUx"/>
+                            <constraint firstItem="vxA-za-gXn" firstAttribute="leading" secondItem="fYt-lf-nop" secondAttribute="leadingMargin" id="r5T-5v-thi"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Zeit &amp; Dosierung" id="7d5-yj-AUi">
+                        <barButtonItem key="leftBarButtonItem" title="Abbrechen" id="V4b-U0-jQc">
+                            <connections>
+                                <action selector="dismissViewController:" destination="bAE-nu-90z" id="rKx-fa-zY5"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Fertig" id="vPb-IK-P29">
+                            <connections>
+                                <action selector="done:" destination="bAE-nu-90z" id="WSQ-ua-EoK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="timePicker" destination="Mhu-Eb-yNO" id="QAF-d3-qRv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7iD-8X-OT9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2977" y="-747"/>
+            <point key="canvasLocation" x="3777" y="-747"/>
         </scene>
         <!--Medikationplan-->
         <scene sceneID="gzR-eb-7uD">
@@ -1258,6 +1431,7 @@
     <resources>
         <image name="glyphicons-12-camera" width="48" height="48"/>
         <image name="glyphicons-194-circle-ok" width="48" height="48"/>
+        <image name="glyphicons-231-moon-color" width="21" height="24"/>
         <image name="glyphicons-46-calendar" width="48" height="48"/>
         <image name="glyphicons-493-medicine" width="48" height="48"/>
         <image name="pill" width="42" height="42"/>
