@@ -47,6 +47,7 @@ class AddMedicationViewController: UIViewController, ManagedObjectContextSettabl
     
     @IBAction func cancelAddMedication(sender: AnyObject) {
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+        managedObjectContext.rollback()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

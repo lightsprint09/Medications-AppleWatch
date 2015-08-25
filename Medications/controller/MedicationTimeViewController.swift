@@ -17,6 +17,8 @@ class MedicationTimeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         executionTime = medication.managedObjectContext!.insertObject() as ExecutionTime
+        executionTime.creationDate = NSDate()
+        executionTime.assignmentDate = timePicker.date
     }
 
     @IBAction func dismissViewController(sender: AnyObject) {
@@ -29,6 +31,7 @@ class MedicationTimeViewController: UIViewController {
 
     @IBAction func timeDidChange(sender: UIDatePicker) {
         executionTime.assignmentDate = sender.date
+        executionTime.assignmentTimeOfDay = NSNumber(integer: TimeOfDay.timeOfDayFromDate(sender.date).rawValue)
     }
     @IBAction func done(sender: AnyObject) {
          presentingViewController?.dismissViewControllerAnimated(true, completion: nil)

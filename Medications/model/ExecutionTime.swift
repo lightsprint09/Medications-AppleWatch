@@ -11,6 +11,10 @@ import CoreData
 
 class ExecutionTime: NSManagedObject {
 
-// Insert code here to add functionality to your managed object subclass
+    var timeOfDay: TimeOfDay {
+        get{
+            return TimeOfDay(rawValue: self.assignmentTimeOfDay.integerValue)!
+        }
+    }
 
 }

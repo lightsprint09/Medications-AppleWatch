@@ -9,23 +9,21 @@
 import UIKit
 
 class ExecutionTimeTableViewCell: UITableViewCell {
-
+    private static let dateFormatter = NSDateFormatter()
+    
     @IBOutlet weak var dayTimeImageView: UIImageView!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var doseLabel: UILabel!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func configurWithExecutionTime(execuitonTime:ExecutionTime) {
-        
+        ExecutionTimeTableViewCell.dateFormatter.dateFormat = "HH:mm"
+         timeLabel.text = ExecutionTimeTableViewCell.dateFormatter.stringFromDate(execuitonTime.assignmentDate)
+       
     }
 
 }

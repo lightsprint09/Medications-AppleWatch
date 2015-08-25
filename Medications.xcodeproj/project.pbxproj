@@ -28,6 +28,7 @@
 		944B2AFF1B8C6B8F0098E1EA /* MedicationTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944B2AFE1B8C6B8F0098E1EA /* MedicationTimeViewController.swift */; };
 		944B2B031B8CA2550098E1EA /* ExecutionTimeTableViewDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944B2B021B8CA2550098E1EA /* ExecutionTimeTableViewDataSourceDelegate.swift */; };
 		944B2B051B8CA2BA0098E1EA /* ExecutionTimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944B2B041B8CA2BA0098E1EA /* ExecutionTimeTableViewCell.swift */; };
+		944B2B071B8CAE220098E1EA /* TimeOfDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944B2B061B8CAE220098E1EA /* TimeOfDay.swift */; };
 		944F21431B59570200ED8A7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944F21421B59570200ED8A7A /* AppDelegate.swift */; };
 		944F21481B59570200ED8A7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 944F21461B59570200ED8A7A /* Main.storyboard */; };
 		944F214B1B59570200ED8A7A /* Medications.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 944F21491B59570200ED8A7A /* Medications.xcdatamodeld */; };
@@ -154,6 +155,7 @@
 		944B2B011B8C71E00098E1EA /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Interface.strings; sourceTree = "<group>"; };
 		944B2B021B8CA2550098E1EA /* ExecutionTimeTableViewDataSourceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecutionTimeTableViewDataSourceDelegate.swift; sourceTree = "<group>"; };
 		944B2B041B8CA2BA0098E1EA /* ExecutionTimeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecutionTimeTableViewCell.swift; sourceTree = "<group>"; };
+		944B2B061B8CAE220098E1EA /* TimeOfDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeOfDay.swift; sourceTree = "<group>"; };
 		944F213F1B59570200ED8A7A /* Medications.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Medications.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		944F21421B59570200ED8A7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		944F21471B59570200ED8A7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -431,6 +433,7 @@
 				94D6D8A61B83584100DD5F2D /* DrugDBService.swift */,
 				94D6D8A81B85B56200DD5F2D /* DayTimeSource.swift */,
 				94D6D8AA1B85B6C400DD5F2D /* DaytimeCollectionViewDataSource.swift */,
+				944B2B061B8CAE220098E1EA /* TimeOfDay.swift */,
 			);
 			path = service;
 			sourceTree = "<group>";
@@ -671,6 +674,7 @@
 				94CA619F1B7F491800FF27F0 /* DrugDetailViewController.swift in Sources */,
 				94D1E5F51B78F53700B0CD7D /* UINavigationControllerCoreDataExtension.swift in Sources */,
 				947F02341B81CD43006D9C7E /* FetchedResultsCollectionViewDataSourceDelegate.swift in Sources */,
+				944B2B071B8CAE220098E1EA /* TimeOfDay.swift in Sources */,
 				94D6D8A71B83584100DD5F2D /* DrugDBService.swift in Sources */,
 				94D1E6061B7A3C3200B0CD7D /* UIColorPainCodeExtension.swift in Sources */,
 				944B2B031B8CA2550098E1EA /* ExecutionTimeTableViewDataSourceDelegate.swift in Sources */,

@@ -14,6 +14,7 @@
     <entity name="ExecutionTime" representedClassName=".ExecutionTime" syncable="YES">
         <attribute name="amount" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="assignmentDate" attributeType="Date" syncable="YES"/>
+        <attribute name="assignmentTimeOfDay" attributeType="Integer 16" minValueString="0" maxValueString="3" syncable="YES"/>
         <attribute name="creationDate" attributeType="Date" syncable="YES"/>
         <attribute name="executionDate" optional="YES" attributeType="Date" indexed="YES" syncable="YES"/>
         <attribute name="millisecondsMoved" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
@@ -25,7 +26,7 @@
     </entity>
     <elements>
         <element name="Drug" positionX="-63" positionY="-18" width="128" height="180"/>
-        <element name="ExecutionTime" positionX="412" positionY="71" width="128" height="133"/>
+        <element name="ExecutionTime" positionX="412" positionY="71" width="128" height="150"/>
         <element name="Medication" positionX="232" positionY="-126" width="128" height="73"/>
     </elements>
 </model>
