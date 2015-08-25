@@ -14,17 +14,20 @@ class AddMedicationViewController: UIViewController, ManagedObjectContextSettabl
     var dataSource: FetchedResultsCollectionViewController<AddMedicationViewController>?
     let drugService = DrugDBService()
     var repeatEventCreator = RepeatEventCreator()
+    let daytimeDataSource = DayTimeSource()
+    
+    @IBOutlet weak var medicationDaytimeCollectionView: UICollectionView!
     
     @IBOutlet weak var weekDaySelectionView: UIStackView!
     var selectedDrug:Drug?
     
-    let daytimeDataSource = DayTimeSource()
     
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         let frc = NSFetchedResultsController(fetchRequest: drugService.sortedFetchRequest(), managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
         dataSource = FetchedResultsCollectionViewController(collectionView: collectionView, fetchedResultsController: frc, delegate: self)
+        medicationDaytimeCollectionView.dataSource = daytimeDataSource
     }
     
     @IBAction func cancelAddMedication(sender: AnyObject) {

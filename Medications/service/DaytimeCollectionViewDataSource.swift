@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension DayTimeSource: UICollectionViewDataSource {
+extension DayTimeSource: UICollectionViewDataSource, UICollectionViewDelegate {
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -26,8 +26,10 @@ extension DayTimeSource: UICollectionViewDataSource {
         if let cell = cell as? DaytimeCell {
             let object = self.objectAtIndexPath(indexPath)
             cell.confirgureWithDaytimeMedication(object)
+            
         }
         
         return cell
     }
+    
 }

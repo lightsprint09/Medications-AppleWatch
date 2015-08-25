@@ -40,6 +40,8 @@
 		944F21931B59573300ED8A7A /* MediWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 944F21751B59573200ED8A7A /* MediWatch.app */; };
 		946C04D91B7BD8FA00D93D10 /* DrugRenderEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E6081B7A4B0200B0CD7D /* DrugRenderEnum.swift */; };
 		946C04DA1B7BD91000D93D10 /* UIColorPainCodeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E6051B7A3C3200B0CD7D /* UIColorPainCodeExtension.swift */; };
+		947D43361B873D42009F45BA /* DaytimeMedicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947D43351B873D42009F45BA /* DaytimeMedicationViewController.swift */; };
+		947D43381B87424D009F45BA /* MedicationColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947D43371B87424D009F45BA /* MedicationColors.swift */; };
 		947F022C1B80A39F006D9C7E /* RepeatEventCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947F022B1B80A39F006D9C7E /* RepeatEventCreator.swift */; };
 		947F022E1B80A3BF006D9C7E /* ReapetEventCreatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947F022D1B80A3BF006D9C7E /* ReapetEventCreatorProtocol.swift */; };
 		947F02321B81CA17006D9C7E /* FetchedResultsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947F02311B81CA17006D9C7E /* FetchedResultsCollectionViewController.swift */; };
@@ -166,6 +168,8 @@
 		944F218C1B59573300ED8A7A /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		944F218E1B59573300ED8A7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		944F21901B59573300ED8A7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		947D43351B873D42009F45BA /* DaytimeMedicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DaytimeMedicationViewController.swift; path = ../DaytimeMedicationViewController.swift; sourceTree = "<group>"; };
+		947D43371B87424D009F45BA /* MedicationColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationColors.swift; sourceTree = "<group>"; };
 		947F022B1B80A39F006D9C7E /* RepeatEventCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatEventCreator.swift; sourceTree = "<group>"; };
 		947F022D1B80A3BF006D9C7E /* ReapetEventCreatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReapetEventCreatorProtocol.swift; sourceTree = "<group>"; };
 		947F02311B81CA17006D9C7E /* FetchedResultsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsCollectionViewController.swift; sourceTree = "<group>"; };
@@ -249,6 +253,7 @@
 				942D38FC1B7888D300553C79 /* extension */,
 				942D38F51B7880FB00553C79 /* protocol */,
 				942D39141B78AAB800553C79 /* DrugTableViewController.swift */,
+				947D43351B873D42009F45BA /* DaytimeMedicationViewController.swift */,
 				94D1E5FF1B7A12CC00B0CD7D /* AddDrugViewController.swift */,
 				94D1E60A1B7B3CCE00B0CD7D /* CoustomDrugViewController.swift */,
 				94CA619E1B7F491800FF27F0 /* DrugDetailViewController.swift */,
@@ -353,6 +358,7 @@
 				94E70E3C1B7E5C900070F153 /* Assets.xcassets */,
 				944F21511B59570200ED8A7A /* Info.plist */,
 				944F21491B59570200ED8A7A /* Medications.xcdatamodeld */,
+				947D43371B87424D009F45BA /* MedicationColors.swift */,
 			);
 			path = Medications;
 			sourceTree = "<group>";
@@ -667,6 +673,7 @@
 				942D39051B788BC700553C79 /* RoundUIImageView.swift in Sources */,
 				942D38F71B78813E00553C79 /* ManagedObjectContextSettable.swift in Sources */,
 				94D1E6091B7A4B0200B0CD7D /* DrugRenderEnum.swift in Sources */,
+				947D43361B873D42009F45BA /* DaytimeMedicationViewController.swift in Sources */,
 				942D391A1B78ABEF00553C79 /* FetchedResultsDataSourceDelegate.swift in Sources */,
 				94D1E60F1B7B462600B0CD7D /* CustomPillCell.swift in Sources */,
 				942D390E1B789DAB00553C79 /* Drug+CoreDataProperties.swift in Sources */,
@@ -686,6 +693,7 @@
 				942D39121B789DAB00553C79 /* Medication+CoreDataProperties.swift in Sources */,
 				947F023A1B81D25B006D9C7E /* AddDrugToMedicationCell.swift in Sources */,
 				94D1E6001B7A12CC00B0CD7D /* AddDrugViewController.swift in Sources */,
+				947D43381B87424D009F45BA /* MedicationColors.swift in Sources */,
 				942D391F1B78AE6A00553C79 /* FetchedResultsDataSource.swift in Sources */,
 				944F21431B59570200ED8A7A /* AppDelegate.swift in Sources */,
 				94D1E60D1B7B44FF00B0CD7D /* CoustomDrugCollectionViewDataSource.swift in Sources */,
