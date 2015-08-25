@@ -22,8 +22,12 @@ class ExecutionTimeTableViewCell: UITableViewCell {
     
     func configurWithExecutionTime(execuitonTime:ExecutionTime) {
         ExecutionTimeTableViewCell.dateFormatter.dateFormat = "HH:mm"
-         timeLabel.text = ExecutionTimeTableViewCell.dateFormatter.stringFromDate(execuitonTime.assignmentDate)
-       
+        timeLabel.text = ExecutionTimeTableViewCell.dateFormatter.stringFromDate(execuitonTime.assignmentDate)
+        dayTimeImageView.image = execuitonTime.timeOfDay.imageWithColor
+        if let amount = execuitonTime.amount?.doubleValue {
+            doseLabel.text = "\(amount) Tabletten"
+        }
+        
     }
 
 }

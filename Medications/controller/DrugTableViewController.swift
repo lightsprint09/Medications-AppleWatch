@@ -32,7 +32,4 @@ class DrugTableViewController: UITableViewController, ManagedObjectContextSettab
         var vc = addDrugVC
         vc.managedObjectContext = managedObjectContext
     }
-
-    
-    
 }

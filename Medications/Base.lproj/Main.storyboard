@@ -521,20 +521,25 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHW-AQ-65U" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
-                                                    <rect key="frame" x="542" y="5" width="34" height="34"/>
-                                                    <color key="backgroundColor" red="0.86274509799999999" green="0.1843137255" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHW-AQ-65U" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
+                                                    <rect key="frame" x="552" y="10" width="24" height="24"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="34" id="1iw-0g-a1W"/>
-                                                        <constraint firstAttribute="width" constant="34" id="nBs-qj-w5j"/>
+                                                        <constraint firstAttribute="height" constant="24" id="1iw-0g-a1W"/>
+                                                        <constraint firstAttribute="width" constant="24" id="nBs-qj-w5j"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
                                                     <state key="normal" title="-">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleColor" red="0.86274509799999999" green="0.1843137255" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="17"/>
+                                                            <real key="value" value="12"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" red="0.86274509799999999" green="0.1843137255" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="1"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
@@ -629,7 +634,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vxA-za-gXn">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" translatesAutoresizingMaskIntoConstraints="NO" id="vxA-za-gXn">
                                 <rect key="frame" x="20" y="72" width="560" height="29"/>
                                 <segments>
                                     <segment title="Morgen"/>
@@ -638,7 +643,7 @@
                                     <segment title="Nacht"/>
                                 </segments>
                                 <connections>
-                                    <action selector="didChangeDaytime:" destination="bAE-nu-90z" eventType="valueChanged" id="awS-om-JRa"/>
+                                    <action selector="didChangeTimeOfDay:" destination="bAE-nu-90z" eventType="valueChanged" id="CaX-v6-dsQ"/>
                                 </connections>
                             </segmentedControl>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="Mhu-Eb-yNO">
@@ -675,8 +680,11 @@
                                                 <real key="value" value="16"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="removeOneDose:" destination="bAE-nu-90z" eventType="touchUpInside" id="P4V-Vd-0Vg"/>
+                                        </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dosierung" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RWH-EV-NiC">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dosierung" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RWH-EV-NiC">
                                         <rect key="frame" x="92" y="3" width="95.5" height="38"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="38" id="lng-15-srO"/>
@@ -700,6 +708,9 @@
                                                 <real key="value" value="16"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="addOneDose:" destination="bAE-nu-90z" eventType="touchUpInside" id="Rup-Pd-dFZ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -741,6 +752,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="doseSegementedControl" destination="QZB-63-eDz" id="zRe-qs-y9F"/>
+                        <outlet property="doseTextField" destination="RWH-EV-NiC" id="TRB-wu-Fq4"/>
+                        <outlet property="timeOfDaySegmentedControl" destination="vxA-za-gXn" id="1sJ-4b-1AU"/>
                         <outlet property="timePicker" destination="Mhu-Eb-yNO" id="QAF-d3-qRv"/>
                     </connections>
                 </viewController>

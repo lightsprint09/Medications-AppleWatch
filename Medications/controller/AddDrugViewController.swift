@@ -76,11 +76,6 @@ class AddDrugViewController: UIViewController, ManagedObjectContextSettable, UII
         }
     }
     
-    @IBAction func didChangeSubstanceName(sender: UITextField) {
-        if let activeSubstance = sender.text {
-            drug.activeSubstance = activeSubstance
-        }
-    }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let destinationCV = segue.destinationViewController as? CoustomDrugViewController {
             destinationCV.drug = drug

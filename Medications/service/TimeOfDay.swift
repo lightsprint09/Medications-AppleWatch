@@ -13,7 +13,7 @@ enum TimeOfDay: Int {
     
     static func timeOfDayFromDate(date:NSDate) -> TimeOfDay {
         let hour = NSCalendar.currentCalendar().component(NSCalendarUnit.Hour, fromDate: date)
-        if hour > 5 && hour < 11 {
+        if hour > 6 && hour < 11 {
             return Morning
         }
         if hour > 11 && hour < 17 {
@@ -22,10 +22,40 @@ enum TimeOfDay: Int {
         if hour > 17 && hour < 22 {
             return Evening
         }
-        if hour > 22 && hour < 5 {
+        if hour > 22 && hour < 6 {
             return Night
         }
         return Night
+    }
+    
+    var startDate:NSDate {
+        get{
+            switch(self) {
+            case .Morning:
+                return NSDate.dateWithHour(6, minutes: 0)
+            case .Noon:
+                return NSDate.dateWithHour(11, minutes: 0)
+            case .Evening:
+                return NSDate.dateWithHour(17, minutes: 0)
+            case .Night:
+               return NSDate.dateWithHour(22, minutes: 0)
+            }
+        }
+    }
+    
+    var endDate:NSDate {
+        get{
+            switch(self) {
+            case .Morning:
+                return NSDate.dateWithHour(11, minutes: 0)
+            case .Noon:
+                return NSDate.dateWithHour(17, minutes: 0)
+            case .Evening:
+                return NSDate.dateWithHour(22, minutes: 0)
+            case .Night:
+                return NSDate.dateWithHour(6, minutes: 0)
+            }
+        }
     }
     
     var imageWithColor: UIImage {

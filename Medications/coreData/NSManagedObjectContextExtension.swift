@@ -18,6 +18,7 @@ extension NSManagedObjectContext {
         do {
         try save()
     } catch {
+        print("Rollback")
             rollback()
         }
     }

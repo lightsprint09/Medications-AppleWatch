@@ -12,7 +12,7 @@
         <relationship name="medications" toMany="YES" deletionRule="Nullify" destinationEntity="Medication" inverseName="drug" inverseEntity="Medication" syncable="YES"/>
     </entity>
     <entity name="ExecutionTime" representedClassName=".ExecutionTime" syncable="YES">
-        <attribute name="amount" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="amount" attributeType="Decimal" minValueString="0" defaultValueString="0" syncable="YES"/>
         <attribute name="assignmentDate" attributeType="Date" syncable="YES"/>
         <attribute name="assignmentTimeOfDay" attributeType="Integer 16" minValueString="0" maxValueString="3" syncable="YES"/>
         <attribute name="creationDate" attributeType="Date" syncable="YES"/>
