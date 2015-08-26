@@ -55,6 +55,17 @@ class FetchedResultsDataSource<D: FetchedResultsDataSourceDelegate>:NSObject, UI
         return true
     }
     
+    @objc func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        switch(editingStyle) {
+        case.Delete:
+            let obj = fetchedResultsController.objectAtIndexPath(indexPath) as! NSManagedObject
+            fetchedResultsController.managedObjectContext.deleteObject(obj)
+        default:
+            print("not implemented")
+        }
+        
+    }
+    
     
     func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
         

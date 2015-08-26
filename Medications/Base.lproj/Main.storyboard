@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="osP-VC-BkV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="osP-VC-BkV">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -226,7 +226,7 @@
                                                 </label>
                                                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glyphicons-194-circle-ok" translatesAutoresizingMaskIntoConstraints="NO" id="aQt-LW-D6j">
                                                     <rect key="frame" x="67" y="-4" width="50" height="50"/>
-                                                    <color key="tintColor" red="0.0" green="0.50196081399917603" blue="0.25098040699958801" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="tintColor" red="0.1960784314" green="0.74117647060000003" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="IAH-hu-WGf"/>
                                                         <constraint firstAttribute="height" constant="50" id="JLo-4R-7jX"/>
@@ -297,7 +297,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="2Z1-Ab-4xh">
                                 <rect key="frame" x="8" y="175" width="584" height="28"/>
                                 <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rMo-MP-Mbc">
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rMo-MP-Mbc">
                                         <rect key="frame" x="0.0" y="0.0" width="584" height="29"/>
                                         <segments>
                                             <segment title="Täglich"/>
@@ -313,8 +313,8 @@
                                     <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Sng-0H-Vjt">
                                         <rect key="frame" x="0.0" y="28" width="584" height="0.0"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="71h-M5-NOu" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="77.5" height="0.0"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="71h-M5-NOu" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="78" height="0.0"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                 <state key="normal" title="Mo">
@@ -335,8 +335,8 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="49" height="0.0"/>
                                                 </variation>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XmA-U0-p98" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
-                                                <rect key="frame" x="84.5" y="0.0" width="77.5" height="0.0"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XmA-U0-p98" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
+                                                <rect key="frame" x="85" y="0.0" width="78" height="0.0"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                 <state key="normal" title="Die">
@@ -357,8 +357,8 @@
                                                     <rect key="frame" x="56" y="0.0" width="48.5" height="0.0"/>
                                                 </variation>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WLC-ib-zqp" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
-                                                <rect key="frame" x="169" y="0.0" width="77.5" height="0.0"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WLC-ib-zqp" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
+                                                <rect key="frame" x="169" y="0.0" width="78" height="0.0"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                 <state key="normal" title="Mi">
@@ -379,8 +379,8 @@
                                                     <rect key="frame" x="111.5" y="0.0" width="49" height="0.0"/>
                                                 </variation>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3L-Jc-R4E" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
-                                                <rect key="frame" x="253.5" y="0.0" width="77" height="0.0"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3L-Jc-R4E" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
+                                                <rect key="frame" x="254" y="0.0" width="77" height="0.0"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                 <state key="normal" title="Do">
@@ -401,8 +401,8 @@
                                                     <rect key="frame" x="167.5" y="0.0" width="49" height="0.0"/>
                                                 </variation>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gyS-6E-fM9" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
-                                                <rect key="frame" x="337.5" y="0.0" width="77.5" height="0.0"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gyS-6E-fM9" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
+                                                <rect key="frame" x="338" y="0.0" width="78" height="0.0"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                 <state key="normal" title="Fr">
@@ -423,8 +423,8 @@
                                                     <rect key="frame" x="223.5" y="0.0" width="49" height="0.0"/>
                                                 </variation>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Yd-FI-waO" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
-                                                <rect key="frame" x="422" y="0.0" width="77.5" height="0.0"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Yd-FI-waO" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
+                                                <rect key="frame" x="422" y="0.0" width="78" height="0.0"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                 <state key="normal" title="Sa">
@@ -445,8 +445,8 @@
                                                     <rect key="frame" x="279.5" y="0.0" width="48.5" height="0.0"/>
                                                 </variation>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aO9-fO-OkD" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
-                                                <rect key="frame" x="506.5" y="0.0" width="77.5" height="0.0"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aO9-fO-OkD" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
+                                                <rect key="frame" x="507" y="0.0" width="78" height="0.0"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                 <state key="normal" title="So">
@@ -468,39 +468,58 @@
                                                 </variation>
                                             </button>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="z1z-Yo-IIK"/>
-                                        </constraints>
                                     </stackView>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WxF-s9-qZq">
-                                <rect key="frame" x="8" y="219" width="572" height="23"/>
+                                <rect key="frame" x="8" y="219" width="572" height="34"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Zeit und Dosierung" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WhM-Ha-yVa">
-                                        <rect key="frame" x="0.0" y="0.0" width="505" height="23"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Xm-9W-Dgo">
-                                        <rect key="frame" x="505" y="0.5" width="67" height="22"/>
-                                        <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <segue destination="zLj-Ir-7Ff" kind="presentation" id="fv0-Pa-BKs"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="E4w-mQ-4tt">
+                                        <rect key="frame" x="0.0" y="0.0" width="572" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zeit und Dosierung" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WhM-Ha-yVa">
+                                                <rect key="frame" x="0.0" y="0.0" width="480" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocJ-Xn-W7C">
+                                                <rect key="frame" x="492" y="0.0" width="34" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="ArQ-ts-Woa"/>
+                                                    <constraint firstAttribute="width" constant="34" id="xbh-gy-7Zx"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.1960784314" green="0.74117647060000003" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" image="icon-ios7-plus"/>
+                                                <connections>
+                                                    <segue destination="zLj-Ir-7Ff" kind="showDetail" id="geI-Ya-dAc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Xm-9W-Dgo">
+                                                <rect key="frame" x="538" y="0.0" width="34" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="NEf-EW-5mc"/>
+                                                    <constraint firstAttribute="width" constant="34" id="f8H-Bs-1aN"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.86274509799999999" green="0.1843137255" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" image="icon-ios7-minus-outline"/>
+                                                <connections>
+                                                    <action selector="toggleDeleteInTableView:" destination="jeK-9w-xN6" eventType="touchUpInside" id="ue2-CF-zq9"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8so-sd-lCE">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8so-sd-lCE">
                                 <rect key="frame" x="8" y="250" width="584" height="286"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="new-medication-cell" id="2YA-j2-Fpb" customClass="ExecutionTimeTableViewCell" customModule="Medications" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="new-medication-cell" id="2YA-j2-Fpb" customClass="ExecutionTimeTableViewCell" customModule="Medications" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="584" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2YA-j2-Fpb" id="tcZ-Uu-c28">
-                                            <rect key="frame" x="0.0" y="0.0" width="584" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="551" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glyphicons-231-moon-color" translatesAutoresizingMaskIntoConstraints="NO" id="mcE-KC-Jh7">
@@ -521,38 +540,14 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHW-AQ-65U" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
-                                                    <rect key="frame" x="552" y="10" width="24" height="24"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="24" id="1iw-0g-a1W"/>
-                                                        <constraint firstAttribute="width" constant="24" id="nBs-qj-w5j"/>
-                                                    </constraints>
-                                                    <state key="normal" title="-">
-                                                        <color key="titleColor" red="0.86274509799999999" green="0.1843137255" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </state>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="12"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                            <color key="value" red="0.86274509799999999" green="0.1843137255" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                            <real key="value" value="1"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="7Nm-dx-Emc" firstAttribute="leading" secondItem="tmr-h0-YZr" secondAttribute="trailing" constant="28" id="H11-4Q-dq1"/>
                                                 <constraint firstItem="mcE-KC-Jh7" firstAttribute="leading" secondItem="tcZ-Uu-c28" secondAttribute="leading" id="M4b-yD-mgR"/>
                                                 <constraint firstItem="tmr-h0-YZr" firstAttribute="leading" secondItem="mcE-KC-Jh7" secondAttribute="trailing" constant="8" id="Tfy-97-jal"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="IHW-AQ-65U" secondAttribute="trailing" id="TlF-Yh-krb"/>
                                                 <constraint firstItem="mcE-KC-Jh7" firstAttribute="top" secondItem="tcZ-Uu-c28" secondAttribute="top" id="UiM-sa-6KI"/>
                                                 <constraint firstItem="7Nm-dx-Emc" firstAttribute="centerY" secondItem="tcZ-Uu-c28" secondAttribute="centerY" id="dnV-qk-biy"/>
                                                 <constraint firstItem="mcE-KC-Jh7" firstAttribute="centerY" secondItem="tcZ-Uu-c28" secondAttribute="centerY" id="nS1-r3-nlB"/>
-                                                <constraint firstItem="IHW-AQ-65U" firstAttribute="centerY" secondItem="tcZ-Uu-c28" secondAttribute="centerY" id="nZq-6N-Vx9"/>
                                                 <constraint firstItem="tmr-h0-YZr" firstAttribute="centerY" secondItem="tcZ-Uu-c28" secondAttribute="centerY" id="vmt-TT-5md"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -664,7 +659,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="JAY-GE-UoF">
                                 <rect key="frame" x="160.5" y="256" width="279.5" height="44"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dM1-CY-QBl" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dM1-CY-QBl" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="44"/>
                                         <color key="backgroundColor" red="0.86274509803921573" green="0.18431372549019609" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -684,7 +679,7 @@
                                             <action selector="removeOneDose:" destination="bAE-nu-90z" eventType="touchUpInside" id="P4V-Vd-0Vg"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dosierung" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RWH-EV-NiC">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dosierung" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RWH-EV-NiC">
                                         <rect key="frame" x="92" y="3" width="95.5" height="38"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="38" id="lng-15-srO"/>
@@ -692,7 +687,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oGG-A8-vZV" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oGG-A8-vZV" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
                                         <rect key="frame" x="199.5" y="0.0" width="80" height="44"/>
                                         <color key="backgroundColor" red="0.19607843137254902" green="0.74117647058823533" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -798,7 +793,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="zX4-he-VwC">
                                             <rect key="frame" x="8" y="4" width="551" height="60"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZPC-Ni-hT3" customClass="DrugCustomaziationView" customModule="Medications" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZPC-Ni-hT3" customClass="DrugCustomaziationView" customModule="Medications" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -819,7 +814,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="59.5"/>
                                                     </variation>
                                                 </view>
-                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" alignment="top" spacing="-12" translatesAutoresizingMaskIntoConstraints="NO" id="dTR-Or-4st">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="-12" translatesAutoresizingMaskIntoConstraints="NO" id="dTR-Or-4st">
                                                     <rect key="frame" x="84" y="0.0" width="467" height="60"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aspirin" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Uy-Ru-dFl">
@@ -828,7 +823,7 @@
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wirkstoff: Acetylsalicylsäure" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufz-7U-PnU">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wirkstoff: Acetylsalicylsäure" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufz-7U-PnU">
                                                             <rect key="frame" x="0.0" y="24" width="193.5" height="36"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -925,8 +920,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pBa-op-S8I">
                                 <rect key="frame" x="20" y="72" width="117" height="90"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xwG-vN-qKO" customClass="DrugCustomaziationView" customModule="Medications" customModuleProvider="target">
-                                        <rect key="frame" x="28.5" y="0.0" width="60" height="60"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xwG-vN-qKO" customClass="DrugCustomaziationView" customModule="Medications" customModuleProvider="target">
+                                        <rect key="frame" x="29" y="0.0" width="60" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oP3-mT-Iua">
                                                 <rect key="frame" x="21.5" y="13.5" width="17" height="32.5"/>
@@ -1004,16 +999,16 @@
                                 <rect key="frame" x="20" y="175" width="560" height="420"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VbF-UM-xe3">
-                                        <rect key="frame" x="22" y="166" width="516" height="68.5"/>
+                                        <rect key="frame" x="22" y="166" width="516" height="69"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="glyphicons-12-camera" translatesAutoresizingMaskIntoConstraints="NO" id="IDI-uo-7jU">
-                                                <rect key="frame" x="234" y="0.0" width="48" height="48"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glyphicons-12-camera" translatesAutoresizingMaskIntoConstraints="NO" id="IDI-uo-7jU">
+                                                <rect key="frame" x="234" y="1" width="48" height="48"/>
                                                 <variation key="widthClass=compact" fixedFrame="YES">
                                                     <rect key="frame" x="134" y="0.0" width="48" height="48"/>
                                                 </variation>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Füge ein Bild des Medikaments oder der Verpackung hinzu" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05q-Tt-sXR">
-                                                <rect key="frame" x="33.5" y="48" width="449" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Füge ein Bild des Medikaments oder der Verpackung hinzu" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05q-Tt-sXR">
+                                                <rect key="frame" x="34" y="49" width="449" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1054,7 +1049,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6LH-L0-TZW">
                                                     <rect key="frame" x="0.0" y="3" width="560" height="41"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDw-eI-p4r">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDw-eI-p4r">
                                                             <rect key="frame" x="0.0" y="0.0" width="560" height="41"/>
                                                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <state key="normal" title="Foto hinzufügen"/>
@@ -1071,7 +1066,7 @@
                                                                 <action selector="presentCamera:" destination="Mg7-DT-c0Y" eventType="touchUpInside" id="9Gv-zh-Ibc"/>
                                                             </connections>
                                                         </button>
-                                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C73-Pd-6ez">
+                                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C73-Pd-6ez">
                                                             <rect key="frame" x="560" y="0.0" width="0.0" height="41"/>
                                                             <state key="normal" title="Foto entfernen">
                                                                 <color key="titleColor" red="0.81568627449999997" green="0.0078431372550000003" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1192,7 +1187,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gaw-Ci-zWg">
                                 <rect key="frame" x="220" y="72" width="160" height="98.5"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bc9-fT-VQr" customClass="DrugCustomaziationView" customModule="Medications" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bc9-fT-VQr" customClass="DrugCustomaziationView" customModule="Medications" customModuleProvider="target">
                                         <rect key="frame" x="45" y="0.0" width="70" height="70"/>
                                         <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -1211,7 +1206,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywb-nr-jeX">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywb-nr-jeX">
                                         <rect key="frame" x="59" y="78" width="42" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1274,8 +1269,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H8g-aO-Pmw" customClass="DrugCustomaziationView" customModule="Medications" customModuleProvider="target">
-                                <rect key="frame" x="255" y="76" width="90" height="90"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8g-aO-Pmw" customClass="DrugCustomaziationView" customModule="Medications" customModuleProvider="target">
+                                <rect key="frame" x="255" y="32" width="90" height="90"/>
                                 <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="lep-yj-zUx"/>
@@ -1296,11 +1291,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="R6K-eX-3q9">
-                                <rect key="frame" x="0.0" y="178" width="600" height="289"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="R6K-eX-3q9">
+                                <rect key="frame" x="0.0" y="134" width="600" height="289"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Form" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hb9-pd-NY9">
-                                        <rect key="frame" x="12" y="0.0" width="576" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Form" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hb9-pd-NY9">
+                                        <rect key="frame" x="12" y="0.0" width="576" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1308,9 +1303,12 @@
                                             <rect key="frame" x="12" y="0.0" width="376" height="20.5"/>
                                         </variation>
                                     </label>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ag4-hF-y8m">
-                                        <rect key="frame" x="2" y="36.5" width="596.5" height="90"/>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ag4-hF-y8m">
+                                        <rect key="frame" x="0.0" y="37" width="600" height="90"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="90" id="88p-2b-MuM"/>
+                                        </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="3" minimumInteritemSpacing="3" id="jRr-Eb-Ltp">
                                             <size key="itemSize" width="90" height="90"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -1361,7 +1359,7 @@
                                         </connections>
                                     </collectionView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Farbe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WgM-kE-J7e">
-                                        <rect key="frame" x="12" y="142.5" width="576" height="20.5"/>
+                                        <rect key="frame" x="12" y="143" width="576" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1372,7 +1370,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sXM-71-0Iu">
                                         <rect key="frame" x="30" y="179" width="540" height="110"/>
                                         <subviews>
-                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="wLU-j4-VLL" customClass="RGBColorSlider">
+                                            <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="wLU-j4-VLL" customClass="RGBColorSlider">
                                                 <rect key="frame" x="-2" y="0.0" width="544" height="31"/>
                                                 <variation key="widthClass=compact" fixedFrame="YES">
                                                     <rect key="frame" x="-2" y="0.0" width="344" height="31"/>
@@ -1384,7 +1382,7 @@
                                                     <action selector="redChanged:" destination="fSJ-vm-eCx" eventType="valueChanged" id="0Ub-0d-oSF"/>
                                                 </connections>
                                             </slider>
-                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="F0E-dP-rJj" customClass="RGBColorSlider">
+                                            <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="F0E-dP-rJj" customClass="RGBColorSlider">
                                                 <rect key="frame" x="-2" y="40" width="544" height="31"/>
                                                 <variation key="widthClass=compact" fixedFrame="YES">
                                                     <rect key="frame" x="-2" y="40" width="344" height="31"/>
@@ -1396,7 +1394,7 @@
                                                     <action selector="greenChanged:" destination="fSJ-vm-eCx" eventType="valueChanged" id="Dbq-7r-4UV"/>
                                                 </connections>
                                             </slider>
-                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fWZ-wG-6we" customClass="RGBColorSlider">
+                                            <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fWZ-wG-6we" customClass="RGBColorSlider">
                                                 <rect key="frame" x="-2" y="80" width="544" height="31"/>
                                                 <variation key="widthClass=compact" fixedFrame="YES">
                                                     <rect key="frame" x="-2" y="80" width="344" height="31"/>
@@ -1421,6 +1419,7 @@
                                 <constraints>
                                     <constraint firstItem="sXM-71-0Iu" firstAttribute="leading" secondItem="R6K-eX-3q9" secondAttribute="leading" constant="30" id="7CV-Wx-r9i"/>
                                     <constraint firstItem="hb9-pd-NY9" firstAttribute="leading" secondItem="R6K-eX-3q9" secondAttribute="leading" constant="12" id="7Q6-tI-zbH"/>
+                                    <constraint firstItem="Ag4-hF-y8m" firstAttribute="width" secondItem="R6K-eX-3q9" secondAttribute="width" id="9CA-GZ-VsO"/>
                                     <constraint firstItem="WgM-kE-J7e" firstAttribute="leading" secondItem="R6K-eX-3q9" secondAttribute="leading" constant="12" id="Ai4-OA-YUw"/>
                                     <constraint firstAttribute="trailing" secondItem="hb9-pd-NY9" secondAttribute="trailing" constant="12" id="B5K-ZM-nHO"/>
                                     <constraint firstAttribute="trailing" secondItem="WgM-kE-J7e" secondAttribute="trailing" constant="12" id="KYd-jh-Q6g"/>
@@ -1474,6 +1473,8 @@
         <image name="glyphicons-231-moon-color" width="21" height="24"/>
         <image name="glyphicons-46-calendar" width="48" height="48"/>
         <image name="glyphicons-493-medicine" width="48" height="48"/>
+        <image name="icon-ios7-minus-outline" width="36" height="37"/>
+        <image name="icon-ios7-plus" width="37" height="37"/>
         <image name="pill" width="42" height="42"/>
     </resources>
     <inferredMetricsTieBreakers>

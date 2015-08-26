@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		942379281B8DD0F400FD8165 /* DrugEnum+ImageRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942379271B8DD0F400FD8165 /* DrugEnum+ImageRender.swift */; settings = {ASSET_TAGS = (); }; };
 		942D38EE1B787EB200553C79 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942D38ED1B787EB200553C79 /* CoreDataStack.swift */; };
 		942D38F71B78813E00553C79 /* ManagedObjectContextSettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942D38F61B78813E00553C79 /* ManagedObjectContextSettable.swift */; };
 		942D38FB1B78855600553C79 /* UITabBarViewControllerCoreDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942D38FA1B78855600553C79 /* UITabBarViewControllerCoreDataExtension.swift */; };
@@ -133,6 +134,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		942379271B8DD0F400FD8165 /* DrugEnum+ImageRender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DrugEnum+ImageRender.swift"; sourceTree = "<group>"; };
 		942D38ED1B787EB200553C79 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataStack.swift; path = ../model/CoreDataStack.swift; sourceTree = "<group>"; };
 		942D38F61B78813E00553C79 /* ManagedObjectContextSettable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectContextSettable.swift; sourceTree = "<group>"; };
 		942D38FA1B78855600553C79 /* UITabBarViewControllerCoreDataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBarViewControllerCoreDataExtension.swift; sourceTree = "<group>"; };
@@ -466,6 +468,7 @@
 			isa = PBXGroup;
 			children = (
 				94D1E6081B7A4B0200B0CD7D /* DrugRenderEnum.swift */,
+				942379271B8DD0F400FD8165 /* DrugEnum+ImageRender.swift */,
 			);
 			name = Pill/Drug;
 			sourceTree = "<group>";
@@ -677,6 +680,7 @@
 				94CA619F1B7F491800FF27F0 /* DrugDetailViewController.swift in Sources */,
 				94D1E5F51B78F53700B0CD7D /* UINavigationControllerCoreDataExtension.swift in Sources */,
 				947F02341B81CD43006D9C7E /* FetchedResultsCollectionViewDataSourceDelegate.swift in Sources */,
+				942379281B8DD0F400FD8165 /* DrugEnum+ImageRender.swift in Sources */,
 				944B2B071B8CAE220098E1EA /* TimeOfDay.swift in Sources */,
 				94D6D8A71B83584100DD5F2D /* DrugDBService.swift in Sources */,
 				94D1E6061B7A3C3200B0CD7D /* UIColorPainCodeExtension.swift in Sources */,

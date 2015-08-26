@@ -76,7 +76,7 @@ class CoustomDrugViewController: UIViewController, DrugSettable, UICollectionVie
     
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let pillKind = DrugRenderEnum(rawValue: indexPath.row)
+        let pillKind = DrugEnum(rawValue: indexPath.row)
         drugView.drugKind = pillKind
         drug.setDrugRenderEnum(pillKind)
     }

@@ -17,7 +17,7 @@ class DrugCustomaziationView: RoundView {
         }
     }
     
-    @IBInspectable var drugKind: DrugRenderEnum? {
+    @IBInspectable var drugKind: DrugEnum? {
         didSet {
             setNeedsDisplay()
         }
@@ -32,7 +32,7 @@ class DrugCustomaziationView: RoundView {
     }
     
     func configureWithDrug(drug:Drug) {
-        drugKind = drug.getDrugRenderType()
+        drugKind = drug.type
         pillBaseColor = drug.color
     }
 }

@@ -14,13 +14,14 @@ extension CoustomDrugViewController: UICollectionViewDataSource {
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return DrugRenderEnum.count
+        let count = DrugEnum.count
+        return count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("coustom-pill-cell", forIndexPath: indexPath)
         if let cell = cell as? CustomPillCell {
-            let pillKind = DrugRenderEnum(rawValue: indexPath.row)
+            let pillKind = DrugEnum(rawValue: indexPath.row)
             cell.pillView.drugKind = pillKind
             cell.pillView.pillBaseColor = rgbColor
         }

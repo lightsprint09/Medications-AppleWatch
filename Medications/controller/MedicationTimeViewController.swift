@@ -26,6 +26,7 @@ class MedicationTimeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         executionTime = medication.managedObjectContext!.insertObject() as ExecutionTime
+        executionTime.medication = medication
         executionTime.creationDate = NSDate()
         executionTime.assignmentDate = timePicker.date
     }

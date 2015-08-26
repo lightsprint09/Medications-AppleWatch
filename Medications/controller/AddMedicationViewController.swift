@@ -24,6 +24,7 @@ class AddMedicationViewController: UIViewController, ManagedObjectContextSettabl
     var selectedDrug:Drug?{
         didSet {
             createMedicationFetch()
+            medication.drug = selectedDrug
         }
     }
     
@@ -46,6 +47,10 @@ class AddMedicationViewController: UIViewController, ManagedObjectContextSettabl
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
         executionTimeDataSource = FetchedResultsDataSource(tableView: executionTimeTableView, fetchedResultsController: frc, delegate: executionTimeDataSourceDelegate)
         
+    }
+   
+    @IBAction func toggleDeleteInTableView(sender: AnyObject) {
+        executionTimeTableView.setEditing(!executionTimeTableView.editing, animated: true)
     }
     
     @IBAction func cancelAddMedication(sender: AnyObject) {

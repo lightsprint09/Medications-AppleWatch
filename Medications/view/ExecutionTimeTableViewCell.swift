@@ -24,8 +24,9 @@ class ExecutionTimeTableViewCell: UITableViewCell {
         ExecutionTimeTableViewCell.dateFormatter.dateFormat = "HH:mm"
         timeLabel.text = ExecutionTimeTableViewCell.dateFormatter.stringFromDate(execuitonTime.assignmentDate)
         dayTimeImageView.image = execuitonTime.timeOfDay.imageWithColor
-        if let amount = execuitonTime.amount?.doubleValue {
-            doseLabel.text = "\(amount) Tabletten"
+        
+        if let amount = execuitonTime.amount?.doubleValue, let drugType = execuitonTime.medication?.drug?.type {
+            doseLabel.text = "\(amount) " + drugType.unit(amount)
         }
         
     }

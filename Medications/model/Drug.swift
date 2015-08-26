@@ -26,18 +26,19 @@ class Drug: NSManagedObject {
         }
     }
     
-    func getDrugRenderType() -> DrugRenderEnum? {
-        if let type = imageKind {
-            return DrugRenderEnum(rawValue: type.integerValue)
+    var type: DrugEnum? {
+        get {
+            if let type = imageKind {
+                return DrugEnum(rawValue: type.integerValue)
+            }
+            return nil
         }
-        return nil
-    }
-    
-    func setDrugRenderEnum(kind:DrugRenderEnum?) {
-        if let kind = kind {
-            imageKind = NSNumber(integer: kind.rawValue)
-        }else {
-            imageKind = nil
+        set {
+            if let kind = newValue {
+                imageKind = NSNumber(integer: kind.rawValue)
+            }else {
+                imageKind = nil
+            }
         }
     }
 }
