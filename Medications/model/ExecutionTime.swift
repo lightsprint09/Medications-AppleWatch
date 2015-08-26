@@ -10,11 +10,25 @@ import Foundation
 import CoreData
 
 class ExecutionTime: NSManagedObject {
-
+    private static let dateFormatter = NSDateFormatter()
     var timeOfDay: TimeOfDay {
         get{
             return TimeOfDay(rawValue: self.assignmentTimeOfDay.integerValue)!
         }
+    }
+    
+    var amountUnitString: String? {
+        get{
+            if let amount = amount?.doubleValue, let drugType = medication?.drug?.type {
+                return "\(amount) " + drugType.unit(amount)
+            }
+            return nil
+        }
+    }
+    
+    var timeString: String {
+        ExecutionTime.dateFormatter.dateFormat = "HH:mm"
+        return ExecutionTime.dateFormatter.stringFromDate(assignmentDate)
     }
 
 }

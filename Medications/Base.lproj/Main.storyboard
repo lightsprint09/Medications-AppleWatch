@@ -41,7 +41,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="daytime-cell" id="H2n-Ra-c0Y" customClass="DaytimeCell" customModule="Medications" customModuleProvider="target">
-                                <rect key="frame" x="150" y="64" width="300" height="300"/>
+                                <rect key="frame" x="150" y="0.0" width="300" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
@@ -131,18 +131,70 @@
         <scene sceneID="NpN-lY-3MI">
             <objects>
                 <tableViewController title="Medikationplan" id="LQP-ve-NUB" customClass="MedicationTableViewController" customModule="Medications" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="v2S-ql-HY4">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="43" sectionFooterHeight="28" id="v2S-ql-HY4">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="eDs-SG-YpR">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="medication-cell" id="eDs-SG-YpR" customClass="MedicationTableCell" customModule="Medications" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="107" width="600" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eDs-SG-YpR" id="ajH-wf-Pba">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="63.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LvW-tm-rwK" customClass="DrugCustomaziationView" customModule="Medications" customModuleProvider="target">
+                                            <rect key="frame" x="8" y="0.0" width="64" height="64"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="64" id="VMn-lM-Cop"/>
+                                                <constraint firstAttribute="width" constant="64" id="Z3b-h2-11K"/>
+                                            </constraints>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aspirin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCz-Qz-OTI">
+                                            <rect key="frame" x="80" y="8" width="160" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="160" id="L8w-BE-cCX"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 Tabletten" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7kj-xQ-vku">
+                                            <rect key="frame" x="80" y="34" width="86.5" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="uL8-DM-DeO"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ss-jP-5Bh">
+                                            <rect key="frame" x="549" y="21.5" width="43" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="4Ss-jP-5Bh" secondAttribute="trailing" id="AQI-5Q-cga"/>
+                                        <constraint firstItem="LvW-tm-rwK" firstAttribute="top" secondItem="ajH-wf-Pba" secondAttribute="topMargin" constant="-8" id="Ypz-hU-5OF"/>
+                                        <constraint firstItem="LvW-tm-rwK" firstAttribute="leading" secondItem="ajH-wf-Pba" secondAttribute="leadingMargin" id="cLY-XV-I46"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="7kj-xQ-vku" secondAttribute="bottom" constant="0.5" id="cUI-2G-5Ns"/>
+                                        <constraint firstItem="7kj-xQ-vku" firstAttribute="top" secondItem="GCz-Qz-OTI" secondAttribute="bottom" constant="5" id="mb9-2r-uTu"/>
+                                        <constraint firstItem="7kj-xQ-vku" firstAttribute="leading" secondItem="GCz-Qz-OTI" secondAttribute="leading" id="pFR-so-gM3"/>
+                                        <constraint firstItem="GCz-Qz-OTI" firstAttribute="top" secondItem="ajH-wf-Pba" secondAttribute="topMargin" id="sb5-9V-oeg"/>
+                                        <constraint firstItem="4Ss-jP-5Bh" firstAttribute="centerY" secondItem="ajH-wf-Pba" secondAttribute="centerY" id="u7T-Uc-Kpp"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="LvW-tm-rwK" secondAttribute="bottom" constant="-8" id="xqb-z3-R98"/>
+                                        <constraint firstItem="GCz-Qz-OTI" firstAttribute="leading" secondItem="LvW-tm-rwK" secondAttribute="trailing" constant="8" symbolic="YES" id="zKj-Z7-qvS"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="drugNameLabel" destination="GCz-Qz-OTI" id="W5D-0R-yXV"/>
+                                    <outlet property="drugView" destination="LvW-tm-rwK" id="rZF-55-SOI"/>
+                                    <outlet property="timeLabel" destination="4Ss-jP-5Bh" id="BzK-Si-AKX"/>
+                                    <outlet property="unitCountLabel" destination="7kj-xQ-vku" id="Bvp-hW-JWJ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -480,7 +532,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zeit und Dosierung" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WhM-Ha-yVa">
                                                 <rect key="frame" x="0.0" y="0.0" width="480" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocJ-Xn-W7C">
@@ -537,7 +589,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Nm-dx-Emc">
                                                     <rect key="frame" x="119" y="11" width="42" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -584,7 +636,11 @@
                                 <action selector="cancelAddMedication:" destination="jeK-9w-xN6" id="F4a-qY-COl"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Speichern" id="gkj-8W-GNU"/>
+                        <barButtonItem key="rightBarButtonItem" title="Speichern" id="gkj-8W-GNU">
+                            <connections>
+                                <action selector="saveMedication:" destination="jeK-9w-xN6" id="bhw-iK-hHM"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="zeg-A1-OCe" id="26o-H6-FW9"/>
@@ -767,7 +823,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="2em-ch-BtY" kind="relationship" relationship="rootViewController" id="JhP-bD-suI"/>
+                        <segue destination="LQP-ve-NUB" kind="relationship" relationship="rootViewController" id="Bfn-Pt-O08"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aGE-Ur-A6v" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1291,7 +1347,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="R6K-eX-3q9">
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillProportionally" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="R6K-eX-3q9">
                                 <rect key="frame" x="0.0" y="134" width="600" height="289"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Form" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hb9-pd-NY9">
@@ -1478,7 +1534,7 @@
         <image name="pill" width="42" height="42"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="l9V-cm-q7R"/>
+        <segue reference="1ue-OZ-QHA"/>
         <segue reference="TJb-nM-l26"/>
         <segue reference="f7Q-im-pbD"/>
     </inferredMetricsTieBreakers>

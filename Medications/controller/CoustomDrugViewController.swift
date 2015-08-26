@@ -22,7 +22,7 @@ class CoustomDrugViewController: UIViewController, DrugSettable, UICollectionVie
     
     override func viewDidLoad() {
         drug.color = rgbColor
-        guard let drugKind = drug.getDrugRenderType(), let color = drug.color else{ return }
+        guard let drugKind = drug.type, let color = drug.color else{ return }
         drugView.drugKind = drugKind
         drugView.pillBaseColor = color
         redSlider.setValue(Float(color.red()), animated: false)
@@ -78,7 +78,7 @@ class CoustomDrugViewController: UIViewController, DrugSettable, UICollectionVie
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let pillKind = DrugEnum(rawValue: indexPath.row)
         drugView.drugKind = pillKind
-        drug.setDrugRenderEnum(pillKind)
+        drug.type = pillKind
     }
     
     let sliderDelegate = RGBColorSliderDelegate()

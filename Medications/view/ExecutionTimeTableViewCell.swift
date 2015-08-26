@@ -9,7 +9,6 @@
 import UIKit
 
 class ExecutionTimeTableViewCell: UITableViewCell {
-    private static let dateFormatter = NSDateFormatter()
     
     @IBOutlet weak var dayTimeImageView: UIImageView!
     @IBOutlet weak var timeLabel: UILabel!
@@ -21,14 +20,9 @@ class ExecutionTimeTableViewCell: UITableViewCell {
     }
     
     func configurWithExecutionTime(execuitonTime:ExecutionTime) {
-        ExecutionTimeTableViewCell.dateFormatter.dateFormat = "HH:mm"
-        timeLabel.text = ExecutionTimeTableViewCell.dateFormatter.stringFromDate(execuitonTime.assignmentDate)
+        timeLabel.text = execuitonTime.timeString
         dayTimeImageView.image = execuitonTime.timeOfDay.imageWithColor
-        
-        if let amount = execuitonTime.amount?.doubleValue, let drugType = execuitonTime.medication?.drug?.type {
-            doseLabel.text = "\(amount) " + drugType.unit(amount)
-        }
-        
+        doseLabel.text = execuitonTime.amountUnitString
     }
 
 }

@@ -28,6 +28,21 @@ enum TimeOfDay: Int {
         return Night
     }
     
+    var toString: String {
+        get{
+            switch(self) {
+            case .Morning:
+                return "Morgen"
+            case .Noon:
+                return "Mittag"
+            case .Evening:
+                return "Abend"
+            case .Night:
+                return "Nacht"
+            }
+        }
+    }
+    
     var startDate:NSDate {
         get{
             switch(self) {

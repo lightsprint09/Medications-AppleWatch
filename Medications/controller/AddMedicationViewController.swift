@@ -52,10 +52,15 @@ class AddMedicationViewController: UIViewController, ManagedObjectContextSettabl
     @IBAction func toggleDeleteInTableView(sender: AnyObject) {
         executionTimeTableView.setEditing(!executionTimeTableView.editing, animated: true)
     }
+    @IBAction func saveMedication(sender: AnyObject) {
+        managedObjectContext.saveOrRollback()
+        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
     
     @IBAction func cancelAddMedication(sender: AnyObject) {
-        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
         managedObjectContext.rollback()
+        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
