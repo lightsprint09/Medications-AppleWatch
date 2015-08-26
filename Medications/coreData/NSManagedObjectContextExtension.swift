@@ -16,24 +16,25 @@ extension NSManagedObjectContext {
     
     public func saveOrRollback() {
         do {
-        try save()
-    } catch {
-        print("Rollback")
+            try save()
+        } catch  {
+        print(error)
             rollback()
         }
     }
     
     public func performChanges(block: () -> ()) {
-            performBlock {
-        block()
-        self.saveOrRollback()
-            }
+        performBlock {
+            block()
+            self.saveOrRollback()
+        }
     }
     
     public func createPersistentObject<A: NSManagedObject >(setupBlock:(A)->()) -> A {
         let object = insertObject() as A
         setupBlock(object)
         saveOrRollback()
+        
         return object
     }
 }

@@ -17,7 +17,13 @@ class AddDrugViewController: UIViewController, ManagedObjectContextSettable, UII
     @IBOutlet weak var plusLabel: UILabel!
     @IBOutlet weak var addStructureButton: UIButton!
     
-    var managedObjectContext:NSManagedObjectContext!
+    var managedObjectContext:NSManagedObjectContext! {
+        didSet {
+            let context = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.MainQueueConcurrencyType)
+            context.parentContext = managedObjectContext
+            managedObjectContext = context
+        }
+    }
     var drug:Drug!
     
     lazy var cameraUI = UIImagePickerController()
@@ -30,7 +36,7 @@ class AddDrugViewController: UIViewController, ManagedObjectContextSettable, UII
     }
     
     override func viewWillAppear(animated: Bool) {
-        guard let _ = drug.getDrugRenderType(), let _ = drug.color else{ return }
+        guard let _ = drug.type, let _ = drug.color else{ return }
         addStructureButton.titleLabel?.text = "Form ändern"
         plusLabel.hidden = true
         
