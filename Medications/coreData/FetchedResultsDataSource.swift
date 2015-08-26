@@ -51,6 +51,11 @@ class FetchedResultsDataSource<D: FetchedResultsDataSourceDelegate>:NSObject, UI
         return fetchedResultsController.sections?.count ?? 1
     }
     
+    @objc func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    
     func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
         
         switch(type) {

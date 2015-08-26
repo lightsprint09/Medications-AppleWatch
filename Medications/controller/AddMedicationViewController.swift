@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class AddMedicationViewController: UIViewController, ManagedObjectContextSettable, UICollectionViewDelegate {
+class AddMedicationViewController: UIViewController, ManagedObjectContextSettable, UICollectionViewDelegate, UITableViewDelegate {
     var managedObjectContext: NSManagedObjectContext!
     var drugDataSource: FetchedResultsCollectionViewController<AddMedicationViewController>?
     var executionTimeDataSource: FetchedResultsDataSource<ExecutionTimeTableViewDataSourceDelegate>?
@@ -35,11 +35,14 @@ class AddMedicationViewController: UIViewController, ManagedObjectContextSettabl
         medication = managedObjectContext.insertObject() as Medication
         let frc = NSFetchedResultsController(fetchRequest: drugService.sortedFetchRequest(), managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
         drugDataSource = FetchedResultsCollectionViewController(collectionView: collectionView, fetchedResultsController: frc, delegate: self)
+        
     }
+    
     
     func createMedicationFetch() {
         let fetchRequest = NSFetchRequest(entityName: ExecutionTime.entityName)
-        fetchRequest.sortDescriptors = []
+        let sortDiscriptor = NSSortDescriptor(key: "assignmentDate", ascending: true)
+        fetchRequest.sortDescriptors = [sortDiscriptor]
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
         executionTimeDataSource = FetchedResultsDataSource(tableView: executionTimeTableView, fetchedResultsController: frc, delegate: executionTimeDataSourceDelegate)
         

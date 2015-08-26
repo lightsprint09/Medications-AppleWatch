@@ -62,11 +62,11 @@ enum TimeOfDay: Int {
         get{
             switch(self) {
             case .Morning:
-                return UIImage(named: "glyphicons-232-sun-color")!
+                return UIImage(named: "glyphicons-232-sunrise-color")!
             case .Noon:
                 return UIImage(named: "glyphicons-232-sun-color")!
             case .Evening:
-                return UIImage(named: "glyphicons-232-sun-color")!
+                return UIImage(named: "glyphicons-232-sunset-color")!
             case .Night:
                 return UIImage(named: "glyphicons-231-moon-color")!
             }
