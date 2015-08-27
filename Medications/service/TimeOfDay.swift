@@ -43,6 +43,21 @@ enum TimeOfDay: Int {
         }
     }
     
+    var colorRepresentation: UIColor {
+        get {
+            switch(self) {
+            case .Morning:
+                return UIColor(red:248 / 255.0, green:96 / 255.0, blue:100 / 255.0, alpha:1.0)
+            case .Noon:
+                return UIColor(red:248 / 255.0, green:123 / 255.0, blue:53 / 255.0, alpha:1.0)
+            case .Evening:
+                return UIColor(red:102 / 255.0, green:86 / 255.0, blue:219 / 255.0, alpha:1.0)
+            case .Night:
+                return UIColor(red:25 / 255.0, green:17 / 255.0, blue:83 / 255.0, alpha:1.0)
+            }
+        }
+    }
+    
     var startDate:NSDate {
         get{
             switch(self) {

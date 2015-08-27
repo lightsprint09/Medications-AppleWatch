@@ -15,7 +15,6 @@ class AddMedicationViewController: UIViewController, ManagedObjectContextSettabl
     var executionTimeDataSource: FetchedResultsDataSource<ExecutionTimeTableViewDataSourceDelegate>?
     let drugService = DrugDBService()
     var repeatEventCreator = RepeatEventCreator()
-    let daytimeDataSource = DayTimeSource()
     var medication: Medication!
     let executionTimeDataSourceDelegate = ExecutionTimeTableViewDataSourceDelegate()
     
@@ -44,6 +43,7 @@ class AddMedicationViewController: UIViewController, ManagedObjectContextSettabl
         let fetchRequest = NSFetchRequest(entityName: ExecutionTime.entityName)
         let sortDiscriptor = NSSortDescriptor(key: "assignmentDate", ascending: true)
         fetchRequest.sortDescriptors = [sortDiscriptor]
+        fetchRequest.predicate = NSPredicate(format: "medication == %@", medication)
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
         executionTimeDataSource = FetchedResultsDataSource(tableView: executionTimeTableView, fetchedResultsController: frc, delegate: executionTimeDataSourceDelegate)
         

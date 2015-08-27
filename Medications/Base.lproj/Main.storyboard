@@ -131,13 +131,13 @@
         <scene sceneID="NpN-lY-3MI">
             <objects>
                 <tableViewController title="Medikationplan" id="LQP-ve-NUB" customClass="MedicationTableViewController" customModule="Medications" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="43" sectionFooterHeight="28" id="v2S-ql-HY4">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="32" sectionFooterHeight="28" id="v2S-ql-HY4">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="medication-cell" id="eDs-SG-YpR" customClass="MedicationTableCell" customModule="Medications" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="107" width="600" height="64"/>
+                                <rect key="frame" x="0.0" y="96" width="600" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eDs-SG-YpR" id="ajH-wf-Pba">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="63.5"/>
@@ -147,7 +147,6 @@
                                             <rect key="frame" x="8" y="0.0" width="64" height="64"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="64" id="VMn-lM-Cop"/>
                                                 <constraint firstAttribute="width" constant="64" id="Z3b-h2-11K"/>
                                             </constraints>
                                         </view>
@@ -319,9 +318,9 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Neues Medikament" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kD-R8-ob2">
-                                            <rect key="frame" x="0.0" y="57" width="113" height="38"/>
+                                            <rect key="frame" x="0.0" y="55" width="113" height="42"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="38" id="0mY-Kt-ntZ"/>
+                                                <constraint firstAttribute="height" constant="42" id="0mY-Kt-ntZ"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -331,7 +330,7 @@
                                     <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <gestureRecognizers/>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="6kD-R8-ob2" secondAttribute="bottom" id="9CA-eF-l2C"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="6kD-R8-ob2" secondAttribute="bottom" constant="-2" id="9CA-eF-l2C"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="ZRK-Vy-ejA" secondAttribute="trailing" constant="-8" id="IEG-bs-ObE"/>
                                         <constraint firstItem="ZRK-Vy-ejA" firstAttribute="leading" secondItem="22s-6H-HeP" secondAttribute="leadingMargin" constant="-8" id="PzT-mM-zza"/>
                                         <constraint firstItem="6kD-R8-ob2" firstAttribute="leading" secondItem="22s-6H-HeP" secondAttribute="leadingMargin" constant="-8" id="QNw-5I-6SJ"/>

@@ -19,7 +19,7 @@ extension NSManagedObjectContext {
             try save()
         } catch  {
         print(error)
-            rollback()
+            //rollback()
         }
     }
     

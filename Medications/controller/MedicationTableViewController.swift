@@ -34,9 +34,10 @@ class MedicationTableViewController: UITableViewController, ManagedObjectContext
     }
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 34))
+        let view = MedicationHeaderView(frame: CGRect(x: 0, y: 0, width: 300, height: 32))
         let timeOfDay = dataSource?.objectAtIndexPath(NSIndexPath(forRow: 0, inSection: section)).timeOfDay
-        label.text = timeOfDay?.toString
-        return label
+        view.configureWithTimeOfDay(timeOfDay!)
+        view.backgroundColor = UIColor(red:240 / 255.0, green:240 / 255.0, blue:240 / 255.0, alpha:1.0)
+        return view
     }
 }
