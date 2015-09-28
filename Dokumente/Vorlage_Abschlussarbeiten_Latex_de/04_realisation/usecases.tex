@@ -1,0 +1,13 @@
+\begin{usecase}
+\addtitle{Usecase 1}{Der Patient wird an ein Medikament erinnert}
+\addfield{Primaerer Akteur}{Patient}
+\addfield{Beschreibung}{Ein Erinnerungs Pop-Up erscheint auf dem Display und es wird ein Signal/eine Vibration ausgelost. Das Pop-Up zeigt ein Abbild des Medikaments, dessen Namen und die Uhrzeit, zu der es eingenommen werden soll.}
+\addfield{Vorbedingung}{Es wurde ein Medikationsplan aus der DB auf die Uhr geladen.}
+\additemizedfield{Ablauf}{
+\item Das Pop-Up mit der Erinnerung erscheint auf dem Smartwatch-Display. Die Erinnerung beinhaltet Informationen zur Uhrzeit, Menge und Art der Medikation
+\item Der Patient bestätigt, dass er das Medikament genommen hat
+\item Gerät bestätigt visuell dass der Patient das Medikament als genommen markiert hat
+}
+\additemizedfield{Alternativablauf}{
+\item Das Pop-Up mit der Erinnerung erscheint auf dem Smartwatch-Display\item Der Patient drückt den Button mit dem Uhr-Symbol\item Auf einem zusätzlichem Dialog erscheint eine Überschrift: “Erinnerung verschieben um:” und eine Liste mit den möglichen Optionen:-15 Minuten-1 Stunde-nicht mehr erinnern}
+\end{usecase}
