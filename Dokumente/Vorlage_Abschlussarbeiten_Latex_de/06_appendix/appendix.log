@@ -1,0 +1,31 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.13 (TeX Live 2013/dev) (format=pdflatex 2013.5.4)  17 NOV 2013 12:07
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**appendix.tex
+(./appendix.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, po
+lish, russian, ukrainian, afrikaans, bokmal, nynorsk, romansh, turkish, kurmanj
+i, icelandic, irish, esperanto, indonesian, armenian, slovak, friulan, danish, 
+latin, german, ngerman, swissgerman, slovenian, galician, bulgarian, estonian, 
+coptic, spanish, ukenglish, usenglishmax, swedish, romanian, pinyin, ibycus, mo
+ngolian, mongolianlmc, uppersorbian, basque, dutch, piedmontese, croatian, fren
+ch, portuguese, interlingua, greek, czech, german-x-2012-05-30, ngerman-x-2012-
+05-30, catalan, finnish, serbian, serbianc, welsh, hungarian, italian, loaded.
+)
+! Emergency stop.
+<*> appendix.tex
+                
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 5 strings out of 493593
+ 137 string characters out of 3147882
+ 47806 words of memory out of 3000000
+ 3385 multiletter control sequences out of 15000+200000
+ 3640 words of font info for 14 fonts, out of 3000000 for 9000
+ 953 hyphenation exceptions out of 8191
+ 5i,0n,1p,93b,8s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!

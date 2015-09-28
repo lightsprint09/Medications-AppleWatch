@@ -1,0 +1,152 @@
+%%
+% ----------------------------------------------------------------------------
+% "THE BEER-WARE LICENSE" (Revision 42):
+% <sebastian.rauh@hs-heilbronn.de/michael.bauer@hs-heilbronn.de> wrote this 
+% file. As long as you retain this notice you can do whatever you want with 
+% this stuff. If we meet some day, and you think this stuff is worth it, you 
+% can buy us a beer in return. 
+% Michael Lukas Bauer, Sebastian Felix Rauh
+% ----------------------------------------------------------------------------
+%%
+
+\documentclass[
+	12pt,
+	BCOR=10mm,
+	listof=totoc,
+	bibliography=totoc
+	]
+{scrbook} %BCOR = Binderandkorrekur, in Druckerrei vor Druck nachfragen wie breit
+\usepackage{mathptmx} % - sets \rmdefault to 'ptm', i.e. times
+\usepackage[utf8]{inputenc}
+\usepackage{parskip}
+\usepackage[english,ngerman]{babel}
+\usepackage{amsmath,amssymb,amstext}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{fancyhdr}
+\usepackage[bookmarksopenlevel=section]{hyperref}
+\usepackage[toc]{glossaries}
+\usepackage{cite}
+\usepackage{multicol}
+\usepackage{listings}
+\usepackage[svgnames]{xcolor}
+
+% Globals
+\newcommand{\autor}{NAME}
+\newcommand{\titel}{Titel der Arbeit}
+\newcommand{\supervisor}{Prof. Dr.-Ing. Gerrit Meixner}
+\newcommand{\reviewer}{Prof. Dr. Mika Musterperson}
+\newcommand{\matriculationNo}{123456}
+
+% Definition XML als Sprache
+\lstdefinestyle{XML} {
+    language=XML,
+    extendedchars=true,
+    %xleftmargin=21pt,
+    frame=single,
+    %framexleftmargin=20pt,
+    numbers=left,
+    numberstyle=\footnotesize\ttfamily\color{Black}, 
+    breaklines=true,
+    breakatwhitespace=true,
+    emph={},
+    emphstyle=\color{Red},
+    basicstyle=\ttfamily\color{Black},
+    columns=fullflexible,
+    commentstyle=\color{Green}\upshape,
+    morestring=[b]",
+    morecomment=[s]{<?}{?>},
+    morecomment=[s][\color{Green}]{<!--}{-->},
+    keywordstyle=\color{Red},
+    stringstyle=\ttfamily\color{Blue}\normalfont,
+    tagstyle=\color{Maroon}\bf,
+    morekeywords={attribute,xmlns,version,type,release,name,use,elementFormDefault,attributeFormDefault,maxOccurs},
+    otherkeywords={xmlns:xs},
+}
+
+% Header and Footer
+\pagestyle{fancy}
+\fancyhf{} % clear the headers
+\fancyhead[LE,RO]{%
+   % We want italics
+   \itshape   
+   \leftmark
+   % The chapter title
+   }
+\fancyfoot[LE,RO]{\thepage}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+
+% Font Times New Roman
+\renewcommand{\familydefault}{ptm} % using \rmdefault here doesn't work
+
+% PDF Property
+\hypersetup{
+	pdftitle={\titel},
+	pdfsubject={},
+	pdfauthor={\autor},
+	pdfkeywords={},
+}
+
+% Bibliography
+\bibliographystyle{acm}
+
+% Glossary
+\makeglossaries
+\glossarystyle{list}
+
+\begin{document}
+
+% Sprache
+\selectlanguage{ngerman}
+
+\begin{titlepage}
+	\input{00_title/titlepage.tex}
+\end{titlepage} 
+
+\frontmatter
+
+\tableofcontents
+
+\listoffigures
+
+\listoftables
+
+\input{07_glossary/glossary.tex}
+\twocolumn
+\printglossaries
+
+\onecolumn
+\mainmatter
+\chapter{Einleitung}
+\label{ch:introduction}
+ 	\input{01_introduction/introduction.tex}
+  
+\chapter{Stand der Wissenschaft}
+\label{ch:state-art}
+ 	\input{02_stateArt/stateArt.tex}
+
+\chapter{Problemstellung, Ziele und Vorgehensweise}
+\label{ch:probs-obs-procs}
+ 	\input{03_probsObsProcs/probsObsProcs.tex}
+ 	
+\chapter{Umsetzung}
+\label{ch:realisation}
+ 	\input{04_realisation/realisation.tex}
+ 	
+\chapter{Zusammenfassung, Evaluation und Ausblick}
+\label{ch:summ-eva-outl}
+ 	\input{05_summEvaOutl/summEvaOutl.tex}
+
+\twocolumn 
+\bibliography{06_appendix/03_bibliography/bib}
+
+\onecolumn
+\appendix 	
+\chapter{Appendix}
+\label{ch:appendix}
+ 	\input{06_appendix/appendix.tex} 
+ 		
+\chapter{Dokumentation}
+\label{ch:documentation}
+ 	%\input{06_appendix/appendix.tex} 
+\end{document}

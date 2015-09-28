@@ -1,0 +1,232 @@
+% This file was created with JabRef 2.9.2.
+% Encoding: Cp1252
+
+@PATENT{2007,
+  nationality = {USA},
+  number = {US 2007/0211081 A1},
+  year = {2007},
+  author = {Quadling t al.},
+  title = {Augmented Reality System for a Dental Laboratory},
+  language = {ENG},
+  assignee = {D4D Technologies, LLC, Richardson, TX (US)},
+  address = {Law Office of David H. Judson, 15950 Dallas Parkway, Suite 225, Dallas
+	TX 75248 (US)},
+  day = {13},
+  month = {September},
+  abstract = {An augmented reality system for integrating video imagery of an actual
+	dental restoration into a computer implemented display of a model
+	that represents a preparation mesial distal neighbors and opposing
+	occlusion that has been generated from a 3D scan of a patient The
+	3D scan data may be generated at a dental office remote from a location
+	at which the augmented reality system is implemented In one embodiment
+	the 3D scan data is provided to the augmented reality system as a
+	digital impression},
+  keywords = {Augmented Reality, dental restoration, 3D scan, CAD},
+  timestamp = {2013.11.10}
+}
+
+@ARTICLE{Birkfellner2002,
+  author = {Birkfellner, W. and Figl, M. and Huber, K. and Watzinger, F. and
+	Wanschitz, F. and Hummel, J. and Hanel, R. and Greimel, W. and Homolka,
+	P. and Ewers, R. and Bergmann, H.},
+  title = {A head-mounted operating binocular for augmented reality visualization
+	in medicine - design and initial evaluation},
+  journal = {Medical Imaging, IEEE Transactions on},
+  year = {2002},
+  volume = {21},
+  pages = {991-997},
+  number = {8},
+  abstract = {Computer-aided surgery (CAS), the intraoperative application of biomedical
+	visualization techniques, appears to be one of the most promising
+	fields of application for augmented reality (AR), the display of
+	additional computer-generated graphics over a real-world scene. Typically
+	a device such as a head-mounted display (HMD) is used for AR. However,
+	considerable technical problems connected with AR have limited the
+	intraoperative application of HMDs up to now. One of the difficulties
+	in using HMDs is the requirement for a common optical focal plane
+	for both the realworld scene and the computer-generated image, and
+	acceptance of the HMD by the user in a surgical environment. In order
+	to increase the clinical acceptance of AR, we have adapted the Varioscope
+	(Life Optics, Vienna), a miniature, cost-effective head-mounted operating
+	binocular, for AR. In this paper, we present the basic design of
+	the modified HMD, and the method and results of an extensive laboratory
+	study for photogrammetric calibration of the Varioscope's computer
+	displays to a real-world scene. In a series of 16 calibrations with
+	varying zoom factors and object distances, mean calibration error
+	was found to be 1.24 ± 0.38 pixels or 0.12 ± 0.05 mm for a 640 ×
+	480 display. Maximum error accounted for 3.33 ± 1.04 pixels or 0.33
+	± 0.12 mm. The location of a position measurement probe of an optical
+	tracking system was transformed to the display with an error of less
+	than 1 mm in the real world in 56% of all cases. For the remaining
+	cases, error was below 2 mm. We conclude that the accuracy achieved
+	in our experiments is sufficient for a wide range of CAS applications.},
+  doi = {10.1109/TMI.2002.803099},
+  issn = {0278-0062},
+  keywords = {augmented reality;biomedical equipment;calibration;focal planes;helmet
+	mounted displays;medical image processing;optical tracking;photogrammetry;position
+	measurement;surgery;augmented reality visualization;clinical acceptance;common
+	optical focal plane;computer-aided surgery;computer-generated image;head-mounted
+	operating binocular;mean calibration error;medical instrumentation;object
+	distances;optical tracking system;photogrammetric calibration;real-world
+	scene;varioscope;zoom factors;Application software;Augmented reality;Biomedical
+	computing;Biomedical optical imaging;Calibration;Computer displays;Content
+	addressable storage;Layout;Surgery;Visualization;Calibration;Computer
+	Graphics;Depth Perception;Equipment Design;Equipment Failure Analysis;Imaging,
+	Three-Dimensional;Microscopy, Video;Microsurgery;Reproducibility
+	of Results;Sensitivity and Specificity;Subtraction Technique;Surgical
+	Equipment;User-Computer Interface;Video Recording}
+}
+
+@ARTICLE{Kenngott2013,
+  author = {Kenngott, HannesG. and Wagner, Martin and Gondan, Matthias and Nickel,
+	Felix and Nolden, Marco and Fetzer, Andreas and Weitz, JÃ¼rgen and
+	Fischer, Lars and Speidel, Stefanie and Meinzer, Hans-Peter and BÃ¶ckler,
+	Dittmar and BÃ¼chler, MarkusW. and MÃ¼ller-Stich, BeatP.},
+  title = {Real-time image guidance in laparoscopic liver surgery: first clinical
+	experience with a guidance system based on intraoperative CT imaging},
+  journal = {Surgical Endoscopy},
+  year = {2013},
+  pages = {1-8},
+  doi = {10.1007/s00464-013-3249-0},
+  issn = {0930-2794},
+  keywords = {Navigation; Liver surgery; Liver resection; Augmented reality; Intraoperative
+	imaging; Computer assistance},
+  language = {English},
+  publisher = {Springer US},
+  url = {http://dx.doi.org/10.1007/s00464-013-3249-0}
+}
+
+@ARTICLE{Lindstroem2012,
+  author = {Lindström, John and Hanken, Claas},
+  title = {Security Challenges and Selected Legal Aspects for Wearable Computing},
+  journal = {J. Inf. Technol. Res.},
+  year = {2012},
+  volume = {5},
+  pages = {68--87},
+  number = {1},
+  month = jan,
+  acmid = {2447286},
+  address = {Hershey, PA, USA},
+  doi = {10.4018/jitr.2012010104},
+  issn = {1938-7857},
+  issue_date = {January 2012},
+  keywords = {Alignment Problems, Legal Aspects, Pervasive Computing, Security Challenges,
+	Wearable Computing},
+  numpages = {20},
+  publisher = {IGI Global},
+  url = {http://dx.doi.org/10.4018/jitr.2012010104}
+}
+
+@ARTICLE{Ploder1995,
+  author = {Ploder, O. and Wagner, A. and Enislidis, G. and Ewers, R.},
+  title = {Computer-assisted intraoperative visualization of dental implants.
+	Augmented reality in medicine},
+  journal = {Radiologe},
+  year = {1995},
+  volume = {35},
+  pages = {569--572},
+  number = {9},
+  month = {Sep},
+  abstract = {In this paper, a recently developed computer-based dental implant
+	positioning system with an image-to-tissue interface is presented.
+	On a computer monitor or in a head-up display, planned implant positions
+	and the implant drill are graphically superimposed on the patient's
+	anatomy. Electromagnetic 3D sensors track all skull and jaw movements;
+	their signal feedback to the workstation induces permanent real-time
+	updating of the virtual graphics' position. An experimental study
+	and a clinical case demonstrates the concept of the augmented reality
+	environment--the physician can see the operating field and superimposed
+	virtual structures, such as dental implants and surgical instruments,
+	without loosing visual control of the operating field. Therefore,
+	the operation system allows visualization of CT planned implantposition
+	and the implementation of important anatomical structures. The presented
+	method for the first time links preoperatively acquired radiologic
+	data, planned implant location and intraoperative navigation assistance
+	for orthotopic positioning of dental implants.},
+  keywords = {dental implants, positioning system, HUD, electromagnetic sensor tracking,
+	see through}
+}
+
+@ARTICLE{Wacker2006,
+  author = {Wacker, Frank K. and Vogt, Sebastian and Khamene, Ali and Jesberger,
+	John A. and Nour, Sherif G. and Elgort, Daniel R. and Sauer, Frank
+	and Duerk, Jeffrey L. and Lewin, Jonathan S.},
+  title = {An Augmented Reality System for MR Image–guided Needle Biopsy: Initial
+	Results in a Swine Model},
+  journal = {Radiology},
+  year = {2006},
+  volume = {238},
+  pages = {497-504},
+  number = {2},
+  note = {PMID: 16436814},
+  abstract = {Purpose: To evaluate an augmented reality (AR) system in combination
+	with a 1.5-T closed-bore magnetic resonance (MR) imager as a navigation
+	tool for needle biopsies.
+	
+	
+	Materials and Methods: The experimental protocol had institutional
+	animal care and use committee approval. Seventy biopsies were performed
+	in phantoms by using 20 tube targets, each with a diameter of 6 mm,
+	and 50 virtual targets. The position of the needle tip in AR and
+	MR space was compared in multiple imaging planes, and virtual and
+	real needle tip localization errors were calculated. Ten AR-guided
+	biopsies were performed in three pigs, and the duration of each procedure
+	was determined. After successful puncture, the distance to the target
+	was measured on MR images. The confidence limits for the achieved
+	in-plane hit rate and for lateral deviation were calculated. A repeated
+	measures analysis of variance was used to determine whether the placement
+	error in a particular dimension (x, y, or z) differed from the others.
+	
+	
+	Results: For the 50 virtual targets, a mean error of 1.1 mm ± 0.5
+	(standard deviation) was calculated. A repeated measures analysis
+	of variance indicated no statistically significant difference (P
+	> .99) in the errors in any particular orientation. For the real
+	targets, all punctures were inside the 6-mm-diameter tube in the
+	transverse plane. The needle depth was within the target plane in
+	11 biopsy procedures; the mean distance to the center of the target
+	was 2.55 mm (95% confidence interval: 1.77 mm, 3.34 mm). For nine
+	biopsy procedures, the needle tip was outside the target plane, with
+	a mean distance to the edge of the target plane of 1.5 mm (range,
+	0.07–3.46 mm). In the animal experiments, the puncture was successful
+	in all 10 cases, with a mean target-needle distance of 9.6 mm ± 4.85.
+	The average procedure time was 18 minutes per puncture.
+	
+	
+	Conclusion: Biopsy procedures performed with a combination of a closed-bore
+	MR system and an AR system are feasible and accurate.},
+  doi = {10.1148/radiol.2382041441},
+  eprint = {http://pubs.rsna.org/doi/pdf/10.1148/radiol.2382041441},
+  keywords = {AR, HMD},
+  url = {http://pubs.rsna.org/doi/abs/10.1148/radiol.2382041441}
+}
+
+@ARTICLE{Wagner1997,
+  author = {Arne Wagner and Michael Rasse and Werner Millesi and Rolf Ewers},
+  title = {Virtual reality for orthognathic surgery: The augmented reality environment
+	concept },
+  journal = {Journal of Oral and Maxillofacial Surgery },
+  year = {1997},
+  volume = {55},
+  pages = {456 - 462},
+  number = {5},
+  abstract = {Purpose: The objective of this study was to apply virtual reality
+	technology to osteotomies of the facial skeleton. Materials and Methods:
+	Augmented reality can be considered a hybrid of virtual and real
+	environment spaces, which are coregistered and simultaneously visualized.
+	Using a see-through \{HMD\} (head-mounted display) and Interventional
+	Video Tomography intraoperatively, partial visual immersion into
+	a patient-related virtual data space augments the surgeon's perception
+	as shown in an experimental study and clinical applications. Results:
+	Without limiting the surgical judgment, offering continuous observation
+	of the operating field, the presented technology additionally provides
+	visual access to invisible data of anatomy, physiology, and function
+	and thus guarantees unencumbered and fluent surgery. Conclusion:
+	Despite current shortcomings, augmented reality technology proved
+	to be particularly well suited for use in osteotomies of the facial
+	skeleton. },
+  doi = {http://dx.doi.org/10.1016/S0278-2391(97)90689-3},
+  issn = {0278-2391},
+  url = {http://www.sciencedirect.com/science/article/pii/S0278239197906893}
+}
+

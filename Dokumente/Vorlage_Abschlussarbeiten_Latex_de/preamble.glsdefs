@@ -1,0 +1,360 @@
+\ifglsentryexists{pdc}{}%
+{%
+\gls@defglossaryentry{pdc}%
+{%
+name={PDC},%
+sort={PDC},%
+type={main},%
+first={Park Distance Control/Park Pilot (PDC)},%
+firstplural={Park Distance Control/Park Pilot (PDC)s},%
+text={PDC},%
+plural={PDCs},%
+description={Warning for obstacles in front and behind the car},%
+descriptionplural={Warning for obstacles in front and behind the car},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{sdw}{}%
+{%
+\gls@defglossaryentry{sdw}%
+{%
+name={SDW},%
+sort={SDW},%
+type={main},%
+first={Side Distance Warning (SDW)},%
+firstplural={Side Distance Warning (SDW)s},%
+text={SDW},%
+plural={SDWs},%
+description={Warning for obstacles in beside the car},%
+descriptionplural={Warning for obstacles in beside the car},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{nra}{}%
+{%
+\gls@defglossaryentry{nra}%
+{%
+name={NRA},%
+sort={NRA},%
+type={main},%
+first={Narrow Road Assist (NRA)},%
+firstplural={Narrow Road Assist (NRA)s},%
+text={NRA},%
+plural={NRAs},%
+description={Visualising PDC and SDW by taking the angle of steering lock respectively the driving tube into account},%
+descriptionplural={Visualising PDC and SDW by taking the angle of steering lock respectively the driving tube into account},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{psc}{}%
+{%
+\gls@defglossaryentry{psc}%
+{%
+name={PSC},%
+sort={PSC},%
+type={main},%
+first={Park Steer Control (PSC)},%
+firstplural={Park Steer Control (PSC)s},%
+text={PSC},%
+plural={PSCs},%
+description={Active steering into longitudinal parking spots},%
+descriptionplural={Active steering into longitudinal parking spots},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{cpsc}{}%
+{%
+\gls@defglossaryentry{cpsc}%
+{%
+name={CPSC},%
+sort={CPSC},%
+type={main},%
+first={Cross Park Steer Control (CPSC)},%
+firstplural={Cross Park Steer Control (CPSC)s},%
+text={CPSC},%
+plural={CPSCs},%
+description={Active steering into crosswise parking spots},%
+descriptionplural={Active steering into crosswise parking spots},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{parking spot measurement}{}%
+{%
+\gls@defglossaryentry{parking spot measurement}%
+{%
+name={Parking Spot Measurement},%
+sort={Parking Spot Measurement},%
+type={main},%
+first={Parking Spot Measurement},%
+firstplural={Parking Spot Measurements},%
+text={Parking Spot Measurement},%
+plural={Parking Spot Measurements},%
+description={Measurement and visualisation during the passing of the parking spot},%
+descriptionplural={Measurement and visualisation during the passing of the parking spot},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{poc}{}%
+{%
+\gls@defglossaryentry{poc}%
+{%
+name={POC first},%
+sort={POC first},%
+type={main},%
+first={POC first},%
+firstplural={POC firsts},%
+text={POC first},%
+plural={POC firsts},%
+description={Active steering during pull out of the car},%
+descriptionplural={Active steering during pull out of the car},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ps}{}%
+{%
+\gls@defglossaryentry{ps}%
+{%
+name={PS},%
+sort={PS},%
+type={main},%
+first={Park Stop (PS)},%
+firstplural={Park Stop (PS)s},%
+text={PS},%
+plural={PSs},%
+description={Regulation of speed by actively longitudinal plug breaking as an addition Feature to all Features except parking spot measurement},%
+descriptionplural={Regulation of speed by actively longitudinal plug breaking as an addition Feature to all Features except parking spot measurement},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{pba}{}%
+{%
+\gls@defglossaryentry{pba}%
+{%
+name={PBA},%
+sort={PBA},%
+type={main},%
+first={Park Brake Assist (PBA)},%
+firstplural={Park Brake Assist (PBA)s},%
+text={PBA},%
+plural={PBAs},%
+description={See Park Stop (PS)},%
+descriptionplural={See Park Stop (PS)},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{sva}{}%
+{%
+\gls@defglossaryentry{sva}%
+{%
+name={SVA},%
+sort={SVA},%
+type={main},%
+first={Side View Assist (SVA)},%
+firstplural={Side View Assist (SVA)s},%
+text={SVA},%
+plural={SVAs},%
+description={Observation of dead corners includes road work assist},%
+descriptionplural={Observation of dead corners includes road work assist},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{sdi}{}%
+{%
+\gls@defglossaryentry{sdi}%
+{%
+name={SDI},%
+sort={SDI},%
+type={main},%
+first={Side Distance Assist (SDA)},%
+firstplural={Side Distance Assist (SDA)s},%
+text={SDI},%
+plural={SDIs},%
+description={See Side View Assist},%
+descriptionplural={See Side View Assist},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{xml}{}%
+{%
+\gls@defglossaryentry{xml}%
+{%
+name={XML},%
+sort={XML},%
+type={main},%
+first={Extensible Markup Language (XML)},%
+firstplural={Extensible Markup Language (XML)s},%
+text={XML},%
+plural={XMLs},%
+description={A markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable. It is defined in the XML 1.0 Specification produced by the W3C, and several other related specifications, all free open standards},%
+descriptionplural={A markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable. It is defined in the XML 1.0 Specification produced by the W3C, and several other related specifications, all free open standards},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
