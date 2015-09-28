@@ -19,6 +19,7 @@ class MedicationTimeViewController: UIViewController {
         didSet {
             executionTime.amount = NSNumber(double: dose)
             doseTextField.text = "\(dose)"
+            fillSegementedDoseControll()
         }
     }
     
@@ -29,6 +30,15 @@ class MedicationTimeViewController: UIViewController {
         executionTime.medication = medication
         executionTime.creationDate = NSDate()
         executionTime.assignmentDate = timePicker.date
+        fillSegementedDoseControll()
+    }
+    
+    func fillSegementedDoseControll() {
+        guard let drugType = medication.drug?.type else { return }
+        doseSegementedControl.removeAllSegments()
+        for unit in  drugType.unitPreSets(Float(dose)).enumerate() {
+            doseSegementedControl.insertSegmentWithTitle("\(unit.element) " + drugType.unit(unit.element), atIndex: unit.index, animated: false)
+        }
     }
 
     @IBAction func dismissViewController(sender: AnyObject) {

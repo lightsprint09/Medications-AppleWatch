@@ -20,5 +20,9 @@ class AddDrugToMedicationCell: UICollectionViewCell {
     
     func showSelectedBadge(isSelected:Bool) {
         selectedView.hidden = !isSelected
+        
+        backgroundColor =  isSelected ? .greenColor() : nil
     }
+    
+    
 }

@@ -263,7 +263,7 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LWj-eO-2Hj" customClass="DrugCustomaziationView" customModule="Medications" customModuleProvider="target">
                                                     <rect key="frame" x="26" y="8" width="60" height="60"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="D8T-a2-rU1"/>
                                                         <constraint firstAttribute="width" constant="60" id="ja8-rI-Q5V"/>
@@ -765,7 +765,7 @@
                                 </subviews>
                             </stackView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="QZB-63-eDz">
-                                <rect key="frame" x="20" y="308" width="560" height="29"/>
+                                <rect key="frame" x="8" y="308" width="584" height="29"/>
                                 <segments>
                                     <segment title="½"/>
                                     <segment title="1"/>
@@ -778,12 +778,12 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="Mhu-Eb-yNO" secondAttribute="trailing" constant="21" id="Fo2-Tk-6Ao"/>
                             <constraint firstItem="vxA-za-gXn" firstAttribute="trailing" secondItem="fYt-lf-nop" secondAttribute="trailingMargin" id="NTL-Oe-2wk"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="QZB-63-eDz" secondAttribute="leading" id="OSN-I5-T1V"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="QZB-63-eDz" secondAttribute="leading" constant="12" id="OSN-I5-T1V"/>
                             <constraint firstItem="QZB-63-eDz" firstAttribute="top" secondItem="JAY-GE-UoF" secondAttribute="bottom" constant="8" id="Vaf-ac-Ff0"/>
                             <constraint firstItem="Mhu-Eb-yNO" firstAttribute="top" secondItem="vxA-za-gXn" secondAttribute="bottom" constant="8" symbolic="YES" id="Vf4-DX-8Ud"/>
                             <constraint firstItem="vxA-za-gXn" firstAttribute="top" secondItem="mc4-Xf-gbC" secondAttribute="bottom" constant="8" symbolic="YES" id="XFc-Tt-JOL"/>
                             <constraint firstItem="JAY-GE-UoF" firstAttribute="top" secondItem="Mhu-Eb-yNO" secondAttribute="bottom" constant="8" id="cHJ-AC-oeT"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="QZB-63-eDz" secondAttribute="trailing" id="iQ9-4a-gsG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QZB-63-eDz" secondAttribute="trailing" constant="-12" id="iQ9-4a-gsG"/>
                             <constraint firstItem="Mhu-Eb-yNO" firstAttribute="leading" secondItem="fYt-lf-nop" secondAttribute="leadingMargin" constant="21" id="p5r-m6-YGX"/>
                             <constraint firstItem="JAY-GE-UoF" firstAttribute="centerX" secondItem="fYt-lf-nop" secondAttribute="centerX" id="pNe-04-uUx"/>
                             <constraint firstItem="vxA-za-gXn" firstAttribute="leading" secondItem="fYt-lf-nop" secondAttribute="leadingMargin" id="r5T-5v-thi"/>

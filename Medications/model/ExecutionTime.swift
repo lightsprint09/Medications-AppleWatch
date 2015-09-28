@@ -19,7 +19,7 @@ class ExecutionTime: NSManagedObject {
     
     var amountUnitString: String? {
         get{
-            if let amount = amount?.doubleValue, let drugType = medication?.drug?.type {
+            if let amount = amount?.floatValue, let drugType = medication?.drug?.type {
                 return "\(amount) " + drugType.unit(amount)
             }
             return nil

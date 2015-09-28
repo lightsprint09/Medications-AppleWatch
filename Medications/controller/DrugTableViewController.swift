@@ -13,10 +13,6 @@ class DrugTableViewController: UITableViewController, ManagedObjectContextSettab
     var managedObjectContext: NSManagedObjectContext!
     var dataSource: FetchedResultsDataSource<DrugTableViewController>?
     let drugService = DrugDBService()
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
     
     override func viewDidLoad() {
         let frc = NSFetchedResultsController(fetchRequest: drugService.sortedFetchRequest(), managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
