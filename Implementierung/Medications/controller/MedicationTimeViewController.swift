@@ -10,33 +10,35 @@ import UIKit
 import CoreData
 
 class MedicationTimeViewController: UIViewController {
+    let executionTimeService = ExecutionTimeService()
+    
     var medication: Medication!
     var executionTime: ExecutionTime!
-    @IBOutlet weak var doseSegementedControl: UISegmentedControl!
-    @IBOutlet weak var doseTextField: UITextField!
-    @IBOutlet weak var timeOfDaySegmentedControl: UISegmentedControl!
-    var dose = 0.0 {
+    var amount = 0.0 {
         didSet {
-            executionTime.amount = NSNumber(double: dose)
-            doseTextField.text = "\(dose)"
-            fillSegementedDoseControll()
+            executionTimeService.updateExecuitonTime(executionTime, assignmentDate: timePicker.date, amount: amount)
+            doseTextField.text = "\(amount)"
+            setupSegementedDoseControll()
         }
     }
     
+    @IBOutlet weak var doseSegementedControl: UISegmentedControl!
+    @IBOutlet weak var doseTextField: UITextField!
+    @IBOutlet weak var timeOfDaySegmentedControl: UISegmentedControl!
     @IBOutlet weak var timePicker: UIDatePicker!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        executionTime = medication.managedObjectContext!.insertObject() as ExecutionTime
-        executionTime.medication = medication
-        executionTime.creationDate = NSDate()
-        executionTime.assignmentDate = timePicker.date
-        fillSegementedDoseControll()
+        guard let context = medication.managedObjectContext else { return }
+        executionTime = executionTimeService.createExecutionTime(context, medication: medication, assignmentDate: timePicker.date)
+        executionTime.isCreationTime = true
+        setupSegementedDoseControll()
     }
     
-    func fillSegementedDoseControll() {
+    func setupSegementedDoseControll() {
         guard let drugType = medication.drug?.type else { return }
         doseSegementedControl.removeAllSegments()
-        for unit in  drugType.unitPreSets(Float(dose)).enumerate() {
+        for unit in drugType.unitPreSets(Float(amount)).enumerate() {
             doseSegementedControl.insertSegmentWithTitle("\(unit.element) " + drugType.unit(unit.element), atIndex: unit.index, animated: false)
         }
     }
@@ -46,11 +48,11 @@ class MedicationTimeViewController: UIViewController {
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
 
-    @IBAction func timeDidChange(sender: UIDatePicker) {
-        let timeOfDay =  TimeOfDay.timeOfDayFromDate(sender.date)
-        executionTime.assignmentDate = sender.date
-        executionTime.assignmentTimeOfDay = NSNumber(integer:timeOfDay.rawValue)
-        timeOfDaySegmentedControl.selectedSegmentIndex = timeOfDay.rawValue
+    @IBAction func assignmentDateDidChange(sender: UIDatePicker) {
+        let assignmentDate = sender.date
+        executionTimeService.updateExecuitonTime(executionTime, assignmentDate: assignmentDate, amount: amount)
+        
+        timeOfDaySegmentedControl.selectedSegmentIndex = executionTime.timeOfDay.rawValue
         
     }
     @IBAction func done(sender: AnyObject) {
@@ -60,18 +62,19 @@ class MedicationTimeViewController: UIViewController {
     @IBAction func didChangeTimeOfDay(sender: UISegmentedControl) {
         if sender.selectedSegmentIndex  != -1 {
             let timeOfDay = TimeOfDay(rawValue: sender.selectedSegmentIndex)
-            timePicker.setDate(timeOfDay!.startDate.dateByAddingTimeInterval(5400), animated: true)
+            let dateOfTime = timeOfDay!.startDate.dateByAddingTimeInterval(5400)
+            timePicker.setDate(dateOfTime, animated: true)
             //TODO: This could be a bug. Change listener not called
-            timeDidChange(timePicker)
+            assignmentDateDidChange(timePicker)
         }
     }
     
     @IBAction func addOneDose(sender: AnyObject) {
-        dose += 0.5
+        amount += 0.5
     }
     
     @IBAction func removeOneDose(sender: AnyObject) {
-        guard (dose - 0.5) >= 0 else {return}
-        dose -= 0.5
+        guard (amount - 0.5) >= 0 else { return }
+        amount -= 0.5
     }
 }

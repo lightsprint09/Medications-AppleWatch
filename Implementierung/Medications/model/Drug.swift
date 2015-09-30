@@ -35,7 +35,7 @@ class Drug: NSManagedObject {
         }
         set {
             if let kind = newValue {
-                imageKind = NSNumber(integer: kind.rawValue)
+                imageKind = kind.rawValue
             }else {
                 imageKind = nil
             }

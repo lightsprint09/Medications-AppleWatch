@@ -22,6 +22,7 @@ class MedicationTableViewController: UITableViewController, ManagedObjectContext
     func executionFetchRequest() -> NSFetchRequest {
         let request = NSFetchRequest(entityName: ExecutionTime.entityName)
         request.sortDescriptors = [NSSortDescriptor(key: "assignmentDate", ascending: true)]
+        request.predicate = NSPredicate(format: "isCreationTime == false")
         
         return request
     }

@@ -13,13 +13,15 @@ enum RepeatType {
 }
 
 class RepeatEventCreator: NSObject {
-    func createEvent(startDate startDate:NSDate, repeatCount:Int, calculateNextDate:(NSDate)->NSDate, useDate:(NSDate)->(), finalCall:(NSDate)->()) {
+    func createEvent(startDate startDate: NSDate, endDate: NSDate, calculateNextDate: (NSDate)->NSDate, useDate: (NSDate)->(), finalCall:((NSDate)->())?) {
         useDate(startDate)
         var nextDate = startDate
-        for var i = 0; i < repeatCount; i++ {
+        while endDate.compare(endDate) == .OrderedAscending {
             nextDate = calculateNextDate(nextDate)
             useDate(nextDate)
         }
-        finalCall(nextDate)
+        finalCall?(nextDate)
     }
 }
+
+

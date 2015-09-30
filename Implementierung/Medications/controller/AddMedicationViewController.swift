@@ -11,23 +11,24 @@ import CoreData
 
 class AddMedicationViewController: UIViewController, ManagedObjectContextSettable, UICollectionViewDelegate, UITableViewDelegate {
     var managedObjectContext: NSManagedObjectContext!
-    var drugDataSource: FetchedResultsCollectionViewController<AddMedicationViewController>?
-    var executionTimeDataSource: FetchedResultsDataSource<ExecutionTimeTableViewDataSourceDelegate>?
+    
     let drugService = DrugDBService()
-    var repeatEventCreator = RepeatEventCreator()
+    let repeatEventCreator = RepeatEventCreator()
+    let executionTimeService = ExecutionTimeService()
+    
     var medication: Medication!
-    let executionTimeDataSourceDelegate = ExecutionTimeTableViewDataSourceDelegate()
-    
-    
-    @IBOutlet weak var weekDaySelectionView: UIStackView!
     var selectedDrug:Drug?{
         didSet {
-            createMedicationFetch()
+            setupExecutionTimeFetchController()
             medication.drug = selectedDrug
         }
     }
     
+    var drugDataSource: FetchedResultsCollectionViewController<AddMedicationViewController>?
+    var executionTimeDataSource: FetchedResultsDataSource<ExecutionTimeTableViewDataSourceDelegate>?
+    let executionTimeDataSourceDelegate = ExecutionTimeTableViewDataSourceDelegate()
     
+    @IBOutlet weak var weekDaySelectionView: UIStackView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var executionTimeTableView: UITableView!
     
@@ -35,18 +36,14 @@ class AddMedicationViewController: UIViewController, ManagedObjectContextSettabl
         medication = managedObjectContext.insertObject() as Medication
         let frc = NSFetchedResultsController(fetchRequest: drugService.sortedFetchRequest(), managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
         drugDataSource = FetchedResultsCollectionViewController(collectionView: collectionView, fetchedResultsController: frc, delegate: self)
-        
     }
     
     
-    func createMedicationFetch() {
-        let fetchRequest = NSFetchRequest(entityName: ExecutionTime.entityName)
-        let sortDiscriptor = NSSortDescriptor(key: "assignmentDate", ascending: true)
-        fetchRequest.sortDescriptors = [sortDiscriptor]
-        fetchRequest.predicate = NSPredicate(format: "medication == %@", medication)
+    func setupExecutionTimeFetchController() {
+        guard let drug = selectedDrug else { return }
+        let fetchRequest = executionTimeService.parentExecutionTimeFetchRequest(drug)
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
         executionTimeDataSource = FetchedResultsDataSource(tableView: executionTimeTableView, fetchedResultsController: frc, delegate: executionTimeDataSourceDelegate)
-        
     }
    
     @IBAction func toggleDeleteInTableView(sender: AnyObject) {
@@ -60,7 +57,6 @@ class AddMedicationViewController: UIViewController, ManagedObjectContextSettabl
     @IBAction func cancelAddMedication(sender: AnyObject) {
         managedObjectContext.rollback()
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
-        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -90,11 +86,7 @@ class AddMedicationViewController: UIViewController, ManagedObjectContextSettabl
         UIView.animateWithDuration(0.4, delay: 0.0, usingSpringWithDamping: 1.0 , initialSpringVelocity: 0, options: [], animations: {self.weekDaySelectionView.hidden = sender.selectedSegmentIndex != 1}, completion: nil)
         
     }
-    
-    func createMedication() {
-        let medication: Medication = managedObjectContext.insertObject()
-        medication.drug = selectedDrug
-    }
+
 }
 
 

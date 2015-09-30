@@ -243,7 +243,7 @@ extension DrugEnum {
             let fillColor2 = baseColor
             
             //// glyphicons-493-medicine.svg Group
-            var bezierPath = UIBezierPath()
+            let bezierPath = UIBezierPath()
             bezierPath.moveToPoint(CGPointMake(56, 72))
             bezierPath.addCurveToPoint(CGPointMake(62, 66), controlPoint1: CGPointMake(59.31, 72), controlPoint2: CGPointMake(62, 69.31))
             bezierPath.addLineToPoint(CGPointMake(62, 33))
@@ -308,7 +308,7 @@ extension DrugEnum {
             
             
             //// Bezier 4 Drawing
-            var bezier4Path = UIBezierPath()
+            let bezier4Path = UIBezierPath()
             bezier4Path.moveToPoint(CGPointMake(56, 39))
             bezier4Path.addLineToPoint(CGPointMake(47, 39))
             bezier4Path.addLineToPoint(CGPointMake(47, 42))

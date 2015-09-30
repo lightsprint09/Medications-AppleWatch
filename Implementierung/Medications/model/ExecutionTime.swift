@@ -13,7 +13,7 @@ class ExecutionTime: NSManagedObject {
     private static let dateFormatter = NSDateFormatter()
     var timeOfDay: TimeOfDay {
         get{
-            return TimeOfDay(rawValue: self.assignmentTimeOfDay.integerValue)!
+            return TimeOfDay(rawValue: assignmentTimeOfDay.integerValue)!
         }
     }
     

@@ -57,7 +57,7 @@ class CoustomDrugViewController: UIViewController, DrugSettable, UICollectionVie
 
     @IBAction func redChanged(sender: UISlider) {
         rgb.0 = 1 - sender.value
-         pillCollectionView.reloadData()
+        
     }
     
     @IBAction func greenChanged(sender: UISlider) {
