@@ -10,11 +10,12 @@ import Foundation
 import CoreData
 
 class ExecutionTimeService: NSObject {
-    func parentExecutionTimeFetchRequest(drug:Drug) -> NSFetchRequest {
-        let fetchRequest = NSFetchRequest(entityName: ExecutionTime.entityName)
-        let sortDiscriptor = NSSortDescriptor(key: "assignmentDate", ascending: true)
+    
+    func rootExecutionTimeFetchRequest(drug:Drug) -> NSFetchRequest {
+        let fetchRequest = NSFetchRequest(entityName: RootExecutionTime.entityName)
+        let sortDiscriptor = NSSortDescriptor(key: "assignmentTime", ascending: true)
         fetchRequest.sortDescriptors = [sortDiscriptor]
-        fetchRequest.predicate = NSPredicate(format: "isCreationTime == true AND medication.drug == %@", drug)
+        fetchRequest.predicate = NSPredicate(format: "drug == %@", drug)
         
         return fetchRequest
     }
@@ -22,26 +23,33 @@ class ExecutionTimeService: NSObject {
     func allChildrenExecutionTimesFetchRequest() -> NSFetchRequest {
         let request = NSFetchRequest(entityName: ExecutionTime.entityName)
         request.sortDescriptors = [NSSortDescriptor(key: "assignmentDate", ascending: true)]
-        request.predicate = NSPredicate(format: "isCreationTime == false")
         
         return request
     }
     
-    func createExecutionTime(context: NSManagedObjectContext, medication: Medication, assignmentDate:NSDate) -> ExecutionTime {
-        let executionTime = context.insertObject() as ExecutionTime
-        executionTime.medication = medication
-        executionTime.creationDate = NSDate()
-        executionTime.assignmentDate = assignmentDate
+    func createRootExecutionTime(context: NSManagedObjectContext, assignmentDate:NSDate) -> RootExecutionTime {
+        let executionTime = context.insertObject() as RootExecutionTime
+        executionTime.assignmentTime = assignmentDate
         
         return executionTime
     }
     
-    func updateExecuitonTime(executionTime: ExecutionTime, assignmentDate: NSDate, amount: Double) {
-        let timeOfDay = TimeOfDay.timeOfDayFromDate(assignmentDate)
-        executionTime.assignmentDate = assignmentDate
-        executionTime.assignmentTimeOfDay = timeOfDay.rawValue
+    func updateExecuitonTime(executionTime: RootExecutionTime, assignmentDate: NSDate, amount: Double) {
+        executionTime.assignmentTime = assignmentDate
         executionTime.amount = NSDecimalNumber(double: amount)
         
         //TODO cascade update of child times
+    }
+    
+    func createChildExecutionTimeFromParent(rootExecutionTime:RootExecutionTime, startDate:NSDate, endDate: NSDate) {
+        guard let managedObjectContext = rootExecutionTime.managedObjectContext else { return }
+        let repeatCreator = RepeatEventCreator()
+        repeatCreator.createEvent(startDate: startDate, endDate: endDate, repeatType: .Daily, useDate: {date in
+            let executionTime = managedObjectContext.insertObject() as ExecutionTime
+            executionTime.assignmentDate = date
+            executionTime.assignmentTimeOfDay = TimeOfDay.timeOfDayFromDate(date).rawValue
+            executionTime.parentExecutionTime = rootExecutionTime
+            executionTime.creationDate = NSDate()
+        })
     }
 }

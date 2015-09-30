@@ -9,22 +9,17 @@
 import UIKit
 import CoreData
 
-class MedicationTableViewController: UITableViewController, ManagedObjectContextSettable {
+class ExecutionTimesTableViewController: UITableViewController, ManagedObjectContextSettable {
     var managedObjectContext: NSManagedObjectContext!
     
-    var dataSource: FetchedResultsDataSource<MedicationTableViewController>?
+    let executionTimeService = ExecutionTimeService()
+    
+    var dataSource: FetchedResultsDataSource<ExecutionTimesTableViewController>?
     
     override func viewDidLoad() {
-        let frc = NSFetchedResultsController(fetchRequest: executionFetchRequest(), managedObjectContext: managedObjectContext, sectionNameKeyPath: "assignmentTimeOfDay", cacheName: nil)
+        let fetchRequest = executionTimeService.allChildrenExecutionTimesFetchRequest()
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: "assignmentTimeOfDay", cacheName: nil)
         dataSource = FetchedResultsDataSource(tableView: tableView, fetchedResultsController: frc, delegate: self)
-    }
-    
-    func executionFetchRequest() -> NSFetchRequest {
-        let request = NSFetchRequest(entityName: ExecutionTime.entityName)
-        request.sortDescriptors = [NSSortDescriptor(key: "assignmentDate", ascending: true)]
-        request.predicate = NSPredicate(format: "isCreationTime == false")
-        
-        return request
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

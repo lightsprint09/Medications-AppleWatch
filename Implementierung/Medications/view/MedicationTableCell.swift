@@ -16,13 +16,12 @@ class MedicationTableCell: UITableViewCell {
     @IBOutlet weak var drugView: DrugCustomaziationView!
     
     func configureWithExecutionTime(executionTime:ExecutionTime) {
-        drugNameLabel.text = executionTime.medication?.drug?.name
+        let drug = executionTime.parentExecutionTime.drug
+        drugNameLabel.text = drug?.name
         unitCountLabel.text = executionTime.amountUnitString
         timeLabel.text = executionTime.timeString
-        if let drug = executionTime.medication?.drug {
+        if let drug = drug {
             drugView.configureWithDrug(drug)
         }
-        
-        
     }
 }

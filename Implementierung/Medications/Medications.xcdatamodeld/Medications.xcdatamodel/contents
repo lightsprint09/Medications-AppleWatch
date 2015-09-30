@@ -9,7 +9,7 @@
         <attribute name="imageKind" optional="YES" attributeType="Integer 16" syncable="YES"/>
         <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="userImage" optional="YES" attributeType="Binary" syncable="YES"/>
-        <relationship name="medications" toMany="YES" deletionRule="Nullify" destinationEntity="Medication" inverseName="drug" inverseEntity="Medication" syncable="YES"/>
+        <relationship name="executionTimes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RootExecutionTime" inverseName="drug" inverseEntity="RootExecutionTime" syncable="YES"/>
     </entity>
     <entity name="ExecutionTime" representedClassName=".ExecutionTime" syncable="YES">
         <attribute name="amount" attributeType="Decimal" minValueString="0" defaultValueString="0" syncable="YES"/>
@@ -17,18 +17,18 @@
         <attribute name="assignmentTimeOfDay" attributeType="Integer 16" minValueString="0" maxValueString="3" syncable="YES"/>
         <attribute name="creationDate" attributeType="Date" syncable="YES"/>
         <attribute name="executionDate" optional="YES" attributeType="Date" indexed="YES" syncable="YES"/>
-        <attribute name="isCreationTime" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="secondsMoved" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <relationship name="createdExtecutionTimes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ExecutionTime" syncable="YES"/>
-        <relationship name="medication" maxCount="1" deletionRule="Nullify" destinationEntity="Medication" inverseName="executionTimes" inverseEntity="Medication" syncable="YES"/>
+        <relationship name="parentExecutionTime" maxCount="1" deletionRule="Nullify" destinationEntity="RootExecutionTime" inverseName="executionTimes" inverseEntity="RootExecutionTime" syncable="YES"/>
     </entity>
-    <entity name="Medication" representedClassName=".Medication" syncable="YES">
-        <relationship name="drug" maxCount="1" deletionRule="Nullify" destinationEntity="Drug" inverseName="medications" inverseEntity="Drug" syncable="YES"/>
-        <relationship name="executionTimes" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ExecutionTime" inverseName="medication" inverseEntity="ExecutionTime" syncable="YES"/>
+    <entity name="RootExecutionTime" representedClassName=".RootExecutionTime" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="assignmentTime" optional="YES" attributeType="Date" indexed="YES" syncable="YES"/>
+        <relationship name="drug" maxCount="1" deletionRule="Nullify" destinationEntity="Drug" inverseName="executionTimes" inverseEntity="Drug" syncable="YES"/>
+        <relationship name="executionTimes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExecutionTime" inverseName="parentExecutionTime" inverseEntity="ExecutionTime" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Drug" positionX="-63" positionY="-18" width="128" height="180"/>
-        <element name="ExecutionTime" positionX="538" positionY="-63" width="128" height="178"/>
-        <element name="Medication" positionX="232" positionY="-171" width="128" height="73"/>
+        <element name="Drug" positionX="673" positionY="-171" width="128" height="178"/>
+        <element name="ExecutionTime" positionX="324" positionY="-333" width="128" height="148"/>
+        <element name="RootExecutionTime" positionX="522" positionY="-288" width="128" height="103"/>
     </elements>
 </model>

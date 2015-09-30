@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension CoustomDrugViewController: UICollectionViewDataSource {
+extension CoustomizeDrugViewController: UICollectionViewDataSource {
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }

@@ -26,122 +26,10 @@
             </objects>
             <point key="canvasLocation" x="-639" y="-99"/>
         </scene>
-        <!--Title-->
-        <scene sceneID="3v7-d7-iJQ">
-            <objects>
-                <collectionViewController id="2em-ch-BtY" customClass="DaytimeMedicationViewController" customModule="Medications" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="U22-y6-S3z">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YIY-Bh-H67">
-                            <size key="itemSize" width="300" height="300"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="daytime-cell" id="H2n-Ra-c0Y" customClass="DaytimeCell" customModule="Medications" customModuleProvider="target">
-                                <rect key="frame" x="150" y="0.0" width="300" height="300"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Morgen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1L-hO-AKa">
-                                            <rect key="frame" x="8" y="8" width="59" height="20.5"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="von 12:00 - 16:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Kn-ic-fLW">
-                                            <rect key="frame" x="157" y="8" width="135" height="20.5"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vgP-FY-rKG">
-                                            <rect key="frame" x="0.0" y="35" width="300" height="265"/>
-                                            <animations/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <prototypes>
-                                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="sZQ-9d-bLt" detailTextLabel="jhy-68-BEg" style="IBUITableViewCellStyleValue2" id="52F-Kf-nBn">
-                                                    <rect key="frame" x="0.0" y="28" width="300" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="52F-Kf-nBn" id="56S-PS-ACj">
-                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="43.5"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
-                                                        <subviews>
-                                                            <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sZQ-9d-bLt">
-                                                                <rect key="frame" x="15" y="15" width="91" height="14.5"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                <animations/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                <color key="textColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jhy-68-BEg">
-                                                                <rect key="frame" x="112" y="15" width="33" height="14.5"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                <animations/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                        <animations/>
-                                                    </tableViewCellContentView>
-                                                    <animations/>
-                                                </tableViewCell>
-                                            </prototypes>
-                                        </tableView>
-                                    </subviews>
-                                    <animations/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <animations/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailingMargin" secondItem="vgP-FY-rKG" secondAttribute="trailing" constant="-8" id="8kA-CY-OIy"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="vgP-FY-rKG" secondAttribute="bottom" constant="-8" id="Kki-fu-vJV"/>
-                                    <constraint firstAttribute="topMargin" secondItem="6Kn-ic-fLW" secondAttribute="top" id="Pgo-b3-Zgd"/>
-                                    <constraint firstAttribute="leadingMargin" secondItem="L1L-hO-AKa" secondAttribute="leading" id="Rpb-bk-gxn"/>
-                                    <constraint firstAttribute="topMargin" secondItem="L1L-hO-AKa" secondAttribute="top" id="h2N-8Y-3jU"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="6Kn-ic-fLW" secondAttribute="trailing" id="py6-mT-sjJ"/>
-                                    <constraint firstItem="vgP-FY-rKG" firstAttribute="top" secondItem="6Kn-ic-fLW" secondAttribute="bottom" constant="6.5" id="rJO-Nz-rm5"/>
-                                    <constraint firstAttribute="leadingMargin" secondItem="vgP-FY-rKG" secondAttribute="leading" constant="8" id="tpa-iU-28k"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="nameLabel" destination="L1L-hO-AKa" id="GqE-rv-ZUf"/>
-                                    <outlet property="tableView" destination="vgP-FY-rKG" id="1fI-mt-ygK"/>
-                                    <outlet property="timeLabel" destination="6Kn-ic-fLW" id="SgQ-qY-g8r"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="2em-ch-BtY" id="gcn-Yk-yIa"/>
-                            <outlet property="delegate" destination="2em-ch-BtY" id="oh0-am-il1"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" title="Title" id="CFI-Sx-XKX">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="CwL-S9-D2g">
-                            <connections>
-                                <segue destination="g4g-cv-JNj" kind="show" id="l9V-cm-q7R"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JYA-rJ-5ZT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="829" y="-1520"/>
-        </scene>
         <!--Medikationplan-->
         <scene sceneID="NpN-lY-3MI">
             <objects>
-                <tableViewController title="Medikationplan" id="LQP-ve-NUB" customClass="MedicationTableViewController" customModule="Medications" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Medikationplan" id="LQP-ve-NUB" customClass="ExecutionTimesTableViewController" customModule="Medications" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="32" sectionFooterHeight="28" id="v2S-ql-HY4">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -376,7 +264,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="2Z1-Ab-4xh">
                                 <rect key="frame" x="8" y="175" width="584" height="28"/>
                                 <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rMo-MP-Mbc">
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rMo-MP-Mbc">
                                         <rect key="frame" x="0.0" y="0.0" width="584" height="29"/>
                                         <animations/>
                                         <segments>
@@ -573,7 +461,7 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocJ-Xn-W7C">
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocJ-Xn-W7C">
                                                 <rect key="frame" x="492" y="0.0" width="34" height="34"/>
                                                 <animations/>
                                                 <constraints>
@@ -586,7 +474,7 @@
                                                     <segue destination="zLj-Ir-7Ff" kind="showDetail" id="geI-Ya-dAc"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Xm-9W-Dgo">
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Xm-9W-Dgo">
                                                 <rect key="frame" x="538" y="0.0" width="34" height="34"/>
                                                 <animations/>
                                                 <constraints>
@@ -692,8 +580,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addExecutionTimeButton" destination="ocJ-Xn-W7C" id="WxW-bh-BzO"/>
                         <outlet property="collectionView" destination="zeg-A1-OCe" id="26o-H6-FW9"/>
                         <outlet property="executionTimeTableView" destination="8so-sd-lCE" id="BQE-MA-PnI"/>
+                        <outlet property="removeExecutionTimeButton" destination="3Xm-9W-Dgo" id="pux-77-hmG"/>
+                        <outlet property="repeatSegementedControl" destination="rMo-MP-Mbc" id="RoE-Ss-ZPW"/>
                         <outlet property="weekDaySelectionView" destination="Sng-0H-Vjt" id="zuC-iY-VVL"/>
                     </connections>
                 </viewController>
@@ -726,7 +617,7 @@
         <!--Zeit & Dosierung-->
         <scene sceneID="4V4-MK-W0b">
             <objects>
-                <viewController id="bAE-nu-90z" customClass="MedicationTimeViewController" customModule="Medications" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bAE-nu-90z" customClass="CreateRootExecutionTimeViewController" customModule="Medications" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mc4-Xf-gbC"/>
                         <viewControllerLayoutGuide type="bottom" id="5sF-Gc-kAw"/>
@@ -1410,7 +1301,7 @@
         <!--Form u. Farbe-->
         <scene sceneID="tFi-aQ-dQn">
             <objects>
-                <viewController id="fSJ-vm-eCx" customClass="CoustomDrugViewController" customModule="Medications" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fSJ-vm-eCx" customClass="CoustomizeDrugViewController" customModule="Medications" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="T0x-7w-RV3"/>
                         <viewControllerLayoutGuide type="bottom" id="Brz-UE-1jo"/>
@@ -1642,7 +1533,6 @@
         <image name="pill" width="42" height="42"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1ue-OZ-QHA"/>
         <segue reference="TJb-nM-l26"/>
         <segue reference="f7Q-im-pbD"/>
     </inferredMetricsTieBreakers>

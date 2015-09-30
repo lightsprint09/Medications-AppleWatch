@@ -12,18 +12,14 @@ import CoreData
 class ExecutionTime: NSManagedObject {
     private static let dateFormatter = NSDateFormatter()
     var timeOfDay: TimeOfDay {
-        get{
-            return TimeOfDay(rawValue: assignmentTimeOfDay.integerValue)!
-        }
+        return TimeOfDay(rawValue: assignmentTimeOfDay.integerValue)!
     }
     
     var amountUnitString: String? {
-        get{
-            if let amount = amount?.floatValue, let drugType = medication?.drug?.type {
-                return "\(amount) " + drugType.unit(amount)
-            }
-            return nil
+        if let amountFloat = amount?.floatValue, let drugType = parentExecutionTime.drug?.type {
+            return "\(amount) " + drugType.unit(amountFloat)
         }
+        return nil
     }
     
     var timeString: String {

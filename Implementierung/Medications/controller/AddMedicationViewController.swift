@@ -16,11 +16,12 @@ class AddMedicationViewController: UIViewController, ManagedObjectContextSettabl
     let repeatEventCreator = RepeatEventCreator()
     let executionTimeService = ExecutionTimeService()
     
-    var medication: Medication!
     var selectedDrug:Drug?{
         didSet {
             setupExecutionTimeFetchController()
-            medication.drug = selectedDrug
+            repeatSegementedControl.enabled = true
+            addExecutionTimeButton.enabled = true
+            removeExecutionTimeButton.enabled = true
         }
     }
     
@@ -31,17 +32,23 @@ class AddMedicationViewController: UIViewController, ManagedObjectContextSettabl
     @IBOutlet weak var weekDaySelectionView: UIStackView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var executionTimeTableView: UITableView!
+    @IBOutlet weak var repeatSegementedControl: UISegmentedControl!
+    @IBOutlet weak var addExecutionTimeButton: UIButton!
+    @IBOutlet weak var removeExecutionTimeButton: UIButton!
     
     override func viewDidLoad() {
-        medication = managedObjectContext.insertObject() as Medication
-        let frc = NSFetchedResultsController(fetchRequest: drugService.sortedFetchRequest(), managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+        setupDrugFetchController()
+    }
+    
+    func setupDrugFetchController() {
+        let fetchRequest = drugService.sortedFetchRequest()
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
         drugDataSource = FetchedResultsCollectionViewController(collectionView: collectionView, fetchedResultsController: frc, delegate: self)
     }
     
-    
     func setupExecutionTimeFetchController() {
         guard let drug = selectedDrug else { return }
-        let fetchRequest = executionTimeService.parentExecutionTimeFetchRequest(drug)
+        let fetchRequest = executionTimeService.rootExecutionTimeFetchRequest(drug)
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
         executionTimeDataSource = FetchedResultsDataSource(tableView: executionTimeTableView, fetchedResultsController: frc, delegate: executionTimeDataSourceDelegate)
     }
@@ -64,8 +71,8 @@ class AddMedicationViewController: UIViewController, ManagedObjectContextSettabl
             var managedObjectContextSettable = managedObjectContextSettable
             managedObjectContextSettable.managedObjectContext = managedObjectContext
         }
-        if let medicationTimeController = (segue.destinationViewController as? UINavigationController)?.topViewController as? MedicationTimeViewController {
-            medicationTimeController.medication = medication
+        if let medicationTimeController = (segue.destinationViewController as? UINavigationController)?.topViewController as? CreateRootExecutionTimeViewController {
+            medicationTimeController.drug = selectedDrug
         }
     }
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CoustomDrugViewController: UIViewController, DrugSettable, UICollectionViewDelegate {
+class CoustomizeDrugViewController: UIViewController, DrugSettable, UICollectionViewDelegate {
     @IBOutlet weak var drugView: DrugCustomaziationView!
     @IBOutlet weak var pillCollectionView: UICollectionView!
     var drug:Drug!

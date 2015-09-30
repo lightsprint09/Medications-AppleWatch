@@ -19,7 +19,7 @@ class ExecutionTimeTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func configurWithExecutionTime(execuitonTime:ExecutionTime) {
+    func configurWithExecutionTime(execuitonTime:RootExecutionTime) {
         timeLabel.text = execuitonTime.timeString
         dayTimeImageView.image = execuitonTime.timeOfDay.imageWithColor
         doseLabel.text = execuitonTime.amountUnitString

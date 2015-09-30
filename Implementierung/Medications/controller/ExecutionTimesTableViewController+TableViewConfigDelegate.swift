@@ -8,14 +8,14 @@
 
 import Foundation
 
-extension MedicationTableViewController: FetchedResultsDataSourceDelegate {
+extension ExecutionTimesTableViewController: FetchedResultsDataSourceDelegate {
     private static let CELL_IDENTIFIER = "medication-cell"
     
     typealias Cell = MedicationTableCell
     typealias Object = ExecutionTime
     
     func cellIdentifierForObject(object: Object) -> String {
-        return MedicationTableViewController.CELL_IDENTIFIER
+        return ExecutionTimesTableViewController.CELL_IDENTIFIER
     }
     
     func configureCell(cell: Cell, object: Object) {

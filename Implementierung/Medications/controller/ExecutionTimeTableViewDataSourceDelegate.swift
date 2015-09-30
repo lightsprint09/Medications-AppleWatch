@@ -12,7 +12,7 @@ class ExecutionTimeTableViewDataSourceDelegate: NSObject, FetchedResultsDataSour
     private static let CELL_IDENTIFIER = "new-medication-cell"
     
     typealias Cell = ExecutionTimeTableViewCell
-    typealias Object = ExecutionTime
+    typealias Object = RootExecutionTime
     
     func cellIdentifierForObject(object: Object) -> String {
         return ExecutionTimeTableViewDataSourceDelegate.CELL_IDENTIFIER

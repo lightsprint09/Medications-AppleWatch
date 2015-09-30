@@ -83,7 +83,7 @@ class AddDrugViewController: UIViewController, ManagedObjectContextSettable, UII
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let destinationCV = segue.destinationViewController as? CoustomDrugViewController {
+        if let destinationCV = segue.destinationViewController as? CoustomizeDrugViewController {
             destinationCV.drug = drug
         }
     }
