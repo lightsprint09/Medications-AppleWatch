@@ -16,8 +16,12 @@ class ExecutionTime: NSManagedObject {
     }
     
     var amountUnitString: String? {
-        if let amountFloat = amount?.floatValue, let drugType = parentExecutionTime.drug?.type {
-            return "\(amount) " + drugType.unit(amountFloat)
+        let formatter = NSNumberFormatter()
+        formatter.maximumFractionDigits = 2
+        if let amountFloat = amount?.floatValue,
+            let amountString = formatter.stringFromNumber(amountFloat),
+            let drugType = parentExecutionTime.drug?.type {
+            return "\(amountString) " + drugType.unit(amountFloat)
         }
         return nil
     }
@@ -26,5 +30,4 @@ class ExecutionTime: NSManagedObject {
         ExecutionTime.dateFormatter.dateFormat = "HH:mm"
         return ExecutionTime.dateFormatter.stringFromDate(assignmentDate)
     }
-
 }

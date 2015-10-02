@@ -24,7 +24,7 @@
         <attribute name="amount" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="assignmentTime" optional="YES" attributeType="Date" indexed="YES" syncable="YES"/>
         <relationship name="drug" maxCount="1" deletionRule="Nullify" destinationEntity="Drug" inverseName="executionTimes" inverseEntity="Drug" syncable="YES"/>
-        <relationship name="executionTimes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExecutionTime" inverseName="parentExecutionTime" inverseEntity="ExecutionTime" syncable="YES"/>
+        <relationship name="executionTimes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ExecutionTime" inverseName="parentExecutionTime" inverseEntity="ExecutionTime" syncable="YES"/>
     </entity>
     <elements>
         <element name="Drug" positionX="673" positionY="-171" width="128" height="178"/>

@@ -50,6 +50,7 @@ class ExecutionTimeService: NSObject {
             executionTime.assignmentTimeOfDay = TimeOfDay.timeOfDayFromDate(date).rawValue
             executionTime.parentExecutionTime = rootExecutionTime
             executionTime.creationDate = NSDate()
+            executionTime.amount = rootExecutionTime.amount
         })
     }
 }

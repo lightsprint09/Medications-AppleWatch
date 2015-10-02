@@ -20,8 +20,8 @@ class MedicationTableCell: UITableViewCell {
         drugNameLabel.text = drug?.name
         unitCountLabel.text = executionTime.amountUnitString
         timeLabel.text = executionTime.timeString
-        if let drug = drug {
-            drugView.configureWithDrug(drug)
+        if let drug2 = drug {
+            drugView.configureWithDrug(drug2)
         }
     }
 }

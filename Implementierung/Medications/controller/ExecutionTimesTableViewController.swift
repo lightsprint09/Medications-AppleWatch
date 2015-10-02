@@ -34,6 +34,22 @@ class ExecutionTimesTableViewController: UITableViewController, ManagedObjectCon
         let timeOfDay = dataSource?.objectAtIndexPath(NSIndexPath(forRow: 0, inSection: section)).timeOfDay
         view.configureWithTimeOfDay(timeOfDay!)
         view.backgroundColor = UIColor(red:240 / 255.0, green:240 / 255.0, blue:240 / 255.0, alpha:1.0)
+        
         return view
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        guard let executionTime = dataSource?.objectAtIndexPath(indexPath), let drug = executionTime.parentExecutionTime.drug  else { return }
+        let actionViewcontroller = UIAlertController(title: "\n\n\n\n\n\n", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        let takeMedikationAction = UIAlertAction(title: "Genommen", style: .Default, handler: nil)
+        let moveToLaterAction = UIAlertAction(title: "Später nehmen", style: .Destructive, handler: nil)
+        let cancle = UIAlertAction(title: "Abbrechen", style: .Cancel, handler: nil)
+        actionViewcontroller.addAction(moveToLaterAction)
+        actionViewcontroller.addAction(takeMedikationAction)
+        actionViewcontroller.addAction(cancle)
+        let detailView = ExecutionTimeDetailView(frame: actionViewcontroller.view.frame, drug: drug, executionTime: executionTime)
+        actionViewcontroller.view.addSubview(detailView)
+        
+        self.presentViewController(actionViewcontroller, animated: true, completion: nil)
     }
 }

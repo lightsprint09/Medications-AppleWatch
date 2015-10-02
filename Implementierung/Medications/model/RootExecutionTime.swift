@@ -12,8 +12,12 @@ import CoreData
 class RootExecutionTime: NSManagedObject {
     private static let dateFormatter = NSDateFormatter()
     var amountUnitString: String? {
-        if let amountFloat = amount?.floatValue, let drugType = drug?.type {
-            return "\(amountFloat) " + drugType.unit(amountFloat)
+        let formatter = NSNumberFormatter()
+        formatter.maximumFractionDigits = 2
+        if let amountFloat = amount?.floatValue,
+            let amountString = formatter.stringFromNumber(amountFloat),
+            let drugType = drug?.type {
+                return "\(amountString) " + drugType.unit(amountFloat)
         }
         return nil
     }
