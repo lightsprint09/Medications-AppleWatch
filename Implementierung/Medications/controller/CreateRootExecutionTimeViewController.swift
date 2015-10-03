@@ -57,6 +57,7 @@ class CreateRootExecutionTimeViewController: UIViewController {
     }
     @IBAction func done(sender: AnyObject) {
         executionTimeService.createChildExecutionTimeFromParent(executionTime, startDate: timePicker.date, endDate: NSDate().dateByAddingTimeInterval(604.800))
+        executionTime.managedObjectContext?.saveOrRollback()
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     

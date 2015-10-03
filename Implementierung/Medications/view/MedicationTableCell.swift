@@ -19,9 +19,15 @@ class MedicationTableCell: UITableViewCell {
         let drug = executionTime.parentExecutionTime.drug
         drugNameLabel.text = drug?.name
         unitCountLabel.text = executionTime.amountUnitString
-        timeLabel.text = executionTime.timeString
+        
         if let drug2 = drug {
             drugView.configureWithDrug(drug2)
+        }
+        timeLabel.text = executionTime.timeString
+        if let _ = executionTime.executionDate {
+            timeLabel.textColor = .greenExecutionTimeColor()
+        } else {
+             timeLabel.textColor = UIColor.blueExecutionTimeColor()
         }
     }
 }

@@ -11,20 +11,21 @@ import Foundation
 enum RepeatType {
     case Daily, Weekly, Monthly
     
-    var calculateNextDate: (NSDate) -> NSDate {
+    var timeInterval: NSTimeInterval {
         switch self {
         case .Daily:
-            return {date in
-                return date.dateByAddingTimeInterval(86400)
-            }
+            return 86400
         case .Weekly:
-            return {date in
-                return date.dateByAddingTimeInterval(604800)
-            }
+            return 604800
         case .Monthly:
-            return {date in
-                return date.dateByAddingTimeInterval(16934400)
-            }
+            return 16934400
+        }
+ 
+    }
+    
+    var calculateNextDate: (NSDate) -> NSDate {
+        return {date in
+            return date.dateByAddingTimeInterval(self.timeInterval)
         }
     }
 }

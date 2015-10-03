@@ -41,7 +41,9 @@ class ExecutionTimesTableViewController: UITableViewController, ManagedObjectCon
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         guard let executionTime = dataSource?.objectAtIndexPath(indexPath), let drug = executionTime.parentExecutionTime.drug  else { return }
         let actionViewcontroller = UIAlertController(title: "\n\n\n\n\n\n", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
-        let takeMedikationAction = UIAlertAction(title: "Genommen", style: .Default, handler: nil)
+        let takeMedikationAction = UIAlertAction(title: "Genommen", style: .Default) { (action) in
+            executionTime.executionDate = NSDate()
+        }
         let moveToLaterAction = UIAlertAction(title: "Später nehmen", style: .Destructive, handler: nil)
         let cancle = UIAlertAction(title: "Abbrechen", style: .Cancel, handler: nil)
         actionViewcontroller.addAction(moveToLaterAction)
