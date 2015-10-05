@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Medications/AppDelegate.swift"
-            timestampString = "465576724.758325"
+            filePath = "MediWatch Extension/NotificationController.swift"
+            timestampString = "465580928.867705"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "application(_:handleActionWithIdentifier:forLocalNotification:withResponseInfo:completionHandler:)"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "didReceiveLocalNotification(_:withCompletion:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

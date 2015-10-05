@@ -41,17 +41,32 @@ class ExecutionTimesTableViewController: UITableViewController, ManagedObjectCon
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         guard let executionTime = dataSource?.objectAtIndexPath(indexPath), let drug = executionTime.parentExecutionTime.drug  else { return }
         let actionViewcontroller = UIAlertController(title: "\n\n\n\n\n\n", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
-        let takeMedikationAction = UIAlertAction(title: "Genommen", style: .Default) { (action) in
+        if let _ = executionTime.executionDate {
+            let revokeMedikationAction = UIAlertAction(title: "Nicht genommen", style: .Default) { (action) in
+                executionTime.executionDate = nil
+            }
+            actionViewcontroller.addAction(revokeMedikationAction)
+        } else {let takeMedikationAction = UIAlertAction(title: "Genommen", style: .Default) { (action) in
             executionTime.executionDate = NSDate()
+            }
+            let moveToLaterAction = UIAlertAction(title: "Später nehmen", style: .Destructive, handler: nil)
+            actionViewcontroller.addAction(moveToLaterAction)
+            actionViewcontroller.addAction(takeMedikationAction)
         }
-        let moveToLaterAction = UIAlertAction(title: "Später nehmen", style: .Destructive, handler: nil)
+        
         let cancle = UIAlertAction(title: "Abbrechen", style: .Cancel, handler: nil)
-        actionViewcontroller.addAction(moveToLaterAction)
-        actionViewcontroller.addAction(takeMedikationAction)
+        
         actionViewcontroller.addAction(cancle)
         let detailView = ExecutionTimeDetailView(frame: actionViewcontroller.view.frame, drug: drug, executionTime: executionTime)
         actionViewcontroller.view.addSubview(detailView)
         
         self.presentViewController(actionViewcontroller, animated: true, completion: nil)
+    }
+    @IBAction func testPush(sender: AnyObject) {
+        guard let executionTime = dataSource?.objectAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) else { return }
+        let notification = executionTimeService.createNotification(executionTime.parentExecutionTime)
+        notification.repeatInterval = .Year
+        notification.fireDate = NSDate().dateByAddingTimeInterval(15)
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
 }

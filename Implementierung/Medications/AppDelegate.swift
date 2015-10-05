@@ -18,26 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        let takeMedikation = UIMutableUserNotificationAction()
-        takeMedikation.identifier = ""
-        takeMedikation.destructive = false
-        takeMedikation.title = "Genommen"
-        takeMedikation.activationMode = .Background
-        takeMedikation.authenticationRequired = false
-        let moveMedikation = UIMutableUserNotificationAction()
-        moveMedikation.identifier = ""
-        moveMedikation.destructive = false
-        moveMedikation.title = "Verschieben"
-        moveMedikation.activationMode = .Background
-        moveMedikation.authenticationRequired = false
-        
-        let category = UIMutableUserNotificationCategory()
-        category.identifier = "take_medikation"
-        category.setActions([takeMedikation, moveMedikation], forContext: .Minimal)
-        category.setActions([takeMedikation, moveMedikation], forContext: .Default)
-        let settings = UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert.union(.Badge), categories: [category])
-        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
-        
+        application.registerUserNotificationSettings(NotificationSettings.notificationSettings)
         guard let rootTabController = window?.rootViewController as? ManagedObjectContextSettable else {
            return true
         }

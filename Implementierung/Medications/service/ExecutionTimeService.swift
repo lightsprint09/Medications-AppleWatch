@@ -46,7 +46,7 @@ class ExecutionTimeService: NSObject {
     func createChildExecutionTimeFromParent(rootExecutionTime:RootExecutionTime, startDate:NSDate, endDate: NSDate) {
         guard let managedObjectContext = rootExecutionTime.managedObjectContext else { return }
         managedObjectContext.saveOrRollback()
-        self.registerNotification(rootExecutionTime)
+        
         let repeatCreator = RepeatEventCreator()
         repeatCreator.createEvent(startDate: startDate, endDate: endDate, repeatType: .Daily, useDate: {date in
             let executionTime = managedObjectContext.insertObject() as ExecutionTime
@@ -58,14 +58,16 @@ class ExecutionTimeService: NSObject {
             executionTime.amount = rootExecutionTime.amount
         })
     }
-    func registerNotification(executionTime:RootExecutionTime) {
+    
+    func createNotification(executionTime:RootExecutionTime) -> UILocalNotification {
         let notification = UILocalNotification()
         notification.fireDate = executionTime.assignmentTime
         notification.repeatInterval = .Day
-        notification.category = "take_medikation"
+        notification.category = NotificationSettings.medicationNotificationCategoryIdentifier
         notification.alertBody = "Nehme " + executionTime.amountUnitString! + " " + executionTime.drug!.name
         notification.alertAction = "Eingenommen"
         notification.userInfo = [coreDataNotificationIDKey: executionTime.objectID.URIRepresentation().absoluteString]
-        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+        
+        return notification
     }
 }

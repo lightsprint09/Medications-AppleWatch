@@ -71,9 +71,12 @@
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ss-jP-5Bh">
-                                            <rect key="frame" x="549" y="21.5" width="43" height="20.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:45" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ss-jP-5Bh">
+                                            <rect key="frame" x="502" y="21.5" width="90" height="20.5"/>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="90" id="Q4h-e0-K7k"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -108,6 +111,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Medikationplan" id="Whn-jX-OJg">
+                        <barButtonItem key="leftBarButtonItem" title="TestPush" id="JRQ-Eg-xHb">
+                            <connections>
+                                <action selector="testPush:" destination="LQP-ve-NUB" id="Zpa-ci-tVc"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Yzz-f9-28A">
                             <connections>
                                 <segue destination="g4g-cv-JNj" kind="presentation" id="1ue-OZ-QHA"/>

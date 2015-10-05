@@ -24,10 +24,12 @@ class MedicationTableCell: UITableViewCell {
             drugView.configureWithDrug(drug2)
         }
         timeLabel.text = executionTime.timeString
-        if let _ = executionTime.executionDate {
+        if let executionDate = executionTime.executionDate {
             timeLabel.textColor = .greenExecutionTimeColor()
+            timeLabel.text = "Genommen " + ExecutionTime.timeStrintFromDate(executionDate)
         } else {
              timeLabel.textColor = UIColor.blueExecutionTimeColor()
+            timeLabel.text = executionTime.timeString
         }
     }
 }

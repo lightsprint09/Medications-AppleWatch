@@ -19,7 +19,7 @@ enum TimeOfDay: Int {
         if hour > 11 && hour < 17 {
             return Noon
         }
-        if hour > 17 && hour < 22 {
+        if hour >= 17 && hour < 22 {
             return Evening
         }
         if hour > 22 && hour < 6 {

@@ -28,10 +28,10 @@ class ExecutionTime: NSManagedObject {
     
     //TODO refactor
     var timeString: String {
-        return timeStrintFromDate(assignmentDate)
+        return ExecutionTime.timeStrintFromDate(assignmentDate)
     }
     
-    func timeStrintFromDate(date:NSDate) -> String {
+    static func timeStrintFromDate(date:NSDate) -> String {
         ExecutionTime.dateFormatter.dateFormat = "HH:mm"
         return ExecutionTime.dateFormatter.stringFromDate(date)
     }
