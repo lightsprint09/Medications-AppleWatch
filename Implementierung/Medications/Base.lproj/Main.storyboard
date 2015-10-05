@@ -635,8 +635,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" translatesAutoresizingMaskIntoConstraints="NO" id="vxA-za-gXn">
-                                <rect key="frame" x="20" y="72" width="560" height="29"/>
+                                <rect key="frame" x="20" y="72" width="560" height="33"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="fch-FG-p74"/>
+                                </constraints>
                                 <segments>
                                     <segment title="Morgen"/>
                                     <segment title="Mittag"/>
@@ -648,7 +651,7 @@
                                 </connections>
                             </segmentedControl>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="Mhu-Eb-yNO">
-                                <rect key="frame" x="41" y="108" width="518" height="140"/>
+                                <rect key="frame" x="41" y="112" width="518" height="140"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="7p1-Rd-HtP"/>
@@ -664,7 +667,7 @@
                                 </connections>
                             </datePicker>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="JAY-GE-UoF">
-                                <rect key="frame" x="160.5" y="256" width="279.5" height="44"/>
+                                <rect key="frame" x="160.5" y="260" width="279.5" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dM1-CY-QBl" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="44"/>
@@ -721,14 +724,20 @@
                                 <animations/>
                             </stackView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="QZB-63-eDz">
-                                <rect key="frame" x="8" y="308" width="584" height="29"/>
+                                <rect key="frame" x="8" y="316" width="584" height="33"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="UKH-UT-5si"/>
+                                </constraints>
                                 <segments>
                                     <segment title="½"/>
                                     <segment title="1"/>
                                     <segment title="1 ½"/>
                                     <segment title="2"/>
                                 </segments>
+                                <connections>
+                                    <action selector="didChangeAmountSegmentedControl:" destination="bAE-nu-90z" eventType="valueChanged" id="sEo-qV-iZH"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <animations/>
@@ -737,7 +746,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Mhu-Eb-yNO" secondAttribute="trailing" constant="21" id="Fo2-Tk-6Ao"/>
                             <constraint firstItem="vxA-za-gXn" firstAttribute="trailing" secondItem="fYt-lf-nop" secondAttribute="trailingMargin" id="NTL-Oe-2wk"/>
                             <constraint firstAttribute="leadingMargin" secondItem="QZB-63-eDz" secondAttribute="leading" constant="12" id="OSN-I5-T1V"/>
-                            <constraint firstItem="QZB-63-eDz" firstAttribute="top" secondItem="JAY-GE-UoF" secondAttribute="bottom" constant="8" id="Vaf-ac-Ff0"/>
+                            <constraint firstItem="QZB-63-eDz" firstAttribute="top" secondItem="JAY-GE-UoF" secondAttribute="bottom" constant="12" id="Vaf-ac-Ff0"/>
                             <constraint firstItem="Mhu-Eb-yNO" firstAttribute="top" secondItem="vxA-za-gXn" secondAttribute="bottom" constant="8" symbolic="YES" id="Vf4-DX-8Ud"/>
                             <constraint firstItem="vxA-za-gXn" firstAttribute="top" secondItem="mc4-Xf-gbC" secondAttribute="bottom" constant="8" symbolic="YES" id="XFc-Tt-JOL"/>
                             <constraint firstItem="JAY-GE-UoF" firstAttribute="top" secondItem="Mhu-Eb-yNO" secondAttribute="bottom" constant="8" id="cHJ-AC-oeT"/>
@@ -753,7 +762,7 @@
                                 <action selector="dismissViewController:" destination="bAE-nu-90z" id="rKx-fa-zY5"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Fertig" id="vPb-IK-P29">
+                        <barButtonItem key="rightBarButtonItem" title="Speichern" id="vPb-IK-P29">
                             <connections>
                                 <action selector="done:" destination="bAE-nu-90z" id="WSQ-ua-EoK"/>
                             </connections>

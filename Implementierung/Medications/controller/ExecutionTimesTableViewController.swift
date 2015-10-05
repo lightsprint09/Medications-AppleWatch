@@ -31,8 +31,8 @@ class ExecutionTimesTableViewController: UITableViewController, ManagedObjectCon
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = MedicationHeaderView(frame: CGRect(x: 0, y: 0, width: 300, height: 32))
-        let timeOfDay = dataSource?.objectAtIndexPath(NSIndexPath(forRow: 0, inSection: section)).timeOfDay
-        view.configureWithTimeOfDay(timeOfDay!)
+        guard let timeOfDay = dataSource?.objectAtIndexPath(NSIndexPath(forRow: 0, inSection: section)).timeOfDay else { return view }
+        view.configureWithTimeOfDay(timeOfDay)
         view.backgroundColor = UIColor(red:240 / 255.0, green:240 / 255.0, blue:240 / 255.0, alpha:1.0)
         
         return view
@@ -46,8 +46,9 @@ class ExecutionTimesTableViewController: UITableViewController, ManagedObjectCon
                 executionTime.executionDate = nil
             }
             actionViewcontroller.addAction(revokeMedikationAction)
-        } else {let takeMedikationAction = UIAlertAction(title: "Genommen", style: .Default) { (action) in
-            executionTime.executionDate = NSDate()
+        } else {
+            let takeMedikationAction = UIAlertAction(title: "Genommen", style: .Default) { (_) in
+                executionTime.executionDate = NSDate()
             }
             let moveToLaterAction = UIAlertAction(title: "Später nehmen", style: .Destructive, handler: nil)
             actionViewcontroller.addAction(moveToLaterAction)
@@ -62,6 +63,7 @@ class ExecutionTimesTableViewController: UITableViewController, ManagedObjectCon
         
         self.presentViewController(actionViewcontroller, animated: true, completion: nil)
     }
+    
     @IBAction func testPush(sender: AnyObject) {
         guard let executionTime = dataSource?.objectAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) else { return }
         let notification = executionTimeService.createNotification(executionTime.parentExecutionTime)

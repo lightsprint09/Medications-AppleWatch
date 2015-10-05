@@ -74,20 +74,33 @@ class AddMedicationViewController: UIViewController, ManagedObjectContextSettabl
         if let medicationTimeController = (segue.destinationViewController as? UINavigationController)?.topViewController as? CreateRootExecutionTimeViewController {
             medicationTimeController.drug = selectedDrug
         }
+        if let createDrugController = (segue.destinationViewController as? UINavigationController)?.topViewController as? AddDrugViewController {
+            createDrugController.delegate = self
+        }
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        guard let drug = drugDataSource?.objectAtIndexPath(indexPath) else { return }
+        selectDrug(drug)
+    }
+    
+    func selectDrug(drug: Drug) {
+        let indexPath = drugDataSource?.fetchedResultsController.indexPathForObject(drug)
+        
         if let selectedDrug = selectedDrug, let currentlySelectedIndexPath = drugDataSource?.fetchedResultsController.indexPathForObject(selectedDrug) {
             if let cell = collectionView.cellForItemAtIndexPath(currentlySelectedIndexPath) as? AddDrugToMedicationCell {
                 cell.showSelectedBadge(false)
             }
         }
-        selectedDrug = drugDataSource?.objectAtIndexPath(indexPath)
-        if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? AddDrugToMedicationCell {
+        selectedDrug = drugDataSource?.objectAtIndexPath(indexPath!)
+        if let cell = collectionView.cellForItemAtIndexPath(indexPath!) as? AddDrugToMedicationCell {
+            collectionView.selectItemAtIndexPath(indexPath, animated: false, scrollPosition: UICollectionViewScrollPosition.CenteredHorizontally)
             cell.showSelectedBadge(true)
+            
         }
-        
     }
+    
+    
     
     @IBAction func didChangeRepeatType(sender: UISegmentedControl) {
         UIView.animateWithDuration(0.4, delay: 0.0, usingSpringWithDamping: 1.0 , initialSpringVelocity: 0, options: [], animations: {self.weekDaySelectionView.hidden = sender.selectedSegmentIndex != 1}, completion: nil)

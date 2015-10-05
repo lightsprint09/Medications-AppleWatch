@@ -11,8 +11,8 @@ import CoreData
 
 class CreateRootExecutionTimeViewController: UIViewController {
     let executionTimeService = ExecutionTimeService()
-    var drug: Drug!
     
+    var drug: Drug!
     var executionTime: RootExecutionTime!
     var amount = 0.0 {
         didSet {
@@ -38,8 +38,11 @@ class CreateRootExecutionTimeViewController: UIViewController {
     func setupSegementedDoseControll() {
         guard let drugType = executionTime.drug?.type else { return }
         doseSegementedControl.removeAllSegments()
+        let formatter = NSNumberFormatter()
+        formatter.maximumFractionDigits = 2
+        formatter.minimumSignificantDigits = 1
         for unit in drugType.unitPreSets(Float(amount)).enumerate() {
-            doseSegementedControl.insertSegmentWithTitle("\(unit.element) " + drugType.unit(unit.element), atIndex: unit.index, animated: false)
+            doseSegementedControl.insertSegmentWithTitle("\(formatter.stringFromNumber(unit.element)!) " + drugType.unit(unit.element), atIndex: unit.index, animated: false)
         }
     }
 
@@ -65,13 +68,18 @@ class CreateRootExecutionTimeViewController: UIViewController {
     }
     
     @IBAction func didChangeTimeOfDay(sender: UISegmentedControl) {
-        if sender.selectedSegmentIndex  != -1 {
-            let timeOfDay = TimeOfDay(rawValue: sender.selectedSegmentIndex)
-            let dateOfTime = timeOfDay!.startDate.dateByAddingTimeInterval(5400)
+        if let timeOfDay = TimeOfDay(rawValue: sender.selectedSegmentIndex)
+            where sender.selectedSegmentIndex  != -1 {
+            let dateOfTime = timeOfDay.startDate.dateByAddingTimeInterval(5400)
             timePicker.setDate(dateOfTime, animated: true)
             //TODO: This could be a bug. Change listener not called
             assignmentDateDidChange(timePicker)
         }
+    }
+    @IBAction func didChangeAmountSegmentedControl(sender: UISegmentedControl) {
+        guard let drugType = executionTime.drug?.type else { return }
+        let amountSelected = drugType.unitPreSets(Float(amount))[sender.selectedSegmentIndex]
+        amount = Double(amountSelected)
     }
     
     @IBAction func addOneDose(sender: AnyObject) {

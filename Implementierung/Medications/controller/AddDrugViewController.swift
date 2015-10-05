@@ -24,6 +24,8 @@ class AddDrugViewController: UIViewController, ManagedObjectContextSettable, UII
             managedObjectContext = context
         }
     }
+    
+    weak var delegate: AddMedicationViewController?
     var drug:Drug!
     
     lazy var cameraUI = UIImagePickerController()
@@ -73,7 +75,8 @@ class AddDrugViewController: UIViewController, ManagedObjectContextSettable, UII
     
     @IBAction func saveDrug(sender: AnyObject) {
         managedObjectContext.saveOrRollback()
-         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+        delegate?.selectDrug(drug)
+        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func didChangeDrugName(sender: UITextField) {

@@ -50,7 +50,7 @@ enum DrugEnum: Int {
         case RoundPillWithMiddel, LongPillWithMiddel, RoundPill, LongPill, HalfPillSingeColor, HalfPillSingeColorDots:
             return [c * 0.25, c * 0.5, c * 1, c * 2]
         case .DropDose, .Injection:
-            return [c * 5, c * 10, c * 20, c * 25]
+            return [c * 3, c * 5, c * 10, c * 15]
         }
     }
     
