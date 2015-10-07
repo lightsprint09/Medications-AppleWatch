@@ -50,17 +50,46 @@ class ExecutionTimesTableViewController: UITableViewController, ManagedObjectCon
             let takeMedikationAction = UIAlertAction(title: "Genommen", style: .Default) { (_) in
                 executionTime.executionDate = NSDate()
             }
-            let moveToLaterAction = UIAlertAction(title: "Später nehmen", style: .Destructive, handler: nil)
+            let moveToLaterAction = UIAlertAction(title: "Später nehmen", style: .Destructive) {(_) in
+                self.askForDelay(executionTime)
+            }
             actionViewcontroller.addAction(moveToLaterAction)
             actionViewcontroller.addAction(takeMedikationAction)
         }
         
-        let cancle = UIAlertAction(title: "Abbrechen", style: .Cancel, handler: nil)
+        let cancleAction = UIAlertAction(title: "Abbrechen", style: .Cancel, handler: nil)
         
-        actionViewcontroller.addAction(cancle)
+        actionViewcontroller.addAction(cancleAction)
         let detailView = ExecutionTimeDetailView(frame: actionViewcontroller.view.frame, drug: drug, executionTime: executionTime)
         actionViewcontroller.view.addSubview(detailView)
         
+        self.presentViewController(actionViewcontroller, animated: true, completion: nil)
+    }
+    
+    func askForDelay(executionTime:ExecutionTime) {
+        let actionViewcontroller = UIAlertController(title: "Verschieben", message: "Wähle die Dauer, um das Medikament verschoben wird", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        let delay10MintesAction = UIAlertAction(title: "15 Minuten", style: .Default) {(_) in
+            executionTime.secondsMoved = 900
+        }
+        let delay30MintesAction = UIAlertAction(title: "30 Minuten", style: .Default) {(_) in
+            executionTime.secondsMoved = 1800
+        }
+        let delay60MintesAction = UIAlertAction(title: "60 Minuten", style: .Default) {(_) in
+            executionTime.secondsMoved = 3600
+        }
+        let delay120MintesAction = UIAlertAction(title: "120 Minuten", style: .Default) {(_) in
+            executionTime.secondsMoved = 7200
+        }
+        
+        let cancleAction = UIAlertAction(title: "Abbrechen", style: .Cancel, handler: nil)
+        
+        actionViewcontroller.addAction(delay10MintesAction)
+        actionViewcontroller.addAction(delay30MintesAction)
+        actionViewcontroller.addAction(delay60MintesAction)
+        actionViewcontroller.addAction(delay120MintesAction)
+        actionViewcontroller.addAction(cancleAction)
+        
+
         self.presentViewController(actionViewcontroller, animated: true, completion: nil)
     }
     

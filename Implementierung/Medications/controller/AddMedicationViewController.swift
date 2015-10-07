@@ -85,15 +85,15 @@ class AddMedicationViewController: UIViewController, ManagedObjectContextSettabl
     }
     
     func selectDrug(drug: Drug) {
-        let indexPath = drugDataSource?.fetchedResultsController.indexPathForObject(drug)
+        guard let indexPath = drugDataSource?.fetchedResultsController.indexPathForObject(drug) else { return }
         
         if let selectedDrug = selectedDrug, let currentlySelectedIndexPath = drugDataSource?.fetchedResultsController.indexPathForObject(selectedDrug) {
             if let cell = collectionView.cellForItemAtIndexPath(currentlySelectedIndexPath) as? AddDrugToMedicationCell {
                 cell.showSelectedBadge(false)
             }
         }
-        selectedDrug = drugDataSource?.objectAtIndexPath(indexPath!)
-        if let cell = collectionView.cellForItemAtIndexPath(indexPath!) as? AddDrugToMedicationCell {
+        selectedDrug = drugDataSource?.objectAtIndexPath(indexPath)
+        if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? AddDrugToMedicationCell {
             collectionView.selectItemAtIndexPath(indexPath, animated: false, scrollPosition: UICollectionViewScrollPosition.CenteredHorizontally)
             cell.showSelectedBadge(true)
             

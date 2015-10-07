@@ -20,6 +20,8 @@ class CoustomizeDrugViewController: UIViewController, DrugSettable, UICollection
         }
     }
     
+    
+    
     override func viewDidLoad() {
         drug.color = rgbColor
         guard let drugKind = drug.type, let color = drug.color else{ return }
@@ -34,6 +36,13 @@ class CoustomizeDrugViewController: UIViewController, DrugSettable, UICollection
         get {
             return sliderDelegate.getCurrentColor()
         }
+    }
+    
+    @IBAction func doneViewController(sender: AnyObject) {
+    }
+    
+    func renderImage() {
+        //let imageRef = CGImageRef(
     }
     
     @IBOutlet weak var redSlider: RGBColorSlider! {

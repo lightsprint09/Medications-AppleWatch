@@ -71,33 +71,62 @@
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:45" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ss-jP-5Bh">
-                                            <rect key="frame" x="502" y="21.5" width="90" height="20.5"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cjg-Dw-za2">
+                                            <rect key="frame" x="502" y="19" width="70" height="22"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:45" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ss-jP-5Bh">
+                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="22"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="nEh-L7-yId"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+120" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6Z-6r-kGV" customClass="RoundLabel" customModule="Medications" customModuleProvider="target">
+                                                    <rect key="frame" x="70" y="0.0" width="0.0" height="22"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="3eM-Xe-xzV"/>
+                                                        <constraint firstAttribute="height" constant="22" id="DpU-WR-IeN"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                    <color key="textColor" red="0.97254901960784312" green="0.4823529411764706" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" red="0.97254901959999995" green="0.4823529412" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="7"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                            </subviews>
                                             <animations/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="90" id="Q4h-e0-K7k"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        </stackView>
                                     </subviews>
                                     <animations/>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="4Ss-jP-5Bh" secondAttribute="trailing" id="AQI-5Q-cga"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Cjg-Dw-za2" secondAttribute="trailing" id="H5t-YW-bQA"/>
+                                        <constraint firstItem="Cjg-Dw-za2" firstAttribute="centerY" secondItem="ajH-wf-Pba" secondAttribute="centerY" id="V86-2O-z6q"/>
                                         <constraint firstItem="LvW-tm-rwK" firstAttribute="top" secondItem="ajH-wf-Pba" secondAttribute="topMargin" id="Ypz-hU-5OF"/>
                                         <constraint firstItem="LvW-tm-rwK" firstAttribute="leading" secondItem="ajH-wf-Pba" secondAttribute="leadingMargin" id="cLY-XV-I46"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="7kj-xQ-vku" secondAttribute="bottom" constant="0.5" id="cUI-2G-5Ns"/>
                                         <constraint firstItem="7kj-xQ-vku" firstAttribute="top" secondItem="GCz-Qz-OTI" secondAttribute="bottom" constant="5" id="mb9-2r-uTu"/>
                                         <constraint firstItem="7kj-xQ-vku" firstAttribute="leading" secondItem="GCz-Qz-OTI" secondAttribute="leading" id="pFR-so-gM3"/>
                                         <constraint firstItem="GCz-Qz-OTI" firstAttribute="top" secondItem="ajH-wf-Pba" secondAttribute="topMargin" id="sb5-9V-oeg"/>
-                                        <constraint firstItem="4Ss-jP-5Bh" firstAttribute="centerY" secondItem="ajH-wf-Pba" secondAttribute="centerY" id="u7T-Uc-Kpp"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="LvW-tm-rwK" secondAttribute="bottom" id="xqb-z3-R98"/>
                                         <constraint firstItem="GCz-Qz-OTI" firstAttribute="leading" secondItem="LvW-tm-rwK" secondAttribute="trailing" constant="-4" id="zKj-Z7-qvS"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
+                                    <outlet property="delayView" destination="P6Z-6r-kGV" id="3dh-i8-s5V"/>
                                     <outlet property="drugNameLabel" destination="GCz-Qz-OTI" id="W5D-0R-yXV"/>
                                     <outlet property="drugView" destination="LvW-tm-rwK" id="rZF-55-SOI"/>
                                     <outlet property="timeLabel" destination="4Ss-jP-5Bh" id="BzK-Si-AKX"/>
@@ -994,7 +1023,7 @@
                                         <animations/>
                                         <state key="normal" title="Form hinzufügen"/>
                                         <connections>
-                                            <segue destination="fSJ-vm-eCx" kind="show" id="f7Q-im-pbD"/>
+                                            <segue destination="r0L-5t-HIS" kind="presentation" id="ggM-qI-lm8"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1204,7 +1233,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p6q-2W-zfx" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="9kX-0e-hBG">
                     <connections>
-                        <segue destination="fSJ-vm-eCx" kind="show" id="kjr-14-vxK"/>
+                        <segue destination="r0L-5t-HIS" kind="presentation" id="Fb2-nJ-OZp"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -1300,6 +1329,23 @@
             </objects>
             <point key="canvasLocation" x="963" y="912"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="AcK-64-BeA">
+            <objects>
+                <navigationController id="r0L-5t-HIS" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sW3-6k-ng0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="fSJ-vm-eCx" kind="relationship" relationship="rootViewController" id="XZX-Wu-ctM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3fl-oF-EjM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2996" y="109"/>
+        </scene>
         <!--Form u. Farbe-->
         <scene sceneID="tFi-aQ-dQn">
             <objects>
@@ -1312,31 +1358,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8g-aO-Pmw" customClass="DrugCustomaziationView" customModule="Medications" customModuleProvider="target">
-                                <rect key="frame" x="255" y="32" width="90" height="90"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="lep-yj-zUx"/>
-                                    <constraint firstAttribute="width" constant="90" id="mlR-9G-m1K"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="pillBaseColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="12"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillProportionally" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="R6K-eX-3q9">
-                                <rect key="frame" x="0.0" y="134" width="600" height="289"/>
+                                <rect key="frame" x="0.0" y="178" width="600" height="257"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Form" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hb9-pd-NY9">
                                         <rect key="frame" x="12" y="0.0" width="576" height="21"/>
@@ -1349,7 +1372,7 @@
                                         </variation>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ag4-hF-y8m">
-                                        <rect key="frame" x="0.0" y="37" width="600" height="90"/>
+                                        <rect key="frame" x="0.0" y="37" width="600" height="50"/>
                                         <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -1363,7 +1386,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="coustom-pill-cell" id="TTs-B6-6RH" customClass="CustomPillCell" customModule="Medications" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                <rect key="frame" x="0.0" y="-20" width="90" height="90"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
@@ -1408,7 +1431,7 @@
                                         </connections>
                                     </collectionView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Farbe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WgM-kE-J7e">
-                                        <rect key="frame" x="12" y="143" width="576" height="21"/>
+                                        <rect key="frame" x="12" y="103" width="576" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1417,8 +1440,8 @@
                                             <rect key="frame" x="12" y="142.5" width="376" height="20.5"/>
                                         </variation>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sXM-71-0Iu">
-                                        <rect key="frame" x="30" y="179" width="540" height="110"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="sXM-71-0Iu">
+                                        <rect key="frame" x="30" y="139" width="540" height="118"/>
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="wLU-j4-VLL" customClass="RGBColorSlider">
                                                 <rect key="frame" x="-2" y="0.0" width="544" height="31"/>
@@ -1434,7 +1457,7 @@
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="F0E-dP-rJj" customClass="RGBColorSlider">
-                                                <rect key="frame" x="-2" y="40" width="544" height="31"/>
+                                                <rect key="frame" x="-2" y="44" width="544" height="31"/>
                                                 <animations/>
                                                 <variation key="widthClass=compact" fixedFrame="YES">
                                                     <rect key="frame" x="-2" y="40" width="344" height="31"/>
@@ -1447,7 +1470,7 @@
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fWZ-wG-6we" customClass="RGBColorSlider">
-                                                <rect key="frame" x="-2" y="80" width="544" height="31"/>
+                                                <rect key="frame" x="-2" y="88" width="544" height="31"/>
                                                 <animations/>
                                                 <variation key="widthClass=compact" fixedFrame="YES">
                                                     <rect key="frame" x="-2" y="80" width="344" height="31"/>
@@ -1481,6 +1504,29 @@
                                     <constraint firstAttribute="trailing" secondItem="sXM-71-0Iu" secondAttribute="trailing" constant="30" id="VY3-62-DYR"/>
                                 </constraints>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8g-aO-Pmw" customClass="DrugCustomaziationView" customModule="Medications" customModuleProvider="target">
+                                <rect key="frame" x="255" y="76" width="90" height="90"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="lep-yj-zUx"/>
+                                    <constraint firstAttribute="width" constant="90" id="mlR-9G-m1K"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="pillBaseColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1492,7 +1538,13 @@
                             <constraint firstItem="R6K-eX-3q9" firstAttribute="top" secondItem="H8g-aO-Pmw" secondAttribute="bottom" constant="12" id="zEX-ap-E7t"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Form u. Farbe" id="bkR-Qm-g4y"/>
+                    <navigationItem key="navigationItem" title="Form u. Farbe" id="bkR-Qm-g4y">
+                        <barButtonItem key="rightBarButtonItem" title="Fertig" id="6Gf-t8-8Np">
+                            <connections>
+                                <action selector="doneViewController:" destination="fSJ-vm-eCx" id="DXB-xr-fzM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="blueSlider" destination="fWZ-wG-6we" id="MHb-pM-zro"/>
                         <outlet property="drugView" destination="H8g-aO-Pmw" id="krF-BO-zdd"/>
@@ -1503,7 +1555,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7XA-cO-EmK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2969" y="109"/>
+            <point key="canvasLocation" x="3701" y="109"/>
         </scene>
         <!--Medikamente-->
         <scene sceneID="abM-S9-7Oq">
@@ -1535,7 +1587,7 @@
         <image name="pill" width="42" height="42"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="ggM-qI-lm8"/>
         <segue reference="TJb-nM-l26"/>
-        <segue reference="f7Q-im-pbD"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -14,6 +14,7 @@ class MedicationTableCell: UITableViewCell {
     @IBOutlet weak var drugNameLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var drugView: DrugCustomaziationView!
+    @IBOutlet weak var delayView: RoundLabel!
     
     func configureWithExecutionTime(executionTime:ExecutionTime) {
         let drug = executionTime.parentExecutionTime.drug
@@ -26,10 +27,17 @@ class MedicationTableCell: UITableViewCell {
         timeLabel.text = executionTime.timeString
         if let executionDate = executionTime.executionDate {
             timeLabel.textColor = .greenExecutionTimeColor()
-            timeLabel.text = "Genommen " + ExecutionTime.timeStrintFromDate(executionDate)
+            timeLabel.text = ExecutionTime.timeStrintFromDate(executionDate) + " ✔︎"
         } else {
              timeLabel.textColor = UIColor.blueExecutionTimeColor()
             timeLabel.text = executionTime.timeString
+        }
+        
+        if let delay = executionTime.secondsMoved where executionTime.executionDate == nil {
+            delayView.text = "+\(delay.integerValue / 60)"
+            delayView.hidden = false
+        } else {
+            delayView.hidden = true
         }
     }
 }
