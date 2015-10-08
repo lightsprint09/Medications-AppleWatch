@@ -10,12 +10,14 @@ import UIKit
 
 class DrugTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var drugView: DrugCustomaziationView!
+    @IBOutlet weak var drugImageView: UIImageView!
     @IBOutlet weak var drugNameLabel: UILabel!
     @IBOutlet weak var activeSubstanceLabel: UILabel!
     func configureWithDrug(drug:Drug) {
         drugNameLabel.text = drug.name
         activeSubstanceLabel.text = drug.activeSubstance
-        drugView.configureWithDrug(drug)
+        if let pillImageData = drug.pillImage {
+            drugImageView.image = UIImage(data: pillImageData)
+        }
     }
 }

@@ -9,7 +9,16 @@
 import Foundation
 
 extension DrugEnum {
-    func render(context:CGContext, baseColor:UIColor, secondColor:UIColor?, scale:CGFloat = 1) {
+    func renderToImage(size:CGSize, baseColor:UIColor, secondColor:UIColor? = nil, scale:CGFloat = 1) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(size, false, 0);
+        let context = UIGraphicsGetCurrentContext()
+        render(context!, baseColor: baseColor)
+        let image = UIGraphicsGetImageFromCurrentImageContext();
+        
+        return image
+    }
+    
+    func render(context:CGContext, baseColor:UIColor, secondColor:UIColor? = nil, scale:CGFloat = 1) {
         let darkBaseColor = UIColor(red: baseColor.red() - 0.3, green: baseColor.green() - 0.3, blue: baseColor.blue() - 0.3, alpha: 1)
         let borderColor = UIColor(red: baseColor.red() - 0.35, green: baseColor.green() - 0.35, blue: baseColor.blue() - 0.35, alpha: 1)
         let pillMiddleColor = UIColor(red: baseColor.red() - 0.4, green: baseColor.green() - 0.4, blue: baseColor.blue() - 0.4, alpha: 1)

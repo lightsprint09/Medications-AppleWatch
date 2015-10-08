@@ -2,7 +2,7 @@
 //  Drug+CoreDataProperties.swift
 //  Medications
 //
-//  Created by Lukas Schmidt on 30.09.15.
+//  Created by Lukas Schmidt on 07.10.15.
 //  Copyright © 2015 Lukas Schmidt. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -17,11 +17,12 @@ extension Drug {
     @NSManaged var activeSubstance: String?
     @NSManaged var color: UIColor?
     @NSManaged var companyName: String?
-    @NSManaged var creationDate: NSDate
+    @NSManaged var creationDate: NSDate?
     @NSManaged var doseOfSubstance: String?
     @NSManaged var imageKind: NSNumber?
     @NSManaged var name: String
     @NSManaged var userImage: NSData?
+    @NSManaged var pillImage: NSData?
     @NSManaged var executionTimes: NSSet
 
 }

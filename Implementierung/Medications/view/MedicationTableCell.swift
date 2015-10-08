@@ -13,7 +13,7 @@ class MedicationTableCell: UITableViewCell {
     @IBOutlet weak var unitCountLabel: UILabel!
     @IBOutlet weak var drugNameLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var drugView: DrugCustomaziationView!
+    @IBOutlet weak var drugImageView: UIImageView!
     @IBOutlet weak var delayView: RoundLabel!
     
     func configureWithExecutionTime(executionTime:ExecutionTime) {
@@ -21,8 +21,8 @@ class MedicationTableCell: UITableViewCell {
         drugNameLabel.text = drug?.name
         unitCountLabel.text = executionTime.amountUnitString
         
-        if let drug2 = drug {
-            drugView.configureWithDrug(drug2)
+        if let pillImageData = drug?.pillImage {
+            drugImageView.image = UIImage(data: pillImageData)
         }
         timeLabel.text = executionTime.timeString
         if let executionDate = executionTime.executionDate {

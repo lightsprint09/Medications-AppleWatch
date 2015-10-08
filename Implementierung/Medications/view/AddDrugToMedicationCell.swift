@@ -10,12 +10,14 @@ import UIKit
 
 class AddDrugToMedicationCell: UICollectionViewCell {
     @IBOutlet weak var drugNamelLabel: UILabel!
-    @IBOutlet weak var drugView: DrugCustomaziationView!
+    @IBOutlet weak var drugImageView: UIImageView!
     @IBOutlet weak var selectedView: UIView!
     
     func configureWithDrug(drug:Drug) {
        drugNamelLabel.text = drug.name
-        drugView.configureWithDrug(drug)
+        if let pillImageData = drug.pillImage {
+            drugImageView.image = UIImage(data: pillImageData)
+        }
     }
     
     func showSelectedBadge(isSelected:Bool) {

@@ -43,7 +43,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="63.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LvW-tm-rwK" customClass="DrugCustomaziationView" customModule="Medications" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LvW-tm-rwK" customClass="UIImageView">
                                             <rect key="frame" x="8" y="8" width="58" height="47.5"/>
                                             <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -127,8 +127,8 @@
                                 <animations/>
                                 <connections>
                                     <outlet property="delayView" destination="P6Z-6r-kGV" id="3dh-i8-s5V"/>
+                                    <outlet property="drugImageView" destination="LvW-tm-rwK" id="HRO-ez-k3s"/>
                                     <outlet property="drugNameLabel" destination="GCz-Qz-OTI" id="W5D-0R-yXV"/>
-                                    <outlet property="drugView" destination="LvW-tm-rwK" id="rZF-55-SOI"/>
                                     <outlet property="timeLabel" destination="4Ss-jP-5Bh" id="BzK-Si-AKX"/>
                                     <outlet property="unitCountLabel" destination="7kj-xQ-vku" id="Bvp-hW-JWJ"/>
                                 </connections>
@@ -206,7 +206,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="113" height="103"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LWj-eO-2Hj" customClass="DrugCustomaziationView" customModule="Medications" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LWj-eO-2Hj" customClass="UIImageView">
                                                     <rect key="frame" x="26" y="8" width="60" height="60"/>
                                                     <animations/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -248,9 +248,9 @@
                                         </constraints>
                                         <size key="customSize" width="113" height="103"/>
                                         <connections>
+                                            <outlet property="drugImageView" destination="LWj-eO-2Hj" id="eDU-fJ-ccK"/>
                                             <outlet property="drugNamelLabel" destination="1jw-Cb-Bgr" id="Qz0-Cu-iLi"/>
-                                            <outlet property="drugView" destination="LWj-eO-2Hj" id="ojr-Z7-b6T"/>
-                                            <outlet property="selectedView" destination="aQt-LW-D6j" id="7hC-nI-PCp"/>
+                                            <outlet property="selectedView" destination="aQt-LW-D6j" id="HrY-64-CC8"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -843,7 +843,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="67.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZPC-Ni-hT3" customClass="DrugCustomaziationView" customModule="Medications" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZPC-Ni-hT3" userLabel="Drug Image View" customClass="UIImageView">
                                             <rect key="frame" x="8" y="8" width="50" height="51.5"/>
                                             <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -909,8 +909,8 @@
                                 <animations/>
                                 <connections>
                                     <outlet property="activeSubstanceLabel" destination="ufz-7U-PnU" id="zbt-KF-QoZ"/>
+                                    <outlet property="drugImageView" destination="ZPC-Ni-hT3" id="E5S-R8-eMU"/>
                                     <outlet property="drugNameLabel" destination="2Uy-Ru-dFl" id="Sd2-96-86a"/>
-                                    <outlet property="drugView" destination="ZPC-Ni-hT3" id="lqY-GY-hzg"/>
                                     <segue destination="BtO-H4-3vn" kind="show" id="HKv-0n-48p"/>
                                 </connections>
                             </tableViewCell>
@@ -963,10 +963,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pBa-op-S8I">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pBa-op-S8I">
                                 <rect key="frame" x="20" y="72" width="117" height="90"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xwG-vN-qKO" customClass="DrugCustomaziationView" customModule="Medications" customModuleProvider="target">
+                                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="xwG-vN-qKO" userLabel="Drug Image View" customClass="RoundUIImageView" customModule="Medications" customModuleProvider="target">
                                         <rect key="frame" x="29" y="0.0" width="60" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oP3-mT-Iua">
@@ -1038,7 +1038,7 @@
                                     </mask>
                                 </variation>
                             </stackView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="7f6-24-ujT">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="7f6-24-ujT">
                                 <rect key="frame" x="149" y="87" width="419" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1047,7 +1047,7 @@
                                     <action selector="didChangeDrugName:" destination="Mg7-DT-c0Y" eventType="editingChanged" id="zsT-3r-feG"/>
                                 </connections>
                             </textField>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SsU-f2-Iab" customClass="RoundView" customModule="Medications" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SsU-f2-Iab" customClass="RoundView" customModule="Medications" customModuleProvider="target">
                                 <rect key="frame" x="20" y="175" width="560" height="420"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VbF-UM-xe3">
@@ -1185,7 +1185,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EOE-3S-fUW">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EOE-3S-fUW">
                                 <rect key="frame" x="192" y="613" width="216" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Mehr Informationen hinzufügen"/>
@@ -1225,7 +1225,7 @@
                     <connections>
                         <outlet property="addStructureButton" destination="1Yu-Vd-Na0" id="xKL-0T-WHL"/>
                         <outlet property="delteImageButton" destination="C73-Pd-6ez" id="ODT-bR-ABU"/>
-                        <outlet property="drugView" destination="xwG-vN-qKO" id="75v-ID-Tfd"/>
+                        <outlet property="drugImageView" destination="xwG-vN-qKO" id="Uh0-20-Zkv"/>
                         <outlet property="imageView" destination="xvD-Ab-Taz" id="xMT-ex-Jby"/>
                         <outlet property="plusLabel" destination="oP3-mT-Iua" id="e6Z-49-UCL"/>
                     </connections>

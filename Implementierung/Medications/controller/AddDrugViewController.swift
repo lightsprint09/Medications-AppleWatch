@@ -11,7 +11,7 @@ import CoreData
 import MobileCoreServices
 
 class AddDrugViewController: UIViewController, ManagedObjectContextSettable, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    @IBOutlet weak var drugView: DrugCustomaziationView!
+    @IBOutlet weak var drugImageView: UIImageView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var delteImageButton: UIButton!
     @IBOutlet weak var plusLabel: UILabel!
@@ -38,11 +38,11 @@ class AddDrugViewController: UIViewController, ManagedObjectContextSettable, UII
     }
     
     override func viewWillAppear(animated: Bool) {
-        guard let _ = drug.type, let _ = drug.color else{ return }
+        guard let pillImageData = drug.pillImage else { return }
         addStructureButton.titleLabel?.text = "Form ändern"
         plusLabel.hidden = true
         
-        drugView.configureWithDrug(drug)
+        drugImageView.image = UIImage(data: pillImageData)
     }
     
     @IBAction func presentCamera(sender: AnyObject) {
@@ -86,7 +86,8 @@ class AddDrugViewController: UIViewController, ManagedObjectContextSettable, UII
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let destinationCV = segue.destinationViewController as? CoustomizeDrugViewController {
+        if let destinationCV = (segue.destinationViewController as? UINavigationController)?.topViewController as? DrugSettable {
+            var destinationCV = destinationCV
             destinationCV.drug = drug
         }
     }

@@ -2,7 +2,7 @@
 //  RootExecutionTime+CoreDataProperties.swift
 //  Medications
 //
-//  Created by Lukas Schmidt on 30.09.15.
+//  Created by Lukas Schmidt on 07.10.15.
 //  Copyright © 2015 Lukas Schmidt. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -16,7 +16,7 @@ extension RootExecutionTime {
 
     @NSManaged var amount: NSDecimalNumber?
     @NSManaged var assignmentTime: NSDate
-    @NSManaged var executionTimes: NSSet
     @NSManaged var drug: Drug?
+    @NSManaged var executionTimes: NSSet
 
 }

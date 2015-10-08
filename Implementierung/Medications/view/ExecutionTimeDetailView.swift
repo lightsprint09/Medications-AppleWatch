@@ -11,8 +11,8 @@ import UIKit
 class ExecutionTimeDetailView: UIView {
     init(frame: CGRect, drug: Drug, executionTime: ExecutionTime) {
         super.init(frame: frame)
-        let view = DrugCustomaziationView(frame: CGRect(x: (bounds.width - 70) / 2, y: 0, width: 70, height: 70))
-        view.configureWithDrug(drug)
+        let imageView = UIImageView(frame: CGRect(x: (bounds.width - 70) / 2, y: 0, width: 70, height: 70))
+        imageView.image = UIImage(data: drug.pillImage!)
         let drugLabel = UILabel(frame: CGRect(x: (bounds.width - 120) / 2, y: 58, width: 120, height: 32))
         drugLabel.textAlignment = .Center
         drugLabel.text = drug.name
@@ -23,8 +23,7 @@ class ExecutionTimeDetailView: UIView {
         //detailLabel. bold
         detailLabel.text = executionTime.timeString + " - " + executionTime.amountUnitString!
         
-        view.backgroundColor = .clearColor()
-        addSubview(view)
+        addSubview(imageView)
         addSubview(drugLabel)
         addSubview(detailLabel)
     }
