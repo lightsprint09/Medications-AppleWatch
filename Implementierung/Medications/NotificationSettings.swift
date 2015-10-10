@@ -11,7 +11,7 @@ import UIKit
 class NotificationSettings: NSObject {
     static var takeMedikationAction:  UIUserNotificationAction {
         let takeMedikation = UIMutableUserNotificationAction()
-        takeMedikation.identifier = ""
+        takeMedikation.identifier = takeMedicationNotificationActionIdentifier
         takeMedikation.destructive = false
         takeMedikation.title = "Genommen"
         takeMedikation.activationMode = .Background
@@ -22,13 +22,21 @@ class NotificationSettings: NSObject {
     
     static var delayMedicationAction: UIUserNotificationAction {
         let delayMedication = UIMutableUserNotificationAction()
-        delayMedication.identifier = ""
+        delayMedication.identifier = delayMedicationNotificationActionIdentifier
         delayMedication.destructive = false
         delayMedication.title = "Verschieben"
-        delayMedication.activationMode = .Background
+        delayMedication.activationMode = .Foreground
         delayMedication.authenticationRequired = false
         
         return delayMedication
+    }
+    
+    static var takeMedicationNotificationActionIdentifier: String {
+        return "take_medikation_category_identifier"
+    }
+    
+    static var delayMedicationNotificationActionIdentifier: String {
+        return "delay_medikation_category_identifier"
     }
     
     static var medicationNotificationCategory: UIUserNotificationCategory {
@@ -41,8 +49,10 @@ class NotificationSettings: NSObject {
     }
     
     static var medicationNotificationCategoryIdentifier: String {
-        return "take_medikation_identifier"
+        return "take_medikation_category_identifier"
     }
+    
+    
     
     static let notificationSettings = UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert.union(.Badge).union(.Sound), categories: [medicationNotificationCategory])
     

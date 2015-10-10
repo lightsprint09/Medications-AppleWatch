@@ -30,6 +30,8 @@
 		9436BAC61BBC0DAB0050DC93 /* RootExecutionTime+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9436BAC31BBC0DAB0050DC93 /* RootExecutionTime+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
 		9436BAC71BBC0DAB0050DC93 /* ExecutionTime+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9436BAC41BBC0DAB0050DC93 /* ExecutionTime+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
 		9436BAC81BBC0DAB0050DC93 /* Drug+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9436BAC51BBC0DAB0050DC93 /* Drug+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		943B24461BC7D2A400E9D4D0 /* TakeDrugNotificationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943B24451BC7D2A400E9D4D0 /* TakeDrugNotificationKeys.swift */; settings = {ASSET_TAGS = (); }; };
+		943B24471BC7D30400E9D4D0 /* TakeDrugNotificationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943B24451BC7D2A400E9D4D0 /* TakeDrugNotificationKeys.swift */; settings = {ASSET_TAGS = (); }; };
 		94463A301BBEBB5700DEE3D6 /* ExecutionTimeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94463A2F1BBEBB5700DEE3D6 /* ExecutionTimeDetailView.swift */; settings = {ASSET_TAGS = (); }; };
 		94463A321BC02E6F00DEE3D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94463A311BC02E6F00DEE3D6 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
 		9448EF7D1B8F034E0024C87F /* MedicationHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9448EF7C1B8F034E0024C87F /* MedicationHeaderView.swift */; settings = {ASSET_TAGS = (); }; };
@@ -160,6 +162,7 @@
 		9436BAC31BBC0DAB0050DC93 /* RootExecutionTime+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RootExecutionTime+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9436BAC41BBC0DAB0050DC93 /* ExecutionTime+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExecutionTime+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9436BAC51BBC0DAB0050DC93 /* Drug+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Drug+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		943B24451BC7D2A400E9D4D0 /* TakeDrugNotificationKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakeDrugNotificationKeys.swift; sourceTree = "<group>"; };
 		94463A2F1BBEBB5700DEE3D6 /* ExecutionTimeDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecutionTimeDetailView.swift; sourceTree = "<group>"; };
 		94463A311BC02E6F00DEE3D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9448EF7C1B8F034E0024C87F /* MedicationHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationHeaderView.swift; sourceTree = "<group>"; };
@@ -219,7 +222,7 @@
 		94D1E6141B7B558D00B0CD7D /* RGBColorSliderDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGBColorSliderDelegate.m; sourceTree = "<group>"; };
 		94D1E6171B7B574700B0CD7D /* Medications-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Medications-Bridging-Header.h"; sourceTree = "<group>"; };
 		94D6D8A61B83584100DD5F2D /* DrugDBService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugDBService.swift; sourceTree = "<group>"; };
-		94DA8ABB1BC1748B00D8B9E6 /* NotificationSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationSettings.swift; sourceTree = "<group>"; };
+		94DA8ABB1BC1748B00D8B9E6 /* NotificationSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationSettings.swift; path = ../NotificationSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -344,6 +347,16 @@
 			name = cell;
 			sourceTree = "<group>";
 		};
+		943B24441BC7D26500E9D4D0 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				94DA8ABB1BC1748B00D8B9E6 /* NotificationSettings.swift */,
+				943B24451BC7D2A400E9D4D0 /* TakeDrugNotificationKeys.swift */,
+			);
+			name = Notification;
+			path = notification;
+			sourceTree = "<group>";
+		};
 		944F21361B59570200ED8A7A = {
 			isa = PBXGroup;
 			children = (
@@ -371,6 +384,7 @@
 		944F21411B59570200ED8A7A /* Medications */ = {
 			isa = PBXGroup;
 			children = (
+				943B24441BC7D26500E9D4D0 /* Notification */,
 				9436BAB91BBBF9C70050DC93 /* ClassStructure.swift */,
 				947F022A1B80A35E006D9C7E /* service */,
 				94D1E6071B7A4AD300B0CD7D /* Pill/Drug */,
@@ -385,7 +399,6 @@
 				944F21511B59570200ED8A7A /* Info.plist */,
 				944F21491B59570200ED8A7A /* Medications.xcdatamodeld */,
 				947D43371B87424D009F45BA /* MedicationColors.swift */,
-				94DA8ABB1BC1748B00D8B9E6 /* NotificationSettings.swift */,
 			);
 			path = Medications;
 			sourceTree = "<group>";
@@ -729,6 +742,7 @@
 				947F022C1B80A39F006D9C7E /* RepeatEventCreator.swift in Sources */,
 				9436BAC11BBC0CA10050DC93 /* RootExecutionTime.swift in Sources */,
 				9436BAC71BBC0DAB0050DC93 /* ExecutionTime+CoreDataProperties.swift in Sources */,
+				943B24461BC7D2A400E9D4D0 /* TakeDrugNotificationKeys.swift in Sources */,
 				947F023A1B81D25B006D9C7E /* AddDrugToMedicationCell.swift in Sources */,
 				94D1E6001B7A12CC00B0CD7D /* AddDrugViewController.swift in Sources */,
 				947D43381B87424D009F45BA /* MedicationColors.swift in Sources */,
@@ -769,6 +783,7 @@
 				946C04DA1B7BD91000D93D10 /* UIColorPainCodeExtension.swift in Sources */,
 				944F218D1B59573300ED8A7A /* NotificationController.swift in Sources */,
 				944F218B1B59573300ED8A7A /* ExtensionDelegate.swift in Sources */,
+				943B24471BC7D30400E9D4D0 /* TakeDrugNotificationKeys.swift in Sources */,
 				946C04D91B7BD8FA00D93D10 /* DrugRenderEnum.swift in Sources */,
 				944F21891B59573300ED8A7A /* InterfaceController.swift in Sources */,
 			);

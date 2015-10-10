@@ -12,7 +12,7 @@ extension DrugEnum {
     func renderToImage(size:CGSize, baseColor:UIColor, secondColor:UIColor? = nil, scale:CGFloat = 1) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(size, false, 0);
         let context = UIGraphicsGetCurrentContext()
-        render(context!, baseColor: baseColor)
+        render(context!, baseColor: baseColor, secondColor: secondColor, scale: scale)
         let image = UIGraphicsGetImageFromCurrentImageContext();
         
         return image

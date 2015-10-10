@@ -45,27 +45,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
-
+    
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
     }
     
+    func openDelayUI(executionTime: ExecutionTime) {
+        if let rootTabController = (window?.rootViewController as? UITabBarController)?.viewControllers?.first as? UINavigationController, let medicationViewController = rootTabController.topViewController as? ExecutionTimesTableViewController {
+            medicationViewController.askForDelay(executionTime)
+        }
+    }
+    
+    func getExecutionTimeForNotification(notification: UILocalNotification) ->ExecutionTime? {
+        guard let urlString = notification.userInfo?[notification_coreDataIDKey] as? String,
+            let url = NSURL(string: urlString),
+            let objectID = managedObjectContext.persistentStoreCoordinator?.managedObjectIDForURIRepresentation(url),
+            let rootExecutionTime = managedObjectContext.objectWithID(objectID) as? RootExecutionTime
+        else {
+            return nil
+        }
+        let fetchRequest = NSFetchRequest(entityName: ExecutionTime.entityName)
+        fetchRequest.predicate = NSPredicate(format: "parentExecutionTime == %@ AND assignmentDate > %@ AND assignmentDate < %@", rootExecutionTime, notification.fireDate!.dateByAddingTimeInterval(-300), notification.fireDate!.dateByAddingTimeInterval(300))
+        if let executionTime = try? managedObjectContext.executeFetchRequest(fetchRequest).first as? ExecutionTime {
+            return executionTime
+        }else {
+            return nil
+        }
+    }
+    
 
     func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, withResponseInfo responseInfo: [NSObject : AnyObject], completionHandler: () -> Void) {
-        guard let urlString = notification.userInfo?[coreDataNotificationIDKey] as? String, let url = NSURL(string: urlString), let objectID = managedObjectContext.persistentStoreCoordinator?.managedObjectIDForURIRepresentation(url) else {
-            completionHandler()
-            return
+        guard let identifier = identifier, let executionTime = getExecutionTimeForNotification(notification) else { completionHandler(); return }
+        switch identifier {
+        case NotificationSettings.takeMedicationNotificationActionIdentifier:
+            executionTime.executionDate = NSDate()
+            managedObjectContext.saveOrRollback()
+            
+            break
+        case NotificationSettings.delayMedicationNotificationActionIdentifier:
+            openDelayUI(executionTime)
+            break
+        default: break
+       
         }
-        if let rootExecutionTime = managedObjectContext.objectWithID(objectID) as? RootExecutionTime {
-            let fetchRequest = NSFetchRequest(entityName: ExecutionTime.entityName)
-            fetchRequest.predicate = NSPredicate(format: "parentExecutionTime == %@ AND assignmentDate > %@ AND assignmentDate < %@", rootExecutionTime, notification.fireDate!.dateByAddingTimeInterval(-300), notification.fireDate!.dateByAddingTimeInterval(300))
-            if let executionTime = try? managedObjectContext.executeFetchRequest(fetchRequest).first as? ExecutionTime {
-                executionTime?.executionDate = NSDate()
-            }
-        }
-        
-        managedObjectContext.saveOrRollback()
         completionHandler()
     }
 

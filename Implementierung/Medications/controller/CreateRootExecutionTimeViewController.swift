@@ -60,9 +60,9 @@ class CreateRootExecutionTimeViewController: UIViewController {
     }
     @IBAction func done(sender: AnyObject) {
         executionTimeService.createChildExecutionTimeFromParent(executionTime, startDate: timePicker.date, endDate: NSDate().dateByAddingTimeInterval(604.800))
-        let notification = executionTimeService.createNotification(executionTime)
-        UIApplication.sharedApplication().scheduleLocalNotification(notification)
-        
+        if let notification = executionTimeService.createNotification(executionTime) {
+             UIApplication.sharedApplication().scheduleLocalNotification(notification)
+        }
         executionTime.managedObjectContext?.saveOrRollback()
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }

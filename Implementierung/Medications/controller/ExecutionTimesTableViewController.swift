@@ -94,10 +94,11 @@ class ExecutionTimesTableViewController: UITableViewController, ManagedObjectCon
     }
     
     @IBAction func testPush(sender: AnyObject) {
-        guard let executionTime = dataSource?.objectAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) else { return }
-        let notification = executionTimeService.createNotification(executionTime.parentExecutionTime)
+        guard let executionTime = dataSource?.objectAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)),
+            let notification = executionTimeService.createNotification(executionTime.parentExecutionTime) else { return }
         notification.repeatInterval = .Year
-        notification.fireDate = NSDate().dateByAddingTimeInterval(15)
+        notification.fireDate = NSDate().dateByAddingTimeInterval(8)
+        notification.soundName = UILocalNotificationDefaultSoundName
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
 }

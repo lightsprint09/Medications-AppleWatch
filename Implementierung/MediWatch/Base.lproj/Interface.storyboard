@@ -47,12 +47,15 @@
             <objects>
                 <notificationController id="YCC-NB-fut">
                     <items>
-                        <label width="136" height="39.5" alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                        <label width="136" height="39.5" alignment="left" text="Asprin  2 Tabletten" textAlignment="center" numberOfLines="3" id="IdU-wH-bcW">
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" weight="semibold" pointSize="16"/>
+                        </label>
                     </items>
-                    <notificationCategory key="notificationCategory" identifier="take_medikation_identifier" id="JfB-70-Muf">
+                    <notificationCategory key="notificationCategory" identifier="take_medikation_category_identifier" id="JfB-70-Muf">
                         <color key="sashColor" red="0.86274509799999999" green="0.1843137255" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                     </notificationCategory>
-                    <color key="backgroundColor" red="0.89019607840000003" green="0.2470588235" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
                         <segue destination="KhG-YX-kO1" kind="relationship" relationship="dynamicNotificationInterface" id="UgN-22-YqO"/>
@@ -64,16 +67,21 @@
         <!--Notification Controller-->
         <scene sceneID="vji-2l-ecq">
             <objects>
-                <controller hidesWhenLoading="NO" id="KhG-YX-kO1" customClass="NotificationController" customModule="MediWatch_Extension">
+                <controller spacing="4" hidesWhenLoading="NO" id="KhG-YX-kO1" customClass="NotificationController" customModule="MediWatch_Extension">
                     <items>
-                        <table alignment="left" id="i6T-lw-sbF">
-                            <items>
-                                <tableRow id="Mea-jH-peV">
-                                    <group key="rootItem" width="1" alignment="left" id="hE7-WB-QVR"/>
-                                </tableRow>
-                            </items>
-                        </table>
+                        <imageView width="54" height="54" alignment="center" id="z2v-vJ-meC"/>
+                        <label alignment="center" text="Asprin" textAlignment="center" id="12X-02-9a6">
+                            <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <label alignment="center" text="2 Tabletten" textAlignment="center" id="KKJ-Il-gOk">
+                            <fontDescription key="font" type="system" weight="semibold" pointSize="18"/>
+                        </label>
                     </items>
+                    <connections>
+                        <outlet property="amountDrugLabel" destination="KKJ-Il-gOk" id="Unw-lW-mbR"/>
+                        <outlet property="drugImage" destination="z2v-vJ-meC" id="bEX-ba-dz3"/>
+                        <outlet property="drugNameLabel" destination="12X-02-9a6" id="Yq2-06-QMk"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="520" y="643"/>

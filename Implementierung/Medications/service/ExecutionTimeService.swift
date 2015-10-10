@@ -9,8 +9,6 @@
 import Foundation
 import CoreData
 
-public let coreDataNotificationIDKey = "coreDataNotificationIDKey"
-
 class ExecutionTimeService: NSObject {
     
     func rootExecutionTimeFetchRequest(drug:Drug) -> NSFetchRequest {
@@ -59,14 +57,20 @@ class ExecutionTimeService: NSObject {
         })
     }
     
-    func createNotification(executionTime:RootExecutionTime) -> UILocalNotification {
+    func createNotification(executionTime:RootExecutionTime) -> UILocalNotification? {
+        guard let drug = executionTime.drug else { return nil }
         let notification = UILocalNotification()
         notification.fireDate = executionTime.assignmentTime
         notification.repeatInterval = .Day
         notification.category = NotificationSettings.medicationNotificationCategoryIdentifier
-        notification.alertBody = "Nehme " + executionTime.amountUnitString! + " " + executionTime.drug!.name
+        notification.alertBody = drug.name + "\n" + executionTime.amountUnitString!
         notification.alertAction = "Eingenommen"
-        notification.userInfo = [coreDataNotificationIDKey: executionTime.objectID.URIRepresentation().absoluteString]
+        let image = drug.type!.renderToImage(CGSize(width: 54, height: 54), baseColor: drug.color!, secondColor: nil, scale: ((1 / 90) * 54))
+        notification.userInfo = [
+            notification_coreDataIDKey: executionTime.objectID.URIRepresentation().absoluteString,
+            notification_drugImageDataKey: UIImagePNGRepresentation(image)!,
+            notification_drugAmountKey: executionTime.amountUnitString!,
+            notification_drugNameKey: drug.name]
         
         return notification
     }
