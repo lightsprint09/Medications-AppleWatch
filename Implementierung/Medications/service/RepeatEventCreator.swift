@@ -32,11 +32,11 @@ enum RepeatType {
 
 class RepeatEventCreator: NSObject {
     func createEvent(startDate startDate: NSDate, endDate: NSDate, calculateNextDate: (NSDate)->NSDate, useDate: (NSDate)->(), finalCall:((NSDate)->())? = nil) {
-        useDate(startDate)
+        //useDate(startDate)
         var nextDate = startDate
-        while endDate.compare(endDate) == .OrderedAscending {
-            nextDate = calculateNextDate(nextDate)
+        while nextDate.compare(endDate) == .OrderedAscending {
             useDate(nextDate)
+            nextDate = calculateNextDate(nextDate)
         }
         finalCall?(nextDate)
     }

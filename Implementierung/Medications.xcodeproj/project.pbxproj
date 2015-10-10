@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		941DEE321BC974FD00BDFBE2 /* RepeatEventCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DEE311BC974FD00BDFBE2 /* RepeatEventCreatorTest.swift */; settings = {ASSET_TAGS = (); }; };
+		941DEE331BC9752600BDFBE2 /* RepeatEventCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947F022B1B80A39F006D9C7E /* RepeatEventCreator.swift */; settings = {ASSET_TAGS = (); }; };
 		942379281B8DD0F400FD8165 /* DrugEnum+ImageRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942379271B8DD0F400FD8165 /* DrugEnum+ImageRender.swift */; settings = {ASSET_TAGS = (); }; };
 		9423792A1B8E2DEA00FD8165 /* ExecutionTimesTableViewController+TableViewConfigDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942379291B8E2DEA00FD8165 /* ExecutionTimesTableViewController+TableViewConfigDelegate.swift */; settings = {ASSET_TAGS = (); }; };
 		9423792C1B8E2E2600FD8165 /* MedicationTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9423792B1B8E2E2600FD8165 /* MedicationTableCell.swift */; settings = {ASSET_TAGS = (); }; };
@@ -139,6 +141,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		941DEE311BC974FD00BDFBE2 /* RepeatEventCreatorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatEventCreatorTest.swift; sourceTree = "<group>"; };
 		942379271B8DD0F400FD8165 /* DrugEnum+ImageRender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DrugEnum+ImageRender.swift"; sourceTree = "<group>"; };
 		942379291B8E2DEA00FD8165 /* ExecutionTimesTableViewController+TableViewConfigDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExecutionTimesTableViewController+TableViewConfigDelegate.swift"; sourceTree = "<group>"; };
 		9423792B1B8E2E2600FD8165 /* MedicationTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationTableCell.swift; sourceTree = "<group>"; };
@@ -408,6 +411,7 @@
 			children = (
 				944F215A1B59570200ED8A7A /* MedicationsTests.swift */,
 				944F215C1B59570200ED8A7A /* Info.plist */,
+				941DEE311BC974FD00BDFBE2 /* RepeatEventCreatorTest.swift */,
 			);
 			path = MedicationsTests;
 			sourceTree = "<group>";
@@ -764,7 +768,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				941DEE321BC974FD00BDFBE2 /* RepeatEventCreatorTest.swift in Sources */,
 				944F215B1B59570200ED8A7A /* MedicationsTests.swift in Sources */,
+				941DEE331BC9752600BDFBE2 /* RepeatEventCreator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
