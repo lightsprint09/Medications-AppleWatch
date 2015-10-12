@@ -9,7 +9,6 @@
 import CoreData
 
 class DrugDBService: NSObject {
-    
     func sortedFetchRequest() -> NSFetchRequest {
         let fetchRequest = NSFetchRequest(entityName: Drug.entityName)
         let sortDiscriptor = NSSortDescriptor(key: "name", ascending: true)

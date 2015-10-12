@@ -6,13 +6,13 @@
 //  Copyright © 2015 Lukas Schmidt. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum TimeOfDay: Int {
     case Morning, Noon, Evening, Night
     
     static func timeOfDayFromDate(date:NSDate) -> TimeOfDay {
-        let hour = NSCalendar.currentCalendar().component(NSCalendarUnit.Hour, fromDate: date)
+        let hour = NSCalendar.currentCalendar().component(.Hour, fromDate: date)
         if hour > 6 && hour < 11 {
             return Morning
         }

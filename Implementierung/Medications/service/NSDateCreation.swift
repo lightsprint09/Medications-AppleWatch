@@ -9,8 +9,22 @@
 import Foundation
 
 extension NSDate {
-    static func dateWithHour(hour:Int, minutes:Int) ->NSDate {
+    static func dateWithHour(hour:Int, minutes:Int) -> NSDate {
         let calender = NSCalendar.currentCalendar()
-        return calender.dateBySettingHour(hour, minute: minutes, second: 0, ofDate: NSDate(), options: NSCalendarOptions.MatchFirst)!
+        return calender.dateBySettingHour(hour, minute: minutes, second: 0, ofDate: NSDate(), options: .MatchFirst)!
+    }
+    
+    static func startDateAndEndDateFromDay(day: NSDate) -> (NSDate, NSDate) {
+        let calendar = NSCalendar.currentCalendar()
+        let dateParts = NSCalendarUnit.Year.union(.Month).union(.Day)
+        let dateComponents = calendar.components(dateParts, fromDate: NSDate())
+        dateComponents.hour = 0
+        dateComponents.minute = 0
+        dateComponents.second = 0
+        
+        let startTime = calendar.dateFromComponents(dateComponents)!
+        let endTime = startTime.dateByAddingTimeInterval(86400)
+        
+        return (startTime, endTime)
     }
 }

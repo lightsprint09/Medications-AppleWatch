@@ -7,10 +7,12 @@
 //
 
 import CoreData
+import Foundation
 
 extension NSManagedObjectContext {
-    public func insertObject<A: NSManagedObject>() -> A {
-        guard let obj = NSEntityDescription.insertNewObjectForEntityForName(A.entityName, inManagedObjectContext: self) as? A else { fatalError("Wrong object type") }
+    func insertObject<A: NSManagedObject>() -> A {
+        guard let obj = NSEntityDescription.insertNewObjectForEntityForName(A.entityName, inManagedObjectContext: self) as? A
+        else { fatalError("Wrong object type") }
         return obj
     }
     

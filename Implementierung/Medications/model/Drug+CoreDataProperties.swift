@@ -9,7 +9,7 @@
 //  to delete and recreate this implementation file for your updated model.
 //
 
-import Foundation
+import UIKit
 import CoreData
 
 extension Drug {

@@ -6,7 +6,7 @@
 //  Copyright © 2015 Lukas Schmidt. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import CoreData
 
 class ExecutionTimeService: NSObject {
@@ -20,9 +20,11 @@ class ExecutionTimeService: NSObject {
         return fetchRequest
     }
     
-    func allChildrenExecutionTimesFetchRequest() -> NSFetchRequest {
+    func allChildrenExecutionTimesFetchRequest(day: NSDate) -> NSFetchRequest {
         let request = NSFetchRequest(entityName: ExecutionTime.entityName)
         request.sortDescriptors = [NSSortDescriptor(key: "assignmentDate", ascending: true)]
+        let dayStartEndPoint = NSDate.startDateAndEndDateFromDay(day)
+        request.predicate = NSPredicate(format: "assignmentDate  BETWEEN {%@, %@}", dayStartEndPoint.0, dayStartEndPoint.1)
         
         return request
     }
@@ -40,6 +42,8 @@ class ExecutionTimeService: NSObject {
         
         //TODO cascade update of child times
     }
+    
+    
     
     func createChildExecutionTimeFromParent(rootExecutionTime:RootExecutionTime, startDate:NSDate, endDate: NSDate) {
         guard let managedObjectContext = rootExecutionTime.managedObjectContext else { return }

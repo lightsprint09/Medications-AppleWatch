@@ -6,7 +6,7 @@
 //  Copyright © 2015 Lukas Schmidt. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension DrugEnum {
     func renderToImage(size:CGSize, baseColor:UIColor, secondColor:UIColor? = nil, scale:CGFloat = 1) -> UIImage {

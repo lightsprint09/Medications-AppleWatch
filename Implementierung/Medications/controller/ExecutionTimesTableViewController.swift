@@ -17,7 +17,7 @@ class ExecutionTimesTableViewController: UITableViewController, ManagedObjectCon
     var dataSource: FetchedResultsDataSource<ExecutionTimesTableViewController>?
     
     override func viewDidLoad() {
-        let fetchRequest = executionTimeService.allChildrenExecutionTimesFetchRequest()
+        let fetchRequest = executionTimeService.allChildrenExecutionTimesFetchRequest(NSDate())
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: "assignmentTimeOfDay", cacheName: nil)
         dataSource = FetchedResultsDataSource(tableView: tableView, fetchedResultsController: frc, delegate: self)
     }

@@ -20,7 +20,6 @@ enum RepeatType {
         case .Monthly:
             return 16934400
         }
- 
     }
     
     var calculateNextDate: (NSDate) -> NSDate {
@@ -32,7 +31,6 @@ enum RepeatType {
 
 class RepeatEventCreator: NSObject {
     func createEvent(startDate startDate: NSDate, endDate: NSDate, calculateNextDate: (NSDate)->NSDate, useDate: (NSDate)->(), finalCall:((NSDate)->())? = nil) {
-        //useDate(startDate)
         var nextDate = startDate
         while nextDate.compare(endDate) == .OrderedAscending {
             useDate(nextDate)

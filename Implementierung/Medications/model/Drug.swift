@@ -6,7 +6,7 @@
 //  Copyright © 2015 Lukas Schmidt. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import CoreData
 
 class Drug: NSManagedObject {
