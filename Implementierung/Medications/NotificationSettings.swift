@@ -31,13 +31,7 @@ class NotificationSettings: NSObject {
         return delayMedication
     }
     
-    static var takeMedicationNotificationActionIdentifier: String {
-        return "take_medikation_category_identifier"
-    }
     
-    static var delayMedicationNotificationActionIdentifier: String {
-        return "delay_medikation_category_identifier"
-    }
     
     static var medicationNotificationCategory: UIUserNotificationCategory {
         let category = UIMutableUserNotificationCategory()
@@ -46,10 +40,6 @@ class NotificationSettings: NSObject {
         category.setActions([takeMedikationAction, delayMedicationAction], forContext: .Default)
         
         return category
-    }
-    
-    static var medicationNotificationCategoryIdentifier: String {
-        return "take_medikation_category_identifier"
     }
     
     

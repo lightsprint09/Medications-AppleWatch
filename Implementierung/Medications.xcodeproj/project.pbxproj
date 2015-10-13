@@ -24,7 +24,6 @@
 		941DEE461BCBD8C900BDFBE2 /* ExecutionTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942D390B1B789DAB00553C79 /* ExecutionTime.swift */; settings = {ASSET_TAGS = (); }; };
 		941DEE471BCBD95000BDFBE2 /* DrugRenderEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E6081B7A4B0200B0CD7D /* DrugRenderEnum.swift */; settings = {ASSET_TAGS = (); }; };
 		941DEE481BCBD95600BDFBE2 /* DrugEnum+ImageRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942379271B8DD0F400FD8165 /* DrugEnum+ImageRender.swift */; settings = {ASSET_TAGS = (); }; };
-		941DEE491BCBDA0D00BDFBE2 /* NotificationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DA8ABB1BC1748B00D8B9E6 /* NotificationSettings.swift */; settings = {ASSET_TAGS = (); }; };
 		941DEE4A1BCBDA2D00BDFBE2 /* TakeDrugNotificationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943B24451BC7D2A400E9D4D0 /* TakeDrugNotificationKeys.swift */; settings = {ASSET_TAGS = (); }; };
 		942379281B8DD0F400FD8165 /* DrugEnum+ImageRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942379271B8DD0F400FD8165 /* DrugEnum+ImageRender.swift */; settings = {ASSET_TAGS = (); }; };
 		9423792A1B8E2DEA00FD8165 /* ExecutionTimesTableViewController+TableViewConfigDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942379291B8E2DEA00FD8165 /* ExecutionTimesTableViewController+TableViewConfigDelegate.swift */; settings = {ASSET_TAGS = (); }; };
@@ -98,7 +97,15 @@
 		94D6D8A71B83584100DD5F2D /* DrugDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D6D8A61B83584100DD5F2D /* DrugDBService.swift */; };
 		94D73C571BCBF14100638F1C /* NSManagedObjectContextExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E5EE1B78EAC700B0CD7D /* NSManagedObjectContextExtension.swift */; settings = {ASSET_TAGS = (); }; };
 		94D73C581BCBF2A500638F1C /* NSManagedObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E5F21B78EBEB00B0CD7D /* NSManagedObjectExtension.swift */; settings = {ASSET_TAGS = (); }; };
+		94D73C5A1BCBFCAD00638F1C /* AbstractCoreDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D73C591BCBFCAD00638F1C /* AbstractCoreDataTest.swift */; settings = {ASSET_TAGS = (); }; };
+		94D73C5B1BCC00F300638F1C /* Medications.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 944F21491B59570200ED8A7A /* Medications.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
+		94D73C5D1BCC053C00638F1C /* DelayMedicationInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D73C5C1BCC053C00638F1C /* DelayMedicationInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
 		94DA8ABC1BC1748B00D8B9E6 /* NotificationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DA8ABB1BC1748B00D8B9E6 /* NotificationSettings.swift */; settings = {ASSET_TAGS = (); }; };
+		94DFA73A1BCC0E4400A91467 /* NotificationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DA8ABB1BC1748B00D8B9E6 /* NotificationSettings.swift */; settings = {ASSET_TAGS = (); }; };
+		94DFA73C1BCC1AA800A91467 /* WCSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DFA73B1BCC1AA800A91467 /* WCSessionManager.swift */; settings = {ASSET_TAGS = (); }; };
+		94DFA73E1BCC1B6A00A91467 /* WatchExecutionTimeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DFA73D1BCC1B6A00A91467 /* WatchExecutionTimeService.swift */; settings = {ASSET_TAGS = (); }; };
+		94DFA73F1BCCF02C00A91467 /* WatchExecutionTimeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DFA73D1BCC1B6A00A91467 /* WatchExecutionTimeService.swift */; settings = {ASSET_TAGS = (); }; };
+		94DFA7401BCCF18800A91467 /* WCSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DFA73B1BCC1AA800A91467 /* WCSessionManager.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -232,7 +239,11 @@
 		94D1E6141B7B558D00B0CD7D /* RGBColorSliderDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGBColorSliderDelegate.m; sourceTree = "<group>"; };
 		94D1E6171B7B574700B0CD7D /* Medications-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Medications-Bridging-Header.h"; sourceTree = "<group>"; };
 		94D6D8A61B83584100DD5F2D /* DrugDBService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugDBService.swift; sourceTree = "<group>"; };
+		94D73C591BCBFCAD00638F1C /* AbstractCoreDataTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractCoreDataTest.swift; sourceTree = "<group>"; };
+		94D73C5C1BCC053C00638F1C /* DelayMedicationInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelayMedicationInterfaceController.swift; sourceTree = "<group>"; };
 		94DA8ABB1BC1748B00D8B9E6 /* NotificationSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationSettings.swift; path = ../NotificationSettings.swift; sourceTree = "<group>"; };
+		94DFA73B1BCC1AA800A91467 /* WCSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WCSessionManager.swift; sourceTree = "<group>"; };
+		94DFA73D1BCC1B6A00A91467 /* WatchExecutionTimeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchExecutionTimeService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -411,6 +422,7 @@
 				944F215C1B59570200ED8A7A /* Info.plist */,
 				941DEE311BC974FD00BDFBE2 /* RepeatEventCreatorTest.swift */,
 				941DEE341BCBCF8100BDFBE2 /* ExecutionTimesServiceTest.swift */,
+				94D73C591BCBFCAD00638F1C /* AbstractCoreDataTest.swift */,
 			);
 			path = MedicationsTests;
 			sourceTree = "<group>";
@@ -431,6 +443,7 @@
 				944F21881B59573300ED8A7A /* InterfaceController.swift */,
 				944F218A1B59573300ED8A7A /* ExtensionDelegate.swift */,
 				944F218C1B59573300ED8A7A /* NotificationController.swift */,
+				94D73C5C1BCC053C00638F1C /* DelayMedicationInterfaceController.swift */,
 				944F218E1B59573300ED8A7A /* Assets.xcassets */,
 				944F21901B59573300ED8A7A /* Info.plist */,
 				944F21861B59573300ED8A7A /* Supporting Files */,
@@ -449,11 +462,13 @@
 		947F022A1B80A35E006D9C7E /* service */ = {
 			isa = PBXGroup;
 			children = (
+				94DFA73B1BCC1AA800A91467 /* WCSessionManager.swift */,
 				947F022B1B80A39F006D9C7E /* RepeatEventCreator.swift */,
 				94D6D8A61B83584100DD5F2D /* DrugDBService.swift */,
 				944B2B061B8CAE220098E1EA /* TimeOfDay.swift */,
 				944B2B081B8CFB460098E1EA /* NSDateCreation.swift */,
 				94352DD01BB96439000C6D1E /* ExecutionTimeService.swift */,
+				94DFA73D1BCC1B6A00A91467 /* WatchExecutionTimeService.swift */,
 			);
 			path = service;
 			sourceTree = "<group>";
@@ -680,6 +695,7 @@
 				947F02361B81D0BF006D9C7E /* AddMedicationViewController.swift in Sources */,
 				94352DD11BB96439000C6D1E /* ExecutionTimeService.swift in Sources */,
 				947F023C1B81D7DE006D9C7E /* ExecutionTimesTableViewController.swift in Sources */,
+				94DFA73C1BCC1AA800A91467 /* WCSessionManager.swift in Sources */,
 				942D39051B788BC700553C79 /* RoundUIImageView.swift in Sources */,
 				942D38F71B78813E00553C79 /* ManagedObjectContextSettable.swift in Sources */,
 				94D1E6091B7A4B0200B0CD7D /* DrugRenderEnum.swift in Sources */,
@@ -716,6 +732,7 @@
 				94D1E60D1B7B44FF00B0CD7D /* CoustomizeDrugViewController + CollectionViewDataSource.swift in Sources */,
 				942D391C1B78AC6D00553C79 /* DrugTableViewCell.swift in Sources */,
 				94D1E60B1B7B3CCE00B0CD7D /* CoustomizeDrugViewController.swift in Sources */,
+				94DFA73E1BCC1B6A00A91467 /* WatchExecutionTimeService.swift in Sources */,
 				942D39011B788B8000553C79 /* RoundView.swift in Sources */,
 				942D39001B788B8000553C79 /* RoundCornerButton.swift in Sources */,
 				942D390F1B789DAB00553C79 /* Drug.swift in Sources */,
@@ -730,8 +747,8 @@
 				941DEE321BC974FD00BDFBE2 /* RepeatEventCreatorTest.swift in Sources */,
 				941DEE461BCBD8C900BDFBE2 /* ExecutionTime.swift in Sources */,
 				94D73C581BCBF2A500638F1C /* NSManagedObjectExtension.swift in Sources */,
-				941DEE491BCBDA0D00BDFBE2 /* NotificationSettings.swift in Sources */,
 				941DEE481BCBD95600BDFBE2 /* DrugEnum+ImageRender.swift in Sources */,
+				94DFA73A1BCC0E4400A91467 /* NotificationSettings.swift in Sources */,
 				941DEE4A1BCBDA2D00BDFBE2 /* TakeDrugNotificationKeys.swift in Sources */,
 				941DEE3C1BCBD88200BDFBE2 /* NSDateCreation.swift in Sources */,
 				941DEE3B1BCBD88200BDFBE2 /* TimeOfDay.swift in Sources */,
@@ -742,9 +759,11 @@
 				941DEE3A1BCBD88200BDFBE2 /* DrugDBService.swift in Sources */,
 				941DEE441BCBD8C900BDFBE2 /* RootExecutionTime.swift in Sources */,
 				941DEE451BCBD8C900BDFBE2 /* Drug.swift in Sources */,
+				94D73C5B1BCC00F300638F1C /* Medications.xcdatamodeld in Sources */,
 				941DEE411BCBD8C900BDFBE2 /* RootExecutionTime+CoreDataProperties.swift in Sources */,
 				941DEE471BCBD95000BDFBE2 /* DrugRenderEnum.swift in Sources */,
 				941DEE421BCBD8C900BDFBE2 /* ExecutionTime+CoreDataProperties.swift in Sources */,
+				94D73C5A1BCBFCAD00638F1C /* AbstractCoreDataTest.swift in Sources */,
 				941DEE401BCBD8B000BDFBE2 /* MedicationColors.swift in Sources */,
 				941DEE391BCBD87800BDFBE2 /* UIColorPainCodeExtension.swift in Sources */,
 				941DEE331BC9752600BDFBE2 /* RepeatEventCreator.swift in Sources */,
@@ -756,11 +775,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				946C04DA1B7BD91000D93D10 /* UIColorPainCodeExtension.swift in Sources */,
+				94DFA7401BCCF18800A91467 /* WCSessionManager.swift in Sources */,
 				944F218D1B59573300ED8A7A /* NotificationController.swift in Sources */,
 				944F218B1B59573300ED8A7A /* ExtensionDelegate.swift in Sources */,
 				943B24471BC7D30400E9D4D0 /* TakeDrugNotificationKeys.swift in Sources */,
 				946C04D91B7BD8FA00D93D10 /* DrugRenderEnum.swift in Sources */,
+				94DFA73F1BCCF02C00A91467 /* WatchExecutionTimeService.swift in Sources */,
 				944F21891B59573300ED8A7A /* InterfaceController.swift in Sources */,
+				94D73C5D1BCC053C00638F1C /* DelayMedicationInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

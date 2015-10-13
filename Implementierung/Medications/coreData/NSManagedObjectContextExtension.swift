@@ -12,7 +12,10 @@ import Foundation
 extension NSManagedObjectContext {
     func insertObject<A: NSManagedObject>() -> A {
         guard let obj = NSEntityDescription.insertNewObjectForEntityForName(A.entityName, inManagedObjectContext: self) as? A
-        else { fatalError("Wrong object type") }
+        else {
+            fatalError("Wrong object type")
+        }
+        
         return obj
     }
     
@@ -20,8 +23,8 @@ extension NSManagedObjectContext {
         do {
             try save()
         } catch  {
-        print(error)
-            //rollback()
+            print(error)
+            rollback()
         }
     }
     

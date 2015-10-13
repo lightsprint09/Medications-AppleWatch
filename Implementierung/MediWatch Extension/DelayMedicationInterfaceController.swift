@@ -1,26 +1,25 @@
 //
-//  NotificationController.swift
-//  MediWatch Extension
+//  DelayMedication.swift
+//  Medications
 //
-//  Created by Lukas Schmidt on 17.07.15.
+//  Created by Lukas Schmidt on 12.10.15.
 //  Copyright © 2015 Lukas Schmidt. All rights reserved.
 //
 
 import WatchKit
-import Foundation
 
-
-class NotificationController: WKUserNotificationInterfaceController {
+class DelayMedicationInterfaceController: WKInterfaceController {
     @IBOutlet var drugImage: WKInterfaceImage!
-
+    
     @IBOutlet var amountDrugLabel: WKInterfaceLabel!
     @IBOutlet var drugNameLabel: WKInterfaceLabel!
-
     
-    override func didReceiveLocalNotification(localNotification: UILocalNotification, withCompletion completionHandler: ((WKUserNotificationInterfaceType) -> Void)) {
-        
-       setupWithNotification(localNotification)
-        completionHandler(.Custom)
+    var notification: UILocalNotification?
+    
+    override func awakeWithContext(context: AnyObject?) {
+        if let notification = context as? UILocalNotification {
+            setupWithNotification(notification)
+        }
     }
     
     func setupWithNotification(localNotification: UILocalNotification) {
@@ -35,7 +34,27 @@ class NotificationController: WKUserNotificationInterfaceController {
         if let drugAmount = localNotification.userInfo?[notification_drugAmountKey] as? String {
             amountDrugLabel.setText(drugAmount)
         }
-
+        
     }
+   
+    @IBAction func moveFirstButtonClick() {
+        
+    }
+    
+    @IBAction func moveSecondButtonClick() {
+        
+    }
+    
+    @IBAction func moveThirdButtonClick() {
+        
+    }
+    
+    @IBAction func moveFouthButtonClick() {
+        
+    }
+    
+    
+    
+    
     
 }

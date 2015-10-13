@@ -23,7 +23,6 @@
                                     <group key="contentGroup" width="60" alignment="left" layout="vertical" id="oju-gO-j4t">
                                         <items>
                                             <imageView alignment="left" id="MvC-nt-bTY"/>
-                                            <label width="84" alignment="left" text="Nehmen" textAlignment="center" id="uz1-gv-mIV"/>
                                         </items>
                                     </group>
                                 </button>
@@ -31,7 +30,6 @@
                                     <group key="contentGroup" width="71" alignment="left" layout="vertical" id="o0j-1G-2A6">
                                         <items>
                                             <imageView alignment="left" id="16E-NV-DwL"/>
-                                            <label width="84" alignment="left" text="Verschieben" textAlignment="center" id="DcD-KJ-DO0"/>
                                         </items>
                                     </group>
                                 </button>
@@ -40,7 +38,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="345"/>
+            <point key="canvasLocation" x="220" y="244"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -63,6 +61,70 @@
                 </notificationController>
             </objects>
             <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Glance Interface Controller-->
+        <scene sceneID="htJ-9N-hRE">
+            <objects>
+                <glanceController hidesWhenLoading="NO" topTemplateType="groupLeftSmall" bottomTemplateType="extraLargeLargeBody1Footer" id="pm8-T4-2Q4">
+                    <items>
+                        <group alignment="left" id="rAZ-g8-2Ey">
+                            <items>
+                                <imageView width="129" height="115" alignment="left" id="VYB-0F-X5X"/>
+                            </items>
+                        </group>
+                        <label alignment="left" text="Label" id="jBK-iI-voA"/>
+                        <label alignment="left" text="Label" id="myb-uc-9mX"/>
+                        <label alignment="left" text="Label" id="vlT-Gp-eV7"/>
+                        <label alignment="left" text="1234" id="d53-aS-qt3"/>
+                        <label alignment="left" text="1234" id="oN8-xV-w5l"/>
+                        <label alignment="left" text="Label" id="b3C-TU-dRh"/>
+                        <label alignment="left" text="Footer" id="aSC-Bl-Uv2"/>
+                    </items>
+                </glanceController>
+            </objects>
+            <point key="canvasLocation" x="257" y="871"/>
+        </scene>
+        <!--Verschieben-->
+        <scene sceneID="rWg-Oi-uB0">
+            <objects>
+                <controller identifier="delay_medication_controller" title="Verschieben" hidesWhenLoading="NO" id="OIs-Az-qSQ" customClass="DelayMedicationInterfaceController" customModule="MediWatch_Extension">
+                    <items>
+                        <imageView width="54" height="54" alignment="center" id="WTj-D0-EDe"/>
+                        <label alignment="center" text="Asprin" textAlignment="center" id="WaW-NR-WNH">
+                            <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <label alignment="center" text="2 Tabletten" textAlignment="center" id="dCC-OA-q1K">
+                            <fontDescription key="font" type="system" weight="semibold" pointSize="18"/>
+                        </label>
+                        <button width="1" alignment="left" title="15 Minuten" id="4dZ-lU-vBB">
+                            <connections>
+                                <action selector="moveFirstButtonClick" destination="OIs-Az-qSQ" id="kPH-Gb-F7y"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="30 Minuten" id="H32-zE-IXr">
+                            <connections>
+                                <action selector="moveSecondButtonClick" destination="OIs-Az-qSQ" id="UMO-aC-CO8"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="1 Stunde" id="euc-fC-24f">
+                            <connections>
+                                <action selector="moveThirdButtonClick" destination="OIs-Az-qSQ" id="pef-W5-jWw"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="2 Stunden" id="jlG-8y-NfS">
+                            <connections>
+                                <action selector="moveFouthButtonClick" destination="OIs-Az-qSQ" id="G6F-Z3-9Af"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="amountDrugLabel" destination="dCC-OA-q1K" id="em9-Tr-Tqj"/>
+                        <outlet property="drugImage" destination="WTj-D0-EDe" id="aTN-Iy-sEF"/>
+                        <outlet property="drugNameLabel" destination="WaW-NR-WNH" id="sqQ-WM-Rqp"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="447" y="303"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="vji-2l-ecq">

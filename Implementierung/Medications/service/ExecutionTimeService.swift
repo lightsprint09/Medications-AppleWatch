@@ -66,7 +66,7 @@ class ExecutionTimeService: NSObject {
         let notification = UILocalNotification()
         notification.fireDate = executionTime.assignmentTime
         notification.repeatInterval = .Day
-        notification.category = NotificationSettings.medicationNotificationCategoryIdentifier
+        notification.category = medicationNotificationCategoryIdentifier
         notification.alertBody = drug.name + "\n" + executionTime.amountUnitString!
         notification.alertAction = "Eingenommen"
         let image = drug.type!.renderToImage(CGSize(width: 54, height: 54), baseColor: drug.color!, secondColor: nil, scale: ((1 / 90) * 54))

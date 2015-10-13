@@ -78,12 +78,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, withResponseInfo responseInfo: [NSObject : AnyObject], completionHandler: () -> Void) {
         guard let identifier = identifier, let executionTime = getExecutionTimeForNotification(notification) else { completionHandler(); return }
         switch identifier {
-        case NotificationSettings.takeMedicationNotificationActionIdentifier:
+        case takeMedicationNotificationActionIdentifier:
             executionTime.executionDate = NSDate()
             managedObjectContext.saveOrRollback()
             
             break
-        case NotificationSettings.delayMedicationNotificationActionIdentifier:
+        case delayMedicationNotificationActionIdentifier:
             openDelayUI(executionTime)
             break
         default: break

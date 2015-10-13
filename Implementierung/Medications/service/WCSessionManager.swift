@@ -1,0 +1,55 @@
+//
+//  WCSessionMultiUse.swift
+//  CardScore
+//
+//  Created by Lukas Schmidt on 23.08.15.
+//  Copyright © 2015 Lukas Schmidt. All rights reserved.
+//
+
+import Foundation
+import WatchConnectivity
+
+class WCSessionManager: NSObject, WCSessionDelegate {
+    var delegates: Dictionary<String, WCSessionDelegate> = Dictionary()
+    var session: WCSession?
+    
+    static let sharedInstace = WCSessionManager()
+    
+    private override init() {
+        super.init()
+        if WCSession.isSupported() {
+            session = WCSession.defaultSession()
+            session!.delegate = self
+        }
+    }
+    
+    func activate() {
+        session?.activateSession()
+    }
+
+    func registerDelegateWithNameSpace(delegate:WCSessionDelegate, nameSpace: String) {
+        delegates[nameSpace] = delegate
+    }
+    
+    func session(session: WCSession, didReceiveMessage message: [String : AnyObject]) {
+        guard let key = message.keys.first, let nameSpace = extractNameSpace(key), let delegate = delegateOfNameSpace(nameSpace) else { return }
+        delegate.session!(session, didReceiveMessage: message)
+    }
+    
+    func session(session: WCSession, didReceiveUserInfo userInfo: [String : AnyObject]) {
+         guard let key = userInfo.keys.first, let nameSpace = extractNameSpace(key), let delegate = delegateOfNameSpace(nameSpace) else {return}
+        delegate.session!(session, didReceiveUserInfo: userInfo)
+    }
+    
+    func delegateOfNameSpace(nameSpace:String) ->WCSessionDelegate? {
+        return delegates[nameSpace]
+    }
+    
+    func extractNameSpace(key:NSString) -> String? {
+        return key.componentsSeparatedByString("-").first
+    }
+    
+    func session(session: WCSession, didFinishUserInfoTransfer userInfoTransfer: WCSessionUserInfoTransfer, error: NSError?) {
+      
+    }
+}
