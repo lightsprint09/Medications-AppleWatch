@@ -37,7 +37,7 @@ class WCSessionManager: NSObject, WCSessionDelegate {
     }
     
     func session(session: WCSession, didReceiveUserInfo userInfo: [String : AnyObject]) {
-         guard let key = userInfo.keys.first, let nameSpace = extractNameSpace(key), let delegate = delegateOfNameSpace(nameSpace) else {return}
+         guard let key = userInfo.keys.first, let nameSpace = extractNameSpace(key), let delegate = delegateOfNameSpace(nameSpace) else { return }
         delegate.session!(session, didReceiveUserInfo: userInfo)
     }
     

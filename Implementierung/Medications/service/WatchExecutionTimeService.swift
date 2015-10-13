@@ -7,23 +7,27 @@
 //
 
 import WatchConnectivity
+import UIKit
 
 class WatchExecutionTimeService: NSObject, WCSessionDelegate {
-    private let markAsTakenEventName = "mark_as_taken_event"
-    private let wcSessionNameSpace = ""
+    private let wcSessionNameSpace = "WatchExecutionTimeService"
+    private let markAsTakenEventName = "-mark_as_taken_event"
     private let session: WCSession
-    private let didMarkExececutionTimeTaken: ((String, NSDate)->())?
+    private let didMarkExececutionTimeTaken: ((UILocalNotification, Int)->())?
     
-    init(session: WCSession, didMarkExececutionTimeTaken:((String, NSDate)->())?) {
+    init(session: WCSession, didMarkExececutionTimeTaken:((UILocalNotification, Int)->())?) {
         self.session = session
         self.didMarkExececutionTimeTaken = didMarkExececutionTimeTaken
         super.init()
          WCSessionManager.sharedInstace.registerDelegateWithNameSpace(self, nameSpace:wcSessionNameSpace)
     }
     
-    func markExecutionTimeAsTaken(objectIDURLString: String) {
+    func markExecutionTimeAsTaken(localNotification: UILocalNotification, delaySeconds:Int) {
         let eventName = wcSessionNameSpace + markAsTakenEventName
-        send([eventName: objectIDURLString])
+        var userInfo = localNotification.userInfo!
+        userInfo["fireDate"] = localNotification.fireDate
+        userInfo["delaySeconds"] = delaySeconds
+        send([eventName: userInfo])
     }
     
     private func send(message:[String : AnyObject]) {
@@ -43,8 +47,11 @@ class WatchExecutionTimeService: NSObject, WCSessionDelegate {
     }
     
     func recieveData(message:[String: AnyObject]) {
-        if let objectID = message[markAsTakenEventName] as? String {
-            didMarkExececutionTimeTaken?(objectID, NSDate())
+        if let userInfo = message[wcSessionNameSpace + markAsTakenEventName] as? [NSObject: AnyObject], let delaySeconds = userInfo["delaySeconds"] as? Int {
+            let notification = UILocalNotification()
+            notification.fireDate = userInfo["fireDate"] as? NSDate
+            notification.userInfo = userInfo
+            didMarkExececutionTimeTaken?(notification, delaySeconds)
         }
     }
     

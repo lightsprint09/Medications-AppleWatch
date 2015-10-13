@@ -13,6 +13,7 @@ class ExecutionTimesTableViewController: UITableViewController, ManagedObjectCon
     var managedObjectContext: NSManagedObjectContext!
     
     let executionTimeService = ExecutionTimeService()
+    var watchExecutionTimeService: WatchExecutionTimeService!
     
     var dataSource: FetchedResultsDataSource<ExecutionTimesTableViewController>?
     
@@ -20,6 +21,20 @@ class ExecutionTimesTableViewController: UITableViewController, ManagedObjectCon
         let fetchRequest = executionTimeService.allChildrenExecutionTimesFetchRequest(NSDate())
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: "assignmentTimeOfDay", cacheName: nil)
         dataSource = FetchedResultsDataSource(tableView: tableView, fetchedResultsController: frc, delegate: self)
+        setupWatchConnection()
+    }
+    
+    func setupWatchConnection() {
+        guard let session = WCSessionManager.sharedInstace.session else { return }
+        watchExecutionTimeService = WatchExecutionTimeService(session: session, didMarkExececutionTimeTaken: didHandleNotificationWatch)
+         WCSessionManager.sharedInstace.activate()
+    }
+    
+    func didHandleNotificationWatch(notification:UILocalNotification, delay:Int) {
+        if let executionTime = executionTimeService.getExecutionTimeForNotification(managedObjectContext, notification: notification) {
+            executionTime.secondsMoved = delay
+            managedObjectContext.saveOrRollback()
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -101,4 +116,6 @@ class ExecutionTimesTableViewController: UITableViewController, ManagedObjectCon
         notification.soundName = UILocalNotificationDefaultSoundName
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
+    
+    
 }

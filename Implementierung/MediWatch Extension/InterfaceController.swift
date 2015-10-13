@@ -32,11 +32,6 @@ class InterfaceController: WKInterfaceController {
         guard let identifier = identifier else { return }
         switch identifier {
         case takeMedicationNotificationActionIdentifier:
-            let watchExecutionTimeService = WatchExecutionTimeService(session: WCSessionManager.sharedInstace.session!, didMarkExececutionTimeTaken: nil)
-            WCSessionManager.sharedInstace.session?.activateSession()
-            if let objectID = localNotification.userInfo?[notification_coreDataIDKey] as? String {
-                 watchExecutionTimeService.markExecutionTimeAsTaken(objectID)
-            }
             break
         case delayMedicationNotificationActionIdentifier:
             presentControllerWithName("delay_medication_controller", context: localNotification)
