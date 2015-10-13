@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     lazy var managedObjectContext = CoreDataStack().createMainContext()
+    let executionTimeService = ExecutionTimeService()
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -57,26 +58,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    func getExecutionTimeForNotification(notification: UILocalNotification) ->ExecutionTime? {
-        guard let urlString = notification.userInfo?[notification_coreDataIDKey] as? String,
-            let url = NSURL(string: urlString),
-            let objectID = managedObjectContext.persistentStoreCoordinator?.managedObjectIDForURIRepresentation(url),
-            let rootExecutionTime = managedObjectContext.objectWithID(objectID) as? RootExecutionTime
-        else {
-            return nil
-        }
-        let fetchRequest = NSFetchRequest(entityName: ExecutionTime.entityName)
-        fetchRequest.predicate = NSPredicate(format: "parentExecutionTime == %@ AND assignmentDate > %@ AND assignmentDate < %@", rootExecutionTime, notification.fireDate!.dateByAddingTimeInterval(-300), notification.fireDate!.dateByAddingTimeInterval(300))
-        if let executionTime = try? managedObjectContext.executeFetchRequest(fetchRequest).first as? ExecutionTime {
-            return executionTime
-        }else {
-            return nil
-        }
-    }
-    
 
     func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, withResponseInfo responseInfo: [NSObject : AnyObject], completionHandler: () -> Void) {
-        guard let identifier = identifier, let executionTime = getExecutionTimeForNotification(notification) else { completionHandler(); return }
+        guard let identifier = identifier,
+            let executionTime = executionTimeService.getExecutionTimeForNotification(managedObjectContext, notification: notification) else { completionHandler(); return }
         switch identifier {
         case takeMedicationNotificationActionIdentifier:
             executionTime.executionDate = NSDate()
