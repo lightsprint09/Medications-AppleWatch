@@ -106,6 +106,19 @@
 		94DFA73E1BCC1B6A00A91467 /* WatchExecutionTimeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DFA73D1BCC1B6A00A91467 /* WatchExecutionTimeService.swift */; settings = {ASSET_TAGS = (); }; };
 		94DFA73F1BCCF02C00A91467 /* WatchExecutionTimeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DFA73D1BCC1B6A00A91467 /* WatchExecutionTimeService.swift */; settings = {ASSET_TAGS = (); }; };
 		94DFA7401BCCF18800A91467 /* WCSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DFA73B1BCC1AA800A91467 /* WCSessionManager.swift */; settings = {ASSET_TAGS = (); }; };
+		94DFA7431BCD4A0F00A91467 /* Lookback.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 94DFA7421BCD4A0F00A91467 /* Lookback.bundle */; settings = {ASSET_TAGS = (); }; };
+		94DFA7451BCD4E6400A91467 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DFA7441BCD4E6400A91467 /* AVFoundation.framework */; };
+		94DFA7471BCD4E6B00A91467 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DFA7461BCD4E6B00A91467 /* AudioToolbox.framework */; };
+		94DFA7491BCD4E7500A91467 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DFA7481BCD4E7500A91467 /* CoreVideo.framework */; };
+		94DFA74B1BCD4E7D00A91467 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DFA74A1BCD4E7D00A91467 /* CoreMedia.framework */; };
+		94DFA74D1BCD4E9F00A91467 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DFA74C1BCD4E9E00A91467 /* MediaPlayer.framework */; };
+		94DFA74F1BCD4EA600A91467 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DFA74E1BCD4EA600A91467 /* QuartzCore.framework */; };
+		94DFA7511BCD4EB300A91467 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DFA7501BCD4EB300A91467 /* SystemConfiguration.framework */; };
+		94DFA7531BCD4ED100A91467 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DFA7521BCD4ED100A91467 /* ImageIO.framework */; };
+		94DFA7551BCD4EDB00A91467 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DFA7541BCD4EDB00A91467 /* CoreImage.framework */; };
+		94DFA7571BCD4EE500A91467 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DFA7561BCD4EE500A91467 /* MobileCoreServices.framework */; };
+		94DFA7591BCD4EEC00A91467 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DFA7581BCD4EEC00A91467 /* MessageUI.framework */; };
+		94DFA75B1BCD4F2300A91467 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DFA75A1BCD4F2300A91467 /* VideoToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -244,6 +257,19 @@
 		94DA8ABB1BC1748B00D8B9E6 /* NotificationSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationSettings.swift; path = ../NotificationSettings.swift; sourceTree = "<group>"; };
 		94DFA73B1BCC1AA800A91467 /* WCSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WCSessionManager.swift; sourceTree = "<group>"; };
 		94DFA73D1BCC1B6A00A91467 /* WatchExecutionTimeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchExecutionTimeService.swift; sourceTree = "<group>"; };
+		94DFA7421BCD4A0F00A91467 /* Lookback.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Lookback.bundle; sourceTree = "<group>"; };
+		94DFA7441BCD4E6400A91467 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		94DFA7461BCD4E6B00A91467 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		94DFA7481BCD4E7500A91467 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		94DFA74A1BCD4E7D00A91467 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		94DFA74C1BCD4E9E00A91467 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		94DFA74E1BCD4EA600A91467 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		94DFA7501BCD4EB300A91467 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		94DFA7521BCD4ED100A91467 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		94DFA7541BCD4EDB00A91467 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		94DFA7561BCD4EE500A91467 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		94DFA7581BCD4EEC00A91467 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		94DFA75A1BCD4F2300A91467 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +277,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94DFA75B1BCD4F2300A91467 /* VideoToolbox.framework in Frameworks */,
+				94DFA7591BCD4EEC00A91467 /* MessageUI.framework in Frameworks */,
+				94DFA7571BCD4EE500A91467 /* MobileCoreServices.framework in Frameworks */,
+				94DFA7551BCD4EDB00A91467 /* CoreImage.framework in Frameworks */,
+				94DFA7531BCD4ED100A91467 /* ImageIO.framework in Frameworks */,
+				94DFA7511BCD4EB300A91467 /* SystemConfiguration.framework in Frameworks */,
+				94DFA74F1BCD4EA600A91467 /* QuartzCore.framework in Frameworks */,
+				94DFA74D1BCD4E9F00A91467 /* MediaPlayer.framework in Frameworks */,
+				94DFA74B1BCD4E7D00A91467 /* CoreMedia.framework in Frameworks */,
+				94DFA7491BCD4E7500A91467 /* CoreVideo.framework in Frameworks */,
+				94DFA7471BCD4E6B00A91467 /* AudioToolbox.framework in Frameworks */,
+				94DFA7451BCD4E6400A91467 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +412,18 @@
 		944F21361B59570200ED8A7A = {
 			isa = PBXGroup;
 			children = (
+				94DFA75A1BCD4F2300A91467 /* VideoToolbox.framework */,
+				94DFA7581BCD4EEC00A91467 /* MessageUI.framework */,
+				94DFA7561BCD4EE500A91467 /* MobileCoreServices.framework */,
+				94DFA7541BCD4EDB00A91467 /* CoreImage.framework */,
+				94DFA7521BCD4ED100A91467 /* ImageIO.framework */,
+				94DFA7501BCD4EB300A91467 /* SystemConfiguration.framework */,
+				94DFA74E1BCD4EA600A91467 /* QuartzCore.framework */,
+				94DFA74C1BCD4E9E00A91467 /* MediaPlayer.framework */,
+				94DFA74A1BCD4E7D00A91467 /* CoreMedia.framework */,
+				94DFA7481BCD4E7500A91467 /* CoreVideo.framework */,
+				94DFA7461BCD4E6B00A91467 /* AudioToolbox.framework */,
+				94DFA7441BCD4E6400A91467 /* AVFoundation.framework */,
 				944F21411B59570200ED8A7A /* Medications */,
 				944F21591B59570200ED8A7A /* MedicationsTests */,
 				944F21761B59573200ED8A7A /* MediWatch */,
@@ -488,6 +538,7 @@
 		94D1E6041B7A3BF400B0CD7D /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				94DFA7411BCD4A0F00A91467 /* Lookback-Resources */,
 				94D1E6101B7B558D00B0CD7D /* RGBSlider */,
 				94D1E6051B7A3C3200B0CD7D /* UIColorPainCodeExtension.swift */,
 			);
@@ -515,6 +566,15 @@
 			name = RGBSlider;
 			path = Classes;
 			sourceTree = "<group>";
+		};
+		94DFA7411BCD4A0F00A91467 /* Lookback-Resources */ = {
+			isa = PBXGroup;
+			children = (
+				94DFA7421BCD4A0F00A91467 /* Lookback.bundle */,
+			);
+			name = "Lookback-Resources";
+			path = "lookback/Lookback-Resources";
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -642,6 +702,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94463A321BC02E6F00DEE3D6 /* Assets.xcassets in Resources */,
+				94DFA7431BCD4A0F00A91467 /* Lookback.bundle in Resources */,
 				944F21481B59570200ED8A7A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -914,8 +975,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Dieter Schmidt (UKN6LJWN4G)";
+				FRAMEWORK_SEARCH_PATHS = lookback/HD;
 				INFOPLIST_FILE = Medications/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-framework",
+					Lookback,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.freiraum.Medications;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Medications/libs/Classes/Medications-Bridging-Header.h";
@@ -928,8 +995,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Dieter Schmidt (UKN6LJWN4G)";
+				FRAMEWORK_SEARCH_PATHS = lookback/HD;
 				INFOPLIST_FILE = Medications/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-framework",
+					Lookback,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.freiraum.Medications;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Medications/libs/Classes/Medications-Bridging-Header.h";

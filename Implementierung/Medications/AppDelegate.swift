@@ -20,7 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         application.registerUserNotificationSettings(NotificationSettings.notificationSettings)
-        guard let rootTabController = window?.rootViewController as? ManagedObjectContextSettable else {
+        Lookback.setupWithAppToken("vGBXCZ5tXCZP8zDw6")
+        Lookback.sharedLookback().shakeToRecord = true
+        Lookback.sharedLookback().feedbackBubbleVisible = true
+                guard let rootTabController = window?.rootViewController as? ManagedObjectContextSettable else {
            return true
         }
         var rtc = rootTabController

@@ -4,3 +4,5 @@
 
 #import "RGBColorSlider.h"
 #import "RGBColorSliderDelegate.h"
+
+#import <Lookback/Lookback.h>
