@@ -9,21 +9,23 @@
 import WatchConnectivity
 import UIKit
 
-class WatchExecutionTimeService: NSObject, WCSessionDelegate {
-    private let wcSessionNameSpace = "WatchExecutionTimeService"
-    private let markAsTakenEventName = "-mark_as_taken_event"
-    private let session: WCSession
-    private let didMarkExececutionTimeTaken: ((UILocalNotification, Int)->())?
+class WatchExecutionTimeService: NSObject, WCSessionManagerDelegate {
+    let namespace = "WatchExecutionTimeService"
+    private let markAsTakenEventName = "-delay_executionTime"
+    private let getTodayExecutionTimeEventName = "-get_today_executionTime"
+    let sessionManager: WCSessionManagerProtocol
+    private let didDelayExecutionTime: ((UILocalNotification, Int)->())?
+    var fetchExecutionTimesFunction: (()->NSArray)?
     
-    init(session: WCSession, didMarkExececutionTimeTaken:((UILocalNotification, Int)->())?) {
-        self.session = session
-        self.didMarkExececutionTimeTaken = didMarkExececutionTimeTaken
+    init(sessionManager: WCSessionManagerProtocol, didDelayExecutionTime:((UILocalNotification, Int)->())? = nil) {
+        self.sessionManager = sessionManager
+        self.didDelayExecutionTime = didDelayExecutionTime
         super.init()
-         WCSessionManager.sharedInstace.registerDelegateWithNameSpace(self, nameSpace:wcSessionNameSpace)
+        self.sessionManager.registerDelegate(self)
     }
     
-    func markExecutionTimeAsTaken(localNotification: UILocalNotification, delaySeconds:Int) {
-        let eventName = wcSessionNameSpace + markAsTakenEventName
+    func delayExecutionTimeFromNotification(localNotification: UILocalNotification, delaySeconds:Int) {
+        let eventName = namespace + markAsTakenEventName
         var userInfo = localNotification.userInfo!
         userInfo["fireDate"] = localNotification.fireDate
         userInfo["delaySeconds"] = delaySeconds
@@ -39,19 +41,35 @@ class WatchExecutionTimeService: NSObject, WCSessionDelegate {
     }
     
     func onError(error:NSError) {
-        
+       print(error)
+    }
+    
+    func getExecutionTimesOfToday(callback:(Array<Dictionary<String, NSObject>>)->()) {
+        let eventName = namespace + getTodayExecutionTimeEventName
+        session.sendMessage([eventName: ""], replyHandler: {data in
+            if let list = data["hu"] as? Array<Dictionary<String, NSObject>>{
+                callback(list)
+            }
+            }, errorHandler: onError)
     }
     
     func session(session: WCSession, didReceiveMessage message: [String : AnyObject]) {
         recieveData(message)
     }
     
+    func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
+        if let fetchExecutionTimesFunction = fetchExecutionTimesFunction {
+            replyHandler(["hu": fetchExecutionTimesFunction()])
+        }
+        
+    }
+    
     func recieveData(message:[String: AnyObject]) {
-        if let userInfo = message[wcSessionNameSpace + markAsTakenEventName] as? [NSObject: AnyObject], let delaySeconds = userInfo["delaySeconds"] as? Int {
+        if let userInfo = message[namespace + markAsTakenEventName] as? [NSObject: AnyObject], let delaySeconds = userInfo["delaySeconds"] as? Int {
             let notification = UILocalNotification()
             notification.fireDate = userInfo["fireDate"] as? NSDate
             notification.userInfo = userInfo
-            didMarkExececutionTimeTaken?(notification, delaySeconds)
+            didDelayExecutionTime?(notification, delaySeconds)
         }
     }
     

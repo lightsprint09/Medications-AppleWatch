@@ -9,26 +9,24 @@
 import Foundation
 import WatchConnectivity
 
-class WCSessionManager: NSObject, WCSessionDelegate {
-    var delegates: Dictionary<String, WCSessionDelegate> = Dictionary()
-    var session: WCSession?
+class WCSessionManager: NSObject, WCSessionManagerProtocol {
+    private var delegates: Dictionary<String, WCSessionDelegate> = Dictionary()
+    var session: WCSession
     
     static let sharedInstace = WCSessionManager()
     
     private override init() {
+        session = WCSession.defaultSession()
         super.init()
-        if WCSession.isSupported() {
-            session = WCSession.defaultSession()
-            session!.delegate = self
-        }
+        session.delegate = self
     }
     
     func activate() {
-        session?.activateSession()
+        session.activateSession()
     }
-
-    func registerDelegateWithNameSpace(delegate:WCSessionDelegate, nameSpace: String) {
-        delegates[nameSpace] = delegate
+    
+    func registerDelegate(delegate: WCSessionManagerDelegate) {
+        delegates[delegate.namespace] = delegate
     }
     
     func session(session: WCSession, didReceiveMessage message: [String : AnyObject]) {
@@ -39,6 +37,11 @@ class WCSessionManager: NSObject, WCSessionDelegate {
     func session(session: WCSession, didReceiveUserInfo userInfo: [String : AnyObject]) {
          guard let key = userInfo.keys.first, let nameSpace = extractNameSpace(key), let delegate = delegateOfNameSpace(nameSpace) else { return }
         delegate.session!(session, didReceiveUserInfo: userInfo)
+    }
+    
+    func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
+        guard let key = message.keys.first, let nameSpace = extractNameSpace(key), let delegate = delegateOfNameSpace(nameSpace) else { return }
+        delegate.session!(session, didReceiveMessage: message, replyHandler: replyHandler)
     }
     
     func delegateOfNameSpace(nameSpace:String) ->WCSessionDelegate? {

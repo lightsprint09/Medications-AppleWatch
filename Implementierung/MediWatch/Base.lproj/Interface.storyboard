@@ -1,45 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8191" systemVersion="15A282b" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8191" systemVersion="15A282b" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Scx-B9-ZLk">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8092"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
-        <scene sceneID="aou-V4-d1y">
-            <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="MediWatch" customModuleProvider="target">
-                    <items>
-                        <table alignment="left" id="2uO-SF-Mts">
-                            <items>
-                                <tableRow id="uT9-Cp-eH4">
-                                    <group key="rootItem" width="1" alignment="left" id="Qdu-o3-B0I"/>
-                                </tableRow>
-                            </items>
-                        </table>
-                        <group width="1" alignment="left" id="f14-KH-4bm">
-                            <items>
-                                <button alignment="left" id="Wpp-GA-Aw6">
-                                    <group key="contentGroup" width="60" alignment="left" layout="vertical" id="oju-gO-j4t">
-                                        <items>
-                                            <imageView alignment="left" id="MvC-nt-bTY"/>
-                                        </items>
-                                    </group>
-                                </button>
-                                <button alignment="left" id="szx-1X-rrB">
-                                    <group key="contentGroup" width="71" alignment="left" layout="vertical" id="o0j-1G-2A6">
-                                        <items>
-                                            <imageView alignment="left" id="16E-NV-DwL"/>
-                                        </items>
-                                    </group>
-                                </button>
-                            </items>
-                        </group>
-                    </items>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="220" y="244"/>
-        </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
             <objects>
@@ -147,6 +112,58 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="520" y="643"/>
+        </scene>
+        <!--Execution Times Interface Controller-->
+        <scene sceneID="Blv-Zn-hly">
+            <objects>
+                <controller id="Scx-B9-ZLk" customClass="ExecutionTimesInterfaceController" customModule="MediWatch_Extension">
+                    <items>
+                        <table alignment="left" id="tXz-Yw-aSj">
+                            <items>
+                                <tableRow identifier="executionTimeCell" id="cc0-LM-1al" customClass="ExecutionTimesCell" customModule="MediWatch_Extension">
+                                    <group key="rootItem" width="1" height="90" alignment="left" layout="vertical" id="Tzf-Rk-bSn">
+                                        <items>
+                                            <imageView width="40" height="40" alignment="center" id="gxw-7j-HiL"/>
+                                            <label width="136" alignment="center" text="Label" textAlignment="center" id="smo-4s-4tc"/>
+                                            <label width="84.5" alignment="center" text="Label" textAlignment="center" id="tsz-h5-Icg"/>
+                                            <group width="86.5" height="1" alignment="right" layout="vertical" spacing="0.0" id="Aqa-A6-qF3"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="drugImage" destination="gxw-7j-HiL" id="fh0-iA-ex2"/>
+                                        <outlet property="drugLabel" destination="smo-4s-4tc" id="Ppk-iS-6wt"/>
+                                        <outlet property="timeLabel" destination="tsz-h5-Icg" id="s4A-c3-Q3r"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="executionTimeCell2" id="vry-yE-T4S" customClass="ExecutionTimesCell" customModule="MediWatch_Extension">
+                                    <group key="rootItem" width="1" height="74" alignment="left" layout="vertical" id="f5I-Hc-Hgj">
+                                        <items>
+                                            <label width="136" height="23.5" alignment="center" text="Label" textAlignment="center" id="BPA-jV-c7d"/>
+                                            <group width="136" height="1" alignment="right" spacing="0.0" id="088-QR-Hw2">
+                                                <items>
+                                                    <imageView width="40" height="40" alignment="center" id="InD-fM-cHT"/>
+                                                    <label width="84.5" height="38.5" alignment="center" text="Label" textAlignment="center" id="tBf-wk-iqj">
+                                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="drugImage" destination="InD-fM-cHT" id="LUw-bA-BOd"/>
+                                        <outlet property="drugLabel" destination="BPA-jV-c7d" id="Uyv-NL-AFA"/>
+                                        <outlet property="timeLabel" destination="tBf-wk-iqj" id="g6L-fY-oca"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="executionTimesTable" destination="tXz-Yw-aSj" id="EHd-lk-B88"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="206" y="249.5"/>
         </scene>
     </scenes>
 </document>

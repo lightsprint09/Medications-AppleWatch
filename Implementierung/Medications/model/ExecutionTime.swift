@@ -35,4 +35,10 @@ class ExecutionTime: NSManagedObject {
         ExecutionTime.dateFormatter.dateFormat = "HH:mm"
         return ExecutionTime.dateFormatter.stringFromDate(date)
     }
+    
+    func transformToWatchData() -> [String: NSObject] {
+        let dict = ["timeString": timeString, "drugName": parentExecutionTime.drug!.name, "drugImageData": parentExecutionTime.drug!.pillImage!]
+        
+        return dict
+    }
 }

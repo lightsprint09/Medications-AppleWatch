@@ -10,10 +10,28 @@ import WatchKit
 import Foundation
 
 
-class InterfaceController: WKInterfaceController {
+class ExecutionTimesInterfaceController: WKInterfaceController {
+    
+    @IBOutlet var executionTimesTable: WKInterfaceTable!
+    var watchExecutionTimeService: WatchExecutionTimeService!
 
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
+        watchExecutionTimeService = WatchExecutionTimeService(sessionManager: WCSessionManager.sharedInstace, didDelayExecutionTime: nil)
+        WCSessionManager.sharedInstace.activate()
+        watchExecutionTimeService.getExecutionTimesOfToday({data in
+            dispatch_async(dispatch_get_main_queue(), {
+                self.executionTimesTable.setNumberOfRows(data.count, withRowType: "executionTimeCell2")
+                for(index, executionTime) in data.enumerate() {
+                    if let row = self.executionTimesTable.rowControllerAtIndex(index) as? ExecutionTimesCell{
+                        row.drugLabel.setText(executionTime["drugName"] as? String)
+                        row.timeLabel.setText(executionTime["timeString"] as? String)
+                        row.drugImage.setImage(UIImage(data: executionTime["drugImageData"]! as! NSData))
+                        
+                    }
+                }
+            })
+        })
         
         // Configure interface objects here.
     }

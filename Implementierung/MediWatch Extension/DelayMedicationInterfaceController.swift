@@ -18,7 +18,7 @@ class DelayMedicationInterfaceController: WKInterfaceController {
     var notification: UILocalNotification?
     
     override func awakeWithContext(context: AnyObject?) {
-        watchExecutionTimeService = WatchExecutionTimeService(session: WCSessionManager.sharedInstace.session!, didMarkExececutionTimeTaken: nil)
+        watchExecutionTimeService = WatchExecutionTimeService(sessionManager: WCSessionManager.sharedInstace, didDelayExecutionTime: nil)
         WCSessionManager.sharedInstace.activate()
         if let notification = context as? UILocalNotification {
             self.notification = notification
@@ -42,18 +42,18 @@ class DelayMedicationInterfaceController: WKInterfaceController {
     }
    
     @IBAction func moveFirstButtonClick() {
-        watchExecutionTimeService.markExecutionTimeAsTaken(notification!, delaySeconds: 900)
+        watchExecutionTimeService.delayExecutionTimeFromNotification(notification!, delaySeconds: 900)
     }
     
     @IBAction func moveSecondButtonClick() {
-        watchExecutionTimeService.markExecutionTimeAsTaken(notification!, delaySeconds: 1800)
+        watchExecutionTimeService.delayExecutionTimeFromNotification(notification!, delaySeconds: 1800)
     }
     
     @IBAction func moveThirdButtonClick() {
-        watchExecutionTimeService.markExecutionTimeAsTaken(notification!, delaySeconds: 3600)
+        watchExecutionTimeService.delayExecutionTimeFromNotification(notification!, delaySeconds: 3600)
     }
     
     @IBAction func moveFouthButtonClick() {
-        watchExecutionTimeService.markExecutionTimeAsTaken(notification!, delaySeconds: 7200)
+        watchExecutionTimeService.delayExecutionTimeFromNotification(notification!, delaySeconds: 7200)
     }   
 }

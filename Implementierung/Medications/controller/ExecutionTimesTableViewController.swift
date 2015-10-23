@@ -25,9 +25,20 @@ class ExecutionTimesTableViewController: UITableViewController, ManagedObjectCon
     }
     
     func setupWatchConnection() {
-        guard let session = WCSessionManager.sharedInstace.session else { return }
-        watchExecutionTimeService = WatchExecutionTimeService(session: session, didMarkExececutionTimeTaken: didHandleNotificationWatch)
-         WCSessionManager.sharedInstace.activate()
+        watchExecutionTimeService = WatchExecutionTimeService(sessionManager: WCSessionManager.sharedInstace, didDelayExecutionTime: didHandleNotificationWatch)
+        watchExecutionTimeService.fetchExecutionTimesFunction = {
+            let fetchRequest = self.executionTimeService.allChildrenExecutionTimesFetchRequest(NSDate())
+            do{
+                let data = try self.managedObjectContext.executeFetchRequest(fetchRequest) as! Array<ExecutionTime>
+                let dataTranform = data.map({ (obj) in
+                    return obj.transformToWatchData()
+                })
+                return dataTranform
+            } catch {
+                return NSArray()
+            }
+        }
+        WCSessionManager.sharedInstace.activate()
     }
     
     func didHandleNotificationWatch(notification:UILocalNotification, delay:Int) {
