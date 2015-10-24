@@ -14,37 +14,30 @@ class ExecutionTimesInterfaceController: WKInterfaceController {
     
     @IBOutlet var executionTimesTable: WKInterfaceTable!
     var watchExecutionTimeService: WatchExecutionTimeService!
+    var executionTimes: NSArray!
 
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         watchExecutionTimeService = WatchExecutionTimeService(sessionManager: WCSessionManager.sharedInstace, didDelayExecutionTime: nil)
         WCSessionManager.sharedInstace.activate()
-        watchExecutionTimeService.getExecutionTimesOfToday({data in
-            dispatch_async(dispatch_get_main_queue(), {
-                self.executionTimesTable.setNumberOfRows(data.count, withRowType: "executionTimeCell2")
-                for(index, executionTime) in data.enumerate() {
-                    if let row = self.executionTimesTable.rowControllerAtIndex(index) as? ExecutionTimesCell{
-                        row.drugLabel.setText(executionTime["drugName"] as? String)
-                        row.timeLabel.setText(executionTime["timeString"] as? String)
-                        row.drugImage.setImage(UIImage(data: executionTime["drugImageData"]! as! NSData))
-                        
-                    }
+        watchExecutionTimeService.fetchExecutionTimesOfToday({executionTimes in
+            self.executionTimes = executionTimes
+            self.executionTimesTable.setNumberOfRows(executionTimes.count, withRowType: "executionTimeCell2")
+            for(index, executionTime) in executionTimes.enumerate() {
+                if let row = self.executionTimesTable.rowControllerAtIndex(index) as? ExecutionTimesCell{
+                    row.displayExecutimeDetails(executionTime)
+                    row.timeLabel.setText(executionTime["timeString"] as? String)
+                    
                 }
-            })
+            }
         })
-        
-        // Configure interface objects here.
+
+    }
+    
+    override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject? {
+        return executionTimes[rowIndex]
     }
 
-    override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
-    }
-
-    override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        super.didDeactivate()
-    }
     
     override func handleActionWithIdentifier(identifier: String?, forLocalNotification localNotification: UILocalNotification) {
         guard let identifier = identifier else { return }

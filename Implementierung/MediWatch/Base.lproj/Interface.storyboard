@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8191" systemVersion="15A282b" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Scx-B9-ZLk">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Scx-B9-ZLk">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8092"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9019"/>
     </dependencies>
     <scenes>
         <!--Static Notification Interface Controller-->
@@ -89,7 +89,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="447" y="303"/>
+            <point key="canvasLocation" x="529" y="256"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="vji-2l-ecq">
@@ -141,18 +141,26 @@
                                             <label width="136" height="23.5" alignment="center" text="Label" textAlignment="center" id="BPA-jV-c7d"/>
                                             <group width="136" height="1" alignment="right" spacing="0.0" id="088-QR-Hw2">
                                                 <items>
-                                                    <imageView width="40" height="40" alignment="center" id="InD-fM-cHT"/>
-                                                    <label width="84.5" height="38.5" alignment="center" text="Label" textAlignment="center" id="tBf-wk-iqj">
-                                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </label>
+                                                    <imageView width="41" height="41" alignment="center" id="InD-fM-cHT"/>
+                                                    <group alignment="right" layout="vertical" id="dNh-XV-3jI">
+                                                        <items>
+                                                            <label width="1" alignment="center" text="Label" textAlignment="center" id="tBf-wk-iqj">
+                                                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <fontDescription key="font" type="boldSystem" pointSize="16"/>
+                                                            </label>
+                                                            <label width="1" alignment="center" text="Label" textAlignment="center" id="d7q-8t-Z12"/>
+                                                        </items>
+                                                    </group>
                                                 </items>
                                             </group>
                                         </items>
                                     </group>
                                     <connections>
+                                        <outlet property="amountDrugLabel" destination="d7q-8t-Z12" id="aLP-SP-0gy"/>
                                         <outlet property="drugImage" destination="InD-fM-cHT" id="LUw-bA-BOd"/>
-                                        <outlet property="drugLabel" destination="BPA-jV-c7d" id="Uyv-NL-AFA"/>
+                                        <outlet property="drugNameLabel" destination="BPA-jV-c7d" id="9kt-uw-FqY"/>
                                         <outlet property="timeLabel" destination="tBf-wk-iqj" id="g6L-fY-oca"/>
+                                        <segue destination="T89-nr-REx" kind="push" id="HWa-J3-hY8"/>
                                     </connections>
                                 </tableRow>
                             </items>
@@ -163,7 +171,42 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="206" y="249.5"/>
+            <point key="canvasLocation" x="150" y="205.5"/>
+        </scene>
+        <!--Details-->
+        <scene sceneID="Jbu-05-rdd">
+            <objects>
+                <controller title="Details" hidesWhenLoading="NO" id="T89-nr-REx" customClass="MedicationDetailsController" customModule="MediWatch_Extension">
+                    <items>
+                        <imageView width="54" height="54" alignment="center" id="PLn-oR-gGL"/>
+                        <label alignment="center" text="Asprin" textAlignment="center" id="Ua8-ME-U6Y">
+                            <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <label alignment="center" text="2 Tabletten" textAlignment="center" id="zVy-7c-TES">
+                            <fontDescription key="font" type="system" weight="semibold" pointSize="18"/>
+                        </label>
+                        <button width="1" alignment="left" title="Nehmen" id="Dxn-Dw-1uN">
+                            <connections>
+                                <action selector="moveFirstButtonClick" destination="T89-nr-REx" id="E1x-D2-IJX"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Verschieben" id="vP4-AI-i4P">
+                            <connections>
+                                <segue destination="OIs-Az-qSQ" kind="push" id="TfD-dP-2M5"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Nicht nehmen" id="UEf-9K-uDE">
+                            <color key="titleColor" red="0.81568627449999997" green="0.0078431372550000003" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="amountDrugLabel" destination="zVy-7c-TES" id="hw4-km-PIq"/>
+                        <outlet property="drugImage" destination="PLn-oR-gGL" id="3OL-NB-ELa"/>
+                        <outlet property="drugNameLabel" destination="Ua8-ME-U6Y" id="BkJ-mn-H3V"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="350" y="225.25"/>
         </scene>
     </scenes>
 </document>

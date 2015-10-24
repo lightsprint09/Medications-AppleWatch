@@ -8,8 +8,9 @@
 
 import WatchKit
 
-class ExecutionTimesCell: NSObject {
+class ExecutionTimesCell: NSObject, ExecutionTimesDisplayDetailsProtocol {
     @IBOutlet var drugImage: WKInterfaceImage!
-    @IBOutlet var drugLabel: WKInterfaceLabel!
+    @IBOutlet var drugNameLabel: WKInterfaceLabel!
     @IBOutlet var timeLabel: WKInterfaceLabel!
+    @IBOutlet var amountDrugLabel: WKInterfaceLabel!
 }

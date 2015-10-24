@@ -8,14 +8,15 @@
 
 import WatchKit
 
-class DelayMedicationInterfaceController: WKInterfaceController {
+class DelayMedicationInterfaceController: WKInterfaceController, ExecutionTimesDisplayDetailsProtocol {
     @IBOutlet var drugImage: WKInterfaceImage!
-    
     @IBOutlet var amountDrugLabel: WKInterfaceLabel!
     @IBOutlet var drugNameLabel: WKInterfaceLabel!
+    
     var watchExecutionTimeService: WatchExecutionTimeService!
     
     var notification: UILocalNotification?
+    var executionTimeInformation: [String: AnyObject]?
     
     override func awakeWithContext(context: AnyObject?) {
         watchExecutionTimeService = WatchExecutionTimeService(sessionManager: WCSessionManager.sharedInstace, didDelayExecutionTime: nil)
@@ -24,36 +25,39 @@ class DelayMedicationInterfaceController: WKInterfaceController {
             self.notification = notification
             setupWithNotification(notification)
         }
+        if let executionTimeData = context as? [String: AnyObject] {
+            executionTimeInformation = executionTimeData
+            displayExecutimeDetails(executionTimeData)
+        }
     }
     
     func setupWithNotification(localNotification: UILocalNotification) {
-        if let imageData = localNotification.userInfo?[notification_drugImageDataKey] as? NSData {
-            let image = UIImage(data: imageData)
-            self.drugImage.setImage(image)
-        }
-        
-        if let drugName = localNotification.userInfo?[notification_drugNameKey] as? String {
-            drugNameLabel.setText(drugName)
-        }
-        if let drugAmount = localNotification.userInfo?[notification_drugAmountKey] as? String {
-            amountDrugLabel.setText(drugAmount)
-        }
-        
+        guard let executionTimeData = localNotification.userInfo as? [String: AnyObject] else { return }
+        executionTimeInformation = executionTimeData
+        executionTimeInformation!["fireDate"] = localNotification.fireDate
+        displayExecutimeDetails(executionTimeData)
     }
    
     @IBAction func moveFirstButtonClick() {
-        watchExecutionTimeService.delayExecutionTimeFromNotification(notification!, delaySeconds: 900)
+        delayExecutionTime(900)
     }
     
     @IBAction func moveSecondButtonClick() {
-        watchExecutionTimeService.delayExecutionTimeFromNotification(notification!, delaySeconds: 1800)
+        delayExecutionTime(1800)
     }
     
     @IBAction func moveThirdButtonClick() {
-        watchExecutionTimeService.delayExecutionTimeFromNotification(notification!, delaySeconds: 3600)
+        delayExecutionTime(3600)
     }
     
     @IBAction func moveFouthButtonClick() {
-        watchExecutionTimeService.delayExecutionTimeFromNotification(notification!, delaySeconds: 7200)
-    }   
+        delayExecutionTime(7200)
+    }
+    
+    func delayExecutionTime(seconds: Int) {
+        //executionTimeInformation?["delaySeconds"] = seconds
+        guard let executionTimeInformation = executionTimeInformation else { return }
+        print(executionTimeInformation)
+        watchExecutionTimeService.delayExecutionTimeFromNotification(executionTimeInformation, delaySeconds: seconds)
+    }
 }

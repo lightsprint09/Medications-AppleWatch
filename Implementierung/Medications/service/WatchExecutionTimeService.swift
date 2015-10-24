@@ -24,12 +24,10 @@ class WatchExecutionTimeService: NSObject, WCSessionManagerDelegate {
         self.sessionManager.registerDelegate(self)
     }
     
-    func delayExecutionTimeFromNotification(localNotification: UILocalNotification, delaySeconds:Int) {
+    func delayExecutionTimeFromNotification(var localNotificationUserInfo: [String: AnyObject], delaySeconds:Int) {
         let eventName = namespace + markAsTakenEventName
-        var userInfo = localNotification.userInfo!
-        userInfo["fireDate"] = localNotification.fireDate
-        userInfo["delaySeconds"] = delaySeconds
-        send([eventName: userInfo])
+        localNotificationUserInfo["delaySeconds"] = delaySeconds
+        send([eventName: localNotificationUserInfo])
     }
     
     private func send(message:[String : AnyObject]) {
@@ -44,13 +42,14 @@ class WatchExecutionTimeService: NSObject, WCSessionManagerDelegate {
        print(error)
     }
     
-    func getExecutionTimesOfToday(callback:(Array<Dictionary<String, NSObject>>)->()) {
+    func fetchExecutionTimesOfToday(callback:(Array<Dictionary<String, NSObject>>)->()) {
         let eventName = namespace + getTodayExecutionTimeEventName
         session.sendMessage([eventName: ""], replyHandler: {data in
-            if let list = data["hu"] as? Array<Dictionary<String, NSObject>>{
-                callback(list)
-            }
-            }, errorHandler: onError)
+            dispatch_async(dispatch_get_main_queue(), {
+                if let list = data["hu"] as? Array<Dictionary<String, NSObject>>{
+                    callback(list)
+                }})
+        }, errorHandler: onError)
     }
     
     func session(session: WCSession, didReceiveMessage message: [String : AnyObject]) {
@@ -61,11 +60,11 @@ class WatchExecutionTimeService: NSObject, WCSessionManagerDelegate {
         if let fetchExecutionTimesFunction = fetchExecutionTimesFunction {
             replyHandler(["hu": fetchExecutionTimesFunction()])
         }
-        
     }
     
     func recieveData(message:[String: AnyObject]) {
-        if let userInfo = message[namespace + markAsTakenEventName] as? [NSObject: AnyObject], let delaySeconds = userInfo["delaySeconds"] as? Int {
+        if let userInfo = message[namespace + markAsTakenEventName] as? [String: AnyObject],
+            let delaySeconds = userInfo["delaySeconds"] as? Int {
             let notification = UILocalNotification()
             notification.fireDate = userInfo["fireDate"] as? NSDate
             notification.userInfo = userInfo

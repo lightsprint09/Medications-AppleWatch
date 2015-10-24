@@ -10,9 +10,8 @@ import WatchKit
 import Foundation
 
 
-class NotificationController: WKUserNotificationInterfaceController {
+class NotificationController: WKUserNotificationInterfaceController, ExecutionTimesDisplayDetailsProtocol {
     @IBOutlet var drugImage: WKInterfaceImage!
-
     @IBOutlet var amountDrugLabel: WKInterfaceLabel!
     @IBOutlet var drugNameLabel: WKInterfaceLabel!
 
@@ -24,18 +23,8 @@ class NotificationController: WKUserNotificationInterfaceController {
     }
     
     func setupWithNotification(localNotification: UILocalNotification) {
-        if let imageData = localNotification.userInfo?[notification_drugImageDataKey] as? NSData {
-            let image = UIImage(data: imageData)
-            self.drugImage.setImage(image)
-        }
-        
-        if let drugName = localNotification.userInfo?[notification_drugNameKey] as? String {
-            drugNameLabel.setText(drugName)
-        }
-        if let drugAmount = localNotification.userInfo?[notification_drugAmountKey] as? String {
-            amountDrugLabel.setText(drugAmount)
-        }
-
+        guard let executionTimeData = localNotification.userInfo as? [String: AnyObject] else { return }
+        displayExecutimeDetails(executionTimeData)
     }
     
 }

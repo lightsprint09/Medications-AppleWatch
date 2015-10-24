@@ -37,7 +37,7 @@ class ExecutionTime: NSManagedObject {
     }
     
     func transformToWatchData() -> [String: NSObject] {
-        let dict = ["timeString": timeString, "drugName": parentExecutionTime.drug!.name, "drugImageData": parentExecutionTime.drug!.pillImage!]
+        let dict = ["timeString": timeString, notification_drugNameKey: parentExecutionTime.drug!.name, notification_drugImageDataKey: parentExecutionTime.drug!.pillImage!, notification_drugAmountKey: amountUnitString!, "fireDate": assignmentDate, notification_coreDataIDKey: parentExecutionTime.objectID.URIRepresentation().absoluteString]
         
         return dict
     }
