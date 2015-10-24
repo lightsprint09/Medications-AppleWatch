@@ -76,9 +76,9 @@
                                 <action selector="moveThirdButtonClick" destination="OIs-Az-qSQ" id="pef-W5-jWw"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" title="2 Stunden" id="jlG-8y-NfS">
+                        <button width="1" alignment="left" title="Eigene Zeit" id="jlG-8y-NfS">
                             <connections>
-                                <action selector="moveFouthButtonClick" destination="OIs-Az-qSQ" id="G6F-Z3-9Af"/>
+                                <segue destination="hwX-Vg-kUK" kind="push" id="bBw-uJ-KHm"/>
                             </connections>
                         </button>
                     </items>
@@ -90,6 +90,17 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="529" y="256"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="vbs-ej-ajz">
+            <objects>
+                <controller id="hwX-Vg-kUK">
+                    <items>
+                        <picker height="100" alignment="left" indicatorMode="shownWhileFocused" id="UyW-hn-BnB"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="712" y="195"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="vji-2l-ecq">
