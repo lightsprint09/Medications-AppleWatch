@@ -19,7 +19,7 @@ class DelayMedicationInterfaceController: WKInterfaceController, ExecutionTimesD
     var executionTimeInformation: [String: AnyObject]?
     
     override func awakeWithContext(context: AnyObject?) {
-        watchExecutionTimeService = WatchExecutionTimeService(sessionManager: WCSessionManager.sharedInstace, didDelayExecutionTime: nil)
+        watchExecutionTimeService = WatchExecutionTimeService(sessionManager: WCSessionManager.sharedInstace)
         WCSessionManager.sharedInstace.activate()
         if let notification = context as? UILocalNotification {
             self.notification = notification
@@ -55,9 +55,9 @@ class DelayMedicationInterfaceController: WKInterfaceController, ExecutionTimesD
     }
     
     func delayExecutionTime(seconds: Int) {
-        //executionTimeInformation?["delaySeconds"] = seconds
         guard let executionTimeInformation = executionTimeInformation else { return }
         print(executionTimeInformation)
         watchExecutionTimeService.delayExecutionTimeFromNotification(executionTimeInformation, delaySeconds: seconds)
+        popController()
     }
 }

@@ -17,9 +17,14 @@ class MedicationDetailsController: WKInterfaceController, ExecutionTimesDisplayD
     var executionTimeInformation: [String: AnyObject]!
     
     override func awakeWithContext(context: AnyObject?) {
-        guard let executionTimeData = context as? [String: AnyObject] else { return }
+        guard let context = context as? [String: AnyObject], let watchService = context["watchExecutionTimeService"] as? WatchExecutionTimeService, let executionTimeData = context["executionTimeData"] as? [String: AnyObject] else { return }
+        watchExecutionTimeService = watchService
         executionTimeInformation = executionTimeData
         displayExecutimeDetails(executionTimeData)
+    }
+    
+    @IBAction func onTakeMedication() {
+       watchExecutionTimeService.executeExecutionTimeWithNotification(executionTimeInformation)
     }
     
     override func contextForSegueWithIdentifier(segueIdentifier: String) -> AnyObject? {

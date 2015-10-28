@@ -89,18 +89,26 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="529" y="256"/>
+            <point key="canvasLocation" x="563" y="226"/>
         </scene>
-        <!--Interface Controller-->
+        <!--Chose Own Delay Time Controller-->
         <scene sceneID="vbs-ej-ajz">
             <objects>
-                <controller id="hwX-Vg-kUK">
+                <controller id="hwX-Vg-kUK" customClass="ChoseOwnDelayTimeController" customModule="MediWatch_Extension">
                     <items>
                         <picker height="100" alignment="left" indicatorMode="shownWhileFocused" id="UyW-hn-BnB"/>
+                        <button width="1" alignment="left" title="Verschieben" id="Aq7-A9-9A2">
+                            <connections>
+                                <action selector="delayMedication" destination="hwX-Vg-kUK" id="jca-ru-72Z"/>
+                            </connections>
+                        </button>
                     </items>
+                    <connections>
+                        <outlet property="delayTimePicker" destination="UyW-hn-BnB" id="etu-4J-YmZ"/>
+                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="712" y="195"/>
+            <point key="canvasLocation" x="769" y="226"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="vji-2l-ecq">
@@ -198,7 +206,7 @@
                         </label>
                         <button width="1" alignment="left" title="Nehmen" id="Dxn-Dw-1uN">
                             <connections>
-                                <action selector="moveFirstButtonClick" destination="T89-nr-REx" id="E1x-D2-IJX"/>
+                                <action selector="onTakeMedication" destination="T89-nr-REx" id="uUg-EP-Qht"/>
                             </connections>
                         </button>
                         <button width="1" alignment="left" title="Verschieben" id="vP4-AI-i4P">

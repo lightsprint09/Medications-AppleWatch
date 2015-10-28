@@ -25,23 +25,34 @@ class ExecutionTimesTableViewController: UITableViewController, ManagedObjectCon
     }
     
     func setupWatchConnection() {
-        watchExecutionTimeService = WatchExecutionTimeService(sessionManager: WCSessionManager.sharedInstace, didDelayExecutionTime: didHandleNotificationWatch)
-        watchExecutionTimeService.fetchExecutionTimesFunction = {
-            let fetchRequest = self.executionTimeService.allChildrenExecutionTimesFetchRequest(NSDate())
-            do{
-                let data = try self.managedObjectContext.executeFetchRequest(fetchRequest) as! Array<ExecutionTime>
-                let dataTranform = data.map({ (obj) in
-                    return obj.transformToWatchData()
-                })
-                return dataTranform
-            } catch {
-                return NSArray()
-            }
-        }
+        watchExecutionTimeService = WatchExecutionTimeService(sessionManager: WCSessionManager.sharedInstace)
+        watchExecutionTimeService.didDelayExecutionTime = delayExecutionTimeWithNotification
+        watchExecutionTimeService.fetchExecutionTimesFunction = fetchExecutionTimesForWatch
+        watchExecutionTimeService.didExecuteExecutionTime = markAsExecutedWithNotification
         WCSessionManager.sharedInstace.activate()
     }
     
-    func didHandleNotificationWatch(notification:UILocalNotification, delay:Int) {
+    func fetchExecutionTimesForWatch() -> NSArray {
+        let fetchRequest = self.executionTimeService.allChildrenExecutionTimesFetchRequest(NSDate())
+        do{
+            let data = try self.managedObjectContext.executeFetchRequest(fetchRequest) as! Array<ExecutionTime>
+            let dataTranform = data.map({ (obj) in
+                return obj.transformToWatchData()
+            })
+            return dataTranform
+        } catch {
+            return NSArray()
+        }
+    }
+    
+    func markAsExecutedWithNotification(notification:UILocalNotification) {
+        if let executionTime = executionTimeService.getExecutionTimeForNotification(managedObjectContext, notification: notification) {
+            executionTime.executionDate = NSDate()
+            managedObjectContext.saveOrRollback()
+        }
+    }
+    
+    func delayExecutionTimeWithNotification(notification:UILocalNotification, delay:Int) {
         if let executionTime = executionTimeService.getExecutionTimeForNotification(managedObjectContext, notification: notification) {
             executionTime.secondsMoved = delay
             managedObjectContext.saveOrRollback()

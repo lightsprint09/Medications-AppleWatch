@@ -11,22 +11,30 @@ import UIKit
 
 class WatchExecutionTimeService: NSObject, WCSessionManagerDelegate {
     let namespace = "WatchExecutionTimeService"
-    private let markAsTakenEventName = "-delay_executionTime"
+    private let delayExecutionTimeEventName = "-delay_executionTime"
     private let getTodayExecutionTimeEventName = "-get_today_executionTime"
+    private let markAsTakenEventName = "-mark_as_taken"
+    
     let sessionManager: WCSessionManagerProtocol
-    private let didDelayExecutionTime: ((UILocalNotification, Int)->())?
+    
+    var didDelayExecutionTime: ((UILocalNotification, Int)->())?
+    var didExecuteExecutionTime: ((UILocalNotification)->())?
     var fetchExecutionTimesFunction: (()->NSArray)?
     
-    init(sessionManager: WCSessionManagerProtocol, didDelayExecutionTime:((UILocalNotification, Int)->())? = nil) {
+    init(sessionManager: WCSessionManagerProtocol) {
         self.sessionManager = sessionManager
-        self.didDelayExecutionTime = didDelayExecutionTime
         super.init()
         self.sessionManager.registerDelegate(self)
     }
     
     func delayExecutionTimeFromNotification(var localNotificationUserInfo: [String: AnyObject], delaySeconds:Int) {
-        let eventName = namespace + markAsTakenEventName
+        let eventName = namespace + delayExecutionTimeEventName
         localNotificationUserInfo["delaySeconds"] = delaySeconds
+        send([eventName: localNotificationUserInfo])
+    }
+    
+    func executeExecutionTimeWithNotification(localNotificationUserInfo: [String: AnyObject]) {
+        let eventName = namespace + markAsTakenEventName
         send([eventName: localNotificationUserInfo])
     }
     
@@ -63,12 +71,18 @@ class WatchExecutionTimeService: NSObject, WCSessionManagerDelegate {
     }
     
     func recieveData(message:[String: AnyObject]) {
-        if let userInfo = message[namespace + markAsTakenEventName] as? [String: AnyObject],
+        if let userInfo = message[namespace + delayExecutionTimeEventName] as? [String: AnyObject],
             let delaySeconds = userInfo["delaySeconds"] as? Int {
             let notification = UILocalNotification()
             notification.fireDate = userInfo["fireDate"] as? NSDate
             notification.userInfo = userInfo
             didDelayExecutionTime?(notification, delaySeconds)
+        }
+        if let userInfo = message[namespace + markAsTakenEventName] as? [String: AnyObject] {
+                let notification = UILocalNotification()
+                notification.fireDate = userInfo["fireDate"] as? NSDate
+                notification.userInfo = userInfo
+                didExecuteExecutionTime?(notification)
         }
     }
     

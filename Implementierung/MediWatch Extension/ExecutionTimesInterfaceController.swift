@@ -18,7 +18,7 @@ class ExecutionTimesInterfaceController: WKInterfaceController {
 
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        watchExecutionTimeService = WatchExecutionTimeService(sessionManager: WCSessionManager.sharedInstace, didDelayExecutionTime: nil)
+        watchExecutionTimeService = WatchExecutionTimeService(sessionManager: WCSessionManager.sharedInstace)
         WCSessionManager.sharedInstace.activate()
         watchExecutionTimeService.fetchExecutionTimesOfToday({executionTimes in
             self.executionTimes = executionTimes
@@ -31,11 +31,10 @@ class ExecutionTimesInterfaceController: WKInterfaceController {
                 }
             }
         })
-
     }
     
     override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject? {
-        return executionTimes[rowIndex]
+        return ["executionTimeData": executionTimes[rowIndex], "watchExecutionTimeService": watchExecutionTimeService]
     }
 
     
