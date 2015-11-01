@@ -14,17 +14,21 @@ class ExecutionTimesInterfaceController: WKInterfaceController {
     
     @IBOutlet var executionTimesTable: WKInterfaceTable!
     var watchExecutionTimeService: WatchExecutionTimeService!
-    var executionTimes: NSArray!
+    var executionTimes: Array<WatchExecutionTimeContext>!
 
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        watchExecutionTimeService = WatchExecutionTimeService(sessionManager: WCSessionManager.sharedInstace)
-        WCSessionManager.sharedInstace.activate()
-        watchExecutionTimeService.fetchExecutionTimesOfToday(displayExecutionTimes)
+       fetchExecutionTimes()
     }
     
     override func willActivate() {
-        watchExecutionTimeService = WatchExecutionTimeService(sessionManager: WCSessionManager.sharedInstace)
+        fetchExecutionTimes()
+    }
+    
+    func fetchExecutionTimes() {
+        if watchExecutionTimeService == nil {
+            watchExecutionTimeService =  WatchExecutionTimeService(sessionManager: WCSessionManager.sharedInstace)
+        }
         WCSessionManager.sharedInstace.activate()
         watchExecutionTimeService.fetchExecutionTimesOfToday(displayExecutionTimes)
     }
@@ -36,12 +40,14 @@ class ExecutionTimesInterfaceController: WKInterfaceController {
             if let row = self.executionTimesTable.rowControllerAtIndex(index) as? ExecutionTimesCell{
                 row.displayExecutimeDetails(executionTimeContext.executionTime)
                 row.timeLabel.setText(executionTimeContext.executionTime.timeString)
+                row.markTakenImage.setHidden(!executionTimeContext.executionTime.hasTakenMedication)
+                row.timeLabel.setTextColor(executionTimeContext.executionTime.hasTakenMedication ? .greenExecutionTimeColor() : .blueExecutionTimeColor())
             }
         }
     }
     
     override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject? {
-        return ["executionTimeData": executionTimes[rowIndex], "watchExecutionTimeService": watchExecutionTimeService]
+        return executionTimes[rowIndex]
     }
 
     

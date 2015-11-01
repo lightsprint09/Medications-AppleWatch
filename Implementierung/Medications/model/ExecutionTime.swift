@@ -42,7 +42,7 @@ class ExecutionTime: NSManagedObject, ExecutionTimeProtocol {
         return ExecutionTime.dateFormatter.stringFromDate(date)
     }
     
-    func transformToWatchData() -> [String: NSObject] {
+    var codingData: [String: NSObject] {
         var dict = ["timeString": timeString, "fireDate": assignmentDate, notification_coreDataIDKey: parentExecutionTime.objectID.URIRepresentation().absoluteString]
         if let drugName = drugName {
             dict[notification_drugNameKey] = drugName
@@ -52,6 +52,10 @@ class ExecutionTime: NSManagedObject, ExecutionTimeProtocol {
         }
         if let amountUnitString = amountUnitString {
             dict[notification_drugAmountKey] = amountUnitString
+        }
+        
+        if let executionDate = executionDate {
+            dict[notification_executionDateKey] = executionDate
         }
         return dict
     }

@@ -65,7 +65,6 @@
 		944F214B1B59570200ED8A7A /* Medications.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 944F21491B59570200ED8A7A /* Medications.xcdatamodeld */; };
 		944F215B1B59570200ED8A7A /* MedicationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944F215A1B59570200ED8A7A /* MedicationsTests.swift */; };
 		944F21791B59573200ED8A7A /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 944F21771B59573200ED8A7A /* Interface.storyboard */; };
-		944F217B1B59573200ED8A7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 944F217A1B59573200ED8A7A /* Assets.xcassets */; };
 		944F21821B59573300ED8A7A /* MediWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 944F21811B59573300ED8A7A /* MediWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		944F21891B59573300ED8A7A /* ExecutionTimesInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944F21881B59573300ED8A7A /* ExecutionTimesInterfaceController.swift */; };
 		944F218B1B59573300ED8A7A /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944F218A1B59573300ED8A7A /* ExtensionDelegate.swift */; };
@@ -80,6 +79,8 @@
 		9472A4811BE657D50044D696 /* WatchExecutionTimeContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9472A47F1BE657D50044D696 /* WatchExecutionTimeContext.swift */; };
 		9472A4821BE65D5F0044D696 /* TimeOfDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944B2B061B8CAE220098E1EA /* TimeOfDay.swift */; };
 		9472A4831BE65D710044D696 /* NSDateCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944B2B081B8CFB460098E1EA /* NSDateCreation.swift */; };
+		9472A4861BE6870F0044D696 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9472A4851BE6870F0044D696 /* Assets.xcassets */; };
+		9472A4871BE6BFAA0044D696 /* MedicationColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947D43371B87424D009F45BA /* MedicationColors.swift */; };
 		947D43381B87424D009F45BA /* MedicationColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947D43371B87424D009F45BA /* MedicationColors.swift */; };
 		947F022C1B80A39F006D9C7E /* RepeatEventCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947F022B1B80A39F006D9C7E /* RepeatEventCreator.swift */; };
 		947F02321B81CA17006D9C7E /* FetchedResultsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947F02311B81CA17006D9C7E /* FetchedResultsCollectionViewController.swift */; };
@@ -220,7 +221,6 @@
 		944F215C1B59570200ED8A7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		944F21751B59573200ED8A7A /* MediWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		944F21781B59573200ED8A7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		944F217A1B59573200ED8A7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		944F217C1B59573200ED8A7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		944F21811B59573300ED8A7A /* MediWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "MediWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		944F21871B59573300ED8A7A /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
@@ -231,6 +231,7 @@
 		944F21901B59573300ED8A7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		946F7D451BDCF2D5008404AC /* ChoseOwnDelayTimeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoseOwnDelayTimeController.swift; sourceTree = "<group>"; };
 		9472A47F1BE657D50044D696 /* WatchExecutionTimeContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchExecutionTimeContext.swift; sourceTree = "<group>"; };
+		9472A4851BE6870F0044D696 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		947D43371B87424D009F45BA /* MedicationColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationColors.swift; sourceTree = "<group>"; };
 		947F022B1B80A39F006D9C7E /* RepeatEventCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatEventCreator.swift; sourceTree = "<group>"; };
 		947F02311B81CA17006D9C7E /* FetchedResultsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsCollectionViewController.swift; sourceTree = "<group>"; };
@@ -454,7 +455,7 @@
 			isa = PBXGroup;
 			children = (
 				944F21771B59573200ED8A7A /* Interface.storyboard */,
-				944F217A1B59573200ED8A7A /* Assets.xcassets */,
+				9472A4851BE6870F0044D696 /* Assets.xcassets */,
 				944F217C1B59573200ED8A7A /* Info.plist */,
 			);
 			path = MediWatch;
@@ -711,7 +712,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				944F217B1B59573200ED8A7A /* Assets.xcassets in Resources */,
+				9472A4861BE6870F0044D696 /* Assets.xcassets in Resources */,
 				944F21791B59573200ED8A7A /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -848,6 +849,7 @@
 				943B24471BC7D30400E9D4D0 /* TakeDrugNotificationKeys.swift in Sources */,
 				9472A4811BE657D50044D696 /* WatchExecutionTimeContext.swift in Sources */,
 				946C04D91B7BD8FA00D93D10 /* DrugRenderEnum.swift in Sources */,
+				9472A4871BE6BFAA0044D696 /* MedicationColors.swift in Sources */,
 				94DFA73F1BCCF02C00A91467 /* WatchExecutionTimeService.swift in Sources */,
 				944F21891B59573300ED8A7A /* ExecutionTimesInterfaceController.swift in Sources */,
 				94D73C5D1BCC053C00638F1C /* DelayMedicationInterfaceController.swift in Sources */,

@@ -23,6 +23,7 @@ private let dateFormatter = NSDateFormatter()
     var amountUnitString: String? { get }
     var drugName: String? { get }
     var drugImage: NSData? { get }
+    var codingData:[String: NSObject] { get }
 }
 
 extension ExecutionTimeProtocol {
@@ -30,6 +31,8 @@ extension ExecutionTimeProtocol {
         return TimeOfDay(rawValue: assignmentTimeOfDay.integerValue)!
     }
     
-    
+    var hasTakenMedication: Bool {
+        return executionDate != nil
+    }
     
 }

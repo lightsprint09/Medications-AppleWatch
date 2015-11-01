@@ -139,21 +139,6 @@
                     <items>
                         <table alignment="left" id="tXz-Yw-aSj">
                             <items>
-                                <tableRow identifier="executionTimeCell" id="cc0-LM-1al" customClass="ExecutionTimesCell" customModule="MediWatch_Extension">
-                                    <group key="rootItem" width="1" height="90" alignment="left" layout="vertical" id="Tzf-Rk-bSn">
-                                        <items>
-                                            <imageView width="40" height="40" alignment="center" id="gxw-7j-HiL"/>
-                                            <label width="136" alignment="center" text="Label" textAlignment="center" id="smo-4s-4tc"/>
-                                            <label width="84.5" alignment="center" text="Label" textAlignment="center" id="tsz-h5-Icg"/>
-                                            <group width="86.5" height="1" alignment="right" layout="vertical" spacing="0.0" id="Aqa-A6-qF3"/>
-                                        </items>
-                                    </group>
-                                    <connections>
-                                        <outlet property="drugImage" destination="gxw-7j-HiL" id="fh0-iA-ex2"/>
-                                        <outlet property="drugLabel" destination="smo-4s-4tc" id="Ppk-iS-6wt"/>
-                                        <outlet property="timeLabel" destination="tsz-h5-Icg" id="s4A-c3-Q3r"/>
-                                    </connections>
-                                </tableRow>
                                 <tableRow identifier="executionTimeCell2" id="vry-yE-T4S" customClass="ExecutionTimesCell" customModule="MediWatch_Extension">
                                     <group key="rootItem" width="1" height="74" alignment="left" layout="vertical" id="f5I-Hc-Hgj">
                                         <items>
@@ -163,10 +148,15 @@
                                                     <imageView width="41" height="41" alignment="center" id="InD-fM-cHT"/>
                                                     <group alignment="right" layout="vertical" id="dNh-XV-3jI">
                                                         <items>
-                                                            <label width="1" alignment="center" text="Label" textAlignment="center" id="tBf-wk-iqj">
-                                                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <fontDescription key="font" type="boldSystem" pointSize="16"/>
-                                                            </label>
+                                                            <group width="1" height="16" alignment="left" id="DDD-RH-R5L">
+                                                                <items>
+                                                                    <label width="50" height="16" alignment="center" text="Label" textAlignment="center" id="tBf-wk-iqj">
+                                                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <fontDescription key="font" type="boldSystem" pointSize="16"/>
+                                                                    </label>
+                                                                    <imageView width="16" height="16" alignment="right" verticalAlignment="center" image="take_icon" id="DhL-Jf-MFW"/>
+                                                                </items>
+                                                            </group>
                                                             <label width="1" alignment="center" text="Label" textAlignment="center" id="d7q-8t-Z12">
                                                                 <fontDescription key="font" type="system" pointSize="14"/>
                                                             </label>
@@ -180,6 +170,7 @@
                                         <outlet property="amountDrugLabel" destination="d7q-8t-Z12" id="aLP-SP-0gy"/>
                                         <outlet property="drugImage" destination="InD-fM-cHT" id="LUw-bA-BOd"/>
                                         <outlet property="drugNameLabel" destination="BPA-jV-c7d" id="9kt-uw-FqY"/>
+                                        <outlet property="markTakenImage" destination="DhL-Jf-MFW" id="Xhl-jH-wl1"/>
                                         <outlet property="timeLabel" destination="tBf-wk-iqj" id="g6L-fY-oca"/>
                                         <segue destination="T89-nr-REx" kind="push" id="HWa-J3-hY8"/>
                                     </connections>
@@ -192,14 +183,24 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="150" y="205.5"/>
+            <point key="canvasLocation" x="150" y="205"/>
         </scene>
         <!--Details-->
         <scene sceneID="Jbu-05-rdd">
             <objects>
                 <controller title="Details" hidesWhenLoading="NO" id="T89-nr-REx" customClass="MedicationDetailsController" customModule="MediWatch_Extension">
                     <items>
-                        <imageView width="54" height="54" alignment="center" id="PLn-oR-gGL"/>
+                        <group width="1" height="54" alignment="center" id="JZi-1E-ZP5">
+                            <items>
+                                <group width="8" alignment="left" id="miE-R8-cAW"/>
+                                <imageView width="26" height="26" alignment="left" verticalAlignment="center" image="take_icon" contentMode="scaleAspectFit" id="YcT-r0-cGf"/>
+                                <imageView width="54" height="54" alignment="center" id="PLn-oR-gGL"/>
+                                <label width="40" alignment="right" verticalAlignment="center" id="WHC-FE-xfa">
+                                    <color key="textColor" red="0.97254901959999995" green="0.4823529412" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="boldSystem" pointSize="16"/>
+                                </label>
+                            </items>
+                        </group>
                         <label alignment="center" text="Asprin" textAlignment="center" id="Ua8-ME-U6Y">
                             <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         </label>
@@ -222,6 +223,8 @@
                     </items>
                     <connections>
                         <outlet property="amountDrugLabel" destination="zVy-7c-TES" id="hw4-km-PIq"/>
+                        <outlet property="checkTakenImage" destination="YcT-r0-cGf" id="CTg-05-ywN"/>
+                        <outlet property="delayTimeLabel" destination="WHC-FE-xfa" id="0Gr-sx-41A"/>
                         <outlet property="drugImage" destination="PLn-oR-gGL" id="3OL-NB-ELa"/>
                         <outlet property="drugNameLabel" destination="Ua8-ME-U6Y" id="BkJ-mn-H3V"/>
                     </connections>

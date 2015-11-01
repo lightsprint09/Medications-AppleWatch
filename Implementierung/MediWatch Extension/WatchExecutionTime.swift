@@ -9,6 +9,8 @@
 import Foundation
 
 class WatchExecutionTime: NSObject, ExecutionTimeProtocol {
+    private static let dateFormatter = NSDateFormatter()
+    
     var amount: NSDecimalNumber?
     var assignmentDate: NSDate
     var assignmentTimeOfDay: NSNumber
@@ -17,22 +19,26 @@ class WatchExecutionTime: NSObject, ExecutionTimeProtocol {
     var secondsMoved: NSNumber?
     var notExecuted: NSNumber
     
-    let timeString: String
+    var timeString: String {
+        WatchExecutionTime.dateFormatter.dateFormat = "HH:mm"
+        return WatchExecutionTime.dateFormatter.stringFromDate(assignmentDate)
+    }
     let amountUnitString: String?
     let drugName: String?
     let drugImage: NSData?
     
+    let codingData:[String: NSObject]
+    
     init(watchtData:[String: NSObject]) {
+        codingData = watchtData
         assignmentDate = watchtData["fireDate"]! as! NSDate
         secondsMoved = watchtData["secondsMoved"] as? NSNumber
         assignmentTimeOfDay = 1
+        executionDate = watchtData[notification_executionDateKey] as? NSDate
         creationDate = NSDate()
         notExecuted = false
-        timeString = watchtData["timeString"] as! String
         amountUnitString = watchtData[notification_drugAmountKey] as? String
         drugName = watchtData[notification_drugNameKey] as? String
         drugImage = watchtData[notification_drugImageDataKey] as? NSData
     }
-    
-   
 }

@@ -17,11 +17,7 @@ protocol ExecutionTimesDisplayDetailsProtocol {
 
 extension ExecutionTimesDisplayDetailsProtocol {
     func displayExecutimeDetails(executionTime: ExecutionTimeProtocol) {
-        if let imageData = executionTime.drugImage {
-            let image = UIImage(data: imageData)
-            self.drugImage.setImage(image)
-        }
-        
+        drugImage.setImageData(executionTime.drugImage)
         drugNameLabel.setText(executionTime.drugName)
         amountDrugLabel.setText(executionTime.amountUnitString)
         

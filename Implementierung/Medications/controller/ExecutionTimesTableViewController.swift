@@ -32,18 +32,15 @@ class ExecutionTimesTableViewController: UITableViewController, ManagedObjectCon
         WCSessionManager.sharedInstace.activate()
     }
     
-    func fetchExecutionTimesForWatch() -> Array<[String: NSObject]> {
+    func fetchExecutionTimesForWatch() -> Array<ExecutionTimeProtocol> {
         let fetchRequest = self.executionTimeService.allChildrenExecutionTimesFetchRequest(NSDate())
         do{
-            let data = try self.managedObjectContext.executeFetchRequest(fetchRequest) as! Array<ExecutionTime>
-            let dataTranform = data.map({ (obj) in
-                return obj.transformToWatchData()
-            })
-            return dataTranform
+            return try self.managedObjectContext.executeFetchRequest(fetchRequest) as! Array<ExecutionTimeProtocol>
         } catch {
-            return  Array<[String: NSObject]>()
+            return  Array<ExecutionTimeProtocol>()
         }
     }
+
     
     func markAsExecutedWithNotification(notification:UILocalNotification) {
         if let executionTime = executionTimeService.getExecutionTimeForNotification(managedObjectContext, notification: notification) {

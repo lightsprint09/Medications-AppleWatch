@@ -11,6 +11,7 @@ public let notification_coreDataIDKey = "coreDataNotificationIDKey"
 public let notification_drugImageDataKey = "drugImageDataKey"
 public let notification_drugAmountKey = "drugAmountKey"
 public let notification_drugNameKey = "drugNameKey"
+public let notification_executionDateKey = "executionDateKey"
 
 let takeMedicationNotificationActionIdentifier = "take_medikation_category_identifier"
 let delayMedicationNotificationActionIdentifier = "delay_medikation_category_identifier"

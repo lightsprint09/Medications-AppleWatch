@@ -19,7 +19,7 @@ class WatchExecutionTimeService: NSObject, WCSessionManagerDelegate {
     
     var didDelayExecutionTime: ((UILocalNotification, Int)->())?
     var didExecuteExecutionTime: ((UILocalNotification)->())?
-    var fetchExecutionTimesFunction: (()->  Array<[String: NSObject]>)?
+    var fetchExecutionTimesFunction: (()->  Array<ExecutionTimeProtocol>)?
     
     init(sessionManager: WCSessionManagerProtocol) {
         self.sessionManager = sessionManager
@@ -27,15 +27,17 @@ class WatchExecutionTimeService: NSObject, WCSessionManagerDelegate {
         self.sessionManager.registerDelegate(self)
     }
     
-    func delayExecutionTimeFromNotification(var localNotificationUserInfo: [String: AnyObject], delaySeconds:Int) {
+    func delayExecutionTime(executionTime:ExecutionTimeProtocol, delaySeconds:Int) {
+        executionTime.secondsMoved = delaySeconds
         let eventName = namespace + delayExecutionTimeEventName
+        var localNotificationUserInfo = executionTime.codingData
         localNotificationUserInfo["delaySeconds"] = delaySeconds
         send([eventName: localNotificationUserInfo])
     }
     
-    func executeExecutionTimeWithNotification(localNotificationUserInfo: [String: AnyObject]) {
+    func executeExecutionTimeWithNotification(executionTime:ExecutionTimeProtocol) {
         let eventName = namespace + markAsTakenEventName
-        send([eventName: localNotificationUserInfo])
+        send([eventName: executionTime.codingData])
     }
     
     private func send(message:[String : AnyObject]) {
@@ -70,7 +72,10 @@ class WatchExecutionTimeService: NSObject, WCSessionManagerDelegate {
     
     func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
         if let fetchExecutionTimesFunction = fetchExecutionTimesFunction {
-            replyHandler(["hu": fetchExecutionTimesFunction()])
+            let dataTranform = fetchExecutionTimesFunction().map({(obj) in
+                return obj.codingData
+            })
+            replyHandler(["hu": dataTranform])
         }
     }
     

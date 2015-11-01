@@ -31,11 +31,12 @@ class DelayMedicationInterfaceController: WKInterfaceController, ExecutionTimesD
     }
     
     func setupWithNotification(localNotification: UILocalNotification) {
+        localNotification.userInfo?["fireDate"] = localNotification.fireDate
         guard let executionTimeData = localNotification.userInfo as? [String: NSObject] else { return }
         let watchExecutionTimeService = WatchExecutionTimeService(sessionManager: WCSessionManager.sharedInstace)
         let executionTime = WatchExecutionTime(watchtData: executionTimeData)
         watchExecutionTimeContext = WatchExecutionTimeContext(executionTimeService: watchExecutionTimeService, executionTime: executionTime)
-        //executionTimeInformation!["fireDate"] = localNotification.fireDate
+        
         displayExecutimeDetails(executionTime)
     }
    
@@ -51,14 +52,14 @@ class DelayMedicationInterfaceController: WKInterfaceController, ExecutionTimesD
         delayExecutionTime(3600)
     }
     
-    @IBAction func moveFouthButtonClick() {
-        delayExecutionTime(7200)
+    override func contextForSegueWithIdentifier(segueIdentifier: String) -> AnyObject? {
+        return watchExecutionTimeContext
     }
     
+    
     func delayExecutionTime(seconds: Int) {
-//        guard let executionTimeInformation = executionTimeInformation else { return }
-//        print(executionTimeInformation)
-//        watchExecutionTimeContext.watchExecutionTimeService.delayExecutionTimeFromNotification(executionTimeInformation, delaySeconds: seconds)
+        let executionTimeService = watchExecutionTimeContext.executionTimeService
+        executionTimeService.delayExecutionTime(watchExecutionTimeContext.executionTime, delaySeconds: seconds)
         popController()
     }
 }
