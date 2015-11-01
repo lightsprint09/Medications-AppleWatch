@@ -13,21 +13,20 @@ class MedicationDetailsController: WKInterfaceController, ExecutionTimesDisplayD
     @IBOutlet var amountDrugLabel: WKInterfaceLabel!
     @IBOutlet var drugNameLabel: WKInterfaceLabel!
     
-    var watchExecutionTimeService: WatchExecutionTimeService!
-    var executionTimeInformation: [String: AnyObject]!
+    var watchExecutionTimeContext: WatchExecutionTimeContext!
     
     override func awakeWithContext(context: AnyObject?) {
-        guard let context = context as? [String: AnyObject], let watchService = context["watchExecutionTimeService"] as? WatchExecutionTimeService, let executionTimeData = context["executionTimeData"] as? [String: AnyObject] else { return }
-        watchExecutionTimeService = watchService
-        executionTimeInformation = executionTimeData
-        displayExecutimeDetails(executionTimeData)
+        guard let context = context as? WatchExecutionTimeContext else { return }
+        watchExecutionTimeContext = context
+        
+        displayExecutimeDetails(context.executionTime)
     }
     
     @IBAction func onTakeMedication() {
-       watchExecutionTimeService.executeExecutionTimeWithNotification(executionTimeInformation)
+       //watchExecutionTimeService.executeExecutionTimeWithNotification(executionTimeInformation)
     }
     
     override func contextForSegueWithIdentifier(segueIdentifier: String) -> AnyObject? {
-        return executionTimeInformation
+        return watchExecutionTimeContext
     }
 }

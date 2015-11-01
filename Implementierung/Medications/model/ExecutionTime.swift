@@ -9,11 +9,9 @@
 import Foundation
 import CoreData
 
-class ExecutionTime: NSManagedObject {
+class ExecutionTime: NSManagedObject, ExecutionTimeProtocol {
     private static let dateFormatter = NSDateFormatter()
-    var timeOfDay: TimeOfDay {
-        return TimeOfDay(rawValue: assignmentTimeOfDay.integerValue)!
-    }
+   
     
     var amountUnitString: String? {
         let formatter = NSNumberFormatter()
@@ -31,14 +29,32 @@ class ExecutionTime: NSManagedObject {
         return ExecutionTime.timeStrintFromDate(assignmentDate)
     }
     
+    var drugName: String? {
+        return parentExecutionTime.drug?.name
+    }
+    
+    var drugImage: NSData? {
+        return parentExecutionTime.drug?.pillImage
+    }
+    
     static func timeStrintFromDate(date:NSDate) -> String {
         ExecutionTime.dateFormatter.dateFormat = "HH:mm"
         return ExecutionTime.dateFormatter.stringFromDate(date)
     }
     
     func transformToWatchData() -> [String: NSObject] {
-        let dict = ["timeString": timeString, notification_drugNameKey: parentExecutionTime.drug!.name, notification_drugImageDataKey: parentExecutionTime.drug!.pillImage!, notification_drugAmountKey: amountUnitString!, "fireDate": assignmentDate, notification_coreDataIDKey: parentExecutionTime.objectID.URIRepresentation().absoluteString]
-        
+        var dict = ["timeString": timeString, "fireDate": assignmentDate, notification_coreDataIDKey: parentExecutionTime.objectID.URIRepresentation().absoluteString]
+        if let drugName = drugName {
+            dict[notification_drugNameKey] = drugName
+        }
+        if let drugImage = drugImage {
+            dict[notification_drugImageDataKey] = drugImage
+        }
+        if let amountUnitString = amountUnitString {
+            dict[notification_drugAmountKey] = amountUnitString
+        }
         return dict
     }
+    
+    
 }

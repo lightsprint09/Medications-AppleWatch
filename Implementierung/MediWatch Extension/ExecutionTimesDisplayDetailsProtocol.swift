@@ -16,21 +16,14 @@ protocol ExecutionTimesDisplayDetailsProtocol {
 }
 
 extension ExecutionTimesDisplayDetailsProtocol {
-    func displayExecutimeDetails(executionTimeData: [String: AnyObject]) {
-        if let imageData = executionTimeData[notification_drugImageDataKey] as? NSData {
+    func displayExecutimeDetails(executionTime: ExecutionTimeProtocol) {
+        if let imageData = executionTime.drugImage {
             let image = UIImage(data: imageData)
             self.drugImage.setImage(image)
         }
         
-        if let drugName = executionTimeData[notification_drugNameKey] as? String {
-            drugNameLabel.setText(drugName)
-        }
-        if let drugAmount = executionTimeData[notification_drugAmountKey] as? String {
-            amountDrugLabel.setText(drugAmount)
-        }
+        drugNameLabel.setText(executionTime.drugName)
+        amountDrugLabel.setText(executionTime.amountUnitString)
         
-        if let drugAmount = executionTimeData[notification_drugAmountKey] as? String {
-            amountDrugLabel.setText(drugAmount)
-        }
     }
 }

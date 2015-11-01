@@ -13,29 +13,30 @@ class DelayMedicationInterfaceController: WKInterfaceController, ExecutionTimesD
     @IBOutlet var amountDrugLabel: WKInterfaceLabel!
     @IBOutlet var drugNameLabel: WKInterfaceLabel!
     
-    var watchExecutionTimeService: WatchExecutionTimeService!
+    var watchExecutionTimeContext: WatchExecutionTimeContext!
     
     var notification: UILocalNotification?
-    var executionTimeInformation: [String: AnyObject]?
     
     override func awakeWithContext(context: AnyObject?) {
-        watchExecutionTimeService = WatchExecutionTimeService(sessionManager: WCSessionManager.sharedInstace)
+        
         WCSessionManager.sharedInstace.activate()
         if let notification = context as? UILocalNotification {
             self.notification = notification
             setupWithNotification(notification)
         }
-        if let executionTimeData = context as? [String: AnyObject] {
-            executionTimeInformation = executionTimeData
-            displayExecutimeDetails(executionTimeData)
+        if let context = context as? WatchExecutionTimeContext{
+            watchExecutionTimeContext = context
+            displayExecutimeDetails(context.executionTime)
         }
     }
     
     func setupWithNotification(localNotification: UILocalNotification) {
-        guard let executionTimeData = localNotification.userInfo as? [String: AnyObject] else { return }
-        executionTimeInformation = executionTimeData
-        executionTimeInformation!["fireDate"] = localNotification.fireDate
-        displayExecutimeDetails(executionTimeData)
+        guard let executionTimeData = localNotification.userInfo as? [String: NSObject] else { return }
+        let watchExecutionTimeService = WatchExecutionTimeService(sessionManager: WCSessionManager.sharedInstace)
+        let executionTime = WatchExecutionTime(watchtData: executionTimeData)
+        watchExecutionTimeContext = WatchExecutionTimeContext(executionTimeService: watchExecutionTimeService, executionTime: executionTime)
+        //executionTimeInformation!["fireDate"] = localNotification.fireDate
+        displayExecutimeDetails(executionTime)
     }
    
     @IBAction func moveFirstButtonClick() {
@@ -55,9 +56,9 @@ class DelayMedicationInterfaceController: WKInterfaceController, ExecutionTimesD
     }
     
     func delayExecutionTime(seconds: Int) {
-        guard let executionTimeInformation = executionTimeInformation else { return }
-        print(executionTimeInformation)
-        watchExecutionTimeService.delayExecutionTimeFromNotification(executionTimeInformation, delaySeconds: seconds)
+//        guard let executionTimeInformation = executionTimeInformation else { return }
+//        print(executionTimeInformation)
+//        watchExecutionTimeContext.watchExecutionTimeService.delayExecutionTimeFromNotification(executionTimeInformation, delaySeconds: seconds)
         popController()
     }
 }

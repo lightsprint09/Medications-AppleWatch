@@ -32,7 +32,7 @@ class ExecutionTimesTableViewController: UITableViewController, ManagedObjectCon
         WCSessionManager.sharedInstace.activate()
     }
     
-    func fetchExecutionTimesForWatch() -> NSArray {
+    func fetchExecutionTimesForWatch() -> Array<[String: NSObject]> {
         let fetchRequest = self.executionTimeService.allChildrenExecutionTimesFetchRequest(NSDate())
         do{
             let data = try self.managedObjectContext.executeFetchRequest(fetchRequest) as! Array<ExecutionTime>
@@ -41,7 +41,7 @@ class ExecutionTimesTableViewController: UITableViewController, ManagedObjectCon
             })
             return dataTranform
         } catch {
-            return NSArray()
+            return  Array<[String: NSObject]>()
         }
     }
     

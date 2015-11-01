@@ -19,7 +19,7 @@ class WatchExecutionTimeService: NSObject, WCSessionManagerDelegate {
     
     var didDelayExecutionTime: ((UILocalNotification, Int)->())?
     var didExecuteExecutionTime: ((UILocalNotification)->())?
-    var fetchExecutionTimesFunction: (()->NSArray)?
+    var fetchExecutionTimesFunction: (()->  Array<[String: NSObject]>)?
     
     init(sessionManager: WCSessionManagerProtocol) {
         self.sessionManager = sessionManager
@@ -50,12 +50,16 @@ class WatchExecutionTimeService: NSObject, WCSessionManagerDelegate {
        print(error)
     }
     
-    func fetchExecutionTimesOfToday(callback:(Array<Dictionary<String, NSObject>>)->()) {
+    func fetchExecutionTimesOfToday(callback:(Array<WatchExecutionTimeContext>)->()) {
         let eventName = namespace + getTodayExecutionTimeEventName
         session.sendMessage([eventName: ""], replyHandler: {data in
             dispatch_async(dispatch_get_main_queue(), {
                 if let list = data["hu"] as? Array<Dictionary<String, NSObject>>{
-                    callback(list)
+                    let executionTimeList: Array<WatchExecutionTimeContext> = list.map({(dict) in
+                        let executionTime = WatchExecutionTime(watchtData: dict)
+                        return WatchExecutionTimeContext(executionTimeService: self, executionTime: executionTime)
+                    })
+                    callback(executionTimeList)
                 }})
         }, errorHandler: onError)
     }

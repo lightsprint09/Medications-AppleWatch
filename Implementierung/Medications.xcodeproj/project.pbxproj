@@ -75,6 +75,11 @@
 		946C04D91B7BD8FA00D93D10 /* DrugRenderEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E6081B7A4B0200B0CD7D /* DrugRenderEnum.swift */; };
 		946C04DA1B7BD91000D93D10 /* UIColorPainCodeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E6051B7A3C3200B0CD7D /* UIColorPainCodeExtension.swift */; };
 		946F7D461BDCF2D5008404AC /* ChoseOwnDelayTimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946F7D451BDCF2D5008404AC /* ChoseOwnDelayTimeController.swift */; };
+		9472A47E1BE639A40044D696 /* WatchExecutionTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F65FB41BE24B6D0010D134 /* WatchExecutionTime.swift */; };
+		9472A4801BE657D50044D696 /* WatchExecutionTimeContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9472A47F1BE657D50044D696 /* WatchExecutionTimeContext.swift */; };
+		9472A4811BE657D50044D696 /* WatchExecutionTimeContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9472A47F1BE657D50044D696 /* WatchExecutionTimeContext.swift */; };
+		9472A4821BE65D5F0044D696 /* TimeOfDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944B2B061B8CAE220098E1EA /* TimeOfDay.swift */; };
+		9472A4831BE65D710044D696 /* NSDateCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944B2B081B8CFB460098E1EA /* NSDateCreation.swift */; };
 		947D43381B87424D009F45BA /* MedicationColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947D43371B87424D009F45BA /* MedicationColors.swift */; };
 		947F022C1B80A39F006D9C7E /* RepeatEventCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947F022B1B80A39F006D9C7E /* RepeatEventCreator.swift */; };
 		947F02321B81CA17006D9C7E /* FetchedResultsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947F02311B81CA17006D9C7E /* FetchedResultsCollectionViewController.swift */; };
@@ -112,6 +117,9 @@
 		94DFA7621BCE7F4100A91467 /* ExecutionTimesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DFA7611BCE7F4100A91467 /* ExecutionTimesCell.swift */; };
 		94DFA7661BCEA53400A91467 /* WCSessionManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DFA7651BCEA53400A91467 /* WCSessionManagerProtocol.swift */; };
 		94DFA7671BCEA76700A91467 /* WCSessionManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DFA7651BCEA53400A91467 /* WCSessionManagerProtocol.swift */; };
+		94F65FB31BE226D30010D134 /* ExcutionTimeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F65FB21BE226D30010D134 /* ExcutionTimeProtocol.swift */; };
+		94F65FB51BE24B6D0010D134 /* WatchExecutionTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F65FB41BE24B6D0010D134 /* WatchExecutionTime.swift */; };
+		94F65FB61BE24B790010D134 /* ExcutionTimeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F65FB21BE226D30010D134 /* ExcutionTimeProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -222,6 +230,7 @@
 		944F218E1B59573300ED8A7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		944F21901B59573300ED8A7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		946F7D451BDCF2D5008404AC /* ChoseOwnDelayTimeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoseOwnDelayTimeController.swift; sourceTree = "<group>"; };
+		9472A47F1BE657D50044D696 /* WatchExecutionTimeContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchExecutionTimeContext.swift; sourceTree = "<group>"; };
 		947D43371B87424D009F45BA /* MedicationColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationColors.swift; sourceTree = "<group>"; };
 		947F022B1B80A39F006D9C7E /* RepeatEventCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatEventCreator.swift; sourceTree = "<group>"; };
 		947F02311B81CA17006D9C7E /* FetchedResultsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsCollectionViewController.swift; sourceTree = "<group>"; };
@@ -255,6 +264,8 @@
 		94DFA73D1BCC1B6A00A91467 /* WatchExecutionTimeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchExecutionTimeService.swift; sourceTree = "<group>"; };
 		94DFA7611BCE7F4100A91467 /* ExecutionTimesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecutionTimesCell.swift; sourceTree = "<group>"; };
 		94DFA7651BCEA53400A91467 /* WCSessionManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WCSessionManagerProtocol.swift; sourceTree = "<group>"; };
+		94F65FB21BE226D30010D134 /* ExcutionTimeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExcutionTimeProtocol.swift; sourceTree = "<group>"; };
+		94F65FB41BE24B6D0010D134 /* WatchExecutionTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchExecutionTime.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +302,7 @@
 				9436BABD1BBC0CA10050DC93 /* RootExecutionTime.swift */,
 				942D39091B789DAB00553C79 /* Drug.swift */,
 				942D390B1B789DAB00553C79 /* ExecutionTime.swift */,
+				94F65FB21BE226D30010D134 /* ExcutionTimeProtocol.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -457,6 +469,8 @@
 				944F218E1B59573300ED8A7A /* Assets.xcassets */,
 				944F21901B59573300ED8A7A /* Info.plist */,
 				944F21861B59573300ED8A7A /* Supporting Files */,
+				94F65FB41BE24B6D0010D134 /* WatchExecutionTime.swift */,
+				9472A47F1BE657D50044D696 /* WatchExecutionTimeContext.swift */,
 			);
 			path = "MediWatch Extension";
 			sourceTree = "<group>";
@@ -737,6 +751,7 @@
 				94352DD11BB96439000C6D1E /* ExecutionTimeService.swift in Sources */,
 				947F023C1B81D7DE006D9C7E /* ExecutionTimesTableViewController.swift in Sources */,
 				94DFA73C1BCC1AA800A91467 /* WCSessionManager.swift in Sources */,
+				9472A4801BE657D50044D696 /* WatchExecutionTimeContext.swift in Sources */,
 				942D39051B788BC700553C79 /* RoundUIImageView.swift in Sources */,
 				942D38F71B78813E00553C79 /* ManagedObjectContextSettable.swift in Sources */,
 				94D1E6091B7A4B0200B0CD7D /* DrugRenderEnum.swift in Sources */,
@@ -746,6 +761,7 @@
 				94463A301BBEBB5700DEE3D6 /* ExecutionTimeDetailView.swift in Sources */,
 				94D1E6161B7B558D00B0CD7D /* RGBColorSliderDelegate.m in Sources */,
 				94CA61A11B7F496500FF27F0 /* DrugSettable.swift in Sources */,
+				9472A47E1BE639A40044D696 /* WatchExecutionTime.swift in Sources */,
 				9436BAC81BBC0DAB0050DC93 /* Drug+CoreDataProperties.swift in Sources */,
 				94DA8ABC1BC1748B00D8B9E6 /* NotificationSettings.swift in Sources */,
 				942D39181B78ABBB00553C79 /* DrugTableViewControllerCellConfigure.swift in Sources */,
@@ -753,6 +769,7 @@
 				94D1E6151B7B558D00B0CD7D /* RGBColorSlider.m in Sources */,
 				947F02381B81D1E5006D9C7E /* AddDrugToMedicationViewControllerExtension.swift in Sources */,
 				9423792C1B8E2E2600FD8165 /* MedicationTableCell.swift in Sources */,
+				94F65FB31BE226D30010D134 /* ExcutionTimeProtocol.swift in Sources */,
 				944B2B051B8CA2BA0098E1EA /* ExecutionTimeTableViewCell.swift in Sources */,
 				942D39111B789DAB00553C79 /* ExecutionTime.swift in Sources */,
 				94D1E5F31B78EBEB00B0CD7D /* NSManagedObjectExtension.swift in Sources */,
@@ -815,16 +832,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9472A4821BE65D5F0044D696 /* TimeOfDay.swift in Sources */,
 				946C04DA1B7BD91000D93D10 /* UIColorPainCodeExtension.swift in Sources */,
 				94272C481BDA3098004EEB70 /* ExecutionTimesDisplayDetailsProtocol.swift in Sources */,
 				94DFA7671BCEA76700A91467 /* WCSessionManagerProtocol.swift in Sources */,
 				94DFA7621BCE7F4100A91467 /* ExecutionTimesCell.swift in Sources */,
 				946F7D461BDCF2D5008404AC /* ChoseOwnDelayTimeController.swift in Sources */,
+				94F65FB61BE24B790010D134 /* ExcutionTimeProtocol.swift in Sources */,
 				94DFA7401BCCF18800A91467 /* WCSessionManager.swift in Sources */,
 				944F218D1B59573300ED8A7A /* NotificationController.swift in Sources */,
 				94272C461BDA2D31004EEB70 /* MedicationDetailsController.swift in Sources */,
 				944F218B1B59573300ED8A7A /* ExtensionDelegate.swift in Sources */,
+				94F65FB51BE24B6D0010D134 /* WatchExecutionTime.swift in Sources */,
+				9472A4831BE65D710044D696 /* NSDateCreation.swift in Sources */,
 				943B24471BC7D30400E9D4D0 /* TakeDrugNotificationKeys.swift in Sources */,
+				9472A4811BE657D50044D696 /* WatchExecutionTimeContext.swift in Sources */,
 				946C04D91B7BD8FA00D93D10 /* DrugRenderEnum.swift in Sources */,
 				94DFA73F1BCCF02C00A91467 /* WatchExecutionTimeService.swift in Sources */,
 				944F21891B59573300ED8A7A /* ExecutionTimesInterfaceController.swift in Sources */,

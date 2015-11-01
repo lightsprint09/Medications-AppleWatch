@@ -20,17 +20,24 @@ class ExecutionTimesInterfaceController: WKInterfaceController {
         super.awakeWithContext(context)
         watchExecutionTimeService = WatchExecutionTimeService(sessionManager: WCSessionManager.sharedInstace)
         WCSessionManager.sharedInstace.activate()
-        watchExecutionTimeService.fetchExecutionTimesOfToday({executionTimes in
-            self.executionTimes = executionTimes
-            self.executionTimesTable.setNumberOfRows(executionTimes.count, withRowType: "executionTimeCell2")
-            for(index, executionTime) in executionTimes.enumerate() {
-                if let row = self.executionTimesTable.rowControllerAtIndex(index) as? ExecutionTimesCell{
-                    row.displayExecutimeDetails(executionTime)
-                    row.timeLabel.setText(executionTime["timeString"] as? String)
-                    
-                }
+        watchExecutionTimeService.fetchExecutionTimesOfToday(displayExecutionTimes)
+    }
+    
+    override func willActivate() {
+        watchExecutionTimeService = WatchExecutionTimeService(sessionManager: WCSessionManager.sharedInstace)
+        WCSessionManager.sharedInstace.activate()
+        watchExecutionTimeService.fetchExecutionTimesOfToday(displayExecutionTimes)
+    }
+    
+    func displayExecutionTimes(executionTimes:Array<WatchExecutionTimeContext>) {
+        self.executionTimes = executionTimes
+        self.executionTimesTable.setNumberOfRows(executionTimes.count, withRowType: "executionTimeCell2")
+        for(index, executionTimeContext) in executionTimes.enumerate() {
+            if let row = self.executionTimesTable.rowControllerAtIndex(index) as? ExecutionTimesCell{
+                row.displayExecutimeDetails(executionTimeContext.executionTime)
+                row.timeLabel.setText(executionTimeContext.executionTime.timeString)
             }
-        })
+        }
     }
     
     override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject? {

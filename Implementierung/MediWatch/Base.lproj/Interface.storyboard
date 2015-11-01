@@ -167,7 +167,9 @@
                                                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="font" type="boldSystem" pointSize="16"/>
                                                             </label>
-                                                            <label width="1" alignment="center" text="Label" textAlignment="center" id="d7q-8t-Z12"/>
+                                                            <label width="1" alignment="center" text="Label" textAlignment="center" id="d7q-8t-Z12">
+                                                                <fontDescription key="font" type="system" pointSize="14"/>
+                                                            </label>
                                                         </items>
                                                     </group>
                                                 </items>
