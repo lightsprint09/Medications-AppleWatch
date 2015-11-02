@@ -18,10 +18,13 @@ class ExecutionTimesInterfaceController: WKInterfaceController {
 
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-       fetchExecutionTimes()
+        fetchExecutionTimes()
     }
     
     override func willActivate() {
+        if(executionTimes != nil) {
+            displayExecutionTimes()
+        }
         fetchExecutionTimes()
     }
     
@@ -30,11 +33,15 @@ class ExecutionTimesInterfaceController: WKInterfaceController {
             watchExecutionTimeService =  WatchExecutionTimeService(sessionManager: WCSessionManager.sharedInstace)
         }
         WCSessionManager.sharedInstace.activate()
-        watchExecutionTimeService.fetchExecutionTimesOfToday(displayExecutionTimes)
+        watchExecutionTimeService.fetchExecutionTimesOfToday(didFetchExecutionTimes)
     }
     
-    func displayExecutionTimes(executionTimes:Array<WatchExecutionTimeContext>) {
+    func didFetchExecutionTimes(executionTimes:Array<WatchExecutionTimeContext>) {
         self.executionTimes = executionTimes
+        displayExecutionTimes()
+    }
+    
+    func displayExecutionTimes() {
         self.executionTimesTable.setNumberOfRows(executionTimes.count, withRowType: "executionTimeCell2")
         for(index, executionTimeContext) in executionTimes.enumerate() {
             if let row = self.executionTimesTable.rowControllerAtIndex(index) as? ExecutionTimesCell{
@@ -49,7 +56,6 @@ class ExecutionTimesInterfaceController: WKInterfaceController {
     override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject? {
         return executionTimes[rowIndex]
     }
-
     
     override func handleActionWithIdentifier(identifier: String?, forLocalNotification localNotification: UILocalNotification) {
         guard let identifier = identifier else { return }

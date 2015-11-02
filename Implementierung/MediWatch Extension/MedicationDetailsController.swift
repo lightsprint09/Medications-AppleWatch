@@ -14,8 +14,13 @@ class MedicationDetailsController: WKInterfaceController, ExecutionTimesDisplayD
     @IBOutlet var drugNameLabel: WKInterfaceLabel!
     @IBOutlet var checkTakenImage: WKInterfaceImage!
     @IBOutlet var delayTimeLabel: WKInterfaceLabel!
+    @IBOutlet var takeMedicationButton: WKInterfaceButton!
+    @IBOutlet var delayMedicationButton: WKInterfaceButton!
     
     var executionTimeContext: WatchExecutionTimeContext!
+    var executionTime: ExecutionTimeProtocol {
+        return executionTimeContext.executionTime
+    }
     
     override func awakeWithContext(context: AnyObject?) {
         guard let context = context as? WatchExecutionTimeContext else { return }
@@ -25,24 +30,32 @@ class MedicationDetailsController: WKInterfaceController, ExecutionTimesDisplayD
     }
     
     override func willActivate() {
-        checkTakenImage.setHidden(executionTimeContext.executionTime.executionDate == nil)
-        if let delayTime = executionTimeContext.executionTime.secondsMoved {
+        checkTakenImage.setHidden(!executionTime.hasTakenMedication)
+        if let delayTime = executionTime.secondsMoved {
             delayTimeLabel.setText("+\(delayTime.intValue / 60)")
         }
     }
     
     @IBAction func onTakeMedication() {
+        executionTime.executionDate = executionTime.hasTakenMedication ? nil : NSDate()
         let executionTimeService = executionTimeContext.executionTimeService
         executionTimeService.executeExecutionTimeWithNotification(executionTimeContext.executionTime)
-        executionTimeContext.executionTime.executionDate = NSDate()
-        checkTakenImage.setHidden(false)
+        animateTakenIcon()
+        takeMedicationButton.setTitle(executionTime.hasTakenMedication ? "Nicht genommen" : "Nehmen")
+        delayMedicationButton.setEnabled(!executionTime.hasTakenMedication)
+    }
+    
+    func animateTakenIcon() {
+        checkTakenImage.setHidden(!executionTime.hasTakenMedication)
         self.checkTakenImage.setWidth(5)
         self.checkTakenImage.setHeight(5)
         animateWithDuration(0.3, animations: {
             self.checkTakenImage.setWidth(26)
             self.checkTakenImage.setHeight(26)
         })
-       
+    }
+    
+    @IBAction func notTakenMedication() {
     }
     
     override func contextForSegueWithIdentifier(segueIdentifier: String) -> AnyObject? {

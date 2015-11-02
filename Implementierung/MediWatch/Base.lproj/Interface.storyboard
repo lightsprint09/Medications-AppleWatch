@@ -219,14 +219,19 @@
                         </button>
                         <button width="1" alignment="left" title="Nicht nehmen" id="UEf-9K-uDE">
                             <color key="titleColor" red="0.81568627449999997" green="0.0078431372550000003" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="notTakenMedication" destination="T89-nr-REx" id="6zb-KZ-LtG"/>
+                            </connections>
                         </button>
                     </items>
                     <connections>
                         <outlet property="amountDrugLabel" destination="zVy-7c-TES" id="hw4-km-PIq"/>
                         <outlet property="checkTakenImage" destination="YcT-r0-cGf" id="CTg-05-ywN"/>
+                        <outlet property="delayMedicationButton" destination="vP4-AI-i4P" id="Q1Y-3c-d4z"/>
                         <outlet property="delayTimeLabel" destination="WHC-FE-xfa" id="0Gr-sx-41A"/>
                         <outlet property="drugImage" destination="PLn-oR-gGL" id="3OL-NB-ELa"/>
                         <outlet property="drugNameLabel" destination="Ua8-ME-U6Y" id="BkJ-mn-H3V"/>
+                        <outlet property="takeMedicationButton" destination="Dxn-Dw-1uN" id="O9V-sL-KX5"/>
                     </connections>
                 </controller>
             </objects>
