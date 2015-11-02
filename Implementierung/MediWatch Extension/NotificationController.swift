@@ -23,7 +23,7 @@ class NotificationController: WKUserNotificationInterfaceController, ExecutionTi
     }
     
     func setupWithNotification(localNotification: UILocalNotification) {
-        localNotification.userInfo?["fireDate"] = localNotification.fireDate
+        localNotification.userInfo?[notification_assignmentDateKey] = localNotification.fireDate
         guard let executionTimeData = localNotification.userInfo as? [String: NSObject] else { return }
         let executionTime = WatchExecutionTime(watchtData: executionTimeData)
         displayExecutimeDetails(executionTime)

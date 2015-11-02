@@ -31,7 +31,7 @@ class DelayMedicationInterfaceController: WKInterfaceController, ExecutionTimesD
     }
     
     func setupWithNotification(localNotification: UILocalNotification) {
-        localNotification.userInfo?["fireDate"] = localNotification.fireDate
+        localNotification.userInfo?[notification_assignmentDateKey] = localNotification.fireDate
         guard let executionTimeData = localNotification.userInfo as? [String: NSObject] else { return }
         let watchExecutionTimeService = WatchExecutionTimeService(sessionManager: WCSessionManager.sharedInstace)
         let executionTime = WatchExecutionTime(watchtData: executionTimeData)
@@ -58,8 +58,8 @@ class DelayMedicationInterfaceController: WKInterfaceController, ExecutionTimesD
     
     
     func delayExecutionTime(seconds: Int) {
-        let executionTimeService = watchExecutionTimeContext.executionTimeService
-        executionTimeService.delayExecutionTime(watchExecutionTimeContext.executionTime, delaySeconds: seconds)
+        watchExecutionTimeContext.executionTime.secondsMoved = seconds
+        watchExecutionTimeContext.executionTimeService.updateExecutionTime(watchExecutionTimeContext.executionTime)
         popController()
     }
 }

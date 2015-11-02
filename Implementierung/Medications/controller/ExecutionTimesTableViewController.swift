@@ -26,9 +26,8 @@ class ExecutionTimesTableViewController: UITableViewController, ManagedObjectCon
     
     func setupWatchConnection() {
         watchExecutionTimeService = WatchExecutionTimeService(sessionManager: WCSessionManager.sharedInstace)
-        watchExecutionTimeService.didDelayExecutionTime = delayExecutionTimeWithNotification
         watchExecutionTimeService.fetchExecutionTimesFunction = fetchExecutionTimesForWatch
-        watchExecutionTimeService.didExecuteExecutionTime = markAsExecutedWithNotification
+        watchExecutionTimeService.didUpdateExecutionTime = updateExecutionTime
         WCSessionManager.sharedInstace.activate()
     }
     
@@ -42,16 +41,9 @@ class ExecutionTimesTableViewController: UITableViewController, ManagedObjectCon
     }
 
     
-    func markAsExecutedWithNotification(notification:UILocalNotification) {
-        if let executionTime = executionTimeService.getExecutionTimeForNotification(managedObjectContext, notification: notification) {
-            executionTime.executionDate = NSDate()
-            managedObjectContext.saveOrRollback()
-        }
-    }
-    
-    func delayExecutionTimeWithNotification(notification:UILocalNotification, delay:Int) {
-        if let executionTime = executionTimeService.getExecutionTimeForNotification(managedObjectContext, notification: notification) {
-            executionTime.secondsMoved = delay
+    func updateExecutionTime(executionTimeData: [String: NSObject]) {
+        if let executionTime = executionTimeService.getExecutionTimeForCodingData(managedObjectContext, codingData: executionTimeData) {
+            executionTime.updateWithCodingData(executionTimeData)
             managedObjectContext.saveOrRollback()
         }
     }

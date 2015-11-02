@@ -43,7 +43,7 @@ class ExecutionTime: NSManagedObject, ExecutionTimeProtocol {
     }
     
     var codingData: [String: NSObject] {
-        var dict = ["timeString": timeString, "fireDate": assignmentDate, notification_coreDataIDKey: parentExecutionTime.objectID.URIRepresentation().absoluteString]
+        var dict = [notification_assignmentDateKey: assignmentDate, notification_coreDataIDKey: parentExecutionTime.objectID.URIRepresentation().absoluteString]
         if let drugName = drugName {
             dict[notification_drugNameKey] = drugName
         }
@@ -60,5 +60,9 @@ class ExecutionTime: NSManagedObject, ExecutionTimeProtocol {
         return dict
     }
     
+    func updateWithCodingData(codingData: [String: NSObject]) {
+        self.executionDate = codingData[notification_executionDateKey] as? NSDate
+        self.secondsMoved = codingData[notification_secondsMovedKey] as? NSNumber
+    }
     
 }

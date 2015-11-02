@@ -43,8 +43,8 @@ class ExecutionTimeService: NSObject {
         //TODO cascade update of child times
     }
     
-    func getExecutionTimeForNotification(managedObjectContext: NSManagedObjectContext, notification: UILocalNotification) -> ExecutionTime? {
-        guard let urlString = notification.userInfo?[notification_coreDataIDKey] as? String,
+    func getExecutionTimeForCodingData(managedObjectContext: NSManagedObjectContext, codingData: [String: NSObject]) -> ExecutionTime? {
+        guard let urlString = codingData[notification_coreDataIDKey] as? String,
             let url = NSURL(string: urlString),
             let objectID = managedObjectContext.persistentStoreCoordinator?.managedObjectIDForURIRepresentation(url),
             let rootExecutionTime = managedObjectContext.objectWithID(objectID) as? RootExecutionTime
@@ -52,7 +52,8 @@ class ExecutionTimeService: NSObject {
                 return nil
         }
         let fetchRequest = NSFetchRequest(entityName: ExecutionTime.entityName)
-        fetchRequest.predicate = NSPredicate(format: "parentExecutionTime == %@ AND assignmentDate > %@ AND assignmentDate < %@", rootExecutionTime, notification.fireDate!.dateByAddingTimeInterval(-300), notification.fireDate!.dateByAddingTimeInterval(300))
+        let fireData = codingData[notification_assignmentDateKey]! as! NSDate
+        fetchRequest.predicate = NSPredicate(format: "parentExecutionTime == %@ AND assignmentDate > %@ AND assignmentDate < %@", rootExecutionTime, fireData.dateByAddingTimeInterval(-300), fireData.dateByAddingTimeInterval(300))
         if let executionTime = try? managedObjectContext.executeFetchRequest(fetchRequest).first as? ExecutionTime {
             return executionTime
         }else {

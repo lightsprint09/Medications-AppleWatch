@@ -39,7 +39,7 @@ class MedicationDetailsController: WKInterfaceController, ExecutionTimesDisplayD
     @IBAction func onTakeMedication() {
         executionTime.executionDate = executionTime.hasTakenMedication ? nil : NSDate()
         let executionTimeService = executionTimeContext.executionTimeService
-        executionTimeService.executeExecutionTimeWithNotification(executionTimeContext.executionTime)
+        executionTimeService.updateExecutionTime(executionTime)
         animateTakenIcon()
         takeMedicationButton.setTitle(executionTime.hasTakenMedication ? "Nicht genommen" : "Nehmen")
         delayMedicationButton.setEnabled(!executionTime.hasTakenMedication)

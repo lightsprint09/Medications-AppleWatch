@@ -61,8 +61,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 
     func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, withResponseInfo responseInfo: [NSObject : AnyObject], completionHandler: () -> Void) {
-        guard let identifier = identifier,
-            let executionTime = executionTimeService.getExecutionTimeForNotification(managedObjectContext, notification: notification) else { completionHandler(); return }
+        guard let identifier = identifier, let codingData = notification.userInfo as? [String: NSObject],
+            let executionTime = executionTimeService.getExecutionTimeForCodingData(managedObjectContext, codingData: codingData) else { completionHandler(); return }
         switch identifier {
         case takeMedicationNotificationActionIdentifier:
             executionTime.executionDate = NSDate()
