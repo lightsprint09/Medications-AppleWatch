@@ -11,7 +11,6 @@ import CoreData
 
 class ExecutionTime: NSManagedObject, ExecutionTimeProtocol {
     private static let dateFormatter = NSDateFormatter()
-   
     
     var amountUnitString: String? {
         let formatter = NSNumberFormatter()

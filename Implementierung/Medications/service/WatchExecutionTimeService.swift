@@ -71,7 +71,7 @@ class WatchExecutionTimeService: NSObject, WCSessionManagerDelegate {
     
     func recieveData(message:[String: AnyObject]) {
         if let userInfo = message[namespace + updateEventName] as? [String: NSObject] {
-                didUpdateExecutionTime?(userInfo)
+            didUpdateExecutionTime?(userInfo)
         }
     }
     

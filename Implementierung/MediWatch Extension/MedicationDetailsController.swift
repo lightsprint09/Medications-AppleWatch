@@ -30,23 +30,27 @@ class MedicationDetailsController: WKInterfaceController, ExecutionTimesDisplayD
     }
     
     override func willActivate() {
-        checkTakenImage.setHidden(!executionTime.hasTakenMedication)
-        if let delayTime = executionTime.secondsMoved {
-            delayTimeLabel.setText("+\(delayTime.intValue / 60)")
-        }
+        updateUI()
     }
     
     @IBAction func onTakeMedication() {
         executionTime.executionDate = executionTime.hasTakenMedication ? nil : NSDate()
         let executionTimeService = executionTimeContext.executionTimeService
         executionTimeService.updateExecutionTime(executionTime)
+        updateUI()
         animateTakenIcon()
+    }
+    
+    func updateUI() {
+        checkTakenImage.setHidden(!executionTime.hasTakenMedication)
         takeMedicationButton.setTitle(executionTime.hasTakenMedication ? "Nicht genommen" : "Nehmen")
         delayMedicationButton.setEnabled(!executionTime.hasTakenMedication)
+        if let delayTime = executionTime.secondsMoved {
+            delayTimeLabel.setText("+\(delayTime.intValue / 60)")
+        }
     }
     
     func animateTakenIcon() {
-        checkTakenImage.setHidden(!executionTime.hasTakenMedication)
         self.checkTakenImage.setWidth(5)
         self.checkTakenImage.setHeight(5)
         animateWithDuration(0.3, animations: {

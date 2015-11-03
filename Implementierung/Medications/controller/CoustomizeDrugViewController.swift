@@ -21,8 +21,6 @@ class CoustomizeDrugViewController: UIViewController, DrugSettable, UICollection
     }
     @IBOutlet weak var imageView: UIImageView!
     
-    
-    
     override func viewDidLoad() {
         drug.color = rgbColor
         guard let drugKind = drug.type, let color = drug.color else{ return }
@@ -67,12 +65,12 @@ class CoustomizeDrugViewController: UIViewController, DrugSettable, UICollection
 
     @IBAction func redChanged(sender: UISlider) {
         rgb.0 = 1 - sender.value
-        
+        pillCollectionView.reloadData()
     }
     
     @IBAction func greenChanged(sender: UISlider) {
         rgb.1 = 1 -  sender.value
-         pillCollectionView.reloadData()
+        pillCollectionView.reloadData()
     }
     
     @IBAction func blueChanged(sender: UISlider) {
