@@ -13,6 +13,7 @@ class DelayMedicationInterfaceController: WKInterfaceController, ExecutionTimesD
     @IBOutlet var amountDrugLabel: WKInterfaceLabel!
     @IBOutlet var drugNameLabel: WKInterfaceLabel!
     
+    @IBOutlet var delayLabel: WKInterfaceLabel!
     var watchExecutionTimeContext: WatchExecutionTimeContext!
     
     var notification: UILocalNotification?

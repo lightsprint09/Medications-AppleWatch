@@ -14,4 +14,5 @@ class ExecutionTimesCell: NSObject, ExecutionTimesDisplayDetailsProtocol {
     @IBOutlet var timeLabel: WKInterfaceLabel!
     @IBOutlet var amountDrugLabel: WKInterfaceLabel!
     @IBOutlet var markTakenImage: WKInterfaceImage!
+    @IBOutlet var delayLabel: WKInterfaceLabel!
 }

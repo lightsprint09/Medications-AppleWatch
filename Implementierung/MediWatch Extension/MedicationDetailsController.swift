@@ -13,7 +13,7 @@ class MedicationDetailsController: WKInterfaceController, ExecutionTimesDisplayD
     @IBOutlet var amountDrugLabel: WKInterfaceLabel!
     @IBOutlet var drugNameLabel: WKInterfaceLabel!
     @IBOutlet var checkTakenImage: WKInterfaceImage!
-    @IBOutlet var delayTimeLabel: WKInterfaceLabel!
+    @IBOutlet var delayLabel: WKInterfaceLabel!
     @IBOutlet var takeMedicationButton: WKInterfaceButton!
     @IBOutlet var delayMedicationButton: WKInterfaceButton!
     
@@ -45,9 +45,7 @@ class MedicationDetailsController: WKInterfaceController, ExecutionTimesDisplayD
         checkTakenImage.setHidden(!executionTime.hasTakenMedication)
         takeMedicationButton.setTitle(executionTime.hasTakenMedication ? "Nicht genommen" : "Nehmen")
         delayMedicationButton.setEnabled(!executionTime.hasTakenMedication)
-        if let delayTime = executionTime.secondsMoved {
-            delayTimeLabel.setText("+\(delayTime.intValue / 60)")
-        }
+        displayExecutimeDetails(executionTime)
     }
     
     func animateTakenIcon() {

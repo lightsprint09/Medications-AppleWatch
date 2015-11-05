@@ -12,6 +12,7 @@ protocol ExecutionTimesDisplayDetailsProtocol {
     var drugImage: WKInterfaceImage! { get }
     var amountDrugLabel: WKInterfaceLabel! { get }
     var drugNameLabel: WKInterfaceLabel! { get }
+    var delayLabel: WKInterfaceLabel! { get }
     
 }
 
@@ -20,6 +21,9 @@ extension ExecutionTimesDisplayDetailsProtocol {
         drugImage.setImageData(executionTime.drugImage)
         drugNameLabel.setText(executionTime.drugName)
         amountDrugLabel.setText(executionTime.amountUnitString)
-        
+        delayLabel.setHidden(executionTime.hasTakenMedication || executionTime.secondsMoved == nil)
+        if let delayTime = executionTime.secondsMoved {
+            delayLabel.setText("+\(delayTime.intValue / 60)")
+        }
     }
 }

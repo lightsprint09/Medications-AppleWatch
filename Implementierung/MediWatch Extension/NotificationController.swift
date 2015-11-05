@@ -15,6 +15,7 @@ class NotificationController: WKUserNotificationInterfaceController, ExecutionTi
     @IBOutlet var amountDrugLabel: WKInterfaceLabel!
     @IBOutlet var drugNameLabel: WKInterfaceLabel!
 
+    @IBOutlet var delayLabel: WKInterfaceLabel!
     
     override func didReceiveLocalNotification(localNotification: UILocalNotification, withCompletion completionHandler: ((WKUserNotificationInterfaceType) -> Void)) {
         

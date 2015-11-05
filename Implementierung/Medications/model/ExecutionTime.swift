@@ -52,16 +52,19 @@ class ExecutionTime: NSManagedObject, ExecutionTimeProtocol {
         if let amountUnitString = amountUnitString {
             dict[notification_drugAmountKey] = amountUnitString
         }
-        
         if let executionDate = executionDate {
             dict[notification_executionDateKey] = executionDate
+        }
+        if let secondsMoved = secondsMoved {
+            dict[notification_secondsMovedKey] = secondsMoved
         }
         return dict
     }
     
     func updateWithCodingData(codingData: [String: NSObject]) {
         self.executionDate = codingData[notification_executionDateKey] as? NSDate
-        self.secondsMoved = codingData[notification_secondsMovedKey] as? NSNumber
+        print(codingData[notification_secondsMovedKey])
+        self.secondsMoved = codingData[notification_secondsMovedKey] as? Int
     }
     
 }

@@ -43,7 +43,7 @@ class WatchExecutionTime: NSObject, ExecutionTimeProtocol {
     init(watchtData:[String: NSObject]) {
         iphoneData = watchtData
         assignmentDate = watchtData[notification_assignmentDateKey]! as! NSDate
-        secondsMoved = watchtData[notification_secondsMovedKey] as? NSNumber
+        secondsMoved = watchtData[notification_secondsMovedKey] as? Int
         assignmentTimeOfDay = 1
         executionDate = watchtData[notification_executionDateKey] as? NSDate
         creationDate = NSDate()

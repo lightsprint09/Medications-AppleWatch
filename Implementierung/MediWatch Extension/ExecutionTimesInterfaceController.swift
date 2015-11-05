@@ -45,10 +45,12 @@ class ExecutionTimesInterfaceController: WKInterfaceController {
         self.executionTimesTable.setNumberOfRows(executionTimes.count, withRowType: "executionTimeCell2")
         for(index, executionTimeContext) in executionTimes.enumerate() {
             if let row = self.executionTimesTable.rowControllerAtIndex(index) as? ExecutionTimesCell{
-                row.displayExecutimeDetails(executionTimeContext.executionTime)
-                row.timeLabel.setText(executionTimeContext.executionTime.timeString)
-                row.markTakenImage.setHidden(!executionTimeContext.executionTime.hasTakenMedication)
-                row.timeLabel.setTextColor(executionTimeContext.executionTime.hasTakenMedication ? .greenExecutionTimeColor() : .blueExecutionTimeColor())
+                let executionTime = executionTimeContext.executionTime
+                row.displayExecutimeDetails(executionTime)
+                row.timeLabel.setText(executionTime.timeString)
+                row.markTakenImage.setHidden(!executionTime.hasTakenMedication)
+                row.timeLabel.setTextColor(executionTime.hasTakenMedication ? .greenExecutionTimeColor() : .blueExecutionTimeColor())
+                
             }
         }
     }
