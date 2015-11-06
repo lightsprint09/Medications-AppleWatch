@@ -1,0 +1,52 @@
+%%
+% ----------------------------------------------------------------------------
+% "THE BEER-WARE LICENSE" (Revision 42):
+% <sebastian.rauh@hs-heilbronn.de/michael.bauer@hs-heilbronn.de> wrote this 
+% file. As long as you retain this notice you can do whatever you want with 
+% this stuff. If we meet some day, and you think this stuff is worth it, you 
+% can buy us a beer in return. 
+% Michael Lukas Bauer, Sebastian Felix Rauh
+% ----------------------------------------------------------------------------
+%%
+
+%%
+% ----------------------------------------------------------------------------
+% "THE BEER-WARE LICENSE" (Revision 42):
+% <sebastian.rauh@hs-heilbronn.de/michael.bauer@hs-heilbronn.de> wrote this 
+% file. As long as you retain this notice you can do whatever you want with 
+% this stuff. If we meet some day, and you think this stuff is worth it, you 
+% can buy us a beer in return. 
+% Michael Lukas Bauer, Sebastian Felix Rauh
+% ----------------------------------------------------------------------------
+%%
+
+\section{Einleitende Worte}
+
+\section{Apple`s Programmiersprache Swift}
+Swift wurde im Juni 2014 von Apple vorgestellt und genießt seit dem steigendes Interesse. Im Juni 2015 wurde Version 2.0 veröffentlicht. Mit Version 2.0 wurde ebenfalls der Plan vorgestellt, Swift Open Source zu machen und somit auch anderen Plattformen die Entwicklung mit Swift zu ermöglichen.  
+\subsection{Objective-C und Swift}
+In den frühen 80er Jahren entwickelte Brad Cox die Sprache Objective-C. Die Sprache sollte die Vorteile einer schnellen C-Sprach mit den Vorteilen der objektorientierten Sprache SmallTalk verbinden. Die Firma NextSTEP nutze Objectiv-C und als NEXTStep von Apple aufgekauft wurde, integrierte Apple Objectiv-C und ermöglichte Mac-Entwicklern die Nutzung \cite{Dalrymple:2009aa}. Als Apple nun 2008 seine iOS Plattform öffnete und Entwickler eigene Anwendungen für das System schreiben konnten, bekam Objective-C neue Aufmerksamkeit. Viele Entwickler sahen Objective-C als ein Überbleibsel alter Zeiten und waren der Sprache negativ eingestellt. Apple stand nun unter Zugzwang um seine Plattform, mit der große wirtschaftliche Interessen Verbunden sind, für Entwickler attraktiv zu halten \cite{tre}. Da jedoch alle highlevel APIs in Objectiv-C vorhanden sind, war es nicht so einfach auf eine bekannte Sprache für iOS und Mac Entwicklung umzusteigen. Man entschied sich für eine Neuentwicklung, mit Hinblick auf neue Programmierparadigmen und sehr guter Kompatibilität zu alten Objectiv-C APIs \cite{tre}.
+\subsection{Überblick der Neuerung}
+Swift bringt viele Neuerungen mit sich. Im folegden werden nun 4 Neuerungen der Sprache erläutert. Diese 4 Neuerungen bieten einen großen Mehrwert für Anwendungsentwickler, es sind jedoch nicht die einzigen Neuerungen. Mehr sind hier\cite{tre} zu finden. Es handelt sich um folgenden Sprach Features
+
+\begin{enumerate}
+\item Closures - Functions as First Class Objects
+\item Generics
+\item Type Inference
+\item Optional Types
+\end{enumerate}
+
+\subsection{Closures - Functions as First Class Objects}
+Während bei strikt objektorientierten Sprachen nur Objekte und primitive Datentypen existieren, gibt es Sprachen, bei denen Funktionen als Typen existieren. Diese Funktionen können auch als Refernz in eine Variablen gespeichert werden. Folgende Code Beispiele sollen dies veranschaulichen.
+\lstdefinestyle{base}{
+  language=C,
+  emptylines=1,
+  breaklines=true,
+  basicstyle=\ttfamily\color{black},
+  moredelim=**[is][\color{red}]{@}{@},
+}
+\lstset{style=base, language=Java, caption=Descriptive Caption Text, label=DescriptiveLabel}
+\lstset{frame=shadowbox}
+	\lstinputlisting{02_stateArt/Drug.java}[frame=single,style=base]
+	
+
