@@ -23,8 +23,7 @@ class ExecutionTimeService: NSObject {
     func allChildrenExecutionTimesFetchRequest(day: NSDate) -> NSFetchRequest {
         let request = NSFetchRequest(entityName: ExecutionTime.entityName)
         request.sortDescriptors = [NSSortDescriptor(key: "assignmentDate", ascending: true)]
-        let dayStartEndPoint = NSDate.startDateAndEndDateFromDay(day)
-        request.predicate = NSPredicate(format: "assignmentDate  BETWEEN {%@, %@}", dayStartEndPoint.0, dayStartEndPoint.1)
+        request.predicate = NSPredicate(format: "assignmentDate  BETWEEN {%@, %@}", day.startOfDay , day.endOfDay)
         
         return request
     }
@@ -53,7 +52,7 @@ class ExecutionTimeService: NSObject {
         }
         let fetchRequest = NSFetchRequest(entityName: ExecutionTime.entityName)
         let fireData = codingData[notification_assignmentDateKey]! as! NSDate
-        fetchRequest.predicate = NSPredicate(format: "parentExecutionTime == %@ AND assignmentDate > %@ AND assignmentDate < %@", rootExecutionTime, fireData.dateByAddingTimeInterval(-300), fireData.dateByAddingTimeInterval(300))
+        fetchRequest.predicate = NSPredicate(format: "parentExecutionTime == %@ AND assignmentDate > %@ AND assignmentDate < %@", rootExecutionTime, fireData.startOfDay, fireData.endOfDay)
         if let executionTime = try? managedObjectContext.executeFetchRequest(fetchRequest).first as? ExecutionTime {
             return executionTime
         }else {

@@ -27,4 +27,12 @@ extension NSDate {
         
         return (startTime, endTime)
     }
+    
+    var startOfDay: NSDate {
+        return NSDate.startDateAndEndDateFromDay(self).0
+    }
+    
+    var endOfDay: NSDate {
+        return NSDate.startDateAndEndDateFromDay(self).1
+    }
 }
