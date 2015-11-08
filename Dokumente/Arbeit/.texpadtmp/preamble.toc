@@ -12,9 +12,9 @@
 \contentsline {subsection}{\numberline {2.2.1}Objective-C und Swift}{3}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}\IeC {\"U}berblick der Neuerung}{3}{subsection.2.2.2}
 \contentsline {subsection}{\numberline {2.2.3}Closures - Functions as First Class Objects}{4}{subsection.2.2.3}
-\contentsline {chapter}{\numberline {3}Problemstellung, Ziele und Vorgehensweise}{5}{chapter.3}
-\contentsline {chapter}{\numberline {4}Umsetzung}{7}{chapter.4}
-\contentsline {chapter}{\numberline {5}Zusammenfassung, Evaluation und Ausblick}{11}{chapter.5}
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{13}{chapter*.4}
-\contentsline {chapter}{\numberline {A}Appendix}{15}{appendix.A}
-\contentsline {chapter}{\numberline {B}Dokumentation}{17}{appendix.B}
+\contentsline {chapter}{\numberline {3}Problemstellung, Ziele und Vorgehensweise}{7}{chapter.3}
+\contentsline {chapter}{\numberline {4}Umsetzung}{9}{chapter.4}
+\contentsline {chapter}{\numberline {5}Zusammenfassung, Evaluation und Ausblick}{13}{chapter.5}
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{15}{chapter*.4}
+\contentsline {chapter}{\numberline {A}Appendix}{17}{appendix.A}
+\contentsline {chapter}{\numberline {B}Dokumentation}{19}{appendix.B}

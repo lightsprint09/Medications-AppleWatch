@@ -30,23 +30,21 @@ In den frühen 80er Jahren entwickelte Brad Cox die Sprache Objective-C. Die Spr
 Swift bringt viele Neuerungen mit sich. Im folegden werden nun 4 Neuerungen der Sprache erläutert. Diese 4 Neuerungen bieten einen großen Mehrwert für Anwendungsentwickler, es sind jedoch nicht die einzigen Neuerungen. Mehr sind hier\cite{tre} zu finden. Es handelt sich um folgenden Sprach Features
 
 \begin{enumerate}
+\item Type Inference
 \item Closures - Functions as First Class Objects
 \item Generics
-\item Type Inference
 \item Optional Types
 \end{enumerate}
 
 \subsection{Closures - Functions as First Class Objects}
-Während bei strikt objektorientierten Sprachen nur Objekte und primitive Datentypen existieren, gibt es Sprachen, bei denen Funktionen als Typen existieren. Diese Funktionen können auch als Refernz in eine Variablen gespeichert werden. Folgende Code Beispiele sollen dies veranschaulichen.
-\lstdefinestyle{base}{
-  language=C,
-  emptylines=1,
-  breaklines=true,
-  basicstyle=\ttfamily\color{black},
-  moredelim=**[is][\color{red}]{@}{@},
-}
-\lstset{style=base, language=Java, caption=Descriptive Caption Text, label=DescriptiveLabel}
+Während bei strikt objektorientierten Sprachen nur Objekte und primitive Datentypen existieren, gibt es Sprachen, bei denen Funktionen als Typen existieren. Diese Funktionen können auch als Refernz in eine Variablen gespeichert werden. Folgende Code Beispiele sollen dies veranschaulichen. Wir nutzen hierfür einen Asynchrones Netzwerk-Request. In Beispiel 2.1 verwenden wir Java als Repräsentant für eine strikt objektorientierte Sprache. Hier wird ein Interface definiert, welches der Nutzer des Netzwerk-Requests implementieren muss, um den Request zu empfangen. Beim Aufrufen des Request, muss nun der Aufrufer als Referenz übergeben werden, damit bei Abschließen des Request, der Aufrufer benachrichtigt werden kann (handleNetworkResponse). 
+
+
+
+\lstset{style=base, language=Java}
 \lstset{frame=shadowbox}
-	\lstinputlisting{02_stateArt/Drug.java}[frame=single,style=base]
+\lstinputlisting[caption=Java Beispiel zu First Class Objects]{02_stateArt/codeExamples/NetworkRequestWithoutFunctions.java}
+Im Codebeispiel 2.2 benötigt es kein Interface für den Nutzer des Netzwerk-Requests. Es ist nun in Swift möglich eine Funktion zu definieren und diese gleichzeitig in einer lokale Variable zu speichern. Nun kann diese Funktion als Referenz zum Netzwerk-Requests übergeben werden. Die Funktion wird aufgerufen, wenn der Netzwerk-Requests beendet ist. 
+\lstinputlisting[caption=Swift Beispiel zu First Class Objects]{02_stateArt/codeExamples/NetworkRequestWithFunctions.swift}
 	
 
