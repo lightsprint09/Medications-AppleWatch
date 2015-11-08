@@ -96,5 +96,17 @@ class ExecutionTimeService: NSObject {
         return notification
     }
     
+    func notificationForExecutionTime(executionTime:RootExecutionTime) -> UILocalNotification? {
+        guard let scheduledLocalNotifications = UIApplication.sharedApplication().scheduledLocalNotifications else { return nil }
+        for (_, notification) in scheduledLocalNotifications.enumerate() {
+            guard let objectID = notification.userInfo?[notification_coreDataIDKey] as? String else { continue }
+            if(executionTime.objectID.URIRepresentation().absoluteString == objectID) {
+                return notification
+            }
+        }
+        
+        return nil
+    }
+    
     
 }

@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 class RootExecutionTime: NSManagedObject {
     private static let dateFormatter = NSDateFormatter()
@@ -29,5 +30,12 @@ class RootExecutionTime: NSManagedObject {
     var timeString: String {
         RootExecutionTime.dateFormatter.dateFormat = "HH:mm"
         return RootExecutionTime.dateFormatter.stringFromDate(assignmentTime)
+    }
+    
+    override func prepareForDeletion() {
+        let executionTimeService = ExecutionTimeService()
+        guard let notification = executionTimeService.notificationForExecutionTime(self) else { return }
+        //TODO remove UIKit From model
+        UIApplication.sharedApplication().cancelLocalNotification(notification)
     }
 }
