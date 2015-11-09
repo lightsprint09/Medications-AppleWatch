@@ -19,11 +19,13 @@ class CoustomizeDrugViewController: UIViewController, DrugSettable, UICollection
             drug.color = rgbColor
         }
     }
+    let sliderDelegate = RGBColorSliderDelegate()
     @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
-        drug.color = rgbColor
-        guard let drugKind = drug.type, let color = drug.color else{ return }
+        guard let drugKind = drug.type, let color = drug.color else{
+            drug.color = rgbColor
+            return }
         drugView.drugKind = drugKind
         drugView.pillBaseColor = color
         redSlider.setValue(Float(color.red()), animated: false)
@@ -31,10 +33,8 @@ class CoustomizeDrugViewController: UIViewController, DrugSettable, UICollection
         blueSlider.setValue(Float(color.blue()), animated: false)
     }
     
-    var rgbColor:UIColor {
-        get {
-            return sliderDelegate.getCurrentColor()
-        }
+    var rgbColor: UIColor {
+        return sliderDelegate.getCurrentColor()
     }
     
     @IBAction func doneViewController(sender: AnyObject) {
@@ -89,7 +89,7 @@ class CoustomizeDrugViewController: UIViewController, DrugSettable, UICollection
         drug.type = pillKind
     }
     
-    let sliderDelegate = RGBColorSliderDelegate()
+    
     
     
 }

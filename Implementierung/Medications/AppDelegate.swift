@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         UITabBar.appearance().tintColor = .globalTintColor()
-        UIView.appearance().tintColor = .globalTintColor()
         application.registerUserNotificationSettings(NotificationSettings.notificationSettings)
         guard let rootTabController = window?.rootViewController as? ManagedObjectContextSettable else {
            return true
