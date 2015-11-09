@@ -34,6 +34,14 @@
 \usepackage{usecases}
 \usepackage{listings}
 \renewcommand{\lstlistingname}{Codebeispiel}
+\lstdefinestyle{base}{
+columns=fullflexible,
+  emptylines=1,
+  breaklines=true,
+  basicstyle=\ttfamily\color{black},
+  moredelim=**[is][\color{red}]{@}{@},
+}
+\lstset{style=base, frame=shadowbox}
 
 % Globals
 \newcommand{\autor}{Lukas Schmidt}

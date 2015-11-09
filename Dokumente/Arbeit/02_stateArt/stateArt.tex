@@ -23,12 +23,13 @@
 \section{Einleitende Worte}
 
 \section{Apple`s Programmiersprache Swift}
-Swift wurde im Juni 2014 von Apple vorgestellt und genießt seit dem steigendes Interesse. Im Juni 2015 wurde Version 2.0 veröffentlicht. Mit Version 2.0 wurde ebenfalls der Plan vorgestellt, Swift Open Source zu machen und somit auch anderen Plattformen die Entwicklung mit Swift zu ermöglichen.  
+Swift wurde im Juni 2014 von Apple vorgestellt und genießt seit dem steigendes Interesse. Im Juni 2015 wurde Version 2.0 veröffentlicht. Mit Version 2.0 wurde ebenfalls der Plan vorgestellt, Swift Open Source zu machen und somit auch anderen Plattformen die Entwicklung mit Swift zu ermöglichen.
+
 \subsection{Objective-C und Swift}
 In den frühen 80er Jahren entwickelte Brad Cox die Sprache Objective-C. Die Sprache sollte die Vorteile einer schnellen C-Sprach mit den Vorteilen der objektorientierten Sprache SmallTalk verbinden. Die Firma NextSTEP nutze Objectiv-C und als NEXTStep von Apple aufgekauft wurde, integrierte Apple Objectiv-C und ermöglichte Mac-Entwicklern die Nutzung \cite{Dalrymple:2009aa}. Als Apple nun 2008 seine iOS Plattform öffnete und Entwickler eigene Anwendungen für das System schreiben konnten, bekam Objective-C neue Aufmerksamkeit. Viele Entwickler sahen Objective-C als ein Überbleibsel alter Zeiten und waren der Sprache negativ eingestellt. Apple stand nun unter Zugzwang um seine Plattform, mit der große wirtschaftliche Interessen Verbunden sind, für Entwickler attraktiv zu halten \cite{tre}. Da jedoch alle highlevel APIs in Objectiv-C vorhanden sind, war es nicht so einfach auf eine bekannte Sprache für iOS und Mac Entwicklung umzusteigen. Man entschied sich für eine Neuentwicklung, mit Hinblick auf neue Programmierparadigmen und sehr guter Kompatibilität zu alten Objectiv-C APIs \cite{tre}.
+
 \subsection{Überblick der Neuerung}
 Swift bringt viele Neuerungen mit sich. Im folegden werden nun 4 Neuerungen der Sprache erläutert. Diese 4 Neuerungen bieten einen großen Mehrwert für Anwendungsentwickler, es sind jedoch nicht die einzigen Neuerungen. Mehr sind hier\cite{tre} zu finden. Es handelt sich um folgenden Sprach Features
-
 \begin{enumerate}
 \item Type Inference
 \item Closures - Functions as First Class Objects
@@ -37,16 +38,25 @@ Swift bringt viele Neuerungen mit sich. Im folegden werden nun 4 Neuerungen der 
 \end{enumerate}
 
 \subsection{Type Inference}
-Bei Type Inference erkennt der Compiler, welcher Typ in eine Variable instanziert wurde. Es ist nicht nötig für die Vairable eine Typendefinition zu erstellen
+Bei Type Inference erkennt der Compiler, welcher Typ in eine Variable instanziert wurde. Es ist nicht nötig für die Vairable eine Typendefinition zu definieren. Hierdurch wird der Quellcode leichter zu lesen. 
+\lstinputlisting[caption=Beispiel zu Type Inference in Swift label=lst:typeInference]{02_stateArt/codeExamples/TypeInference.swift}
 
 \subsection{Closures - Functions as First Class Objects}
-Während bei strikt objektorientierten Sprachen nur Objekte und primitive Datentypen existieren, gibt es Sprachen, bei denen Funktionen als Typen existieren. Diese Funktionen können auch als Refernz in eine Variablen gespeichert werden. Folgende Code Beispiele sollen dies veranschaulichen. Wir nutzen hierfür einen Asynchrones Netzwerk-Request. In Beispiel 2.1 wird  Java als Repräsentant für eine strikt objektorientierte Sprache verwendet. Hier wird ein Interface definiert, welches der Nutzer des Netzwerk-Requests implementieren muss, um den Request zu empfangen. Beim Aufrufen des Request, muss nun der Aufrufer als Referenz übergeben werden, damit bei Abschließen des Request, der Aufrufer benachrichtigt werden kann (handleNetworkResponse). 
+Während bei strikt objektorientierten Sprachen nur Objekte und primitive Datentypen existieren, gibt es Sprachen, bei denen Funktionen als Typen existieren. Diese Funktionen können auch als Refernz in eine Variablen gespeichert werden. Folgende Code Beispiele sollen dies veranschaulichen. Wir nutzen hierfür einen Asynchrones Netzwerk-Request.
+\lstinputlisting[caption=Java Beispiel zu First Class Objects, label=lst:firstFuncJava]{02_stateArt/codeExamples/NetworkRequestWithoutFunctions.java}
+ In Beispiel \ref{lst:firstFuncJava} wird Java als Repräsentant für eine strikt objektorientierte Sprache verwendet. Hier wird ein Interface definiert, welches der Nutzer des Netzwerk-Requests implementieren muss, um den Request zu empfangen. Beim Aufrufen des Request, muss nun der Aufrufer als Referenz übergeben werden, damit bei Abschließen des Request, der Aufrufer benachrichtigt werden kann (handleNetworkResponse). 
+\lstinputlisting[caption=Swift Beispiel zu First Class Objects, label=lst:firstFuncSwift]{02_stateArt/codeExamples/NetworkRequestWithFunctions.swift}
+Im Codebeispiel \ref{lst:firstFuncSwift} benötigt es kein Interface für den Nutzer des Netzwerk-Requests. Es ist nun in Swift möglich eine Funktion zu definieren und diese gleichzeitig in einer lokale Variable zu speichern. Nun kann diese Funktion als Referenz zum Netzwerk-Requests übergeben werden. Die Funktion wird aufgerufen, wenn der Netzwerk-Requests beendet ist. 
 
 
+\subsection{Optional Types}
+Optional Types eröffnen neue Möglichkeiten beim Modellieren von Datenmodellen und erstellen von APIs. Im folgenden Beispiel wird eine Medikation in Java ohne Optional Types und in Swift mit Optional Types modelliert.
+\lstinputlisting[caption=Java Beispiel mit fehlenden Optional Types, label=lst:optinalsJava]{02_stateArt/codeExamples/OptionalType.java} 
 
-\lstset{frame=shadowbox}
-\lstinputlisting[caption=Java Beispiel zu First Class Objects]{02_stateArt/codeExamples/NetworkRequestWithoutFunctions.java}
-Im Codebeispiel 2.2 benötigt es kein Interface für den Nutzer des Netzwerk-Requests. Es ist nun in Swift möglich eine Funktion zu definieren und diese gleichzeitig in einer lokale Variable zu speichern. Nun kann diese Funktion als Referenz zum Netzwerk-Requests übergeben werden. Die Funktion wird aufgerufen, wenn der Netzwerk-Requests beendet ist. 
-\lstinputlisting[caption=Swift Beispiel zu First Class Objects]{02_stateArt/codeExamples/NetworkRequestWithFunctions.swift}
-	
+Im Codebeispiel \ref{lst:optinalsJava} ist zu erkennen, dass zur Compilezeit keine Aussage über den Zustand der Instanz-Variablen getroffen werden kann. Der Entwickler muss also aus dem logischen Kontext erkennen, welche Variablen eine null Referenz enthalten könnte. Dies kann zu Laufzeitfehlern führen.
 
+\lstinputlisting[caption=Swift Beispiel mit Optional Types, label=lst:optinalsSwift]{02_stateArt/codeExamples/OptionalType.swift}
+In \ref{lst:optinalsSwift} sind die Instanzvariablen nun mit Optional Types modeliert. Nun 
+kann zur Compilezeit zugesichert werden, welche Variablen eine null Referenz enthalten können und welche Variablen sicher mit einem Wert belegt sind. Dies führt zu weniger Fehler während der Laufzeit.
+
+Auch APIs können so modelliert werden. So darf ein Parameter nicht null sein, wenn er nicht als Optional definiert wurde. Dies macht eine API strikter und führt ebenfalls zu weniger Fehlern
