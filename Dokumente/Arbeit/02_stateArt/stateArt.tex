@@ -36,12 +36,14 @@ Swift bringt viele Neuerungen mit sich. Im folegden werden nun 4 Neuerungen der 
 \item Optional Types
 \end{enumerate}
 
+\subsection{Type Inference}
+Bei Type Inference erkennt der Compiler, welcher Typ in eine Variable instanziert wurde. Es ist nicht nötig für die Vairable eine Typendefinition zu erstellen
+
 \subsection{Closures - Functions as First Class Objects}
-Während bei strikt objektorientierten Sprachen nur Objekte und primitive Datentypen existieren, gibt es Sprachen, bei denen Funktionen als Typen existieren. Diese Funktionen können auch als Refernz in eine Variablen gespeichert werden. Folgende Code Beispiele sollen dies veranschaulichen. Wir nutzen hierfür einen Asynchrones Netzwerk-Request. In Beispiel 2.1 verwenden wir Java als Repräsentant für eine strikt objektorientierte Sprache. Hier wird ein Interface definiert, welches der Nutzer des Netzwerk-Requests implementieren muss, um den Request zu empfangen. Beim Aufrufen des Request, muss nun der Aufrufer als Referenz übergeben werden, damit bei Abschließen des Request, der Aufrufer benachrichtigt werden kann (handleNetworkResponse). 
+Während bei strikt objektorientierten Sprachen nur Objekte und primitive Datentypen existieren, gibt es Sprachen, bei denen Funktionen als Typen existieren. Diese Funktionen können auch als Refernz in eine Variablen gespeichert werden. Folgende Code Beispiele sollen dies veranschaulichen. Wir nutzen hierfür einen Asynchrones Netzwerk-Request. In Beispiel 2.1 wird  Java als Repräsentant für eine strikt objektorientierte Sprache verwendet. Hier wird ein Interface definiert, welches der Nutzer des Netzwerk-Requests implementieren muss, um den Request zu empfangen. Beim Aufrufen des Request, muss nun der Aufrufer als Referenz übergeben werden, damit bei Abschließen des Request, der Aufrufer benachrichtigt werden kann (handleNetworkResponse). 
 
 
 
-\lstset{style=base, language=Java}
 \lstset{frame=shadowbox}
 \lstinputlisting[caption=Java Beispiel zu First Class Objects]{02_stateArt/codeExamples/NetworkRequestWithoutFunctions.java}
 Im Codebeispiel 2.2 benötigt es kein Interface für den Nutzer des Netzwerk-Requests. Es ist nun in Swift möglich eine Funktion zu definieren und diese gleichzeitig in einer lokale Variable zu speichern. Nun kann diese Funktion als Referenz zum Netzwerk-Requests übergeben werden. Die Funktion wird aufgerufen, wenn der Netzwerk-Requests beendet ist. 
