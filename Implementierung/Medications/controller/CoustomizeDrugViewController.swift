@@ -38,11 +38,11 @@ class CoustomizeDrugViewController: UIViewController, DrugSettable, UICollection
     }
     
     @IBAction func doneViewController(sender: AnyObject) {
-        let renderesPill = drug.type!.renderToImage(CGSize(width: 90, height: 90), baseColor: rgbColor)
-        drug.pillImage = UIImagePNGRepresentation(renderesPill)
+        if let renderesPill = drug.type?.renderToImage(CGSize(width: 90, height: 90), baseColor: rgbColor) {
+             drug.pillImage = UIImagePNGRepresentation(renderesPill)
+        }
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
-    
     
     @IBOutlet weak var redSlider: RGBColorSlider! {
         didSet {
