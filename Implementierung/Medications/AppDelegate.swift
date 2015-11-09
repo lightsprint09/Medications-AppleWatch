@@ -16,9 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     lazy var managedObjectContext = CoreDataStack().createMainContext()
     let executionTimeService = ExecutionTimeService()
-
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        UITabBar.appearance().tintColor = .globalTintColor()
+        UIView.appearance().tintColor = .globalTintColor()
         application.registerUserNotificationSettings(NotificationSettings.notificationSettings)
         guard let rootTabController = window?.rootViewController as? ManagedObjectContextSettable else {
            return true
@@ -57,7 +59,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             medicationViewController.askForDelay(executionTime)
         }
     }
-    
 
     func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, withResponseInfo responseInfo: [NSObject : AnyObject], completionHandler: () -> Void) {
         guard let identifier = identifier, let codingData = notification.userInfo as? [String: NSObject],

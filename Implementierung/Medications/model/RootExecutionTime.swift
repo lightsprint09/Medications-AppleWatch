@@ -17,7 +17,7 @@ class RootExecutionTime: NSManagedObject {
         formatter.maximumFractionDigits = 2
         if let amountFloat = amount?.floatValue,
             let amountString = formatter.stringFromNumber(amountFloat),
-            let drugType = drug?.type {
+            let drugType = drug.type {
                 return "\(amountString) " + drugType.unit(amountFloat)
         }
         return nil

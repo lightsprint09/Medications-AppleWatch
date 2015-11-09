@@ -79,7 +79,7 @@ class ExecutionTimeService: NSObject {
     }
     
     func createNotification(executionTime:RootExecutionTime) -> UILocalNotification? {
-        guard let drug = executionTime.drug else { return nil }
+        let drug = executionTime.drug
         let notification = UILocalNotification()
         notification.fireDate = executionTime.assignmentTime
         notification.repeatInterval = .Day

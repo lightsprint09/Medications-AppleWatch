@@ -17,7 +17,7 @@ class ExecutionTime: NSManagedObject, ExecutionTimeProtocol {
         formatter.maximumFractionDigits = 2
         if let amountFloat = amount?.floatValue,
             let amountString = formatter.stringFromNumber(amountFloat),
-            let drugType = parentExecutionTime.drug?.type {
+            let drugType = parentExecutionTime.drug.type {
             return "\(amountString) " + drugType.unit(amountFloat)
         }
         return nil
@@ -29,11 +29,11 @@ class ExecutionTime: NSManagedObject, ExecutionTimeProtocol {
     }
     
     var drugName: String? {
-        return parentExecutionTime.drug?.name
+        return parentExecutionTime.drug.name
     }
     
     var drugImage: NSData? {
-        return parentExecutionTime.drug?.pillImage
+        return parentExecutionTime.drug.pillImage
     }
     
     static func timeStrintFromDate(date:NSDate) -> String {

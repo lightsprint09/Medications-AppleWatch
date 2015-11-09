@@ -39,7 +39,7 @@ class AddDrugViewController: UIViewController, ManagedObjectContextSettable, UII
     
     override func viewWillAppear(animated: Bool) {
         guard let pillImageData = drug.pillImage else { return }
-        addStructureButton.titleLabel?.text = "Form ändern"
+        addStructureButton.setTitle("Form ändern", forState: .Normal)
         plusLabel.hidden = true
         
         drugImageView.image = UIImage(data: pillImageData)

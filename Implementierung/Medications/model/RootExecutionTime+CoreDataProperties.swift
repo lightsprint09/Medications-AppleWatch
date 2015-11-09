@@ -16,7 +16,7 @@ extension RootExecutionTime {
 
     @NSManaged var amount: NSDecimalNumber?
     @NSManaged var assignmentTime: NSDate
-    @NSManaged var drug: Drug?
+    @NSManaged var drug: Drug
     @NSManaged var executionTimes: NSSet
 
 }

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="15A282b" minimumToolsVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9057" systemVersion="15C31f" minimumToolsVersion="Automatic">
     <entity name="Drug" representedClassName=".Drug" syncable="YES">
         <attribute name="activeSubstance" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="color" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="companyName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="creationDate" attributeType="Date" syncable="YES"/>
         <attribute name="doseOfSubstance" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="imageKind" optional="YES" attributeType="Integer 16" syncable="YES"/>
+        <attribute name="imageKind" attributeType="Integer 16" syncable="YES"/>
         <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="pillImage" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="userImage" optional="YES" attributeType="Binary" syncable="YES"/>
@@ -29,7 +29,7 @@
         <relationship name="executionTimes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ExecutionTime" inverseName="parentExecutionTime" inverseEntity="ExecutionTime" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Drug" positionX="673" positionY="-171" width="128" height="193"/>
+        <element name="Drug" positionX="673" positionY="-171" width="128" height="195"/>
         <element name="ExecutionTime" positionX="324" positionY="-351" width="128" height="163"/>
         <element name="RootExecutionTime" positionX="522" positionY="-288" width="128" height="103"/>
     </elements>

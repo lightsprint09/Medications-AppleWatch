@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="osP-VC-BkV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15C31f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="osP-VC-BkV">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -10,12 +10,13 @@
         <scene sceneID="mAt-0U-RYO">
             <objects>
                 <tabBarController id="osP-VC-BkV" sceneMemberID="viewController">
-                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="DdC-iz-mvy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.13333333333333333" green="0.062745098039215685" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.62745098040000002" green="0.90588235289999997" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="f5Y-1T-phX" kind="relationship" relationship="viewControllers" id="fCF-iR-IUV"/>
@@ -974,8 +975,8 @@
                                                 <rect key="frame" x="21.5" y="13.5" width="17" height="32.5"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <color key="highlightedColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.20000000000000001" green="0.094117647060000004" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="highlightedColor" red="0.20000000000000001" green="0.094117647058823528" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
                                             </label>
                                         </subviews>
                                         <animations/>
@@ -1163,7 +1164,7 @@
                                     </visualEffectView>
                                 </subviews>
                                 <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.41960784309999999" blue="0.65098039220000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="uAt-a3-Asf" secondAttribute="trailing" id="3NC-hR-Xvn"/>
                                     <constraint firstItem="VbF-UM-xe3" firstAttribute="leading" secondItem="SsU-f2-Iab" secondAttribute="leading" constant="22" id="4La-Bv-Vpr"/>
@@ -1183,6 +1184,12 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.20000000000000001" green="0.094117647060000004" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -1359,10 +1366,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillProportionally" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="R6K-eX-3q9">
-                                <rect key="frame" x="0.0" y="178" width="600" height="257"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="R6K-eX-3q9">
+                                <rect key="frame" x="0.0" y="178" width="600" height="306"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Form" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hb9-pd-NY9">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Form wählen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hb9-pd-NY9">
                                         <rect key="frame" x="12" y="0.0" width="576" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
@@ -1372,8 +1379,8 @@
                                             <rect key="frame" x="12" y="0.0" width="376" height="20.5"/>
                                         </variation>
                                     </label>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ag4-hF-y8m">
-                                        <rect key="frame" x="0.0" y="37" width="600" height="50"/>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ag4-hF-y8m">
+                                        <rect key="frame" x="0.0" y="35" width="600" height="90"/>
                                         <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -1387,7 +1394,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="coustom-pill-cell" id="TTs-B6-6RH" customClass="CustomPillCell" customModule="Medications" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="-20" width="90" height="90"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
@@ -1431,8 +1438,16 @@
                                             <outlet property="delegate" destination="fSJ-vm-eCx" id="8G2-Ma-k0w"/>
                                         </connections>
                                     </collectionView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Farbe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WgM-kE-J7e">
-                                        <rect key="frame" x="12" y="103" width="576" height="21"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZAZ-kc-Mmf">
+                                        <rect key="frame" x="12" y="139" width="576" height="1"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.20000000000000001" green="0.094117647060000004" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="4Rl-QV-PQx"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Farbe wählen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WgM-kE-J7e">
+                                        <rect key="frame" x="12" y="154" width="576" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1441,10 +1456,10 @@
                                             <rect key="frame" x="12" y="142.5" width="376" height="20.5"/>
                                         </variation>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="sXM-71-0Iu">
-                                        <rect key="frame" x="30" y="139" width="540" height="118"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="sXM-71-0Iu">
+                                        <rect key="frame" x="30" y="188" width="540" height="118"/>
                                         <subviews>
-                                            <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="wLU-j4-VLL" customClass="RGBColorSlider">
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="wLU-j4-VLL" customClass="RGBColorSlider">
                                                 <rect key="frame" x="-2" y="0.0" width="544" height="31"/>
                                                 <animations/>
                                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -1457,7 +1472,7 @@
                                                     <action selector="redChanged:" destination="fSJ-vm-eCx" eventType="valueChanged" id="0Ub-0d-oSF"/>
                                                 </connections>
                                             </slider>
-                                            <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="F0E-dP-rJj" customClass="RGBColorSlider">
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="F0E-dP-rJj" customClass="RGBColorSlider">
                                                 <rect key="frame" x="-2" y="44" width="544" height="31"/>
                                                 <animations/>
                                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -1470,7 +1485,7 @@
                                                     <action selector="greenChanged:" destination="fSJ-vm-eCx" eventType="valueChanged" id="Dbq-7r-4UV"/>
                                                 </connections>
                                             </slider>
-                                            <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fWZ-wG-6we" customClass="RGBColorSlider">
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fWZ-wG-6we" customClass="RGBColorSlider">
                                                 <rect key="frame" x="-2" y="88" width="544" height="31"/>
                                                 <animations/>
                                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -1503,6 +1518,7 @@
                                     <constraint firstAttribute="trailing" secondItem="hb9-pd-NY9" secondAttribute="trailing" constant="12" id="B5K-ZM-nHO"/>
                                     <constraint firstAttribute="trailing" secondItem="WgM-kE-J7e" secondAttribute="trailing" constant="12" id="KYd-jh-Q6g"/>
                                     <constraint firstAttribute="trailing" secondItem="sXM-71-0Iu" secondAttribute="trailing" constant="30" id="VY3-62-DYR"/>
+                                    <constraint firstItem="ZAZ-kc-Mmf" firstAttribute="width" secondItem="hb9-pd-NY9" secondAttribute="width" id="tZ2-xi-MhK"/>
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8g-aO-Pmw" customClass="DrugCustomaziationView" customModule="Medications" customModuleProvider="target">
@@ -1540,7 +1556,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Form u. Farbe" id="bkR-Qm-g4y">
-                        <barButtonItem key="rightBarButtonItem" title="Fertig" id="6Gf-t8-8Np">
+                        <barButtonItem key="rightBarButtonItem" title="Speichern" id="6Gf-t8-8Np">
                             <connections>
                                 <action selector="doneViewController:" destination="fSJ-vm-eCx" id="DXB-xr-fzM"/>
                             </connections>
@@ -1591,4 +1607,5 @@
         <segue reference="ggM-qI-lm8"/>
         <segue reference="bqY-cm-pTJ"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.13333333333333333" green="0.062745098039215685" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
 </document>

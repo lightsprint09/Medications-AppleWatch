@@ -18,10 +18,10 @@ class MedicationTableCell: UITableViewCell {
     
     func configureWithExecutionTime(executionTime:ExecutionTime) {
         let drug = executionTime.parentExecutionTime.drug
-        drugNameLabel.text = drug?.name
+        drugNameLabel.text = drug.name
         unitCountLabel.text = executionTime.amountUnitString
         
-        if let pillImageData = drug?.pillImage {
+        if let pillImageData = drug.pillImage {
             drugImageView.image = UIImage(data: pillImageData)
         }
         timeLabel.text = executionTime.timeString

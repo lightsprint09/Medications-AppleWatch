@@ -20,4 +20,8 @@ extension UIColor {
     static func redExecutionTimeColor() -> UIColor {
         return UIColor(red:220 / 255.0, green:47 / 255.0, blue:52 / 255.0, alpha:1.0)
     }
+    
+    static func globalTintColor() -> UIColor {
+        return UIColor(red:51 / 255.0, green:24 / 255.0, blue:130 / 255.0, alpha:1.0)
+    }
 }

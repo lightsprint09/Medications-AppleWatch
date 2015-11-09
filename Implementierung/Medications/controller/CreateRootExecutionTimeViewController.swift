@@ -36,7 +36,7 @@ class CreateRootExecutionTimeViewController: UIViewController {
     }
     
     func setupSegementedDoseControll() {
-        guard let drugType = executionTime.drug?.type else { return }
+        guard let drugType = executionTime.drug.type else { return }
         doseSegementedControl.removeAllSegments()
         let formatter = NSNumberFormatter()
         formatter.maximumFractionDigits = 2
@@ -77,7 +77,7 @@ class CreateRootExecutionTimeViewController: UIViewController {
         }
     }
     @IBAction func didChangeAmountSegmentedControl(sender: UISegmentedControl) {
-        guard let drugType = executionTime.drug?.type else { return }
+        guard let drugType = executionTime.drug.type else { return }
         let amountSelected = drugType.unitPreSets(Float(amount))[sender.selectedSegmentIndex]
         amount = Double(amountSelected)
     }
