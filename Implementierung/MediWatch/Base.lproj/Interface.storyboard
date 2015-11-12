@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Scx-B9-ZLk">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9059" systemVersion="15C31f" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Scx-B9-ZLk">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9019"/>
@@ -154,6 +154,27 @@
             </objects>
             <point key="canvasLocation" x="507" y="643"/>
         </scene>
+        <!--Interface Controller-->
+        <scene sceneID="gCg-x2-kkK">
+            <objects>
+                <controller id="Ket-Zh-A8s">
+                    <items>
+                        <group width="1" alignment="left" id="X9k-h7-BMo">
+                            <items>
+                                <imageView width="70" height="48" alignment="center" image="take_icon" contentMode="scaleAspectFit" id="v0G-Vj-EkX">
+                                    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </imageView>
+                                <label width="70" height="48" alignment="center" text="12:30" textAlignment="center" id="uZn-Sw-uZv"/>
+                            </items>
+                        </group>
+                        <label width="70" height="48" alignment="left" text="2x" textAlignment="center" id="JK3-fW-ivP">
+                            <fontDescription key="font" type="boldSystem" pointSize="36"/>
+                        </label>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="150" y="-287"/>
+        </scene>
         <!--Execution Times Interface Controller-->
         <scene sceneID="Blv-Zn-hly">
             <objects>
@@ -161,10 +182,12 @@
                     <items>
                         <table alignment="left" id="tXz-Yw-aSj">
                             <items>
-                                <tableRow identifier="executionTimeCell2" id="vry-yE-T4S" customClass="ExecutionTimesCell" customModule="MediWatch_Extension">
+                                <tableRow identifier="executionTimeCell" id="vry-yE-T4S" customClass="ExecutionTimesCell" customModule="MediWatch_Extension">
                                     <group key="rootItem" width="1" height="74" alignment="left" layout="vertical" id="f5I-Hc-Hgj">
                                         <items>
-                                            <label width="136" height="23.5" alignment="center" text="Label" textAlignment="center" id="BPA-jV-c7d"/>
+                                            <label width="136" height="23.5" alignment="center" text="Label" textAlignment="center" id="BPA-jV-c7d">
+                                                <fontDescription key="font" type="system" weight="medium" pointSize="19"/>
+                                            </label>
                                             <group width="136" height="1" alignment="right" spacing="0.0" id="088-QR-Hw2">
                                                 <items>
                                                     <imageView width="41" height="41" alignment="center" id="InD-fM-cHT"/>
@@ -174,7 +197,7 @@
                                                                 <items>
                                                                     <label width="50" height="16" alignment="center" text="Label" textAlignment="center" id="tBf-wk-iqj">
                                                                         <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                                        <fontDescription key="font" type="boldSystem" pointSize="16"/>
+                                                                        <fontDescription key="font" type="boldSystem" pointSize="17"/>
                                                                     </label>
                                                                     <label width="34" alignment="right" verticalAlignment="center" text="+30" id="uee-M2-fPF">
                                                                         <color key="textColor" red="0.97254901959999995" green="0.4823529412" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -202,6 +225,42 @@
                                         <segue destination="T89-nr-REx" kind="push" id="HWa-J3-hY8"/>
                                     </connections>
                                 </tableRow>
+                                <tableRow identifier="executionTimeCellBig" id="5Zt-fW-QaC" customClass="BigMedicationCell" customModule="MediWatch_Extension">
+                                    <group key="rootItem" width="1" height="120" alignment="left" layout="vertical" id="fKF-zZ-eCW">
+                                        <items>
+                                            <group width="1" alignment="center" spacing="0.0" id="x6L-BL-IzA">
+                                                <items>
+                                                    <imageView width="68" height="48" alignment="left" image="take_icon" contentMode="scaleAspectFit" id="Tra-eP-G1z"/>
+                                                    <label width="54" height="48" alignment="center" text="12:30" textAlignment="center" id="fT9-AU-Nxk">
+                                                        <fontDescription key="font" type="system" weight="semibold" pointSize="22"/>
+                                                    </label>
+                                                    <label width="34" alignment="right" verticalAlignment="center" text="+30" id="io6-ys-Mv8">
+                                                        <color key="textColor" red="0.97254901959999995" green="0.4823529412" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="font" type="system" weight="medium" pointSize="16"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                            <label width="70" height="30" alignment="left" text="2x" textAlignment="center" id="Pjd-XJ-27T">
+                                                <fontDescription key="font" type="boldSystem" pointSize="36"/>
+                                            </label>
+                                            <imageView width="16" height="16" alignment="right" verticalAlignment="center" image="take_icon" id="rKB-CV-fJa"/>
+                                            <group width="136" alignment="left" id="org-5n-TST">
+                                                <items>
+                                                    <label alignment="center" text="Label" textAlignment="center" id="2Gj-Tt-bfn"/>
+                                                </items>
+                                                <color key="backgroundColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </group>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="amountDrugLabel" destination="Pjd-XJ-27T" id="diZ-1U-ibe"/>
+                                        <outlet property="delayLabel" destination="io6-ys-Mv8" id="Ngv-wH-2aX"/>
+                                        <outlet property="drugImage" destination="Tra-eP-G1z" id="xxt-3H-47a"/>
+                                        <outlet property="drugNameLabel" destination="2Gj-Tt-bfn" id="wnk-WK-7VG"/>
+                                        <outlet property="markTakenImage" destination="rKB-CV-fJa" id="7fr-f7-lgX"/>
+                                        <outlet property="timeLabel" destination="fT9-AU-Nxk" id="haJ-Vf-228"/>
+                                    </connections>
+                                </tableRow>
                             </items>
                         </table>
                     </items>
@@ -210,7 +269,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="150" y="205"/>
+            <point key="canvasLocation" x="150" y="204.5"/>
         </scene>
         <!--Details-->
         <scene sceneID="Jbu-05-rdd">

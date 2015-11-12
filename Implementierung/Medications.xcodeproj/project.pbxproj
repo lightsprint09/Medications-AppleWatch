@@ -30,6 +30,7 @@
 		9423792C1B8E2E2600FD8165 /* MedicationTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9423792B1B8E2E2600FD8165 /* MedicationTableCell.swift */; };
 		94272C461BDA2D31004EEB70 /* MedicationDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94272C451BDA2D31004EEB70 /* MedicationDetailsController.swift */; };
 		94272C481BDA3098004EEB70 /* ExecutionTimesDisplayDetailsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94272C471BDA3098004EEB70 /* ExecutionTimesDisplayDetailsProtocol.swift */; };
+		942AD6991BF3DCB000EE9A9A /* BigMedicationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942AD6981BF3DCB000EE9A9A /* BigMedicationCell.swift */; };
 		942D38EE1B787EB200553C79 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942D38ED1B787EB200553C79 /* CoreDataStack.swift */; };
 		942D38F71B78813E00553C79 /* ManagedObjectContextSettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942D38F61B78813E00553C79 /* ManagedObjectContextSettable.swift */; };
 		942D38FB1B78855600553C79 /* UITabBarViewControllerCoreDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942D38FA1B78855600553C79 /* UITabBarViewControllerCoreDataExtension.swift */; };
@@ -180,6 +181,7 @@
 		9423792B1B8E2E2600FD8165 /* MedicationTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationTableCell.swift; sourceTree = "<group>"; };
 		94272C451BDA2D31004EEB70 /* MedicationDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationDetailsController.swift; sourceTree = "<group>"; };
 		94272C471BDA3098004EEB70 /* ExecutionTimesDisplayDetailsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecutionTimesDisplayDetailsProtocol.swift; sourceTree = "<group>"; };
+		942AD6981BF3DCB000EE9A9A /* BigMedicationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigMedicationCell.swift; sourceTree = "<group>"; };
 		942D38ED1B787EB200553C79 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataStack.swift; path = ../model/CoreDataStack.swift; sourceTree = "<group>"; };
 		942D38F61B78813E00553C79 /* ManagedObjectContextSettable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectContextSettable.swift; sourceTree = "<group>"; };
 		942D38FA1B78855600553C79 /* UITabBarViewControllerCoreDataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBarViewControllerCoreDataExtension.swift; sourceTree = "<group>"; };
@@ -555,6 +557,7 @@
 		94DFA7631BCE7F4500A91467 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				942AD6981BF3DCB000EE9A9A /* BigMedicationCell.swift */,
 				94DFA7611BCE7F4100A91467 /* ExecutionTimesCell.swift */,
 			);
 			name = view;
@@ -840,6 +843,7 @@
 				94DFA7621BCE7F4100A91467 /* ExecutionTimesCell.swift in Sources */,
 				946F7D461BDCF2D5008404AC /* ChoseOwnDelayTimeController.swift in Sources */,
 				94F65FB61BE24B790010D134 /* ExcutionTimeProtocol.swift in Sources */,
+				942AD6991BF3DCB000EE9A9A /* BigMedicationCell.swift in Sources */,
 				94DFA7401BCCF18800A91467 /* WCSessionManager.swift in Sources */,
 				944F218D1B59573300ED8A7A /* NotificationController.swift in Sources */,
 				94272C461BDA2D31004EEB70 /* MedicationDetailsController.swift in Sources */,

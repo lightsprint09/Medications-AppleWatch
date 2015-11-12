@@ -42,15 +42,14 @@ class ExecutionTimesInterfaceController: WKInterfaceController {
     }
     
     func displayExecutionTimes() {
-        self.executionTimesTable.setNumberOfRows(executionTimes.count, withRowType: "executionTimeCell2")
+        self.executionTimesTable.setNumberOfRows(executionTimes.count, withRowType: "executionTimeCell")
         for(index, executionTimeContext) in executionTimes.enumerate() {
-            if let row = self.executionTimesTable.rowControllerAtIndex(index) as? ExecutionTimesCell{
+            if let row = self.executionTimesTable.rowControllerAtIndex(index) as? ExecutionTimesCell {
                 let executionTime = executionTimeContext.executionTime
                 row.displayExecutimeDetails(executionTime)
                 row.timeLabel.setText(executionTime.timeString)
                 row.markTakenImage.setHidden(!executionTime.hasTakenMedication)
                 row.timeLabel.setTextColor(executionTime.hasTakenMedication ? .greenExecutionTimeColor() : .blueExecutionTimeColor())
-                
             }
         }
     }

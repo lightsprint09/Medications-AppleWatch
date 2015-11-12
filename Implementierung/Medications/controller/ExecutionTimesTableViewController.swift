@@ -123,6 +123,7 @@ class ExecutionTimesTableViewController: UITableViewController, ManagedObjectCon
     @IBAction func testPush(sender: AnyObject) {
         guard let executionTime = dataSource?.objectAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)),
             let notification = executionTimeService.createNotification(executionTime.parentExecutionTime) else { return }
+        print(notification.userInfo)
         notification.repeatInterval = .Year
         notification.fireDate = NSDate().dateByAddingTimeInterval(8)
         notification.soundName = UILocalNotificationDefaultSoundName
