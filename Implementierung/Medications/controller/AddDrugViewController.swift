@@ -2,7 +2,7 @@
 //  AddDrugViewController.swift
 //  Medications
 //
-//  Created by Lukas Schmidt on 11.08.15.
+//  Created by Lukas Schmidt on 11.08.15 and Lena.
 //  Copyright © 2015 Lukas Schmidt. All rights reserved.
 //
 
@@ -19,7 +19,7 @@ class AddDrugViewController: UIViewController, ManagedObjectContextSettable, UII
     
     var managedObjectContext:NSManagedObjectContext! {
         didSet {
-            let context = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.MainQueueConcurrencyType)
+            let context = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
             context.parentContext = managedObjectContext
             managedObjectContext = context
         }
@@ -46,9 +46,9 @@ class AddDrugViewController: UIViewController, ManagedObjectContextSettable, UII
     }
     
     @IBAction func presentCamera(sender: AnyObject) {
-        guard UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) else {return}
+        guard UIImagePickerController.isSourceTypeAvailable(.Camera) else {return}
         cameraUI.delegate = self
-        cameraUI.sourceType = UIImagePickerControllerSourceType.Camera;
+        cameraUI.sourceType = .Camera;
         
         cameraUI.allowsEditing = true
         

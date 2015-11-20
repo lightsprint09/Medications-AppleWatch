@@ -225,6 +225,19 @@
                                         <segue destination="T89-nr-REx" kind="push" id="HWa-J3-hY8"/>
                                     </connections>
                                 </tableRow>
+                                <tableRow identifier="dayTimeCell" id="91f-YH-C27">
+                                    <group key="rootItem" width="1" height="30" alignment="left" id="FXr-eH-iIz">
+                                        <items>
+                                            <imageView width="30" height="30" alignment="left" id="JdV-h1-3om"/>
+                                            <label width="93" height="1" alignment="center" text="Morgens" textAlignment="center" id="5qW-me-EBL">
+                                                <fontDescription key="font" type="system" weight="semibold" pointSize="19"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="drugNameLabel" destination="5qW-me-EBL" id="h7U-ut-H3O"/>
+                                    </connections>
+                                </tableRow>
                                 <tableRow identifier="executionTimeCellBig" id="5Zt-fW-QaC" customClass="BigMedicationCell" customModule="MediWatch_Extension">
                                     <group key="rootItem" width="1" height="120" alignment="left" layout="vertical" id="fKF-zZ-eCW">
                                         <items>
