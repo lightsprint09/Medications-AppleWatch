@@ -27,8 +27,10 @@ class CreateRootExecutionTimeViewController: UIViewController {
     @IBOutlet weak var timeOfDaySegmentedControl: UISegmentedControl!
     @IBOutlet weak var timePicker: UIDatePicker!
     
+    @IBOutlet weak var test: UIStackView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        test.backgroundColor = .redColor()
         guard let managedObjectContext = drug.managedObjectContext else { return }
         executionTime = executionTimeService.createRootExecutionTime(managedObjectContext, assignmentDate: timePicker.date)
         executionTime.drug = drug
