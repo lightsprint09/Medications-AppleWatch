@@ -21,44 +21,45 @@
 %%
 
 \section{Einleitende Worte}
-Während das Forschungsfeld der "Medication Adherence", also as Einhalten des Medikamentenplans, schon jahrzehntelang erforscht wurde, ist diese Arbeit ist Teil eines noch sehr jungen Forschungsgebietes. Smartwatches existieren noch nicht lange im Consumer Bereich.
+Während das Forschungsfeld der "Medication Adherence", also as Einhalten des Medikamentenplans, schon jahrzehntelang erforscht wurde, ist diese Arbeit ist Teil eines noch sehr jungen Forschungsgebietes. Smartwatches existieren noch nicht lange im Consumer Bereich. Im folgenden ist eine Zusammenfassungen der relevanten Forschungen zu finden. Apple`s Programmiersprache Swift, sowie die Technologie der Wearables wird beschrieben.
 \section{Arbeiten im Forschungsumfeld}
-Leider gibt es kaum Arbeiten, welche sich mit dem Thema Smartwatch und "Medication Adherence" beschäftigten. Dies ist auf das noch junge Forschungsfeld zurückzuführen. Das Paper \cite{Fabian-Sailer:2015aa} bietet eine Einstieg für diese Arbeit. Aus diesen Paper wurde auch das Praktikum abgeleitet, deren Erkenntnisse hier fortgeführt werden. 
+Leider gibt es kaum Arbeiten, welche sich mit dem Thema Smartwatch und "Medication Adherence" beschäftigten. Dies ist auf das noch junge Forschungsfeld zurückzuführen. Sailer Arbeit \cite{Fabian-Sailer:2015aa} bietet eine Einstieg für diese Arbeit. Hier wurde auch die Thematik des PITA Praktikum abgeleitet, deren Erkenntnisse hier fortgeführt werden. 
 
-Weiter gibt es sehr spannende Forschungen im Bereich der Smartwatchanwednung, die in Fortschreitender Entwicklung auch im Bereich "Medication Adherence" vorstellbar sind. Mit Ambient Assisted Living, also der technischen Unterstützung älterer oder eingeschränkter Personen im Haushalt, beschäftigt sich die Arbeit "Non-obstructive Room-level Locating System in Home Environments Using Activity Fingerprints from Smartwatch"\cite{Lee:2015:NRL:2750858.2804272}. Wenn man nicht nur die Zeit, sondern auch den Ort oder das Zimmer für eine Medikamenteneinnahme definieren kann, könnte dar Patienten das Medikament direkt einnehmen und die Gefahr des Vergessens verringert sich. Ebenso gliedert sich folgende Arbeit \cite{Laput:2015:ETR:2807442.2807481}. Die Arbeit beschreibt das Erkennen von Gegenständen an ihrem Elektromagnetischem Feld. Auch hier ist ein Kontext Gewinn die Folge, welcher zur optimalen Medikamenteneinnahme führen kann.
+Weiter gibt es sehr spannende Forschungen im Bereich der Smartwatchanwednung, die in Fortschreitender Entwicklung auch im Bereich "Medication Adherence" vorstellbar sind. Mit Ambient Assisted Living, also der technischen Unterstützung älterer oder eingeschränkter Personen im Haushalt, beschäftigt sich die Arbeit "Non-obstructive Room-level Locating System in Home Environments Using Activity Fingerprints from Smartwatch"\cite{Lee:2015:NRL:2750858.2804272}. Wenn man nicht nur die Zeit, sondern auch den Ort oder das Zimmer für eine Medikamenteneinnahme definieren kann, könnte der Patienten das Medikament direkt einnehmen und die Gefahr des Vergessens verringert sich. Ebenso gliedert sich die Arbeit von Laput in den Bereich ein, der einen Kontextgewinn zur Folge hat \cite{Laput:2015:ETR:2807442.2807481}. Die Arbeit beschreibt das Erkennen von Gegenständen an ihrem Elektromagnetischem Feld. Der Kontext Gewinn, zu Erkennen welche Gegenstände der Träger der Uhr berührt, könnte zur Fehler bei Medikamenteneinnahme verhindern.
 
-Orientiert man sich an Arbeiten, deren Ziel die smartphonegestütze "Medication Adherence" zum Ziel hatten findet man unter anderem die aktuelle natinale Umfrage \cite{Krebs-P:2015aa} aus den USA, bei der 1604 Smartphone Nutzer zur ihrer Nutzung von Gesundheitsanwednungen befragt wurden. Mehr dazu wird im Kapitel \ref{ch:probs-obs-procs} zur Problemstellung  aufgegriffen
+Orientiert man sich an Arbeiten, deren Ziel die smartphonegestütze "Medication Adherence" zum Ziel hatten findet man unter anderem die aktuelle nationale Umfrage \cite{Krebs-P:2015aa} aus den USA, bei der 1604 Smartphone Nutzer zur ihrer Nutzung von Gesundheitsanwednungen befragt wurden. Mehr dazu wird im Kapitel \ref{ch:probs-obs-procs} zur Problemstellung  aufgegriffen
+\todo{Apple Keynote Produkt Vorstellung}
 \section{Apple`s Programmiersprache Swift}
-Swift wurde im Juni 2014 von Apple vorgestellt und genießt seit dem steigendes Interesse. Im Juni 2015 wurde Version 2.0 veröffentlicht. Mit Version 2.0 wurde ebenfalls der Plan vorgestellt, Swift Open Source zu machen und somit auch anderen Plattformen die Entwicklung mit Swift zu ermöglichen.
+Swift wurde im Juni 2014 von Apple vorgestellt und genießt seit dem steigendes Interesse. Im Juni 2015 wurde Version 2.0 veröffentlicht \cite{Apple:2014sp}. Mit Version 2.0 wurde ebenfalls der Plan vorgestellt, Swift Open Source zu machen und somit auch anderen Plattformen die Entwicklung mit Swift zu ermöglichen \cite{Apple:2014sp}.
 
 \subsection{Objective-C und Swift}
 In den frühen 80er Jahren entwickelte Brad Cox die Sprache Objective-C\cite{Dalrymple:2009aa}. Weiter führt Dalrymple aus, dass die Sprache  die Vorteile einer schnellen C-Sprach mit den Vorteilen der objektorientierten Sprache SmallTalk verbinden sollte. Die Firma NextSTEP nutze Objectiv-C und als NEXTStep von Apple aufgekauft wurde, integrierte Apple Objectiv-C und ermöglichte Mac-Entwicklern die Nutzung.
 
- Als Apple nun 2008 seine iOS Plattform öffnete und Entwickler eigene Anwendungen für das System schreiben konnten, bekam Objective-C neue Aufmerksamkeit. Viele Entwickler sahen Objective-C als ein Überbleibsel alter Zeiten und waren der Sprache negativ eingestellt. Apple stand nun unter Zugzwang um seine Plattform, mit der große wirtschaftliche Interessen Verbunden sind, für Entwickler attraktiv zu halten \cite{tre}. Da jedoch alle highlevel APIs in Objectiv-C vorhanden sind, war es nicht so einfach auf eine bekannte Sprache für iOS und Mac Entwicklung umzusteigen. Man entschied sich für eine Neuentwicklung, mit Hinblick auf neue Programmierparadigmen und sehr guter Kompatibilität zu alten Objectiv-C APIs \cite{tre}.
+ Als Apple nun 2008 seine iOS Plattform öffnete und Entwickler eigene Anwendungen für das System schreiben konnten, bekam Objective-C neue Aufmerksamkeit. Viele Entwickler sahen Objective-C als ein Überbleibsel alter Zeiten und waren der Sprache negativ eingestellt. Apple stand nun unter Zugzwang um seine Plattform, mit der große wirtschaftliche Interessen Verbunden sind, für Entwickler attraktiv zu halten \cite{Wells:2015fu}. Da jedoch alle highlevel APIs in Objectiv-C vorhanden sind, ist es technisch nicht Möglich auf eine bekannte Sprache wie Java für iOS und Mac Entwicklung umzusteigen. Man entschied sich für eine Neuentwicklung, mit Hinblick auf neue Programmierparadigmen und sehr guter Kompatibilität zu alten Objectiv-C APIs \cite{Wells:2015fu}.
 
 \subsection{Überblick der Neuerung}
-Swift bringt viele Neuerungen mit sich. Im folegden werden nun 4 Neuerungen der Sprache erläutert. Diese 4 Neuerungen bieten einen großen Mehrwert für Anwendungsentwickler, es sind jedoch nicht die einzigen Neuerungen. Mehr sind hier\cite{tre} zu finden. Es handelt sich um folgenden Sprach Features
-\begin{enumerate}
+las\begin{enumerate}
 \item Type Inference
-\item Closures - Functions as First Class Objects
+\item Closures - Functions as First Class Types
 \item Generics
 \item Optional Types
 \end{enumerate}
 
 \subsection{Type Inference}
-Bei Type Inference erkennt der Compiler, welcher Typ in eine Variable instanziert wurde. Es ist nicht nötig für die Vairable eine Typendefinition zu definieren. Hierdurch wird der Quellcode leichter zu lesen. 
+Bei Type Inference erkennt der Compiler, welcher Typ in eine Variable instanziert wurde. Es ist nicht nötig für die Vairable eine Typendefinition zu definieren \cite{Apple:2014sp}. Hierdurch wird der Quellcode leichter zu lesen. 
 \lstinputlisting[caption=Beispiel zu Type Inference in Swift label=lst:typeInference]{02_stateArt/codeExamples/TypeInference.swift}
 
-\subsection{Closures - Functions as First Class Objects}
-Während bei strikt objektorientierten Sprachen nur Objekte und primitive Datentypen existieren, gibt es Sprachen, bei denen Funktionen als Typen existieren. Diese Funktionen können auch als Refernz in eine Variablen gespeichert werden. Folgende Code Beispiele sollen dies veranschaulichen. Wir nutzen hierfür einen Asynchrones Netzwerk-Request.
+\subsection{Closures - Functions as First Class Types}
+Während bei strikt objektorientierten Sprachen nur Objekte und primitive Datentypen existieren, gibt es Sprachen, bei denen Funktionen als Typen existieren. Diese Funktionen können auch als Refernz in eine Variablen gespeichert werden. Folgende Code Beispiele sollen dies veranschaulichen. Wir nutzen hierfür einen Asynchrones Netzwerk-Request\cite{Apple:2014sp}.
 \lstinputlisting[caption=Java Beispiel zu First Class Objects, label=lst:firstFuncJava]{02_stateArt/codeExamples/NetworkRequestWithoutFunctions.java}
  In Beispiel \ref{lst:firstFuncJava} wird Java als Repräsentant für eine strikt objektorientierte Sprache verwendet. Hier wird ein Interface definiert, welches der Nutzer des Netzwerk-Requests implementieren muss, um den Request zu empfangen. Beim Aufrufen des Request, muss nun der Aufrufer als Referenz übergeben werden, damit bei Abschließen des Request, der Aufrufer benachrichtigt werden kann (handleNetworkResponse). 
 \lstinputlisting[caption=Swift Beispiel zu First Class Objects, label=lst:firstFuncSwift]{02_stateArt/codeExamples/NetworkRequestWithFunctions.swift}
 Im Codebeispiel \ref{lst:firstFuncSwift} benötigt es kein Interface für den Nutzer des Netzwerk-Requests. Es ist nun in Swift möglich eine Funktion zu definieren und diese gleichzeitig in einer lokale Variable zu speichern. Nun kann diese Funktion als Referenz zum Netzwerk-Requests übergeben werden. Die Funktion wird aufgerufen, wenn der Netzwerk-Requests beendet ist. 
 
+\todo{Generics oder Protocol Extension}
 
 \subsection{Optional Types}
-Optional Types eröffnen neue Möglichkeiten beim Modellieren von Datenmodellen und erstellen von APIs. Im folgenden Beispiel wird eine Medikation in Java ohne Optional Types und in Swift mit Optional Types modelliert.
+Optional Types eröffnen neue Möglichkeiten beim Modellieren von Datenmodellen und erstellen von APIs. Es ist so möglich Argumente in einer Methode als Optional zu kennzeichnen und somit dem Nutzer der Methode zu erlauben eine null-Referenz zu übergeben. Ist kein Optional-Type gekennzeichnet, so verbietet der Compiler ein null-Referenz übergabe \cite{Apple:2014sp}. Im folgenden Beispiel wird eine Medikation in Java ohne Optional Types und in Swift mit Optional Types modelliert.
 \lstinputlisting[caption=Java Beispiel mit fehlenden Optional Types, label=lst:optinalsJava]{02_stateArt/codeExamples/OptionalType.java} 
 
 Im Codebeispiel \ref{lst:optinalsJava} ist zu erkennen, dass zur Compilezeit keine Aussage über den Zustand der Instanz-Variablen getroffen werden kann. Der Entwickler muss also aus dem logischen Kontext erkennen, welche Variablen eine null Referenz enthalten könnte. Dies kann zu Laufzeitfehlern führen.
@@ -67,4 +68,6 @@ Im Codebeispiel \ref{lst:optinalsJava} ist zu erkennen, dass zur Compilezeit kei
 In \ref{lst:optinalsSwift} sind die Instanzvariablen nun mit Optional Types modeliert. Nun 
 kann zur Compilezeit zugesichert werden, welche Variablen eine null Referenz enthalten können und welche Variablen sicher mit einem Wert belegt sind. Dies führt zu weniger Fehler während der Laufzeit.
 
-Auch APIs können so modelliert werden. So darf ein Parameter nicht null sein, wenn er nicht als Optional definiert wurde. Dies macht eine API strikter und führt ebenfalls zu weniger Fehlern
+Auch APIs können so modelliert werden. So darf ein Parameter nicht null sein, wenn er nicht als Optional definiert wurde. Dies macht eine API strikter und führt ebenfalls zu weniger Laufzeitfehlern, da Fehler schon zur Compilezeit erkannt werden.
+
+\section{Wearables}
