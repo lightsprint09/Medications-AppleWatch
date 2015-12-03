@@ -18,22 +18,32 @@ Die Anforderungen wurden von eine Gerspräch mit Monika Pobiruchin am Anfang des
 Von dem Gespräch mit Monika Pobiruchin wurde eine Persona für die Zielgruppe abgeleitet. Diese Persona ist im Anhang zu finden.
 Mit Hilfe der Persona, wurden die Kern-Usacases abgeleitet. Die folgenden Usecase 1 bis 4 wurden im Praktikum erarbeitet und wurden von dort übernommen. 
 \input{04_realisation/pita_usecases.tex}
-Diese 4 Usecases sind auch Grundlage für dies Arbeit. Wie die Usecases umgesetzt sind wird in Kapitel \ref{ch:realisation} beschrieben. In Kapitel \ref{ch:summ-eva-outl} finden sich überarbeitet Usecases, die Verbesserungen enthalten, welche aus der Evaluation mit der Zielgruppe hervorgehen.
+Diese vier Usecases sind auch Grundlage für dies Arbeit. Wie die Usecases umgesetzt sind wird in Kapitel \ref{ch:realisation} beschrieben. In Kapitel \ref{ch:summ-eva-outl} finden sich überarbeitet Usecases, die Verbesserungen enthalten, welche aus der Evaluation mit der Zielgruppe hervorgehen.
 
 \section{Apple Watch}
 \label{ch:apple-watch}
 Eine Andorderung, welche sich aus dem Kontext dieser Arbeit entnehmen lässt, ist die Nutzung der Apple Watch als Zielplatform. Die Apple Watch wurde im September 2014 vorgestellt und staret im April 2015 mit dem Verkauf.
 \subsection{Hardware}
 Die Apple Watch existiert in zwei Versionen. Einen Uhr mit 38mm (272x340) und eine mit 42mm (312x390) großem Display. Die bietet einen 8GB großen internen Speicher. Mit einer Akkulaufzeit von 18h unter durchschnittlicher Nutzung, hält die Uhr einen Tag durch \cite{Riches:2015aa}. 
+\todo{Abhänigkeit zum iPhone}
 \subsection{Software}
 Mit erscheinen der Uhr wurde auch das Betriebsystem in Version 1 ausgeliefert und dazu das \gls{sdk} Names WatchKit. Dies erlaubte es Entwicklern Anwendungen zu Entwickeln, welche auf dem verbunden iPhone ausgeführt wurden. Diese führte zu schlechte Performance der Anwendungen und zu vollen Abhängigkeit zum iPhone.
 
-Im Juni veröffentlichte Apple die erste Vorabversion von watchOS 2.0, welches später im September 2015 für Endnutzer bereit gestellt wurde. watchOS biete mehr Unabhängigkeit für Anwendungen. Die Andwendugen laufen direkt auf der Uhr.
+Im Juni veröffentlichte Apple die erste Vorabversion von watchOS 2.0, welches später im September 2015 für Endnutzer bereit gestellt wurde. watchOS biete mehr Unabhängigkeit für Anwendungen. Die Andwendugen laufen direkt auf der Uhr. Für Anwendugsentwickler gibt es drei Informationen auf der Uhr dazustellen. Es Handelt sich um native Anwendugen (Apps), Glances, und Actionable Notifications \cite{Apple:2015devAw}.
+
+Native Anwendungen sind fest installierte auf der Uhr. Sie können unabhängig auf der Uhr gestartet werden. In der Watch-App lassen sich komplexere Anwendungen realisieren, da der Nutzer durch viele Möglichkeiten der Interaktion Eingaben unter Interaktionen(\ref{ch:eingabe_interface} tätigen kann. Installiert werden die Apps vom iPhone aus. Eine Watch-App benötigt immer eine iPhone App, die jeweils auf dem iPhone installiert ist.
+
+Ein Glance ist ein Interface, auf dem die wichtigesten Informationen einer App übersichtlich dargestellt werden. Der Nutzer soll mit einem Blick die Informationen erkennen. Es ist keine Interaktion mit einem Glance möglich. Tippt der der Nutzer auf einen Glance öffnet sich die Zugehörige App. Glances sind optional zu einer App zu entwickeln.
+
+
+
+
 \subsection{Schniststellen}
 Bluetooth 4.0 und Wi-Fi 802.11b/g sind die Netzwerkschnistellen der Apple Watch. Dazu kommt noch ein NFC Chip, der jedoch nicht über eine API nutzbar ist und vorerst nur für Apple Pay, dem Apple eigenen Bezahldienst, vorgesehen ist\cite{RITCHIE:2015aa}. 
 \subsection{Sensoren}
 Die Apple Watch besitzt einen Beschleunigungssensor und Gyroskop welche genaue Bewegungsdaten liefern. Ebenso ist ein optischer Herzschagsensor verbaut, der an der Unterseite der Uhr auf der Haut anliegt. Ein Mikrofon, welches für Spracheingabe genutzt werden kann ist auch vorhanden.
 \subsection{Eingabe Interfaces}
+\label{ch:eingabe_interface}
 Neben eines normalen Touchescreen führte Apple in der Uhr auch eine Eingabeart Names Force Touch ein. Diese Technologie erlaubt es der Uhr zu erkennen, wie fest der Nutzer auf das Display drückt. Dies ermöglicht eine Neue Art der Eingabe. Besonders bei einer kleinen Eingabefläche, wie die der Apple Watch, ist eine neue Interaktionsdimesion interessant, da es eine differenziertere Interaktion erlaubt. Leider ist eine mögliche Interaktion mit Force Touch optisch nicht zu erkennen, was eine klare Nutzerführung schwer macht.
 
  Von Analogen Uhren ist die Krone, also das Rad an der Seite einer Uhr, an dem die Uhr eingestellt oder aufgezogen werden kann bekannt. An der Apple Watch ist die Krone auch zu finden. Apple nennt sie "Digital Crown", also digitale Krone. Sie befindet sich ebenfalls an der Seite der Uhr. Die Krone ist drehbar und lässt sich ebenfalls als Druckknopf nutzen. Sie dient zum scrollen von Inhalten, sowie präzisen Auswählen von Elementen aus einer Auswahlliste. Durch nutzen der Krone wird der Bildschirm nicht durch einen Finger verdeckt, was bei einem kleinen Display von Vorteil ist.
