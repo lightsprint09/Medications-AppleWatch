@@ -46,9 +46,9 @@ class ExecutionTime: NSManagedObject, ExecutionTimeProtocol {
         if let drugName = drugName {
             dict[notification_drugNameKey] = drugName
         }
-//        if let drugImage = drugImage {
-//            dict[notification_drugImageDataKey] = drugImage
-//        }
+        if let drugImage = drugImage {
+            dict[notification_drugImageDataKey] = drugImage
+        }
         if let amountUnitString = amountUnitString {
             dict[notification_drugAmountKey] = amountUnitString
         }
