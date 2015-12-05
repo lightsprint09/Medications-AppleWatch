@@ -25,18 +25,22 @@ Diese vier Usecases sind auch Grundlage für dies Arbeit. Wie die Usecases umges
 Eine Andorderung, welche sich aus dem Kontext dieser Arbeit entnehmen lässt, ist die Nutzung der Apple Watch als Zielplatform. Die Apple Watch wurde im September 2014 vorgestellt und staret im April 2015 mit dem Verkauf.
 \subsection{Hardware}
 Die Apple Watch existiert in zwei Versionen. Einen Uhr mit 38mm (272x340) und eine mit 42mm (312x390) großem Display. Die bietet einen 8GB großen internen Speicher. Mit einer Akkulaufzeit von 18h unter durchschnittlicher Nutzung, hält die Uhr einen Tag durch \cite{Riches:2015aa}. 
-\todo{Abhänigkeit zum iPhone}
+\subsection{Abhängigkeit zum iPhone}
+Die Apple Watch wurde als Erweiterung zum iPhone Entwickelt. Und so sind auch viele integrale Funktionen nur vom iPhone aus steuerbar. Die Uhr kann ohne ein iPhone nicht durch den Setup-Prozess geleitet werden. Auch native Anwendungen (siehe \ref{ch:watch_software}) können nur über das iPhone installiert werden. Sind diese Schritte getan, also die Uhr Betriebsbereit und Anwendungen installiert, kann die Uhr teilweise auch Autonom agieren. So kann sie auch ohne iPhone, über WLAN, mit dem Internet kommunizieren.
+
 \subsection{Software}
-Mit erscheinen der Uhr wurde auch das Betriebsystem in Version 1 ausgeliefert und dazu das \gls{sdk} Names WatchKit. Dies erlaubte es Entwicklern Anwendungen zu Entwickeln, welche auf dem verbunden iPhone ausgeführt wurden. Diese führte zu schlechte Performance der Anwendungen und zu vollen Abhängigkeit zum iPhone.
+\label{ch:watch_software}
+Mit erscheinen der Uhr wurde auch das Betriebsystem in Version 1 ausgeliefert und dazu das \gls{sdk} Names WatchKit. Dies erlaubte es Entwicklern Anwendungen zu entwickeln, welche auf dem verbunden iPhone ausgeführt wurden. Diese führte zu schlechte Performance der Anwendungen und zu vollen Abhängigkeit zum iPhone.
 
-Im Juni veröffentlichte Apple die erste Vorabversion von watchOS 2.0, welches später im September 2015 für Endnutzer bereit gestellt wurde. watchOS biete mehr Unabhängigkeit für Anwendungen. Die Andwendugen laufen direkt auf der Uhr. Für Anwendugsentwickler gibt es drei Informationen auf der Uhr dazustellen. Es Handelt sich um native Anwendugen (Apps), Glances, und Actionable Notifications \cite{Apple:2015devAw}.
+Im Juni 2015 veröffentlichte Apple die erste Vorabversion von watchOS 2.0, welches später im September 2015 für Endnutzer bereit gestellt wurde. watchOS biete mehr Unabhängigkeit für Anwendungen, da diese direkt auf der Uhr ausgeführt werden. Für Anwendugsentwickler gibt es drei Arten Informationen auf der Uhr dazustellen. Es Handelt sich um native Anwendugen (Apps), Glances, und Actionable Notifications \cite{Apple:2015devAw}.
 
-Native Anwendungen sind fest installierte auf der Uhr. Sie können unabhängig auf der Uhr gestartet werden. In der Watch-App lassen sich komplexere Anwendungen realisieren, da der Nutzer durch viele Möglichkeiten der Interaktion Eingaben unter Interaktionen(\ref{ch:eingabe_interface} tätigen kann. Installiert werden die Apps vom iPhone aus. Eine Watch-App benötigt immer eine iPhone App, die jeweils auf dem iPhone installiert ist.
+Native Anwendungen sind fest installiert auf der Uhr. Sie können unabhängig auf der Uhr gestartet werden. In einer native Anwendungen lassen sich komplexere Anwendungen realisieren, da der Nutzer durch viele Möglichkeiten hat der Eingaben und Interaktionen (\ref{ch:eingabe_interface} zu tätigen. Installiert werden die Apps vom iPhone aus. Eine Watch-App benötigt immer eine iPhone App, die jeweils auf dem iPhone installiert ist.
 
-Ein Glance ist ein Interface, auf dem die wichtigesten Informationen einer App übersichtlich dargestellt werden. Der Nutzer soll mit einem Blick die Informationen erkennen. Es ist keine Interaktion mit einem Glance möglich. Tippt der der Nutzer auf einen Glance öffnet sich die Zugehörige App. Glances sind optional zu einer App zu entwickeln.
+Ein Glance ist ein Interface, auf dem die wichtigsten Informationen einer App übersichtlich dargestellt werden. Der Nutzer soll mit einem Blick die Informationen erkennen. Es ist keine Interaktion mit einem Glance möglich. Tippt der der Nutzer auf einen Glance öffnet sich die Zugehörige App. Glances sind optional zu einer App zu entwickeln.
 
+Notifications oder auch auf deutsch Benachrichtigungen Informieren den Benutzer über Ereignisse. Diese Ereignisse können entweder zeitlich geplant sein, vom Betreten einer Ortskoordinate ausgelöst werden oder von einem Server auf das Gerät gepusht (Server sendet ein Ereignis, wie z.B. eine Nachricht) werden. Notification können Aktionen beinhalten. So kann eine Bestätigung einer Notification direkt geschehen, ohne dafür die dazugehörige Anwendung zu starten. Dies nennt man eine Actionable Notification \cite{Apple:2015devAw}.
 
-
+Es gibt zwei verschiede Arten von Notification, die beide die gleiche Funktion haben, jedoch mit unterschiedlichen Informationsgehalt für die Uhr angereichert werden. Zum einen die Standard Notification. Diese Notification wird vom iPhone gespiegelt, bietet also nicht mehr Informationen gegenüber der iPhone Notification. Es ist jedoch möglich, mit einer nativen Anwendung auch eine optimale Darstellung der Notification zu entwickeln. Diese Darstellung kann detaillierte Informationen beinhalten wie Bilder, Karten oder genauer Beschreibung der Information\cite{Apple:2015notif}.
 
 \subsection{Schniststellen}
 Bluetooth 4.0 und Wi-Fi 802.11b/g sind die Netzwerkschnistellen der Apple Watch. Dazu kommt noch ein NFC Chip, der jedoch nicht über eine API nutzbar ist und vorerst nur für Apple Pay, dem Apple eigenen Bezahldienst, vorgesehen ist\cite{RITCHIE:2015aa}. 
