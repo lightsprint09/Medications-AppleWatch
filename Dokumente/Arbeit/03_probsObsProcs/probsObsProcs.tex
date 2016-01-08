@@ -32,7 +32,7 @@ Die Apple Watch wurde als Erweiterung zum iPhone Entwickelt. Und so sind auch vi
 \label{ch:watch_software}
 Mit erscheinen der Uhr wurde auch das Betriebsystem in Version 1 ausgeliefert und dazu das \gls{sdk} Names WatchKit. Dies erlaubte es Entwicklern Anwendungen zu entwickeln, welche auf dem verbunden iPhone ausgeführt wurden. Diese führte zu schlechte Performance der Anwendungen und zu vollen Abhängigkeit zum iPhone.
 
-Im Juni 2015 veröffentlichte Apple die erste Vorabversion von watchOS 2.0, welches später im September 2015 für Endnutzer bereit gestellt wurde. watchOS biete mehr Unabhängigkeit für Anwendungen, da diese direkt auf der Uhr ausgeführt werden. Für Anwendugsentwickler gibt es drei Arten Informationen auf der Uhr dazustellen. Es Handelt sich um native Anwendugen (Apps), Glances, und Actionable Notifications \cite{Apple:2015devAw}.
+Im Juni 2015 veröffentlichte Apple die erste Vorabversion von watchOS 2.0, welches später im September 2015 für Endnutzer bereit gestellt wurde. watchOS biete mehr Unabhängigkeit für Anwendungen, da diese direkt auf der Uhr ausgeführt werden. Für Anwendugsentwickler gibt es drei Arten Informationen auf der Uhr dazustellen. Es Handelt sich um native Anwendungen (Apps), Glances, und Actionable Notifications \cite{Apple:2015devAw}.
 
 Native Anwendungen sind fest installiert auf der Uhr. Sie können unabhängig auf der Uhr gestartet werden. In einer native Anwendungen lassen sich komplexere Anwendungen realisieren, da der Nutzer durch viele Möglichkeiten hat der Eingaben und Interaktionen (\ref{ch:eingabe_interface} zu tätigen. Installiert werden die Apps vom iPhone aus. Eine Watch-App benötigt immer eine iPhone App, die jeweils auf dem iPhone installiert ist.
 
@@ -46,6 +46,7 @@ Es gibt zwei verschiede Arten von Notification, die beide die gleiche Funktion h
 Bluetooth 4.0 und Wi-Fi 802.11b/g sind die Netzwerkschnistellen der Apple Watch. Dazu kommt noch ein NFC Chip, der jedoch nicht über eine API nutzbar ist und vorerst nur für Apple Pay, dem Apple eigenen Bezahldienst, vorgesehen ist\cite{RITCHIE:2015aa}. 
 \subsection{Sensoren}
 Die Apple Watch besitzt einen Beschleunigungssensor und Gyroskop welche genaue Bewegungsdaten liefern. Ebenso ist ein optischer Herzschagsensor verbaut, der an der Unterseite der Uhr auf der Haut anliegt. Ein Mikrofon, welches für Spracheingabe genutzt werden kann ist auch vorhanden.
+\todo{Tapic Engine}
 \subsection{Eingabe Interfaces}
 \label{ch:eingabe_interface}
 Neben eines normalen Touchescreen führte Apple in der Uhr auch eine Eingabeart Names Force Touch ein. Diese Technologie erlaubt es der Uhr zu erkennen, wie fest der Nutzer auf das Display drückt. Dies ermöglicht eine Neue Art der Eingabe. Besonders bei einer kleinen Eingabefläche, wie die der Apple Watch, ist eine neue Interaktionsdimesion interessant, da es eine differenziertere Interaktion erlaubt. Leider ist eine mögliche Interaktion mit Force Touch optisch nicht zu erkennen, was eine klare Nutzerführung schwer macht.
@@ -58,5 +59,10 @@ Apple biete 6 verschiede Armbänder für die Apple Watch an (Stand Nov. 2015). Z
 Das in der günstigsten Version mitgelieferter Version (Sportarmband) verfügt über einen sehr komplizierten Verschlussmechanismus und ist deswegen weniger für Menschen geeignet, die über schwache sensomotorische Fähigkeiten verfügen. Es gibt auch Armbänder, die einen magnetischen Verschluss bieten, diese biete eine einfachen Handhabung, sind jedoch 3 mal so teuer, wie das Sportarmband.
 
 An der Verbindung zwischen Armband und Uhr ist eine nicht weiter spezifizierter Wartungsport verbaut. Dieser Anschluss könnte in Zukunft Armbänder ermöglichen, welche Informationen aus dem Armband an die Uhr weiterleiten.
+\subsection{Prototyping}
+Zum erstellen des frühen Prototyps wurden Papier-Prototypen erstellt. Durch die Nutzung dieser Werkzeug konnte schnell un iterativ gearbeitet werden. Da as diese Arbeit nur eine Person gearbeitet hat, bietet sich diese Methode an, da sie schnell zu erlernen ist, bzw. keine Vorkenntnisse voraussetzt und schnell Ergebnisse erzielt.
+\subsection{Evaluation}
+Die Evaluierung des Prototypen soll eine quantifiziertes Ergebnis liefern, anhand dessen Schwachstellen aufgezeigt werden sollen. Diese Schwachstellen sollen mit der nächsten Interation der Software ausgebessert werden.
 
+Hierfür werden 2 Fragebögen genutzt. Einmal AttrakDiff, welcher die subjektiv  Wahrnehmung der Bedienbarkeit und Aussehen des Prototypen erfragt. Es handelt sich um einen standardisierten Fragebogen und eine standardisierten Auswertungsmethode. Da dieser Frageboden keine Antworten über Funktionen des Prototyp gibt, ist es nötig einen zweiten Fragebogen zu erstellen. Dieser Fragebogen erfragt die Situation, also den Kontext in dem sich der Anwender befindet und die daraus Folgenden Ansprüche an den Prototypen. So sollen fehlende Funktionen oder Fehler in der Analyse aufdecken
 

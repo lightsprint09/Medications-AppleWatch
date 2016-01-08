@@ -1,13 +1,4 @@
-//
-//  WatchExecutionTimeService.swift
-//  Medications
-//
-//  Created by Lukas Schmidt on 12.10.15.
-//  Copyright © 2015 Lukas Schmidt. All rights reserved.
-//
 
-import WatchConnectivity
-import UIKit
 
 class WatchExecutionTimeService: NSObject, WCSessionManagerDelegate {
     private let fetchExecutionTimesEventName = "fetchExecutionTimes"
@@ -25,24 +16,7 @@ class WatchExecutionTimeService: NSObject, WCSessionManagerDelegate {
         super.init()
         self.sessionManager.registerDelegate(self)
     }
-    
-    func updateExecutionTime(executionTime: ExecutionTimeProtocol) {
-        let eventName = namespace + updateEventName
-        send([eventName: executionTime.codingData])
-    }
-    
-    private func send(message:[String : AnyObject]) {
-        if session.reachable {
-            session.sendMessage(message, replyHandler: nil, errorHandler: onError)
-        } else {
-            session.transferUserInfo(message)
-        }
-    }
-    
-    func onError(error:NSError) {
-       print(error)
-    }
-    
+  /.../
     func fetchExecutionTimesOfToday(callback:(Array<WatchExecutionTimeContext>)->()) {
         let eventName = namespace + getTodayExecutionTimeEventName
         session.sendMessage([eventName: ""], replyHandler: {data in
@@ -50,16 +24,7 @@ class WatchExecutionTimeService: NSObject, WCSessionManagerDelegate {
             dispatch_async(dispatch_get_main_queue(), {
                 callback(contexts)
             })
-        }, errorHandler: onError)
-    }
-    
-    func executionTimesContextsFromDict(dictionary:[String: AnyObject]) ->[WatchExecutionTimeContext]? {
-        guard let list = dictionary[fetchExecutionTimesEventName] as? Array<Dictionary<String, NSObject>> else { return nil }
-    
-        return list.map({(dict) in
-            let executionTime = WatchExecutionTime(watchtData: dict)
-            return WatchExecutionTimeContext(executionTimeService: self, executionTime: executionTime)
-        })
+            }, errorHandler: onError)
     }
     
     func session(session: WCSession, didReceiveMessage message: [String : AnyObject]) {

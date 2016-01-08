@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15C31f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="osP-VC-BkV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="osP-VC-BkV">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -13,7 +13,6 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="DdC-iz-mvy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.13333333333333333" green="0.062745098039215685" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="selectedImageTintColor" red="0.62745098040000002" green="0.90588235289999997" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -34,7 +33,6 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="32" sectionFooterHeight="28" id="v2S-ql-HY4">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="medication-cell" id="eDs-SG-YpR" customClass="MedicationTableCell" customModule="Medications" customModuleProvider="target">
@@ -46,7 +44,6 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aspirin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCz-Qz-OTI">
                                             <rect key="frame" x="62" y="8" width="160" height="21"/>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="160" id="L8w-BE-cCX"/>
                                             </constraints>
@@ -56,7 +53,6 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 Tabletten" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7kj-xQ-vku">
                                             <rect key="frame" x="62" y="34" width="86.5" height="21"/>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="uL8-DM-DeO"/>
                                             </constraints>
@@ -69,7 +65,6 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:45" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ss-jP-5Bh">
                                                     <rect key="frame" x="0.0" y="0.0" width="70" height="22"/>
-                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="nEh-L7-yId"/>
                                                     </constraints>
@@ -79,7 +74,6 @@
                                                 </label>
                                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+120" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6Z-6r-kGV" customClass="RoundLabel" customModule="Medications" customModuleProvider="target">
                                                     <rect key="frame" x="70" y="0.0" width="0.0" height="22"/>
-                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="3eM-Xe-xzV"/>
                                                         <constraint firstAttribute="height" constant="22" id="DpU-WR-IeN"/>
@@ -100,11 +94,9 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                             </subviews>
-                                            <animations/>
                                         </stackView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LvW-tm-rwK" customClass="UIImageView">
                                             <rect key="frame" x="8" y="5" width="54" height="54"/>
-                                            <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="54" id="20h-t3-dpg"/>
@@ -112,7 +104,6 @@
                                             </constraints>
                                         </view>
                                     </subviews>
-                                    <animations/>
                                     <constraints>
                                         <constraint firstItem="7kj-xQ-vku" firstAttribute="leading" secondItem="LvW-tm-rwK" secondAttribute="trailing" id="2oA-Gh-gbc"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Cjg-Dw-za2" secondAttribute="trailing" id="H5t-YW-bQA"/>
@@ -126,7 +117,6 @@
                                         <constraint firstItem="GCz-Qz-OTI" firstAttribute="top" secondItem="ajH-wf-Pba" secondAttribute="topMargin" id="sb5-9V-oeg"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <animations/>
                                 <connections>
                                     <outlet property="delayView" destination="P6Z-6r-kGV" id="3dh-i8-s5V"/>
                                     <outlet property="drugImageView" destination="LvW-tm-rwK" id="HRO-ez-k3s"/>
@@ -165,7 +155,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="l57-rX-Hx7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="jeK-9w-xN6" kind="relationship" relationship="rootViewController" id="ICZ-yx-ppZ"/>
@@ -189,7 +178,6 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zeg-A1-OCe">
                                 <rect key="frame" x="0.0" y="64" width="600" height="103"/>
-                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="103" id="xqT-iF-2e7"/>
@@ -210,7 +198,6 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LWj-eO-2Hj" customClass="UIImageView">
                                                     <rect key="frame" x="26" y="8" width="60" height="60"/>
-                                                    <animations/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="D8T-a2-rU1"/>
@@ -219,14 +206,12 @@
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jw-Cb-Bgr">
                                                     <rect key="frame" x="0.0" y="74" width="113" height="20.5"/>
-                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glyphicons-194-circle-ok" translatesAutoresizingMaskIntoConstraints="NO" id="aQt-LW-D6j">
                                                     <rect key="frame" x="67" y="-4" width="50" height="50"/>
-                                                    <animations/>
                                                     <color key="tintColor" red="0.1960784314" green="0.74117647060000003" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="IAH-hu-WGf"/>
@@ -234,10 +219,8 @@
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
-                                            <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailingMargin" secondItem="aQt-LW-D6j" secondAttribute="trailing" constant="-12" id="4n7-nM-hxv"/>
@@ -262,7 +245,6 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRK-Vy-ejA">
                                             <rect key="frame" x="0.0" y="8" width="113" height="67"/>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="67" id="BWE-a7-KHY"/>
                                             </constraints>
@@ -272,7 +254,6 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Neues Medikament" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kD-R8-ob2">
                                             <rect key="frame" x="0.0" y="55" width="113" height="42"/>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="42" id="0mY-Kt-ntZ"/>
                                             </constraints>
@@ -281,7 +262,6 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <animations/>
                                     <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <gestureRecognizers/>
                                     <constraints>
@@ -305,7 +285,6 @@
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rMo-MP-Mbc">
                                         <rect key="frame" x="0.0" y="0.0" width="584" height="29"/>
-                                        <animations/>
                                         <segments>
                                             <segment title="Täglich"/>
                                             <segment title="Wöchentlich"/>
@@ -322,7 +301,6 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="71h-M5-NOu" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="78" height="0.0"/>
-                                                <animations/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                 <state key="normal" title="Mo">
@@ -345,7 +323,6 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XmA-U0-p98" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
                                                 <rect key="frame" x="85" y="0.0" width="78" height="0.0"/>
-                                                <animations/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                 <state key="normal" title="Die">
@@ -368,7 +345,6 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WLC-ib-zqp" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
                                                 <rect key="frame" x="169" y="0.0" width="78" height="0.0"/>
-                                                <animations/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                 <state key="normal" title="Mi">
@@ -391,7 +367,6 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3L-Jc-R4E" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
                                                 <rect key="frame" x="254" y="0.0" width="77" height="0.0"/>
-                                                <animations/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                 <state key="normal" title="Do">
@@ -414,7 +389,6 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gyS-6E-fM9" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
                                                 <rect key="frame" x="338" y="0.0" width="78" height="0.0"/>
-                                                <animations/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                 <state key="normal" title="Fr">
@@ -437,7 +411,6 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Yd-FI-waO" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
                                                 <rect key="frame" x="422" y="0.0" width="78" height="0.0"/>
-                                                <animations/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                 <state key="normal" title="Sa">
@@ -460,7 +433,6 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aO9-fO-OkD" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
                                                 <rect key="frame" x="507" y="0.0" width="78" height="0.0"/>
-                                                <animations/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                 <state key="normal" title="So">
@@ -482,10 +454,8 @@
                                                 </variation>
                                             </button>
                                         </subviews>
-                                        <animations/>
                                     </stackView>
                                 </subviews>
-                                <animations/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WxF-s9-qZq">
                                 <rect key="frame" x="8" y="219" width="572" height="34"/>
@@ -495,14 +465,12 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zeit und Dosierung" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WhM-Ha-yVa">
                                                 <rect key="frame" x="0.0" y="0.0" width="480" height="34"/>
-                                                <animations/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocJ-Xn-W7C">
                                                 <rect key="frame" x="492" y="0.0" width="34" height="34"/>
-                                                <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="34" id="ArQ-ts-Woa"/>
                                                     <constraint firstAttribute="width" constant="34" id="xbh-gy-7Zx"/>
@@ -515,7 +483,6 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Xm-9W-Dgo">
                                                 <rect key="frame" x="538" y="0.0" width="34" height="34"/>
-                                                <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="34" id="NEf-EW-5mc"/>
                                                     <constraint firstAttribute="width" constant="34" id="f8H-Bs-1aN"/>
@@ -527,14 +494,11 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <animations/>
                                     </stackView>
                                 </subviews>
-                                <animations/>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8so-sd-lCE">
                                 <rect key="frame" x="8" y="250" width="584" height="286"/>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="new-medication-cell" id="2YA-j2-Fpb" customClass="ExecutionTimeTableViewCell" customModule="Medications" customModuleProvider="target">
@@ -546,27 +510,23 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glyphicons-231-moon-color" translatesAutoresizingMaskIntoConstraints="NO" id="mcE-KC-Jh7">
                                                     <rect key="frame" x="0.0" y="0.0" width="43" height="44"/>
-                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="43" id="Ygc-pT-zA3"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:15" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmr-h0-YZr">
                                                     <rect key="frame" x="51" y="11" width="40" height="20.5"/>
-                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Nm-dx-Emc">
                                                     <rect key="frame" x="119" y="11" width="42" height="20.5"/>
-                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="7Nm-dx-Emc" firstAttribute="leading" secondItem="tmr-h0-YZr" secondAttribute="trailing" constant="28" id="H11-4Q-dq1"/>
                                                 <constraint firstItem="mcE-KC-Jh7" firstAttribute="leading" secondItem="tcZ-Uu-c28" secondAttribute="leading" id="M4b-yD-mgR"/>
@@ -577,7 +537,6 @@
                                                 <constraint firstItem="tmr-h0-YZr" firstAttribute="centerY" secondItem="tcZ-Uu-c28" secondAttribute="centerY" id="vmt-TT-5md"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <animations/>
                                         <connections>
                                             <outlet property="dayTimeImageView" destination="mcE-KC-Jh7" id="HHs-Rv-u5g"/>
                                             <outlet property="doseLabel" destination="7Nm-dx-Emc" id="Qke-Gs-sFN"/>
@@ -587,7 +546,6 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="2Z1-Ab-4xh" secondAttribute="trailing" constant="-12" id="5vD-CA-cxj"/>
@@ -643,7 +601,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qe7-xR-mHg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="bAE-nu-90z" kind="relationship" relationship="rootViewController" id="MeI-Vb-V7b"/>
@@ -676,7 +633,6 @@
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glyphicons-46-calendar" translatesAutoresizingMaskIntoConstraints="NO" id="JbG-WF-BYE">
                                                         <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
-                                                        <animations/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="32" id="NtI-ex-jaN"/>
                                                             <constraint firstAttribute="width" constant="32" id="YMK-8t-xQx"/>
@@ -684,25 +640,21 @@
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rhytmus" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfc-Q0-etK">
                                                         <rect key="frame" x="44" y="0.0" width="540" height="32"/>
-                                                        <animations/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                         <color key="textColor" red="0.20000000000000001" green="0.094117647060000004" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <animations/>
                                                 <color key="backgroundColor" red="0.20000000000000001" green="0.094117647060000004" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                             </stackView>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9mv-KO-xd1">
                                                 <rect key="frame" x="0.0" y="38" width="584" height="29"/>
-                                                <animations/>
                                                 <segments>
                                                     <segment title="Täglich"/>
                                                     <segment title="Wöchentlich"/>
                                                 </segments>
                                             </segmentedControl>
                                         </subviews>
-                                        <animations/>
                                         <color key="backgroundColor" red="0.89019607840000003" green="0.2470588235" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="7MD-QP-mbi">
@@ -713,7 +665,6 @@
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glyphicons-54-alarm" translatesAutoresizingMaskIntoConstraints="NO" id="6Av-T8-4ak">
                                                         <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
-                                                        <animations/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="32" id="DHq-Wx-rGk"/>
                                                             <constraint firstAttribute="height" constant="32" id="csR-V9-9CX"/>
@@ -721,13 +672,11 @@
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zeiten" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6CF-pe-FUr">
                                                         <rect key="frame" x="44" y="0.0" width="540" height="32"/>
-                                                        <animations/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                         <color key="textColor" red="0.20000000000000001" green="0.094117647060000004" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <animations/>
                                                 <color key="backgroundColor" red="0.20000000000000001" green="0.094117647060000004" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="7NN-ZO-sLf">
@@ -741,7 +690,6 @@
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8r-O6-M81" customClass="RoundLabel" customModule="Medications" customModuleProvider="target">
                                                                         <rect key="frame" x="52" y="1" width="42" height="21"/>
-                                                                        <animations/>
                                                                         <color key="backgroundColor" red="0.20000000000000001" green="0.094117647060000004" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="40" id="mrg-vO-mBS"/>
@@ -756,7 +704,6 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                 </subviews>
-                                                                <animations/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="22" id="RXJ-3v-3sn"/>
@@ -769,7 +716,6 @@
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56x-11-uYG" customClass="RoundLabel" customModule="Medications" customModuleProvider="target">
                                                                         <rect key="frame" x="52" y="1" width="42" height="21"/>
-                                                                        <animations/>
                                                                         <color key="backgroundColor" red="0.20000000000000001" green="0.094117647060000004" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="40" id="Gbi-xb-4lo"/>
@@ -784,7 +730,6 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                 </subviews>
-                                                                <animations/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstItem="56x-11-uYG" firstAttribute="centerY" secondItem="qLZ-xl-lC3" secondAttribute="centerY" id="2bK-Fa-QPC"/>
@@ -797,7 +742,6 @@
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7j-hf-xNP" customClass="RoundLabel" customModule="Medications" customModuleProvider="target">
                                                                         <rect key="frame" x="52" y="1" width="42" height="21"/>
-                                                                        <animations/>
                                                                         <color key="backgroundColor" red="0.20000000000000001" green="0.094117647060000004" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="40" id="nci-eZ-HFH"/>
@@ -812,7 +756,6 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                 </subviews>
-                                                                <animations/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstItem="A7j-hf-xNP" firstAttribute="centerY" secondItem="y6J-LO-dbE" secondAttribute="centerY" id="bWB-eY-AvN"/>
@@ -825,7 +768,6 @@
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7P-nS-gBn" customClass="RoundLabel" customModule="Medications" customModuleProvider="target">
                                                                         <rect key="frame" x="52" y="1" width="42" height="21"/>
-                                                                        <animations/>
                                                                         <color key="backgroundColor" red="0.20000000000000001" green="0.094117647060000004" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="40" id="D2u-hB-BM1"/>
@@ -840,7 +782,6 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                 </subviews>
-                                                                <animations/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstItem="u7P-nS-gBn" firstAttribute="centerY" secondItem="Pbu-VZ-ujV" secondAttribute="centerY" id="1Gi-VW-1uT"/>
@@ -849,11 +790,9 @@
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
-                                                        <animations/>
                                                     </stackView>
                                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" translatesAutoresizingMaskIntoConstraints="NO" id="vxA-za-gXn">
                                                         <rect key="frame" x="0.0" y="24" width="584" height="29"/>
-                                                        <animations/>
                                                         <segments>
                                                             <segment title="Morgen"/>
                                                             <segment title="Mittag"/>
@@ -865,11 +804,9 @@
                                                         </connections>
                                                     </segmentedControl>
                                                 </subviews>
-                                                <animations/>
                                             </stackView>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="Mhu-Eb-yNO">
                                                 <rect key="frame" x="0.0" y="96" width="584" height="50"/>
-                                                <animations/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="sMs-qV-dLv"/>
@@ -885,7 +822,6 @@
                                                 </connections>
                                             </datePicker>
                                         </subviews>
-                                        <animations/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="A2R-K0-c0v">
                                         <rect key="frame" x="0.0" y="254" width="584" height="116"/>
@@ -895,7 +831,6 @@
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glyphicons-493-medicine" translatesAutoresizingMaskIntoConstraints="NO" id="W7n-0Q-dtx">
                                                         <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
-                                                        <animations/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="32" id="ZRy-eI-9Zf"/>
                                                             <constraint firstAttribute="width" constant="32" id="trL-b4-LRe"/>
@@ -903,13 +838,11 @@
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dosierung" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EvC-DF-3kC">
                                                         <rect key="frame" x="44" y="0.0" width="540" height="32"/>
-                                                        <animations/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                         <color key="textColor" red="0.20000000000000001" green="0.094117647060000004" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <animations/>
                                                 <color key="backgroundColor" red="0.20000000000000001" green="0.094117647060000004" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="JAY-GE-UoF">
@@ -917,7 +850,6 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dM1-CY-QBl" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="44"/>
-                                                        <animations/>
                                                         <color key="backgroundColor" red="0.86274509803921573" green="0.18431372549019609" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="44" id="B1K-RN-WdR"/>
@@ -938,7 +870,6 @@
                                                     </button>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dosierung" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RWH-EV-NiC">
                                                         <rect key="frame" x="94" y="3" width="96" height="38"/>
-                                                        <animations/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="38" id="lng-15-srO"/>
                                                         </constraints>
@@ -947,7 +878,6 @@
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oGG-A8-vZV" customClass="RoundCornerButton" customModule="Medications" customModuleProvider="target">
                                                         <rect key="frame" x="204" y="0.0" width="80" height="44"/>
-                                                        <animations/>
                                                         <color key="backgroundColor" red="0.19607843137254902" green="0.74117647058823533" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="80" id="CuQ-lf-sNx"/>
@@ -967,11 +897,9 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <animations/>
                                             </stackView>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="QZB-63-eDz">
                                                 <rect key="frame" x="219" y="88" width="147" height="29"/>
-                                                <animations/>
                                                 <segments>
                                                     <segment title="½"/>
                                                     <segment title="1"/>
@@ -983,16 +911,13 @@
                                                 </connections>
                                             </segmentedControl>
                                         </subviews>
-                                        <animations/>
                                         <constraints>
                                             <constraint firstItem="Lsc-ND-qQL" firstAttribute="width" secondItem="A2R-K0-c0v" secondAttribute="width" id="eJ9-mC-JDu"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
-                                <animations/>
                             </stackView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="UCf-sX-EhY" firstAttribute="leading" secondItem="fYt-lf-nop" secondAttribute="leadingMargin" constant="-12" id="PSF-Ja-90p"/>
@@ -1032,7 +957,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZqJ-3v-bFI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="LQP-ve-NUB" kind="relationship" relationship="rootViewController" id="Bfn-Pt-O08"/>
@@ -1049,7 +973,6 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" id="KH4-8z-boE">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="drug-cell" rowHeight="68" id="X8W-NH-CIx" customClass="DrugTableViewCell" customModule="Medications" customModuleProvider="target">
@@ -1061,7 +984,6 @@
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZPC-Ni-hT3" userLabel="Drug Image View" customClass="UIImageView">
                                             <rect key="frame" x="8" y="7" width="54" height="54"/>
-                                            <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="54" id="0BE-tI-A5A"/>
@@ -1087,14 +1009,12 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aspirin" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Uy-Ru-dFl">
                                                     <rect key="frame" x="0.0" y="0.0" width="53" height="32"/>
-                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wirkstoff: Acetylsalicylsäure" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufz-7U-PnU">
                                                     <rect key="frame" x="0.0" y="20" width="193.5" height="32"/>
-                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -1103,7 +1023,6 @@
                                                     </variation>
                                                 </label>
                                             </subviews>
-                                            <animations/>
                                             <variation key="widthClass=compact" fixedFrame="YES">
                                                 <rect key="frame" x="84" y="0.0" width="267" height="60"/>
                                             </variation>
@@ -1112,7 +1031,6 @@
                                             </variation>
                                         </stackView>
                                     </subviews>
-                                    <animations/>
                                     <constraints>
                                         <constraint firstItem="dTR-Or-4st" firstAttribute="leading" secondItem="ZPC-Ni-hT3" secondAttribute="trailing" constant="8" id="7pM-GR-nsm"/>
                                         <constraint firstItem="ZPC-Ni-hT3" firstAttribute="centerY" secondItem="kI9-xB-Kr0" secondAttribute="centerY" id="TNX-af-fgi"/>
@@ -1122,7 +1040,6 @@
                                         <constraint firstAttribute="leadingMargin" secondItem="ZPC-Ni-hT3" secondAttribute="leading" id="mld-a3-b2X"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <animations/>
                                 <connections>
                                     <outlet property="activeSubstanceLabel" destination="ufz-7U-PnU" id="zbt-KF-QoZ"/>
                                     <outlet property="drugImageView" destination="ZPC-Ni-hT3" id="E5S-R8-eMU"/>
@@ -1157,7 +1074,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="yfW-Cp-hNH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="Mg7-DT-c0Y" kind="relationship" relationship="rootViewController" id="jDU-qz-Rvk"/>
@@ -1187,13 +1103,11 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oP3-mT-Iua">
                                                 <rect key="frame" x="21.5" y="13.5" width="17" height="32.5"/>
-                                                <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.094117647060000004" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="highlightedColor" red="0.20000000000000001" green="0.094117647058823528" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
                                             </label>
                                         </subviews>
-                                        <animations/>
                                         <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="oP3-mT-Iua" firstAttribute="centerY" secondItem="xwG-vN-qKO" secondAttribute="centerY" id="HWS-VT-1jZ"/>
@@ -1215,7 +1129,6 @@
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pill" translatesAutoresizingMaskIntoConstraints="NO" id="vMP-Wg-Xsq" customClass="RoundUIImageView" customModule="Medications" customModuleProvider="target">
                                         <rect key="frame" x="28.5" y="0.0" width="60" height="60"/>
-                                        <animations/>
                                         <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" red="0.66645901419999998" green="0.18823529410000001" blue="0.27058823529999998" alpha="0.72999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -1236,14 +1149,12 @@
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Yu-Vd-Na0">
                                         <rect key="frame" x="0.0" y="60" width="117" height="30"/>
-                                        <animations/>
                                         <state key="normal" title="Form hinzufügen"/>
                                         <connections>
                                             <segue destination="r0L-5t-HIS" kind="presentation" id="ggM-qI-lm8"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="117" id="DYj-an-fvm"/>
                                     <constraint firstItem="1Yu-Vd-Na0" firstAttribute="width" secondItem="pBa-op-S8I" secondAttribute="width" id="nQ7-NQ-BV2"/>
@@ -1259,7 +1170,6 @@
                             </stackView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="7f6-24-ujT">
                                 <rect key="frame" x="149" y="87" width="419" height="30"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
                                 <connections>
@@ -1274,14 +1184,12 @@
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glyphicons-12-camera" translatesAutoresizingMaskIntoConstraints="NO" id="IDI-uo-7jU">
                                                 <rect key="frame" x="234" y="1" width="48" height="48"/>
-                                                <animations/>
                                                 <variation key="widthClass=compact" fixedFrame="YES">
                                                     <rect key="frame" x="134" y="0.0" width="48" height="48"/>
                                                 </variation>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Füge ein Bild des Medikaments oder der Verpackung hinzu" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05q-Tt-sXR">
                                                 <rect key="frame" x="34" y="49" width="449" height="21"/>
-                                                <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1290,11 +1198,9 @@
                                                 </variation>
                                             </label>
                                         </subviews>
-                                        <animations/>
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xvD-Ab-Taz">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="420"/>
-                                        <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
@@ -1311,15 +1217,12 @@
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bild" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pe-Sk-dbg">
                                                                 <rect key="frame" x="0.0" y="0.0" width="29" height="20.5"/>
-                                                                <animations/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
-                                                        <animations/>
                                                     </view>
-                                                    <animations/>
                                                     <vibrancyEffect>
                                                         <blurEffect style="light"/>
                                                     </vibrancyEffect>
@@ -1329,7 +1232,6 @@
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDw-eI-p4r">
                                                             <rect key="frame" x="0.0" y="0.0" width="560" height="41"/>
-                                                            <animations/>
                                                             <state key="normal" title="Foto hinzufügen"/>
                                                             <variation key="widthClass=compact" fixedFrame="YES">
                                                                 <rect key="frame" x="0.0" y="0.0" width="360" height="41"/>
@@ -1346,7 +1248,6 @@
                                                         </button>
                                                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C73-Pd-6ez">
                                                             <rect key="frame" x="560" y="0.0" width="0.0" height="41"/>
-                                                            <animations/>
                                                             <state key="normal" title="Foto entfernen">
                                                                 <color key="titleColor" red="0.81568627449999997" green="0.0078431372550000003" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
@@ -1361,10 +1262,8 @@
                                                             </variation>
                                                         </button>
                                                     </subviews>
-                                                    <animations/>
                                                 </stackView>
                                             </subviews>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="6LH-L0-TZW" firstAttribute="top" secondItem="bZk-Wy-2XJ" secondAttribute="top" constant="3" id="Dp4-vE-bZf"/>
                                                 <constraint firstItem="6LH-L0-TZW" firstAttribute="leading" secondItem="bZk-Wy-2XJ" secondAttribute="leading" id="K0J-IR-5J1"/>
@@ -1372,14 +1271,12 @@
                                                 <constraint firstAttribute="trailing" secondItem="6LH-L0-TZW" secondAttribute="trailing" id="wbd-ZJ-Kpi"/>
                                             </constraints>
                                         </view>
-                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="2jT-Ot-MUx"/>
                                         </constraints>
                                         <blurEffect style="light"/>
                                     </visualEffectView>
                                 </subviews>
-                                <animations/>
                                 <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="uAt-a3-Asf" secondAttribute="trailing" id="3NC-hR-Xvn"/>
@@ -1411,11 +1308,9 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EOE-3S-fUW">
                                 <rect key="frame" x="192" y="613" width="216" height="30"/>
-                                <animations/>
                                 <state key="normal" title="Mehr Informationen hinzufügen"/>
                             </button>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
@@ -1477,7 +1372,6 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bc9-fT-VQr" customClass="DrugCustomaziationView" customModule="Medications" customModuleProvider="target">
                                         <rect key="frame" x="45" y="0.0" width="70" height="70"/>
-                                        <animations/>
                                         <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="9gU-w4-Avl"/>
@@ -1497,20 +1391,17 @@
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywb-nr-jeX">
                                         <rect key="frame" x="59" y="78" width="42" height="20.5"/>
-                                        <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="n2F-gE-lWl"/>
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ubl-g7-D9e" customClass="RoundUIImageView" customModule="Medications" customModuleProvider="target">
                                 <rect key="frame" x="20" y="170" width="560" height="420"/>
-                                <animations/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1523,7 +1414,6 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="Ubl-g7-D9e" secondAttribute="leading" id="03f-3N-Dx7"/>
@@ -1557,7 +1447,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="sW3-6k-ng0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="fSJ-vm-eCx" kind="relationship" relationship="rootViewController" id="XZX-Wu-ctM"/>
@@ -1584,7 +1473,6 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Form wählen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hb9-pd-NY9">
                                         <rect key="frame" x="12" y="0.0" width="576" height="21"/>
-                                        <animations/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1594,7 +1482,6 @@
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ag4-hF-y8m">
                                         <rect key="frame" x="0.0" y="35" width="600" height="90"/>
-                                        <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="90" id="88p-2b-MuM"/>
@@ -1615,7 +1502,6 @@
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hx9-ki-5cZ" customClass="DrugCustomaziationView" customModule="Medications" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
-                                                            <animations/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="pillBaseColor">
@@ -1624,10 +1510,8 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                     </subviews>
-                                                    <animations/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
-                                                <animations/>
                                                 <constraints>
                                                     <constraint firstItem="Hx9-ki-5cZ" firstAttribute="leading" secondItem="TTs-B6-6RH" secondAttribute="leadingMargin" constant="-8" id="7s7-2W-x1b"/>
                                                     <constraint firstItem="Hx9-ki-5cZ" firstAttribute="top" secondItem="TTs-B6-6RH" secondAttribute="topMargin" constant="-8" id="d4v-px-hgX"/>
@@ -1653,7 +1537,6 @@
                                     </collectionView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZAZ-kc-Mmf">
                                         <rect key="frame" x="12" y="139" width="576" height="1"/>
-                                        <animations/>
                                         <color key="backgroundColor" red="0.20000000000000001" green="0.094117647060000004" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="4Rl-QV-PQx"/>
@@ -1661,7 +1544,6 @@
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Farbe wählen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WgM-kE-J7e">
                                         <rect key="frame" x="12" y="154" width="576" height="21"/>
-                                        <animations/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1674,7 +1556,6 @@
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="wLU-j4-VLL" customClass="RGBColorSlider">
                                                 <rect key="frame" x="-2" y="0.0" width="544" height="31"/>
-                                                <animations/>
                                                 <variation key="widthClass=compact" fixedFrame="YES">
                                                     <rect key="frame" x="-2" y="0.0" width="344" height="31"/>
                                                 </variation>
@@ -1687,7 +1568,6 @@
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="F0E-dP-rJj" customClass="RGBColorSlider">
                                                 <rect key="frame" x="-2" y="44" width="544" height="31"/>
-                                                <animations/>
                                                 <variation key="widthClass=compact" fixedFrame="YES">
                                                     <rect key="frame" x="-2" y="40" width="344" height="31"/>
                                                 </variation>
@@ -1700,7 +1580,6 @@
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fWZ-wG-6we" customClass="RGBColorSlider">
                                                 <rect key="frame" x="-2" y="88" width="544" height="31"/>
-                                                <animations/>
                                                 <variation key="widthClass=compact" fixedFrame="YES">
                                                     <rect key="frame" x="-2" y="80" width="344" height="31"/>
                                                 </variation>
@@ -1713,7 +1592,6 @@
                                                 </connections>
                                             </slider>
                                         </subviews>
-                                        <animations/>
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="30" y="179" width="340" height="110"/>
                                         </variation>
@@ -1722,7 +1600,6 @@
                                         </variation>
                                     </stackView>
                                 </subviews>
-                                <animations/>
                                 <constraints>
                                     <constraint firstItem="sXM-71-0Iu" firstAttribute="leading" secondItem="R6K-eX-3q9" secondAttribute="leading" constant="30" id="7CV-Wx-r9i"/>
                                     <constraint firstItem="hb9-pd-NY9" firstAttribute="leading" secondItem="R6K-eX-3q9" secondAttribute="leading" constant="12" id="7Q6-tI-zbH"/>
@@ -1736,7 +1613,6 @@
                             </stackView>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H8g-aO-Pmw" customClass="DrugCustomaziationView" customModule="Medications" customModuleProvider="target">
                                 <rect key="frame" x="255" y="76" width="90" height="90"/>
-                                <animations/>
                                 <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="lep-yj-zUx"/>
@@ -1758,7 +1634,6 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="R6K-eX-3q9" secondAttribute="trailing" constant="-20" id="AoI-KQ-evk"/>
@@ -1795,7 +1670,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Lug-2q-xIi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="A4L-r0-d5w" kind="relationship" relationship="rootViewController" id="tAc-FE-JPF"/>
