@@ -31,12 +31,16 @@ class WatchExecutionTime: NSObject, ExecutionTimeProtocol {
     
     var codingData: [String: NSObject] {
         var dict = iphoneData
-        if let executionDate = executionDate {
-            dict[notification_executionDateKey] = executionDate
-        }
-        if let secondsMoved = secondsMoved {
-            dict[notification_secondsMovedKey] = secondsMoved
-        }
+        dict[notification_executionDateKey] = executionDate
+        dict[notification_secondsMovedKey] = secondsMoved
+//        if let executionDate = executionDate {
+//            dict[notification_executionDateKey] = executionDate
+//        }else {
+//           dict[notification_executionDateKey] = nil
+//        }
+//        if let secondsMoved = secondsMoved {
+//            
+//        }
         return dict
     }
     

@@ -26,7 +26,6 @@ class MedicationDetailsController: WKInterfaceController, ExecutionTimesDisplayD
         guard let context = context as? WatchExecutionTimeContext else { return }
         executionTimeContext = context
         displayExecutimeDetails(context.executionTime)
-        
     }
     
     override func willActivate() {
@@ -50,10 +49,8 @@ class MedicationDetailsController: WKInterfaceController, ExecutionTimesDisplayD
     
     func animateTakenIcon() {
         self.checkTakenImage.setWidth(5)
-        self.checkTakenImage.setHeight(5)
         animateWithDuration(0.3, animations: {
             self.checkTakenImage.setWidth(26)
-            self.checkTakenImage.setHeight(26)
         })
     }
     
