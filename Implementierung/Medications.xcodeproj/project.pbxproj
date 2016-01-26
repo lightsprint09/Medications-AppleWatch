@@ -93,6 +93,12 @@
 		946B67EA1C57B33E0062FEC0 /* NSPersistentStoreCoordinator+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946B67DC1C57B33E0062FEC0 /* NSPersistentStoreCoordinator+Extensions.swift */; };
 		946B67EB1C57B33E0062FEC0 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946B67DD1C57B33E0062FEC0 /* Utilities.swift */; };
 		946B67EC1C57B33E0062FEC0 /* ValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946B67DE1C57B33E0062FEC0 /* ValueTransformer.swift */; };
+		946B67F11C57B7F50062FEC0 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946B67EE1C57B7F50062FEC0 /* DataProvider.swift */; };
+		946B67F21C57B7F50062FEC0 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946B67EF1C57B7F50062FEC0 /* DataSource.swift */; };
+		946B67F31C57B7F50062FEC0 /* FetchedResultsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946B67F01C57B7F50062FEC0 /* FetchedResultsDataProvider.swift */; };
+		946B67F71C57B8700062FEC0 /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946B67F51C57B8700062FEC0 /* CollectionViewDataSource.swift */; };
+		946B67F81C57B8700062FEC0 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946B67F61C57B8700062FEC0 /* TableViewDataSource.swift */; };
+		946B67FA1C57B89F0062FEC0 /* ConfigurableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946B67F91C57B89F0062FEC0 /* ConfigurableCell.swift */; };
 		946C04D91B7BD8FA00D93D10 /* DrugRenderEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E6081B7A4B0200B0CD7D /* DrugRenderEnum.swift */; };
 		946C04DA1B7BD91000D93D10 /* UIColorPainCodeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E6051B7A3C3200B0CD7D /* UIColorPainCodeExtension.swift */; };
 		946F7D461BDCF2D5008404AC /* ChoseOwnDelayTimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946F7D451BDCF2D5008404AC /* ChoseOwnDelayTimeController.swift */; };
@@ -237,8 +243,8 @@
 		94272C471BDA3098004EEB70 /* ExecutionTimesDisplayDetailsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecutionTimesDisplayDetailsProtocol.swift; sourceTree = "<group>"; };
 		942AD6981BF3DCB000EE9A9A /* BigMedicationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigMedicationCell.swift; sourceTree = "<group>"; };
 		942D38ED1B787EB200553C79 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataStack.swift; path = ../model/CoreDataStack.swift; sourceTree = "<group>"; };
-		942D38F61B78813E00553C79 /* ManagedObjectContextSettable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectContextSettable.swift; sourceTree = "<group>"; };
-		942D38FA1B78855600553C79 /* UITabBarViewControllerCoreDataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBarViewControllerCoreDataExtension.swift; sourceTree = "<group>"; };
+		942D38F61B78813E00553C79 /* ManagedObjectContextSettable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManagedObjectContextSettable.swift; path = ../Medications/coreData/ManagedObjectContextSettable.swift; sourceTree = "<group>"; };
+		942D38FA1B78855600553C79 /* UITabBarViewControllerCoreDataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITabBarViewControllerCoreDataExtension.swift; path = ../Medications/coreData/UITabBarViewControllerCoreDataExtension.swift; sourceTree = "<group>"; };
 		942D38FD1B788B8000553C79 /* RoundCornerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundCornerButton.swift; sourceTree = "<group>"; };
 		942D38FE1B788B8000553C79 /* RoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		942D38FF1B788B8000553C79 /* RoundLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundLabel.swift; sourceTree = "<group>"; };
@@ -306,6 +312,12 @@
 		946B67DC1C57B33E0062FEC0 /* NSPersistentStoreCoordinator+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSPersistentStoreCoordinator+Extensions.swift"; sourceTree = "<group>"; };
 		946B67DD1C57B33E0062FEC0 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		946B67DE1C57B33E0062FEC0 /* ValueTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueTransformer.swift; sourceTree = "<group>"; };
+		946B67EE1C57B7F50062FEC0 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		946B67EF1C57B7F50062FEC0 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		946B67F01C57B7F50062FEC0 /* FetchedResultsDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsDataProvider.swift; sourceTree = "<group>"; };
+		946B67F51C57B8700062FEC0 /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSource.swift; sourceTree = "<group>"; };
+		946B67F61C57B8700062FEC0 /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
+		946B67F91C57B89F0062FEC0 /* ConfigurableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurableCell.swift; sourceTree = "<group>"; };
 		946F7D451BDCF2D5008404AC /* ChoseOwnDelayTimeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoseOwnDelayTimeController.swift; sourceTree = "<group>"; };
 		9472A47F1BE657D50044D696 /* WatchExecutionTimeContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchExecutionTimeContext.swift; sourceTree = "<group>"; };
 		9472A4851BE6870F0044D696 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -321,7 +333,7 @@
 		94CA61A01B7F496500FF27F0 /* DrugSettable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugSettable.swift; sourceTree = "<group>"; };
 		94D1E5EE1B78EAC700B0CD7D /* NSManagedObjectContextExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContextExtension.swift; sourceTree = "<group>"; };
 		94D1E5F21B78EBEB00B0CD7D /* NSManagedObjectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectExtension.swift; sourceTree = "<group>"; };
-		94D1E5F41B78F53700B0CD7D /* UINavigationControllerCoreDataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationControllerCoreDataExtension.swift; sourceTree = "<group>"; };
+		94D1E5F41B78F53700B0CD7D /* UINavigationControllerCoreDataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UINavigationControllerCoreDataExtension.swift; path = ../Medications/coreData/UINavigationControllerCoreDataExtension.swift; sourceTree = "<group>"; };
 		94D1E5FF1B7A12CC00B0CD7D /* AddDrugViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDrugViewController.swift; sourceTree = "<group>"; };
 		94D1E6021B7A3B5D00B0CD7D /* DrugCustomaziationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugCustomaziationView.swift; sourceTree = "<group>"; };
 		94D1E6051B7A3C3200B0CD7D /* UIColorPainCodeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorPainCodeExtension.swift; sourceTree = "<group>"; };
@@ -585,6 +597,8 @@
 		946B67B21C57B2520062FEC0 /* CoreDataStack */ = {
 			isa = PBXGroup;
 			children = (
+				946B67F41C57B83D0062FEC0 /* controller */,
+				946B67ED1C57B7C30062FEC0 /* DataSources */,
 				946B67D11C57B33E0062FEC0 /* Collection+CoreDataExtensions.swift */,
 				946B67D21C57B33E0062FEC0 /* CoreDataErrors.swift */,
 				946B67D31C57B33E0062FEC0 /* KeyCodable.swift */,
@@ -615,6 +629,29 @@
 			path = CoreDataStackTests;
 			sourceTree = "<group>";
 		};
+		946B67ED1C57B7C30062FEC0 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				946B67F91C57B89F0062FEC0 /* ConfigurableCell.swift */,
+				946B67F51C57B8700062FEC0 /* CollectionViewDataSource.swift */,
+				946B67F61C57B8700062FEC0 /* TableViewDataSource.swift */,
+				946B67EE1C57B7F50062FEC0 /* DataProvider.swift */,
+				946B67EF1C57B7F50062FEC0 /* DataSource.swift */,
+				946B67F01C57B7F50062FEC0 /* FetchedResultsDataProvider.swift */,
+			);
+			name = DataSources;
+			sourceTree = "<group>";
+		};
+		946B67F41C57B83D0062FEC0 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				942D38F61B78813E00553C79 /* ManagedObjectContextSettable.swift */,
+				942D38FA1B78855600553C79 /* UITabBarViewControllerCoreDataExtension.swift */,
+				94D1E5F41B78F53700B0CD7D /* UINavigationControllerCoreDataExtension.swift */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
 		947F022A1B80A35E006D9C7E /* service */ = {
 			isa = PBXGroup;
 			children = (
@@ -630,9 +667,6 @@
 		94D1E6011B7A20C600B0CD7D /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				942D38F61B78813E00553C79 /* ManagedObjectContextSettable.swift */,
-				942D38FA1B78855600553C79 /* UITabBarViewControllerCoreDataExtension.swift */,
-				94D1E5F41B78F53700B0CD7D /* UINavigationControllerCoreDataExtension.swift */,
 				942D39191B78ABEF00553C79 /* FetchedResultsDataSourceDelegate.swift */,
 				947F02331B81CD43006D9C7E /* FetchedResultsCollectionViewDataSourceDelegate.swift */,
 			);
@@ -1069,18 +1103,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				946B67DF1C57B33E0062FEC0 /* Collection+CoreDataExtensions.swift in Sources */,
+				946B67F21C57B7F50062FEC0 /* DataSource.swift in Sources */,
 				946B67E91C57B33E0062FEC0 /* NSManagedObjectContext+Observers.swift in Sources */,
+				946B67FA1C57B89F0062FEC0 /* ConfigurableCell.swift in Sources */,
+				946B67F11C57B7F50062FEC0 /* DataProvider.swift in Sources */,
 				946B67EB1C57B33E0062FEC0 /* Utilities.swift in Sources */,
 				946B67EA1C57B33E0062FEC0 /* NSPersistentStoreCoordinator+Extensions.swift in Sources */,
+				946B67F81C57B8700062FEC0 /* TableViewDataSource.swift in Sources */,
 				946B67E01C57B33E0062FEC0 /* CoreDataErrors.swift in Sources */,
 				946B67E71C57B33E0062FEC0 /* NSManagedObject+Extensions.swift in Sources */,
 				946B67E51C57B33E0062FEC0 /* ModelVersionType.swift in Sources */,
 				946B67E31C57B33E0062FEC0 /* Migration.swift in Sources */,
+				946B67F31C57B7F50062FEC0 /* FetchedResultsDataProvider.swift in Sources */,
 				946B67E41C57B33E0062FEC0 /* ModelBuilder.swift in Sources */,
 				946B67E61C57B33E0062FEC0 /* NSFetchRequest+Extensions.swift in Sources */,
 				946B67EC1C57B33E0062FEC0 /* ValueTransformer.swift in Sources */,
 				946B67E11C57B33E0062FEC0 /* KeyCodable.swift in Sources */,
 				946B67E81C57B33E0062FEC0 /* NSManagedObjectContext+Extensions.swift in Sources */,
+				946B67F71C57B8700062FEC0 /* CollectionViewDataSource.swift in Sources */,
 				946B67D01C57B2FA0062FEC0 /* ManagedObject.swift in Sources */,
 				946B67E21C57B33E0062FEC0 /* ManagedObjectObserver.swift in Sources */,
 			);
