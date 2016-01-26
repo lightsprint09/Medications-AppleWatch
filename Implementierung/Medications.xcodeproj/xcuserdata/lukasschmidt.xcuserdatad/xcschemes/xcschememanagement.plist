@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>CoreDataStack.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>MediWatch.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -38,6 +43,16 @@
 			<true/>
 		</dict>
 		<key>944F21741B59573200ED8A7A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>946B67B01C57B2520062FEC0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>946B67B91C57B2520062FEC0</key>
 		<dict>
 			<key>primary</key>
 			<true/>

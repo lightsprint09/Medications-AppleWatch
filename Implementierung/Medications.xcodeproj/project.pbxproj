@@ -73,6 +73,26 @@
 		944F218D1B59573300ED8A7A /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944F218C1B59573300ED8A7A /* NotificationController.swift */; };
 		944F218F1B59573300ED8A7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 944F218E1B59573300ED8A7A /* Assets.xcassets */; };
 		944F21931B59573300ED8A7A /* MediWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 944F21751B59573200ED8A7A /* MediWatch.app */; };
+		946B67B41C57B2520062FEC0 /* CoreDataStack.h in Headers */ = {isa = PBXBuildFile; fileRef = 946B67B31C57B2520062FEC0 /* CoreDataStack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		946B67BB1C57B2520062FEC0 /* CoreDataStack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 946B67B11C57B2520062FEC0 /* CoreDataStack.framework */; };
+		946B67C21C57B2520062FEC0 /* CoreDataStackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946B67C11C57B2520062FEC0 /* CoreDataStackTests.swift */; };
+		946B67C61C57B2520062FEC0 /* CoreDataStack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 946B67B11C57B2520062FEC0 /* CoreDataStack.framework */; };
+		946B67C81C57B2520062FEC0 /* CoreDataStack.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 946B67B11C57B2520062FEC0 /* CoreDataStack.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		946B67D01C57B2FA0062FEC0 /* ManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946B67CF1C57B2FA0062FEC0 /* ManagedObject.swift */; };
+		946B67DF1C57B33E0062FEC0 /* Collection+CoreDataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946B67D11C57B33E0062FEC0 /* Collection+CoreDataExtensions.swift */; };
+		946B67E01C57B33E0062FEC0 /* CoreDataErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946B67D21C57B33E0062FEC0 /* CoreDataErrors.swift */; };
+		946B67E11C57B33E0062FEC0 /* KeyCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946B67D31C57B33E0062FEC0 /* KeyCodable.swift */; };
+		946B67E21C57B33E0062FEC0 /* ManagedObjectObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946B67D41C57B33E0062FEC0 /* ManagedObjectObserver.swift */; };
+		946B67E31C57B33E0062FEC0 /* Migration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946B67D51C57B33E0062FEC0 /* Migration.swift */; };
+		946B67E41C57B33E0062FEC0 /* ModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946B67D61C57B33E0062FEC0 /* ModelBuilder.swift */; };
+		946B67E51C57B33E0062FEC0 /* ModelVersionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946B67D71C57B33E0062FEC0 /* ModelVersionType.swift */; };
+		946B67E61C57B33E0062FEC0 /* NSFetchRequest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946B67D81C57B33E0062FEC0 /* NSFetchRequest+Extensions.swift */; };
+		946B67E71C57B33E0062FEC0 /* NSManagedObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946B67D91C57B33E0062FEC0 /* NSManagedObject+Extensions.swift */; };
+		946B67E81C57B33E0062FEC0 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946B67DA1C57B33E0062FEC0 /* NSManagedObjectContext+Extensions.swift */; };
+		946B67E91C57B33E0062FEC0 /* NSManagedObjectContext+Observers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946B67DB1C57B33E0062FEC0 /* NSManagedObjectContext+Observers.swift */; };
+		946B67EA1C57B33E0062FEC0 /* NSPersistentStoreCoordinator+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946B67DC1C57B33E0062FEC0 /* NSPersistentStoreCoordinator+Extensions.swift */; };
+		946B67EB1C57B33E0062FEC0 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946B67DD1C57B33E0062FEC0 /* Utilities.swift */; };
+		946B67EC1C57B33E0062FEC0 /* ValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946B67DE1C57B33E0062FEC0 /* ValueTransformer.swift */; };
 		946C04D91B7BD8FA00D93D10 /* DrugRenderEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E6081B7A4B0200B0CD7D /* DrugRenderEnum.swift */; };
 		946C04DA1B7BD91000D93D10 /* UIColorPainCodeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E6051B7A3C3200B0CD7D /* UIColorPainCodeExtension.swift */; };
 		946F7D461BDCF2D5008404AC /* ChoseOwnDelayTimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946F7D451BDCF2D5008404AC /* ChoseOwnDelayTimeController.swift */; };
@@ -147,6 +167,27 @@
 			remoteGlobalIDString = 944F21741B59573200ED8A7A;
 			remoteInfo = MediWatch;
 		};
+		946B67BC1C57B2520062FEC0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 944F21371B59570200ED8A7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 946B67B01C57B2520062FEC0;
+			remoteInfo = CoreDataStack;
+		};
+		946B67BE1C57B2520062FEC0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 944F21371B59570200ED8A7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 944F213E1B59570200ED8A7A;
+			remoteInfo = Medications;
+		};
+		946B67C41C57B2520062FEC0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 944F21371B59570200ED8A7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 946B67B01C57B2520062FEC0;
+			remoteInfo = CoreDataStack;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -170,6 +211,17 @@
 				944F21931B59573300ED8A7A /* MediWatch.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		946B67C71C57B2520062FEC0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				946B67C81C57B2520062FEC0 /* CoreDataStack.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -233,6 +285,27 @@
 		944F218C1B59573300ED8A7A /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		944F218E1B59573300ED8A7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		944F21901B59573300ED8A7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		946B67B11C57B2520062FEC0 /* CoreDataStack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoreDataStack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		946B67B31C57B2520062FEC0 /* CoreDataStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
+		946B67B51C57B2520062FEC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		946B67BA1C57B2520062FEC0 /* CoreDataStackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataStackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		946B67C11C57B2520062FEC0 /* CoreDataStackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStackTests.swift; sourceTree = "<group>"; };
+		946B67C31C57B2520062FEC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		946B67CF1C57B2FA0062FEC0 /* ManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObject.swift; sourceTree = "<group>"; };
+		946B67D11C57B33E0062FEC0 /* Collection+CoreDataExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+CoreDataExtensions.swift"; sourceTree = "<group>"; };
+		946B67D21C57B33E0062FEC0 /* CoreDataErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataErrors.swift; sourceTree = "<group>"; };
+		946B67D31C57B33E0062FEC0 /* KeyCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyCodable.swift; sourceTree = "<group>"; };
+		946B67D41C57B33E0062FEC0 /* ManagedObjectObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectObserver.swift; sourceTree = "<group>"; };
+		946B67D51C57B33E0062FEC0 /* Migration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Migration.swift; sourceTree = "<group>"; };
+		946B67D61C57B33E0062FEC0 /* ModelBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelBuilder.swift; sourceTree = "<group>"; };
+		946B67D71C57B33E0062FEC0 /* ModelVersionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelVersionType.swift; sourceTree = "<group>"; };
+		946B67D81C57B33E0062FEC0 /* NSFetchRequest+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSFetchRequest+Extensions.swift"; sourceTree = "<group>"; };
+		946B67D91C57B33E0062FEC0 /* NSManagedObject+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Extensions.swift"; sourceTree = "<group>"; };
+		946B67DA1C57B33E0062FEC0 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
+		946B67DB1C57B33E0062FEC0 /* NSManagedObjectContext+Observers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Observers.swift"; sourceTree = "<group>"; };
+		946B67DC1C57B33E0062FEC0 /* NSPersistentStoreCoordinator+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSPersistentStoreCoordinator+Extensions.swift"; sourceTree = "<group>"; };
+		946B67DD1C57B33E0062FEC0 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		946B67DE1C57B33E0062FEC0 /* ValueTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueTransformer.swift; sourceTree = "<group>"; };
 		946F7D451BDCF2D5008404AC /* ChoseOwnDelayTimeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoseOwnDelayTimeController.swift; sourceTree = "<group>"; };
 		9472A47F1BE657D50044D696 /* WatchExecutionTimeContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchExecutionTimeContext.swift; sourceTree = "<group>"; };
 		9472A4851BE6870F0044D696 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -278,6 +351,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				946B67C61C57B2520062FEC0 /* CoreDataStack.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +366,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		946B67AD1C57B2520062FEC0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		946B67B71C57B2520062FEC0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				946B67BB1C57B2520062FEC0 /* CoreDataStack.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +495,8 @@
 				944F21591B59570200ED8A7A /* MedicationsTests */,
 				944F21761B59573200ED8A7A /* MediWatch */,
 				944F21851B59573300ED8A7A /* MediWatch Extension */,
+				946B67B21C57B2520062FEC0 /* CoreDataStack */,
+				946B67C01C57B2520062FEC0 /* CoreDataStackTests */,
 				944F21401B59570200ED8A7A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -417,6 +508,8 @@
 				944F21561B59570200ED8A7A /* MedicationsTests.xctest */,
 				944F21751B59573200ED8A7A /* MediWatch.app */,
 				944F21811B59573300ED8A7A /* MediWatch Extension.appex */,
+				946B67B11C57B2520062FEC0 /* CoreDataStack.framework */,
+				946B67BA1C57B2520062FEC0 /* CoreDataStackTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -487,6 +580,39 @@
 				944F21871B59573300ED8A7A /* PushNotificationPayload.apns */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		946B67B21C57B2520062FEC0 /* CoreDataStack */ = {
+			isa = PBXGroup;
+			children = (
+				946B67D11C57B33E0062FEC0 /* Collection+CoreDataExtensions.swift */,
+				946B67D21C57B33E0062FEC0 /* CoreDataErrors.swift */,
+				946B67D31C57B33E0062FEC0 /* KeyCodable.swift */,
+				946B67D41C57B33E0062FEC0 /* ManagedObjectObserver.swift */,
+				946B67D51C57B33E0062FEC0 /* Migration.swift */,
+				946B67D61C57B33E0062FEC0 /* ModelBuilder.swift */,
+				946B67D71C57B33E0062FEC0 /* ModelVersionType.swift */,
+				946B67D81C57B33E0062FEC0 /* NSFetchRequest+Extensions.swift */,
+				946B67D91C57B33E0062FEC0 /* NSManagedObject+Extensions.swift */,
+				946B67DA1C57B33E0062FEC0 /* NSManagedObjectContext+Extensions.swift */,
+				946B67DB1C57B33E0062FEC0 /* NSManagedObjectContext+Observers.swift */,
+				946B67DC1C57B33E0062FEC0 /* NSPersistentStoreCoordinator+Extensions.swift */,
+				946B67DD1C57B33E0062FEC0 /* Utilities.swift */,
+				946B67DE1C57B33E0062FEC0 /* ValueTransformer.swift */,
+				946B67CF1C57B2FA0062FEC0 /* ManagedObject.swift */,
+				946B67B31C57B2520062FEC0 /* CoreDataStack.h */,
+				946B67B51C57B2520062FEC0 /* Info.plist */,
+			);
+			path = CoreDataStack;
+			sourceTree = "<group>";
+		};
+		946B67C01C57B2520062FEC0 /* CoreDataStackTests */ = {
+			isa = PBXGroup;
+			children = (
+				946B67C11C57B2520062FEC0 /* CoreDataStackTests.swift */,
+				946B67C31C57B2520062FEC0 /* Info.plist */,
+			);
+			path = CoreDataStackTests;
 			sourceTree = "<group>";
 		};
 		947F022A1B80A35E006D9C7E /* service */ = {
@@ -579,6 +705,17 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		946B67AE1C57B2520062FEC0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				946B67B41C57B2520062FEC0 /* CoreDataStack.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		944F213E1B59570200ED8A7A /* Medications */ = {
 			isa = PBXNativeTarget;
@@ -588,11 +725,13 @@
 				944F213C1B59570200ED8A7A /* Frameworks */,
 				944F213D1B59570200ED8A7A /* Resources */,
 				944F219B1B59573300ED8A7A /* Embed Watch Content */,
+				946B67C71C57B2520062FEC0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				944F21921B59573300ED8A7A /* PBXTargetDependency */,
+				946B67C51C57B2520062FEC0 /* PBXTargetDependency */,
 			);
 			name = Medications;
 			productName = Medications;
@@ -651,12 +790,50 @@
 			productReference = 944F21811B59573300ED8A7A /* MediWatch Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
+		946B67B01C57B2520062FEC0 /* CoreDataStack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 946B67CD1C57B2520062FEC0 /* Build configuration list for PBXNativeTarget "CoreDataStack" */;
+			buildPhases = (
+				946B67AC1C57B2520062FEC0 /* Sources */,
+				946B67AD1C57B2520062FEC0 /* Frameworks */,
+				946B67AE1C57B2520062FEC0 /* Headers */,
+				946B67AF1C57B2520062FEC0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoreDataStack;
+			productName = CoreDataStack;
+			productReference = 946B67B11C57B2520062FEC0 /* CoreDataStack.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		946B67B91C57B2520062FEC0 /* CoreDataStackTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 946B67CE1C57B2520062FEC0 /* Build configuration list for PBXNativeTarget "CoreDataStackTests" */;
+			buildPhases = (
+				946B67B61C57B2520062FEC0 /* Sources */,
+				946B67B71C57B2520062FEC0 /* Frameworks */,
+				946B67B81C57B2520062FEC0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				946B67BD1C57B2520062FEC0 /* PBXTargetDependency */,
+				946B67BF1C57B2520062FEC0 /* PBXTargetDependency */,
+			);
+			name = CoreDataStackTests;
+			productName = CoreDataStackTests;
+			productReference = 946B67BA1C57B2520062FEC0 /* CoreDataStackTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		944F21371B59570200ED8A7A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Lukas Schmidt";
 				TargetAttributes = {
@@ -673,6 +850,13 @@
 					944F21801B59573300ED8A7A = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = 2UNP9S73JZ;
+					};
+					946B67B01C57B2520062FEC0 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					946B67B91C57B2520062FEC0 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 944F213E1B59570200ED8A7A;
 					};
 				};
 			};
@@ -693,6 +877,8 @@
 				944F21551B59570200ED8A7A /* MedicationsTests */,
 				944F21741B59573200ED8A7A /* MediWatch */,
 				944F21801B59573300ED8A7A /* MediWatch Extension */,
+				946B67B01C57B2520062FEC0 /* CoreDataStack */,
+				946B67B91C57B2520062FEC0 /* CoreDataStackTests */,
 			);
 		};
 /* End PBXProject section */
@@ -728,6 +914,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				944F218F1B59573300ED8A7A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		946B67AF1C57B2520062FEC0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		946B67B81C57B2520062FEC0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -864,6 +1064,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		946B67AC1C57B2520062FEC0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				946B67DF1C57B33E0062FEC0 /* Collection+CoreDataExtensions.swift in Sources */,
+				946B67E91C57B33E0062FEC0 /* NSManagedObjectContext+Observers.swift in Sources */,
+				946B67EB1C57B33E0062FEC0 /* Utilities.swift in Sources */,
+				946B67EA1C57B33E0062FEC0 /* NSPersistentStoreCoordinator+Extensions.swift in Sources */,
+				946B67E01C57B33E0062FEC0 /* CoreDataErrors.swift in Sources */,
+				946B67E71C57B33E0062FEC0 /* NSManagedObject+Extensions.swift in Sources */,
+				946B67E51C57B33E0062FEC0 /* ModelVersionType.swift in Sources */,
+				946B67E31C57B33E0062FEC0 /* Migration.swift in Sources */,
+				946B67E41C57B33E0062FEC0 /* ModelBuilder.swift in Sources */,
+				946B67E61C57B33E0062FEC0 /* NSFetchRequest+Extensions.swift in Sources */,
+				946B67EC1C57B33E0062FEC0 /* ValueTransformer.swift in Sources */,
+				946B67E11C57B33E0062FEC0 /* KeyCodable.swift in Sources */,
+				946B67E81C57B33E0062FEC0 /* NSManagedObjectContext+Extensions.swift in Sources */,
+				946B67D01C57B2FA0062FEC0 /* ManagedObject.swift in Sources */,
+				946B67E21C57B33E0062FEC0 /* ManagedObjectObserver.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		946B67B61C57B2520062FEC0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				946B67C21C57B2520062FEC0 /* CoreDataStackTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -881,6 +1111,21 @@
 			isa = PBXTargetDependency;
 			target = 944F21741B59573200ED8A7A /* MediWatch */;
 			targetProxy = 944F21911B59573300ED8A7A /* PBXContainerItemProxy */;
+		};
+		946B67BD1C57B2520062FEC0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 946B67B01C57B2520062FEC0 /* CoreDataStack */;
+			targetProxy = 946B67BC1C57B2520062FEC0 /* PBXContainerItemProxy */;
+		};
+		946B67BF1C57B2520062FEC0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 944F213E1B59570200ED8A7A /* Medications */;
+			targetProxy = 946B67BE1C57B2520062FEC0 /* PBXContainerItemProxy */;
+		};
+		946B67C51C57B2520062FEC0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 946B67B01C57B2520062FEC0 /* CoreDataStack */;
+			targetProxy = 946B67C41C57B2520062FEC0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -992,6 +1237,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Dieter Schmidt (UKN6LJWN4G)";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Medications/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.freiraum.Medications;
@@ -1006,6 +1252,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Dieter Schmidt (UKN6LJWN4G)";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Medications/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.freiraum.Medications;
@@ -1105,6 +1352,77 @@
 			};
 			name = Release;
 		};
+		946B67C91C57B2520062FEC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Dieter Schmidt (UKN6LJWN4G)";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CoreDataStack/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.freiraum.CoreDataStack;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		946B67CA1C57B2520062FEC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Dieter Schmidt (UKN6LJWN4G)";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CoreDataStack/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.freiraum.CoreDataStack;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		946B67CB1C57B2520062FEC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CoreDataStackTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.freiraum.CoreDataStackTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Medications.app/Medications";
+			};
+			name = Debug;
+		};
+		946B67CC1C57B2520062FEC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CoreDataStackTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.freiraum.CoreDataStackTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Medications.app/Medications";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1152,6 +1470,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		946B67CD1C57B2520062FEC0 /* Build configuration list for PBXNativeTarget "CoreDataStack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				946B67C91C57B2520062FEC0 /* Debug */,
+				946B67CA1C57B2520062FEC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		946B67CE1C57B2520062FEC0 /* Build configuration list for PBXNativeTarget "CoreDataStackTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				946B67CB1C57B2520062FEC0 /* Debug */,
+				946B67CC1C57B2520062FEC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 
