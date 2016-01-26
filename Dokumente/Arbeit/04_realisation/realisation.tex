@@ -36,16 +36,27 @@ Mit der "sendMessage:" Methode können Nachrichten und Datenpakete gesendet werd
 
 Werden erst beim Watch-App Start benötigte Daten vom der iPhone angefordert, kann dies zu einer großen Verzögerung kommen. Daher sollten Informationen, die auf der Uhr angezeigt werden, nicht erst zum Zeitpunkt der Darstellung angefordert werden. Gibt es eine Datenänderung auf dem iPhone, die relevante Daten für die Uhr enthält, so sollten diese mit der Methode "transferUserInfo:" an die Uhr gesendet werden. Mit dem Aufrufen dieser Methode wird die übergebene Information nicht direkt zu Uhr geschickt. Das System sendet die Daten zu einem optimalen Zeitpunkt (starke Verbindung zur Uhr, mögliche WLAN Verbindung) an die Uhr. Wenn nun die Watch-App startet, so sind die Daten bereit und können direkt dargestellt werden.
 
-Zum übertragen von größeren Daten steht die Methode "transferFile:" zur Verfügung. Die Methode verhält sich equivalent zu "transferUserInfo:", wird jedoch in der Realisierung nicht verwednet.
+Zum übertragen von größeren Daten steht die Methode "transferFile:" zur Verfügung. Die Methode verhält sich equivalent zu "transferUserInfo:", wird jedoch in der Realisierung nicht verwendet.
 
 \section{Anwendung}
 
-Die Anwendung besteht aus 2 Komponenten auf der Apple Watch. Eine native Notification (\ref{ch:watch_software}). Diese wurde darauf hin optimiert, dass eine große graphische Repräsentation des Medikaments angezeigt wird. Dem Nutzer wird so die Wiedererkennung des Medikaments zu erleichtert (siehe \ref{fig:watch-app-notification}).
+Die Anwendung besteht aus 2 Komponenten auf der Apple Watch. Eine native Notification (\ref{ch:watch_software}). Diese wurde darauf hin optimiert, dass eine große graphische Repräsentation des Medikaments angezeigt wird. Dem Nutzer wird so die Wiedererkennung des Medikaments zu erleichtert (siehe \ref{fig:watch-app-notification}). Neben dem Medikamentennamen wird auch die Dosierung des Medikaments dargestellt. Es wird dem Nutzer ermöglicht mit nur einer Aktion das Medikament zu Bestätigen oder es zu Verschieben. Die Notification ist darauf ausgelegt eine sehr schnelle Interaktion zu ermöglichen, damit der Nutzer nicht länger als 10 Sekunden mit der Uhr interagieren muss.
+
+Neben der Notification gibt es noch eine  native App. Diese läuft auf der Uhr und stellt eine Liste der heutigen Medikamente dar. Die App muss aktiv vom Nutzer gestartet werden. In \ref{fig:watch-app-take} wird ein Medikament aus der List ausgewählt. Nach dem man ein Medikamnet ausgewählt hat, kommt man in einen Detailansicht des Medikaments. Dort kann man nun das Medikament als genommen markieren. Ein visuelles Feedback zur Einnahme zeigt dem Nutzer seine Aktion. Vom der Detailansicht ist es auch Möglich ein Medikament zur späteren Einnahme zu makieren 
 
 \begin{figure}
 	\caption{Notification für Medikament}
 	\label{fig:watch-app-notification}
-	\centering
-	\includegraphics[width=0.5\textwidth]{04_realisation/screenshots/watch/notification.png}
+	\includegraphics[width=0.5\textwidth]{04_realisation/screenshots/watch/notification01.png}
+	\includegraphics[width=0.5\textwidth]{04_realisation/screenshots/watch/notification02.png}
+\end{figure}
+
+\begin{figure}
+	\caption{Interface zu wählen von eines Medikaments (oben links). Medikament als genommen bestätigen (oben rechts). Medikament ist als genommen markiert (unten links). Medikament ist in der Übersicht als genommen markiert(unten rechts)}
+	\label{fig:watch-app-take}
+	\includegraphics[width=0.5\textwidth]{04_realisation/screenshots/watch/notTaken01.png}
+	\includegraphics[width=0.5\textwidth]{04_realisation/screenshots/watch/notTaken02.png}
+	\includegraphics[width=0.5\textwidth]{04_realisation/screenshots/watch/taken01.png}
+	\includegraphics[width=0.5\textwidth]{04_realisation/screenshots/watch/taken02.png}
 \end{figure}
 
