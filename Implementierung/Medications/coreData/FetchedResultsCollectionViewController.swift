@@ -35,7 +35,7 @@ class FetchedResultsCollectionViewController<D: FetchedResultsCollectionViewData
     
     @objc func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let object = objectAtIndexPath(indexPath)
-        let identifier = self.delegate.cellIdentifierForObject(object)
+        let identifier = delegate.cellIdentifierForObject(object)
         guard let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as? D.Cell else {
             fatalError("Unexpected cell type at \(indexPath)") }
         delegate.configureCell(cell, object: object)

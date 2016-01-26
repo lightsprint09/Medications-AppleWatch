@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import CoreDataStack
 
-class ExecutionTimeTableViewCell: UITableViewCell {
+class ExecutionTimeTableViewCell: UITableViewCell, ConfigurableCell {
+    typealias DataSource = RootExecutionTime
     
     @IBOutlet weak var dayTimeImageView: UIImageView!
     @IBOutlet weak var timeLabel: UILabel!
@@ -19,10 +21,13 @@ class ExecutionTimeTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    func configureForObject(object: DataSource) {
+        timeLabel.text = object.timeString
+        dayTimeImageView.image = object.timeOfDay.imageWithColor
+        doseLabel.text = object.amountUnitString
+    }
+    
     func configurWithExecutionTime(execuitonTime:RootExecutionTime) {
-        timeLabel.text = execuitonTime.timeString
-        dayTimeImageView.image = execuitonTime.timeOfDay.imageWithColor
-        doseLabel.text = execuitonTime.amountUnitString
     }
 
 }

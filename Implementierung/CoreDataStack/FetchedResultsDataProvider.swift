@@ -9,11 +9,11 @@
 import CoreData
 
 
-class FetchedResultsDataProvider<Delegate: DataProviderDelegate>: NSObject, NSFetchedResultsControllerDelegate, DataProvider {
+public class FetchedResultsDataProvider<Delegate: DataProviderDelegate>: NSObject, NSFetchedResultsControllerDelegate, DataProvider {
 
-    typealias Object = Delegate.Object
+    public typealias Object = Delegate.Object
 
-    init(fetchedResultsController: NSFetchedResultsController, delegate: Delegate) {
+    public init(fetchedResultsController: NSFetchedResultsController, delegate: Delegate) {
         self.fetchedResultsController = fetchedResultsController
         self.delegate = delegate
         super.init()
@@ -21,24 +21,24 @@ class FetchedResultsDataProvider<Delegate: DataProviderDelegate>: NSObject, NSFe
         try! fetchedResultsController.performFetch()
     }
 
-    func reconfigureFetchRequest(@noescape block: NSFetchRequest -> ()) {
+    public func reconfigureFetchRequest(@noescape block: NSFetchRequest -> ()) {
         NSFetchedResultsController.deleteCacheWithName(fetchedResultsController.cacheName)
         block(fetchedResultsController.fetchRequest)
         do { try fetchedResultsController.performFetch() } catch { fatalError("fetch request failed") }
         delegate.dataProviderDidUpdate(nil)
     }
 
-    func objectAtIndexPath(indexPath: NSIndexPath) -> Object {
+    public func objectAtIndexPath(indexPath: NSIndexPath) -> Object {
         guard let result = fetchedResultsController.objectAtIndexPath(indexPath) as? Object else { fatalError("Unexpected object at \(indexPath)") }
         return result
     }
 
-    func numberOfItemsInSection(section: Int) -> Int {
+    public func numberOfItemsInSection(section: Int) -> Int {
         guard let sec = fetchedResultsController.sections?[section] else { return 0 }
         return sec.numberOfObjects
     }
     
-    func numberOfSections() -> Int {
+    public func numberOfSections() -> Int {
         return fetchedResultsController.sections?.count ?? 1
     }
 
@@ -52,11 +52,11 @@ class FetchedResultsDataProvider<Delegate: DataProviderDelegate>: NSObject, NSFe
 
     // MARK: NSFetchedResultsControllerDelegate
 
-    func controllerWillChangeContent(controller: NSFetchedResultsController) {
+    public func controllerWillChangeContent(controller: NSFetchedResultsController) {
         updates = []
     }
 
-    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+    public func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
         switch type {
         case .Insert:
             guard let indexPath = newIndexPath else { fatalError("Index path should be not nil") }
@@ -75,7 +75,7 @@ class FetchedResultsDataProvider<Delegate: DataProviderDelegate>: NSObject, NSFe
         }
     }
 
-    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+    public func controllerDidChangeContent(controller: NSFetchedResultsController) {
         delegate.dataProviderDidUpdate(updates)
     }
 

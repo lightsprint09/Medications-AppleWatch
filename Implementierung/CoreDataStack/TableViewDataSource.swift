@@ -9,9 +9,9 @@
 import UIKit
 
 
-class TableViewDataSource<Delegate: DataSourceDelegate, Data: DataProvider, Cell: UITableViewCell where Delegate.Object == Data.Object, Cell: ConfigurableCell, Cell.DataSource == Data.Object>: NSObject, UITableViewDataSource {
+public class TableViewDataSource<Delegate: DataSourceDelegate, Data: DataProvider, Cell: UITableViewCell where Delegate.Object == Data.Object, Cell: ConfigurableCell, Cell.DataSource == Data.Object>: NSObject, UITableViewDataSource {
 
-    required init(tableView: UITableView, dataProvider: Data, delegate: Delegate) {
+    public required init(tableView: UITableView, dataProvider: Data, delegate: Delegate) {
         self.tableView = tableView
         self.dataProvider = dataProvider
         self.delegate = delegate
@@ -20,12 +20,12 @@ class TableViewDataSource<Delegate: DataSourceDelegate, Data: DataProvider, Cell
         tableView.reloadData()
     }
 
-    var selectedObject: Data.Object? {
+    public var selectedObject: Data.Object? {
         guard let indexPath = tableView.indexPathForSelectedRow else { return nil }
         return dataProvider.objectAtIndexPath(indexPath)
     }
 
-    func processUpdates(updates: [DataProviderUpdate<Data.Object>]?) {
+    public func processUpdates(updates: [DataProviderUpdate<Data.Object>]?) {
         guard let updates = updates else { return tableView.reloadData() }
         tableView.beginUpdates()
         for update in updates {
@@ -54,12 +54,16 @@ class TableViewDataSource<Delegate: DataSourceDelegate, Data: DataProvider, Cell
 
 
     // MARK: UITableViewDataSource
+    
+    public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return dataProvider.numberOfSections()
+    }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataProvider.numberOfItemsInSection(section)
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let object = dataProvider.objectAtIndexPath(indexPath)
         let identifier = delegate.cellIdentifierForObject(object)
         guard let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as? Cell

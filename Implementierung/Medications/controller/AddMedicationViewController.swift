@@ -8,6 +8,19 @@
 
 import UIKit
 import CoreData
+import CoreDataStack
+
+extension AddMedicationViewController: DataProviderDelegate, DataSourceDelegate {
+    typealias Object = RootExecutionTime
+    
+    func dataProviderDidUpdate(updates: [DataProviderUpdate<Object>]?) {
+        
+    }
+    
+    func cellIdentifierForObject(object: Object) -> String {
+        return "new-medication-cell"
+    }
+}
 
 class AddMedicationViewController: UIViewController, ManagedObjectContextSettable, UICollectionViewDelegate, UITableViewDelegate {
     var managedObjectContext: NSManagedObjectContext!
@@ -24,11 +37,13 @@ class AddMedicationViewController: UIViewController, ManagedObjectContextSettabl
             removeExecutionTimeButton.enabled = true
         }
     }
+    var testX: DrugDataSourceDelegate!
     
-    var drugDataSource: FetchedResultsCollectionViewController<AddMedicationViewController>?
-    var executionTimeDataSource: FetchedResultsDataSource<ExecutionTimeTableViewDataSourceDelegate>?
-    let executionTimeDataSourceDelegate = ExecutionTimeTableViewDataSourceDelegate()
+    var drugDataSource: FetchedResultsCollectionViewController<DrugDataSourceDelegate>?
     
+    var executionTimeDataProvider: FetchedResultsDataProvider<AddMedicationViewController>!
+    var executionTimeDataSource: TableViewDataSource<AddMedicationViewController, FetchedResultsDataProvider<AddMedicationViewController>, ExecutionTimeTableViewCell>!
+        
     @IBOutlet weak var weekDaySelectionView: UIStackView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var executionTimeTableView: UITableView!
@@ -43,14 +58,17 @@ class AddMedicationViewController: UIViewController, ManagedObjectContextSettabl
     func setupDrugFetchController() {
         let fetchRequest = drugService.sortedFetchRequest()
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
-        drugDataSource = FetchedResultsCollectionViewController(collectionView: collectionView, fetchedResultsController: frc, delegate: self)
+        testX =  DrugDataSourceDelegate()
+        drugDataSource = FetchedResultsCollectionViewController(collectionView: collectionView, fetchedResultsController: frc, delegate: testX)
     }
     
     func setupExecutionTimeFetchController() {
         guard let drug = selectedDrug else { return }
         let fetchRequest = executionTimeService.rootExecutionTimeFetchRequest(drug)
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
-        executionTimeDataSource = FetchedResultsDataSource(tableView: executionTimeTableView, fetchedResultsController: frc, delegate: executionTimeDataSourceDelegate)
+        executionTimeDataProvider = FetchedResultsDataProvider(fetchedResultsController: frc, delegate: self)
+        
+        executionTimeDataSource = TableViewDataSource(tableView: executionTimeTableView, dataProvider: executionTimeDataProvider, delegate: self)
     }
    
     @IBAction func toggleDeleteInTableView(sender: AnyObject) {

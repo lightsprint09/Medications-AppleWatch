@@ -7,7 +7,7 @@
 //
 
 
-protocol ConfigurableCell {
+public protocol ConfigurableCell {
     typealias DataSource
     func configureForObject(object: DataSource)
 }

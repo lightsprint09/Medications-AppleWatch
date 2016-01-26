@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol DrugSettable {
+protocol DrugSettable: class {
     var drug:Drug! {set get}
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension AddMedicationViewController: FetchedResultsCollectionViewDataSourceDelegate {
+class DrugDataSourceDelegate: FetchedResultsCollectionViewDataSourceDelegate {
     private static let CELL_IDENTIFIER = "add-drug-to-medication-cell"
     
     typealias Cell = AddDrugToMedicationCell
@@ -18,17 +18,17 @@ extension AddMedicationViewController: FetchedResultsCollectionViewDataSourceDel
     typealias Footer = UICollectionReusableView
     
     func cellIdentifierForObject(object: Object) -> String {
-        return AddMedicationViewController.CELL_IDENTIFIER
+        return DrugDataSourceDelegate.CELL_IDENTIFIER
     }
     
     func configureCell(cell: Cell, object: Object) {
-        if let selectedDrug = selectedDrug where object.isEqual(selectedDrug) {
-            cell.showSelectedBadge(true)
-        }else {
-            cell.showSelectedBadge(false)
-        }
-        
-        cell.configureWithDrug(object)
+//        if let selectedDrug = selectedDrug where object.isEqual(selectedDrug) {
+//            cell.showSelectedBadge(true)
+//        }else {
+//            cell.showSelectedBadge(false)
+//        }
+//        
+//        cell.configureWithDrug(object)
     }
     
     func headerIdentifierForIndexPath(indexPath: NSIndexPath) -> String {

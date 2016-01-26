@@ -8,19 +8,34 @@
 
 import UIKit
 import CoreData
+import CoreDataStack
+
+extension ExecutionTimesTableViewController: DataProviderDelegate, DataSourceDelegate {
+    typealias Object = ExecutionTime
+    
+    func dataProviderDidUpdate(updates: [DataProviderUpdate<Object>]?) {
+        
+    }
+    
+    func cellIdentifierForObject(object: Object) -> String {
+        return "medication-cell"
+    }
+}
 
 class ExecutionTimesTableViewController: UITableViewController, ManagedObjectContextSettable {
     var managedObjectContext: NSManagedObjectContext!
     
     let executionTimeService = ExecutionTimeService()
     var watchExecutionTimeService: WatchExecutionTimeService!
-    
-    var dataSource: FetchedResultsDataSource<ExecutionTimesTableViewController>?
+    lazy var dataProvider:FetchedResultsDataProvider<ExecutionTimesTableViewController>  = {
+        let fetchRequest = self.executionTimeService.allChildrenExecutionTimesFetchRequest(NSDate())
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: "assignmentTimeOfDay", cacheName: nil)
+        return FetchedResultsDataProvider(fetchedResultsController: frc, delegate: self)
+    }()
+    var dataSource: TableViewDataSource<ExecutionTimesTableViewController, FetchedResultsDataProvider<ExecutionTimesTableViewController>, MedicationTableCell>!
     
     override func viewDidLoad() {
-        let fetchRequest = executionTimeService.allChildrenExecutionTimesFetchRequest(NSDate())
-        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: "assignmentTimeOfDay", cacheName: nil)
-        dataSource = FetchedResultsDataSource(tableView: tableView, fetchedResultsController: frc, delegate: self)
+        dataSource = TableViewDataSource<ExecutionTimesTableViewController, FetchedResultsDataProvider<ExecutionTimesTableViewController>, MedicationTableCell>(tableView: tableView, dataProvider: dataProvider, delegate: self)
         setupWatchConnection()
     }
     
@@ -57,7 +72,8 @@ class ExecutionTimesTableViewController: UITableViewController, ManagedObjectCon
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = MedicationHeaderView(frame: CGRect(x: 0, y: 0, width: 300, height: 32))
-        guard let timeOfDay = dataSource?.objectAtIndexPath(NSIndexPath(forRow: 0, inSection: section)).timeOfDay else { return view }
+        let indexPath = NSIndexPath(forRow: 0, inSection: section)
+        let timeOfDay = dataProvider.objectAtIndexPath(indexPath).timeOfDay
         view.configureWithTimeOfDay(timeOfDay)
         view.backgroundColor = UIColor(red:240 / 255.0, green:240 / 255.0, blue:240 / 255.0, alpha:1.0)
         
@@ -65,7 +81,7 @@ class ExecutionTimesTableViewController: UITableViewController, ManagedObjectCon
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        guard let executionTime = dataSource?.objectAtIndexPath(indexPath) else { return }
+        let executionTime = dataProvider.objectAtIndexPath(indexPath)
         let drug = executionTime.parentExecutionTime.drug
         let actionViewcontroller = UIAlertController(title: "\n\n\n\n\n\n", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
         if let _ = executionTime.executionDate {
@@ -121,8 +137,8 @@ class ExecutionTimesTableViewController: UITableViewController, ManagedObjectCon
     }
     
     @IBAction func testPush(sender: AnyObject) {
-        guard let executionTime = dataSource?.objectAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)),
-            let notification = executionTimeService.createNotification(executionTime.parentExecutionTime) else { return }
+        let executionTime = dataProvider.objectAtIndexPath(NSIndexPath(forRow: 0, inSection: 0))
+        guard let notification = executionTimeService.createNotification(executionTime.parentExecutionTime) else { return }
         print(notification.userInfo)
         notification.repeatInterval = .Year
         notification.fireDate = NSDate().dateByAddingTimeInterval(8)

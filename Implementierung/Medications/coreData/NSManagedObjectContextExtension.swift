@@ -10,37 +10,37 @@ import CoreData
 import Foundation
 
 extension NSManagedObjectContext {
-    func insertObject<A: NSManagedObject>() -> A {
-        guard let obj = NSEntityDescription.insertNewObjectForEntityForName(A.entityName, inManagedObjectContext: self) as? A
-        else {
-            fatalError("Wrong object type")
-        }
-        
-        return obj
-    }
-    
-    public func saveOrRollback() {
-        do {
-            try save()
-        } catch  {
-            print(error)
-            rollback()
-        }
-    }
-    
-    public func performChanges(block: () -> ()) {
-        performBlock {
-            block()
-            self.saveOrRollback()
-        }
-    }
-    
-    public func createPersistentObject<A: NSManagedObject >(setupBlock:(A)->()) -> A {
-        let object = insertObject() as A
-        setupBlock(object)
-        saveOrRollback()
-        
-        return object
-    }
+//    func insertObject<A: NSManagedObject>() -> A {
+//        guard let obj = NSEntityDescription.insertNewObjectForEntityForName(A.entityName, inManagedObjectContext: self) as? A
+//        else {
+//            fatalError("Wrong object type")
+//        }
+//        
+//        return obj
+//    }
+//    
+//    public func saveOrRollback() {
+//        do {
+//            try save()
+//        } catch  {
+//            print(error)
+//            rollback()
+//        }
+//    }
+//    
+//    public func performChanges(block: () -> ()) {
+//        performBlock {
+//            block()
+//            self.saveOrRollback()
+//        }
+//    }
+//    
+//    public func createPersistentObject<A: NSManagedObject >(setupBlock:(A)->()) -> A {
+//        let object = insertObject() as A
+//        setupBlock(object)
+//        saveOrRollback()
+//        
+//        return object
+//    }
 }
  

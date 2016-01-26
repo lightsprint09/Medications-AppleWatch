@@ -7,13 +7,16 @@
 //
 
 import UIKit
+import CoreDataStack
 
-class DrugTableViewCell: UITableViewCell {
+class DrugTableViewCell: UITableViewCell, ConfigurableCell {
+    typealias DataSource = Drug
     
     @IBOutlet weak var drugImageView: UIImageView!
     @IBOutlet weak var drugNameLabel: UILabel!
     @IBOutlet weak var activeSubstanceLabel: UILabel!
-    func configureWithDrug(drug:Drug) {
+    
+    func configureForObject(drug: DataSource) {
         drugNameLabel.text = drug.name
         activeSubstanceLabel.text = drug.activeSubstance
         if let pillImageData = drug.pillImage {

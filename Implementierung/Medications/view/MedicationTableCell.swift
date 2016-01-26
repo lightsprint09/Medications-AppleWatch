@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import CoreDataStack
 
-class MedicationTableCell: UITableViewCell {
+class MedicationTableCell: UITableViewCell, ConfigurableCell {
+    typealias DataSource = ExecutionTime
     
     @IBOutlet weak var unitCountLabel: UILabel!
     @IBOutlet weak var drugNameLabel: UILabel!
@@ -16,28 +18,32 @@ class MedicationTableCell: UITableViewCell {
     @IBOutlet weak var drugImageView: UIImageView!
     @IBOutlet weak var delayView: RoundLabel!
     
-    func configureWithExecutionTime(executionTime:ExecutionTime) {
-        let drug = executionTime.parentExecutionTime.drug
+    func configureForObject(object: DataSource) {
+        let drug = object.parentExecutionTime.drug
         drugNameLabel.text = drug.name
-        unitCountLabel.text = executionTime.amountUnitString
+        unitCountLabel.text = object.amountUnitString
         
         if let pillImageData = drug.pillImage {
             drugImageView.image = UIImage(data: pillImageData)
         }
-        timeLabel.text = executionTime.timeString
-        if let executionDate = executionTime.executionDate {
+        timeLabel.text = object.timeString
+        if let executionDate = object.executionDate {
             timeLabel.textColor = .greenExecutionTimeColor()
             timeLabel.text = ExecutionTime.timeStrintFromDate(executionDate) + " ✔︎"
         } else {
-             timeLabel.textColor = UIColor.blueExecutionTimeColor()
-            timeLabel.text = executionTime.timeString
+            timeLabel.textColor = UIColor.blueExecutionTimeColor()
+            timeLabel.text = object.timeString
         }
         
-        if let delay = executionTime.secondsMoved where executionTime.executionDate == nil {
+        if let delay = object.secondsMoved where object.executionDate == nil {
             delayView.text = "+\(delay.integerValue / 60)"
             delayView.hidden = false
         } else {
             delayView.hidden = true
         }
+    }
+    
+    func configureWithExecutionTime(executionTime:ExecutionTime) {
+        
     }
 }

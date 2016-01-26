@@ -54,6 +54,10 @@ class CollectionViewDataSource<Delegate: DataSourceDelegate, Data: DataProvider,
 
 
     // MARK: UICollectionViewDataSource
+    
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return dataProvider.numberOfSections()
+    }
 
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return dataProvider.numberOfItemsInSection(section)
