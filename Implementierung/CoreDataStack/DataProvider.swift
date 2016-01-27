@@ -14,6 +14,8 @@ public  protocol DataProvider: class {
     func objectAtIndexPath(indexPath: NSIndexPath) -> Object
     func numberOfItemsInSection(section: Int) -> Int
     func numberOfSections() -> Int
+    
+    func indexPathForObject(object: Object) -> NSIndexPath?
 }
 
 

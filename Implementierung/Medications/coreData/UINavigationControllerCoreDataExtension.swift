@@ -16,9 +16,8 @@ extension UINavigationController: ManagedObjectContextSettable {
         }
         
         set(context) {
-            if let topViewController = topViewController as? ManagedObjectContextSettable {
-                var controller = topViewController
-                controller.managedObjectContext = context
+            if let managedObjectContextSettable = topViewController as? ManagedObjectContextSettable {
+                managedObjectContextSettable.managedObjectContext = context
             }
         }
     }

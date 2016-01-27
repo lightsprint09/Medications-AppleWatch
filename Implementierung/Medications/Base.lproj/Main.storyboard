@@ -1145,7 +1145,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pBa-op-S8I">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pBa-op-S8I">
                                 <rect key="frame" x="20" y="72" width="117" height="90"/>
                                 <subviews>
                                     <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="xwG-vN-qKO" userLabel="Drug Image View" customClass="RoundUIImageView" customModule="Medications" customModuleProvider="target">
@@ -1218,7 +1218,7 @@
                                     <outletCollection property="gestureRecognizers" destination="9kX-0e-hBG" appends="YES" id="SoX-UL-Kcg"/>
                                 </connections>
                             </stackView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="7f6-24-ujT">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="7f6-24-ujT">
                                 <rect key="frame" x="149" y="87" width="419" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
@@ -1226,7 +1226,7 @@
                                     <action selector="didChangeDrugName:" destination="Mg7-DT-c0Y" eventType="editingChanged" id="zsT-3r-feG"/>
                                 </connections>
                             </textField>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SsU-f2-Iab" customClass="RoundView" customModule="Medications" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SsU-f2-Iab" customClass="RoundView" customModule="Medications" customModuleProvider="target">
                                 <rect key="frame" x="20" y="175" width="560" height="420"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VbF-UM-xe3">
@@ -1356,7 +1356,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EOE-3S-fUW">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EOE-3S-fUW">
                                 <rect key="frame" x="192" y="613" width="216" height="30"/>
                                 <state key="normal" title="Mehr Informationen hinzufügen"/>
                             </button>
@@ -1742,8 +1742,8 @@
         <image name="pill" width="42" height="42"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TJb-nM-l26"/>
         <segue reference="ggM-qI-lm8"/>
+        <segue reference="TJb-nM-l26"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.20000000000000001" green="0.094117647058823528" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
 </document>

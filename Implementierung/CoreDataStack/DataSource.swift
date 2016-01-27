@@ -12,3 +12,14 @@ public protocol DataSourceDelegate: class {
     func cellIdentifierForObject(object: Object) -> String
 }
 
+public protocol CollectionViewDataSourceDelegate: DataSourceDelegate {
+    typealias Header: UICollectionReusableView
+    typealias Footer: UICollectionReusableView
+    
+    func headerIdentifierForIndexPath(indexPath: NSIndexPath) -> String
+    func configureHeader(header: Header, indexPath: NSIndexPath)
+    
+    func footerIdentifierForIndexPath(indexPath: NSIndexPath) -> String
+    func configureFooter(header: Footer, indexPath: NSIndexPath)
+}
+

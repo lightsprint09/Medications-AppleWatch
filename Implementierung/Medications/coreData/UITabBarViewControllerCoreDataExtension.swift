@@ -23,8 +23,7 @@ extension UITabBarController: ManagedObjectContextSettable {
         
         for (_, controller) in childViewControllers.enumerate(){
             if let controller = controller as? ManagedObjectContextSettable {
-                var t = controller
-                t.managedObjectContext = managedObjectContext
+                controller.managedObjectContext = managedObjectContext
             }
         }
     }

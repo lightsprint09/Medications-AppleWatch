@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import CoreDataStack
 
-class AddDrugToMedicationCell: UICollectionViewCell {
+class AddDrugToMedicationCell: UICollectionViewCell, ConfigurableCell {
+    typealias DataSource = Drug
+    
     @IBOutlet weak var drugNamelLabel: UILabel!
     @IBOutlet weak var drugImageView: UIImageView!
     @IBOutlet weak var selectedView: UIView!
     
-    func configureWithDrug(drug:Drug) {
-       drugNamelLabel.text = drug.name
+    func configureForObject(drug: DataSource) {
+        drugNamelLabel.text = drug.name
         if let pillImageData = drug.pillImage {
             drugImageView.image = UIImage(data: pillImageData)
         }
@@ -22,7 +25,6 @@ class AddDrugToMedicationCell: UICollectionViewCell {
     
     func showSelectedBadge(isSelected:Bool) {
         selectedView.hidden = !isSelected
-        
         backgroundColor =  isSelected ? UIColor(red:230 / 255.0, green:230 / 255.0, blue:230 / 255.0, alpha:1.0) : nil
     }
     

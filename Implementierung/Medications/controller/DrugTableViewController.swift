@@ -29,7 +29,7 @@ class DrugTableViewController: UITableViewController, ManagedObjectContextSettab
     let drugService = DrugDBService()
     
     override func viewDidLoad() {
-        let frc = NSFetchedResultsController(fetchRequest: drugService.sortedFetchRequest(), managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+        let frc = NSFetchedResultsController(fetchRequest: drugService.sortedFetchRequest(), managedObjectContext: managedObjectContext)
         drugDataProvider = FetchedResultsDataProvider(fetchedResultsController: frc, delegate: self)
         tableViewDataSource = TableViewDataSource(tableView: tableView, dataProvider: drugDataProvider, delegate: self)
     }
@@ -38,8 +38,7 @@ class DrugTableViewController: UITableViewController, ManagedObjectContextSettab
         if let drugSettabel = (segue.destinationViewController as? UINavigationController)?.topViewController as? DrugSettable, let indexPath = tableView.indexPathForSelectedRow  {
             drugSettabel.drug = drugDataProvider.objectAtIndexPath(indexPath)
         }
-        guard let addDrugVC = (segue.destinationViewController as? UINavigationController)?.topViewController as? ManagedObjectContextSettable else {return}
-        var vc = addDrugVC
-        vc.managedObjectContext = managedObjectContext
+        guard let managedObjectContextSettable = (segue.destinationViewController as? UINavigationController)?.topViewController as? ManagedObjectContextSettable else {return}
+        managedObjectContextSettable.managedObjectContext = managedObjectContext
     }
 }

@@ -24,8 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard let rootTabController = window?.rootViewController as? ManagedObjectContextSettable else {
            return true
         }
-        var rtc = rootTabController
-        rtc.managedObjectContext = managedObjectContext
+        rootTabController.managedObjectContext = managedObjectContext
         return true
     }
 

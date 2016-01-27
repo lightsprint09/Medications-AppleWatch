@@ -41,6 +41,13 @@ public class FetchedResultsDataProvider<Delegate: DataProviderDelegate>: NSObjec
     public func numberOfSections() -> Int {
         return fetchedResultsController.sections?.count ?? 1
     }
+    
+    public func indexPathForObject(object: Object) -> NSIndexPath? {
+        if let object =  object as? AnyObject {
+            return fetchedResultsController.indexPathForObject(object)
+        }
+        return nil
+    }
 
 
     // MARK: Private

@@ -56,7 +56,7 @@ class AddDrugViewController: UIViewController, ManagedObjectContextSettable, UII
     }
     
     func imagePickerControllerDidCancel(picker:UIImagePickerController) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {

@@ -9,9 +9,9 @@
 import UIKit
 
 
-class CollectionViewDataSource<Delegate: DataSourceDelegate, Data: DataProvider, Cell: UICollectionViewCell where Delegate.Object == Data.Object, Cell: ConfigurableCell, Cell.DataSource == Data.Object>: NSObject, UICollectionViewDataSource {
+public class CollectionViewDataSource<Delegate: CollectionViewDataSourceDelegate, Data: DataProvider, Cell: UICollectionViewCell where Delegate.Object == Data.Object, Cell: ConfigurableCell, Cell.DataSource == Data.Object>: NSObject, UICollectionViewDataSource {
 
-    required init(collectionView: UICollectionView, dataProvider: Data, delegate: Delegate) {
+    public required init(collectionView: UICollectionView, dataProvider: Data, delegate: Delegate) {
         self.collectionView = collectionView
         self.dataProvider = dataProvider
         self.delegate = delegate
@@ -20,7 +20,7 @@ class CollectionViewDataSource<Delegate: DataSourceDelegate, Data: DataProvider,
         collectionView.reloadData()
     }
 
-    var selectedObject: Data.Object? {
+    public var selectedObject: Data.Object? {
         guard let indexPath = collectionView.indexPathsForSelectedItems()?.first else { return nil }
         return dataProvider.objectAtIndexPath(indexPath)
     }
@@ -55,15 +55,15 @@ class CollectionViewDataSource<Delegate: DataSourceDelegate, Data: DataProvider,
 
     // MARK: UICollectionViewDataSource
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    public func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return dataProvider.numberOfSections()
     }
 
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return dataProvider.numberOfItemsInSection(section)
     }
 
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    public func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let object = dataProvider.objectAtIndexPath(indexPath)
         let identifier = delegate.cellIdentifierForObject(object)
         guard let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as? Cell else {
@@ -71,6 +71,22 @@ class CollectionViewDataSource<Delegate: DataSourceDelegate, Data: DataProvider,
         }
         cell.configureForObject(object)
         return cell
+    }
+    
+    public func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        switch(kind) {
+        case UICollectionElementKindSectionHeader:
+            let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: delegate.headerIdentifierForIndexPath(indexPath), forIndexPath: indexPath) as! Delegate.Header
+            delegate.configureHeader(headerView, indexPath: indexPath)
+            return headerView
+            
+        case UICollectionElementKindSectionFooter:
+            let footerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: delegate.footerIdentifierForIndexPath(indexPath), forIndexPath: indexPath) as! Delegate.Footer
+            delegate.configureFooter(footerView, indexPath: indexPath)
+            return footerView
+        default:
+            return UICollectionReusableView()
+        }
     }
 
 }

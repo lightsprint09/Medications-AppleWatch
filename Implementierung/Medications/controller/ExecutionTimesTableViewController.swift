@@ -29,7 +29,7 @@ class ExecutionTimesTableViewController: UITableViewController, ManagedObjectCon
     var watchExecutionTimeService: WatchExecutionTimeService!
     lazy var dataProvider:FetchedResultsDataProvider<ExecutionTimesTableViewController>  = {
         let fetchRequest = self.executionTimeService.allChildrenExecutionTimesFetchRequest(NSDate())
-        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: "assignmentTimeOfDay", cacheName: nil)
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: "assignmentTimeOfDay")
         return FetchedResultsDataProvider(fetchedResultsController: frc, delegate: self)
     }()
     var dataSource: TableViewDataSource<ExecutionTimesTableViewController, FetchedResultsDataProvider<ExecutionTimesTableViewController>, MedicationTableCell>!
@@ -65,7 +65,6 @@ class ExecutionTimesTableViewController: UITableViewController, ManagedObjectCon
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let managedObjectContextSettable = segue.destinationViewController as? ManagedObjectContextSettable {
-           var managedObjectContextSettable = managedObjectContextSettable
             managedObjectContextSettable.managedObjectContext = managedObjectContext
         }
     }

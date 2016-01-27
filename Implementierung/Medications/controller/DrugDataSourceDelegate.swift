@@ -7,33 +7,28 @@
 //
 
 import Foundation
+import CoreDataStack
 
-class DrugDataSourceDelegate: FetchedResultsCollectionViewDataSourceDelegate {
-    private static let CELL_IDENTIFIER = "add-drug-to-medication-cell"
-    
-    typealias Cell = AddDrugToMedicationCell
+class DrugDataSourceDelegate: DataProviderDelegate, CollectionViewDataSourceDelegate  {
     typealias Object = Drug
+    
+    func dataProviderDidUpdate(updates: [DataProviderUpdate<Object>]?) {
+        
+    }
+    
+    func cellIdentifierForObject(object: Object) -> String {
+        return "add-drug-to-medication-cell"
+    }
     
     typealias Header = UICollectionReusableView
     typealias Footer = UICollectionReusableView
     
-    func cellIdentifierForObject(object: Object) -> String {
-        return DrugDataSourceDelegate.CELL_IDENTIFIER
-    }
-    
-    func configureCell(cell: Cell, object: Object) {
-//        if let selectedDrug = selectedDrug where object.isEqual(selectedDrug) {
-//            cell.showSelectedBadge(true)
-//        }else {
-//            cell.showSelectedBadge(false)
-//        }
-//        
-//        cell.configureWithDrug(object)
-    }
+
     
     func headerIdentifierForIndexPath(indexPath: NSIndexPath) -> String {
         return "add-drug-header-view"
     }
+    
     func configureHeader(header: Header, indexPath: NSIndexPath) {
        
     }
@@ -43,5 +38,5 @@ class DrugDataSourceDelegate: FetchedResultsCollectionViewDataSourceDelegate {
     }
     func configureFooter(header: Footer, indexPath: NSIndexPath) {
     }
-        
+    
 }

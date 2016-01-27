@@ -37,13 +37,14 @@ class AddMedicationViewController: UIViewController, ManagedObjectContextSettabl
             removeExecutionTimeButton.enabled = true
         }
     }
-    var testX: DrugDataSourceDelegate!
+    var drugDataDelegate: DrugDataSourceDelegate!
     
-    var drugDataSource: FetchedResultsCollectionViewController<DrugDataSourceDelegate>?
+    var drugDataProvider: FetchedResultsDataProvider<DrugDataSourceDelegate>!
+    var drugCollectionViewDataSource: CollectionViewDataSource<DrugDataSourceDelegate, FetchedResultsDataProvider<DrugDataSourceDelegate>, AddDrugToMedicationCell>!
     
     var executionTimeDataProvider: FetchedResultsDataProvider<AddMedicationViewController>!
     var executionTimeDataSource: TableViewDataSource<AddMedicationViewController, FetchedResultsDataProvider<AddMedicationViewController>, ExecutionTimeTableViewCell>!
-        
+    
     @IBOutlet weak var weekDaySelectionView: UIStackView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var executionTimeTableView: UITableView!
@@ -57,15 +58,16 @@ class AddMedicationViewController: UIViewController, ManagedObjectContextSettabl
     
     func setupDrugFetchController() {
         let fetchRequest = drugService.sortedFetchRequest()
-        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
-        testX =  DrugDataSourceDelegate()
-        drugDataSource = FetchedResultsCollectionViewController(collectionView: collectionView, fetchedResultsController: frc, delegate: testX)
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext)
+        drugDataDelegate =  DrugDataSourceDelegate()
+        drugDataProvider = FetchedResultsDataProvider(fetchedResultsController: frc, delegate: drugDataDelegate)
+        drugCollectionViewDataSource = CollectionViewDataSource(collectionView: collectionView, dataProvider: drugDataProvider, delegate: drugDataDelegate)
     }
     
     func setupExecutionTimeFetchController() {
         guard let drug = selectedDrug else { return }
         let fetchRequest = executionTimeService.rootExecutionTimeFetchRequest(drug)
-        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext)
         executionTimeDataProvider = FetchedResultsDataProvider(fetchedResultsController: frc, delegate: self)
         
         executionTimeDataSource = TableViewDataSource(tableView: executionTimeTableView, dataProvider: executionTimeDataProvider, delegate: self)
@@ -74,6 +76,7 @@ class AddMedicationViewController: UIViewController, ManagedObjectContextSettabl
     @IBAction func toggleDeleteInTableView(sender: AnyObject) {
         executionTimeTableView.setEditing(!executionTimeTableView.editing, animated: true)
     }
+    
     @IBAction func saveMedication(sender: AnyObject) {
         managedObjectContext.saveOrRollback()
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
@@ -86,7 +89,6 @@ class AddMedicationViewController: UIViewController, ManagedObjectContextSettabl
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let managedObjectContextSettable = segue.destinationViewController as? ManagedObjectContextSettable {
-            var managedObjectContextSettable = managedObjectContextSettable
             managedObjectContextSettable.managedObjectContext = managedObjectContext
         }
         if let medicationTimeController = (segue.destinationViewController as? UINavigationController)?.topViewController as? CreateRootExecutionTimeViewController {
@@ -98,19 +100,19 @@ class AddMedicationViewController: UIViewController, ManagedObjectContextSettabl
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        guard let drug = drugDataSource?.objectAtIndexPath(indexPath) else { return }
+        let drug = drugDataProvider.objectAtIndexPath(indexPath)
         selectDrug(drug)
     }
     
     func selectDrug(drug: Drug) {
-        guard let indexPath = drugDataSource?.fetchedResultsController.indexPathForObject(drug) else { return }
+        guard let indexPath = drugDataProvider.indexPathForObject(drug) else { return }
         
-        if let selectedDrug = selectedDrug, let currentlySelectedIndexPath = drugDataSource?.fetchedResultsController.indexPathForObject(selectedDrug) {
+        if let selectedDrug = selectedDrug, let currentlySelectedIndexPath = drugDataProvider.indexPathForObject(selectedDrug) {
             if let cell = collectionView.cellForItemAtIndexPath(currentlySelectedIndexPath) as? AddDrugToMedicationCell {
                 cell.showSelectedBadge(false)
             }
         }
-        selectedDrug = drugDataSource?.objectAtIndexPath(indexPath)
+        selectedDrug = drugDataProvider.objectAtIndexPath(indexPath)
         if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? AddDrugToMedicationCell {
             collectionView.selectItemAtIndexPath(indexPath, animated: false, scrollPosition: UICollectionViewScrollPosition.CenteredHorizontally)
             cell.showSelectedBadge(true)

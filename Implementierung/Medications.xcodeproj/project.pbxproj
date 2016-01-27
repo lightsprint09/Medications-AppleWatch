@@ -94,6 +94,7 @@
 		946B67F71C57B8700062FEC0 /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946B67F51C57B8700062FEC0 /* CollectionViewDataSource.swift */; };
 		946B67F81C57B8700062FEC0 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946B67F61C57B8700062FEC0 /* TableViewDataSource.swift */; };
 		946B67FA1C57B89F0062FEC0 /* ConfigurableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946B67F91C57B89F0062FEC0 /* ConfigurableCell.swift */; };
+		946B67FC1C58B9AE0062FEC0 /* NSFetchedResultsController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946B67FB1C58B9AE0062FEC0 /* NSFetchedResultsController+Extensions.swift */; };
 		946C04D91B7BD8FA00D93D10 /* DrugRenderEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E6081B7A4B0200B0CD7D /* DrugRenderEnum.swift */; };
 		946C04DA1B7BD91000D93D10 /* UIColorPainCodeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E6051B7A3C3200B0CD7D /* UIColorPainCodeExtension.swift */; };
 		946F7D461BDCF2D5008404AC /* ChoseOwnDelayTimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946F7D451BDCF2D5008404AC /* ChoseOwnDelayTimeController.swift */; };
@@ -106,16 +107,12 @@
 		9472A4871BE6BFAA0044D696 /* MedicationColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947D43371B87424D009F45BA /* MedicationColors.swift */; };
 		947D43381B87424D009F45BA /* MedicationColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947D43371B87424D009F45BA /* MedicationColors.swift */; };
 		947F022C1B80A39F006D9C7E /* RepeatEventCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947F022B1B80A39F006D9C7E /* RepeatEventCreator.swift */; };
-		947F02321B81CA17006D9C7E /* FetchedResultsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947F02311B81CA17006D9C7E /* FetchedResultsCollectionViewController.swift */; };
-		947F02341B81CD43006D9C7E /* FetchedResultsCollectionViewDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947F02331B81CD43006D9C7E /* FetchedResultsCollectionViewDataSourceDelegate.swift */; };
 		947F02361B81D0BF006D9C7E /* AddMedicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947F02351B81D0BF006D9C7E /* AddMedicationViewController.swift */; };
-		947F02381B81D1E5006D9C7E /* AddDrugToMedicationViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947F02371B81D1E5006D9C7E /* AddDrugToMedicationViewControllerExtension.swift */; };
+		947F02381B81D1E5006D9C7E /* DrugDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947F02371B81D1E5006D9C7E /* DrugDataSourceDelegate.swift */; };
 		947F023A1B81D25B006D9C7E /* AddDrugToMedicationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947F02391B81D25B006D9C7E /* AddDrugToMedicationCell.swift */; };
 		947F023C1B81D7DE006D9C7E /* ExecutionTimesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947F023B1B81D7DE006D9C7E /* ExecutionTimesTableViewController.swift */; };
 		94CA619F1B7F491800FF27F0 /* DrugDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CA619E1B7F491800FF27F0 /* DrugDetailViewController.swift */; };
 		94CA61A11B7F496500FF27F0 /* DrugSettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CA61A01B7F496500FF27F0 /* DrugSettable.swift */; };
-		94D1E5EF1B78EAC700B0CD7D /* NSManagedObjectContextExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E5EE1B78EAC700B0CD7D /* NSManagedObjectContextExtension.swift */; };
-		94D1E5F31B78EBEB00B0CD7D /* NSManagedObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E5F21B78EBEB00B0CD7D /* NSManagedObjectExtension.swift */; };
 		94D1E5F51B78F53700B0CD7D /* UINavigationControllerCoreDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E5F41B78F53700B0CD7D /* UINavigationControllerCoreDataExtension.swift */; };
 		94D1E6001B7A12CC00B0CD7D /* AddDrugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E5FF1B7A12CC00B0CD7D /* AddDrugViewController.swift */; };
 		94D1E6031B7A3B5D00B0CD7D /* DrugCustomaziationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E6021B7A3B5D00B0CD7D /* DrugCustomaziationView.swift */; };
@@ -127,8 +124,6 @@
 		94D1E6151B7B558D00B0CD7D /* RGBColorSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E6121B7B558D00B0CD7D /* RGBColorSlider.m */; };
 		94D1E6161B7B558D00B0CD7D /* RGBColorSliderDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E6141B7B558D00B0CD7D /* RGBColorSliderDelegate.m */; };
 		94D6D8A71B83584100DD5F2D /* DrugDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D6D8A61B83584100DD5F2D /* DrugDBService.swift */; };
-		94D73C571BCBF14100638F1C /* NSManagedObjectContextExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E5EE1B78EAC700B0CD7D /* NSManagedObjectContextExtension.swift */; };
-		94D73C581BCBF2A500638F1C /* NSManagedObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E5F21B78EBEB00B0CD7D /* NSManagedObjectExtension.swift */; };
 		94D73C5A1BCBFCAD00638F1C /* AbstractCoreDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D73C591BCBFCAD00638F1C /* AbstractCoreDataTest.swift */; };
 		94D73C5B1BCC00F300638F1C /* Medications.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 944F21491B59570200ED8A7A /* Medications.xcdatamodeld */; };
 		94D73C5D1BCC053C00638F1C /* DelayMedicationInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D73C5C1BCC053C00638F1C /* DelayMedicationInterfaceController.swift */; };
@@ -236,7 +231,7 @@
 		94272C451BDA2D31004EEB70 /* MedicationDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationDetailsController.swift; sourceTree = "<group>"; };
 		94272C471BDA3098004EEB70 /* ExecutionTimesDisplayDetailsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecutionTimesDisplayDetailsProtocol.swift; sourceTree = "<group>"; };
 		942AD6981BF3DCB000EE9A9A /* BigMedicationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigMedicationCell.swift; sourceTree = "<group>"; };
-		942D38ED1B787EB200553C79 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataStack.swift; path = ../model/CoreDataStack.swift; sourceTree = "<group>"; };
+		942D38ED1B787EB200553C79 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		942D38F61B78813E00553C79 /* ManagedObjectContextSettable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManagedObjectContextSettable.swift; path = ../Medications/coreData/ManagedObjectContextSettable.swift; sourceTree = "<group>"; };
 		942D38FA1B78855600553C79 /* UITabBarViewControllerCoreDataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITabBarViewControllerCoreDataExtension.swift; path = ../Medications/coreData/UITabBarViewControllerCoreDataExtension.swift; sourceTree = "<group>"; };
 		942D38FD1B788B8000553C79 /* RoundCornerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundCornerButton.swift; sourceTree = "<group>"; };
@@ -308,21 +303,18 @@
 		946B67F51C57B8700062FEC0 /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSource.swift; sourceTree = "<group>"; };
 		946B67F61C57B8700062FEC0 /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		946B67F91C57B89F0062FEC0 /* ConfigurableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurableCell.swift; sourceTree = "<group>"; };
+		946B67FB1C58B9AE0062FEC0 /* NSFetchedResultsController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSFetchedResultsController+Extensions.swift"; sourceTree = "<group>"; };
 		946F7D451BDCF2D5008404AC /* ChoseOwnDelayTimeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoseOwnDelayTimeController.swift; sourceTree = "<group>"; };
 		9472A47F1BE657D50044D696 /* WatchExecutionTimeContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchExecutionTimeContext.swift; sourceTree = "<group>"; };
 		9472A4851BE6870F0044D696 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		947D43371B87424D009F45BA /* MedicationColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationColors.swift; sourceTree = "<group>"; };
 		947F022B1B80A39F006D9C7E /* RepeatEventCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatEventCreator.swift; sourceTree = "<group>"; };
-		947F02311B81CA17006D9C7E /* FetchedResultsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsCollectionViewController.swift; sourceTree = "<group>"; };
-		947F02331B81CD43006D9C7E /* FetchedResultsCollectionViewDataSourceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsCollectionViewDataSourceDelegate.swift; sourceTree = "<group>"; };
 		947F02351B81D0BF006D9C7E /* AddMedicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMedicationViewController.swift; sourceTree = "<group>"; };
-		947F02371B81D1E5006D9C7E /* AddDrugToMedicationViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDrugToMedicationViewControllerExtension.swift; sourceTree = "<group>"; };
+		947F02371B81D1E5006D9C7E /* DrugDataSourceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugDataSourceDelegate.swift; sourceTree = "<group>"; };
 		947F02391B81D25B006D9C7E /* AddDrugToMedicationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDrugToMedicationCell.swift; sourceTree = "<group>"; };
 		947F023B1B81D7DE006D9C7E /* ExecutionTimesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecutionTimesTableViewController.swift; sourceTree = "<group>"; };
 		94CA619E1B7F491800FF27F0 /* DrugDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugDetailViewController.swift; sourceTree = "<group>"; };
 		94CA61A01B7F496500FF27F0 /* DrugSettable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugSettable.swift; sourceTree = "<group>"; };
-		94D1E5EE1B78EAC700B0CD7D /* NSManagedObjectContextExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContextExtension.swift; sourceTree = "<group>"; };
-		94D1E5F21B78EBEB00B0CD7D /* NSManagedObjectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectExtension.swift; sourceTree = "<group>"; };
 		94D1E5F41B78F53700B0CD7D /* UINavigationControllerCoreDataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UINavigationControllerCoreDataExtension.swift; path = ../Medications/coreData/UINavigationControllerCoreDataExtension.swift; sourceTree = "<group>"; };
 		94D1E5FF1B7A12CC00B0CD7D /* AddDrugViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDrugViewController.swift; sourceTree = "<group>"; };
 		94D1E6021B7A3B5D00B0CD7D /* DrugCustomaziationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugCustomaziationView.swift; sourceTree = "<group>"; };
@@ -392,6 +384,7 @@
 		942D38EF1B787EB900553C79 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				942D38ED1B787EB200553C79 /* CoreDataStack.swift */,
 				9436BAC31BBC0DAB0050DC93 /* RootExecutionTime+CoreDataProperties.swift */,
 				9436BAC41BBC0DAB0050DC93 /* ExecutionTime+CoreDataProperties.swift */,
 				9436BAC51BBC0DAB0050DC93 /* Drug+CoreDataProperties.swift */,
@@ -431,7 +424,7 @@
 			isa = PBXGroup;
 			children = (
 				94D1E60C1B7B44FF00B0CD7D /* CoustomizeDrugViewController + CollectionViewDataSource.swift */,
-				947F02371B81D1E5006D9C7E /* AddDrugToMedicationViewControllerExtension.swift */,
+				947F02371B81D1E5006D9C7E /* DrugDataSourceDelegate.swift */,
 			);
 			name = extension;
 			sourceTree = "<group>";
@@ -449,19 +442,6 @@
 				94463A2F1BBEBB5700DEE3D6 /* ExecutionTimeDetailView.swift */,
 			);
 			path = view;
-			sourceTree = "<group>";
-		};
-		942D39161B78AB1400553C79 /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				942D38ED1B787EB200553C79 /* CoreDataStack.swift */,
-				94D1E6011B7A20C600B0CD7D /* controller */,
-				94D1E5EE1B78EAC700B0CD7D /* NSManagedObjectContextExtension.swift */,
-				94D1E5F21B78EBEB00B0CD7D /* NSManagedObjectExtension.swift */,
-				947F02311B81CA17006D9C7E /* FetchedResultsCollectionViewController.swift */,
-			);
-			name = CoreData;
-			path = coreData;
 			sourceTree = "<group>";
 		};
 		942D391D1B78AC7300553C79 /* cell */ = {
@@ -520,7 +500,6 @@
 				947F022A1B80A35E006D9C7E /* service */,
 				94D1E6071B7A4AD300B0CD7D /* Pill/Drug */,
 				94D1E6041B7A3BF400B0CD7D /* libs */,
-				942D39161B78AB1400553C79 /* CoreData */,
 				942D39031B788B8C00553C79 /* view */,
 				942D38F41B7880E700553C79 /* controller */,
 				942D38EF1B787EB900553C79 /* model */,
@@ -602,6 +581,7 @@
 				946B67CF1C57B2FA0062FEC0 /* ManagedObject.swift */,
 				946B67B31C57B2520062FEC0 /* CoreDataStack.h */,
 				946B67B51C57B2520062FEC0 /* Info.plist */,
+				946B67FB1C58B9AE0062FEC0 /* NSFetchedResultsController+Extensions.swift */,
 			);
 			path = CoreDataStack;
 			sourceTree = "<group>";
@@ -648,14 +628,6 @@
 				944B2B081B8CFB460098E1EA /* NSDateCreation.swift */,
 			);
 			path = service;
-			sourceTree = "<group>";
-		};
-		94D1E6011B7A20C600B0CD7D /* controller */ = {
-			isa = PBXGroup;
-			children = (
-				947F02331B81CD43006D9C7E /* FetchedResultsCollectionViewDataSourceDelegate.swift */,
-			);
-			name = controller;
 			sourceTree = "<group>";
 		};
 		94D1E6041B7A3BF400B0CD7D /* libs */ = {
@@ -959,17 +931,14 @@
 			files = (
 				94CA619F1B7F491800FF27F0 /* DrugDetailViewController.swift in Sources */,
 				94D1E5F51B78F53700B0CD7D /* UINavigationControllerCoreDataExtension.swift in Sources */,
-				947F02341B81CD43006D9C7E /* FetchedResultsCollectionViewDataSourceDelegate.swift in Sources */,
 				942379281B8DD0F400FD8165 /* DrugEnum+ImageRender.swift in Sources */,
 				944B2B071B8CAE220098E1EA /* TimeOfDay.swift in Sources */,
 				94D6D8A71B83584100DD5F2D /* DrugDBService.swift in Sources */,
 				94D1E6061B7A3C3200B0CD7D /* UIColorPainCodeExtension.swift in Sources */,
 				942D38EE1B787EB200553C79 /* CoreDataStack.swift in Sources */,
 				944F214B1B59570200ED8A7A /* Medications.xcdatamodeld in Sources */,
-				947F02321B81CA17006D9C7E /* FetchedResultsCollectionViewController.swift in Sources */,
 				942D39021B788B8000553C79 /* RoundLabel.swift in Sources */,
 				944B2AFF1B8C6B8F0098E1EA /* CreateRootExecutionTimeViewController.swift in Sources */,
-				94D1E5EF1B78EAC700B0CD7D /* NSManagedObjectContextExtension.swift in Sources */,
 				947F02361B81D0BF006D9C7E /* AddMedicationViewController.swift in Sources */,
 				94DFA7661BCEA53400A91467 /* WCSessionManagerProtocol.swift in Sources */,
 				94352DD11BB96439000C6D1E /* ExecutionTimeService.swift in Sources */,
@@ -989,12 +958,11 @@
 				94DA8ABC1BC1748B00D8B9E6 /* NotificationSettings.swift in Sources */,
 				94D1E6031B7A3B5D00B0CD7D /* DrugCustomaziationView.swift in Sources */,
 				94D1E6151B7B558D00B0CD7D /* RGBColorSlider.m in Sources */,
-				947F02381B81D1E5006D9C7E /* AddDrugToMedicationViewControllerExtension.swift in Sources */,
+				947F02381B81D1E5006D9C7E /* DrugDataSourceDelegate.swift in Sources */,
 				9423792C1B8E2E2600FD8165 /* MedicationTableCell.swift in Sources */,
 				94F65FB31BE226D30010D134 /* ExcutionTimeProtocol.swift in Sources */,
 				944B2B051B8CA2BA0098E1EA /* ExecutionTimeTableViewCell.swift in Sources */,
 				942D39111B789DAB00553C79 /* ExecutionTime.swift in Sources */,
-				94D1E5F31B78EBEB00B0CD7D /* NSManagedObjectExtension.swift in Sources */,
 				942D39151B78AAB800553C79 /* DrugTableViewController.swift in Sources */,
 				942D38FB1B78855600553C79 /* UITabBarViewControllerCoreDataExtension.swift in Sources */,
 				947F022C1B80A39F006D9C7E /* RepeatEventCreator.swift in Sources */,
@@ -1023,10 +991,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94D73C571BCBF14100638F1C /* NSManagedObjectContextExtension.swift in Sources */,
 				941DEE321BC974FD00BDFBE2 /* RepeatEventCreatorTest.swift in Sources */,
 				941DEE461BCBD8C900BDFBE2 /* ExecutionTime.swift in Sources */,
-				94D73C581BCBF2A500638F1C /* NSManagedObjectExtension.swift in Sources */,
 				941DEE481BCBD95600BDFBE2 /* DrugEnum+ImageRender.swift in Sources */,
 				94DFA73A1BCC0E4400A91467 /* NotificationSettings.swift in Sources */,
 				941DEE4A1BCBDA2D00BDFBE2 /* TakeDrugNotificationKeys.swift in Sources */,
@@ -1097,6 +1063,7 @@
 				946B67F31C57B7F50062FEC0 /* FetchedResultsDataProvider.swift in Sources */,
 				946B67E41C57B33E0062FEC0 /* ModelBuilder.swift in Sources */,
 				946B67E61C57B33E0062FEC0 /* NSFetchRequest+Extensions.swift in Sources */,
+				946B67FC1C58B9AE0062FEC0 /* NSFetchedResultsController+Extensions.swift in Sources */,
 				946B67EC1C57B33E0062FEC0 /* ValueTransformer.swift in Sources */,
 				946B67E11C57B33E0062FEC0 /* KeyCodable.swift in Sources */,
 				946B67E81C57B33E0062FEC0 /* NSManagedObjectContext+Extensions.swift in Sources */,
