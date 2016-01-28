@@ -10,6 +10,6 @@ import CoreData
 
 public extension NSFetchedResultsController {
     convenience init(fetchRequest: NSFetchRequest, managedObjectContext: NSManagedObjectContext, sectionNameKeyPath: String? = nil, cacheNameDefault: String? = nil) {
-        self.init(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: sectionNameKeyPath, cacheNameDefault: nil)
+        self.init(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: sectionNameKeyPath, cacheName: nil)
     }
 }

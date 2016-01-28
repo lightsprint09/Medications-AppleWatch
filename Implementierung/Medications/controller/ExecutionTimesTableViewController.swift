@@ -14,7 +14,7 @@ extension ExecutionTimesTableViewController: DataProviderDelegate, DataSourceDel
     typealias Object = ExecutionTime
     
     func dataProviderDidUpdate(updates: [DataProviderUpdate<Object>]?) {
-        
+        dataSource.processUpdates(updates)
     }
     
     func cellIdentifierForObject(object: Object) -> String {

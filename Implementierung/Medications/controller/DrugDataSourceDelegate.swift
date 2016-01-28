@@ -7,13 +7,24 @@
 //
 
 import Foundation
+import CoreData
 import CoreDataStack
 
-class DrugDataSourceDelegate: DataProviderDelegate, CollectionViewDataSourceDelegate  {
+class DrugDataSource: DataProviderDelegate, CollectionViewDataSourceDelegate  {
     typealias Object = Drug
+    var drugDataProvider: FetchedResultsDataProvider<DrugDataSource>!
+    var drugCollectionViewDataSource: CollectionViewDataSource<DrugDataSource, FetchedResultsDataProvider<DrugDataSource>, AddDrugToMedicationCell>!
+   
+    init(collectionView: UICollectionView, managedObjectContext: NSManagedObjectContext) {
+        let drugService = DrugDBService()
+        let fetchRequest = drugService.sortedFetchRequest()
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext)
+        drugDataProvider = FetchedResultsDataProvider(fetchedResultsController: frc, delegate: self)
+        drugCollectionViewDataSource = CollectionViewDataSource(collectionView: collectionView, dataProvider: drugDataProvider, delegate: self)
+    }
     
     func dataProviderDidUpdate(updates: [DataProviderUpdate<Object>]?) {
-        
+        drugCollectionViewDataSource.processUpdates(updates)
     }
     
     func cellIdentifierForObject(object: Object) -> String {

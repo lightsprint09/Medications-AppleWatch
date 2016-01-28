@@ -25,7 +25,7 @@ public class CollectionViewDataSource<Delegate: CollectionViewDataSourceDelegate
         return dataProvider.objectAtIndexPath(indexPath)
     }
 
-    func processUpdates(updates: [DataProviderUpdate<Data.Object>]?) {
+    public func processUpdates(updates: [DataProviderUpdate<Data.Object>]?) {
         guard let updates = updates else { return collectionView.reloadData() }
         collectionView.performBatchUpdates({
             for update in updates {

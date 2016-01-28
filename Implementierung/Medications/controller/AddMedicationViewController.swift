@@ -14,7 +14,7 @@ extension AddMedicationViewController: DataProviderDelegate, DataSourceDelegate 
     typealias Object = RootExecutionTime
     
     func dataProviderDidUpdate(updates: [DataProviderUpdate<Object>]?) {
-        
+        executionTimeDataSource.processUpdates(updates)
     }
     
     func cellIdentifierForObject(object: Object) -> String {
@@ -25,7 +25,7 @@ extension AddMedicationViewController: DataProviderDelegate, DataSourceDelegate 
 class AddMedicationViewController: UIViewController, ManagedObjectContextSettable, UICollectionViewDelegate, UITableViewDelegate {
     var managedObjectContext: NSManagedObjectContext!
     
-    let drugService = DrugDBService()
+    
     let repeatEventCreator = RepeatEventCreator()
     let executionTimeService = ExecutionTimeService()
     
@@ -37,10 +37,8 @@ class AddMedicationViewController: UIViewController, ManagedObjectContextSettabl
             removeExecutionTimeButton.enabled = true
         }
     }
-    var drugDataDelegate: DrugDataSourceDelegate!
     
-    var drugDataProvider: FetchedResultsDataProvider<DrugDataSourceDelegate>!
-    var drugCollectionViewDataSource: CollectionViewDataSource<DrugDataSourceDelegate, FetchedResultsDataProvider<DrugDataSourceDelegate>, AddDrugToMedicationCell>!
+    var drugDataSource: DrugDataSource!
     
     var executionTimeDataProvider: FetchedResultsDataProvider<AddMedicationViewController>!
     var executionTimeDataSource: TableViewDataSource<AddMedicationViewController, FetchedResultsDataProvider<AddMedicationViewController>, ExecutionTimeTableViewCell>!
@@ -57,11 +55,7 @@ class AddMedicationViewController: UIViewController, ManagedObjectContextSettabl
     }
     
     func setupDrugFetchController() {
-        let fetchRequest = drugService.sortedFetchRequest()
-        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext)
-        drugDataDelegate =  DrugDataSourceDelegate()
-        drugDataProvider = FetchedResultsDataProvider(fetchedResultsController: frc, delegate: drugDataDelegate)
-        drugCollectionViewDataSource = CollectionViewDataSource(collectionView: collectionView, dataProvider: drugDataProvider, delegate: drugDataDelegate)
+        drugDataSource = DrugDataSource(collectionView: collectionView, managedObjectContext: managedObjectContext)
     }
     
     func setupExecutionTimeFetchController() {
@@ -100,19 +94,19 @@ class AddMedicationViewController: UIViewController, ManagedObjectContextSettabl
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let drug = drugDataProvider.objectAtIndexPath(indexPath)
+        let drug = drugDataSource.drugDataProvider.objectAtIndexPath(indexPath)
         selectDrug(drug)
     }
     
     func selectDrug(drug: Drug) {
-        guard let indexPath = drugDataProvider.indexPathForObject(drug) else { return }
+        guard let indexPath = drugDataSource.drugDataProvider.indexPathForObject(drug) else { return }
         
-        if let selectedDrug = selectedDrug, let currentlySelectedIndexPath = drugDataProvider.indexPathForObject(selectedDrug) {
+        if let selectedDrug = selectedDrug, let currentlySelectedIndexPath = drugDataSource.drugDataProvider.indexPathForObject(selectedDrug) {
             if let cell = collectionView.cellForItemAtIndexPath(currentlySelectedIndexPath) as? AddDrugToMedicationCell {
                 cell.showSelectedBadge(false)
             }
         }
-        selectedDrug = drugDataProvider.objectAtIndexPath(indexPath)
+        selectedDrug = drugDataSource.drugDataProvider.objectAtIndexPath(indexPath)
         if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? AddDrugToMedicationCell {
             collectionView.selectItemAtIndexPath(indexPath, animated: false, scrollPosition: UICollectionViewScrollPosition.CenteredHorizontally)
             cell.showSelectedBadge(true)
