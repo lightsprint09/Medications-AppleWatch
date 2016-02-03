@@ -81,6 +81,22 @@ public class FetchedResultsDataProvider<Delegate: DataProviderDelegate>: NSObjec
             updates.append(.Delete(indexPath))
         }
     }
+    
+    public func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
+        switch type {
+        case .Insert:
+            updates.append(.InsertSection(sectionIndex))
+        case .Update: break
+//            let object = objectAtIndexPath(indexPath)
+//            updates.append(.Update(indexPath, object))
+        case .Move: break
+//            guard let indexPath = indexPath else { fatalError("Index path should be not nil") }
+//            guard let newIndexPath = newIndexPath else { fatalError("New index path should be not nil") }
+//            updates.append(.Move(indexPath, newIndexPath))
+        case .Delete:
+            updates.append(.DeleteSection(sectionIndex))
+        }
+    }
 
     public func controllerDidChangeContent(controller: NSFetchedResultsController) {
         delegate.dataProviderDidUpdate(updates)

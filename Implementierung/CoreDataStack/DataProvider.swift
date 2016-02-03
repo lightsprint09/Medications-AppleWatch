@@ -30,5 +30,8 @@ public  enum DataProviderUpdate<Object> {
     case Update(NSIndexPath, Object)
     case Move(NSIndexPath, NSIndexPath)
     case Delete(NSIndexPath)
+    
+    case InsertSection(Int)
+    case DeleteSection(Int)
 }
 

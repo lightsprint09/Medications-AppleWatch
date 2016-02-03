@@ -33,7 +33,10 @@ class ExecutionTimesInterfaceController: WKInterfaceController {
             watchExecutionTimeService =  WatchExecutionTimeService(sessionManager: WCSessionManager.sharedInstace)
         }
         WCSessionManager.sharedInstace.activate()
-        watchExecutionTimeService.fetchExecutionTimesOfToday(didFetchExecutionTimes)
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            self.watchExecutionTimeService.fetchExecutionTimesOfToday(self.didFetchExecutionTimes)
+        })
+        
     }
     
     func didFetchExecutionTimes(executionTimes:Array<WatchExecutionTimeContext>) {

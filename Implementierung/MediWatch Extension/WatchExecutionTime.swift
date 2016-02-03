@@ -27,20 +27,13 @@ class WatchExecutionTime: NSObject, ExecutionTimeProtocol {
     let drugName: String?
     let drugImage: NSData?
     
-    private let iphoneData:[String: NSObject]
+    private let iphoneData: [String: NSObject]
     
     var codingData: [String: NSObject] {
         var dict = iphoneData
         dict[notification_executionDateKey] = executionDate
         dict[notification_secondsMovedKey] = secondsMoved
-//        if let executionDate = executionDate {
-//            dict[notification_executionDateKey] = executionDate
-//        }else {
-//           dict[notification_executionDateKey] = nil
-//        }
-//        if let secondsMoved = secondsMoved {
-//            
-//        }
+        
         return dict
     }
     

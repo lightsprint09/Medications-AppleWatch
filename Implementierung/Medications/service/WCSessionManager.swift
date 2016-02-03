@@ -10,7 +10,7 @@ import Foundation
 import WatchConnectivity
 
 class WCSessionManager: NSObject, WCSessionManagerProtocol {
-    private var delegates: Dictionary<String, WCSessionDelegate> = Dictionary()
+    private var delegates = Dictionary<String, WCSessionDelegate>()
     var session: WCSession
     
     static let sharedInstace = WCSessionManager()

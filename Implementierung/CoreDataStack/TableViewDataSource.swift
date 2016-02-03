@@ -32,6 +32,7 @@ public class TableViewDataSource<Delegate: DataSourceDelegate, Data: DataProvide
             switch update {
             case .Insert(let indexPath):
                 tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                
             case .Update(let indexPath, let object):
                 guard let cell = tableView.cellForRowAtIndexPath(indexPath) as? Cell else { break }
                 cell.configureForObject(object)
@@ -40,6 +41,10 @@ public class TableViewDataSource<Delegate: DataSourceDelegate, Data: DataProvide
                 tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Fade)
             case .Delete(let indexPath):
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            case .InsertSection(let sectionIndex):
+                self.tableView.insertSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
+            case .DeleteSection(let sectionIndex):
+                self.tableView.deleteSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
             }
         }
         tableView.endUpdates()

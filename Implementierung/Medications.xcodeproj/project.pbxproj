@@ -111,6 +111,7 @@
 		947F02381B81D1E5006D9C7E /* DrugDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947F02371B81D1E5006D9C7E /* DrugDataSourceDelegate.swift */; };
 		947F023A1B81D25B006D9C7E /* AddDrugToMedicationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947F02391B81D25B006D9C7E /* AddDrugToMedicationCell.swift */; };
 		947F023C1B81D7DE006D9C7E /* ExecutionTimesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947F023B1B81D7DE006D9C7E /* ExecutionTimesTableViewController.swift */; };
+		948CDB581C5A711F00C410E3 /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 948CDB551C5A6FFD00C410E3 /* Eureka.framework */; };
 		94CA619F1B7F491800FF27F0 /* DrugDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CA619E1B7F491800FF27F0 /* DrugDetailViewController.swift */; };
 		94CA61A11B7F496500FF27F0 /* DrugSettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CA61A01B7F496500FF27F0 /* DrugSettable.swift */; };
 		94D1E5F51B78F53700B0CD7D /* UINavigationControllerCoreDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E5F41B78F53700B0CD7D /* UINavigationControllerCoreDataExtension.swift */; };
@@ -313,6 +314,7 @@
 		947F02371B81D1E5006D9C7E /* DrugDataSourceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugDataSourceDelegate.swift; sourceTree = "<group>"; };
 		947F02391B81D25B006D9C7E /* AddDrugToMedicationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDrugToMedicationCell.swift; sourceTree = "<group>"; };
 		947F023B1B81D7DE006D9C7E /* ExecutionTimesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecutionTimesTableViewController.swift; sourceTree = "<group>"; };
+		948CDB551C5A6FFD00C410E3 /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Carthage/Build/iOS/Eureka.framework; sourceTree = "<group>"; };
 		94CA619E1B7F491800FF27F0 /* DrugDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugDetailViewController.swift; sourceTree = "<group>"; };
 		94CA61A01B7F496500FF27F0 /* DrugSettable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugSettable.swift; sourceTree = "<group>"; };
 		94D1E5F41B78F53700B0CD7D /* UINavigationControllerCoreDataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UINavigationControllerCoreDataExtension.swift; path = ../Medications/coreData/UINavigationControllerCoreDataExtension.swift; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				946B67C61C57B2520062FEC0 /* CoreDataStack.framework in Frameworks */,
+				948CDB581C5A711F00C410E3 /* Eureka.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +472,7 @@
 		944F21361B59570200ED8A7A = {
 			isa = PBXGroup;
 			children = (
+				948CDB551C5A6FFD00C410E3 /* Eureka.framework */,
 				944F21411B59570200ED8A7A /* Medications */,
 				944F21591B59570200ED8A7A /* MedicationsTests */,
 				944F21761B59573200ED8A7A /* MediWatch */,
@@ -717,6 +721,7 @@
 				944F213D1B59570200ED8A7A /* Resources */,
 				944F219B1B59573300ED8A7A /* Embed Watch Content */,
 				946B67C71C57B2520062FEC0 /* Embed Frameworks */,
+				948CDB591C5A713800C410E3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -923,6 +928,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		948CDB591C5A713800C410E3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Eureka.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		944F213B1B59570200ED8A7A /* Sources */ = {
@@ -1225,6 +1247,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Dieter Schmidt (UKN6LJWN4G)";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Medications/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.freiraum.Medications;
@@ -1240,6 +1266,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Dieter Schmidt (UKN6LJWN4G)";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Medications/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.freiraum.Medications;
@@ -1349,6 +1379,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CoreDataStack/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1373,6 +1407,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CoreDataStack/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1465,6 +1503,7 @@
 				946B67CA1C57B2520062FEC0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		946B67CE1C57B2520062FEC0 /* Build configuration list for PBXNativeTarget "CoreDataStackTests" */ = {
 			isa = XCConfigurationList;
@@ -1473,6 +1512,7 @@
 				946B67CC1C57B2520062FEC0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

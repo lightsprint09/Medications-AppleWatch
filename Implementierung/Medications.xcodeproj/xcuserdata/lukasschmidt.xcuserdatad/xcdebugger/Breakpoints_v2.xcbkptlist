@@ -15,6 +15,38 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "6"
             endingLineNumber = "6">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Medications.WatchExecutionTimeService.__deallocating_deinit"
+                  moduleName = "Medications"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lukasschmidt/Developer/Git/Medications/Implementierung/Medications/service/WatchExecutionTimeService.swift"
+                  timestampString = "476214099.028515"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Medications.WatchExecutionTimeService.init (Medications.WatchExecutionTimeService.Type)() -&gt; Medications.WatchExecutionTimeService"
+                  moduleName = "Medications"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lukasschmidt/Developer/Git/Medications/Implementierung/Medications/service/WatchExecutionTimeService.swift"
+                  timestampString = "476214099.028772"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

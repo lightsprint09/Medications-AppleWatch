@@ -27,15 +27,15 @@ class ExecutionTimesTableViewController: UITableViewController, ManagedObjectCon
     
     let executionTimeService = ExecutionTimeService()
     var watchExecutionTimeService: WatchExecutionTimeService!
-    lazy var dataProvider:FetchedResultsDataProvider<ExecutionTimesTableViewController>  = {
-        let fetchRequest = self.executionTimeService.allChildrenExecutionTimesFetchRequest(NSDate())
-        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: "assignmentTimeOfDay")
-        return FetchedResultsDataProvider(fetchedResultsController: frc, delegate: self)
-    }()
+    var dataProvider:FetchedResultsDataProvider<ExecutionTimesTableViewController>!
     var dataSource: TableViewDataSource<ExecutionTimesTableViewController, FetchedResultsDataProvider<ExecutionTimesTableViewController>, MedicationTableCell>!
     
     override func viewDidLoad() {
+        let fetchRequest = self.executionTimeService.allChildrenExecutionTimesFetchRequest(NSDate())
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: "assignmentTimeOfDay")
+        dataProvider = FetchedResultsDataProvider(fetchedResultsController: frc, delegate: self)
         dataSource = TableViewDataSource<ExecutionTimesTableViewController, FetchedResultsDataProvider<ExecutionTimesTableViewController>, MedicationTableCell>(tableView: tableView, dataProvider: dataProvider, delegate: self)
+        
         setupWatchConnection()
     }
     

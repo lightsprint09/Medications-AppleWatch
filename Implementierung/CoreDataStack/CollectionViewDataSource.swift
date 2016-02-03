@@ -40,6 +40,10 @@ public class CollectionViewDataSource<Delegate: CollectionViewDataSourceDelegate
                     self.collectionView.insertItemsAtIndexPaths([newIndexPath])
                 case .Delete(let indexPath):
                     self.collectionView.deleteItemsAtIndexPaths([indexPath])
+                case .InsertSection(let sectionIndex):
+                    self.collectionView.insertSections(NSIndexSet(index: sectionIndex))
+                case .DeleteSection(let sectionIndex):
+                    self.collectionView.deleteSections(NSIndexSet(index: sectionIndex))
                 }
             }
         }, completion: nil)

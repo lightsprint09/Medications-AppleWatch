@@ -101,10 +101,10 @@ class AddMedicationViewController: UIViewController, ManagedObjectContextSettabl
     func selectDrug(drug: Drug) {
         guard let indexPath = drugDataSource.drugDataProvider.indexPathForObject(drug) else { return }
         
-        if let selectedDrug = selectedDrug, let currentlySelectedIndexPath = drugDataSource.drugDataProvider.indexPathForObject(selectedDrug) {
-            if let cell = collectionView.cellForItemAtIndexPath(currentlySelectedIndexPath) as? AddDrugToMedicationCell {
-                cell.showSelectedBadge(false)
-            }
+        if let selectedDrug = selectedDrug,
+            let currentlySelectedIndexPath = drugDataSource.drugDataProvider.indexPathForObject(selectedDrug),
+            let cell = collectionView.cellForItemAtIndexPath(currentlySelectedIndexPath) as? AddDrugToMedicationCell {
+            cell.showSelectedBadge(false)
         }
         selectedDrug = drugDataSource.drugDataProvider.objectAtIndexPath(indexPath)
         if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? AddDrugToMedicationCell {
@@ -113,8 +113,6 @@ class AddMedicationViewController: UIViewController, ManagedObjectContextSettabl
             
         }
     }
-    
-    
     
     @IBAction func didChangeRepeatType(sender: UISegmentedControl) {
         UIView.animateWithDuration(0.4, delay: 0.0, usingSpringWithDamping: 1.0 , initialSpringVelocity: 0, options: [], animations: {self.weekDaySelectionView.hidden = sender.selectedSegmentIndex != 1}, completion: nil)
