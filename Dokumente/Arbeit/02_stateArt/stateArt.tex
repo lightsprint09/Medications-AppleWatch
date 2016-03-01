@@ -26,11 +26,12 @@ Während das Forschungsfeld der "Medication Adherence", also as Einhalten des Me
 Leider gibt es kaum Arbeiten, welche sich mit dem Thema Smartwatch und "Medication Adherence" beschäftigten. Dies ist auf das noch junge Forschungsfeld zurückzuführen. Sailer Arbeit \cite{Fabian-Sailer:2015aa} bietet eine Einstieg für diese Arbeit. Hier wurde auch die Thematik des PITA Praktikum abgeleitet, deren Erkenntnisse hier fortgeführt werden. 
 
 Weiter gibt es sehr spannende Forschungen im Bereich der Smartwatchanwednung, die in Fortschreitender Entwicklung auch im Bereich "Medication Adherence" vorstellbar sind. Mit Ambient Assisted Living, also der technischen Unterstützung älterer oder eingeschränkter Personen im Haushalt, beschäftigt sich die Arbeit "Non-obstructive Room-level Locating System in Home Environments Using Activity Fingerprints from Smartwatch"\cite{Lee:2015:NRL:2750858.2804272}. Wenn man nicht nur die Zeit, sondern auch den Ort oder das Zimmer für eine Medikamenteneinnahme definieren kann, könnte der Patienten das Medikament direkt einnehmen und die Gefahr des Vergessens verringert sich. Ebenso gliedert sich die Arbeit von Laput in den Bereich ein, der einen Kontextgewinn zur Folge hat \cite{Laput:2015:ETR:2807442.2807481}. Die Arbeit beschreibt das Erkennen von Gegenständen an ihrem Elektromagnetischem Feld. Der Kontext Gewinn, zu Erkennen welche Gegenstände der Träger der Uhr berührt, könnte zur Fehler bei Medikamenteneinnahme verhindern.
+\todo{7 Sekunden}
 
 Orientiert man sich an Arbeiten, deren Ziel die smartphonegestütze "Medication Adherence" zum Ziel hatten findet man unter anderem die aktuelle nationale Umfrage \cite{Krebs-P:2015aa} aus den USA, bei der 1604 Smartphone Nutzer zur ihrer Nutzung von Gesundheitsanwednungen befragt wurden. Mehr dazu wird im Kapitel \ref{ch:probs-obs-procs} zur Problemstellung  aufgegriffen
-\todo{Apple Keynote Produkt Vorstellung}
+
 \section{Apple`s Programmiersprache Swift}
-Swift wurde im Juni 2014 von Apple vorgestellt und genießt seit dem steigendes Interesse. Im Juni 2015 wurde Version 2.0 veröffentlicht \cite{Apple:2014sp}. Mit Version 2.0 wurde ebenfalls der Plan vorgestellt, Swift Open Source zu machen und somit auch anderen Plattformen die Entwicklung mit Swift zu ermöglichen \cite{Apple:2014sp}.
+Swift wurde im Juni 2014 von Apple vorgestellt und genießt seit dem steigendes Interesse. Im Juni 2015 wurde Version 2.0 veröffentlicht \cite{Apple:2014sp}. Mit Version 2.0 wurde ebenfalls der Plan vorgestellt, Swift Open Source zu machen und somit auch anderen Plattformen die Entwicklung mit Swift zu ermöglichen \cite{Apple:2014sp}. Diesen Plan setzte Apple Ende 2015 in die Tat um. Swift ist nun völlig Open Source. Es können Vorschläge für neue Sprachfunktionen gemacht werden. Auch Apples Entwicklungsteam diskutiert seine Pläne für die Sprache öffentlich \cite{Apple:2015swiftOpen}.
 
 \subsection{Objective-C und Swift}
 In den frühen 80er Jahren entwickelte Brad Cox die Sprache Objective-C\cite{Dalrymple:2009aa}. Weiter führt Dalrymple aus, dass die Sprache  die Vorteile einer schnellen C-Sprach mit den Vorteilen der objektorientierten Sprache SmallTalk verbinden sollte. Die Firma NextSTEP nutze Objectiv-C und als NEXTStep von Apple aufgekauft wurde, integrierte Apple Objectiv-C und ermöglichte Mac-Entwicklern die Nutzung.
@@ -38,7 +39,7 @@ In den frühen 80er Jahren entwickelte Brad Cox die Sprache Objective-C\cite{Dal
  Als Apple nun 2008 seine iOS Plattform öffnete und Entwickler eigene Anwendungen für das System schreiben konnten, bekam Objective-C neue Aufmerksamkeit. Viele Entwickler sahen Objective-C als ein Überbleibsel alter Zeiten und waren der Sprache negativ eingestellt. Apple stand nun unter Zugzwang um seine Plattform, mit der große wirtschaftliche Interessen Verbunden sind, für Entwickler attraktiv zu halten \cite{Wells:2015fu}. Da jedoch alle highlevel APIs in Objectiv-C vorhanden sind, ist es technisch nicht Möglich auf eine bekannte Sprache wie Java für iOS und Mac Entwicklung umzusteigen. Man entschied sich für eine Neuentwicklung, mit Hinblick auf neue Programmierparadigmen und sehr guter Kompatibilität zu alten Objectiv-C APIs \cite{Wells:2015fu}.
 
 \subsection{Überblick der Neuerung}
-las\begin{enumerate}
+\begin{enumerate}
 \item Type Inference
 \item Closures - Functions as First Class Types
 \item Generics
@@ -56,7 +57,18 @@ Während bei strikt objektorientierten Sprachen nur Objekte und primitive Datent
 \lstinputlisting[caption=Swift Beispiel zu First Class Objects, label=lst:firstFuncSwift]{02_stateArt/codeExamples/NetworkRequestWithFunctions.swift}
 Im Codebeispiel \ref{lst:firstFuncSwift} benötigt es kein Interface für den Nutzer des Netzwerk-Requests. Es ist nun in Swift möglich eine Funktion zu definieren und diese gleichzeitig in einer lokale Variable zu speichern. Nun kann diese Funktion als Referenz zum Netzwerk-Requests übergeben werden. Die Funktion wird aufgerufen, wenn der Netzwerk-Requests beendet ist. 
 
-\todo{Generics oder Protocol Extension}
+\section{Generics}
+Generics sind schon längere Zeit Teil moderner Programmiersprachen. Sie Unterstützen der Entwickler um Fehler zu Compilezeit zu entdecken. Ein sehr gutes Beispiel Colletions (Arrays, Listen, Set, etc). Eine Collection Typ wie Array muss nicht für jeden Typ den er hält neu implementiert werden.
+\lstinputlisting[caption=Swift Beispiel zu Generic Array Collection, label=lst:generics]{02_stateArt/codeExamples/Generics.swift}
+Im Codebeispiel \ref{lst:generics} werden die Vorteile von Generics aufgezeigt. Der erste Versuch einen Array zu implementieren (CustomMedicationArray) zeigt, dass dieser Array zwar eine sehr gute Typen Deklarierung enthält. Der Compiler kann den Entwickler also maximal Unterstützen, jedoch ist diese Implementierung minimal Wiederverwendbar. Der zweite Ansatz (CustomArray) gibt als Typ-Einschränkung den globalen Supertyp an. Dies führt zu einer Maximalen Wiederverwendbarkeit, da jede Klasse von diesem globalen Supertyp erbt (funktioniert nur theoretisch, da in Swift kein Zwang besteht von einem Globalen Supertyp zu erben).
+Die letzte Implementierung (GenericArray) nutzt nun Generics. So wird bei der Definition der Klasse ein generische Typ "T" eingeführt. Diese Typ ist eine Art Platzhalten für einen konkreten Typ, der später vom Array gehalten wird. So muss bei der Initialisierung der generischen Klasse die Typ-Information für T mit übergeben werden (siehe letze Zeile in \ref{lst:generics}).
+
+Das Oben beschriebene Beispiel dient nur zur Verdeutlichung den Konzeptes. Swift bietet eine Reihe an Collection Types, darunter auch eine generische Array Implementierung. 
+
+\section{Protocol Extension}
+Protocol Extension helfen dem Entwickler Abstraktionen, die über ein Interface (in Swift Protocol) definiert werden zu implementieren und dadurch Duplizierungen zu minimieren. So kann es sein, dass eine Methode eines Inerfaces in jeder Klasse, die das Interface implementiert gleich umgesetzt ist. Dies führt zu einer Code-Duplizierung. 
+\lstinputlisting[caption=Swift Beispiel zu Generic Array Collection, label=lst:ProtocolExtensions]{02_stateArt/codeExamples/ProtocolExtensions.swift}
+Im Codebeispiel \ref{lst:ProtocolExtensions} wird ein List Interface definiert. Die Extension zu diesem Interface ermöglicht die Implmentierung von "last" und "first". Diese Implementierung teilen sich nun alle Klassen, die List implementieren.
 
 \subsection{Optional Types}
 Optional Types eröffnen neue Möglichkeiten beim Modellieren von Datenmodellen und erstellen von APIs. Es ist so möglich Argumente in einer Methode als Optional zu kennzeichnen und somit dem Nutzer der Methode zu erlauben eine null-Referenz zu übergeben. Ist kein Optional-Type gekennzeichnet, so verbietet der Compiler ein null-Referenz übergabe \cite{Apple:2014sp}. Im folgenden Beispiel wird eine Medikation in Java ohne Optional Types und in Swift mit Optional Types modelliert.
@@ -75,7 +87,7 @@ Auch APIs können so modelliert werden. So darf ein Parameter nicht null sein, w
 
 Wearables sind meist mit Sensoren ausgestattet, die Daten aus der Körperregion sammeln, an der sie getragen werden \cite{4711366}. Diese Daten zeigen immer nur einen Teilauschnitt. Durch Tragen von mehreren Geräten, am Körper verteilt, können mehr Daten gesammelt werden. So ist es möglich einen noch genaueren Überblick über den Zustand des Körpers zu erhalten\cite{4711366}.
 
-Erst mit der Miniaturisierung der Computertechnik und Sensoren, war es möglich Computer mit integriertem Akku in Größe einer Streichholzschachtel herzustellen. Während Swatch 1995/1996 \todo{Swatch Quelle} eine Uhr vorstellte, die als Skipass funktionierte stellte Apple 18 Jahre später die Apple Watch vor, die über eien Mikroprozessor, WLAN und eine Vielzahl an Sensoren verfügt (mehr zur Apple Watch in \ref{ch:apple-watch})
+Erst mit der Miniaturisierung der Computertechnik und Sensoren, war es möglich Computer mit integriertem Akku in Größe einer Streichholzschachtel herzustellen. Während Swatch 1995/1996 eine Uhr vorstellte, die als Skipass funktionierte stellte Apple 18 Jahre später die Apple Watch vor, die über eien Mikroprozessor, WLAN und eine Vielzahl an Sensoren verfügt (mehr zur Apple Watch in \ref{ch:apple-watch})
 
 Doch nicht nur Uhren zählen zu den Wearables. Google präsentierte mit der Google Glass eine Datenbrille, die über eine Kamera, ein Heads "Prismatic head-mount" Display, Sprachstuerung, sowie Internetverbindung und weitere Sensoren verfügt \cite{Muensterer2014281}. Auch ein Ring, der mit Hilfe eines Sensoren den Puls misst existiert als Prototyp \cite{4711366}.
 

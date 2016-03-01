@@ -14,7 +14,7 @@ Die in Kapitel 3 aufgeführten Analyse Ergebnisse wurden für die erste Interati
 \section{Benutzeroberfläche}
 Xcode bietet für visuelle Erstellung von Benutzeroberflächen ein eigenen integrierten Editor namens InterfaceBuilder bereit. Hiermit können graphische Elemente per DragAndDrop zu einer Benutzeroberfläche zusammengestellt werden \ref{fig:xcode-interface-elements}. Ebenfalls per DragAndDrop werden diese Inerface-Elemete mit dem Quellcode verbunden\ref{fig:xcode-interface-code-connect}.
 
-Die Auswahl an Interface-Elemenete ist sehr begrenzt und bietet kaum Möglichkeiten eigene Interface-Elemenete zu erstellen. Trotz dieser Begrenztheit lassen sich Anwendungen komplexere Anwendungen bauen. 
+Die Auswahl an Interface-Elemenete ist sehr begrenzt und bietet kaum Möglichkeiten eigene Interface-Elemenete zu erstellen. Trotz dieser Begrenztheit lassen sich Anwendungen komplexere Anwendungen bauen.
 \begin{figure}
 	\caption{Interface Elemente zu Erstellen von Benutzeroberflächen}
 	\label{fig:xcode-interface-elements}
@@ -38,12 +38,18 @@ Werden erst beim Watch-App Start benötigte Daten vom der iPhone angefordert, ka
 
 Zum übertragen von größeren Daten steht die Methode "transferFile:" zur Verfügung. Die Methode verhält sich equivalent zu "transferUserInfo:", wird jedoch in der Realisierung nicht verwendet.
 
+\section{Notification Management}
+Notifications für die Medikationen werden mit der Notification API  registriert werden \cite{Apple:2015notif}. Auch kann das Verhalten der Notifications angepasst werden. So werden vordefinierte Aktionen wie "Einnehmen" oder "Verschieben" in die Notifications konfiguriert.
+
+Bei der Notification handelt sich um eine UILocalNotification \cite{Apple:2015notif}. Die Art von Notification benötigt keinen Remote Server \todo{remote S. erklären}, sondern wird vom verbunden iPhone verwaltet. Zum jetzigen Zeitpunkt ist es nicht möglich UILocalNotification von der Uhr zu verwalten. Dies würde die Uhr im Falle der Mediwatch-Anwendung noch unabhängiger machen. Sind die Notifications einmal auf dem iPhone registriert, werden sie zum Ausführungszeitpunkt auf der Uhr angezeigt. Dazu ist keine Verbindung zum iPhone mehr nötig.
+
 \section{Anwendung}
 
-Die Anwendung besteht aus 2 Komponenten auf der Apple Watch. Eine native Notification (\ref{ch:watch_software}). Diese wurde darauf hin optimiert, dass eine große graphische Repräsentation des Medikaments angezeigt wird. Dem Nutzer wird so die Wiedererkennung des Medikaments zu erleichtert (siehe \ref{fig:watch-app-notification}). Neben dem Medikamentennamen wird auch die Dosierung des Medikaments dargestellt. Es wird dem Nutzer ermöglicht mit nur einer Aktion das Medikament zu Bestätigen oder es zu Verschieben. Die Notification ist darauf ausgelegt eine sehr schnelle Interaktion zu ermöglichen, damit der Nutzer nicht länger als 10 Sekunden mit der Uhr interagieren muss.
+Die Anwendung besteht aus 2 Komponenten auf der Apple Watch. Eine native Notification  und eine auf der Uhr installierte und ausgeführte Anwendung (siehe \ref{ch:watch_software}).
 
-Neben der Notification gibt es noch eine  native App. Diese läuft auf der Uhr und stellt eine Liste der heutigen Medikamente dar. Die App muss aktiv vom Nutzer gestartet werden. In \ref{fig:watch-app-take} wird ein Medikament aus der List ausgewählt. Nach dem man ein Medikamnet ausgewählt hat, kommt man in einen Detailansicht des Medikaments. Dort kann man nun das Medikament als genommen markieren. Ein visuelles Feedback zur Einnahme zeigt dem Nutzer seine Aktion. Vom der Detailansicht ist es auch Möglich ein Medikament zur späteren Einnahme zu makieren 
-
+\subsection{Notification}
+ Die Notification bringt die Uhr zum Zeitpunkt der geplanten Medikamenteneinnahme zum vibrieren und lässt optional einen Ton erklingen. Dies führt dazu, dass der Anwender auf die Uhr Blick und die bevorstehende Medikamenteneinnahme bemerkt. Die Notification wurde darauf hin optimiert, dass eine große graphische Repräsentation des Medikaments angezeigt wird. Dem Nutzer wird so die Wiedererkennung des Medikaments zu erleichtert (siehe \ref{fig:watch-app-notification}).Neben dem Medikamentennamen wird auch die Dosierung des Medikaments dargestellt. Es wird dem Nutzer ermöglicht mit nur einer Aktion das Medikament zu Bestätigen oder es zu Verschieben. Die Notification ist darauf ausgelegt eine sehr schnelle Interaktion zu ermöglichen, damit der Nutzer nicht länger als 10 Sekunden mit der Uhr interagieren muss (siehe \ref{fig:watch-app-notification}).
+ 
 \begin{figure}
 	\caption{Notification für Medikament}
 	\label{fig:watch-app-notification}
@@ -51,12 +57,25 @@ Neben der Notification gibt es noch eine  native App. Diese läuft auf der Uhr u
 	\includegraphics[width=0.5\textwidth]{04_realisation/screenshots/watch/notification02.png}
 \end{figure}
 
+\subsection{Native Anwendung}
+Neben der Notification gibt es noch eine native App. Diese läuft auf der Uhr und stellt eine Liste der Medikamente des aktuellen Tages dar. Die App muss aktiv vom Nutzer gestartet werden. In \ref{fig:watch-app-take} wird ein Medikament aus der List ausgewählt. Nach dem man ein Medikament ausgewählt hat, bekommt man in einen Detailansicht des Medikaments zu sehen. Dort kann man nun das Medikament als genommen oder nicht genommen markieren. Ein visuelles Feedback zur Einnahme zeigt dem Nutzer seine Aktionen an. Von der Detailansicht ist es auch Möglich ein Medikament zur späteren Einnahme zu markieren. Hier hat der Anwender die Möglichkeit aus vordefinierten Zeiten auszuwählen oder eine eigene Zeit zu wählen (siehe \ref{fig:watch-app-delay}). 
+
 \begin{figure}
-	\caption{Interface zu wählen von eines Medikaments (oben links). Medikament als genommen bestätigen (oben rechts). Medikament ist als genommen markiert (unten links). Medikament ist in der Übersicht als genommen markiert(unten rechts)}
+	\caption{Native Anwendung: Interface zu wählen von eines Medikaments (oben links). Medikament als genommen bestätigen (oben rechts). Eigene Zeitdauer auswählen (unten links). Medikament ist in der Übersicht als verschoben markiert (unten rechts)}
 	\label{fig:watch-app-take}
 	\includegraphics[width=0.5\textwidth]{04_realisation/screenshots/watch/notTaken01.png}
 	\includegraphics[width=0.5\textwidth]{04_realisation/screenshots/watch/notTaken02.png}
 	\includegraphics[width=0.5\textwidth]{04_realisation/screenshots/watch/taken01.png}
 	\includegraphics[width=0.5\textwidth]{04_realisation/screenshots/watch/taken02.png}
 \end{figure}
+
+\begin{figure}
+	\caption{Native Anwendung: Interface zu verschieben von eines Medikaments (oben links). Zeitdauer für das Verschiebenwählen (oben rechts). Medikament ist als genommen markiert (unten links). Medikament ist in der Übersicht als genommen markiert(unten rechts)}
+	\label{fig:watch-app-delay}
+	\includegraphics[width=0.5\textwidth]{04_realisation/screenshots/watch/delay01.png}
+	\includegraphics[width=0.5\textwidth]{04_realisation/screenshots/watch/delay02.png}
+	\includegraphics[width=0.5\textwidth]{04_realisation/screenshots/watch/delay03.png}
+	\includegraphics[width=0.5\textwidth]{04_realisation/screenshots/watch/delay04.png}
+\end{figure}
+
 

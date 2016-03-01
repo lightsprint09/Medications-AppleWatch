@@ -44,7 +44,7 @@ class NotificationSettings: NSObject {
     
     
     
-    static let notificationSettings = UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert.union(.Badge).union(.Sound), categories: [medicationNotificationCategory])
+    static let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: [medicationNotificationCategory])
     
 }
 

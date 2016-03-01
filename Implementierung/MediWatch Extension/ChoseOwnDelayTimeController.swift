@@ -8,10 +8,17 @@
 
 import WatchKit
 
+
+
 class ChoseOwnDelayTimeController: WKInterfaceController {
     @IBOutlet var delayTimePicker: WKInterfacePicker!
+    var watchExecutionTimeContext: WatchExecutionTimeContext!
+    var delayMinutes: Int?
 
     override func awakeWithContext(context: AnyObject?) {
+        if let context = context as? WatchExecutionTimeContext{
+            watchExecutionTimeContext = context
+        }
         var pickerItems: [WKPickerItem] = []
         let pickerItem = WKPickerItem()
         pickerItem.title = "\(1) Minute"
@@ -25,5 +32,18 @@ class ChoseOwnDelayTimeController: WKInterfaceController {
     }
     
     @IBAction func delayMedication() {
+        if let delayMinutes = delayMinutes {
+            watchExecutionTimeContext.delayExecutionTime(delayMinutes * 60)
+        }
+      popToRootController()
+    }
+    
+    @IBAction func didChangePickerValue(value: Int) {
+        delayMinutes = value + 1
+    }
+    func delayExecutionTime(seconds: Int) {
+        watchExecutionTimeContext.executionTime.secondsMoved = seconds
+        watchExecutionTimeContext.executionTimeService.updateExecutionTime(watchExecutionTimeContext.executionTime)
+        popController()
     }
 }

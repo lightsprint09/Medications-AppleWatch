@@ -17,4 +17,9 @@ class WatchExecutionTimeContext: NSObject {
         self.executionTime = executionTime
         super.init()
     }
+    
+    func delayExecutionTime(seconds: Int) {
+        executionTime.secondsMoved = seconds
+        executionTimeService.updateExecutionTime(executionTime)
+    }
 }

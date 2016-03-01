@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9059" systemVersion="15C31f" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Scx-B9-ZLk">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Scx-B9-ZLk">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9019"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
     </dependencies>
     <scenes>
         <!--Static Notification Interface Controller-->
@@ -10,9 +10,9 @@
             <objects>
                 <notificationController id="YCC-NB-fut">
                     <items>
-                        <label width="136" height="39.5" alignment="left" text="Asprin  2 Tabletten" textAlignment="center" numberOfLines="3" id="IdU-wH-bcW">
+                        <label width="136" height="58.5" alignment="left" text="Asprin  2 Tabletten" textAlignment="center" numberOfLines="3" id="IdU-wH-bcW">
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="font" type="system" weight="semibold" pointSize="16"/>
+                            <fontDescription key="font" type="system" weight="semibold" pointSize="23"/>
                         </label>
                     </items>
                     <notificationCategory key="notificationCategory" identifier="take_medikation_category_identifier" id="JfB-70-Muf">
@@ -47,7 +47,7 @@
                     </items>
                 </glanceController>
             </objects>
-            <point key="canvasLocation" x="257" y="871"/>
+            <point key="canvasLocation" x="220" y="875"/>
         </scene>
         <!--Verschieben-->
         <scene sceneID="rWg-Oi-uB0">
@@ -67,26 +67,27 @@
                         </group>
                         <label alignment="center" text="Asprin" textAlignment="center" id="WaW-NR-WNH">
                             <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" pointSize="17"/>
                         </label>
                         <label alignment="center" text="2 Tabletten" textAlignment="center" id="dCC-OA-q1K">
-                            <fontDescription key="font" type="system" weight="semibold" pointSize="18"/>
+                            <fontDescription key="font" type="system" weight="semibold" pointSize="19"/>
                         </label>
-                        <button width="1" alignment="left" title="15 Minuten" id="4dZ-lU-vBB">
+                        <button width="1" height="44" alignment="left" title="15 Minuten" id="4dZ-lU-vBB">
                             <connections>
                                 <action selector="moveFirstButtonClick" destination="OIs-Az-qSQ" id="kPH-Gb-F7y"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" title="30 Minuten" id="H32-zE-IXr">
+                        <button width="1" height="44" alignment="left" title="30 Minuten" id="H32-zE-IXr">
                             <connections>
                                 <action selector="moveSecondButtonClick" destination="OIs-Az-qSQ" id="UMO-aC-CO8"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" title="1 Stunde" id="euc-fC-24f">
+                        <button width="1" height="44" alignment="left" title="1 Stunde" id="euc-fC-24f">
                             <connections>
                                 <action selector="moveThirdButtonClick" destination="OIs-Az-qSQ" id="pef-W5-jWw"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" title="Eigene Zeit" id="jlG-8y-NfS">
+                        <button width="1" height="44" alignment="left" title="Eigene Zeit" id="jlG-8y-NfS">
                             <connections>
                                 <segue destination="hwX-Vg-kUK" kind="push" id="bBw-uJ-KHm"/>
                             </connections>
@@ -100,15 +101,19 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="563" y="226"/>
+            <point key="canvasLocation" x="490" y="230"/>
         </scene>
         <!--Chose Own Delay Time Controller-->
         <scene sceneID="vbs-ej-ajz">
             <objects>
                 <controller id="hwX-Vg-kUK" customClass="ChoseOwnDelayTimeController" customModule="MediWatch_Extension">
                     <items>
-                        <picker height="100" alignment="left" indicatorMode="shownWhileFocused" id="UyW-hn-BnB"/>
-                        <button width="1" alignment="left" title="Verschieben" id="Aq7-A9-9A2">
+                        <picker height="100" alignment="left" indicatorMode="shownWhileFocused" id="UyW-hn-BnB">
+                            <connections>
+                                <action selector="didChangePickerValue:" destination="hwX-Vg-kUK" id="WRC-Cw-pR8"/>
+                            </connections>
+                        </picker>
+                        <button width="1" height="44" alignment="left" title="Verschieben" id="Aq7-A9-9A2">
                             <connections>
                                 <action selector="delayMedication" destination="hwX-Vg-kUK" id="jca-ru-72Z"/>
                             </connections>
@@ -124,13 +129,13 @@
         <!--Notification Controller-->
         <scene sceneID="vji-2l-ecq">
             <objects>
-                <controller spacing="4" hidesWhenLoading="NO" id="KhG-YX-kO1" customClass="NotificationController" customModule="MediWatch_Extension">
+                <controller spacing="2" hidesWhenLoading="NO" id="KhG-YX-kO1" customClass="NotificationController" customModule="MediWatch_Extension">
                     <items>
                         <group width="1" height="54" alignment="center" id="9Yz-3d-Ara">
                             <items>
                                 <group width="8" alignment="left" id="6vC-5y-9TX"/>
                                 <imageView width="26" height="26" alignment="left" verticalAlignment="center" hidden="YES" image="take_icon" contentMode="scaleAspectFit" id="Hvk-JV-aUX"/>
-                                <imageView width="54" height="54" alignment="center" id="N9N-sI-2fT"/>
+                                <imageView width="55" height="55" alignment="center" id="N9N-sI-2fT"/>
                                 <label width="40" alignment="right" verticalAlignment="center" id="0fS-Qh-Zij">
                                     <color key="textColor" red="0.97254901959999995" green="0.4823529412" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="font" type="boldSystem" pointSize="16"/>
@@ -139,9 +144,10 @@
                         </group>
                         <label alignment="center" text="Asprin" textAlignment="center" id="12X-02-9a6">
                             <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" pointSize="17"/>
                         </label>
                         <label alignment="center" text="2 Tabletten" textAlignment="center" id="KKJ-Il-gOk">
-                            <fontDescription key="font" type="system" weight="semibold" pointSize="18"/>
+                            <fontDescription key="font" type="system" weight="semibold" pointSize="20"/>
                         </label>
                     </items>
                     <connections>
@@ -152,7 +158,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="507" y="643"/>
+            <point key="canvasLocation" x="431" y="643"/>
         </scene>
         <!--Interface Controller-->
         <scene sceneID="gCg-x2-kkK">
@@ -304,19 +310,19 @@
                             <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         </label>
                         <label alignment="center" text="2 Tabletten" textAlignment="center" id="zVy-7c-TES">
-                            <fontDescription key="font" type="system" weight="semibold" pointSize="18"/>
+                            <fontDescription key="font" type="system" weight="semibold" pointSize="19"/>
                         </label>
-                        <button width="1" alignment="left" title="Nehmen" id="Dxn-Dw-1uN">
+                        <button width="1" height="44" alignment="left" title="Nehmen" id="Dxn-Dw-1uN">
                             <connections>
                                 <action selector="onTakeMedication" destination="T89-nr-REx" id="uUg-EP-Qht"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" title="Verschieben" id="vP4-AI-i4P">
+                        <button width="1" height="44" alignment="left" title="Verschieben" id="vP4-AI-i4P">
                             <connections>
                                 <segue destination="OIs-Az-qSQ" kind="push" id="TfD-dP-2M5"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" title="Nicht nehmen" id="UEf-9K-uDE">
+                        <button width="1" height="44" alignment="left" title="Nicht nehmen" id="UEf-9K-uDE">
                             <color key="titleColor" red="0.81568627449999997" green="0.0078431372550000003" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="notTakenMedication" destination="T89-nr-REx" id="6zb-KZ-LtG"/>
