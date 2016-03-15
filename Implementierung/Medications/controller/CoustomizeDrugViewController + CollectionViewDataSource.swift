@@ -23,7 +23,7 @@ extension CoustomizeDrugViewController: UICollectionViewDataSource {
         if let cell = cell as? CustomPillCell {
             let pillKind = DrugEnum(rawValue: indexPath.row)
             cell.pillView.drugKind = pillKind
-            cell.pillView.pillBaseColor = rgbColor
+            cell.pillView.pillBaseColor = displayingObject.color
         }
         
         return cell;

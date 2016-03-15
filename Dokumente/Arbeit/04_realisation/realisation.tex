@@ -11,6 +11,9 @@
 
 Die in Kapitel 3 aufgeführten Analyse Ergebnisse wurden für die erste Interation des Prototyps umgesetzt. Es handelt sich hierbei um ein funktionsfähigen Prototypen, der nativ auf der Apple Watch ausführbar ist. Im folgenden werden Schritte der Umsetzung genauer beschrieben. Hierbei wird genauer auf die Benutzeroberflächenerstellung, sowie auch die Verbindung zischen Uhr und iPhone eingegangen.
 
+\section{Wekzeuge}
+Für die Entwicklung wurde Apple Entwicklungsumgebung Xcode in Version 7.2.1 mit den SDKs iOS 9.2 und watchOS 2.1. Zum Verwalten des des Source-Codes wurde Git\cite{git} verwendet. Als Git-Remoteserver wurde Github \cite{github} verwendet. Die graphische Repräsentationen der Medikamente keine statischen Bilder. Jede Art von Medikament hat eine Vorlage, die dynamisch mit jeglicher Farbe eingefärbt werden kann. Zum Erstellen dieser Vorlagen wurde PaintCode in Version 2.4 \cite{paintCode} genutzt.
+
 \section{Benutzeroberfläche}
 Xcode bietet für visuelle Erstellung von Benutzeroberflächen ein eigenen integrierten Editor namens InterfaceBuilder bereit. Hiermit können graphische Elemente per DragAndDrop zu einer Benutzeroberfläche zusammengestellt werden \ref{fig:xcode-interface-elements}. Ebenfalls per DragAndDrop werden diese Inerface-Elemete mit dem Quellcode verbunden\ref{fig:xcode-interface-code-connect}.
 
@@ -41,7 +44,7 @@ Zum übertragen von größeren Daten steht die Methode "transferFile:" zur Verf�
 \section{Notification Management}
 Notifications für die Medikationen werden mit der Notification API  registriert werden \cite{Apple:2015notif}. Auch kann das Verhalten der Notifications angepasst werden. So werden vordefinierte Aktionen wie "Einnehmen" oder "Verschieben" in die Notifications konfiguriert.
 
-Bei der Notification handelt sich um eine UILocalNotification \cite{Apple:2015notif}. Die Art von Notification benötigt keinen Remote Server \todo{remote S. erklären}, sondern wird vom verbunden iPhone verwaltet. Zum jetzigen Zeitpunkt ist es nicht möglich UILocalNotification von der Uhr zu verwalten. Dies würde die Uhr im Falle der Mediwatch-Anwendung noch unabhängiger machen. Sind die Notifications einmal auf dem iPhone registriert, werden sie zum Ausführungszeitpunkt auf der Uhr angezeigt. Dazu ist keine Verbindung zum iPhone mehr nötig.
+Bei der Notification handelt sich um eine UILocalNotification \cite{Apple:2015notif}. Die Art von Notification benötigt keinen \gls{remoteServer}, sondern wird vom verbunden iPhone verwaltet. Zum jetzigen Zeitpunkt ist es nicht möglich UILocalNotification von der Uhr zu verwalten. Dies würde die Uhr im Falle der Mediwatch-Anwendung noch unabhängiger machen. Sind die Notifications einmal auf dem iPhone registriert, werden sie zum Ausführungszeitpunkt auf der Uhr angezeigt. Dazu ist keine Verbindung zum iPhone mehr nötig.
 
 \section{Anwendung}
 

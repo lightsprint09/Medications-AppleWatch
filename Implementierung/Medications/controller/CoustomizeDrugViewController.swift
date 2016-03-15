@@ -7,39 +7,44 @@
 //
 
 import UIKit
+import CoreDataStack
 
-class CoustomizeDrugViewController: UIViewController, DrugSettable, UICollectionViewDelegate {
-    @IBOutlet weak var drugView: DrugCustomaziationView!
-    @IBOutlet weak var pillCollectionView: UICollectionView!
-    var drug:Drug!
+class CoustomizeDrugViewController: UIViewController, UICollectionViewDelegate, ManagedObjectDisplaying {
+    typealias Displayable = Drug
+    var displayingObject: Drug!
+    var observer: GenericObserver<Drug>!
     
-    var rgb:(Float, Float, Float) = (1,1,1) {
-        didSet{
-            drugView.pillBaseColor = rgbColor
-            drug.color = rgbColor
-        }
-    }
-    let sliderDelegate = RGBColorSliderDelegate()
-    @IBOutlet weak var imageView: UIImageView!
-    
-    override func viewDidLoad() {
-        guard let drugKind = drug.type, let color = drug.color else{
-            drug.color = rgbColor
-            return }
-        drugView.drugKind = drugKind
+    func didChangeObject(changeType: ManagedObjectObserver.ChangeType, object drug: Drug) {
+        let color = drug.color!
         drugView.pillBaseColor = color
         redSlider.setValue(Float(color.red()), animated: false)
         greenSlider.setValue(Float(color.green()), animated: false)
         blueSlider.setValue(Float(color.blue()), animated: false)
+        pillCollectionView.reloadData()
+        guard let drugKind = drug.type else{
+            return }
+        drugView.drugKind = drugKind
     }
     
-    var rgbColor: UIColor {
-        return sliderDelegate.getCurrentColor()
+    
+    @IBOutlet weak var drugView: DrugCustomaziationView!
+    @IBOutlet weak var pillCollectionView: UICollectionView!
+
+    let sliderDelegate = RGBColorSliderDelegate()
+    @IBOutlet weak var imageView: UIImageView!
+    
+    override func viewDidLoad() {
+        displayingObject.color = displayingObject.color ?? .whiteColor()
+        observer = GenericObserver(object: displayingObject, changeHandler: didChangeObject)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+      observer = nil
     }
     
     @IBAction func doneViewController(sender: AnyObject) {
-        if let renderesPill = drug.type?.renderToImage(CGSize(width: 90, height: 90), baseColor: rgbColor) {
-             drug.pillImage = UIImagePNGRepresentation(renderesPill)
+        if let color = displayingObject.color, let renderesPill = displayingObject.type?.renderToImage(CGSize(width: 90, height: 90), baseColor: color) {
+             displayingObject.pillImage = UIImagePNGRepresentation(renderesPill)
         }
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -64,18 +69,15 @@ class CoustomizeDrugViewController: UIViewController, DrugSettable, UICollection
     }
 
     @IBAction func redChanged(sender: UISlider) {
-        rgb.0 = 1 - sender.value
-        pillCollectionView.reloadData()
+        displayingObject.color = sliderDelegate.getCurrentColor()
     }
     
     @IBAction func greenChanged(sender: UISlider) {
-        rgb.1 = 1 -  sender.value
-        pillCollectionView.reloadData()
+        displayingObject.color = sliderDelegate.getCurrentColor()
     }
     
     @IBAction func blueChanged(sender: UISlider) {
-        rgb.2 = 1 -  sender.value
-         pillCollectionView.reloadData()
+        displayingObject.color = sliderDelegate.getCurrentColor()
     }
     
     @IBAction func finishDragging(sender: AnyObject) {
@@ -85,8 +87,7 @@ class CoustomizeDrugViewController: UIViewController, DrugSettable, UICollection
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let pillKind = DrugEnum(rawValue: indexPath.row)
-        drugView.drugKind = pillKind
-        drug.type = pillKind
+        displayingObject.type = pillKind
     }
     
     

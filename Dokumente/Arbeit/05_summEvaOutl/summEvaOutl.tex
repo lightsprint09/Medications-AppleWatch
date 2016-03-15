@@ -42,16 +42,27 @@ Während er Gesprächs  mehr Einblick in das Leben der Probanden zu erhalten. Pr
 \subsection{Probleme tabellarisch}
 \begin{table}[]
 \centering
-\caption{My caption}
+\caption{Probleme und mögliche Lösungen des Smartwatch Prototypes}
 \label{my-label}
-\begin{tabular}{|l|l|l|}
+\begin{tabular}{p{4cm} p{5cm} p{5cm}|l|l|l|}
 \hline
  Problem  &Auswirkungen  &mögliche Lösung  \\ \hline
- fehlender Internetanschluss  &keine Aktualisierungen und keine Benachrichtigungen für den Arzt &Uhr oder Smartphone mit Mobilfunk  \\
- fehlende Feinmotorik der Probanden&  &  \\
- Vibration zu leicht&  &  \\
- Nur mit Brille lesbar&  &  \\
- Armband schwer anlegbar&  &  \\
- Uhr ist unästhethisch&  &  \\ \hline
+ \textbf{fehlender Internetanschluss}  &keine Aktualisierungen des Medikamentenplans und keine Benachrichtigungen für den Arzt &Uhr oder Smartphone mit Mobilfunkverbindung ausstatten  \\
+ \textbf{fehlende Feinmotorik der Probanden} &Buttons werden nicht getroffen oder falsche Aktionen werden ausgelöst  &große haptische Knöpfe in die Hardware integrieren, die gut drückbar sind  \\
+ \textbf{Vibration zu leicht}&Vibration wird nicht gespürt und Medikament wird vergessen  &Stärkere Vibration,Lauten Ton dazu abspielen, starken optisches Feedback (grelles Blinken)   \\
+ \textbf{Nur mit Brille lesbar} &Benachrichtigung wird erkannt, bis jedoch die Brille im Haushalt gefunden, ist die Medikation schon vergessen oder die Uhr hat die Benachrichtigung schon zurückgestellt  &Größeres Schrift, die Auch ohne Brille lesbar ist. Audiowiedergabe der Medikation  \\
+ \textbf{Armband schwer anlegbar}&Uhr wird morgens nicht gerne Angezogen und bleibt so liegen und Patient bekommt keine Benachrichtigungen  &Verzicht auf Standart Sport Band und dafür Armbänder die leicht anzuziehen sind finden. Viele Patienten tragen dehnbare Bänder ohne Verschluss \\
+ \textbf{Uhr ist unästhetisch}&Patient trägt die Uhr nicht und wird so nicht an die Medikamente erinnert  &Keine Standart Uhren kaufen, sondern den Patienten die Farbe und Form der Uhr und die Art des Armbandes aussuchen lassen  \\ \hline
 \end{tabular}
 \end{table}
+
+\section{Zusammenfassung}
+Ziel der Arbeit war es, die Akzeptanz eines Systems zur Erinnerung an Medikamente zu testen. Dieses Ziel wurde mit einer Patientenbefragung verfolgt. Patienten stehen dem Konzept der Uhr am Handgelenk, ob sie jetzt digital oder Analog ist positiv gegenüber. So ist die Uhr als Medium für solche Zwecke geeignet. Die Apple Watch, mit ihrer touchscreenbasierten Navigation, stellt für die getestete Zielgruppe eine große Herausforderung da. Fehlende Feinmotorische Fähigkeiten erschwert den Patienten die Interaktion mit der Uhr. Auch sind Vibration und Geräuschwiedergabe zu schwach und können so leicht überhört werden. Das ästhetische Aussehen der Uhr ist nicht zu vernachlässigen, da die Uhr oft als Art Schmuck getragen wird. So trägt die Farbe, Form und Größe zur Akzeptanz der Uhr bei. Findet der Patient die Uhr unschön/unmodisch, so wird er sie nicht tragen und schlimmstenfalls seine Medikamente vergessen.
+
+Da Smartwatches noch keine große Verbreitung haben, sind auch die Werkzeuge zur Umsetzung von Anwendungen begrenzt. Interaktive Prototypen sind auf der Uhr nicht die Verwendung von Code möglich. So vermehrt sich der Aufwand für schnelles iteratives Vorgehen. Das WatchOS SDK von Apple bietet eine relativ übersichtliche Schnittstelle. Die Schnittstellen ermöglichen es komplexere Anwendungen zu erstellen. Diese sind jedoch an manchen Stellen noch limitiert. Da es sich um die erste Geräte-Generation handelt, muss abgewartet werden, mit welchen Leistungsverbesserungen weiter Generation nachgerüstete werden, um die Uhr zu einem wirklich nützlichen Werkzeug zu machen. Das Potential zu einem guten Nutzen zeigt die erste Generation auf, jedoch ist sie an manchen Stellen (Geschwindigkeit, Lange Wartezeiten) noch nicht ausgereift.
+
+Apples neue Programmiersprache Swift, die zur Implementierung genutzt wurde, bietet Konzepte moderner Programmiersprachen. Diese Konzepte unterstützen den Entwickler meist schon zur Compilezeit. Dies führt zu einer frühen Fehlererkennung. Durch diese Spracheigenschaften, wie Optionals (\ref{ch:optionals}), die Sicherheit in der Modelierung geben oder Closures und First Class Functions (\ref{ch:closures}) die Konzepte Funktionales Programmierung bereitstellen, eignet sich Swift sehr gut als Lehrsprache. Dadurch das Swift unter einer Open Source Lizenz veröffentlicht wurde, kann man nun für mehre Zielplattfomen Entwickeln.
+
+\section{Ausblicke}
+Mit den Gewonnen Ergebnissen kann diese Projekt neu ausgerichtet werden. So sollte die Zielgruppe über mehr Erfahrung mit digitalen Geräten verfügen. So wäre eine Unterstützung von Kindern und Jugendlichen im Alter ab 12 Jahren denkbar. Diese könnten bei ihrer Therapie unterstützt werden und durch die moderne Technik, mit der sie aufgewachsen sind, motiviert werden, Medikamente zeitgemäß einzunehmen.
+Nachdem die Defizite mit der Lesbarkeit durch die Evaluation entdeckt wurden, ergab die Recherche, dass die watchOS Plattform über Funktionen der Accessibility verfügt \cite{Apple:watchAccess} . Damit ist es möglich Nutzungs-Erleichterungen für Menschen mit Körperlichen Einschränkungen zu schaffen. So kann mit DynamicType, also eine dynamischen Schriftgröße in der App, die Lesbarkeit verbessert werden. Der Nutzer kann so seine eigene Schriftgröße wählen. Auch die Navigation zum Öffnen von Anwendungen wird mit Accessibility Einstellungen verbessert.

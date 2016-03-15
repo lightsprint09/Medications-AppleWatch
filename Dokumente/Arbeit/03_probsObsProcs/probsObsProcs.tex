@@ -8,17 +8,17 @@
 % Michael Lukas Bauer, Sebastian Felix Rauh
 % ----------------------------------------------------------------------------
 %%
-In diesem Kapitel Ergebnisse der Analyse und des Entwurfes erläuteret. große Teile der Anforderungsanalyse stammen aus dem PITA Praktikum.
+In diesem Kapitel Ergebnisse der Analyse und des Entwurfes erläuteret. große Teile der Anforderungsanalyse stammen aus dem \gls{pita}.
 \section{Entwicklungsmethodik}
-Da das Projekt nur durch eine Person durchgeführt wurde, kann man nicht von einem definierbaren Methodik sprechen. Es handelte sich um ein iteratives Vorgehen. Funktionen, die bei der Evaluation erarbeitet wurden, sind direkt in eine neue Version der Anforderungen integriert worden. Der Quellcode wurde mit \gls{git} versioniert verwaltet
+Da das Projekt nur durch eine Person durchgeführt wurde, kann man nicht von einem definierbaren Methodik sprechen. Es handelte sich um ein iteratives Vorgehen. Funktionen, die bei der Evaluation erarbeitet wurden, sind direkt in eine neue Version der Anforderungen integriert worden. Der Quellcode wurde mit \gls{git} versioniert verwaltet.
 \section{Anforderungsanalyse}
-Die Anforderungen wurden von eine Gerspräch mit Monika Pobiruchin am Anfang des Pita-Praktikum erhoben. Kernaussage dieser Anforderungen, dass das System von alten Menschen genutzt werden kann, um Medikamente regelmäßiger einzunehmen. Dies beinhaltet eine geringe Auseinandersetzung mit der Technik des Systems. Die Uhr soll möglichst autonom sein und nicht zwingen an ein Smartphone gekoppelt sein.
+Die Anforderungen wurden von eine Gerspräch mit Monika Pobiruchin am Anfang vom \gls{pita} erhoben. Kernaussage dieser Anforderungen, dass das System von alten Menschen genutzt werden kann, um Medikamente regelmäßiger einzunehmen. Dies beinhaltet eine geringe Auseinandersetzung mit der Technik des Systems. Die Uhr soll möglichst autonom sein und nicht zwingen an ein Smartphone gekoppelt sein.
 
 \section{Usecases} 
 Von dem Gespräch mit Monika Pobiruchin wurde eine Persona für die Zielgruppe abgeleitet. Diese Persona ist im Anhang zu finden.
-Mit Hilfe der Persona, wurden die Kern-Usacases abgeleitet. Die folgenden Usecase 1 bis 4 wurden im Praktikum erarbeitet und wurden von dort übernommen. 
+Mit Hilfe der Persona, wurden die Kern-Usacases abgeleitet. Die folgenden Usecase 1 bis 4 wurden im \gls{pita} erarbeitet und wurden von dort übernommen. 
 \input{04_realisation/pita_usecases.tex}
-Diese vier Usecases sind auch Grundlage für dies Arbeit. Wie die Usecases umgesetzt sind wird in Kapitel \ref{ch:realisation} beschrieben. In Kapitel \ref{ch:summ-eva-outl} finden sich überarbeitet Usecases, die Verbesserungen enthalten, welche aus der Evaluation mit der Zielgruppe hervorgehen.
+Diese vier Usecases sind auch Grundlage für dies Arbeit. Wie die Usecases umgesetzt sind wird in Kapitel \ref{ch:realisation} beschrieben.
 
 \section{Apple Watch}
 \label{ch:apple-watch}
@@ -48,15 +48,12 @@ Es gibt zwei verschiede Arten von Notification, die beide die gleiche Funktion h
 Bluetooth 4.0 und Wi-Fi 802.11b/g sind die Netzwerkschnistellen der Apple Watch. Dazu kommt noch ein NFC Chip, der jedoch nicht über eine API nutzbar ist und vorerst nur für Apple Pay, dem Apple eigenen Bezahldienst, vorgesehen ist\cite{RITCHIE:2015aa}. 
 \subsection{Sensoren}
 Die Apple Watch besitzt einen Beschleunigungssensor und Gyroskop welche genaue Bewegungsdaten liefern. Ebenso ist ein optischer Herzschagsensor verbaut, der an der Unterseite der Uhr auf der Haut anliegt. Ein Mikrofon, welches für Spracheingabe genutzt werden kann ist auch vorhanden.
-\subsection{Taptic Engine}
 
-\todo{Tapic Engine}
 \subsection{Eingabe Interfaces}
 \label{ch:eingabe_interface}
 Neben eines normalen Touchescreen führte Apple in der Uhr auch eine Eingabeart Names Force Touch ein. Diese Technologie erlaubt es der Uhr zu erkennen, wie fest der Nutzer auf das Display drückt. Dies ermöglicht eine Neue Art der Eingabe. Besonders bei einer kleinen Eingabefläche, wie die der Apple Watch, ist eine neue Interaktionsdimesion interessant, da es eine differenziertere Interaktion erlaubt. Leider ist eine mögliche Interaktion mit Force Touch optisch nicht zu erkennen, was eine klare Nutzerführung schwer macht.
 
  Von Analogen Uhren ist die Krone, also das Rad an der Seite einer Uhr, an dem die Uhr eingestellt oder aufgezogen werden kann bekannt. An der Apple Watch ist die Krone auch zu finden. Apple nennt sie "Digital Crown", also digitale Krone. Sie befindet sich ebenfalls an der Seite der Uhr. Die Krone ist drehbar und lässt sich ebenfalls als Druckknopf nutzen. Sie dient zum scrollen von Inhalten, sowie präzisen Auswählen von Elementen aus einer Auswahlliste. Durch nutzen der Krone wird der Bildschirm nicht durch einen Finger verdeckt, was bei einem kleinen Display von Vorteil ist.
-\todo{Accesability}
 \subsection{Armband}
 Apple biete 6 verschiede Armbänder für die Apple Watch an (Stand Nov. 2015). Zusätzlich ist es möglich, Armbänder von Drittherstellern zu erwerben. 
 

@@ -42,10 +42,11 @@ columns=fullflexible,
   moredelim=**[is][\color{red}]{@}{@},
 }
 \lstset{style=base, frame=shadowbox}
+\usepackage{tasks}
 
 % Globals
 \newcommand{\autor}{Lukas Schmidt}
-\newcommand{\titel}{Steht noch nicht ganz fest}
+\newcommand{\titel}{System zur Erinnerung an Medikamenteneinnahme für die Apple Watch mit Blick auf Gebrauchstauglichkeit und Akzeptanz  der Plattform}
 \newcommand{\supervisor}{Prof. Dr.-Ing. Gerrit Meixner}
 \newcommand{\reviewer}{Prof. Dr. Martin Haag}
 \newcommand{\matriculationNo}{182706}
@@ -105,7 +106,7 @@ columns=fullflexible,
 % Glossary
 \makeglossaries
 \glossarystyle{list}
-
+\input{07_glossary/glossary.tex}
 \begin{document}
 
 % Sprache
@@ -123,7 +124,7 @@ columns=fullflexible,
 
 \listoftables
 
-\input{07_glossary/glossary.tex}
+
 \twocolumn
 \printglossaries
 
@@ -158,9 +159,5 @@ columns=fullflexible,
 \chapter{Appendix}
 \label{ch:appendix}
  	\input{06_appendix/appendix.tex} 
- 		
-\chapter{Dokumentation}
-\label{ch:documentation}
- 	%\input{06_appendix/appendix.tex} 
 \end{document}
 

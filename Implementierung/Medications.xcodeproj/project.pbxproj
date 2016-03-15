@@ -112,6 +112,7 @@
 		947F023A1B81D25B006D9C7E /* AddDrugToMedicationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947F02391B81D25B006D9C7E /* AddDrugToMedicationCell.swift */; };
 		947F023C1B81D7DE006D9C7E /* ExecutionTimesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947F023B1B81D7DE006D9C7E /* ExecutionTimesTableViewController.swift */; };
 		948CDB581C5A711F00C410E3 /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 948CDB551C5A6FFD00C410E3 /* Eureka.framework */; };
+		9493F5531C904D630008EE10 /* ManagedObjectDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9493F5521C904D630008EE10 /* ManagedObjectDisplaying.swift */; };
 		94CA619F1B7F491800FF27F0 /* DrugDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CA619E1B7F491800FF27F0 /* DrugDetailViewController.swift */; };
 		94CA61A11B7F496500FF27F0 /* DrugSettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CA61A01B7F496500FF27F0 /* DrugSettable.swift */; };
 		94D1E5F51B78F53700B0CD7D /* UINavigationControllerCoreDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1E5F41B78F53700B0CD7D /* UINavigationControllerCoreDataExtension.swift */; };
@@ -315,6 +316,7 @@
 		947F02391B81D25B006D9C7E /* AddDrugToMedicationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDrugToMedicationCell.swift; sourceTree = "<group>"; };
 		947F023B1B81D7DE006D9C7E /* ExecutionTimesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecutionTimesTableViewController.swift; sourceTree = "<group>"; };
 		948CDB551C5A6FFD00C410E3 /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Carthage/Build/iOS/Eureka.framework; sourceTree = "<group>"; };
+		9493F5521C904D630008EE10 /* ManagedObjectDisplaying.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManagedObjectDisplaying.swift; path = ../Medications/coreData/ManagedObjectDisplaying.swift; sourceTree = "<group>"; };
 		94CA619E1B7F491800FF27F0 /* DrugDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugDetailViewController.swift; sourceTree = "<group>"; };
 		94CA61A01B7F496500FF27F0 /* DrugSettable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugSettable.swift; sourceTree = "<group>"; };
 		94D1E5F41B78F53700B0CD7D /* UINavigationControllerCoreDataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UINavigationControllerCoreDataExtension.swift; path = ../Medications/coreData/UINavigationControllerCoreDataExtension.swift; sourceTree = "<group>"; };
@@ -618,6 +620,7 @@
 				942D38F61B78813E00553C79 /* ManagedObjectContextSettable.swift */,
 				942D38FA1B78855600553C79 /* UITabBarViewControllerCoreDataExtension.swift */,
 				94D1E5F41B78F53700B0CD7D /* UINavigationControllerCoreDataExtension.swift */,
+				9493F5521C904D630008EE10 /* ManagedObjectDisplaying.swift */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -1072,6 +1075,7 @@
 			files = (
 				946B67DF1C57B33E0062FEC0 /* Collection+CoreDataExtensions.swift in Sources */,
 				946B67F21C57B7F50062FEC0 /* DataSource.swift in Sources */,
+				9493F5531C904D630008EE10 /* ManagedObjectDisplaying.swift in Sources */,
 				946B67E91C57B33E0062FEC0 /* NSManagedObjectContext+Observers.swift in Sources */,
 				946B67FA1C57B89F0062FEC0 /* ConfigurableCell.swift in Sources */,
 				946B67F11C57B7F50062FEC0 /* DataProvider.swift in Sources */,

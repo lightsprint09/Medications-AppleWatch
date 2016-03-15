@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import MobileCoreServices
+import CoreDataStack
 
 class AddDrugViewController: UIViewController, ManagedObjectContextSettable, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var drugImageView: UIImageView!
@@ -86,8 +87,8 @@ class AddDrugViewController: UIViewController, ManagedObjectContextSettable, UII
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let drugSettable = (segue.destinationViewController as? UINavigationController)?.topViewController as? DrugSettable {
-            drugSettable.drug = drug
+        if let drugSettable = (segue.destinationViewController as? UINavigationController)?.topViewController as? CoustomizeDrugViewController {
+            drugSettable.displayingObject = drug
         }
     }
 }

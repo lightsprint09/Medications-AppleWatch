@@ -28,17 +28,20 @@ class Drug: NSManagedObject {
     
     var type: DrugEnum? {
         get {
-            if let type = imageKind {
-                return DrugEnum(rawValue: type.integerValue)
-            }
-            return nil
+            return DrugEnum(rawValue: imageKind?.integerValue ?? -1)
         }
         set {
-            if let kind = newValue {
-                imageKind = kind.rawValue
-            }else {
-                imageKind = nil
-            }
+            imageKind = newValue?.rawValue ?? nil
         }
     }
+    
+//    var rgb: (Float, Float, Float)? {
+//        get {
+//            guard let color = self.color else { return nil }
+//            return (Float(color.red()), Float(color.green()), Float(color.blue()))
+//        }
+//        set {
+//            
+//        }
+//    }
 }
