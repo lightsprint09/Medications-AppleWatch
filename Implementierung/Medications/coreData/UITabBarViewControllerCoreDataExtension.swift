@@ -20,7 +20,6 @@ extension UITabBarController: ManagedObjectContextSettable {
         }
     }
     private func passManagedObjectContextToChildren(managedObjectContext:NSManagedObjectContext) {
-        
         for (_, controller) in childViewControllers.enumerate(){
             if let controller = controller as? ManagedObjectContextSettable {
                 controller.managedObjectContext = managedObjectContext

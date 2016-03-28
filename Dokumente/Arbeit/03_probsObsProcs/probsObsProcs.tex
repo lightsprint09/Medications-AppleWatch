@@ -8,59 +8,59 @@
 % Michael Lukas Bauer, Sebastian Felix Rauh
 % ----------------------------------------------------------------------------
 %%
-In diesem Kapitel Ergebnisse der Analyse und des Entwurfes erläuteret. große Teile der Anforderungsanalyse stammen aus dem \gls{pita}.
+In diesem Kapitel werden Ergebnisse der Analyse und des Entwurfes erläutert. Große Teile der Anforderungsanalyse stammen aus dem \gls{pita}.
 \section{Entwicklungsmethodik}
-Da das Projekt nur durch eine Person durchgeführt wurde, kann man nicht von einem definierbaren Methodik sprechen. Es handelte sich um ein iteratives Vorgehen. Funktionen, die bei der Evaluation erarbeitet wurden, sind direkt in eine neue Version der Anforderungen integriert worden. Der Quellcode wurde mit \gls{git} versioniert verwaltet.
+Da das Projekt nur durch eine Person durchgeführt wurde, kann man nicht von einer definierbaren Methodik sprechen. Es handelte sich um ein iteratives Vorgehen. Funktionen, die bei der Evaluation erarbeitet wurden, sind direkt in eine neue Version der Anforderungen integriert worden. Der Quellcode wurde mit \gls{git} versioniert verwaltet.
 \section{Anforderungsanalyse}
-Die Anforderungen wurden von eine Gerspräch mit Monika Pobiruchin am Anfang vom \gls{pita} erhoben. Kernaussage dieser Anforderungen, dass das System von alten Menschen genutzt werden kann, um Medikamente regelmäßiger einzunehmen. Dies beinhaltet eine geringe Auseinandersetzung mit der Technik des Systems. Die Uhr soll möglichst autonom sein und nicht zwingen an ein Smartphone gekoppelt sein.
+Die Anforderungen wurden von einem Gespräch mit Monika Pobiruchin am Anfang vom \gls{pita} erhoben. Kernaussage dieses Gesprächs war, dass das System von alten Menschen genutzt werden soll, um Medikamente regelmäßiger einzunehmen. Dies beinhaltet eine geringe Auseinandersetzung mit der Technik des Systems. Die Uhr soll möglichst autonom sein und nicht zwingend an ein Smartphone gekoppelt sein.
 
 \section{Usecases} 
-Von dem Gespräch mit Monika Pobiruchin wurde eine Persona für die Zielgruppe abgeleitet. Diese Persona ist im Anhang zu finden.
-Mit Hilfe der Persona, wurden die Kern-Usacases abgeleitet. Die folgenden Usecase 1 bis 4 wurden im \gls{pita} erarbeitet und wurden von dort übernommen. 
+Von dem Gespräch mit Monika Pobiruchin wurde eine Persona für die Zielgruppe erstellt.
+Mit Hilfe der Persona wurden die Kern-Usecases abgeleitet. Die folgenden Usecases 1 bis 4 wurden im \gls{pita} erarbeitet und von dort übernommen. 
 \input{04_realisation/pita_usecases.tex}
-Diese vier Usecases sind auch Grundlage für dies Arbeit. Wie die Usecases umgesetzt sind wird in Kapitel \ref{ch:realisation} beschrieben.
+Diese vier Usecases sind auch Grundlage für diese Arbeit. Wie die Usecases umgesetzt sind, wird in Kapitel \ref{ch:realisation} beschrieben.
 
 \section{Apple Watch}
 \label{ch:apple-watch}
-Eine Andorderung, welche sich aus dem Kontext dieser Arbeit entnehmen lässt, ist die Nutzung der Apple Watch als Zielplatform. Die Apple Watch wurde im September 2014 vorgestellt und staret im April 2015 mit dem Verkauf.
+Eine Andorderung, welche sich aus dem Kontext dieser Arbeit entnehmen lässt, ist die Nutzung der Apple Watch als Zielplattform. Die Apple Watch wurde im September 2014 vorgestellt und startete im April 2015 mit dem Verkauf.
 \subsection{Hardware}
-Die Apple Watch existiert in zwei Versionen. Einen Uhr mit 38mm (272x340) und eine mit 42mm (312x390) großem Display. Die bietet einen 8GB großen internen Speicher. Mit einer Akkulaufzeit von 18h unter durchschnittlicher Nutzung, hält die Uhr einen Tag durch \cite{Riches:2015aa}. 
+Die Apple Watch existiert in zwei Versionen. Eine Uhr mit 38mm (272x340) und eine mit 42mm (312x390) großem Display. Die Uhr bietet einen 8GB großen internen Speicher. Mit einer Akkulaufzeit von 18h unter durchschnittlicher Nutzung hält die Uhr einen Tag durch \cite{Riches:2015aa}. 
 \subsection{Abhängigkeit zum iPhone}
-Die Apple Watch wurde als Erweiterung zum iPhone Entwickelt. Und so sind auch viele integrale Funktionen nur vom iPhone aus steuerbar. Die Uhr kann ohne ein iPhone nicht durch den Setup-Prozess geleitet werden. Auch native Anwendungen (siehe \ref{ch:watch_software}) können nur über das iPhone installiert werden. Sind diese Schritte getan, also die Uhr Betriebsbereit und Anwendungen installiert, kann die Uhr teilweise auch Autonom agieren. So kann sie auch ohne iPhone, über WLAN, mit dem Internet kommunizieren.
+Die Apple Watch wurde als Erweiterung zum iPhone entwickelt. Und so sind auch viele integrale Funktionen nur vom iPhone aus steuerbar. Die Uhr kann ohne ein iPhone nicht durch den Setup-Prozess geleitet werden. Auch native Anwendungen (siehe \ref{ch:watch_software}) können nur über das iPhone installiert werden. Sind diese Schritte getan, also die Uhr betriebsbereit und Anwendungen installiert, kann die Uhr teilweise auch autonom agieren. So kann sie auch ohne iPhone, über WLAN, mit dem Internet kommunizieren.
 
 \subsection{Software}
 \label{ch:watch_software}
-Mit erscheinen der Uhr wurde auch das Betriebsystem in Version 1 ausgeliefert und dazu das \gls{sdk} Names WatchKit. Dies erlaubte es Entwicklern Anwendungen zu entwickeln, welche auf dem verbunden iPhone ausgeführt wurden. Diese führte zu schlechte Performance der Anwendungen und zu vollen Abhängigkeit zum iPhone.
+Mit Erscheinen der Uhr wurde auch das Betriebssystem in Version 1 ausgeliefert und dazu das \gls{sdk} namens WatchKit. Dies erlaubte es Anwendungen zu entwickeln, welche auf dem verbundenen iPhone ausgeführt wurden. Dies führte zu schlechter Performance der Anwendungen und zu völliger Abhängigkeit zum iPhone.
 
-Im Juni 2015 veröffentlichte Apple die erste Vorabversion von watchOS 2.0, welches später im September 2015 für Endnutzer bereit gestellt wurde. watchOS biete mehr Unabhängigkeit für Anwendungen, da diese direkt auf der Uhr ausgeführt werden. Für Anwendugsentwickler gibt es vier Arten Informationen auf der Uhr dazustellen. Es Handelt sich um native Anwendungen (Apps), Glances, Complications, und Actionable Notifications \cite{Apple:2015devAw}.
+Im Juni 2015 veröffentlichte Apple die erste Vorabversion von watchOS 2.0, welches später im September 2015 für Endnutzer bereit gestellt wurde. WatchOS bietet mehr Unabhängigkeit für Anwendungen, da diese direkt auf der Uhr ausgeführt werden. Für Anwendungsentwickler gibt es vier Arten Informationen auf der Uhr darzustellen. Es handelt sich um native Anwendungen (Apps), Glances, Complications und Actionable Notifications \cite{Apple:2015devAw}.
 
-Native Anwendungen sind fest installiert auf der Uhr. Sie können unabhängig auf der Uhr gestartet werden. In einer native Anwendungen lassen sich komplexere Anwendungen realisieren, da der Nutzer durch viele Möglichkeiten hat der Eingaben und Interaktionen (\ref{ch:eingabe_interface} zu tätigen. Installiert werden die Apps vom iPhone aus. Eine Watch-App benötigt immer eine iPhone App, die jeweils auf dem iPhone installiert ist.
+Native Anwendungen sind fest installiert auf der Uhr. Sie können unabhängig auf der Uhr gestartet werden. In einer nativen Anwendung lassen sich komplexere Programme realisieren, da der Nutzer durch viele Möglichkeiten zur Eingabe und Interaktion (\ref{ch:eingabe_interface}) hat. Installiert werden die Apps vom iPhone aus. Eine Watch-App benötigt immer eine iPhone App, die jeweils auf dem iPhone installiert ist.
 
-Complications sind kleine Interface Elemente, die sich auf dem Zifferblatt der Uhr platzieren lassen. So kann mit einem Blick auf die Uhrzeit auch Informationen aus der App abgelesen werden.
+Complications sind kleine Interface Elemente, die sich auf dem Zifferblatt der Uhr platzieren lassen. So können mit einem Blick auf die Uhrzeit auch Informationen aus der App abgelesen werden.
 
-Ein Glance ist ein Interface, auf dem die wichtigsten Informationen einer App übersichtlich dargestellt werden. Der Nutzer soll mit einem Blick die Informationen erkennen. Es ist keine Interaktion mit einem Glance möglich. Tippt der der Nutzer auf einen Glance öffnet sich die Zugehörige App. Glances sind optional zu einer App zu entwickeln.
+Ein Glance ist ein Interface, auf dem die wichtigsten Informationen einer App übersichtlich dargestellt werden. Der Nutzer soll mit einem Blick die Informationen erkennen. Es ist keine Interaktion mit einem Glance möglich. Tippt der Nutzer auf einen Glance, öffnet sich die zugehörige App. Glances sind optional zu einer App zu entwickeln.
 
-Notifications oder auch auf deutsch Benachrichtigungen Informieren den Benutzer über Ereignisse. Diese Ereignisse können entweder zeitlich geplant sein, vom Betreten einer Ortskoordinate ausgelöst werden oder von einem Server auf das Gerät gepusht (Server sendet ein Ereignis, wie z.B. eine Nachricht) werden. Notification können Aktionen beinhalten. So kann eine Bestätigung einer Notification direkt geschehen, ohne dafür die dazugehörige Anwendung zu starten. Dies nennt man eine Actionable Notification \cite{Apple:2015devAw}.
+Notifications, oder auch auf deutsch Benachrichtigungen, informieren den Benutzer über Ereignisse. Diese Ereignisse können entweder zeitlich geplant sein, vom Betreten einer Ortskoordinate ausgelöst werden, oder von einem Server auf das Gerät gepusht (Server sendet ein Ereignis, wie z.B. eine Nachricht) werden. Notifications können Aktionen beinhalten. So kann eine Bestätigung einer Notification direkt geschehen, ohne dafür die dazugehörige Anwendung zu starten. Dies nennt man eine Actionable Notification \cite{Apple:2015devAw}.
 
-Es gibt zwei verschiede Arten von Notification, die beide die gleiche Funktion haben, jedoch mit unterschiedlichen Informationsgehalt für die Uhr angereichert werden. Zum einen die Standard Notification. Diese Notification wird vom iPhone gespiegelt, bietet also nicht mehr Informationen gegenüber der iPhone Notification. Es ist jedoch möglich, mit einer nativen Anwendung auch eine optimale Darstellung der Notification zu entwickeln. Diese Darstellung kann detaillierte Informationen beinhalten wie Bilder, Karten oder genauer Beschreibung der Information\cite{Apple:2015notif}.
+Es gibt zwei verschiedene Arten von Notifications, die beide die gleiche Funktion haben, jedoch mit unterschiedlichem Informationsgehalt angereichert werden. Zum Einen die Standard Notification. Diese Notification wird vom iPhone gespiegelt. Sie bietet nicht mehr Informationen gegenüber der iPhone Notification. Es ist jedoch möglich, mit einer nativen Anwendung auch eine optimale Darstellung der Notification zu entwickeln. Diese Darstellung kann detaillierte Informationen beinhalten wie Bilder, Karten oder eine genauere Beschreibung der Information\cite{Apple:2015notif}.
 
-\subsection{Schniststellen}
-Bluetooth 4.0 und Wi-Fi 802.11b/g sind die Netzwerkschnistellen der Apple Watch. Dazu kommt noch ein NFC Chip, der jedoch nicht über eine API nutzbar ist und vorerst nur für Apple Pay, dem Apple eigenen Bezahldienst, vorgesehen ist\cite{RITCHIE:2015aa}. 
+\subsection{Schnittstellen}
+Bluetooth 4.0 und Wi-Fi 802.11b/g sind die Netzwerkschnittstellen der Apple Watch. Dazu kommt noch ein NFC Chip, der jedoch nicht über eine API nutzbar ist und vorerst nur für Apple Pay, dem Apple eigenen Bezahldienst, vorgesehen ist\cite{RITCHIE:2015aa}. 
 \subsection{Sensoren}
-Die Apple Watch besitzt einen Beschleunigungssensor und Gyroskop welche genaue Bewegungsdaten liefern. Ebenso ist ein optischer Herzschagsensor verbaut, der an der Unterseite der Uhr auf der Haut anliegt. Ein Mikrofon, welches für Spracheingabe genutzt werden kann ist auch vorhanden.
+Die Apple Watch besitzt einen Beschleunigungssensor und Gyroskop, welche genaue Bewegungsdaten liefern. Ebenso ist ein optischer Herzschlagsensor verbaut, der an der Unterseite der Uhr auf der Haut anliegt. Ein Mikrofon, welches für Spracheingabe genutzt werden kann, ist auch vorhanden.
 
 \subsection{Eingabe Interfaces}
 \label{ch:eingabe_interface}
-Neben eines normalen Touchescreen führte Apple in der Uhr auch eine Eingabeart Names Force Touch ein. Diese Technologie erlaubt es der Uhr zu erkennen, wie fest der Nutzer auf das Display drückt. Dies ermöglicht eine Neue Art der Eingabe. Besonders bei einer kleinen Eingabefläche, wie die der Apple Watch, ist eine neue Interaktionsdimesion interessant, da es eine differenziertere Interaktion erlaubt. Leider ist eine mögliche Interaktion mit Force Touch optisch nicht zu erkennen, was eine klare Nutzerführung schwer macht.
+Neben eines normalen Touchscreens führte Apple in der Uhr auch eine Eingabeart namens Force Touch ein. Diese Technologie erlaubt der Uhr zu erkennen, wie fest der Nutzer auf das Display drückt. Dies ermöglicht eine neue Art der Eingabe. Besonders bei einer kleinen Eingabefläche, wie die der Apple Watch, ist eine neue Interaktionsdimension interessant, da es eine differenziertere Interaktion erlaubt. Leider ist eine mögliche Interaktion mit Force Touch optisch nicht zu erkennen, was eine klare Nutzerführung schwer macht.
 
- Von Analogen Uhren ist die Krone, also das Rad an der Seite einer Uhr, an dem die Uhr eingestellt oder aufgezogen werden kann bekannt. An der Apple Watch ist die Krone auch zu finden. Apple nennt sie "Digital Crown", also digitale Krone. Sie befindet sich ebenfalls an der Seite der Uhr. Die Krone ist drehbar und lässt sich ebenfalls als Druckknopf nutzen. Sie dient zum scrollen von Inhalten, sowie präzisen Auswählen von Elementen aus einer Auswahlliste. Durch nutzen der Krone wird der Bildschirm nicht durch einen Finger verdeckt, was bei einem kleinen Display von Vorteil ist.
+ Von analogen Uhren ist die Krone, das Rad an der Seite einer Uhr, bekannt. An ihr kann die Uhr eingestellt oder aufgezogen werden. An der Apple Watch ist die Krone auch zu finden. Apple nennt sie \glqq Digital Crown\grqq, also digitale Krone. Sie befindet sich ebenfalls an der Seite der Uhr. Die Krone ist drehbar und lässt sich ebenfalls als Druckknopf nutzen. Sie dient zum Scrollen von Inhalten, sowie zum präzisem Auswählen von Elementen aus einer Auswahlliste. Durch das Nutzen der Krone wird der Bildschirm nicht durch einen Finger verdeckt, was bei einem kleinen Display von großem Vorteil ist.
 \subsection{Armband}
-Apple biete 6 verschiede Armbänder für die Apple Watch an (Stand Nov. 2015). Zusätzlich ist es möglich, Armbänder von Drittherstellern zu erwerben. 
+Apple bietet sechs verschiedene Armbänder für die Apple Watch an (Stand Nov. 2015). Zusätzlich ist es möglich, Armbänder von Drittherstellern zu erwerben. 
 
-Das in der günstigsten Version mitgelieferter Version (Sportarmband) verfügt über einen sehr komplizierten Verschlussmechanismus und ist deswegen weniger für Menschen geeignet, die über schwache sensomotorische Fähigkeiten verfügen. Es gibt auch Armbänder, die einen magnetischen Verschluss bieten, diese biete eine einfachen Handhabung, sind jedoch 3 mal so teuer, wie das Sportarmband.
+Das in der günstigsten Version mitgelieferte Armband (Sportarmband) verfügt über einen sehr komplizierten Verschlussmechanismus und ist deswegen weniger für Menschen geeignet, die über schwache sensomotorische Fähigkeiten verfügen. Es gibt auch Armbänder, die einen magnetischen Verschluss bieten und deswegen leichter zu handhaben sind. Diese Armbänder sind jedoch drei mal so teuer wie das Sportarmband.
 
-An der Verbindung zwischen Armband und Uhr ist eine nicht weiter spezifizierter Wartungsport verbaut. Dieser Anschluss könnte in Zukunft Armbänder ermöglichen, welche Informationen aus dem Armband an die Uhr weiterleiten.
+An der Verbindung zwischen Armband und Uhr ist ein nicht weiter spezifizierter Wartungsport verbaut. Dieser Anschluss könnte in Zukunft Armbänder ermöglichen, die Informationen aus dem Armband an die Uhr übermitteln.
 \subsection{Prototyping}
-Zum erstellen des frühen Prototyps wurden Papier-Prototypen erstellt. Durch die Nutzung dieser Werkzeug konnte schnell und iterativ gearbeitet werden. Da as diese Arbeit nur eine Person gearbeitet hat, bietet sich diese Methode an, da sie schnell zu erlernen ist, bzw. keine Vorkenntnisse voraussetzt und schnell Ergebnisse erzielt.
+Zum Erstellen des frühen Prototyps wurden Papier-Prototypen erstellt. Durch die Nutzung dieses Werkzeuges konnte schnell und iterativ gearbeitet werden. Da an dieser Arbeit nur eine Person gearbeitet hat, bietet sich diese Methode an. Sie ist schnell zu erlernen, setzt keine Vorkenntnisse voraus und erzielt schnell Ergebnisse.
 
 
