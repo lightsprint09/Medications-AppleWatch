@@ -8,7 +8,7 @@
 % Michael Lukas Bauer, Sebastian Felix Rauh
 % ----------------------------------------------------------------------------
 %%
-In diesem Kapitel werden Ergebnisse der Analyse und des Entwurfes erläutert. Große Teile der Anforderungsanalyse stammen aus dem \gls{pita}.
+Im Kapitel drei werden Ergebnisse der Analyse und des Entwurfes dargestellt. Große Teile der Anforderungsanalyse stammen aus dem \gls{pita}. Die Hardware und Software der Apple Watch wird genauer beschrieben.
 \section{Entwicklungsmethodik}
 Da das Projekt nur durch eine Person durchgeführt wurde, kann man nicht von einer definierbaren Methodik sprechen. Es handelte sich um ein iteratives Vorgehen. Funktionen, die bei der Evaluation erarbeitet wurden, sind direkt in eine neue Version der Anforderungen integriert worden. Der Quellcode wurde mit \gls{git} versioniert verwaltet.
 \section{Anforderungsanalyse}
@@ -18,7 +18,67 @@ Die Anforderungen wurden von einem Gespräch mit Monika Pobiruchin am Anfang vom
 Von dem Gespräch mit Monika Pobiruchin wurde eine Persona für die Zielgruppe erstellt.
 Mit Hilfe der Persona wurden die Kern-Usecases abgeleitet. Die folgenden Usecases 1 bis 4 wurden im \gls{pita} erarbeitet und von dort übernommen. 
 \input{04_realisation/pita_usecases.tex}
-Diese vier Usecases sind auch Grundlage für diese Arbeit. Wie die Usecases umgesetzt sind, wird in Kapitel \ref{ch:realisation} beschrieben.
+Diese vier Usecases sind auch Grundlage für diese Arbeit.
+
+\section{Apple`s Programmiersprache Swift}
+Swift wurde im Juni 2014 von Apple vorgestellt und genießt seitdem steigendes Interesse. Im Juni 2015 wurde Version 2.0 veröffentlicht \cite{Apple:2014sp}. Mit Version 2.0 wurde ebenfalls der Plan vorgestellt, Swift Open Source zu machen und somit auch anderen Plattformen die Entwicklung mit Swift zu ermöglichen \cite{Apple:2014sp}. Diesen Plan setzte Apple Ende 2015 in die Tat um. Swift ist nun völlig Open Source. Es können Vorschläge für neue Sprachfunktionen gemacht werden. Auch Apple`s Entwicklungsteam diskutiert seine Pläne für die Sprache öffentlich \cite{Apple:2015swiftOpen}.
+
+\subsection{Objective-C und Swift}
+In den frühen 80er Jahren entwickelte Brad Cox die Sprache Objective-C\cite{Dalrymple:2009aa}. Weiter führt Dalrymple aus, dass die Sprache  die Vorteile einer schnellen C-Sprache mit den Vorteilen der objektorientierten Sprache SmallTalk verbinden sollte. Die Firma NextSTEP nutzte Objectiv-C und als NEXTStep von Apple aufgekauft wurde, integrierte Apple Objectiv-C und ermöglichte Mac-Entwicklern die Nutzung.
+
+ Als Apple nun 2008 seine iOS Plattform öffnete und Entwickler eigene Anwendungen für das System schreiben konnten, bekam Objective-C neue Aufmerksamkeit. Viele Entwickler sahen Objective-C als ein Überbleibsel alter Zeiten und waren der Sprache gegenüber negativ eingestellt. Apple stand nun unter Zugzwang um seine Plattform, mit der große wirtschaftliche Interessen verbunden sind, für Entwickler attraktiv zu halten \cite{Wells:2015fu}. Da jedoch alle highlevel APIs in Objectiv-C vorhanden sind, ist es technisch nicht möglich, auf eine bekannte Sprache wie Java für iOS und Mac Entwicklung umzusteigen. Man entschied sich für eine Neuentwicklung mit Hinblick auf neue Programmierparadigmen und auf sehr gute Kompatibilität zu alten Objectiv-C APIs \cite{Wells:2015fu}.
+
+\subsection{Überblick der Neuerung}
+Swift bietet gegenüber Objectiv-C viele Neuerungen. Diese Neuerungen sind bekannte Konzepte, die schon in anderen Programmiersprachen Verwendung finden. Die meisten dieser Verbesserungen unterstützen den Entwickler früh Fehler im Quellcode zu entdecken. Im folgenden sind die wichtigsten Neuerungen beschrieben.
+
+\subsection*{Type Inference}
+Bei Type Inference erkennt der Compiler, welcher Typ in eine Variable instanziiert wurde. Es ist nicht nötig für die Variable eine Typendefinition anzugeben \cite{Apple:2014sp}. Hierdurch wird der Quellcode leichter lesbar. 
+\lstinputlisting[caption=Beispiel zu Type Inference in Swift label=lst:typeInference]{02_stateArt/codeExamples/TypeInference.swift}
+
+\subsection*{Closures - Functions as First Class Types}
+\label{ch:closures}
+Während bei strikt objektorientierten Sprachen nur Objekte und primitive Datentypen existieren, gibt es Sprachen, bei denen Funktionen als Typen existieren. Diese Funktionen können auch als Referenz in eine Variable gespeichert werden. Folgende Code Beispiele sollen dies veranschaulichen. Wir nutzen hierfür einen asynchronen Netzwerk-Request\cite{Apple:2014sp}.
+\lstinputlisting[caption=Java Beispiel zu First Class Objects, label=lst:firstFuncJava]{02_stateArt/codeExamples/NetworkRequestWithoutFunctions.java}
+ In Beispiel \ref{lst:firstFuncJava} wird Java als Repräsentant für eine strikt objektorientierte Sprache verwendet. Hier wird ein Interface definiert, welches der Nutzer des Netzwerk-Requests implementieren muss, um den Request zu empfangen. Beim Aufrufen des Requests muss nun der Aufrufer als Referenz übergeben werden, damit bei Abschließen des Requests der Aufrufer benachrichtigt werden kann (\lstinline{handleNetworkResponse}). 
+\lstinputlisting[caption=Swift Beispiel zu First Class Objects, label=lst:firstFuncSwift]{02_stateArt/codeExamples/NetworkRequestWithFunctions.swift}
+Im Codebeispiel \ref{lst:firstFuncSwift} benötigt es kein Interface für den Nutzer des Netzwerk-Requests. Es ist nun in Swift möglich, eine Funktion zu definieren und diese gleichzeitig in einer lokalen Variablen zu speichern. Nun kann diese Funktion als Referenz zum Netzwerk-Request übergeben werden. Die Funktion wird aufgerufen, wenn der Netzwerk-Request beendet ist. 
+
+\subsection*{Generics}
+Generics sind schon längere Zeit Teil moderner Programmiersprachen. Sie unterstützen den Entwickler, um Fehler zur Compilezeit zu entdecken. Ein sehr gutes Beispiel hierfür sind Collections (Arrays, Listen, Set, etc). Ein Collection Typ wie Array muss nicht für jeden Typ, den er hält, neu implementiert werden.
+\lstinputlisting[caption=Swift Beispiel zu Generic Array Collection, label=lst:generics]{02_stateArt/codeExamples/Generics.swift}
+Im Codebeispiel \ref{lst:generics} werden die Vorteile von Generics aufgezeigt. Der erste Versuch einen Array zu implementieren (\lstinline{CustomMedicationArray}) zeigt, dass dieser Array eine sehr gute Typen Deklarierung enthält. Der Compiler kann den Entwickler also maximal unterstützen, jedoch ist diese Implementierung minimal wiederverwendbar. Der zweite Ansatz (\lstinline{CustomArray}) gibt als Typ-Einschränkung den globalen Supertyp an. Dies führt zu einer maximalen Wiederverwendbarkeit, da jede Klasse von diesem globalen Supertyp erbt (funktioniert nur theoretisch, da in Swift kein Zwang besteht, von einem globalen Supertyp zu erben).
+Die letzte Implementierung (\lstinline{GenericArray}) nutzt nun Generics. So wird bei der Definition der Klasse ein generischer Typ \lstinline{ T}  eingeführt. Dieser Typ ist eine Art Platzhalter für einen konkreten Typ, der später vom Array gehalten wird. So muss bei der Initialisierung der generischen Klasse die Typ-Information für \lstinline{T} übergeben werden (siehe letze Zeile in \ref{lst:generics}).
+
+Das oben beschriebene Beispiel dient nur zur Verdeutlichung des Konzeptes. Swift bietet eine Reihe an Collection Types, darunter auch eine generische Array Implementierung. 
+
+\subsection*{Protocol Extension}
+Protocol Extension helfen dem Entwickler Abstraktionen, die über ein Interface (in Swift Protocol) definiert werden, zu implementieren und dadurch Duplizierungen zu minimieren. So kann es sein, dass eine Methode eines Interfaces in jeder Klasse, die das Interface implementiert, gleich umgesetzt wird. Dies führt zu einer Code-Duplizierung. 
+\lstinputlisting[caption=Swift Beispiel zu Generic Array Collection, label=lst:ProtocolExtensions]{02_stateArt/codeExamples/ProtocolExtensions.swift}
+Im Codebeispiel \ref{lst:ProtocolExtensions} wird ein List Interface definiert. Die Extension zu diesem Interface ermöglicht die Implementierung von \lstinline{last}  und \lstinline{first}. Diese Implementierung teilen sich nun alle Klassen, die List implementieren.
+
+\subsection*{Optional Types}
+\label{ch:optionals}
+Optional Types eröffnen neue Möglichkeiten beim Modellieren von Datenmodellen und Erstellen von APIs. Es ist so möglich, Argumente in einer Methode als \glqq 0ptional\grqq  zu kennzeichnen und somit dem Nutzer der Methode zu erlauben, eine null-Referenz zu übergeben. Ist kein Optional-Type gekennzeichnet, so verbietet der Compiler eine null-Referenz Übergabe \cite{Apple:2014sp}. Im folgenden Beispiel wird eine Medikation in Java ohne Optional Types und in Swift mit Optional Types modelliert.
+\lstinputlisting[caption=Java Beispiel mit fehlenden Optional Types, label=lst:optinalsJava]{02_stateArt/codeExamples/OptionalType.java} 
+
+Im Codebeispiel \ref{lst:optinalsJava} ist zu erkennen, dass zur Compilezeit keine Aussage über den Zustand der Instanz-Variablen getroffen werden kann. Der Entwickler muss also aus dem logischen Kontext erkennen, welche Variablen eine null-Referenz enthalten könnten. Dies kann zu Laufzeitfehlern führen.
+
+\lstinputlisting[caption=Swift Beispiel mit Optional Types, label=lst:optinalsSwift]{02_stateArt/codeExamples/OptionalType.swift}
+In \ref{lst:optinalsSwift} sind die Instanzvariablen nun mit Optional Types modelliert. Nun 
+kann zur Compilezeit zugesichert werden, welche Variablen eine null-Referenz enthalten können und welche Variablen sicher mit einem Wert belegt sind. Dies führt zu weniger Fehlern während der Laufzeit.
+
+Auch APIs können mit \glqq Optionals\grqq  modelliert werden. So darf ein Parameter nicht null sein, wenn er nicht als Optional definiert wurde. Dies macht eine API strikter und führt ebenfalls zu weniger Laufzeitfehlern, da Fehler schon zur Compilezeit erkannt werden.
+
+\section{Wearables}
+Übersetzt man Wearables ins Deutsche, bedeutet es \glqq Tragbares\grqq  oder \glqq Anziehbares\grqq  im Sinne von einem Kleidungsstück tragen. Wenn man nun den Begriff Wearables mit Kleidung assoziiert, liegt man nicht falsch. Anstatt Computer auf dem Schreibtisch oder in der Hosentasche zu haben, trägt man sie am Körper wie Kleidungs- oder Schmuckstücke \cite{Dvorak:2008aa}. Die Grenzen zwischen Kleidung und Computer verschmelzen und es ist manchmal nicht klar, was man schon als Wearable bezeichnen kann oder auch nicht.
+
+Wearables sind meist mit Sensoren ausgestattet, die Daten aus der Körperregion sammeln, an der sie getragen werden \cite{4711366}. Diese Daten zeigen immer nur einen Teilausschnitt. Durch das Tragen von mehreren Geräten am Körper verteilt, können mehr Daten gesammelt werden. So ist es möglich, einen noch genaueren Überblick über den Zustand des Körpers zu erhalten\cite{4711366}.
+
+Erst mit der Miniaturisierung der Computertechnik und Sensoren war es möglich, Computer mit integriertem Akku in Größe einer Streichholzschachtel herzustellen. Während Swatch 1995/1996 eine Uhr vorstellte, die als Skipass funktionierte, stellte Apple 18 Jahre später die Apple Watch vor, die über einen Mikroprozessor, WLAN und eine Vielzahl an Sensoren verfügt (mehr zur Apple Watch in \ref{ch:apple-watch})
+
+Doch nicht nur Uhren zählen zu den Wearables. Google präsentierte mit der Google Glass eine Datenbrille, die über eine Kamera, ein Heads \glqq Prismatic head-mount\glqq  Display, Sprachsteuerung sowie Internetverbindung und weitere Sensoren verfügt \cite{Muensterer2014281}. Auch ein Ring, der mit Hilfe eines Sensors den Puls misst, existiert als Prototyp \cite{4711366}.
+
+Während im Smartphone-Markt noch ein Focus auf Leistung und Funktion der Geräte gelegte wurde, darf man beim Wearables-Markt den Faktor der Ästhetik nicht vergessen. Hier wird ein Bereich betreten, der starke Einflüsse von Mode aufzeigt. Anwender eines Gerätes achten also nicht mehr nur auf die Funktion, sondern auch auf Form, Farbe und Lifestyle den das Produkt verkörpert. Apple bietet unter dem Namen \glqq Watch Edition \grqq eine Apple Watch aus echtem Gold an, deren Preis über 10.000 Euro beträgt und sich an den Luxusmarkt richtet. Auch TAGHeuer, eine Firma, die sich auf luxuriöse und modische Uhren spezialisiert hat, betritt nun auch den Markt der Wearables \cite{TAGHeuer:20015aa}.
 
 \section{Apple Watch}
 \label{ch:apple-watch}

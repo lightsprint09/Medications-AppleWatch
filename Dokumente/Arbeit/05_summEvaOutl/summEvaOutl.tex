@@ -8,6 +8,7 @@
 % Michael Lukas Bauer, Sebastian Felix Rauh
 % ----------------------------------------------------------------------------
 %%
+In Kapitel 5 werden die erarbeiteten Ergebnisse mit Probanden der Zielgruppe evaluiert. Hier werden Schwächen und Stärken des erstellten Konzepts sichtbar. Auch wird ein Ausblick für die Zukunft gegeben.
 
 \section{Evaluation}
 
@@ -54,15 +55,3 @@ Auch der zweite Fragebogen zu den Funktionen und deren Nutzungskontext wurde nic
  \textbf{Uhr ist unästhetisch}&Patient trägt die Uhr nicht und wird so nicht an die Medikamente erinnert  &Keine Standard Uhren kaufen, sondern den Patienten die Farbe und Form der Uhr und die Art des Armbandes aussuchen lassen  \\ \hline
 \end{tabular}
 \end{table}
-
-\section{Zusammenfassung}
-Ziel der Arbeit war es, die Akzeptanz eines Systems zur Erinnerung an Medikamenteneinnahme zu testen. Als Methode wurde eine Patientenbefragung verwendet. Patienten stehen dem Tragen einer Uhr am Handgelenk positiv gegenüber. Ob sie jetzt digital oder analog ist, ist nebensächlich. Aus diesen Gründen ist die Uhr ein ideales Gerät zur Erinnerung von Medikamenten. Die Apple Watch mit ihrer touchscreen-basierten Navigation stellt für die getestete Zielgruppe eine große Herausforderung dar. Reduzierte feinmotorische Fähigkeiten erschweren den Patienten die Interaktion mit der Uhr. Auch Vibration und Geräuschwiedergabe sind zu schwach und können häufig nicht wahrgenommen werden. Das ästhetische Aussehen der Uhr ist nicht zu vernachlässigen, da eine Uhr oft als eine Art Schmuck getragen wird. So trägt die Farbe, Form und Größe zur Akzeptanz der Uhr bei. Findet der Patient die Uhr unschön/unmodisch, so wird er sie nicht tragen und schlimmstenfalls seine Medikamente vergessen.
-
-Da Smartwatches noch keine große Verbreitung haben, sind auch die Werkzeuge zur Umsetzung von Anwendungen begrenzt. Es gibt keine Werkzeuge zur Erstellung interaktiver Prototypen, die auf der Uhr ausführbar sind. Ein Prototyp kann ausschließlich unter Verwendung von Code erstellt werden. So vermehrt sich der Aufwand für schnelles iteratives Vorgehen. Das watchOS SDK von Apple bietet eine relativ übersichtliche Schnittstelle. Die Schnittstellen ermöglichen es komplexere Anwendungen zu erstellen. Diese sind jedoch in manchen Anwendungsgebieten noch limitiert. Da es sich um die erste Geräte-Generation handelt, muss abgewartet werden mit welchen Leistungsverbesserungen weitere Generationen nachgerüstet werden, um die Uhr zu einem wirklich nützlichen Werkzeug zu machen. Das Potential zu einem guten Nutzen zeigt die erste Generation auf, jedoch ist sie an manchen Stellen (Geschwindigkeit, lange Wartezeiten) noch nicht ausgereift.
-
-Apples neue Programmiersprache Swift, die zur Implementierung genutzt wurde, bietet Konzepte moderner Programmiersprachen. Diese Konzepte unterstützen den Entwickler meist schon zur Compilezeit. Dies führt zu einer frühen Fehlererkennung. Durch diese Spracheigenschaften, wie Optionals (\ref{ch:optionals}), die Sicherheit in der Modellierung geben, oder Closures und First Class Functions (\ref{ch:closures}), die Konzepte funktionaler Programmierung bereitstellen, eignet sich Swift sehr gut als Lehrsprache. Dadurch, dass Swift unter einer Open Source Lizenz veröffentlicht wurde, kann man nun für mehrere Zielplattformen entwickeln.
-
-\section{Ausblicke}
-Mit den gewonnenen Ergebnissen kann dieses Projekt neu ausgerichtet werden. Zum Beispiel sollte die Zielgruppe über mehr Erfahrung mit digitalen Geräten verfügen. Der Einsatz der Uhr bei Kindern und Jugendlichen im Alter ab 12 Jahren ist denkbar. Diese könnten bei ihrer Therapie unterstützt und durch die moderne Technik, mit der sie aufgewachsen sind, motiviert werden Medikamente zeitgerecht einzunehmen.
-Nachdem die Defizite mit der Bedienbarkeit durch die Evaluation entdeckt wurden, ergab die Recherche, dass die watchOS Plattform über Funktionen der Accessibility verfügt \cite{Apple:watchAccess} . Damit ist es möglich, Nutzungs-Erleichterungen für Menschen mit körperlichen Einschränkungen zu schaffen. So kann mit DynamicType, also eine dynamischen Schriftgröße in der App, die Lesbarkeit verbessert werden. Der Nutzer kann so seine eigene Schriftgröße wählen. Auch die Navigation zum Öffnen von Anwendungen wird mit Accessibility Einstellungen verbessert. Die Uhr als Hilfsmittel im Alltag zeigt gute Ansätze auf und ist in der Zukunft weiter zu verfolgen. Wichtig hierbei ist, dass die Uhr als solches bestehen bleibt und nicht durch einen großen unschönen Kasten am Handgelenk ersetzt wird.
-

@@ -15,6 +15,7 @@ Die in Kapitel 3 aufgeführten Analyse-Ergebnisse wurden für die erste Iteratio
 Für die Entwicklung wurde Apples Entwicklungsumgebung Xcode in Version 7.2.1 mit den SDKs iOS 9.2 und watchOS 2.1 verwendet. Zum Verwalten des Source-Codes wurde Git\cite{git} eingesetzt. Als Git-Remoteserver wurde Github \cite{github} verwendet. Die graphische Repräsentation der Medikamente sind keine statischen Bilder. Jede Art von Medikament hat eine Vorlage, die dynamisch mit jeglicher Farbe eingefärbt werden kann. Zum Erstellen dieser Vorlagen wurde PaintCode in Version 2.4 \cite{paintCode} genutzt.
 
 \section{Benutzeroberfläche}
+\label{ch:userinterface}
 Xcode bietet für visuelle Erstellung von Benutzeroberflächen einen eigenen integrierten Editor namens InterfaceBuilder. Hiermit können graphische Elemente per DragAndDrop zu einer Benutzeroberfläche zusammengestellt werden (\ref{fig:xcode-interface-elements}). Ebenfalls per DragAndDrop werden diese Interface-Elemete mit dem Quellcode verbunden (\ref{fig:xcode-interface-code-connect}).
 
 Die Auswahl an Interface-Elementen ist sehr begrenzt und bietet kaum Möglichkeiten eigene Interface-Elemenete zu erstellen. Trotz dieser Begrenztheit lassen sich komplexere Anwendungen bauen.
@@ -32,17 +33,35 @@ Die Auswahl an Interface-Elementen ist sehr begrenzt und bietet kaum Möglichkei
 	\includegraphics[width=0.9\textwidth]{04_realisation/screenshots/xcode-interface-code-connect}
 \end{figure}
 
+\section{Datenhalten - Persistence}
+Da das generell iPhone das primäre Objekt der Nutzung ist, bietet sich die Datenhaltung auf dem iPhone an. Apple bietet mit mit CoreData \cite{Apple:2015swiftOpen} eine Framework zur Persistierung von Object-Graphen. Dieses Framework bietet eine gute Abstraction und ist deswegen leicht zu integrieren. So bringt CoreData einen graphischen Editor mit, der es erlaubt Datenschemata schnell und einfach zu erstellen. Daten, die in CoreData gespeichter wurden, lassen sich mittel gezielten Datenbankanfragen abfragen. So muss keine eigene Logik zum Suchen und Sortieren implementiert werden. Auch bietet Schnittstellen zum Verwalten von Änderung in den Daten, so lassen sich schnell komplexe Anwendungen erstellen. Durch langjähriges Bestehen des CoreData Frameworks lässt sich eine stabile Nutzung garantieren.  CoreData lässt sich auch auf der AppleWatch nutzen. Dupliziert man nun die Datenhaltung vom iPhone auf die Uhr, müssen diese beiden Datensätze immer konsistent gehalten werden. Dieser Abgleich bei Änderung einer Datenhaltung ist aufwendig zu implementieren. Wir der Abgleich jedoch realisiert wird die Uhr nochmal ein Stück unabhängiger. 
+
+Im konkreten Fall wurde keine doppelte Datenhaltung genutzt. Das iPhone ist also die zentrale Datenquelle. Die Apple Watch kann als Client betrachtet werden, der die Daten des iPhones präsentiert. Zur Realisierung eines Client-Server Verbindung zwischen Uhr und iPhone wurde das WatchConnectivity Framework genutzt welches in \ref{watchCon} beschreiben wird. Daten müssen vor dem Versenden an die Uhr jedoch immer in ein serialisierbares Format übertragen werden. Es können CoreData Objekte nicht direkt übertragen werden.
+
+
 \section{WatchConnectivity}
+\label{watchCon}
 Wichtig für die Kommunikation zwischen Uhr und iPhone ist das WatchConnectivity Framework \cite{Apple:2015SharingDataToWatch}. Hierbei ist im Listing \ref{lst:wcConnect} zu sehen, wie genau eine Verbindung aufgebaut werden kann. Es wird auch demonstriert wie ein Datenaustausch realisiert werden kann. Wichtig ist, dass diese Verbindung zum richtigen Zeitpunkt im Application-Lifecycle aufgebaut wird, da es sonst zu Datenverlusten kommen kann.
 
 \lstinputlisting[caption=Nutzung des WatchConnectivity Framework, label=lst:wcConnect]{04_realisation/code/WatchExecutionTimeService.swift}
  
 
-Mit der \grqq sendMessage:\grqq  Methode können Nachrichten und Datenpakete gesendet werden, welche sich durch eine ID identifizieren lassen. Eine direkte Antwort auf eine solche Nachricht ist mittels eines Replay-Handlers möglich. So kann eine Art Request/Response Datentransfer realisiert werden. Zu beachten ist jedoch, dass die Kommunikation relativ langsam ist. Sie sollte nur verwendet werden um kleine Informationen zu senden.
+Mit der \lstinline{sendMessage:} Methode können Nachrichten und Datenpakete gesendet werden, welche sich durch eine ID identifizieren lassen. Eine direkte Antwort auf eine solche Nachricht ist mittels eines Replay-Handlers möglich. So kann eine Art Request/Response Datentransfer realisiert werden. Zu beachten ist jedoch, dass die Kommunikation relativ langsam ist. Sie sollte nur verwendet werden um kleine Informationen zu senden.
 
-Werden erst beim Watch-App Start benötigte Daten vom iPhone angefordert, kann dies zu einer großen Verzögerung führen. Daher sollten Informationen, die auf der Uhr angezeigt werden, nicht erst zum Zeitpunkt der Darstellung angefordert werden. Gibt es eine Datenänderung auf dem iPhone, die relevante Daten für die Uhr enthält, so sollten diese mit der Methode \grqq transferUserInfo:\grqq  an die Uhr gesendet werden. Mit dem Aufrufen dieser Methode wird die übergebene Information nicht direkt zur Uhr geschickt. Das System sendet die Daten zu einem optimalen Zeitpunkt (starke Verbindung zur Uhr, mögliche WLAN Verbindung) an die Uhr. Wenn nun die Watch-App startet sind die Daten bereit und können direkt dargestellt werden.
+Werden erst beim Watch-App Start benötigte Daten vom iPhone angefordert, kann dies zu einer großen Verzögerung führen. Daher sollten Informationen, die auf der Uhr angezeigt werden, nicht erst zum Zeitpunkt der Darstellung angefordert werden. Gibt es eine Datenänderung auf dem iPhone, die relevante Daten für die Uhr enthält, so sollten diese mit der Methode \lstinline{transferUserInfo:}  an die Uhr gesendet werden. Mit dem Aufrufen dieser Methode wird die übergebene Information nicht direkt zur Uhr geschickt. Das System sendet die Daten zu einem optimalen Zeitpunkt (starke Verbindung zur Uhr, mögliche WLAN Verbindung) an die Uhr. Wenn nun die Watch-App startet sind die Daten bereit und können direkt dargestellt werden.
 
-Zum Übertragen von größeren Daten steht die Methode \grqq transferFile:\grqq zur Verfügung. Die Methode verhält sich equivalent zu \grqq transferUserInfo:\grqq, wird jedoch in der Realisierung nicht verwendet.
+Zum Übertragen von größeren Daten steht die Methode \lstinline{transferFile:} zur Verfügung. Die Methode verhält sich equivalent zu \lstinline{transferUserInfo:}, wird jedoch in der Realisierung nicht verwendet.
+
+\section{Modellierung des Programmablaufes}
+Apple empfiehlt für iOS und auch watchOS die Nutzung von \gls{mvc} als Grundlage zur Entwicklung. So existiert in watchOS die Klasse \lstinline{WKInterfaceController} als Supertyp für jeden ViewController. Jeder ViewController ist standardmäßig für einen Bildschirm zuständig. So wird hier als Beispiel in \ref{lst:viewController}  der Controller zur Darstellung von Medikamentendetails beschreiben.
+
+Die mit \lstinline{IBOutlet} annotierten Variablen sind Referenzen für View Elemenet. So hält \lstinline{drugNameLabel} ein Label zur Darstellung des Medikamentennamens. Methoden die mit \lstinline{IBAction} sind Aktionen, die beim interagieren mit dem Interface ausgelöst werden. \lstinline{onTakeMedication} wird ausgelöst wenn der Nutzer den Button zum Bestätigung der Einnahme klickt. Der Prefix \lstinline{IB} steht bei den Annotationen für InterfaceBuilder, welcher zum Erstellen der View-Elemente genutzt wird (\ref{ch:userinterface}).
+
+
+Die überschriebene Methode \lstinline{awakeWithContext:} ist eine Lifecycle Methode des ViewControllers. Sie hilft Daten von einem ViewController zum nächsten zu geben. Die Daten werden vom vorhergehenden ViewController bereit gestellt. Dieser überschreibt die Methode \lstinline{contextForSegueWithIdentifier:} und kann nun Daten abhängig vom Identifier übergeben. So sind diese zwei Methode der einzige Kontaktpunkt von ViewController. Dies erhöht extrem die Kapselung der Komponenten.
+
+\lstinputlisting[caption=ViewController zu Darstellen von Medikamentendetails, label=lst:viewController]{04_realisation/code/MedicationDetailsController.swift}
+
 
 \section{Notification Management}
 Notifications für die Medikationen werden mit der Notification API  registriert \cite{Apple:2015notif}. Auch kann das Verhalten der Notifications angepasst werden. So können vordefinierte Aktionen wie \glqq Einnehmen\grqq  oder \glqq Verschieben\grqq in die Notifications konfiguriert werden.
@@ -58,8 +77,9 @@ Die Anwendung besteht aus zwei Komponenten auf der Apple Watch. Eine native Noti
 \begin{figure}
 	\caption{Notification für ein Medikament}
 	\label{fig:watch-app-notification}
-	\includegraphics[width=0.5\textwidth]{04_realisation/screenshots/watch/notification01.png}
-	\includegraphics[width=0.5\textwidth]{04_realisation/screenshots/watch/notification02.png}
+	\centering
+	\includegraphics[width=0.4\textwidth]{04_realisation/screenshots/watch/notification01.png}
+	\includegraphics[width=0.4\textwidth]{04_realisation/screenshots/watch/notification02.png}
 \end{figure}
 
 \subsection{Native Anwendung}
@@ -68,19 +88,21 @@ Neben der Notification gibt es noch eine native App. Diese läuft auf der Uhr un
 \begin{figure}
 	\caption{Native Anwendung: Interface zum Wählen eines Medikaments (oben links). Medikament als genommen bestätigen (oben rechts). Eigene Zeitdauer auswählen (unten links). Medikament ist in der Übersicht als verschoben markiert (unten rechts)}
 	\label{fig:watch-app-take}
-	\includegraphics[width=0.5\textwidth]{04_realisation/screenshots/watch/notTaken01.png}
-	\includegraphics[width=0.5\textwidth]{04_realisation/screenshots/watch/notTaken02.png}
-	\includegraphics[width=0.5\textwidth]{04_realisation/screenshots/watch/taken01.png}
-	\includegraphics[width=0.5\textwidth]{04_realisation/screenshots/watch/taken02.png}
+	\centering
+	\includegraphics[width=0.4\textwidth]{04_realisation/screenshots/watch/notTaken01.png}
+	\includegraphics[width=0.4\textwidth]{04_realisation/screenshots/watch/notTaken02.png}
+	\includegraphics[width=0.4\textwidth]{04_realisation/screenshots/watch/taken01.png}
+	\includegraphics[width=0.4\textwidth]{04_realisation/screenshots/watch/taken02.png}
 \end{figure}
 
 \begin{figure}
 	\caption{Native Anwendung: Interface zum Verschieben eines Medikaments (oben links). Zeitdauer für das Verschieben wählen (oben rechts). Medikament ist als genommen markiert (unten links). Medikament ist in der Übersicht als genommen markiert(unten rechts)}
 	\label{fig:watch-app-delay}
-	\includegraphics[width=0.5\textwidth]{04_realisation/screenshots/watch/delay01.png}
-	\includegraphics[width=0.5\textwidth]{04_realisation/screenshots/watch/delay02.png}
-	\includegraphics[width=0.5\textwidth]{04_realisation/screenshots/watch/delay03.png}
-	\includegraphics[width=0.5\textwidth]{04_realisation/screenshots/watch/delay04.png}
+	\centering
+	\includegraphics[width=0.4\textwidth]{04_realisation/screenshots/watch/delay01.png}
+	\includegraphics[width=0.4\textwidth]{04_realisation/screenshots/watch/delay02.png}
+	\includegraphics[width=0.4\textwidth]{04_realisation/screenshots/watch/delay03.png}
+	\includegraphics[width=0.4\textwidth]{04_realisation/screenshots/watch/delay04.png}
 \end{figure}
 
 \section{Quellcode}
