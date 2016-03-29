@@ -8,16 +8,16 @@
 % Michael Lukas Bauer, Sebastian Felix Rauh
 % ----------------------------------------------------------------------------
 %%
-In Kapitel 5 werden die erarbeiteten Ergebnisse mit Probanden der Zielgruppe evaluiert. Hier werden Schwächen und Stärken des erstellten Konzepts sichtbar. Auch wird ein Ausblick für die Zukunft gegeben.
+In Kapitel 5 werden die erarbeiteten Ergebnisse mit Probanden der Zielgruppe evaluiert. Hier werden Schwächen und Stärken des erstellten Konzepts sichtbar.
 
 \section{Evaluation}
-
 Die Evaluierung des Prototyps soll ein quantifiziertes Ergebnis liefern, anhand dessen Schwachstellen aufgezeigt werden sollen. Diese Schwachstellen werden mit der nächsten Iteration der Software ausgebessert.
 
 \subsection{Zielgruppe der Evaluation}
 Die Zielgruppe sollten Menschen sein, deren Alltag von Medikamenteneinnahmen geprägt ist. Es sollte sich um Menschen mit wenig oder keinen Vorkenntnissen mit touchscreen-basierten Geräten handeln.  Patienten fortgeschrittenen Alters, die sich stationär im Krankenhaus aufhalten, eignen sich gut. Diese nehmen in der Regel Medikamente und haben viel freie Zeit während des Aufenthaltes im Krankenhaus für eine Befragung.
 
 \subsection{Vorgehen}
+\label{ch:vorgehen}
 Im ersten Schritt wird dem Probanden die Apple Watch gezeigt und die dahinterliegende Technologie erklärt, um Neugier bei dem Patienten zu wecken. Nun können die Patienten die Uhr selbstständig anlegen. 
 Im zweiten Schritt wird eine Notification, die eine Vibration auslöst, gestartet. Die Patienten müssen die Vibration spüren und dann auf die Uhr schauen. Dort sollen sie den Bildschirminhalt wiedergeben. Haben sie diese Aufgabe erfolgreich gelöst, so müssen sie die Benachrichtigung bestätigen, also auf den Button mit der Aufschrift \glqq Genommen \grqq (siehe \ref{fig:watch-app-notification}) tippen.
 
@@ -27,23 +27,30 @@ In Schritt Drei müssen die Patienten den App-Bildschirm durch Drücken auf die 
 Für die Evaluation werden zwei Fragebögen genutzt. Einmal AttrakDiff\cite{UserInDe:Attrakdiff}, welcher die subjektive  Wahrnehmung der Bedienbarkeit und das Aussehen des Prototyps erfragt. Es handelt sich um einen standardisierten Fragebogen und eine standardisierte Auswertungsmethode. Da dieser Fragebogen keine Antworten über Funktionen des Prototyps gibt, ist es nötig, einen zweiten Fragebogen zu erstellen. Dieser erfragt die Situation, also den Kontext in dem sich der Anwender befindet und die daraus folgenden Ansprüche an den Prototyp. So sollen fehlende Funktionen oder Fehler in der Analyse aufdeckt werden. Die Fragen sind im Anhang zu finden.
 Die Erfassung der Fragen wird mit Limesurvey\cite{Limesurvey} in Version 2.05 durchgeführt. Da sich Limesurvey selbst hosten lässt, bleiben die erfragten Daten auf einem sicheren Hochschulserver und werden nicht bei Drittanbietern gespeichert. 
 
+\subsection{Methodik - Thinking Aloud}
+\label{ch:thinking}
+Die Thinking Aloud nach Nielsen \cite{Nielsen:1993aa} beschreibt eine Methode zur Feedback-Gewinnung von Software. Probanden werden aufgefordert während der Nutzung der Software und deren Nutzerschnittstelle ihre Gedanken laut auszusprechen. Hierfür sind passende Probanden zu finden, die jeweils eine vorgegebene Aufgabe mit der Software ausführen (siehe \ref{ch:vorgehen}).
+
+Die Vorteile diese Methode liegen auf der Hand. Sie ist sehr günstig, da keinerlei Geräte verwendet werden. Auch muss sie nicht in einem Labor durchgeführt werden. Es ist sogar von Vorteil die Anwendung im üblichen Benutzungskontext der Anwendug zu testen. Meist reicht schon eine kleine Anzahl an Probanden um ein deutliches Feedback zu bekommen. Die Methodik erweißt sich als sehr robust, da kaum Fehler bei der Durchführung gemacht werden können. Die Methode kann zu jedem Zeitpunkt im Entwicklungsprozess eingesetzt werden. So eigent sie sich sehr gut für agile Prozesse bei denen Prokektteile flexibel getestetet werden sollen. Durch die niedrige Barriere zur Durchführung können auch Softwareentwickler oder Manager diesen Prozess durchführen und erhalten dadurch sehr schnell Feedback. Da diese Feedback sehr persönlich ist, wird es stärker von den Testern aufgenommen als Ergebnisse die reine Zahlen auf Papier.
+
+Da die die meisten Menschen es nicht gewohnt sind Selbstgespräche zu führen, sollte darauf geachtet werden den Probanden immer im Redefluss zu halten. Auch kann es für den Durchführenden schwierig sein zwischen unwichtigen Aussagen und wichtigen Aussagen desProbanden zu unterscheiden. Der Durchführende muss darauf achten, dass er mit den Anweisung den Probanden nicht beeinflusst und so das Ergebnis verfälscht.
+
 \section{Durchführung der Evaluation}
-\subsection{Beschreibung der Zielgruppe}
-Es haben insgesamt 11 Patienten  an der Befragung teilgenommen. Davon waren 7 weiblich und 4 männlich. Alle waren im Alter zwischen 70 und 85. 
+Die Befragung wurde im Kreiskrankenhaus Mosbach unter Aufsicht von Frau Flohr durchgeführt. Die Patienten befanden sich stationär auf der geriatrischen Rehabilitation. Es haben insgesamt 11 Patienten  an der Befragung teilgenommen. Davon waren 7 weiblich und 4 männlich. Alle waren im Alter zwischen 70 und 85. 
 
 \subsection{Befragung der Patienten}
+
 Die Befragung in der Zielgruppe verlief sehr schwierig und nicht wie geplant.
 Der erste Schritt der Befragung klappte bei fast allen Probanden sehr gut. So erkannten sie die Notification mit der einhergehenden Vibration. Der Bildschirminhalt wurde von fast allen Patienten als verständlich geschildert. Das darauf folgende Bestätigen einer Notification verlief zu großen Teilen schlecht. Die Patienten konnten die Buttons zum Bestätigen nicht treffen, da bei ihnen die Feinmotorik eingeschränkt war.
 Das Öffnen einer App ist aufgrund der reduzierten Feinmotorik ebenfalls nicht möglich. Die App-Icons sind zu klein und werden nicht getroffen. Das Öffnen der Anwendung wurde bei allen Patienten nicht erreicht.
-\subsection{Auswertung}
+\subsection{Auswertung - Ergebnis}
 Der Fragebogen AttrakDiff ist in dieser Zielgruppe nicht praktikabel. Eine sehr genaue Unterscheidung zwischen den Begrifflichkeiten, die der  AttrakDiff abfragt, ist für die Zielgruppe nicht möglich. Dies fällt auf, wenn man mit den Probanden spricht. Sie schweifen oft ab und man ist nicht in der Lage, ihre Aussagen zu erfassen. Direkte Fragen, die den Alltag der Probanden betreffen, werden zuverlässig beantwortet. Schwierigkeiten, die die Patienten mit der Medikamenteneinnahme haben,  werden nicht zugegeben bzw. heruntergespielt.
-Die Befragungen wurden deswegen auf eine Thinking Alound Methode \cite{Sommerville:2016aa} umgestellt. Leider sind die Ergebnisse so nicht mehr quantifizierbar, jedoch sind aus den Aussagen der Patienten und den Beobachtungen gute Schlussfolgerungen möglich.
-Auch der zweite Fragebogen zu den Funktionen und deren Nutzungskontext wurde nicht verwendet. Hier wurde versucht, während des Gesprächs  mehr Einblick in das Leben der Probanden zu erhalten. Probanden erzählen gerne über ihr Leben und suchen eher das persönliche Gespräch. Daraus geht hervor, dass die Patienten mit großer Übereinstimmung keinen Internetanschluss besitzen. Dies schließt entfernte Aktualisierungen des Medikationsplans und Einnahmebestätigungen des Patienten für den Arzt aus. Missgefallen äußern die weiblichen Patientinnen über die Größe und das Aussehen der Uhr. Eine Uhr muss dem Geschmack der Patientin entsprechen. Hierbei spielt die Größe wie auch das Aussehen der Uhr eine Rolle. Bei Beschreibung von anderen modischen Farben der Uhr oder der Armbänder zeigen sie sich interessiert. Ein Großteil der Patienten sieht jedoch ein, dass sie aufgrund ihrer Sehschwäche die große Uhr (42mm) benötigen. Die große Uhr wird im Gegenzug als zu groß beschrieben. Die meisten Patienten haben keine Probleme die Schrift zu lesen. Meist nehmen sie ihre Brille zur Hilfe, die im Krankenhaus natürlich immer griffbereit ist. Nur bei einem kleinen Teil kommt es vor, dass sie den Text auf dem Display auch mit Brille nicht lesen können. Das größte Problem ist jedoch die schon erwähnte Einschränkung der Feinmotorik. So können die Probanden die Uhr nicht wirklich aktiv bedienen, sondern reagieren nur auf die Vibration am Handgelenk. Dies führt zu einer Hilflosigkeit gegenüber der Technik der Uhr.
-\subsection{Probleme tabellarisch}
+Die Befragungen wurden deswegen auf eine Thinking Alound Methode (\ref{ch:thinking}) umgestellt. Leider sind die Ergebnisse so nicht mehr quantifizierbar, jedoch sind aus den Aussagen der Patienten und den Beobachtungen gute Schlussfolgerungen möglich.
+Auch der zweite Fragebogen zu den Funktionen und deren Nutzungskontext wurde nicht verwendet. Hier wurde versucht, während des Gesprächs  mehr Einblick in das Leben der Probanden zu erhalten. Probanden erzählen gerne über ihr Leben und suchen eher das persönliche Gespräch. Daraus geht hervor, dass die Patienten mit großer Übereinstimmung keinen Internetanschluss besitzen. Dies schließt entfernte Aktualisierungen des Medikationsplans und Einnahmebestätigungen des Patienten für den Arzt aus. Missgefallen äußern die weiblichen Patientinnen über die Größe und das Aussehen der Uhr. Eine Uhr muss dem Geschmack der Patientin entsprechen. Hierbei spielt die Größe wie auch das Aussehen der Uhr eine Rolle. Bei Beschreibung von anderen modischen Farben der Uhr oder der Armbänder zeigen sie sich interessiert. Ein Großteil der Patienten sieht jedoch ein, dass sie aufgrund ihrer Sehschwäche die große Uhr (42mm) benötigen. Die große Uhr wird im Gegenzug als zu groß beschrieben. Die meisten Patienten haben keine Probleme die Schrift zu lesen. Meist nehmen sie ihre Brille zur Hilfe, die im Krankenhaus natürlich immer griffbereit ist. Nur bei einem kleinen Teil kommt es vor, dass sie den Text auf dem Display auch mit Brille nicht lesen können. Das größte Problem ist jedoch die schon erwähnte Einschränkung der Feinmotorik. So können die Probanden die Uhr nicht wirklich aktiv bedienen, sondern reagieren nur auf die Vibration am Handgelenk. Dies führt zu einer Hilflosigkeit gegenüber der Technik der Uhr. Eine genaue Auflistung der Probleme findet sich in \ref{ch:problems}
 \begin{table}[]
 \centering
 \caption{Probleme und mögliche Lösungen des Smartwatch Prototyps}
-\label{my-label}
+\label{ch:problems}
 \begin{tabular}{p{4cm} p{5cm} p{5cm}|l|l|l|}
 \hline
  Problem  &Auswirkungen  &mögliche Lösung  \\ \hline
@@ -55,3 +62,37 @@ Auch der zweite Fragebogen zu den Funktionen und deren Nutzungskontext wurde nic
  \textbf{Uhr ist unästhetisch}&Patient trägt die Uhr nicht und wird so nicht an die Medikamente erinnert  &Keine Standard Uhren kaufen, sondern den Patienten die Farbe und Form der Uhr und die Art des Armbandes aussuchen lassen  \\ \hline
 \end{tabular}
 \end{table}
+\subsection{Auswertung des Fragebogens zum Nutzungskontext}
+Die Frage des Fragebogen zum Nutzungskontext wurde im Laufe des Gesprächs oder im Nachgang des Thinking Alouds geklärt. Die Aussagen waren jedoch oft nicht erkennbar, also handelt es sich eher um eine Einschätzung der Antworten. Die Antworten sind in \ref{fig:result} graphisch dargestellt.
+
+\begin{figure}
+\begin{tikzpicture}
+[
+    pie chart,
+    slice type={comet}{blu},
+    slice type={legno}{rosso},
+    pie values/.style={font={\small}},
+    scale=2
+]
+
+
+	\pie[shift={(0cm, 0cm)}]{Tragen eine Uhr im Alltag}{73/comet, 27/legno}
+    \pie[shift={(4.3cm, 0cm)}]{Besitzen einen Computer undInternetanschluss}{9/comet, 91/legno}
+    \pie[shift={(0cm, -2.6cm)}]{Findet die Idee gut }{81/comet, 19/legno}
+    \pie[shift={(4.3cm, -2.6cm)}]{Haben Probleme Medikamente rechtzeitig zu nehmen}{36/comet, 64/legno}
+    \pie[shift={(0cm, -5.2cm)}]{Wissen welche Medikamente sie nehmen}{73/comet, 27/legno}
+    \pie[shift={(4.3cm, -5.2cm)}]{Erkennen Medikamente an Form u. Farbe}{45/comet, 65/legno}
+    \pie[shift={(0cm, -7.8cm)}]{Besitzen ein mobiles Telefon}{27/comet, 73/legno}
+    \pie[shift={(4.3cm, -7.8cm)}]{Würden sie Anwendung + Uhr nutzen}{36/comet, 64/legno}
+    
+    
+
+	\centering
+    \legend[shift={(2.2cm,-8.6cm)}]{{Ja}/comet, {Nein}/legno}
+
+\end{tikzpicture}
+\caption{Ergebnis des Fragebogens für den Nutzungskontext}
+\label{fig:result}
+\end{figure}
+\section{Probleme bei der Evaluation}
+Die Zielgruppe mit dem Alter zwischen 70 und 85 erwies sich als schwierig. Eine bessere Vorbereitung auf diese Gruppe von Menschen wäre von Vorteil gewesen. Die Fragen, die geprüft werden, sollten auf eine minimale Anzahl reduziert werden. Es ist eher wichtig einen persönliche Verbindung zum Befragten am Anfang des Gesprächs aufzubauen. Konfrontiert man sie gleich mit einer großen Anzahl an Fragen, verunsichert man sie. Auch sollte man hierbei geduldig sein und ein persönliche Themen aufgreifen. Die Befragten stehen anfangs einer Befragung eher skeptisch gegenüber. Diese Skepsis gilt es zu überwinden.
