@@ -12,36 +12,37 @@
 Die in Kapitel 3 aufgeführten Analyse-Ergebnisse wurden für die erste Iteration des Prototyps umgesetzt. Es handelt sich hierbei um einen funktionsfähigen Prototypen, der nativ auf der Apple Watch ausführbar ist. Im folgenden werden Schritte der Umsetzung genauer beschrieben. Hierbei wird auf die Benutzeroberflächenerstellung sowie auf die Verbindung zwischen Uhr und iPhone eingegangen.
 
 \section{Werkzeuge}
-Für die Entwicklung wurde Apples Entwicklungsumgebung Xcode in Version 7.2.1 mit den SDKs iOS 9.2 und watchOS 2.1 verwendet. Zum Verwalten des Source-Codes wurde Git\cite{git} eingesetzt. Als Git-Remoteserver wurde Github \cite{github} verwendet. Die graphische Repräsentation der Medikamente sind keine statischen Bilder. Jede Art von Medikament hat eine Vorlage, die dynamisch mit jeglicher Farbe eingefärbt werden kann. Zum Erstellen dieser Vorlagen wurde PaintCode in Version 2.4 \cite{paintCode} genutzt.
+\label{ch:tools}
+Für die Entwicklung wurde Apples Entwicklungsumgebung Xcode in Version 7.2.1 mit den SDKs iOS 9.2 und watchOS 2.1 verwendet. Zum Verwalten des Source-Codes wurde Git\cite{git} eingesetzt. Als Git-Remoteserver wurde Github \cite{github} verwendet. Die graphische Repräsentation der Medikamente sind keine statischen Bilder. Jede Art von Medikament hat eine Vorlage, die dynamisch mit jeglicher Farbe eingefärbt werden kann. Zum Erstellen dieser Vorlagen wurde PaintCode in Version 2.4 \cite{paintCode} genutzt. Zu beachten ist, das die Entwicklung von iOS und watchOS Anwendungen nur auf einem Mac möglich ist. Für diese Arbeit wurde Mac OS X 10.11.3 verwendet.
 
 \section{Benutzeroberfläche}
 \label{ch:userinterface}
-Xcode bietet für visuelle Erstellung von Benutzeroberflächen einen eigenen integrierten Editor namens InterfaceBuilder. Hiermit können graphische Elemente per DragAndDrop zu einer Benutzeroberfläche zusammengestellt werden (\ref{fig:xcode-interface-elements}). Ebenfalls per DragAndDrop werden diese Interface-Elemete mit dem Quellcode verbunden (\ref{fig:xcode-interface-code-connect}).
+Xcode bietet für visuelle Erstellung von Benutzeroberflächen einen eigenen integrierten Editor namens InterfaceBuilder. Hiermit können graphische Elemente per DragAndDrop zu einer Benutzeroberfläche zusammengestellt werden (Abbildung \ref{fig:xcode-interface-elements}). Ebenfalls per DragAndDrop werden diese Interface-Elemete mit dem Quellcode verbunden (Abbildung \ref{fig:xcode-interface-code-connect}).
 
-Die Auswahl an Interface-Elementen ist sehr begrenzt und bietet kaum Möglichkeiten eigene Interface-Elemenete zu erstellen. Trotz dieser Begrenztheit lassen sich komplexere Anwendungen bauen.
+Die Auswahl an Interface-Elementen ist sehr begrenzt und bietet kaum Möglichkeiten eigene Interface-Elemenente zu erstellen. Trotz dieser Begrenztheit lassen sich komplexere Anwendungen bauen.
 \begin{figure}
-	\caption{Interface Elemente zu Erstellen von Benutzeroberflächen}
+	\caption{Interface Elemente zum Erstellen von Benutzeroberflächen}
 	\label{fig:xcode-interface-elements}
 	\centering
 		\includegraphics[width=0.9\textwidth]{04_realisation/screenshots/xcode-interface-elements}
 \end{figure}
 
 \begin{figure}
-	\caption{Interface Elemente mit Quellcode verknüfen}
+	\caption{Interface Elemente mit Quellcode verknüpfen}
 	\label{fig:xcode-interface-code-connect}
 	\centering
 	\includegraphics[width=0.9\textwidth]{04_realisation/screenshots/xcode-interface-code-connect}
 \end{figure}
 
 \section{Datenhalten - Persistence}
-Da generell das iPhone das primäre Objekt der Nutzung ist, bietet sich die Datenhaltung auf dem iPhone an. Apple bietet mit CoreData \cite{Apple:2015swiftOpen} eine Framework zur Persistierung von Objekt-Graphen. Das Framework, welches auf SQLite aufsetzt, bietet eine gute Abstraktion einer Datenbank und ist deswegen leicht und schnell zu integrieren. So bringt CoreData einen graphischen Editor mit, der es erlaubt Datenschemata zu erstellen und diese in Klassen zu transformieren. Daten, die in CoreData gespeichert wurden, lassen sich mittels gezielter Datenbankanfragen abfragen. So muss keine eigene Logik zum Suchen und Sortieren implementiert werden. Des Weiteren bietet CoreData Schnittstellen zur Benachrichtigung bei Änderung in den Daten. Durch langjähriges Bestehen des CoreData Frameworks lässt sich eine stabile Nutzung garantieren. CoreData lässt sich auch auf der AppleWatch nutzen. Dupliziert man nun die Datenhaltung vom iPhone auf die Uhr, müssen diese beiden Datensätze immer konsistent gehalten werden. Dieser Abgleich bei Änderung einer Datenhaltung ist aufwendig zu implementieren. Wird dieser Abgleich jedoch realisiert, ist die Uhr nochmal ein Stück unabhängiger. 
+Da generell das iPhone das primäre Objekt der Nutzung ist, bietet sich die Datenhaltung auf dem iPhone an. Apple bietet mit CoreData \cite{Apple:2015swiftOpen} eine Framework zur Persistierung von Objekt-Graphen. Das Framework, welches auf SQLite aufsetzt, bietet eine gute Abstraktion einer Datenbank und ist deswegen leicht und schnell zu integrieren. So bringt CoreData einen graphischen Editor mit, der es erlaubt, Datenschemata zu erstellen und diese in Klassen zu transformieren. Daten, die in CoreData gespeichert wurden, lassen sich mittels gezielter Datenbankanfragen abfragen. So muss keine eigene Logik zum Suchen und Sortieren implementiert werden. Des Weiteren bietet CoreData Schnittstellen zur Benachrichtigung bei Änderung in den Daten. Durch langjähriges Bestehen des CoreData Frameworks lässt sich eine stabile Nutzung garantieren. CoreData kann auch auf der AppleWatch genutzt werden. Dupliziert man nun die Datenhaltung vom iPhone auf die Uhr, müssen diese beiden Datensätze immer konsistent gehalten werden. Dieser Abgleich bei Änderung einer Datenhaltung ist aufwendig, zu implementieren. Wird dieser Abgleich jedoch realisiert, ist die Uhr nochmal ein Stück unabhängiger. 
 
 Im konkreten Fall wurde keine doppelte Datenhaltung genutzt. Das iPhone ist also die zentrale Datenquelle. Die Apple Watch kann als Client betrachtet werden, der die Daten des iPhones präsentiert. Zur Realisierung einer Client-Server Verbindung zwischen Uhr und iPhone wurde das WatchConnectivity Framework genutzt, welches in \ref{watchCon} beschrieben wird. Daten müssen vor dem Versenden an die Uhr jedoch immer in ein serialisierbares Format übertragen werden. CoreData Objekte  können nicht direkt übertragen werden.
 
 
 \section{WatchConnectivity}
 \label{watchCon}
-Wichtig für die Kommunikation zwischen Uhr und iPhone ist das WatchConnectivity Framework \cite{Apple:2015SharingDataToWatch}. Hierbei ist im Listing \ref{lst:wcConnect} zu sehen, wie genau eine Verbindung aufgebaut werden kann. Es wird auch demonstriert, wie ein Datenaustausch realisiert werden kann. Wichtig ist, dass diese Verbindung zum richtigen Zeitpunkt im Application-Lifecycle aufgebaut wird, da es sonst zu Datenverlusten kommen kann.
+Wichtig für die Kommunikation zwischen Uhr und iPhone ist das WatchConnectivity Framework \cite{Apple:2015SharingDataToWatch}. Hierbei ist im Listing \ref{lst:wcConnect} zu sehen, wie genau eine Verbindung aufgebaut werden kann. Es wird auch demonstriert, wie ein Datenaustausch realisiert werden kann. Wichtig ist, dass diese Verbindung zum richtigen Zeitpunkt im Application-Lifecycle aufgebaut wird, da es sonst zu Datenverlusten kommen kann. Wird die Verbindung zu früh erstellt, also wenn noch kein Handler zur Weiterverarbeitung gesetzt wurde, so laufen die Daten ins Leere und sind verloren.
 
 \lstinputlisting[caption=Nutzung des WatchConnectivity Framework, label=lst:wcConnect]{04_realisation/code/WatchExecutionTimeService.swift}
  
@@ -71,16 +72,18 @@ Mit \lstinline{WKInterfacePicker} bietet Apple eine Standard View-Componente zum
 \section{Notification Management}
 Notifications für die Medikationen werden mit der Notification API  registriert \cite{Apple:2015notif}. Auch kann das Verhalten der Notifications angepasst werden. So können vordefinierte Aktionen wie \glqq Einnehmen\grqq  oder \glqq Verschieben\grqq in die Notifications konfiguriert werden.
 
-Bei der Notification handelt es sich um eine UILocalNotification \cite{Apple:2015notif}. Die Art von Notification benötigt keinen \gls{remoteServer}, sondern wird vom verbundenen iPhone verwaltet. Zum jetzigen Zeitpunkt ist es nicht möglich UILocalNotification von der Uhr zu erstellen. Dies würde die Uhr im Falle der Mediwatch-Anwendung noch unabhängiger machen. Sind die Notifications einmal auf dem iPhone registriert, werden sie zum Ausführungszeitpunkt auf der Uhr angezeigt. Dazu ist keine Verbindung zum iPhone mehr nötig.
+Bei der Notification handelt es sich um eine UILocalNotification \cite{Apple:2015notif}. Die Art von Notification benötigt keinen \gls{remoteServer}, sondern wird vom verbundenen iPhone verwaltet. Zum jetzigen Zeitpunkt ist es nicht möglich, UILocalNotification von der Uhr zu erstellen. Dies würde die Uhr im Falle der Mediwatch-Anwendung noch unabhängiger machen. Sind die Notifications einmal auf dem iPhone registriert, werden sie zum Ausführungszeitpunkt auf der Uhr angezeigt. Dazu ist keine Verbindung zum iPhone mehr nötig.
 
 \section{Anwendung}
 
-Die Anwendung besteht aus zwei Komponenten auf der Apple Watch. Eine native Notification  und eine auf der Uhr installierte und ausgeführte Anwendung (siehe \ref{ch:watch_software}). In \ref{fig:watch-real} finden sich Bilder der Anwendung auf der Uhr. Dies sind Screenshots, die mit Hilfe einer Bildbearbeitungssoftware eingefügt wurden. Diese Bilder können ein Gefühl für die echte Anwendung auf der Uhr vermitteln.
+Die Anwendung besteht aus zwei Komponenten auf der Apple Watch. Eine native Notification und eine auf der Uhr installierte und ausgeführte Anwendung (siehe \ref{ch:watch_software}). In Abbildung \ref{fig:watch-real} finden sich Bilder der Anwendung auf der Uhr. Dies sind Screenshots, die mit Hilfe einer Bildbearbeitungssoftware eingefügt wurden. Diese Bilder können ein Gefühl für die echte Anwendung auf der Uhr vermitteln.
 
 \subsection{Notification}
- Die Notification bringt die Uhr zum Zeitpunkt der geplanten Medikamenteneinnahme zum Vibrieren und lässt optional einen Ton erklingen. Dies führt dazu, dass der Anwender auf die Uhr blickt und an die bevorstehende Medikamenteneinnahme erinnert wird. Die Notification wurde daraufhin optimiert, sodass eine große graphische Repräsentation des Medikaments angezeigt wird. Dem Nutzer wird so die Wiedererkennung des Medikaments erleichtert (siehe \ref{fig:watch-app-notification}). Neben dem Medikamentennamen wird auch die Dosierung des Medikaments dargestellt. Mit nur einer Aktion wird dem Nutzer ermöglicht, die Medikamenteneinnahme zu bestätigen oder sie zu verschieben. Die Notification ist darauf ausgelegt eine sehr schnelle Interaktion zu ermöglichen, damit der Nutzer nicht länger als 10 Sekunden mit der Uhr interagieren muss (siehe \ref{fig:watch-app-notification}). Diese Zeit führt sich auf die Studie \glqq Smartwatch in vivo\glqq \cite{Pizza:2016} zurück.
+Die Notification bringt die Uhr zum Zeitpunkt der geplanten Medikamenteneinnahme zum Vibrieren und lässt optional einen Ton erklingen. Dies führt dazu, dass der Anwender auf die Uhr blickt und an die bevorstehende Medikamenteneinnahme erinnert wird. Die Notification wurde daraufhin optimiert, sodass eine große graphische Repräsentation des Medikaments angezeigt wird. Dem Nutzer wird so die Wiedererkennung des Medikaments erleichtert (siehe \ref{fig:watch-app-notification}). Neben dem Medikamentennamen wird auch die Dosierung des Medikaments dargestellt. Mit nur einer Aktion wird dem Nutzer ermöglicht, die Medikamenteneinnahme zu bestätigen oder sie zu verschieben. Die Notification ist darauf ausgelegt, eine sehr schnelle Interaktion zu ermöglichen, damit der Nutzer nicht länger als 10 Sekunden mit der Uhr interagieren muss (siehe \ref{fig:watch-app-notification}). Diese Zeit führt sich auf die Studie \glqq Smartwatch in vivo\glqq \cite{Pizza:2016} zurück.
  
  Diese Erweiterung der Notification mit dem Bild des Medikaments wird jedoch vom System geregelt. Dauert das Rendern der Notification zu lange, stellt das System eine reine Textdarstellung der Notification dar. Dies führt zu einem gewaltigen Informationsverlust. Als Anwendungsentwickler hat man nur die Option, seine Notification mit bestmöglicher Geschwindigkeit zu rendern, um eine Textdarstellung zu vermeiden. Das System bietet jedoch keine Garantie für eine erweiterte Darstellung der Notification. Dies kann im Extremfall zu Verwirrungen des Nutzers führen.
+ 
+Die Notification sind ungeeignet, wenn es darum geht, mehrere Datenpunkte gleichzeitig darzustellen. Wenn also mehrere Medikamente in einer Notification angezeigt werden, so verliert man die Übersicht. In der konkreten Realisierung der Arbeit wurde deswegen vorerst nur ein Medikament pro Notification dargestellt.
 \begin{figure}
 	\caption{Notification für ein Medikament}
 	\label{fig:watch-app-notification}
@@ -90,10 +93,10 @@ Die Anwendung besteht aus zwei Komponenten auf der Apple Watch. Eine native Noti
 \end{figure}
 
 \subsection{Native Anwendung}
-Neben der Notification gibt es noch eine native App. Diese läuft auf der Uhr und stellt eine Liste der Medikamente des aktuellen Tages dar. Die App muss aktiv vom Nutzer gestartet werden. Der Nutzer muss also auf die Digital Crown drücken und dann die App aus der Übersicht wählen. In Abbildung \ref{fig:watch-app-take} wird ein Medikament aus der Liste ausgewählt. Nachdem man ein Medikament ausgewählt hat, bekommt man in einer Detailansicht das Medikament zu sehen. Nun kann das Medikament als genommen oder nicht genommen markiert werden. Ein visuelles Feedback (grüner Haken) zur Einnahme zeigt dem Nutzer seine Aktionen an. Von der Detailansicht aus ist es auch möglich, ein Medikament zur späteren Einnahme zu markieren. Hier hat der Anwender die Möglichkeit aus vordefinierten Zeiten auszuwählen oder eine eigene Zeit zu bestimmen. Um die gewählte Zeitdauer wird die Benachrichtigung für das Medikament verschoben (siehe \ref{fig:watch-app-delay}). 
+Neben der Notification gibt es noch eine native App. Diese läuft auf der Uhr und stellt eine Liste der Medikamente des aktuellen Tages dar. Die App muss aktiv vom Nutzer gestartet werden. Der Nutzer muss also auf die Digital Crown drücken und dann die App aus der Übersicht wählen. In Abbildung \ref{fig:watch-app-take} wird ein Medikament aus der Liste ausgewählt. Nachdem man ein Medikament ausgewählt hat, bekommt man in einer Detailansicht das Medikament zu sehen. Nun kann das Medikament als genommen oder nicht genommen markiert werden. Ein visuelles Feedback (grüner Haken) zur Einnahme zeigt dem Nutzer seine Aktionen an. Von der Detailansicht aus ist es auch möglich, ein Medikament zur späteren Einnahme zu markieren. Hier hat der Anwender die Möglichkeit, aus vordefinierten Zeiten auszuwählen oder eine eigene Zeit zu bestimmen. Um die gewählte Zeitdauer wird die Benachrichtigung für das Medikament verschoben (siehe Abbildung \ref{fig:watch-app-delay}).
 
 \begin{figure}
-	\caption{Native Anwendung: Interface zum Wählen eines Medikaments (oben links). Medikament als genommen bestätigen (oben rechts). Eigene Zeitdauer auswählen (unten links). Medikament ist in der Übersicht als verschoben markiert (unten rechts)}
+	\caption{Native Anwendung: Interface zum Wählen eines Medikaments (oben links). Medikament als genommen bestätigen (oben rechts). Medikament ist als genommen markiert (unten links). Medikament ist in der Übersicht als genommen markiert(unten rechts)}
 	\label{fig:watch-app-take}
 	\centering
 	\includegraphics[width=0.4\textwidth]{04_realisation/screenshots/watch/notTaken01.png}
@@ -103,7 +106,7 @@ Neben der Notification gibt es noch eine native App. Diese läuft auf der Uhr un
 \end{figure}
 
 \begin{figure}
-	\caption{Native Anwendung: Interface zum Verschieben eines Medikaments (oben links). Zeitdauer für das Verschieben wählen (oben rechts). Medikament ist als genommen markiert (unten links). Medikament ist in der Übersicht als genommen markiert(unten rechts)}
+	\caption{Native Anwendung: Interface zum Verschieben eines Medikaments (oben links). Zeitdauer für das Verschieben wählen (oben rechts). Eigene Zeitdauer auswählen (unten links). Medikament ist in der Übersicht als verschoben markiert (unten rechts) }
 	\label{fig:watch-app-delay}
 	\centering
 	\includegraphics[width=0.4\textwidth]{04_realisation/screenshots/watch/delay01.png}
@@ -121,5 +124,5 @@ Neben der Notification gibt es noch eine native App. Diese läuft auf der Uhr un
 	\includegraphics[width=1\textwidth]{04_realisation/screenshots/Mockup-Generated-by-Dunnnk-2.jpg}
 	\end{figure}
 \section{Quellcode}
-Das ausführbare Projekt lässt sich von Github unter folgender URL\cite{Schmidt:repoCode} auschecken. So kann es kompiliert und getestet werden. 
+Das ausführbare Projekt lässt sich von Github unter der URL\cite{Schmidt:repoCode} auschecken. So kann es kompiliert und getestet werden. Die hierzu benötigten Werkzeuge sind in \ref{ch:tools} zu finden.
 

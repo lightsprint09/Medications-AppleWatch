@@ -18,7 +18,7 @@ Die Anforderungen wurden von einem Gespräch mit Monika Pobiruchin am Anfang vom
 Von dem Gespräch mit Monika Pobiruchin wurde eine Persona für die Zielgruppe erstellt.
 Mit Hilfe der Persona wurden die Kern-Usecases abgeleitet. Die folgenden Usecases 1 bis 4 wurden im \gls{pita} erarbeitet und von dort übernommen. 
 \input{04_realisation/pita_usecases.tex}
-Diese vier Usecases sind auch Grundlage für diese Arbeit.
+Diese vier Usecases sind auch Grundlage für diese Arbeit. Jedoch werden nur die Usecases umgesetzt, welche auch in der Evaluation geprüft werden können.
 
 \section{Apple`s Programmiersprache Swift}
 Swift wurde im Juni 2014 von Apple vorgestellt und genießt seitdem steigendes Interesse. Im Juni 2015 wurde Version 2.0 veröffentlicht \cite{Apple:2014sp}. Mit Version 2.0 wurde ebenfalls der Plan vorgestellt, Swift Open Source zu machen und somit auch anderen Plattformen die Entwicklung mit Swift zu ermöglichen \cite{Apple:2014sp}. Diesen Plan setzte Apple Ende 2015 in die Tat um. Swift ist nun völlig Open Source. Es können Vorschläge für neue Sprachfunktionen gemacht werden. Auch Apple`s Entwicklungsteam diskutiert seine Pläne für die Sprache öffentlich \cite{Apple:2015swiftOpen}.
@@ -29,10 +29,10 @@ In den frühen 80er Jahren entwickelte Brad Cox die Sprache Objective-C\cite{Dal
  Als Apple nun 2008 seine iOS Plattform öffnete und Entwickler eigene Anwendungen für das System schreiben konnten, bekam Objective-C neue Aufmerksamkeit. Viele Entwickler sahen Objective-C als ein Überbleibsel alter Zeiten und waren der Sprache gegenüber negativ eingestellt. Apple stand nun unter Zugzwang um seine Plattform, mit der große wirtschaftliche Interessen verbunden sind, für Entwickler attraktiv zu halten \cite{Wells:2015fu}. Da jedoch alle highlevel APIs in Objectiv-C vorhanden sind, ist es technisch nicht möglich, auf eine bekannte Sprache wie Java für iOS und Mac Entwicklung umzusteigen. Man entschied sich für eine Neuentwicklung mit Hinblick auf neue Programmierparadigmen und auf sehr gute Kompatibilität zu alten Objectiv-C APIs \cite{Wells:2015fu}.
 
 \subsection{Überblick der Neuerung}
-Swift bietet gegenüber Objectiv-C viele Neuerungen. Diese Neuerungen sind bekannte Konzepte, die schon in anderen Programmiersprachen Verwendung finden. Die meisten dieser Verbesserungen unterstützen den Entwickler früh Fehler im Quellcode zu entdecken. Im folgenden sind die wichtigsten Neuerungen beschrieben.
+Swift bietet gegenüber Objectiv-C viele Neuerungen. Diese Neuerungen sind bekannte Konzepte, die schon in anderen Programmiersprachen Verwendung finden. Die meisten dieser Verbesserungen unterstützen den Entwickler früh, Fehler im Quellcode zu entdecken. Im folgenden sind die wichtigsten Neuerungen beschrieben.
 
 \subsection*{Type Inference}
-Bei Type Inference erkennt der Compiler, welcher Typ in eine Variable instanziiert wurde. Es ist nicht nötig für die Variable eine Typendefinition anzugeben \cite{Apple:2014sp}. Hierdurch wird der Quellcode leichter lesbar. 
+Bei Type Inference erkennt der Compiler, welcher Typ in eine Variable instanziiert wurde. Es ist nicht nötig, für die Variable eine Typendefinition anzugeben \cite{Apple:2014sp}. Hierdurch wird der Quellcode leichter lesbar. 
 \lstinputlisting[caption=Beispiel zu Type Inference in Swift label=lst:typeInference]{02_stateArt/codeExamples/TypeInference.swift}
 
 \subsection*{Closures - Functions as First Class Types}
@@ -46,7 +46,7 @@ Im Codebeispiel \ref{lst:firstFuncSwift} benötigt es kein Interface für den Nu
 \subsection*{Generics}
 Generics sind schon längere Zeit Teil moderner Programmiersprachen. Sie unterstützen den Entwickler, um Fehler zur Compilezeit zu entdecken. Ein sehr gutes Beispiel hierfür sind Collections (Arrays, Listen, Set, etc). Ein Collection Typ wie Array muss nicht für jeden Typ, den er hält, neu implementiert werden.
 \lstinputlisting[caption=Swift Beispiel zu Generic Array Collection, label=lst:generics]{02_stateArt/codeExamples/Generics.swift}
-Im Codebeispiel \ref{lst:generics} werden die Vorteile von Generics aufgezeigt. Der erste Versuch einen Array zu implementieren (\lstinline{CustomMedicationArray}) zeigt, dass dieser Array eine sehr gute Typen Deklarierung enthält. Der Compiler kann den Entwickler also maximal unterstützen, jedoch ist diese Implementierung minimal wiederverwendbar. Der zweite Ansatz (\lstinline{CustomArray}) gibt als Typ-Einschränkung den globalen Supertyp an. Dies führt zu einer maximalen Wiederverwendbarkeit, da jede Klasse von diesem globalen Supertyp erbt (funktioniert nur theoretisch, da in Swift kein Zwang besteht, von einem globalen Supertyp zu erben).
+Im Codebeispiel \ref{lst:generics} werden die Vorteile von Generics aufgezeigt. Der erste Versuch, einen Array zu implementieren (\lstinline{CustomMedicationArray}), zeigt, dass dieser Array eine sehr gute Typen Deklarierung enthält. Der Compiler kann den Entwickler also maximal unterstützen, jedoch ist diese Implementierung minimal wiederverwendbar. Der zweite Ansatz (\lstinline{CustomArray}) gibt als Typ-Einschränkung den globalen Supertyp an. Dies führt zu einer maximalen Wiederverwendbarkeit, da jede Klasse von diesem globalen Supertyp erbt (funktioniert nur theoretisch, da in Swift kein Zwang besteht, von einem globalen Supertyp zu erben).
 Die letzte Implementierung (\lstinline{GenericArray}) nutzt nun Generics. So wird bei der Definition der Klasse ein generischer Typ \lstinline{ T}  eingeführt. Dieser Typ ist eine Art Platzhalter für einen konkreten Typ, der später vom Array gehalten wird. So muss bei der Initialisierung der generischen Klasse die Typ-Information für \lstinline{T} übergeben werden (siehe letze Zeile in \ref{lst:generics}).
 
 Das oben beschriebene Beispiel dient nur zur Verdeutlichung des Konzeptes. Swift bietet eine Reihe an Collection Types, darunter auch eine generische Array Implementierung. 
@@ -78,7 +78,7 @@ Erst mit der Miniaturisierung der Computertechnik und Sensoren war es möglich, 
 
 Doch nicht nur Uhren zählen zu den Wearables. Google präsentierte mit der Google Glass eine Datenbrille, die über eine Kamera, ein Heads \glqq Prismatic head-mount\glqq  Display, Sprachsteuerung sowie Internetverbindung und weitere Sensoren verfügt \cite{Muensterer2014281}. Auch ein Ring, der mit Hilfe eines Sensors den Puls misst, existiert als Prototyp \cite{4711366}.
 
-Während im Smartphone-Markt noch ein Focus auf Leistung und Funktion der Geräte gelegte wurde, darf man beim Wearables-Markt den Faktor der Ästhetik nicht vergessen. Hier wird ein Bereich betreten, der starke Einflüsse von Mode aufzeigt. Anwender eines Gerätes achten also nicht mehr nur auf die Funktion, sondern auch auf Form, Farbe und Lifestyle den das Produkt verkörpert. Apple bietet unter dem Namen \glqq Watch Edition \grqq eine Apple Watch aus echtem Gold an, deren Preis über 10.000 Euro beträgt und sich an den Luxusmarkt richtet. Auch TAGHeuer, eine Firma, die sich auf luxuriöse und modische Uhren spezialisiert hat, betritt nun auch den Markt der Wearables \cite{TAGHeuer:20015aa}.
+Während im Smartphone-Markt noch ein Focus auf Leistung und Funktion der Geräte gelegte wurde, darf man beim Wearables-Markt den Faktor der Ästhetik nicht vergessen. Hier wird ein Bereich betreten, der starke Einflüsse von Mode aufzeigt. Anwender eines Gerätes achten also nicht mehr nur auf die Funktion, sondern auch auf Form, Farbe und Lifestyle, den das Produkt verkörpert. Apple bietet unter dem Namen \glqq Watch Edition \grqq eine Apple Watch aus echtem Gold an, deren Preis über 10.000 Euro beträgt und sich an den Luxusmarkt richtet. Auch TAGHeuer, eine Firma, die sich auf luxuriöse und modische Uhren spezialisiert hat, betritt nun auch den Markt der Wearables \cite{TAGHeuer:20015aa}.
 
 \section{Apple Watch}
 \label{ch:apple-watch}
@@ -90,9 +90,9 @@ Die Apple Watch wurde als Erweiterung zum iPhone entwickelt. Und so sind auch vi
 
 \subsection{Software}
 \label{ch:watch_software}
-Mit Erscheinen der Uhr wurde auch das Betriebssystem in Version 1 ausgeliefert und dazu das \gls{sdk} namens WatchKit. Dies erlaubte es Anwendungen zu entwickeln, welche auf dem verbundenen iPhone ausgeführt wurden. Dies führte zu schlechter Performance der Anwendungen und zu völliger Abhängigkeit zum iPhone.
+Mit Erscheinen der Uhr wurde auch das Betriebssystem in Version 1 ausgeliefert und dazu das \gls{sdk} namens WatchKit. Dies erlaubte es Anwendungen zu entwickeln, welche auf dem verbundenen iPhone ausgeführt wurden. Die Folge war schlechter Performance der Anwendungen und zu völliger Abhängigkeit zum iPhone.
 
-Im Juni 2015 veröffentlichte Apple die erste Vorabversion von watchOS 2.0, welches später im September 2015 für Endnutzer bereit gestellt wurde. WatchOS bietet mehr Unabhängigkeit für Anwendungen, da diese direkt auf der Uhr ausgeführt werden. Für Anwendungsentwickler gibt es vier Arten Informationen auf der Uhr darzustellen. Es handelt sich um native Anwendungen (Apps), Glances, Complications und Actionable Notifications \cite{Apple:2015devAw}.
+Im Juni 2015 veröffentlichte Apple die erste Vorabversion von watchOS 2.0, welches später im September 2015 für Endnutzer bereit gestellt wurde. WatchOS bietet mehr Unabhängigkeit für Anwendungen, da diese direkt auf der Uhr ausgeführt werden. Für Anwendungsentwickler gibt es vier Arten, Informationen auf der Uhr darzustellen. Es handelt sich um native Anwendungen (Apps), Glances, Complications und Actionable Notifications \cite{Apple:2015devAw}.
 
 Native Anwendungen sind fest installiert auf der Uhr. Sie können unabhängig auf der Uhr gestartet werden. In einer nativen Anwendung lassen sich komplexere Programme realisieren, da der Nutzer durch viele Möglichkeiten zur Eingabe und Interaktion (\ref{ch:eingabe_interface}) hat. Installiert werden die Apps vom iPhone aus. Eine Watch-App benötigt immer eine iPhone App, die jeweils auf dem iPhone installiert ist.
 
@@ -113,13 +113,13 @@ Die Apple Watch besitzt einen Beschleunigungssensor und Gyroskop, welche genaue 
 \label{ch:eingabe_interface}
 Neben eines normalen Touchscreens führte Apple in der Uhr auch eine Eingabeart namens Force Touch ein. Diese Technologie erlaubt der Uhr zu erkennen, wie fest der Nutzer auf das Display drückt. Dies ermöglicht eine neue Art der Eingabe. Besonders bei einer kleinen Eingabefläche, wie die der Apple Watch, ist eine neue Interaktionsdimension interessant, da es eine differenziertere Interaktion erlaubt. Leider ist eine mögliche Interaktion mit Force Touch optisch nicht zu erkennen, was eine klare Nutzerführung schwer macht.
 
- Von analogen Uhren ist die Krone, das Rad an der Seite einer Uhr, bekannt. An ihr kann die Uhr eingestellt oder aufgezogen werden. An der Apple Watch ist die Krone auch zu finden. Apple nennt sie \glqq Digital Crown\grqq, also digitale Krone. Sie befindet sich ebenfalls an der Seite der Uhr. Die Krone ist drehbar und lässt sich ebenfalls als Druckknopf nutzen. Sie dient zum Scrollen von Inhalten, sowie zum präzisem Auswählen von Elementen aus einer Auswahlliste. Durch das Nutzen der Krone wird der Bildschirm nicht durch einen Finger verdeckt, was bei einem kleinen Display von großem Vorteil ist.
+ Von analogen Uhren ist die Krone, das Rad an der Seite einer Uhr, bekannt. An ihr kann die Uhr eingestellt oder aufgezogen werden. An der Apple Watch ist die Krone auch zu finden. Apple nennt sie \glqq Digital Crown\grqq, also digitale Krone. Sie befindet sich ebenfalls an der Seite der Uhr. Die Krone ist drehbar und lässt sich als Druckknopf nutzen. Sie dient zum Scrollen von Inhalten sowie zum präzisem Auswählen von Elementen aus einer Auswahlliste. Durch das Nutzen der Krone wird der Bildschirm nicht durch einen Finger verdeckt, was bei einem kleinen Display von großem Vorteil ist.
 \subsection{Armband}
 Apple bietet sechs verschiedene Armbänder für die Apple Watch an (Stand Nov. 2015). Zusätzlich ist es möglich, Armbänder von Drittherstellern zu erwerben. 
 
 Das in der günstigsten Version mitgelieferte Armband (Sportarmband) verfügt über einen sehr komplizierten Verschlussmechanismus und ist deswegen weniger für Menschen geeignet, die über schwache sensomotorische Fähigkeiten verfügen. Es gibt auch Armbänder, die einen magnetischen Verschluss bieten und deswegen leichter zu handhaben sind. Diese Armbänder sind jedoch drei mal so teuer wie das Sportarmband.
 
-An der Verbindung zwischen Armband und Uhr ist ein nicht weiter spezifizierter Wartungsport verbaut. Dieser Anschluss könnte in Zukunft Armbänder ermöglichen, die Informationen aus dem Armband an die Uhr übermitteln.
+An der Verbindung zwischen Armband und Uhr ist ein nicht weiter spezifizierter Wartungsport verbaut. Dieser Anschluss könnte in Zukunft Armbänder ermöglichen, die Informationen aus dem Armband an die Uhr zu übermitteln.
 \subsection{Prototyping}
 Zum Erstellen des frühen Prototyps wurden Papier-Prototypen erstellt. Durch die Nutzung dieses Werkzeuges konnte schnell und iterativ gearbeitet werden. Da an dieser Arbeit nur eine Person gearbeitet hat, bietet sich diese Methode an. Sie ist schnell zu erlernen, setzt keine Vorkenntnisse voraus und erzielt schnell Ergebnisse.
 

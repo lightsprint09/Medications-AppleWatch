@@ -1,15 +1,15 @@
 \begin{usecase}
 \addtitle{Usecase 1}{Der Patient wird an ein Medikament erinnert}
 \addfield{Primärer Akteur}{Patient}
-\addfield{Beschreibung}{Ein Erinnerungs Pop-Up erscheint auf dem Display und es wird ein Signal/eine Vibration ausgelost. Das Pop-Up zeigt ein Abbild des Medikaments, dessen Namen und die Uhrzeit, zu der es eingenommen werden soll.}
+\addfield{Beschreibung}{Ein Erinnerungs Pop-Up erscheint auf dem Display und es wird ein Signal/eine Vibration ausgelöst. Das Pop-Up zeigt ein Abbild des Medikaments, dessen Namen und die Uhrzeit, zu der es eingenommen werden soll.}
 \addfield{Vorbedingung}{Es wurde ein Medikationsplan aus der DB auf die Uhr geladen.}
 \additemizedfield{Ablauf}{
 \item Das Pop-Up mit der Erinnerung erscheint auf dem Smartwatch-Display. Die Erinnerung beinhaltet Informationen zur Uhrzeit, Menge und Art der Medikation
 \item Der Patient bestätigt, dass er das Medikament genommen hat
-\item Gerät bestätigt visuell dass der Patient das Medikament als genommen markiert hat
+\item Gerät bestätigt visuell, dass der Patient das Medikament als genommen markiert hat
 }
 \additemizedfield{Alternativablauf}{
-\item Das Pop-Up mit der Erinnerung erscheint auf dem Smartwatch-Display\item Der Patient wählt Option zum Verschieben der Medikation aus\item Auf einem zusätzlichem Dialog kann er aus einer Auswahl eine Zeitdauer wählen, um das die Medikation verschoben wird}
+\item Das Pop-Up mit der Erinnerung erscheint auf dem Smartwatch-Display\item Der Patient wählt Option zum Verschieben der Medikation aus\item Auf einem zusätzlichen Dialog kann er aus einer Auswahl eine Zeitdauer wählen, um die die Medikation verschoben wird}
 \additemizedfield{Alternativablauf 2}{
 \item Das Pop-Up mit der Erinnerung erscheint auf dem Smartwatch-Display\item Der Patient reagiert nicht auf die Erinnerung
 \item Die Erinnerung wird alle x Minuten wiederholt, solange der Patient nicht reagiert.\item Das Fehlen einer Reaktion des Patientens innerhalb einer Zeit von x Minuten wird vermerkt}
@@ -35,7 +35,7 @@
 \additemizedfield{Alternativablauf 3}{
 \item Das Pop-Up mit der Erinnerung erscheint auf dem Smartwatch-Display\item Der Patient reagiert nicht auf die Erinnerung
 \item Die Erinnerung wird alle x Minuten wiederholt, solange der Patient nicht reagiert.\item Das Fehlen einer Reaktion des Patientens innerhalb einer Zeit von x Minuten wird vermerkt}
-\addfield{Ergebnis}{Der Patient hat die Einnahme der MEdikamente bestätigt und dieses auch eingenommen}
+\addfield{Ergebnis}{Der Patient hat die Einnahme der Medikamente bestätigt und diese auch eingenommen}
 \addfield{Alternativergebnis 1}{Der Patient hat die Erinnerung an die Medikamenteneinnahme verschoben}
 \addfield{Alternativergebnis 2}{Der Patient hat die Erinnerung an das Medikament ausgeschaltet}
 \addfield{Alternativergebnis 3}{Der Patient hat bestimmte Medikamente ausgewählt und mit dem weiterführenden Usecase 1 bearbeitet}
@@ -44,7 +44,7 @@
 \begin{usecase}
 \addtitle{Usecase 3}{Einzelne Einnahmebestätigung zurücknehmen}
 \addfield{Primärer Akteur}{Patient}
-\addfield{Vorbedingung}{Es wurde ein Medikationsplan aus der DB auf die Uhr geladen. Eine Medikation wurde als genommen makiert}
+\addfield{Vorbedingung}{Es wurde ein Medikationsplan aus der DB auf die Uhr geladen. Eine Medikation wurde als genommen markiert}
 \additemizedfield{Ablauf}{
 \item Das System zeigt das genommene Medikament an\item Der Benutzer drückt auf den Button mit der Aufschrift “Rücknahme”\item Das System wechselt zur Darstellung eines einzelnen Medikaments, beschrieben im UseCase 1
 }
@@ -54,9 +54,9 @@
 \begin{usecase}
 \addtitle{Usecase 4}{Mehrere Einnahmebestätigungen zurücknehmen}
 \addfield{Primärer Akteur}{Patient}
-\addfield{Vorbedingung}{Es wurde ein Medikationsplan aus der DB auf die Uhr geladen. Mehrere Medikationen, welche zur gleichen Zeit genommen wurden, wurde als genommen makiert}
+\addfield{Vorbedingung}{Es wurde ein Medikationsplan aus der DB auf die Uhr geladen. Mehrere Medikationen, welche zur gleichen Zeit genommen wurden, wurde als genommen markiert}
 \additemizedfield{Ablauf}{
-\item Das System zeigt die genommenen Medikamente an\item Der Benutzer drückt auf den Button mit der Aufschrift “Rücknahme”\item Das System wechselt zur Darstellung mehrere Medikamente, beschrieben im UseCase 2
+\item Das System zeigt die genommenen Medikamente an\item Der Benutzer drückt auf den Button mit der Aufschrift “Rücknahme”\item Das System wechselt zur Darstellung mehrerer Medikamente, beschrieben im UseCase 2
 }
 \addfield{Ergebnis}{Die Einnahmebestätigung ist zurückgenommen. Die Erinnerung ist erneut zu bestätigen oder zu verschieben.}
 \end{usecase}
